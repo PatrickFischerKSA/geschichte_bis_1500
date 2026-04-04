@@ -7,7 +7,28 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-shell">
+  <div id="teacher-gate" class="teacher-gate">
+    <div class="teacher-gate-panel">
+      <p class="panel-kicker">Lehrer*innenzugang</p>
+      <h1>Walkthrough für Einsatz, Steuerung und Auswertung</h1>
+      <p>
+        Diese Seite ist für Lehrpersonen gedacht. Nach der Freischaltung erhältst du einen
+        geführten Überblick über Unterrichtslogik, Freischaltsystem, Leistungsbewertung und
+        Unterrichtseinsatz der gesamten Lernumgebung.
+      </p>
+      <label class="welcome-name teacher-password-field">
+        <strong>Passwort</strong>
+        <input id="teacher-password-input" type="password" placeholder="Passwort eingeben" />
+      </label>
+      <div class="welcome-actions">
+        <button class="btn primary" type="button" data-teacher-unlock>Zugang öffnen</button>
+        <a class="btn ghost" href="index.html">Zur Lernumgebung</a>
+      </div>
+      <p id="teacher-gate-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div id="teacher-shell" class="page-shell teacher-shell" hidden>
     <header class="hero teacher-hero">
       <div class="hero-copy">
         <p class="eyebrow">Lehrpersonen-Version</p>
@@ -47,6 +68,71 @@
     </header>
 
     <main class="content teacher-content">
+      <section class="panel teacher-walkthrough-panel">
+        <p class="panel-kicker">Walkthrough</p>
+        <h2>So steuerst du die Lernumgebung im Unterricht</h2>
+        <div class="teacher-walkthrough-grid">
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">1</span>
+            <h3>Einstieg setzen</h3>
+            <p>
+              Öffne die Lernumgebung gemeinsam im Plenum, kläre die Leitidee der zwölf Module und
+              zeige den Lernenden die Startmaske mit Namensfeld, Fortschrittslogik und
+              Zertifikatsziel.
+            </p>
+          </article>
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">2</span>
+            <h3>Module sequenziell führen</h3>
+            <p>
+              Jedes Modul folgt derselben Dramaturgie. So können Lernende ritualisiert arbeiten:
+              Einstieg, Input, Quelle, Textfrage, Vertiefung, Selbsttest, Merkkasten, Transfer und
+              anschließend die kleine Inhaltssicherung.
+            </p>
+          </article>
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">3</span>
+            <h3>Freischaltung nutzen</h3>
+            <p>
+              Das nächste Modul wird erst ab 60 Prozent in der Inhaltssicherung freigegeben. So
+              ist die Lernreise nicht nur atmosphärisch, sondern auch diagnostisch nutzbar: Du
+              erkennst sofort, wo Wiederholung oder Vertiefung nötig ist.
+            </p>
+          </article>
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">4</span>
+            <h3>Feedback auswerten</h3>
+            <p>
+              Die Lernenden erhalten pro Aufgabe sichtbar „richtig“ oder „überarbeiten“ sowie
+              qualifiziertes Sofortfeedback. Im Unterricht kannst du diese Rückmeldungen für kurze
+              Murmelphasen, Partnerfeedback oder gezielte Nachsteuerung nutzen.
+            </p>
+          </article>
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">5</span>
+            <h3>Abschluss sichern</h3>
+            <p>
+              Nach allen bestandenen Modulen wird das Zertifikat freigeschaltet. Für Lehrpersonen
+              eignet sich das als sichtbarer Abschluss, als Portfolio-Anlass oder als Einstieg in
+              einen summativen Leistungsnachweis.
+            </p>
+          </article>
+          <article class="walkthrough-step">
+            <span class="walkthrough-count">6</span>
+            <h3>Unterricht flexibel anpassen</h3>
+            <p>
+              Du kannst die Lernumgebung kompakt, vertieft, im Flipped-Classroom oder als
+              Projektarbeit einsetzen. Die Modulmatrix unten hilft dir, passende Kürzungen oder
+              Vertiefungen schnell zu entscheiden.
+            </p>
+          </article>
+        </div>
+        <div class="teacher-access-actions">
+          <button class="btn ghost" type="button" data-print-teacher>PDF-Übersicht drucken</button>
+          <button class="btn ghost" type="button" data-teacher-lock>Zugang wieder sperren</button>
+        </div>
+      </section>
+
       <section class="panel intro-panel">
         <p class="panel-kicker">Didaktische Grundidee</p>
         <h2>Vom Ursprung des Menschen zu Herrschaft, Religion und Vernetzung</h2>
@@ -282,11 +368,6 @@
       </section>
     </main>
   </div>
-  <script>
-    const printButton = document.querySelector("[data-print-teacher]");
-    if (printButton) {
-      printButton.addEventListener("click", () => window.print());
-    }
-  </script>
+  <script src="teacher.js"></script>
 </body>
 </html>
