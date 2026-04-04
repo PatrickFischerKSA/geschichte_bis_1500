@@ -1943,7 +1943,7 @@ function createNoiseBuffer(context) {
   const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
   const data = buffer.getChannelData(0);
   for (let i = 0; i < data.length; i += 1) {
-    data[i] = (Math.random() * 2 - 1) * 0.25;
+    data[i] = (Math.random() * 2 - 1) * 0.08;
   }
   return buffer;
 }
@@ -1964,53 +1964,84 @@ async function startAmbient(state) {
   cleanupAmbient();
 
   ambientMasterGain = ambientContext.createGain();
-  ambientMasterGain.gain.value = 0.026;
-  ambientMasterGain.connect(ambientContext.destination);
+  ambientMasterGain.gain.value = 0.018;
 
-  const lowPad = ambientContext.createOscillator();
-  lowPad.type = "sine";
-  lowPad.frequency.value = 146.83;
-  const lowPadGain = ambientContext.createGain();
-  lowPadGain.gain.value = 0.45;
+  const outputHighpass = ambientContext.createBiquadFilter();
+  outputHighpass.type = "highpass";
+  outputHighpass.frequency.value = 180;
+  outputHighpass.Q.value = 0.7;
 
-  const highPad = ambientContext.createOscillator();
-  highPad.type = "triangle";
-  highPad.frequency.value = 220;
-  const highPadGain = ambientContext.createGain();
-  highPadGain.gain.value = 0.15;
+  const outputLowpass = ambientContext.createBiquadFilter();
+  outputLowpass.type = "lowpass";
+  outputLowpass.frequency.value = 3800;
+  outputLowpass.Q.value = 0.5;
+
+  ambientMasterGain.connect(outputHighpass);
+  outputHighpass.connect(outputLowpass);
+  outputLowpass.connect(ambientContext.destination);
+
+  const shimmerPad = ambientContext.createOscillator();
+  shimmerPad.type = "sine";
+  shimmerPad.frequency.value = 392;
+  const shimmerPadGain = ambientContext.createGain();
+  shimmerPadGain.gain.value = 0.028;
+
+  const lightPad = ambientContext.createOscillator();
+  lightPad.type = "triangle";
+  lightPad.frequency.value = 523.25;
+  const lightPadGain = ambientContext.createGain();
+  lightPadGain.gain.value = 0.014;
 
   const lfo = ambientContext.createOscillator();
   lfo.type = "sine";
-  lfo.frequency.value = 0.08;
+  lfo.frequency.value = 0.11;
   const lfoGain = ambientContext.createGain();
-  lfoGain.gain.value = 0.03;
+  lfoGain.gain.value = 0.006;
 
   lfo.connect(lfoGain);
-  lfoGain.connect(lowPadGain.gain);
-  lfoGain.connect(highPadGain.gain);
+  lfoGain.connect(shimmerPadGain.gain);
+  lfoGain.connect(lightPadGain.gain);
 
-  lowPad.connect(lowPadGain);
-  highPad.connect(highPadGain);
-  lowPadGain.connect(ambientMasterGain);
-  highPadGain.connect(ambientMasterGain);
+  shimmerPad.connect(shimmerPadGain);
+  lightPad.connect(lightPadGain);
+  shimmerPadGain.connect(ambientMasterGain);
+  lightPadGain.connect(ambientMasterGain);
 
-  const noiseFilter = ambientContext.createBiquadFilter();
-  noiseFilter.type = "lowpass";
-  noiseFilter.frequency.value = 420;
-  noiseFilter.Q.value = 0.4;
+  const noiseHighpass = ambientContext.createBiquadFilter();
+  noiseHighpass.type = "highpass";
+  noiseHighpass.frequency.value = 1400;
+  noiseHighpass.Q.value = 0.7;
+
+  const noiseLowpass = ambientContext.createBiquadFilter();
+  noiseLowpass.type = "lowpass";
+  noiseLowpass.frequency.value = 4200;
+  noiseLowpass.Q.value = 0.4;
 
   const noiseGain = ambientContext.createGain();
-  noiseGain.gain.value = 0.05;
+  noiseGain.gain.value = 0.012;
   ambientNoiseSource = ambientContext.createBufferSource();
   ambientNoiseSource.buffer = createNoiseBuffer(ambientContext);
   ambientNoiseSource.loop = true;
-  ambientNoiseSource.connect(noiseFilter);
-  noiseFilter.connect(noiseGain);
+  ambientNoiseSource.connect(noiseHighpass);
+  noiseHighpass.connect(noiseLowpass);
+  noiseLowpass.connect(noiseGain);
   noiseGain.connect(ambientMasterGain);
 
-  [lowPad, highPad, lfo].forEach((osc) => osc.start());
+  [shimmerPad, lightPad, lfo].forEach((osc) => osc.start());
   ambientNoiseSource.start();
-  ambientNodes = [lowPad, highPad, lfo, lowPadGain, highPadGain, lfoGain, noiseFilter, noiseGain];
+  ambientNodes = [
+    shimmerPad,
+    lightPad,
+    lfo,
+    shimmerPadGain,
+    lightPadGain,
+    lfoGain,
+    noiseHighpass,
+    noiseLowpass,
+    noiseGain,
+    outputHighpass,
+    outputLowpass
+  ];
 
   state.ambientEnabled = true;
   saveState(state);
@@ -2752,7 +2783,7 @@ function updateAmbientButton(state) {
     return;
   }
 
-  button.textContent = state.ambientEnabled ? "Ambient stoppen" : "Ambient starten";
+  button.textContent = state.ambientEnabled ? "Klangfläche stoppen" : "Klangfläche starten";
   button.classList.toggle("is-active", Boolean(state.ambientEnabled));
   button.setAttribute("aria-pressed", state.ambientEnabled ? "true" : "false");
 }
