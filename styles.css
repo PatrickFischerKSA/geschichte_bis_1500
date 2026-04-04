@@ -68,6 +68,31 @@ body.is-overlay-open {
   overflow: hidden;
 }
 
+body.first-run-intro .hero,
+body.first-run-intro .showcase-panel,
+body.first-run-intro .sidebar,
+body.first-run-intro #module-list,
+body.first-run-intro #completion-panel {
+  animation: introReveal 850ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+body.first-run-intro .hero {
+  animation-delay: 80ms;
+}
+
+body.first-run-intro .showcase-panel {
+  animation-delay: 180ms;
+}
+
+body.first-run-intro .sidebar {
+  animation-delay: 240ms;
+}
+
+body.first-run-intro #module-list,
+body.first-run-intro #completion-panel {
+  animation-delay: 320ms;
+}
+
 a {
   color: var(--navy);
 }
@@ -200,6 +225,12 @@ p {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 22px;
+}
+
+#ambient-toggle.is-active {
+  background: var(--teal);
+  color: #fff;
+  border-color: transparent;
 }
 
 .compact {
@@ -1169,6 +1200,19 @@ p {
   }
   100% {
     transform: translate3d(1%, -1.5%, 0) scale(1.04);
+  }
+}
+
+@keyframes introReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 

@@ -1834,6 +1834,11 @@ const moduleVisuals = {
   }
 };
 
+let ambientContext = null;
+let ambientMasterGain = null;
+let ambientNodes = [];
+let ambientNoiseSource = null;
+
 function normalize(value) {
   return String(value || "")
     .toLowerCase()
@@ -1903,6 +1908,122 @@ function getPassedModuleCount(state) {
 function getLearnerName(state) {
   const value = String(state.learnerName || "").trim();
   return value || "Lernende Person";
+}
+
+function cleanupAmbient() {
+  ambientNodes.forEach((node) => {
+    try {
+      node.stop?.();
+    } catch {}
+    try {
+      node.disconnect?.();
+    } catch {}
+  });
+  ambientNodes = [];
+
+  if (ambientNoiseSource) {
+    try {
+      ambientNoiseSource.stop?.();
+    } catch {}
+    try {
+      ambientNoiseSource.disconnect?.();
+    } catch {}
+  }
+  ambientNoiseSource = null;
+
+  if (ambientMasterGain) {
+    try {
+      ambientMasterGain.disconnect();
+    } catch {}
+  }
+  ambientMasterGain = null;
+}
+
+function createNoiseBuffer(context) {
+  const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < data.length; i += 1) {
+    data[i] = (Math.random() * 2 - 1) * 0.25;
+  }
+  return buffer;
+}
+
+async function startAmbient(state) {
+  if (!ambientContext) {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) {
+      return false;
+    }
+    ambientContext = new AudioContextClass();
+  }
+
+  if (ambientContext.state === "suspended") {
+    await ambientContext.resume();
+  }
+
+  cleanupAmbient();
+
+  ambientMasterGain = ambientContext.createGain();
+  ambientMasterGain.gain.value = 0.026;
+  ambientMasterGain.connect(ambientContext.destination);
+
+  const lowPad = ambientContext.createOscillator();
+  lowPad.type = "sine";
+  lowPad.frequency.value = 146.83;
+  const lowPadGain = ambientContext.createGain();
+  lowPadGain.gain.value = 0.45;
+
+  const highPad = ambientContext.createOscillator();
+  highPad.type = "triangle";
+  highPad.frequency.value = 220;
+  const highPadGain = ambientContext.createGain();
+  highPadGain.gain.value = 0.15;
+
+  const lfo = ambientContext.createOscillator();
+  lfo.type = "sine";
+  lfo.frequency.value = 0.08;
+  const lfoGain = ambientContext.createGain();
+  lfoGain.gain.value = 0.03;
+
+  lfo.connect(lfoGain);
+  lfoGain.connect(lowPadGain.gain);
+  lfoGain.connect(highPadGain.gain);
+
+  lowPad.connect(lowPadGain);
+  highPad.connect(highPadGain);
+  lowPadGain.connect(ambientMasterGain);
+  highPadGain.connect(ambientMasterGain);
+
+  const noiseFilter = ambientContext.createBiquadFilter();
+  noiseFilter.type = "lowpass";
+  noiseFilter.frequency.value = 420;
+  noiseFilter.Q.value = 0.4;
+
+  const noiseGain = ambientContext.createGain();
+  noiseGain.gain.value = 0.05;
+  ambientNoiseSource = ambientContext.createBufferSource();
+  ambientNoiseSource.buffer = createNoiseBuffer(ambientContext);
+  ambientNoiseSource.loop = true;
+  ambientNoiseSource.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(ambientMasterGain);
+
+  [lowPad, highPad, lfo].forEach((osc) => osc.start());
+  ambientNoiseSource.start();
+  ambientNodes = [lowPad, highPad, lfo, lowPadGain, highPadGain, lfoGain, noiseFilter, noiseGain];
+
+  state.ambientEnabled = true;
+  saveState(state);
+  return true;
+}
+
+function stopAmbient(state) {
+  cleanupAmbient();
+  if (ambientContext && ambientContext.state === "running") {
+    ambientContext.suspend().catch(() => {});
+  }
+  state.ambientEnabled = false;
+  saveState(state);
 }
 
 function updateProgress(state) {
@@ -2602,6 +2723,14 @@ function bindWelcomeOverlay(state) {
     state.learnerName = String(nameInput?.value || "").trim();
     state.welcomeDismissed = true;
     saveState(state);
+    if (!state.introPlayed) {
+      document.body.classList.add("first-run-intro");
+      window.setTimeout(() => {
+        document.body.classList.remove("first-run-intro");
+      }, 1600);
+      state.introPlayed = true;
+      saveState(state);
+    }
     renderApp(state);
   });
 }
@@ -2615,6 +2744,38 @@ function bindCompletionActions() {
   button.addEventListener("click", () => {
     window.print();
   });
+}
+
+function updateAmbientButton(state) {
+  const button = document.getElementById("ambient-toggle");
+  if (!button) {
+    return;
+  }
+
+  button.textContent = state.ambientEnabled ? "Ambient stoppen" : "Ambient starten";
+  button.classList.toggle("is-active", Boolean(state.ambientEnabled));
+  button.setAttribute("aria-pressed", state.ambientEnabled ? "true" : "false");
+}
+
+function bindAmbientButton(state) {
+  const button = document.getElementById("ambient-toggle");
+  if (!button) {
+    return;
+  }
+
+  updateAmbientButton(state);
+  button.onclick = async () => {
+    if (state.ambientEnabled) {
+      stopAmbient(state);
+      updateAmbientButton(state);
+      return;
+    }
+
+    const started = await startAmbient(state);
+    if (started) {
+      updateAmbientButton(state);
+    }
+  };
 }
 
 function renderApp(state) {
@@ -2632,6 +2793,7 @@ function renderApp(state) {
   bindContentChecks(state);
   bindWelcomeOverlay(state);
   bindCompletionActions();
+  bindAmbientButton(state);
   updateProgress(state);
 }
 
