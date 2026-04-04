@@ -1,6 +1,4 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
-const HARARI_PDF_URL = "assets/local/harari.pdf";
-const HARARI_LOCAL_PREVIEW_BASE = "http://127.0.0.1:4173/assets/local/harari.pdf";
 const HARARI_VIEWER_PATH = "harari-viewer.html";
 const HARARI_LOCAL_VIEWER_BASE = "http://127.0.0.1:4173/harari-viewer.html";
 
@@ -3265,14 +3263,6 @@ function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
 
-function getHarariPdfLink(page) {
-  const base = isHarariPdfAvailable() ? HARARI_PDF_URL : HARARI_LOCAL_PREVIEW_BASE;
-  if (!page) {
-    return base;
-  }
-  return `${base}#page=${page}`;
-}
-
 function getHarariViewerLink(detail) {
   const base = isHarariPdfAvailable() ? HARARI_VIEWER_PATH : HARARI_LOCAL_VIEWER_BASE;
   const params = new URLSearchParams();
@@ -3309,7 +3299,6 @@ function renderHarariPdfButton(detail) {
   return `
     <div class="source-actions">
       <a class="btn primary" href="${getHarariViewerLink(detail)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
-      <a class="btn ghost" href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">Roh-PDF öffnen</a>
       <span class="source-locator-note">${
         isLocal
           ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"

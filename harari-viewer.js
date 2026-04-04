@@ -10,7 +10,6 @@
     window.location.protocol === "file:";
 
   const pdfUrl = "assets/local/harari.pdf";
-  const rawPdfUrl = `${pdfUrl}#page=${page}`;
 
   document.getElementById("title").textContent = label;
   document.getElementById("page-pill").textContent = `Zielseite ${page}`;
@@ -18,7 +17,6 @@
   document.getElementById("search-note").textContent = search
     ? `Gesuchte Passage: ${search}`
     : "Keine Suchphrase übergeben.";
-  document.getElementById("raw-link").href = rawPdfUrl;
 
   const status = document.getElementById("status");
   const canvas = document.getElementById("pdf-canvas");
