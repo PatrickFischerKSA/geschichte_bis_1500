@@ -812,6 +812,15 @@ p {
   gap: 12px;
 }
 
+.module-entry-note {
+  margin: 12px 0 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 109, 102, 0.14);
+  background: rgba(255, 248, 236, 0.92);
+  color: var(--text);
+}
+
 .module-tag {
   display: inline-flex;
   padding: 7px 12px;

@@ -1328,6 +1328,8 @@ const moduleSupports = {
   "modul-1": {
     overview:
       "In diesem Modul klärst du zuerst eine Grundfrage: Nicht alles Vergangene ist automatisch Geschichte im engeren Sinn. Geschichte beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Erinnerungen und gemeinsame Vorstellungen ordnen.",
+    entryNote:
+      "Du brauchst für dieses Modul kein Vorwissen. Ein Name wie Harari ist hier nur der Name eines Historikers, dessen Buch uns beim Ordnen des Stoffs hilft.",
     authorIntro:
       "Yuval Noah Harari ist ein Historiker und Autor eines bekannten Überblicksbuchs zur Menschheitsgeschichte. Du musst ihn nicht kennen. Für diesen Kurs ist nur wichtig: Er hilft dabei, sehr lange Entwicklungen in wenige große Veränderungen zu gliedern, damit der Stoff verständlicher wird.",
     terms: [
@@ -1347,6 +1349,8 @@ const moduleSupports = {
   "modul-2": {
     overview:
       "Hier lernst du, dass der moderne Mensch nicht von Anfang an allein und überlegen war. Über lange Zeit lebten mehrere Menschenarten gleichzeitig, und der Erfolg des Homo sapiens musste sich erst entwickeln.",
+    entryNote:
+      "Der Ausdruck Homo sapiens meint die heutige Menschenart. In diesem Modul lernst du den Begriff erst kennen; du musst ihn nicht schon vorher beherrschen.",
     terms: [
       { term: "Homo sapiens", description: "Die Menschenart, zu der wir heute gehören." },
       { term: "Migration", description: "Wanderung von Gruppen in neue Räume, oft über viele Generationen hinweg." },
@@ -1363,6 +1367,8 @@ const moduleSupports = {
   "modul-3": {
     overview:
       "In diesem Modul geht es um den vielleicht wichtigsten Schritt der frühen Menschheitsgeschichte: Menschen können nicht nur warnen oder rufen, sondern über Abwesendes, Zukünftiges und Vorgestelltes sprechen.",
+    entryNote:
+      "Der Ausdruck kognitive Revolution klingt schwierig. Gemeint ist hier eine große Veränderung im Denken, Sprechen und Vorstellen der Menschen.",
     terms: [
       { term: "Symbol", description: "Ein Zeichen, das für etwas steht, etwa ein Bild, ein Wort oder ein Ritual." },
       { term: "Mythos", description: "Eine erzählte Vorstellung, die einer Gruppe Sinn, Regeln oder Zugehörigkeit gibt." },
@@ -1379,6 +1385,8 @@ const moduleSupports = {
   "modul-4": {
     overview:
       "Bevor Menschen sesshaft wurden, lebten sie sehr lange in mobilen Gruppen. Diese Lebensweise war nicht primitiv, sondern verlangte viel Wissen über Tiere, Pflanzen, Wege, Wetter und Jahreszeiten.",
+    entryNote:
+      "Jäger und Sammler sind Gruppen, die ohne feste Felder und große Vorratsspeicher leben. Das ist keine Vorstufe minderer Art, sondern eine eigene Lebensform.",
     terms: [
       { term: "mobil", description: "Nicht dauerhaft an einem Ort lebend, sondern wandernd oder saisonal unterwegs." },
       { term: "mündliche Überlieferung", description: "Weitergabe von Wissen durch Erzählen, Vorzeigen und gemeinsames Erinnern." },
@@ -1395,6 +1403,8 @@ const moduleSupports = {
   "modul-5": {
     overview:
       "Mit Landwirtschaft beginnt kein einfaches Glückskapitel, sondern ein großer Umbruch. Menschen bauen Häuser, legen Vorräte an und werden gleichzeitig abhängiger von Ernten, Boden und Besitzordnung.",
+    entryNote:
+      "Der Ausdruck landwirtschaftliche Revolution meint hier keinen plötzlichen Aufstand, sondern eine tiefgreifende Veränderung hin zu Ackerbau, Viehzucht und festen Siedlungen.",
     terms: [
       { term: "Sesshaftigkeit", description: "Dauerhaftes Leben an einem festen Ort." },
       { term: "Überschuss", description: "Mehr erzeugte Nahrung oder Güter, als sofort verbraucht werden." },
@@ -1411,6 +1421,8 @@ const moduleSupports = {
   "modul-6": {
     overview:
       "Dieses Modul zeigt, wie aus Vorräten und Organisation frühe Staaten werden. Sobald Nahrung, Arbeit und Besitz für viele Menschen geregelt werden müssen, entstehen Schrift, Listen, Verwaltung und neue Formen der Herrschaft.",
+    entryNote:
+      "Mit Hochkultur ist hier eine frühe komplexe Gesellschaft gemeint, also eine Gesellschaft mit Städten, Schrift, Arbeitsteilung und Herrschaft.",
     terms: [
       { term: "Hochkultur", description: "Frühe komplexe Gesellschaft mit Städten, Schrift, Arbeitsteilung und Herrschaft." },
       { term: "Verwaltung", description: "Organisation von Abgaben, Arbeit, Vorräten und Zuständigkeiten." },
@@ -1427,6 +1439,8 @@ const moduleSupports = {
   "modul-7": {
     overview:
       "Imperien verbinden große Räume. Das geschieht nicht nur durch Eroberung, sondern auch durch Straßen, Brücken, Gesetze, Handel, Sprache und feste Verwaltungsorte.",
+    entryNote:
+      "Ein Imperium ist ein Großreich, das viele Regionen und Bevölkerungsgruppen zusammenfasst. Das Wort wird im Modul erklärt; du musst es nicht vorher kennen.",
     terms: [
       { term: "Imperium", description: "Großreich, das viele Regionen und Bevölkerungsgruppen politisch zusammenfasst." },
       { term: "Infrastruktur", description: "Straßen, Brücken, Häfen, Bauten und andere Grundlagen für Verkehr und Versorgung." },
@@ -1443,6 +1457,8 @@ const moduleSupports = {
   "modul-8": {
     overview:
       "Geld ist mehr als Metall. Es funktioniert nur, wenn Menschen ihm vertrauen und es als Wert anerkennen. Darum verbindet Geld auch Menschen, die sich persönlich gar nicht kennen.",
+    entryNote:
+      "In diesem Modul geht es nicht nur um Münzen, sondern um die Grundfrage, warum Menschen einer Währung überhaupt vertrauen.",
     terms: [
       { term: "Währung", description: "Ein geregeltes Geldsystem mit allgemein anerkannten Zahlungsmitteln." },
       { term: "Vertrauen", description: "Erwartung, dass andere dieselbe Ordnung ebenfalls anerkennen." },
@@ -1459,6 +1475,8 @@ const moduleSupports = {
   "modul-9": {
     overview:
       "Religionen ordnen die Welt. Sie geben Antworten auf Sinnfragen, regeln Verhalten, schaffen Zugehörigkeit und können Herrschaft stützen oder kritisieren.",
+    entryNote:
+      "Religion wird hier nicht nur als privater Glaube verstanden, sondern auch als Ordnung von Gemeinschaft, Regeln und Weltbildern.",
     terms: [
       { term: "Polytheismus", description: "Glaube an mehrere Götter." },
       { term: "Monotheismus", description: "Glaube an einen einzigen Gott." },
@@ -1475,6 +1493,8 @@ const moduleSupports = {
   "modul-10": {
     overview:
       "Das Mittelalter war weder nur dunkel noch nur romantisch. Menschen lebten in einer harten, aber auch sehr organisierten Welt mit Herrschaft, Frömmigkeit, Arbeit, Konflikten, Städten und kulturellen Leistungen.",
+    entryNote:
+      "Auch wenn du schon Bilder aus Filmen, Spielen oder Kinderbüchern kennst, startet dieses Modul noch einmal bei den Grundfragen: Wer lebte wie, und wie sah der Alltag wirklich aus?",
     terms: [
       { term: "Stände", description: "Vorstellung einer gesellschaftlichen Ordnung aus klar abgegrenzten Gruppen." },
       { term: "Kirche", description: "Religiöse Institution mit großem Einfluss auf Alltag, Bildung und Herrschaft." },
@@ -1491,6 +1511,8 @@ const moduleSupports = {
   "modul-11": {
     overview:
       "Im späteren Mittelalter nehmen Kontakte, Märkte, Städte und religiöse Bewegungen zu. Gleichzeitig lernst du hier besonders deutlich, dass Geschichtswissen nie einfach gegeben ist, sondern aus Quellen kritisch erschlossen werden muss.",
+    entryNote:
+      "Quellenkritik bedeutet: Wir prüfen, woher eine Information stammt, wie zuverlässig sie ist und welche Interessen in ihr stecken könnten.",
     terms: [
       { term: "Quelle", description: "Alles, woran sich Vergangenheit untersuchen lässt: Texte, Bilder, Gegenstände oder Gebäude." },
       { term: "Chronik", description: "Schriftliche Aufzeichnung historischer Ereignisse aus einer bestimmten Perspektive." },
@@ -1507,6 +1529,8 @@ const moduleSupports = {
   "modul-12": {
     overview:
       "Zum Schluss bündelst du die ganze Lernreise. Dabei wird deutlich: Geschichte bis 1500 ist nicht nur Europa, und sie endet nicht einfach in einer geraden Fortschrittsgeschichte.",
+    entryNote:
+      "Ein Perspektivwechsel heißt, dass wir denselben Zeitraum aus einem anderen Blickwinkel betrachten. Genau das tust du hier am Ende noch einmal bewusst.",
     terms: [
       { term: "Perspektivwechsel", description: "Bewusstes Wechseln des Blickwinkels, um ein Thema anders und oft genauer zu verstehen." },
       { term: "Eurozentrismus", description: "Sichtweise, die Europa zum natürlichen Mittelpunkt der Geschichte macht." },
@@ -2106,6 +2130,22 @@ function cleanStudentText(text) {
     .trim();
 }
 
+function cleanPromptText(text) {
+  return cleanStudentText(text)
+    .replace(/Hararis Bild vom /gi, "das Bild aus dem Buchauszug vom ")
+    .replace(/Hararis Bild /gi, "das Bild aus dem Buchauszug ")
+    .replace(/Hararis These/gi, "die These im Buchauszug")
+    .replace(/Hararis Zuspitzung/gi, "die Zuspitzung im Buchauszug")
+    .replace(/Hararis Einstieg/gi, "den Einstieg im Buchauszug")
+    .replace(/Hararis Kapitel/gi, "das Kapitel im Buchauszug")
+    .replace(/Harari-PDF/gi, "Buchauszug")
+    .replace(/\bHarari\b/gi, "den Historiker Harari");
+}
+
+function getModuleIntroText(module) {
+  return moduleSupports[module.id]?.overview || cleanStudentText(module.hook);
+}
+
 function loadState() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -2371,7 +2411,7 @@ function renderSourceCard(source) {
 function renderShortAnswerBox(task, kindLabel) {
   return `
     <div class="${kindLabel === "Transferfrage" ? "transfer-box" : "task-box"}">
-      <p><strong>${kindLabel}:</strong> ${task.question}</p>
+      <p><strong>${kindLabel}:</strong> ${cleanPromptText(task.question)}</p>
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
         <button class="btn primary" type="button" data-check="${task.id}">Antwort prüfen</button>
@@ -2402,6 +2442,16 @@ function renderSupportSection(module) {
 
   return `
     <div class="support-grid">
+      ${
+        support.entryNote
+          ? `
+            <article class="support-card support-card-wide">
+              <p class="section-kicker">Vor dem Start</p>
+              <p>${support.entryNote}</p>
+            </article>
+          `
+          : ""
+      }
       ${
         support.authorIntro
           ? `
@@ -2640,9 +2690,14 @@ function renderModules(state) {
             <h2>${module.title}</h2>
             <span class="status-badge ${status.className}">${status.label}</span>
           </div>
-          <p class="lead">${cleanStudentText(module.hook)}</p>
+          ${
+            moduleSupports[module.id]?.entryNote
+              ? `<div class="module-entry-note">${moduleSupports[module.id].entryNote}</div>`
+              : ""
+          }
+          <p class="lead">${getModuleIntroText(module)}</p>
           <div class="goals">
-            ${module.goals.map((goal) => `<div class="goal">${goal}</div>`).join("")}
+            ${module.goals.map((goal) => `<div class="goal">${cleanStudentText(goal)}</div>`).join("")}
           </div>
         </div>
         <div class="module-meta">
@@ -2676,7 +2731,7 @@ function renderModules(state) {
       <div class="module-grid">
         <section class="module-section">
           <p class="section-kicker">1. Einstieg</p>
-          <p>${cleanStudentText(module.hook)}</p>
+          <p>${getModuleIntroText(module)}</p>
         </section>
 
         <section class="module-section">
@@ -2687,7 +2742,7 @@ function renderModules(state) {
 
         <section class="module-section">
           <p class="section-kicker">3. Quellenarbeit</p>
-          <p>${module.sourcePrompt}</p>
+          <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map(renderSourceCard).join("")}
           </div>
@@ -2907,7 +2962,7 @@ function bindShortAnswerTasks(state) {
       const result = {
         level: "mid",
         title: "Musterantwort",
-        body: task.sampleAnswer
+        body: cleanPromptText(task.sampleAnswer)
       };
       feedbackBox.className = "feedback is-visible mid";
       feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
