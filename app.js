@@ -143,8 +143,8 @@ const modules = [
     input: [
       "Zu Beginn unterscheiden wir drei Ebenen. Erstens gibt es Naturgeschichte. Dazu gehören die Entstehung der Erde, Veränderungen des Klimas, Gesteine, Tiere und Pflanzen. Zweitens gibt es die Entwicklung des Menschen als Lebewesen. Hier geht es um Evolution, verschiedene Menschenarten und körperliche Veränderungen. Drittens gibt es Geschichte im engeren Sinn. Sie beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Symbole, Erinnerungen und gemeinsame Vorstellungen gestalten.",
       "Diese Unterscheidung ist wichtig, weil Geschichtsunterricht nicht einfach alles Vergangene in einen Topf wirft. Ein Vulkanausbruch oder die Eiszeit gehören zwar zur Vergangenheit, aber noch nicht automatisch zur Geschichte im engeren Sinn. Historisch wird es dort, wo Menschen handeln, Regeln erfinden, Werkzeuge bewusst einsetzen, Wissen weitergeben und sich in Gruppen organisieren. Geschichte ist deshalb immer auch eine Geschichte von Kultur.",
-      "Für diesen Kurs ist außerdem wichtig, dass wir nicht nur Jahr für Jahr oder Reich für Reich vorgehen. Stattdessen arbeiten wir mit großen Veränderungen, die viele spätere Entwicklungen vorbereiten. Dazu gehören zum Beispiel Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion. Solche Veränderungen helfen uns, sehr lange Zeiträume besser zu verstehen.",
-      "Die SRF-Ressource zum Anthropozän öffnet dafür den Blick in die Ferne. Sie zeigt, dass menschliches Handeln Folgen hat, die weit über den Augenblick hinausgehen. Wer Feuer nutzt, Wälder rodet, Felder anlegt, Metalle verarbeitet oder Städte baut, verändert die Welt dauerhaft. Darum beginnt der Kurs mit Grundbegriffen und Entwicklungslinien und nicht sofort mit einzelnen Herrschern oder Kriegen."
+      "Für diesen Kurs ist außerdem wichtig, dass wir nicht nur Jahr für Jahr oder Reich für Reich vorgehen. Stattdessen arbeiten wir mit großen Veränderungen, die viele spätere Entwicklungen vorbereiten. Dazu gehören Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion. Diese Begriffe bleiben aber nicht abstrakt. In den folgenden Modulen werden sie an konkreten Fällen sichtbar: an Pfahlbauten, Münzfunden, Straßen, Latrinen, Chroniken oder Pilgerwegen.",
+      "Die SRF-Ressource zum Anthropozän öffnet dafür den Blick in die Ferne. Sie verbindet Feuer, Landwirtschaft, Metall, Hochmittelalter und moderne Umweltfolgen zu einer langen Entwicklungslinie. Dadurch wird klar: Wer Feuer nutzt, Wälder rodet, Felder anlegt, Metalle verarbeitet oder Städte baut, verändert nicht nur den eigenen Alltag, sondern ganze Landschaften. Geschichte beginnt also nicht erst bei berühmten Herrschern, sondern dort, wo Menschen ihre Welt wirksam umgestalten."
     ],
     sources: [
       {
@@ -165,12 +165,12 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, ab welcher Schwelle dieser Kurs von Geschichte spricht und warum diese Entscheidung für alle folgenden Module wichtig ist.",
+      "Arbeite mit dem Anthropozän-Beispiel heraus, warum dieser Kurs Geschichte nicht nur als Liste von Ereignissen, sondern als Veränderung menschlicher Lebensweisen versteht.",
     task: {
       id: "m1-task",
       question:
-        "Erkläre in 4 bis 6 Sätzen den Unterschied zwischen Naturgeschichte, biologischer Menschheitsentwicklung und Geschichte im engeren Sinn.",
-      placeholder: "Formuliere eine knappe, aber genaue Unterscheidung.",
+        "Erkläre in 4 bis 6 Sätzen den Unterschied zwischen Naturgeschichte, biologischer Menschheitsentwicklung und Geschichte im engeren Sinn. Nenne dabei ein Beispiel für menschliche Eingriffe wie Feuer, Landwirtschaft oder Städtebau.",
+      placeholder: "Unterscheide die drei Ebenen und baue ein konkretes Beispiel ein.",
       sampleAnswer:
         "Naturgeschichte umfasst Prozesse wie Urknall, Entstehung von Atomen und geologische Veränderungen. Die biologische Menschheitsentwicklung beschreibt, wie sich menschenähnliche Arten entwickelten. Geschichte im engeren Sinn beginnt erst dort, wo Homo sapiens Kulturen, Regeln, Symbole und gemeinsame Ordnungen aufbaut. Entscheidend sind also nicht nur Körpermerkmale, sondern kulturelle Praktiken. Deshalb strukturieren Sprache, Sesshaftigkeit, Herrschaft und Religion den weiteren Verlauf des Kurses.",
       criteria: [
@@ -243,7 +243,7 @@ const modules = [
       "Wenn wir an frühe Menschen denken, stellen wir uns oft eine einfache Entwicklungslinie vor: erst primitive Vorformen, dann irgendwann den modernen Menschen. So einfach war es aber nicht. Über lange Zeit lebten mehrere Menschenarten gleichzeitig. Dazu gehörten zum Beispiel Neandertaler, Homo erectus, Denisova-Menschen und Homo sapiens. Der heutige Mensch war also nicht von Anfang an allein auf der Welt.",
       "Außerdem war Homo sapiens zunächst kein unaufhaltsamer Sieger. Frühe Menschen waren über sehr lange Zeit nur ein Teil vieler Tier- und Menschenwelten. Sie beherrschten die Erde nicht einfach sofort. Das macht die eigentliche historische Frage spannend: Warum setzte sich gerade diese Menschenart später in so vielen Räumen durch?",
       "Ein Teil der Antwort liegt in biologischen Voraussetzungen. Das menschliche Gehirn ist leistungsfähig, braucht aber viel Energie. Der aufrechte Gang macht die Hände frei, bringt aber auch neue Belastungen mit sich. Menschenkinder bleiben lange hilfsbedürftig. Genau dadurch entstehen enge Bindungen, gemeinsames Lernen und soziale Abhängigkeiten. Der Mensch ist also nicht trotz, sondern auch wegen seiner Abhängigkeit erfolgreich.",
-      "Die SRF-Ressource zu '1491' ergänzt diesen Blick global. Sie erinnert daran, dass Menschen schon sehr früh große Räume erschlossen, neue Wege fanden und sich an sehr unterschiedliche Umwelten anpassten. Migration ist daher kein Randthema der Geschichte, sondern ein Grundmuster. Menschen bewegen sich, lernen neue Räume kennen und verändern dabei ihre Lebensweisen."
+      "Die SRF-Ressource zu '1491' ergänzt diesen Blick global. Sie erinnert daran, dass Menschen Amerika schon sehr früh erreichten und sich an sehr unterschiedliche Umwelten anpassten. In kalten Regionen brauchten sie andere Kleidung, Unterkünfte und Vorräte als in wärmeren Landschaften. Migration ist daher kein Randthema der Geschichte, sondern ein Grundmuster. Menschen bewegen sich, lernen neue Räume kennen und entwickeln dafür immer neue Lebensweisen."
     ],
     sources: [
       {
@@ -264,12 +264,12 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Verbinde Hararis Bild vom unauffälligen Tier mit der SRF-Perspektive auf frühe Migration: Warum war gerade Anpassungsfähigkeit historisch so wichtig?",
+      "Verbinde Hararis Bild vom unauffälligen Tier mit den Beispielen aus '1491': Warum waren Bewegung, Anpassung und Lernen wichtiger als bloße Stärke?",
     task: {
       id: "m2-task",
       question:
-        "Erkläre, warum Homo sapiens lange nicht automatisch überlegen war, später aber dennoch große Räume besiedeln konnte.",
-      placeholder: "Arbeite mit biologischen und kulturellen Faktoren.",
+        "Erkläre, warum Homo sapiens lange nicht automatisch überlegen war, später aber dennoch große Räume besiedeln konnte. Beziehe die Anpassung an verschiedene Landschaften mit ein.",
+      placeholder: "Arbeite mit biologischen Faktoren, Lernen und neuen Lebensweisen in unterschiedlichen Räumen.",
       sampleAnswer:
         "Homo sapiens war lange nicht automatisch überlegen, weil auch andere Menschenarten existierten und frühe Menschen insgesamt nur begrenzt Einfluss auf ihre Umwelt hatten. Große Gehirne kosteten viel Energie, und Menschenkinder blieben lange hilfsbedürftig. Gleichzeitig förderten freie Hände, Werkzeuggebrauch, soziale Bindungen und Lernfähigkeit die Anpassung an neue Räume. Gerade diese Verbindung aus biologischer Ausstattung und sozialem Lernen machte spätere Ausbreitung möglich.",
       criteria: [
@@ -342,7 +342,7 @@ const modules = [
       "Mit Sprache ist hier nicht bloß gemeint, dass Menschen Laute bilden können. Entscheidend ist, worüber sie sprechen können. Tiere können warnen, locken oder Signale geben. Menschen können zusätzlich über Vergangenes, Zukünftiges, Abwesendes und Vorgestelltes reden. Sie können also nicht nur auf die Welt reagieren, sondern gemeinsame Vorstellungen von der Welt entwickeln.",
       "Genau darin liegt ein historischer Wendepunkt. Wenn Menschen über Dinge sprechen können, die man nicht direkt sieht, dann können sie Regeln aufstellen, Zugehörigkeit definieren, Aufgaben verteilen und Geschichten über ihre Herkunft erzählen. So entstehen Mythen, Verbote, Rituale und gemeinsame Identitäten. Sprache macht also nicht nur Verständigung möglich, sondern Ordnung.",
       "Das ist wichtig, weil viele spätere Entwicklungen genau darauf aufbauen. Staaten funktionieren nicht nur mit Waffen, sondern auch mit Gesetzen. Geld funktioniert nicht nur als Metall, sondern als gemeinsam anerkannter Wert. Religion wirkt nicht nur innerlich, sondern auch durch geteilte Vorstellungen von Welt und Gemeinschaft. All das setzt voraus, dass Menschen an dieselben Dinge glauben oder sich zumindest darauf beziehen können.",
-      "Die SRF-Ressource '1491' hilft, das sichtbar zu machen. Felsbilder, Totempfähle, Schriftzeichen und andere kulturelle Spuren zeigen, dass Menschen ihre Welt nicht nur bewohnen, sondern deuten. Frühgeschichte ist deshalb keine stumme Vorstufe, sondern bereits eine Welt aus Zeichen, Bedeutungen und gemeinsamen Erzählungen."
+      "Die SRF-Ressource '1491' hilft, das sichtbar zu machen. Felsbilder, Totempfähle, Schriftzeichen und andere kulturelle Spuren zeigen, dass Menschen ihre Welt nicht nur bewohnen, sondern deuten. Solche Zeichen sagen: Hier erinnert sich eine Gemeinschaft, hier markiert sie Zugehörigkeit, hier erklärt sie ihre Welt. Frühgeschichte ist deshalb keine stumme Vorstufe, sondern bereits eine Welt aus Zeichen, Bedeutungen und gemeinsamen Erzählungen."
     ],
     sources: [
       {
@@ -363,12 +363,12 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Untersuche, wie aus Sprache und Symbolen mehr wird als Kommunikation: nämlich gemeinsame Ordnung, Erinnerung und Identität.",
+      "Untersuche an Felsbildern, Totempfählen und Schriftzeichen, wie aus Sprache und Symbolen gemeinsame Ordnung, Erinnerung und Identität werden.",
     task: {
       id: "m3-task",
       question:
-        "Warum können Menschen in viel größeren Gruppen kooperieren als Schimpansen? Antworte mit Blick auf Sprache und gemeinsame Vorstellungen.",
-      placeholder: "Erkläre den Zusammenhang zwischen Sprache, Mythos und Kooperation.",
+        "Warum können Menschen in viel größeren Gruppen kooperieren als Schimpansen? Antworte mit Blick auf Sprache, gemeinsame Vorstellungen und symbolische Zeichen.",
+      placeholder: "Erkläre den Zusammenhang zwischen Sprache, Mythos, Zeichen und Kooperation.",
       sampleAnswer:
         "Menschen können in größeren Gruppen kooperieren, weil sie mit Sprache nicht nur konkrete Dinge, sondern auch Vorstellungen und Regeln teilen. Sie können über Götter, Gesetze, Zugehörigkeit oder Aufgaben sprechen, selbst wenn diese nicht materiell sichtbar sind. So entsteht Vertrauen in gemeinsame Ordnungen. Dadurch wird Zusammenarbeit mit vielen Fremden möglich, nicht nur mit wenigen persönlich bekannten Mitgliedern einer Gruppe.",
       criteria: [
@@ -438,8 +438,8 @@ const modules = [
     ],
     input: [
       "Bevor Menschen sesshaft wurden, lebten sie sehr lange in kleineren, mobilen Gruppen. Sie zogen nicht planlos umher, sondern bewegten sich oft nach Jahreszeiten, Tierwanderungen, Wasserstellen oder Pflanzenvorkommen. Diese Lebensweise verlangte ständige Beobachtung der Umwelt und eine gute Abstimmung innerhalb der Gruppe.",
-      "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Ihre Lebensform konnte sehr anpassungsfähig und vielseitig sein. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen brauchte man andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Die SRF-Ressource '1491' zeigt genau diese Vielfalt sehr anschaulich.",
-      "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Erzählen, Zeigen, Nachahmen und Rituale werden dadurch zu wichtigen Techniken des Überlebens.",
+      "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Ihre Lebensform konnte sehr anpassungsfähig und vielseitig sein. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen brauchte man andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Die SRF-Ressource '1491' zeigt genau diese Vielfalt anschaulich, wenn sie über unterschiedliche Behausungen, Jagdformen und Formen des Zusammenlebens spricht.",
+      "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Erzählen, Zeigen, Nachahmen und Rituale werden dadurch zu wichtigen Techniken des Überlebens. Gerade darin wird sichtbar, dass mobile Lebensweisen hoch organisiert sein konnten.",
       "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging."
     ],
     sources: [
@@ -461,12 +461,12 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, weshalb Mobilität nicht mit Rückständigkeit verwechselt werden darf, sondern eine eigene Form historischer Kompetenz darstellt.",
+      "Arbeite an Behausungen, Jagdformen und mündlicher Weitergabe heraus, weshalb Mobilität keine Rückständigkeit, sondern eine eigene Form historischer Kompetenz ist.",
     task: {
       id: "m4-task",
       question:
-        "Vergleiche mobile Jäger-und-Sammler-Gesellschaften mit späteren sesshaften Dorfgemeinschaften. Nenne mindestens drei Unterschiede.",
-      placeholder: "Denke an Nahrung, Bewegung, Besitz, Wissensformen und soziale Ordnung.",
+        "Vergleiche mobile Jäger-und-Sammler-Gesellschaften mit späteren sesshaften Dorfgemeinschaften. Nenne mindestens drei Unterschiede und nutze Beispiele wie Behausungen, Nahrung oder Wissensweitergabe.",
+      placeholder: "Denke an Bewegung, Unterkünfte, Nahrung, Besitz und mündliches Wissen.",
       sampleAnswer:
         "Jäger-und-Sammler-Gesellschaften waren mobiler und passten sich saisonal an Landschaften an. Sie lebten meist von vielfältiger Nahrung statt von wenigen angebauten Pflanzen. Besitz war oft weniger auf Vorrat und dauerhaftes Eigentum ausgerichtet. Wissen wurde stark mündlich, praktisch und über Beobachtung weitergegeben. Sesshafte Dörfer dagegen sind stärker an Felder, Speicher und feste Häuser gebunden.",
       criteria: [
@@ -1242,9 +1242,9 @@ const modules = [
       "frühe Geschichte mit langfristigen Umwelt- und Weltfolgen verbinden"
     ],
     input: [
-      "Im Schlussmodul ordnen wir nicht einfach noch einmal alle Themen, sondern ziehen eine historische Bilanz. Dabei hilft die SRF-Ressource '1491' besonders stark. Sie zeigt, dass Geschichte vor 1500 nicht nur Europa, Rom und Mittelalter umfasst. In Amerika gab es lange vor Kolumbus Gesellschaften mit Landwirtschaft, Kunst, Sprachen, politischen Ordnungen und religiösen Vorstellungen.",
-      "Damit wird ein wichtiger Perspektivwechsel möglich. 1492 ist für Amerika ein Einschnitt, aber nicht der Anfang aller Geschichte dort. Wer das versteht, merkt, wie schnell Geschichte eurozentrisch erzählt wird. Die Abschlussphase des Kurses soll genau diese Verkürzung korrigieren und den Blick auf mehrere Weltregionen öffnen.",
-      "Danach richtet sich der Blick noch einmal auf lange Folgen. Die Anthropozän-Ressource macht deutlich, dass menschliche Innovationen wie Feuergebrauch, Landwirtschaft, Metallverarbeitung, Städtebau oder Fernhandel nicht folgenlos bleiben. Sie greifen tief in Umwelt und Lebensverhältnisse ein. Auch wenn der Kurs um 1500 endet, reichen viele seiner Entwicklungslinien weit darüber hinaus.",
+      "Im Schlussmodul ordnen wir nicht einfach noch einmal alle Themen, sondern ziehen eine historische Bilanz. Dabei hilft die SRF-Ressource '1491' besonders stark. Sie zeigt, dass Geschichte vor 1500 nicht nur Europa, Rom und Mittelalter umfasst. In Amerika gab es lange vor Kolumbus Gesellschaften mit Landwirtschaft, Kunst, Sprachen, politischen Ordnungen und religiösen Vorstellungen. Häuser, Felder, Städte und Weltbilder existierten dort längst.",
+      "Damit wird ein wichtiger Perspektivwechsel möglich. 1492 ist für Amerika ein Einschnitt, aber nicht der Anfang aller Geschichte dort. Wer das versteht, merkt, wie schnell Geschichte eurozentrisch erzählt wird. Die Abschlussphase des Kurses korrigiert diese Verkürzung und öffnet den Blick auf mehrere Weltregionen, die ihre eigenen historischen Wege entwickelt haben.",
+      "Danach richtet sich der Blick noch einmal auf lange Folgen. Die Anthropozän-Ressource macht deutlich, dass menschliche Innovationen wie Feuergebrauch, Landwirtschaft, Metallverarbeitung, Städtebau oder Fernhandel nicht folgenlos bleiben. Sie greifen tief in Umwelt und Lebensverhältnisse ein. Wenn in früheren Modulen Felder, Speicher, Straßen oder Städte vorkamen, dann sind das deshalb nicht nur Einzelbeispiele, sondern Teile einer langen Mensch-Umwelt-Geschichte.",
       "Am Ende werden deshalb die großen Zusammenhänge sichtbar: Sprache ermöglicht größere Kooperation, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 ist so keine lose Folge von Brocken, sondern eine zusammenhängende Entwicklung menschlicher Weltgestaltung."
     ],
     sources: [
@@ -1274,7 +1274,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Formuliere aus allen Modulen eine eigene historische Langzeitthese: Welche Entwicklungen tragen besonders weit, und welche Perspektiven müssen erweitert werden?",
+      "Formuliere aus den Beispielen des Kurses eine eigene Langzeitthese: Was verbinden Pfahlbauten, Münzfunde, Römerstraßen, Pilgerwege und die Perspektive von 1491?",
     task: {
       id: "m12-task",
       question:
@@ -1561,8 +1561,8 @@ const moduleSupports = {
 const quickChecks = {
   "modul-1": {
     id: "m1-quick",
-    question: "Warum beginnt dieser Kurs nicht einfach beim Urknall oder beim ersten Steinwerkzeug? Antworte in 2 bis 4 Sätzen.",
-    placeholder: "Erkläre die Schwelle zwischen Natur und Geschichte.",
+    question: "Warum beginnt dieser Kurs nicht einfach beim Urknall oder beim ersten Steinwerkzeug? Antworte in 2 bis 4 Sätzen und nenne ein Beispiel wie Feuer, Landwirtschaft oder Städtebau.",
+    placeholder: "Erkläre die Schwelle zwischen Natur und Geschichte mit einem konkreten Beispiel.",
     sampleAnswer:
       "Der Kurs beginnt nicht einfach beim Urknall, weil der Urknall Naturgeschichte ist. Er beginnt auch nicht automatisch beim ersten Werkzeug, weil biologische Entwicklung noch nicht dasselbe ist wie Geschichte im engeren Sinn. Entscheidend ist die Schwelle, an der Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln und gemeinsamen Vorstellungen.",
     criteria: [
@@ -1573,8 +1573,8 @@ const quickChecks = {
   },
   "modul-2": {
     id: "m2-quick",
-    question: "Warum war die lange Hilfsbedürftigkeit menschlicher Kinder historisch wichtig?",
-    placeholder: "Nenne den Zusammenhang von Kindheit, Lernen und Kooperation.",
+    question: "Warum war die lange Hilfsbedürftigkeit menschlicher Kinder historisch wichtig, wenn Menschen in neue Räume wanderten?",
+    placeholder: "Nenne den Zusammenhang von Kindheit, Lernen, Kooperation und Anpassung.",
     sampleAnswer:
       "Die lange Hilfsbedürftigkeit menschlicher Kinder zwang Gruppen zu Fürsorge, Lernen und enger Zusammenarbeit. Gerade dadurch konnten Wissen, Sprache und soziale Regeln intensiv weitergegeben werden.",
     criteria: [
@@ -1585,8 +1585,8 @@ const quickChecks = {
   },
   "modul-3": {
     id: "m3-quick",
-    question: "Warum kann ein Mythos historisch wirksam sein, obwohl man ihn nicht anfassen kann?",
-    placeholder: "Denke an Regeln, Zugehörigkeit und gemeinsames Handeln.",
+    question: "Warum kann ein Mythos historisch wirksam sein, obwohl man ihn nicht anfassen kann? Denke auch an Zeichen wie Felsbilder oder Totempfähle.",
+    placeholder: "Verbinde Mythos, Zeichen, Zugehörigkeit und gemeinsames Handeln.",
     sampleAnswer:
       "Ein Mythos ist historisch wirksam, wenn viele Menschen gemeinsam an ihn glauben. Dann kann er Regeln stützen, Zugehörigkeit herstellen und gemeinsames Handeln ermöglichen.",
     criteria: [
@@ -1597,8 +1597,8 @@ const quickChecks = {
   },
   "modul-4": {
     id: "m4-quick",
-    question: "Warum brauchten mobile Gruppen besonders viel Wissen über ihre Umwelt?",
-    placeholder: "Nenne mindestens zwei Bereiche dieses Wissens.",
+    question: "Warum brauchten mobile Gruppen besonders viel Wissen über ihre Umwelt? Nenne mindestens zwei Bereiche wie Wege, Tiere, Unterkünfte oder Jahreszeiten.",
+    placeholder: "Nenne konkrete Bereiche dieses Wissens.",
     sampleAnswer:
       "Mobile Gruppen brauchten viel Umweltwissen, weil sie Wege, Jahreszeiten, Tiere, essbare Pflanzen und Gefahren kennen mussten. Ohne dieses Wissen konnten sie nicht sicher überleben.",
     criteria: [
@@ -1609,8 +1609,8 @@ const quickChecks = {
   },
   "modul-5": {
     id: "m5-quick",
-    question: "Nenne einen Gewinn und einen Preis der Sesshaftigkeit.",
-    placeholder: "Schreibe knapp, aber genau.",
+    question: "Nenne einen Gewinn und einen Preis der Sesshaftigkeit. Denke an Dinge, die man bei den Pfahlbauern konkret sehen kann.",
+    placeholder: "Schreibe knapp über Häuser, Vorräte, Arbeit oder Abhängigkeit.",
     sampleAnswer:
       "Ein Gewinn der Sesshaftigkeit ist, dass Menschen Vorräte anlegen und feste Häuser bauen konnten. Ein Preis war die stärkere Abhängigkeit von Ernten und die größere Arbeitsbelastung.",
     criteria: [
@@ -1620,8 +1620,8 @@ const quickChecks = {
   },
   "modul-6": {
     id: "m6-quick",
-    question: "Warum war Schrift für frühe Staaten ein Machtmittel?",
-    placeholder: "Denke an Listen, Abgaben und Organisation.",
+    question: "Warum war Schrift für frühe Staaten ein Machtmittel? Denke an Listen, Abgaben und die Ordnung im Alten Ägypten.",
+    placeholder: "Verbinde Schrift mit Verwaltung, Abgaben und Herrschaft.",
     sampleAnswer:
       "Schrift war ein Machtmittel, weil mit ihr Abgaben, Vorräte, Arbeitsleistungen und Besitz festgehalten werden konnten. Wer schreiben und verwalten konnte, gewann Einfluss auf die ganze Ordnung.",
     criteria: [
@@ -1632,8 +1632,8 @@ const quickChecks = {
   },
   "modul-7": {
     id: "m7-quick",
-    question: "Wie verändert ein Imperium den Alltag der Menschen vor Ort?",
-    placeholder: "Nenne zwei konkrete Veränderungen.",
+    question: "Wie verändert ein Imperium den Alltag der Menschen vor Ort? Nenne zwei konkrete Veränderungen wie Straßen, Weinbau, neue Waren oder Recht.",
+    placeholder: "Nenne zwei konkrete Veränderungen aus dem römischen Alltag.",
     sampleAnswer:
       "Ein Imperium verändert den Alltag durch Straßen, neue Waren, Gesetze, Bauten oder Sprache. Menschen leben dadurch in stärker geregelten und vernetzten Räumen.",
     criteria: [
@@ -1644,8 +1644,8 @@ const quickChecks = {
   },
   "modul-8": {
     id: "m8-quick",
-    question: "Warum kann Geld auch zwischen Fremden funktionieren?",
-    placeholder: "Erkläre das mit einem Schlüsselbegriff.",
+    question: "Warum kann Geld auch zwischen Fremden funktionieren? Denke an den Münzschatz von Ueken.",
+    placeholder: "Erkläre das mit Vertrauen, Wert und Umlauf.",
     sampleAnswer:
       "Geld funktioniert zwischen Fremden, wenn beide Seiten darauf vertrauen, dass andere es ebenfalls anerkennen. Dieses gemeinsame Vertrauen macht Tausch über persönliche Beziehungen hinaus möglich.",
     criteria: [
@@ -1656,8 +1656,8 @@ const quickChecks = {
   },
   "modul-9": {
     id: "m9-quick",
-    question: "Was bedeutet es, Religion als Ordnungssystem zu verstehen?",
-    placeholder: "Denke an Regeln, Gemeinschaft und Weltdeutung.",
+    question: "Was bedeutet es, Religion als Ordnungssystem zu verstehen? Denke an Rituale, Gemeinschaft und die Vernetzung von Wissen und Handel.",
+    placeholder: "Verbinde Regeln, Gemeinschaft, Weltdeutung und Austausch.",
     sampleAnswer:
       "Religion ist ein Ordnungssystem, wenn sie nicht nur glaubt, sondern Verhalten regelt, Gemeinschaft stiftet und die Welt deutet. Sie kann dadurch Alltag und Herrschaft mitprägen.",
     criteria: [
@@ -1668,8 +1668,8 @@ const quickChecks = {
   },
   "modul-10": {
     id: "m10-quick",
-    question: "Warum hilft Alltagsgeschichte dabei, das Mittelalter besser zu verstehen?",
-    placeholder: "Nenne Beispiele aus dem täglichen Leben.",
+    question: "Warum hilft Alltagsgeschichte dabei, das Mittelalter besser zu verstehen? Nenne Beispiele wie Küche, Hygiene, Kleidung oder Verteidigung.",
+    placeholder: "Nenne konkrete Bereiche des täglichen Lebens.",
     sampleAnswer:
       "Alltagsgeschichte hilft, weil sie zeigt, wie Menschen im Mittelalter wirklich wohnten, aßen, arbeiteten und sich schützten. So verschwindet das bloße Klischee vom romantischen oder dunklen Mittelalter.",
     criteria: [
@@ -1679,8 +1679,8 @@ const quickChecks = {
   },
   "modul-11": {
     id: "m11-quick",
-    question: "Warum reicht es beim Kinderkreuzzug nicht, eine spannende Erzählung einfach zu glauben?",
-    placeholder: "Erkläre die Rolle der Quellenkritik.",
+    question: "Warum reicht es beim Kinderkreuzzug nicht, eine spannende Erzählung einfach zu glauben? Denke an Chroniken und ihre Zuverlässigkeit.",
+    placeholder: "Erkläre die Rolle von Quellenkritik und Überlieferung.",
     sampleAnswer:
       "Eine spannende Erzählung reicht nicht, weil Historikerinnen und Historiker prüfen müssen, welche Quellen es gibt, wann sie entstanden sind und wie zuverlässig sie sind. Erst dann lässt sich einschätzen, was wahrscheinlich passiert ist.",
     criteria: [
@@ -1691,8 +1691,8 @@ const quickChecks = {
   },
   "modul-12": {
     id: "m12-quick",
-    question: "Warum ist 1492 für Amerika ein Einschnitt, aber nicht der Anfang von Geschichte?",
-    placeholder: "Antworte mit Blick auf die Zeit davor.",
+    question: "Warum ist 1492 für Amerika ein Einschnitt, aber nicht der Anfang von Geschichte? Denke an Gesellschaften, Landwirtschaft und politische Ordnung vor Kolumbus.",
+    placeholder: "Antworte mit Blick auf die Zeit davor und ihre konkreten Leistungen.",
     sampleAnswer:
       "1492 ist ein Einschnitt, weil sich Begegnung, Gewalt und Herrschaft stark verändern. Aber Amerikas Geschichte beginnt viel früher, denn dort gab es bereits lange zuvor Gesellschaften mit Landwirtschaft, Kunst, Sprachen und politischer Ordnung.",
     criteria: [
@@ -1708,13 +1708,14 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 1",
     questions: [
       {
-        prompt: "Erkläre den Unterschied zwischen Naturgeschichte und Geschichte im engeren Sinn.",
-        placeholder: "Formuliere den Unterschied in eigenen Worten.",
+        prompt: "Erkläre den Unterschied zwischen Naturgeschichte und Geschichte im engeren Sinn. Nenne dabei ein Beispiel für einen menschlichen Eingriff wie Feuer, Landwirtschaft oder Städtebau.",
+        placeholder: "Formuliere den Unterschied und baue ein Beispiel ein.",
         sampleAnswer:
-          "Naturgeschichte beschreibt die Entwicklung von Erde, Klima und Lebewesen. Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln, Symbolen und gemeinsamen Erinnerungen.",
+          "Naturgeschichte beschreibt die Entwicklung von Erde, Klima und Lebewesen. Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln, Symbolen und gemeinsamen Erinnerungen. Feuergebrauch oder Landwirtschaft gehören deshalb zur Geschichte, weil Menschen damit ihre Umwelt bewusst verändern.",
         criteria: [
           { label: "Naturgeschichte erklärt", keywords: ["erde", "klima", "lebewesen", "naturgeschichte"] },
-          { label: "kulturelle Schwelle genannt", keywords: ["kultur", "sprache", "regeln", "symbole", "erinnerungen"] }
+          { label: "kulturelle Schwelle genannt", keywords: ["kultur", "sprache", "regeln", "symbole", "erinnerungen"] },
+          { label: "menschlicher Eingriff als Beispiel", keywords: ["feuer", "landwirtschaft", "städtebau", "metall", "rodung"] }
         ]
       },
       {
@@ -1744,8 +1745,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Erkläre, warum Migration und Anpassung zentrale Teile der Frühgeschichte sind.",
-        placeholder: "Arbeite mit Beispielen aus neuen Räumen.",
+        prompt: "Erkläre, warum Migration und Anpassung zentrale Teile der Frühgeschichte sind. Nenne Beispiele wie Unterkünfte, Nahrung oder Wege in neuen Räumen.",
+        placeholder: "Arbeite mit Beispielen aus neuen Räumen und Lebensweisen.",
         sampleAnswer:
           "Migration und Anpassung sind zentral, weil Menschen neue Räume nicht nur erreichten, sondern dort auch neue Lebensweisen entwickelten. Behausungen, Nahrung, Werkzeuge und Wege wurden an Klima und Landschaft angepasst.",
         criteria: [
@@ -1770,13 +1771,14 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Wie helfen gemeinsame Vorstellungen dabei, große Gruppen zu organisieren?",
-        placeholder: "Denke an Regeln, Zugehörigkeit und Vertrauen.",
+        prompt: "Wie helfen gemeinsame Vorstellungen dabei, große Gruppen zu organisieren? Beziehe auch symbolische Zeichen wie Bilder, Pfähle oder Schriftzeichen mit ein.",
+        placeholder: "Denke an Regeln, Zugehörigkeit, Vertrauen und Zeichen.",
         sampleAnswer:
-          "Gemeinsame Vorstellungen helfen, weil Menschen dadurch an dieselben Regeln, Götter, Gesetze oder Zugehörigkeiten glauben. So können auch viele Fremde zusammenarbeiten, ohne sich alle persönlich zu kennen.",
+          "Gemeinsame Vorstellungen helfen, weil Menschen dadurch an dieselben Regeln, Götter, Gesetze oder Zugehörigkeiten glauben. Zeichen wie Bilder oder Schrift machen solche Vorstellungen sichtbar und erinnerbar. So können auch viele Fremde zusammenarbeiten, ohne sich alle persönlich zu kennen.",
         criteria: [
           { label: "gemeinsame Vorstellung", keywords: ["gemeinsame", "vorstellungen", "glauben"] },
           { label: "Regeln oder Zugehörigkeit", keywords: ["regeln", "gesetze", "zugehorigkeit", "gotter"] },
+          { label: "symbolische Zeichen", keywords: ["bilder", "zeichen", "schrift", "pfahl", "totem"] },
           { label: "Großgruppen", keywords: ["fremde", "große gruppen", "zusammenarbeiten"] }
         ]
       }
@@ -1786,13 +1788,14 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 4",
     questions: [
       {
-        prompt: "Vergleiche mobile Jäger-und-Sammler-Gruppen mit sesshaften Dörfern.",
-        placeholder: "Nenne mindestens drei Unterschiede.",
+        prompt: "Vergleiche mobile Jäger-und-Sammler-Gruppen mit sesshaften Dörfern. Nenne mindestens drei Unterschiede und denke auch an Behausungen.",
+        placeholder: "Nenne Unterschiede bei Bewegung, Wohnen, Nahrung und Vorräten.",
         sampleAnswer:
-          "Mobile Gruppen wanderten stärker, passten sich saisonal an und lebten nicht von festen Feldern. Sesshafte Dörfer bauten Häuser, legten Vorräte an und waren stärker an Boden und Ernten gebunden.",
+          "Mobile Gruppen wanderten stärker, passten sich saisonal an und nutzten flexible Behausungen statt fester Häuser. Sesshafte Dörfer bauten Häuser, legten Vorräte an und waren stärker an Boden und Ernten gebunden.",
         criteria: [
           { label: "Mobilität", keywords: ["mobil", "wandern", "saisonal"] },
           { label: "Sesshaftigkeit", keywords: ["hauser", "felder", "dorfer", "sesshaft"] },
+          { label: "Behausungen", keywords: ["behausungen", "unterkunfte", "hütten", "hauser"] },
           { label: "Vorräte oder Ernten", keywords: ["vorrate", "ernte", "speicher"] }
         ]
       },
@@ -2000,8 +2003,8 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 12",
     questions: [
       {
-        prompt: "Warum ist '1491' ein wichtiger Perspektivwechsel für die ganze Einheit?",
-        placeholder: "Erkläre, was dadurch am Geschichtsbild anders wird.",
+        prompt: "Warum ist '1491' ein wichtiger Perspektivwechsel für die ganze Einheit? Erkläre, was dadurch am Geschichtsbild anders wird und nenne konkrete Leistungen indigener Gesellschaften.",
+        placeholder: "Erkläre den Perspektivwechsel mit konkreten Beispielen.",
         sampleAnswer:
           "1491 ist ein wichtiger Perspektivwechsel, weil dadurch deutlich wird, dass Geschichte vor 1500 nicht nur europäische Geschichte ist. Amerikas Gesellschaften hatten schon lange vor Kolumbus Landwirtschaft, Kunst, Sprachen und politische Ordnung.",
         criteria: [
