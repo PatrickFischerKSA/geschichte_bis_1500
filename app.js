@@ -1339,7 +1339,7 @@ const modules = [
 const moduleSupports = {
   "modul-1": {
     overview:
-      "In diesem Modul klärst du zuerst eine Grundfrage: Nicht alles Vergangene ist automatisch Geschichte im engeren Sinn. Geschichte beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Erinnerungen und gemeinsame Vorstellungen ordnen.",
+      "Naturgeschichte beschreibt Erde, Klima und Lebewesen. Geschichte im engeren Sinn beginnt dort, wo Menschen mit Sprache, Regeln, Werkzeugen und gemeinsamen Vorstellungen ihre Umwelt bewusst ordnen und verändern.",
     entryNote:
       "Du brauchst für dieses Modul kein Vorwissen. Ein Name wie Harari ist hier nur der Name eines Historikers, dessen Buch uns beim Ordnen des Stoffs hilft.",
     authorIntro:
@@ -1360,7 +1360,7 @@ const moduleSupports = {
   },
   "modul-2": {
     overview:
-      "Hier lernst du, dass der moderne Mensch nicht von Anfang an allein und überlegen war. Über lange Zeit lebten mehrere Menschenarten gleichzeitig, und der Erfolg des Homo sapiens musste sich erst entwickeln.",
+      "Über lange Zeit lebten mehrere Menschenarten gleichzeitig. Homo sapiens war zunächst weder allein noch automatisch überlegen; entscheidend wurden Anpassung, Lernen, Kooperation und Bewegung in neue Räume.",
     entryNote:
       "Der Ausdruck Homo sapiens meint die heutige Menschenart. In diesem Modul lernst du den Begriff erst kennen; du musst ihn nicht schon vorher beherrschen.",
     terms: [
@@ -1378,7 +1378,7 @@ const moduleSupports = {
   },
   "modul-3": {
     overview:
-      "In diesem Modul geht es um den vielleicht wichtigsten Schritt der frühen Menschheitsgeschichte: Menschen können nicht nur warnen oder rufen, sondern über Abwesendes, Zukünftiges und Vorgestelltes sprechen.",
+      "Menschliche Sprache kann mehr als warnen oder rufen. Sie ermöglicht Aussagen über Abwesendes, Zukünftiges und Vorgestelltes und schafft dadurch Regeln, Zugehörigkeit, Mythen und größere Zusammenarbeit.",
     entryNote:
       "Der Ausdruck kognitive Revolution klingt schwierig. Gemeint ist hier eine große Veränderung im Denken, Sprechen und Vorstellen der Menschen.",
     terms: [
@@ -1396,7 +1396,7 @@ const moduleSupports = {
   },
   "modul-4": {
     overview:
-      "Bevor Menschen sesshaft wurden, lebten sie sehr lange in mobilen Gruppen. Diese Lebensweise war nicht primitiv, sondern verlangte viel Wissen über Tiere, Pflanzen, Wege, Wetter und Jahreszeiten.",
+      "Vor der Sesshaftigkeit lebten Menschen über sehr lange Zeit in mobilen Gruppen. Diese Lebensweise beruhte auf präzisem Wissen über Wege, Tiere, Pflanzen, Jahreszeiten, Unterkünfte und Gefahren.",
     entryNote:
       "Jäger und Sammler sind Gruppen, die ohne feste Felder und große Vorratsspeicher leben. Das ist keine Vorstufe minderer Art, sondern eine eigene Lebensform.",
     terms: [
@@ -1414,7 +1414,7 @@ const moduleSupports = {
   },
   "modul-5": {
     overview:
-      "Mit Landwirtschaft beginnt kein einfaches Glückskapitel, sondern ein großer Umbruch. Menschen bauen Häuser, legen Vorräte an und werden gleichzeitig abhängiger von Ernten, Boden und Besitzordnung.",
+      "Mit Landwirtschaft entstehen feste Häuser, Vorräte und Dörfer. Zugleich wachsen Arbeitslast, Abhängigkeit von Ernten, Bedeutung von Besitz und die Gefahr sozialer Ungleichheit.",
     entryNote:
       "Der Ausdruck landwirtschaftliche Revolution meint hier keinen plötzlichen Aufstand, sondern eine tiefgreifende Veränderung hin zu Ackerbau, Viehzucht und festen Siedlungen.",
     terms: [
@@ -1432,7 +1432,7 @@ const moduleSupports = {
   },
   "modul-6": {
     overview:
-      "Dieses Modul zeigt, wie aus Vorräten und Organisation frühe Staaten werden. Sobald Nahrung, Arbeit und Besitz für viele Menschen geregelt werden müssen, entstehen Schrift, Listen, Verwaltung und neue Formen der Herrschaft.",
+      "Frühe Staaten entstehen dort, wo Vorräte gezählt, Abgaben organisiert, Arbeit gelenkt und Herrschaft begründet werden. Schrift, Verwaltung, Kalender und religiöse Legitimation werden dabei zu Machtmitteln.",
     entryNote:
       "Mit Hochkultur ist hier eine frühe komplexe Gesellschaft gemeint, also eine Gesellschaft mit Städten, Schrift, Arbeitsteilung und Herrschaft.",
     terms: [
@@ -1450,7 +1450,7 @@ const moduleSupports = {
   },
   "modul-7": {
     overview:
-      "Imperien verbinden große Räume. Das geschieht nicht nur durch Eroberung, sondern auch durch Straßen, Brücken, Gesetze, Handel, Sprache und feste Verwaltungsorte.",
+      "Imperien halten große Räume nicht nur mit Heeren zusammen, sondern mit Straßen, Brücken, Städten, Gesetzen, Steuern, Sprache und geregelten Verkehrswegen.",
     entryNote:
       "Ein Imperium ist ein Großreich, das viele Regionen und Bevölkerungsgruppen zusammenfasst. Das Wort wird im Modul erklärt; du musst es nicht vorher kennen.",
     terms: [
@@ -1468,7 +1468,7 @@ const moduleSupports = {
   },
   "modul-8": {
     overview:
-      "Geld ist mehr als Metall. Es funktioniert nur, wenn Menschen ihm vertrauen und es als Wert anerkennen. Darum verbindet Geld auch Menschen, die sich persönlich gar nicht kennen.",
+      "Geld funktioniert nur, wenn Menschen seinen Wert anerkennen. Münzen verbinden deshalb Handel, Herrschaft, Vertrauen, Verkehrswege und Krisenerfahrungen in einem einzigen Gegenstand.",
     entryNote:
       "In diesem Modul geht es nicht nur um Münzen, sondern um die Grundfrage, warum Menschen einer Währung überhaupt vertrauen.",
     terms: [
@@ -1486,7 +1486,7 @@ const moduleSupports = {
   },
   "modul-9": {
     overview:
-      "Religionen ordnen die Welt. Sie geben Antworten auf Sinnfragen, regeln Verhalten, schaffen Zugehörigkeit und können Herrschaft stützen oder kritisieren.",
+      "Religion ordnet Zeit, Raum und Verhalten. Rituale, heilige Orte, Verbote, Feste und Texte schaffen Zugehörigkeit und können Herrschaft stützen, Wissen verbreiten und Räume vernetzen.",
     entryNote:
       "Religion wird hier nicht nur als privater Glaube verstanden, sondern auch als Ordnung von Gemeinschaft, Regeln und Weltbildern.",
     terms: [
@@ -1504,7 +1504,7 @@ const moduleSupports = {
   },
   "modul-10": {
     overview:
-      "Das Mittelalter war weder nur dunkel noch nur romantisch. Menschen lebten in einer harten, aber auch sehr organisierten Welt mit Herrschaft, Frömmigkeit, Arbeit, Konflikten, Städten und kulturellen Leistungen.",
+      "Das Mittelalter war eine harte und zugleich hoch organisierte Lebenswelt. Burgen, Kathedralen, Küche, Hygiene, Verteidigung, Rangordnung, Frömmigkeit und Arbeit griffen eng ineinander.",
     entryNote:
       "Auch wenn du schon Bilder aus Filmen, Spielen oder Kinderbüchern kennst, startet dieses Modul noch einmal bei den Grundfragen: Wer lebte wie, und wie sah der Alltag wirklich aus?",
     terms: [
@@ -1522,7 +1522,7 @@ const moduleSupports = {
   },
   "modul-11": {
     overview:
-      "Im späteren Mittelalter nehmen Kontakte, Märkte, Städte und religiöse Bewegungen zu. Gleichzeitig lernst du hier besonders deutlich, dass Geschichtswissen nie einfach gegeben ist, sondern aus Quellen kritisch erschlossen werden muss.",
+      "Im Hoch- und Spätmittelalter verdichten sich Märkte, Städte, Pilgerwege und religiöse Bewegungen. Gleichzeitig zeigen Chroniken und Überlieferungen, dass historische Aussagen immer quellenkritisch geprüft werden müssen.",
     entryNote:
       "Quellenkritik bedeutet: Wir prüfen, woher eine Information stammt, wie zuverlässig sie ist und welche Interessen in ihr stecken könnten.",
     terms: [
@@ -1540,7 +1540,7 @@ const moduleSupports = {
   },
   "modul-12": {
     overview:
-      "Zum Schluss bündelst du die ganze Lernreise. Dabei wird deutlich: Geschichte bis 1500 ist nicht nur Europa, und sie endet nicht einfach in einer geraden Fortschrittsgeschichte.",
+      "Geschichte bis 1500 ist weder nur Europa noch eine einfache Fortschrittslinie. Sprachfähigkeit, Sesshaftigkeit, Staatlichkeit, Handel, Religion und unterschiedliche Weltregionen bilden lange Entwicklungslinien mit Folgen weit über 1500 hinaus.",
     entryNote:
       "Ein Perspektivwechsel heißt, dass wir denselben Zeitraum aus einem anderen Blickwinkel betrachten. Genau das tust du hier am Ende noch einmal bewusst.",
     terms: [
@@ -2322,7 +2322,7 @@ function renderFilmFoundation(module) {
     <section class="film-foundation">
       <div class="film-foundation-head">
         <p class="section-kicker">Filmgrundlage</p>
-        <p>Diese SRF-Filme und Filmseiten tragen das Modul. Öffne sie direkt aus dem Kapitel heraus und arbeite mit den dort gezeigten Beispielen weiter.</p>
+        <p>Hier liegen die konkreten Beispiele des Moduls: Gegenstände, Lebensweisen, Räume, Wege, Funde und historische Situationen aus den SRF-Filmen.</p>
       </div>
       <div class="film-grid">
         ${filmSources
