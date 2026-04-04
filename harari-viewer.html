@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harari-Passage öffnen</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f0e6;
+        --card: rgba(255, 252, 246, 0.96);
+        --line: rgba(30, 44, 52, 0.12);
+        --text: #1e2c34;
+        --muted: #5f6f78;
+        --accent: #17364b;
+        --accent-soft: rgba(23, 54, 75, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(232, 211, 167, 0.28), transparent 35%),
+          linear-gradient(180deg, #faf6ef, var(--bg));
+        color: var(--text);
+      }
+
+      main {
+        width: min(1100px, calc(100vw - 32px));
+        margin: 24px auto 48px;
+      }
+
+      .viewer-shell {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--card);
+        box-shadow: 0 20px 50px rgba(30, 44, 52, 0.08);
+      }
+
+      .viewer-head {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .viewer-head h1 {
+        margin: 0;
+        font-size: clamp(1.9rem, 4vw, 2.8rem);
+        line-height: 1.05;
+      }
+
+      .viewer-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(200, 155, 60, 0.14);
+        color: #7b5a16;
+        font-weight: 700;
+      }
+
+      .viewer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn.ghost {
+        border-color: rgba(23, 54, 75, 0.14);
+        background: white;
+        color: var(--accent);
+      }
+
+      .viewer-note {
+        color: var(--muted);
+      }
+
+      .viewer-panel {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .status {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .status.error {
+        background: rgba(160, 42, 42, 0.12);
+        color: #7f1d1d;
+      }
+
+      .canvas-wrap {
+        overflow: auto;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: white;
+        min-height: 420px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      canvas {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 10px 26px rgba(30, 44, 52, 0.12);
+      }
+
+      .viewer-search {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="viewer-shell">
+        <div class="viewer-head">
+          <h1 id="title">Harari-Passage</h1>
+          <div class="viewer-meta">
+            <span class="pill" id="page-pill">Seite</span>
+            <span class="viewer-note" id="quote-note"></span>
+          </div>
+          <div class="viewer-actions">
+            <a class="btn primary" id="raw-link" href="#" target="_blank" rel="noreferrer">Roh-PDF öffnen</a>
+            <a class="btn ghost" href="./index.html">Zur Einheit zurück</a>
+          </div>
+          <p class="viewer-note">Diese Ansicht rendert die Zielseite direkt, statt den Browser-PDF-Viewer raten zu lassen.</p>
+        </div>
+
+        <div class="viewer-panel">
+          <div class="status" id="status">Lade PDF und rendere Zielseite …</div>
+          <p class="viewer-search" id="search-note"></p>
+          <div class="canvas-wrap">
+            <canvas id="pdf-canvas"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="./harari-viewer.js"></script>
+  </body>
+</html>

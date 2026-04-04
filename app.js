@@ -1,6 +1,8 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 const HARARI_PDF_URL = "assets/local/harari.pdf";
 const HARARI_LOCAL_PREVIEW_BASE = "http://127.0.0.1:4173/assets/local/harari.pdf";
+const HARARI_VIEWER_PATH = "harari-viewer.html";
+const HARARI_LOCAL_VIEWER_BASE = "http://127.0.0.1:4173/harari-viewer.html";
 
 const sourceCatalog = [
   {
@@ -2415,20 +2417,30 @@ function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
 
-function getHarariPdfLink(page, search) {
+function getHarariPdfLink(page) {
   const base = isHarariPdfAvailable() ? HARARI_PDF_URL : HARARI_LOCAL_PREVIEW_BASE;
-  const params = [];
-  if (page) {
-    params.push(`page=${page}`);
-    params.push("zoom=page-fit");
-  }
-  if (search) {
-    params.push(`search=${encodeURIComponent(search)}`);
-  }
   if (!page) {
     return base;
   }
-  return `${base}#${params.join("&")}`;
+  return `${base}#page=${page}`;
+}
+
+function getHarariViewerLink(detail) {
+  const base = isHarariPdfAvailable() ? HARARI_VIEWER_PATH : HARARI_LOCAL_VIEWER_BASE;
+  const params = new URLSearchParams();
+  if (detail.pdfPage) {
+    params.set("page", String(detail.pdfPage));
+  }
+  if (detail.pdfSearch) {
+    params.set("search", detail.pdfSearch);
+  }
+  if (detail.locator) {
+    params.set("label", detail.locator);
+  }
+  if (detail.quote) {
+    params.set("quote", detail.quote);
+  }
+  return `${base}?${params.toString()}`;
 }
 
 function isHarariPdfAvailable() {
@@ -2448,11 +2460,12 @@ function renderHarariPdfButton(detail) {
 
   return `
     <div class="source-actions">
-      <a class="btn primary" href="${getHarariPdfLink(detail.pdfPage, detail.pdfSearch)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
+      <a class="btn primary" href="${getHarariViewerLink(detail)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
+      <a class="btn ghost" href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">Roh-PDF öffnen</a>
       <span class="source-locator-note">${
         isLocal
-          ? "springt in deine lokale PDF an die passende Stelle und sucht den Ausdruck im Text"
-          : "springt auf deine lokale Vorschau unter 127.0.0.1:4173, oeffnet die Zielseite und sucht den Ausdruck im Text"
+          ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"
+          : "springt auf deine lokale Vorschau unter 127.0.0.1:4173 und rendert dort die exakte Zielseite"
       }</span>
     </div>
   `;
@@ -2618,11 +2631,11 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
-  const harariPdfLink = source.title === "Harari-PDF" ? getHarariPdfLink(detail.pdfPage, detail.pdfSearch) : null;
+  const harariPdfLink = source.title === "Harari-PDF" ? getHarariViewerLink(detail) : null;
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
       ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
-          isHarariPdfAvailable() ? "lokale PDF-Navigation" : "Link zur lokalen Vorschau-PDF"
+          isHarariPdfAvailable() ? "Viewer mit exakter Seitenansicht" : "Link zum lokalen Harari-Viewer"
         }</span>`
       : detail.locator || "";
 
