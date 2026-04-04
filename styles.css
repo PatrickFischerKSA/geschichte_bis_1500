@@ -985,6 +985,16 @@ p {
   margin-top: 12px;
 }
 
+.source-focus {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(30, 44, 52, 0.08);
+}
+
+.source-focus p + p {
+  margin-top: 8px;
+}
+
 .source-list {
   margin: 8px 0 0 20px;
   display: grid;

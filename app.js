@@ -1732,6 +1732,17 @@ const contentChecks = {
           { label: "Bedeutung für den Kurs", keywords: ["kurs", "blick", "verandert"] },
           { label: "große Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
         ]
+      },
+      {
+        prompt: "Die SRF-Seite zum Anthropozän arbeitet mit drei Schritten: Kosten des Fortschritts, neues Erdzeitalter, Lösungen. Erkläre in 4 bis 6 Sätzen, warum genau diese Struktur für Modul 1 wichtig ist.",
+        placeholder: "Verbinde Fortschritt, Folgeschäden und Langzeitblick auf Geschichte.",
+        sampleAnswer:
+          "Die Struktur ist für Modul 1 wichtig, weil sie Geschichte sofort als Langzeitprozess zeigt. Zuerst wird deutlich, dass Fortschritt Vorteile bringt, aber auch Schäden erzeugt. Dann stellt die Seite die Frage nach einem neuen Erdzeitalter des Menschen. Am Schluss wird sichtbar, dass Menschen auch auf ihre eigenen Folgen reagieren. So beginnt der Kurs nicht mit Einzelereignissen, sondern mit einer langen Geschichte menschlicher Eingriffe.",
+        criteria: [
+          { label: "Kosten des Fortschritts", keywords: ["fortschritt", "kosten", "schaden", "folgen"] },
+          { label: "neues Erdzeitalter", keywords: ["erdzeitalter", "anthropozan", "geologisch"] },
+          { label: "Lösungen", keywords: ["losungen", "gegenmassnahmen", "reagieren", "renaturierung", "schutz"] }
+        ]
       }
     ]
   },
@@ -1759,6 +1770,17 @@ const contentChecks = {
           { label: "Anpassung beschrieben", keywords: ["anpassung", "klima", "landschaft", "behausungen"] },
           { label: "konkrete Lebensweise", keywords: ["nahrung", "werkzeuge", "wege"] }
         ]
+      },
+      {
+        prompt: "Arbeite mit der SRF-Seite 1491 heraus, warum 1492 für Amerika ein Einschnitt, aber kein Anfang ist. Nenne dabei mindestens zwei konkrete Sachinformationen aus der Ressource.",
+        placeholder: "Nutze Fakten wie Landbrücke, Kanus, Sprachen, Reiche oder Landwirtschaft.",
+        sampleAnswer:
+          "1492 ist ein Einschnitt, aber kein Anfang, weil Menschen Amerika schon vor 18'000 bis 20'000 Jahren erreichten. Einige kamen über die Landbrücke, andere in Kanus. Es gab dort viele Sprachen, Gesellschaften, Landwirtschaft und politische Strukturen lange vor Kolumbus. Die Ressource zeigt also eine Vorgeschichte statt einer leeren Bühne.",
+        criteria: [
+          { label: "Einschnitt statt Anfang", keywords: ["einschnitt", "kein anfang", "1492"] },
+          { label: "frühe Besiedlung", keywords: ["18000", "20000", "landbrucke", "kanus"] },
+          { label: "entwickelte Gesellschaften", keywords: ["sprachen", "gesellschaften", "reiche", "landwirtschaft"] }
+        ]
       }
     ]
   },
@@ -1785,6 +1807,17 @@ const contentChecks = {
           { label: "Regeln oder Zugehörigkeit", keywords: ["regeln", "gesetze", "zugehorigkeit", "gotter"] },
           { label: "symbolische Zeichen", keywords: ["bilder", "zeichen", "schrift", "pfahl", "totem"] },
           { label: "Großgruppen", keywords: ["fremde", "große gruppen", "zusammenarbeiten"] }
+        ]
+      },
+      {
+        prompt: "Nutze Felsbilder, Totempfähle und Mayaschrift aus der SRF-Seite 1491 und erkläre, was diese drei Beispiele über symbolische Ordnung verraten.",
+        placeholder: "Zeige, wie Bilder, Monumente und Schrift Erinnerung und Ordnung tragen.",
+        sampleAnswer:
+          "Felsbilder zeigen, dass Menschen Erlebnisse und Weltdeutungen festhalten. Totempfähle erzählen Familien- und Herkunftsgeschichte öffentlich. Mayaschrift beweist, dass komplexe Zeichenwelten Wissen dauerhaft sichern können. Alle drei Beispiele zeigen, dass Gesellschaften sich über Symbole und Erinnerung ordnen.",
+        criteria: [
+          { label: "Felsbilder", keywords: ["felsbilder", "hohle", "handabdrucke", "bilder"] },
+          { label: "Totempfähle", keywords: ["totempfahle", "familie", "herkunft", "holzmonumente"] },
+          { label: "Schrift", keywords: ["mayaschrift", "hieroglyphen", "zeichen", "wissen"] }
         ]
       }
     ]
@@ -1814,6 +1847,17 @@ const contentChecks = {
           { label: "praktisches Wissen", keywords: ["wege", "tiere", "jahreszeiten", "regeln"] },
           { label: "Gemeinschaft oder Ritual", keywords: ["gemeinschaft", "zusammenhalt", "ritual"] }
         ]
+      },
+      {
+        prompt: "Erkläre an Zelt, Lehmhaus und Iglu, warum mobile Lebensformen nicht als rückständig missverstanden werden dürfen.",
+        placeholder: "Zeige die Anpassung an Klima, Raum und Lebensweise.",
+        sampleAnswer:
+          "Zelt, Lehmhaus und Iglu zeigen, dass Unterkünfte genau an Umwelt und Lebensweise angepasst wurden. Mobile Gruppen bauten nicht einfach weniger, sondern anders. Ihre Behausungen mussten zu Klima, Material und Bewegung passen. Das ist keine Rückständigkeit, sondern hoch spezialisiertes Umweltwissen.",
+        criteria: [
+          { label: "drei Unterkunftsformen", keywords: ["zelt", "lehmhaus", "iglu"] },
+          { label: "Anpassung", keywords: ["anpassung", "klima", "material", "landschaft"] },
+          { label: "Fehldeutung korrigiert", keywords: ["nicht ruckstandig", "spezialisiert", "eigenstandig"] }
+        ]
       }
     ]
   },
@@ -1840,6 +1884,17 @@ const contentChecks = {
           { label: "Wohnen oder Speicher", keywords: ["hauser", "speicher", "dorf"] },
           { label: "Arbeit", keywords: ["arbeit", "arbeitsablaufe", "anbau"] },
           { label: "Besitz oder Konflikte", keywords: ["besitz", "land", "konflikte", "vorrate"] }
+        ]
+      },
+      {
+        prompt: "Was zeigen die Pfahlbauer von Pfyn ganz konkret über Sesshaftigkeit? Nenne drei Dinge aus dem Film, die diesen Wandel sichtbar machen.",
+        placeholder: "Arbeite mit Hüttenbau, Werkzeugen, Feuerstellen, Kleidung, Nahrung oder Vorräten.",
+        sampleAnswer:
+          "Die Pfahlbauer zeigen Sesshaftigkeit konkret durch Hüttenbau, Feuerstellen und Vorratshaltung. Auch Werkzeuge wie Steinbeile und Kolbenpfeile gehören dazu, weil eine feste Siedlung dauernde Arbeit braucht. Kleidung, Nahrung und Reparaturen zeigen, dass Sesshaftigkeit ein ganzer Alltag war.",
+        criteria: [
+          { label: "Bauen oder Wohnen", keywords: ["huttenbau", "hauser", "feuerstellen"] },
+          { label: "Werkzeuge", keywords: ["steinbeile", "kolbenpfeile", "werkzeuge"] },
+          { label: "Alltag", keywords: ["kleidung", "nahrung", "vorrate", "arbeit"] }
         ]
       }
     ]
@@ -1868,6 +1923,17 @@ const contentChecks = {
           { label: "Schrift oder Verwaltung", keywords: ["schrift", "hieroglyph", "verwaltung", "beamtentum"] },
           { label: "Herrschaft oder Religion", keywords: ["pharao", "herrschaft", "religion", "legitimation"] }
         ]
+      },
+      {
+        prompt: "Warum ist die SRF-Folge zum Alten Ägypten für dieses Modul wichtiger als bloß ein Bild von Pyramiden? Arbeite mit Nil, Beamtentum und Hieroglyphenschrift.",
+        placeholder: "Zeige, wie Umwelt, Verwaltung und Schrift zusammen einen Staat tragen.",
+        sampleAnswer:
+          "Die Folge ist wichtiger als bloße Pyramidenbilder, weil sie Staatlichkeit erklärt. Der Nil macht Landwirtschaft planbar, das Beamtentum organisiert Abgaben und Arbeiten, und Hieroglyphenschrift stabilisiert Verwaltung. So wird Ägypten als funktionierende Ordnung sichtbar, nicht nur als Monumentenwelt.",
+        criteria: [
+          { label: "Nil", keywords: ["nil", "landwirtschaft", "planbar"] },
+          { label: "Beamtentum", keywords: ["beamtentum", "abgaben", "organisiert"] },
+          { label: "Hieroglyphenschrift", keywords: ["hieroglyph", "schrift", "verwaltung"] }
+        ]
       }
     ]
   },
@@ -1893,6 +1959,17 @@ const contentChecks = {
         criteria: [
           { label: "konkrete Beispiele", keywords: ["strassen", "brucken", "waren", "weinbau", "recht", "bauten"] },
           { label: "Alltagswirkung", keywords: ["alltag", "handel", "leben", "ernahrung"] }
+        ]
+      },
+      {
+        prompt: "Die Reihe 'Römer in der Schweiz' ist fünfteilig. Erkläre, warum für das Verständnis eines Imperiums genau die Verbindung aus Legionären, Siedlungen und Straßen entscheidend ist.",
+        placeholder: "Verbinde Militär, Alltagsraum und Infrastruktur.",
+        sampleAnswer:
+          "Legionäre zeigen die militärische Seite des Imperiums, Siedlungen die dauerhafte Ordnung vor Ort und Straßen die Verbindung großer Räume. Erst zusammen erklären diese drei Dinge, wie Rom Gebiete kontrollierte, versorgte und in sein Reich einband.",
+        criteria: [
+          { label: "Legionäre", keywords: ["legionare", "militar", "vindonissa"] },
+          { label: "Siedlungen", keywords: ["siedlungen", "gutshofe", "bader", "wasserleitungen"] },
+          { label: "Straßen", keywords: ["strassen", "handel", "verbindung", "infrastruktur"] }
         ]
       }
     ]
@@ -1921,6 +1998,17 @@ const contentChecks = {
           { label: "Herrschaft", keywords: ["herrschaft", "anerkannt", "macht"] },
           { label: "Unsicherheit oder Verstecken", keywords: ["unsicher", "versteckt", "krise", "vermog"] }
         ]
+      },
+      {
+        prompt: "Was ergänzt die Reihe 'Grosse Völker' zum Münzschatz von Ueken? Antworte mit Karthagern, Arabern und mindestens einer historischen Leistung.",
+        placeholder: "Zeige, dass Vernetzung mehr ist als Münzumlauf.",
+        sampleAnswer:
+          "Die Reihe ergänzt den Münzschatz, weil sie Vernetzung über verschiedene Großräume zeigt. Die Karthager stehen für Seehandel und Purpur, die Araber für Wissenschaft, Mathematik und Medizin. So wird deutlich, dass Handel nicht nur Ware, sondern auch Wissen und Kultur bewegt.",
+        criteria: [
+          { label: "Karthager", keywords: ["karthager", "purpur", "seehandel"] },
+          { label: "Araber", keywords: ["araber", "mathematik", "medizin", "wissenschaft"] },
+          { label: "Vernetzung über Geld hinaus", keywords: ["wissen", "kultur", "nicht nur ware", "vernetzung"] }
+        ]
       }
     ]
   },
@@ -1948,6 +2036,17 @@ const contentChecks = {
           { label: "Wissen", keywords: ["gelehrte", "texte", "ubersetzungen", "ideen"] },
           { label: "Handel", keywords: ["handel", "waren", "austausch"] }
         ]
+      },
+      {
+        prompt: "Was zeigt die Araber-Folge von 'Grosse Völker' darüber, warum Religion, Wissen und Herrschaft zusammen gedacht werden müssen?",
+        placeholder: "Arbeite mit Islam, Großreich, Mathematik, Medizin oder Bildung.",
+        sampleAnswer:
+          "Die Araber-Folge zeigt, dass der Islam Teil eines großen politischen und kulturellen Raums war. In diesem Raum wurden Mathematik, Medizin und Wissenschaft gefördert und verbreitet. Religion, Bildung und Herrschaft greifen also ineinander, statt getrennte Bereiche zu sein.",
+        criteria: [
+          { label: "Islamischer Raum", keywords: ["islam", "grossreich", "raum"] },
+          { label: "Wissensfelder", keywords: ["mathematik", "medizin", "wissenschaft", "bildung"] },
+          { label: "Verknüpfung", keywords: ["zusammen", "ineinander", "herrschaft", "religion"] }
+        ]
       }
     ]
   },
@@ -1973,6 +2072,17 @@ const contentChecks = {
         criteria: [
           { label: "konkrete Alltagsbereiche", keywords: ["wohnen", "kochen", "hygiene", "verteidigung", "kleidung"] },
           { label: "soziale Unterschiede oder Lebenswelt", keywords: ["unterschiede", "lebenswelt", "alltag"] }
+        ]
+      },
+      {
+        prompt: "Vergleiche den Einstieg über 'Das verrückte Mittelalter' mit 'Mittelalter in der Schweiz'. Was leistet die eine Reihe, was leistet die andere?",
+        placeholder: "Unterscheide populären Einstieg und präzise Alltagsgeschichte.",
+        sampleAnswer:
+          "Das verrückte Mittelalter liefert bekannte Motive wie Ritter, Burgen, Pest oder Minnesänger als Einstieg. Mittelalter in der Schweiz geht genauer in Hygiene, Küche, Verteidigung, Statussymbole und Funde. Die erste Reihe motiviert und bündelt Bilder, die zweite präzisiert und korrigiert sie.",
+        criteria: [
+          { label: "Einstieg über populäre Bilder", keywords: ["ritter", "burgen", "pest", "minnesanger", "einstieg"] },
+          { label: "Alltagsgeschichte", keywords: ["hygiene", "kuche", "verteidigung", "statussymbole", "funde"] },
+          { label: "unterschiedliche Funktion", keywords: ["motiviert", "prazisiert", "korrigiert", "vergleicht"] }
         ]
       }
     ]
@@ -2001,6 +2111,17 @@ const contentChecks = {
           { label: "Wege oder Bewegung", keywords: ["wege", "pilger", "bewegung", "reisen"] },
           { label: "Austausch", keywords: ["waren", "ideen", "vorstellungen", "verbunden"] }
         ]
+      },
+      {
+        prompt: "Was genau macht der Film zum Kinderkreuzzug mit der Überlieferung von 1212? Antworte mit Nikolaus, Stephan und der Frage nach der Zuverlässigkeit der Chroniken.",
+        placeholder: "Zeige, dass der Film nicht nur erzählt, sondern prüft.",
+        sampleAnswer:
+          "Der Film nimmt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes ernst, aber nicht unkritisch. Er fragt, was Chroniken tatsächlich belegen, wann sie entstanden und wie zuverlässig sie sind. So wird aus einer Legende ein Fall für Quellenkritik.",
+        criteria: [
+          { label: "Nikolaus oder Stephan", keywords: ["nikolaus", "stephan", "cologne", "cloyes"] },
+          { label: "1212 oder Kreuzzugsüberlieferung", keywords: ["1212", "kinderkreuzzug", "uberlieferung"] },
+          { label: "Zuverlässigkeit der Chroniken", keywords: ["chroniken", "zuverlassigkeit", "belegen", "prufen"] }
+        ]
       }
     ]
   },
@@ -2027,6 +2148,17 @@ const contentChecks = {
           { label: "früher Schritt", keywords: ["sprache", "kooperation", "kognitiv"] },
           { label: "mittlerer Schritt", keywords: ["sesshaftigkeit", "vorrate", "landwirtschaft"] },
           { label: "späterer Schritt", keywords: ["schrift", "staat", "handel", "religion", "imperium"] }
+        ]
+      },
+      {
+        prompt: "Verbinde die Hauptthese von 1491 mit der Hauptthese des Anthropozäns. Warum ist diese Kombination für den Schluss des Kurses so stark?",
+        placeholder: "Arbeite mit globaler Perspektive und Langzeitfolgen.",
+        sampleAnswer:
+          "1491 zeigt, dass Geschichte vor 1500 global ist und nicht bei Europa endet. Das Anthropozän zeigt, dass frühe Entwicklungen lange Folgen haben und bis in Umwelt und Erdgeschichte wirken. Zusammen ergeben beide Seiten einen Schluss, der zugleich global und langfristig denkt.",
+        criteria: [
+          { label: "globale Perspektive", keywords: ["global", "nicht nur europa", "1491", "amerika"] },
+          { label: "Langzeitfolgen", keywords: ["langzeit", "folgen", "anthropozan", "umwelt"] },
+          { label: "Bedeutung für den Kursabschluss", keywords: ["schluss", "abschluss", "zusammen", "verbinden"] }
         ]
       }
     ]
@@ -2160,7 +2292,16 @@ const sourceDetails = {
       { title: "Hoffnung für die Ozeane – Helden der Meere", note: "Menschliche Eingriffe, Überfischung und konkrete Schutzprojekte.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/hoffnung-fuer-die-ozeane-helden-der-meere" },
       { title: "Erfolgreiche Renaturierung – Paradiese aus Menschenhand", note: "Drei Renaturierungsprojekte; Schäden und mögliche Umkehrprozesse.", link: "https://www.srf.ch/sendungen/school/physik-chemie-biologie/erfolgreiche-renaturierung-paradiese-aus-menschenhand" },
       { title: "Gefährliche Desertifikation – Planet Sand", note: "Wüstenbildung, Ressourcenknappheit und menschengemachte ökologische Krisen.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/gefaehrliche-desertifikation-planet-sand" }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört in Modul 1, weil sie den ganzen Kurs von Anfang an als Langzeitgeschichte menschlicher Eingriffe ordnet und nicht erst am Schluss als Umwelt-Nachtrag auftaucht.",
+    mustKnow: [
+      "Feuer, Landwirtschaft, Metallbau, Hochmittelalter und Industrialisierung werden als eine zusammenhängende Eingriffsgeschichte erzählt.",
+      "Fortschritt bringt nicht nur Nutzen, sondern auch Schäden an Boden, Wasser, Luft und Lebensräumen hervor.",
+      "Die Frage nach dem Anthropozän verschiebt Geschichte von Einzelereignissen zu langfristigen Folgen."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Geschichte bestehe nur aus Herrschern, Kriegen und Daten und habe mit Naturveränderung nichts zu tun."
   },
   [makeSourceKey("modul-2", "Harari-PDF")]: {
     badge: "S. 30 · Frühe Sapiens",
@@ -2190,7 +2331,16 @@ const sourceDetails = {
       { title: "Epochale Umbrüche – Ein Moment in der Geschichte", note: "Historische Wendepunkte und Einschnitte in vergleichender Perspektive.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/epochale-umbrueche-ein-moment-in-der-geschichte" },
       { title: "In die Neue Welt – Amerigo Vespucci", note: "Entdeckungsnarrative und europäische Benennung Amerikas.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/in-die-neue-welt-amerigo-vespucci-der-mann-der-amerika-seinen-namen-gab" },
       { title: "Indigene Völker: Ohne Tiere keine Menschen", note: "Naturbeziehung, Mythen, Rituale und Tierwelt aus indigener Perspektive.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/indigene-voelker-ohne-tiere-keine-menschen" }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört in Modul 2, weil frühe Menschheitsgeschichte hier nicht abstrakt über Evolution, sondern konkret über Wege, Räume, Behausungen, Sprachen und Überlebensstrategien greifbar wird.",
+    mustKnow: [
+      "Die ersten Menschen Amerikas erreichen den Kontinent vor rund 18'000 bis 20'000 Jahren über Landbrücke und Kanus.",
+      "Unterkünfte und Lebensweisen werden an Klima und Landschaft angepasst: Zelt, Lehmhaus, Iglu.",
+      "Amerika ist lange vor 1492 von vielen Sprachen, Gesellschaften und politischen Strukturen geprägt."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Amerikas Geschichte beginne erst mit Kolumbus oder lasse sich als leere Bühne vor der europäischen Ankunft erzählen."
   },
   [makeSourceKey("modul-3", "Harari-PDF")]: {
     badge: "S. 33 · Kognitive Revolution",
@@ -2214,7 +2364,16 @@ const sourceDetails = {
       { title: "Totempfähle", note: "Holzmonumente als Familiengeschichte, Herkunft und öffentlicher Erinnerungsort." },
       { title: "Schriftkultur", note: "Mayaschrift mit rund 800 Hieroglyphen als Beleg für komplexe Zeichenwelten." },
       { title: "Steinmarkierungen", note: "Orientierung, Raumwissen und Wegführung in der Landschaft." }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört in Modul 3, weil sie Sprache und Symbolfähigkeit in sichtbare historische Spuren übersetzt und damit den Übergang von bloßer Kommunikation zu kultureller Ordnung zeigt.",
+    mustKnow: [
+      "Felsbilder sind keine Dekoration, sondern Speicher von Erinnerung, Weltdeutung und Handlung.",
+      "Totempfähle erzählen Herkunfts- und Familiengeschichte öffentlich und dauerhaft.",
+      "Mayaschrift zeigt, dass komplexe Zeichenwelten und Schriftkultur lange vor Europa oder Kolumbus vorhanden sind."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Vorzeit sei eine stumme, symbolarme Phase ohne komplexe Ordnungssysteme."
   },
   [makeSourceKey("modul-4", "SRF: 1491")]: {
     badge: "SRF-school-Film · Lebensformen",
@@ -2228,7 +2387,16 @@ const sourceDetails = {
       { title: "Behausungen", note: "Zelte aus Tierhäuten, Häuser aus Lehm, Iglus aus Schnee." },
       { title: "Ernährungsweisen", note: "Jagd, Sammeln, Terrassenlandwirtschaft und regionale Anpassung." },
       { title: "Mündliche Wissensweitergabe", note: "Überleben, Wege und Umweltwissen werden vor allem erzählt und gezeigt." }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört in Modul 4, weil sie mobile Lebensformen als eigenständige, wissensreiche Lebensweise zeigt und nicht bloß als unentwickelte Vorstufe zur Sesshaftigkeit.",
+    mustKnow: [
+      "Jäger-und-Sammler-Gesellschaften passen Behausungen, Wege und Ernährung sehr genau an ihre Umwelt an.",
+      "Mündliche Überlieferung trägt praktisches Wissen über Tiere, Klima, Jagd und Orientierung.",
+      "Mobilität ist eine historisch anspruchsvolle Form der Organisation."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, mobile Gruppen hätten planlos oder nur mangelhaft gelebt."
   },
   [makeSourceKey("modul-4", "Harari-PDF")]: {
     badge: "S. 100 · Vor der Sesshaftigkeit",
@@ -2252,7 +2420,16 @@ const sourceDetails = {
     badge: "SRF-school-Film · Experimentalarchäologie",
     locator: "SRF school: Pfahlbauer von Pfyn",
     passage:
-      "Im Zentrum stehen zwei Familien und zwei junge Männer, die vier Wochen wie vor rund 5700 Jahren leben. Der Film macht Sesshaftigkeit konkret über Hüttenbau, Steinbeile, Kolbenpfeile, Kleidung, Feuerstellen, Nahrung und die ständige Handarbeit, die eine feste Siedlung überhaupt erst trägt."
+      "Im Zentrum stehen zwei Familien und zwei junge Männer, die vier Wochen wie vor rund 5700 Jahren leben. Der Film macht Sesshaftigkeit konkret über Hüttenbau, Steinbeile, Kolbenpfeile, Kleidung, Feuerstellen, Nahrung und die ständige Handarbeit, die eine feste Siedlung überhaupt erst trägt.",
+    whyHere:
+      "Der Film gehört in Modul 5, weil Sesshaftigkeit hier als Alltag aus Material, Mühe, Zeit und Versorgung sichtbar wird statt als abstrakter Entwicklungsschritt.",
+    mustKnow: [
+      "Sesshaftigkeit bedeutet Bau, Reparatur, Vorratshaltung und dauernde Handarbeit.",
+      "Werkzeuge wie Steinbeile und Kolbenpfeile sind Teil einer festen, nicht nur mobilen Lebensordnung.",
+      "Eine Siedlung funktioniert nur, wenn Wohnen, Nahrung, Feuer und Arbeit gemeinsam organisiert werden."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Sesshaftigkeit sei einfach bequemer oder automatisch fortschrittlicher gewesen."
   },
   [makeSourceKey("modul-6", "Harari-PDF")]: {
     badge: "S. 155–161 · Schrift und Bürokratie",
@@ -2274,7 +2451,16 @@ const sourceDetails = {
         title: "Eine kurze Geschichte über... – Das Alte Ägypten",
         note: "Nil, Beamte und Hieroglyphenschrift als Basis dauerhafter Herrschaft."
       }
-    ]
+    ],
+    whyHere:
+      "Die Folge gehört in Modul 6, weil sie frühe Staatlichkeit nicht über Pyramidenromantik, sondern über Nil, Verwaltung und Schrift erklärt.",
+    mustKnow: [
+      "Der Nil schafft verlässliche landwirtschaftliche Grundlagen.",
+      "Beamtentum organisiert Abgaben, Arbeiten und Herrschaft.",
+      "Hieroglyphenschrift stabilisiert Verwaltung und Langzeitordnung."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, frühe Hochkulturen ließen sich vor allem durch Monumente und große Herrscher erklären."
   },
   [makeSourceKey("modul-7", "SRF: Römer in der Schweiz")]: {
     badge: "fünfteilige Reihe · Römer konkret",
@@ -2288,13 +2474,31 @@ const sourceDetails = {
       { title: "Wo lebten die Römer in der Schweiz?", note: "Gutshöfe, Wasserleitungen, Heizungen, Bäder und römische Baukunst." },
       { title: "Wie lebten die Römer in der Schweiz?", note: "Wein, Aprikosen, Walnüsse, Familienleben, Religion und Alltag." },
       { title: "Strassen, Handel und was von den Römern geblieben ist", note: "Straßennetz, Tunnel, Handel, Zahlungsmittel und langfristige Infrastrukturfolgen." }
-    ]
+    ],
+    whyHere:
+      "Die Reihe gehört in Modul 7, weil Imperium hier an einem regionalen Raum konkret wird: Militär, Siedlung, Alltag, Infrastruktur und Kulturkontakt greifen ineinander.",
+    mustKnow: [
+      "Römische Herrschaft verändert Raum durch Straßen, Brücken, Lager und Verkehrsachsen.",
+      "Imperium wirkt bis in Ernährung, Bauten, Tierhaltung und Familienalltag hinein.",
+      "Römische Ordnung überlagert lokale keltische Strukturen statt einfach im leeren Raum zu entstehen."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, ein Imperium bestehe nur aus Eroberungskarten und Schlachten."
   },
   [makeSourceKey("modul-7", "SRF: Das Römer-Experiment")]: {
     badge: "SRF-school-Film · Rekonstruktion",
     locator: "SRF school: Das Römer-Experiment",
     passage:
-      "Der Film arbeitet mit Rekonstruktion statt bloßer Beschreibung: Kochen, Werkzeuge, Gladiatorenausbildung und nachgestellte Alltagssituationen zeigen, wie stark imperiale Ordnung im Materiellen steckt. Genau deshalb ergänzt er die politische Reichsgeschichte durch Körper, Gegenstände und Routinen."
+      "Der Film arbeitet mit Rekonstruktion statt bloßer Beschreibung: Kochen, Werkzeuge, Gladiatorenausbildung und nachgestellte Alltagssituationen zeigen, wie stark imperiale Ordnung im Materiellen steckt. Genau deshalb ergänzt er die politische Reichsgeschichte durch Körper, Gegenstände und Routinen.",
+    whyHere:
+      "Der Film gehört in Modul 7, weil er Reichsgeschichte in Gegenstände, Körper und Arbeitsabläufe übersetzt.",
+    mustKnow: [
+      "Römischer Alltag wird über Experimente und Rekonstruktionen erschlossen.",
+      "Kochen, Kämpfen und Arbeiten folgen materiellen Routinen und Techniken.",
+      "Imperium zeigt sich nicht nur in Gesetzen, sondern auch in Werkzeugen, Gebäuden und Praktiken."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Alltagsgeschichte sei bloß schmückendes Beiwerk neben der politischen Geschichte."
   },
   [makeSourceKey("modul-8", "Harari-PDF")]: {
     badge: "S. 212 · Geld",
@@ -2309,7 +2513,16 @@ const sourceDetails = {
     badge: "SRF-school-Film · Sachquelle",
     locator: "SRF school: Der Münzschatz von Ueken",
     passage:
-      "Der Film verfolgt die Untersuchung von über 4000 römischen Silbermünzen aus dem Fricktal. Reinigung mit Sandstrahl- und Ultraschallgeräten, Bilder, Inschriften und Prägungen machen anschaulich, wie Historiker aus einem Fund Aussagen zu Herrschaft, Umlauf, Vermögen und möglicher Unsicherheit gewinnen."
+      "Der Film verfolgt die Untersuchung von über 4000 römischen Silbermünzen aus dem Fricktal. Reinigung mit Sandstrahl- und Ultraschallgeräten, Bilder, Inschriften und Prägungen machen anschaulich, wie Historiker aus einem Fund Aussagen zu Herrschaft, Umlauf, Vermögen und möglicher Unsicherheit gewinnen.",
+    whyHere:
+      "Der Film gehört in Modul 8, weil Geld hier als Sachquelle sichtbar wird und nicht nur als abstraktes Wirtschaftswort.",
+    mustKnow: [
+      "Über 4000 Silbermünzen bilden einen außergewöhnlich dichten Quellenfund.",
+      "Bilder, Inschriften und Prägungen verbinden Münzen mit Herrschaft und Umlauf.",
+      "Ein Schatzfund kann auf Unsicherheit, Vermögensschutz oder Krisen verweisen."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Münzen sagten nur etwas über Preise und sonst nichts aus."
   },
   [makeSourceKey("modul-8", "SRF: Grosse Völker")]: {
     badge: "dreiteilige Reihe · Fernhandel",
@@ -2332,7 +2545,16 @@ const sourceDetails = {
         title: "Grosse Völker – Die Germanen",
         note: "Siedlungen, Begegnung mit Rom, Wanderungen und kulturelle Nachwirkung."
       }
-    ]
+    ],
+    whyHere:
+      "Die Reihe gehört in Modul 8, weil Handel und Vernetzung hier nicht nur an Rom, sondern an mehreren Großräumen erklärt werden.",
+    mustKnow: [
+      "Die Karthager stehen für Seehandel, Purpur und wirtschaftliche Reichweite.",
+      "Die Araber stehen für Wissenstransfer, Wissenschaft und Fernverbindungen.",
+      "Die Germanen zeigen, dass auch Wanderung, Siedlung und Kontakt zu Rom Teil europäischer Vernetzung sind."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, historische Vernetzung sei im Kern nur eine römische oder rein europäische Leistung."
   },
   [makeSourceKey("modul-9", "Harari-PDF")]: {
     badge: "S. 251 · Religion im Raum",
@@ -2356,7 +2578,16 @@ const sourceDetails = {
         title: "Grosse Völker – Die Araber",
         note: "Islamischer Glaube, Großreich, Wissenschaft, Medizin und Mathematik in einem Zusammenhang."
       }
-    ]
+    ],
+    whyHere:
+      "Die Araber-Folge gehört in Modul 9, weil sie Religion, Wissen und Herrschaft in einem einzigen historischen Zusammenhang sichtbar macht.",
+    mustKnow: [
+      "Islam ist Teil eines politischen und kulturellen Großraums.",
+      "Mathematik, Medizin und Wissenschaft sind eng mit Bildungsnetzen verbunden.",
+      "Religion steht hier nicht gegen Wissen, sondern trägt institutionelle und kulturelle Ordnung mit."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Religion sei in vormodernen Gesellschaften nur Privatglaube oder Gegenspielerin von Wissen."
   },
   [makeSourceKey("modul-10", "SRF: Das verrückte Mittelalter")]: {
     badge: "Serienseite · viele Einzelfilme",
@@ -2403,7 +2634,16 @@ const sourceDetails = {
     relatedItems: [
       { title: "Mittelalter in der Schweiz", note: "Alltagsgeschichte in Burgen und Schlössern.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/wie-die-leute-gelebt-haben-mittelalter-in-der-schweiz" },
       { title: "Historische Spurensuche – Eine kurze Geschichte über…", note: "Vertiefung zu Mittelalter und Altem Ägypten.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/historische-spurensuche-eine-kurze-geschichte-ueber" }
-    ]
+    ],
+    whyHere:
+      "Die Serie gehört in Modul 10 als Einstieg, weil sie vorhandene Mittelalterbilder der Lernenden aufnimmt und in bearbeitbare Teilthemen zerlegt.",
+    mustKnow: [
+      "Burgen, Ritter, Turniere, Pest, Handel und Minnesang gehören zu realen historischen Themenfeldern.",
+      "Die Reihe zeigt diese Themen bewusst vereinfacht und muss deshalb im Kurs präzisiert werden.",
+      "Sie liefert einen motivierenden Zugang, aber nicht die letzte Erklärung des Mittelalters."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, ein populärer Überblick reiche bereits als ausreichendes Mittelalterwissen."
   },
   [makeSourceKey("modul-10", "SRF: Mittelalter in der Schweiz")]: {
     badge: "fünfteilige Reihe · Burgen und Schlösser",
@@ -2419,7 +2659,16 @@ const sourceDetails = {
       { title: "Schloss Spiez – Lebenswelt und Statussymbole der Schlossbewohner", note: "Kleidung, Rang, Zeichen von Stand und höfischer Welt." },
       { title: "Schloss Lenzburg – Kochen in der Schlossküche", note: "Speisen, Zutaten, Küche und Alltagsorganisation." },
       { title: "Verteidigung auf der Kyburg", note: "Rüstung, Wehrhaftigkeit und Schutzfunktion der Burg." }
-    ]
+    ],
+    whyHere:
+      "Die Reihe gehört in Modul 10, weil sie das Mittelalter über Burgen und Schlösser hinweg in konkrete Lebenswelt übersetzt.",
+    mustKnow: [
+      "Hygiene, Küche, Kleidung und Funde sind historische Quellen zur Gesellschaft.",
+      "Verteidigung gehört zur Burg, erklärt aber nicht allein das Mittelalter.",
+      "Statussymbole machen Rang und Stand sichtbar."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Mittelaltergeschichte bestehe nur aus Kriegen, Rittern und Königen."
   },
   [makeSourceKey("modul-10", "SRF: Eine kurze Geschichte über…")]: {
     badge: "dreiteilige Reihe · Folge Mittelalter",
@@ -2440,13 +2689,31 @@ const sourceDetails = {
       { title: "Eine kurze Geschichte über ... – Das Alte Ägypten", note: "Warum Ägypten rund 3000 Jahre lang bestehen konnte." },
       { title: "Eine kurze Geschichte über ... – Das Mittelalter", note: "Warum das Mittelalter weder nur dunkel noch nur romantisch war." },
       { title: "Eine kurze Geschichte über ... – Die Hexenverfolgung", note: "Wie es zur Verfolgung von rund 50'000 Menschen kommen konnte." }
-    ]
+    ],
+    whyHere:
+      "Die Reihe gehört in Modul 10, weil sie Epochen in klaren Streitfragen aufspannt und damit Klischeeprüfung erzwingt.",
+    mustKnow: [
+      "Das Mittelalter wird ausdrücklich gegen das Klischee der dunklen Epoche erzählt.",
+      "Die Ägypten-Folge bleibt für Staatlichkeit und Langzeitordnung wichtig.",
+      "Die Hexenverfolgung zeigt, wie Angst, Gewalt und Aberglaube historisch organisiert werden."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Epochen ließen sich mit einem einzigen Etikett wie dunkel, glanzvoll oder rückständig erklären."
   },
   [makeSourceKey("modul-11", "SRF: Der Kreuzzug der Kinder")]: {
     badge: "SRF-school-Film · Quellenkritik",
     locator: "SRF school: Mythos oder historischer Fakt – Der Kreuzzug der Kinder",
     passage:
-      "Der Film verfolgt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes-les-Trois-Rivières, die Reise von 1212 und die Frage, was Chroniken tatsächlich belegen. Seine Stärke liegt genau darin, dass er das Ereignis nicht nur erzählt, sondern seine historische Unsicherheit offenlegt."
+      "Der Film verfolgt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes-les-Trois-Rivières, die Reise von 1212 und die Frage, was Chroniken tatsächlich belegen. Seine Stärke liegt genau darin, dass er das Ereignis nicht nur erzählt, sondern seine historische Unsicherheit offenlegt.",
+    whyHere:
+      "Der Film gehört in Modul 11, weil er Quellenkritik nicht theoretisch, sondern an einem dramatischen Beispiel vorführt.",
+    mustKnow: [
+      "Ausgangspunkt sind zwei Jungen und die Überlieferung um das Jahr 1212.",
+      "Chroniken müssen auf Entstehungszeit, Absicht und Zuverlässigkeit geprüft werden.",
+      "Religiöse Bewegung, Gerücht und spätere Ausschmückung können historische Bilder stark verändern."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, alte Chroniken seien automatisch wahr oder historische Wahrheit bestehe nur aus dem Nacherzählen spektakulärer Geschichten."
   },
   [makeSourceKey("modul-11", "Harari-PDF")]: {
     badge: "S. 251 · Samarkand",
@@ -2470,7 +2737,16 @@ const sourceDetails = {
       { title: "Gesellschaften und Reiche", note: "Von lokalen Bündnissen bis zu Azteken und Inka." },
       { title: "Landwirtschaft und Handel", note: "Mais, Quinoa, Kartoffeln, Bohnen und kontinentale Verbreitung." },
       { title: "Kulturelles Erbe", note: "Felsbilder, Totempfähle, Schrift und Fragen der Rückführung." }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört ins Abschlussmodul, weil sie den größten Perspektivwechsel der ganzen Einheit bündelt und gegen eurozentrische Abschlusserzählungen arbeitet.",
+    mustKnow: [
+      "1492 ist ein Einschnitt, aber kein Anfang der Geschichte Amerikas.",
+      "Amerika vor Kolumbus ist durch Landwirtschaft, politische Ordnungen, Kunst und Sprachen geprägt.",
+      "Rückführung und Mitbestimmung zeigen, dass Geschichte bis in die Gegenwart umkämpft bleibt."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, die Vormoderne lasse sich am Ende der Einheit doch wieder nur aus Europa heraus bilanzieren."
   },
   [makeSourceKey("modul-12", "SRF: Anthropozän")]: {
     badge: "SRF-school-Seite · Langzeitfolgen",
@@ -2490,7 +2766,16 @@ const sourceDetails = {
       { title: "Hoffnung für die Ozeane – Helden der Meere", note: "Schutzprojekte in bedrohten Meeresräumen.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/hoffnung-fuer-die-ozeane-helden-der-meere" },
       { title: "Erfolgreiche Renaturierung – Paradiese aus Menschenhand", note: "Renaturierung als Gegenbild zur reinen Schadensgeschichte.", link: "https://www.srf.ch/sendungen/school/physik-chemie-biologie/erfolgreiche-renaturierung-paradiese-aus-menschenhand" },
       { title: "Gefährliche Desertifikation – Planet Sand", note: "Wüstenbildung und Ressourcenkonflikte als konkrete Umweltfolge.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/gefaehrliche-desertifikation-planet-sand" }
-    ]
+    ],
+    whyHere:
+      "Die Seite gehört ins Abschlussmodul, weil sie alle vorherigen Innovationsschritte als lange Vorgeschichte heutiger Umweltveränderungen lesbar macht.",
+    mustKnow: [
+      "Frühere Innovationen wirken über ihre eigene Epoche hinaus weiter.",
+      "Anthropozän ist eine Deutungsfrage nach geologisch sichtbaren Spuren menschlicher Geschichte.",
+      "SRF verbindet Diagnose und Gegenmaßnahmen, nicht nur Katastrophenerzählung."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, die Folgen vormoderner Entwicklungen endeten einfach um 1500."
   },
   [makeSourceKey("modul-12", "Harari-PDF")]: {
     badge: "S. 150 · Weltreiche und Netze",
@@ -2579,6 +2864,26 @@ function renderRelevantItems(items, label) {
           })
           .join("")}
       </ul>
+    </div>
+  `;
+}
+
+function renderSourceFocus(detail) {
+  if (!detail.whyHere && !detail.mustKnow?.length && !detail.misconception) {
+    return "";
+  }
+
+  return `
+    <div class="source-focus">
+      ${detail.whyHere ? `<p><strong>Warum genau in diesem Modul?</strong> ${cleanStudentText(detail.whyHere)}</p>` : ""}
+      ${
+        detail.mustKnow?.length
+          ? `<div class="source-list-block"><p><strong>Drei Sachinformationen, die aus dieser Ressource heraus müssen:</strong></p><ul class="source-list">${detail.mustKnow
+              .map((item) => `<li>${cleanStudentText(item)}</li>`)
+              .join("")}</ul></div>`
+          : ""
+      }
+      ${detail.misconception ? `<p><strong>Welche Fehldeutung wird korrigiert?</strong> ${cleanStudentText(detail.misconception)}</p>` : ""}
     </div>
   `;
 }
@@ -2740,6 +3045,7 @@ function renderSourceCard(source, module) {
       ${detail.locator ? `<p><strong>Verortung:</strong> ${locatorMarkup}</p>` : ""}
       ${source.title === "Harari-PDF" ? renderHarariPdfButton(detail) : ""}
       ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
+      ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>Konkrete Passage:</strong> ${passage}</p>
       ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
@@ -2819,6 +3125,7 @@ function renderFilmFoundation(module) {
                 </div>
                 ${detail.locator ? `<p><strong>Verortung:</strong> ${detail.locator}</p>` : ""}
                 ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
+                ${renderSourceFocus(detail)}
                 <p><strong>Zentrale Informationen:</strong> ${passage}</p>
                 ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf dieser SRF-Seite besonders wichtig:")}
                 ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
@@ -2927,7 +3234,7 @@ function renderContentCheck(module, state) {
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
+      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich und stütze dich ausdrücklich auf Filmgrundlage, Quellenkarten und Grundwissen des Moduls. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
       <div class="check-grid">${questions}</div>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
