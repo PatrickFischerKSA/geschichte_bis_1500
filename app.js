@@ -1324,6 +1324,429 @@ const modules = [
   }
 ];
 
+const contentChecks = {
+  "modul-1": {
+    title: "Inhaltssicherung Modul 1",
+    questions: [
+      {
+        prompt: "Was unterscheidet Geschichte im engeren Sinn von Naturgeschichte?",
+        options: [
+          "Geschichte meint kulturell geordnete menschliche Welt, Naturgeschichte nicht.",
+          "Geschichte ist einfach alles, was vor heute passiert ist.",
+          "Naturgeschichte beginnt erst mit der Schrift."
+        ],
+        correctIndex: 0,
+        explanation: "Der Kurs trennt Naturgeschichte, biologische Entwicklung und Kulturgeschichte ausdrücklich."
+      },
+      {
+        prompt: "Welche Strukturachse übernimmt die Einheit von Harari?",
+        options: [
+          "Nur die klassische Dreiteilung Antike, Mittelalter, Neuzeit.",
+          "Kognitive Revolution, Landwirtschaft und Vereinigungsprozesse.",
+          "Nur große Schlachten und Herrscher."
+        ],
+        correctIndex: 1,
+        explanation: "Hararis Großstruktur bildet die Tiefenfolie der Einheit."
+      },
+      {
+        prompt: "Warum taucht das Anthropozän schon im Einstieg auf?",
+        options: [
+          "Weil der Kurs eigentlich erst mit dem 20. Jahrhundert beginnt.",
+          "Weil es den Blick auf Langzeitfolgen menschlichen Handelns öffnet.",
+          "Weil es Hararis einziges Thema ist."
+        ],
+        correctIndex: 1,
+        explanation: "Der Begriff dient im Kurs als Langzeitperspektive, nicht als neues Kapitel ab der Moderne."
+      }
+    ]
+  },
+  "modul-2": {
+    title: "Inhaltssicherung Modul 2",
+    questions: [
+      {
+        prompt: "Welche Aussage trifft auf frühe Menschen nach Harari zu?",
+        options: [
+          "Es gab lange mehrere Menschenarten gleichzeitig.",
+          "Homo sapiens war von Anfang an allein.",
+          "Menschen waren sofort ökologisch dominant."
+        ],
+        correctIndex: 0,
+        explanation: "Gerade die Gleichzeitigkeit verschiedener Menschenarten ist ein zentrales Argument."
+      },
+      {
+        prompt: "Was macht die Ressource '1491' für dieses Modul besonders wichtig?",
+        options: [
+          "Sie zeigt frühe Migration und Anpassung außerhalb Europas.",
+          "Sie beweist, dass Menschen erst ab 1492 in Amerika lebten.",
+          "Sie behandelt ausschließlich das Mittelalter in Europa."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource erweitert die Frühgeschichte global."
+      },
+      {
+        prompt: "Warum spielt die lange Hilfsbedürftigkeit menschlicher Kinder eine Rolle?",
+        options: [
+          "Weil sie Kooperation, Erziehung und soziale Bindungen fördert.",
+          "Weil sie Geschichte verhindert.",
+          "Weil sie den Werkzeuggebrauch überflüssig macht."
+        ],
+        correctIndex: 0,
+        explanation: "Harari verbindet frühe Abhängigkeit mit sozialer Lernfähigkeit."
+      }
+    ]
+  },
+  "modul-3": {
+    title: "Inhaltssicherung Modul 3",
+    questions: [
+      {
+        prompt: "Was ist laut Harari das historisch Neue an menschlicher Sprache?",
+        options: [
+          "Sie ist lauter als jede Tierkommunikation.",
+          "Sie kann über Vorgestelltes und Abwesendes sprechen.",
+          "Sie braucht keine Gemeinschaft."
+        ],
+        correctIndex: 1,
+        explanation: "Nicht Lautstärke, sondern Abstraktionsfähigkeit ist der Schlüssel."
+      },
+      {
+        prompt: "Warum sind Mythen historisch wichtig?",
+        options: [
+          "Weil sie immer wahr sind.",
+          "Weil sie gemeinsame Ordnungen und Kooperation ermöglichen.",
+          "Weil sie nur Unterhaltung bieten."
+        ],
+        correctIndex: 1,
+        explanation: "Geteilte Vorstellungen können soziale Wirklichkeit erzeugen."
+      },
+      {
+        prompt: "Wie stützt '1491' dieses Modul?",
+        options: [
+          "Durch Beispiele für Felsbilder, Totempfähle und Schriftkultur.",
+          "Durch römische Legionen in der Schweiz.",
+          "Durch moderne Umweltpolitik."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource macht Symbolfähigkeit materiell sichtbar."
+      }
+    ]
+  },
+  "modul-4": {
+    title: "Inhaltssicherung Modul 4",
+    questions: [
+      {
+        prompt: "Welche Lebensform beschreibt das Modul vor allem?",
+        options: [
+          "Starre Stadtgesellschaften mit Bürokratie.",
+          "Mobile Gesellschaften mit Anpassung an Räume und Jahreszeiten.",
+          "Industrielle Arbeitswelten."
+        ],
+        correctIndex: 1,
+        explanation: "Jäger-und-Sammler-Gesellschaften sind hochgradig mobil und angepasst."
+      },
+      {
+        prompt: "Was zeigt '1491' über Unterkünfte früher Gesellschaften?",
+        options: [
+          "Sie waren überall gleich gebaut.",
+          "Sie waren an Klima, Mobilität und Lebensweise angepasst.",
+          "Sie bestanden fast nur aus Steinburgen."
+        ],
+        correctIndex: 1,
+        explanation: "Zelte, Lehmhäuser und Iglus zeigen funktionale Vielfalt."
+      },
+      {
+        prompt: "Warum ist mündliche Weitergabe hier zentral?",
+        options: [
+          "Weil frühe Gesellschaften kein praktisches Wissen brauchten.",
+          "Weil Orientierung, Jagd- und Umweltwissen gemeinschaftlich erinnert werden mussten.",
+          "Weil Schrift immer verboten war."
+        ],
+        correctIndex: 1,
+        explanation: "Erzählen und Erinnern sichern Überleben."
+      }
+    ]
+  },
+  "modul-5": {
+    title: "Inhaltssicherung Modul 5",
+    questions: [
+      {
+        prompt: "Warum ist Hararis Formel vom 'größten Betrug' didaktisch nützlich?",
+        options: [
+          "Weil sie zu einem abgewogenen Urteil über Landwirtschaft zwingt.",
+          "Weil Landwirtschaft eindeutig nur negativ war.",
+          "Weil danach keine Geschichte mehr passiert."
+        ],
+        correctIndex: 0,
+        explanation: "Die Zuspitzung fordert differenziertes Abwägen heraus."
+      },
+      {
+        prompt: "Welche Folge der Sesshaftigkeit ist zentral?",
+        options: [
+          "Mehr Überschüsse, aber auch neue Abhängigkeiten.",
+          "Völlige Gleichheit in allen Gesellschaften.",
+          "Ende jeder Arbeitsteilung."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul betont gerade die Ambivalenz von Sicherheit und Abhängigkeit."
+      },
+      {
+        prompt: "Was leistet 'Pfahlbauer von Pfyn' für das Modul?",
+        options: [
+          "Es macht jungsteinzeitlichen Alltag experimentell greifbar.",
+          "Es behandelt nur moderne Technik.",
+          "Es erklärt die Reformation."
+        ],
+        correctIndex: 0,
+        explanation: "Experimentalarchäologie konkretisiert Sesshaftigkeit im Alltag."
+      }
+    ]
+  },
+  "modul-6": {
+    title: "Inhaltssicherung Modul 6",
+    questions: [
+      {
+        prompt: "Wofür wird frühe Schrift in diesem Modul besonders wichtig?",
+        options: [
+          "Vor allem für Verwaltung und Buchhaltung.",
+          "Nur für Theaterstücke.",
+          "Nur für private Briefe."
+        ],
+        correctIndex: 0,
+        explanation: "Schrift erscheint hier zuerst als Verwaltungstechnik."
+      },
+      {
+        prompt: "Welche Kombination stabilisiert frühe Staaten besonders?",
+        options: [
+          "Überschuss, Verwaltung, Schrift und Legitimation.",
+          "Zufall und einzelne Heldengestalten allein.",
+          "Nur gutes Wetter."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul verbindet materielle und symbolische Ordnung."
+      },
+      {
+        prompt: "Warum wird Ägypten als Fallbeispiel genutzt?",
+        options: [
+          "Weil Nil, Beamtentum und Schrift Langzeitstabilität erklären helfen.",
+          "Weil Ägypten keine Verwaltung kannte.",
+          "Weil Ägypten nichts mit Religion zu tun hatte."
+        ],
+        correctIndex: 0,
+        explanation: "Genau diese Strukturfaktoren hebt die SRF-Ressource hervor."
+      }
+    ]
+  },
+  "modul-7": {
+    title: "Inhaltssicherung Modul 7",
+    questions: [
+      {
+        prompt: "Wie ordnen Imperien große Räume?",
+        options: [
+          "Über Infrastruktur, Militär, Recht und Verwaltung.",
+          "Nur durch Gerüchte.",
+          "Gar nicht, sie bestehen nur auf Karten."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul erklärt Imperien als reale Ordnungsmodelle."
+      },
+      {
+        prompt: "Was zeigt 'Römer in der Schweiz' besonders gut?",
+        options: [
+          "Wie Expansion Alltag, Verkehrswege und Kulturkontakt verändert.",
+          "Dass die Römer ohne lokale Räume planten.",
+          "Dass römische Herrschaft nur auf Tempeln beruhte."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource regionalisiert imperiale Strukturen."
+      },
+      {
+        prompt: "Warum ergänzt das 'Römer-Experiment' das Modul sinnvoll?",
+        options: [
+          "Weil es römischen Alltag über rekonstruierte Praxis sichtbar macht.",
+          "Weil es nur moderne Computerspiele erklärt.",
+          "Weil es ausschließlich Diplomatie der Neuzeit behandelt."
+        ],
+        correctIndex: 0,
+        explanation: "Alltagsgeschichte und materielle Kultur werden dadurch greifbar."
+      }
+    ]
+  },
+  "modul-8": {
+    title: "Inhaltssicherung Modul 8",
+    questions: [
+      {
+        prompt: "Warum kann Geld Menschen verbinden, die sich nicht kennen?",
+        options: [
+          "Weil es auf geteilter Akzeptanz und Vertrauen beruht.",
+          "Weil jedes Metall automatisch wertvoll ist.",
+          "Weil Geld keine politische Ordnung braucht."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul erklärt Geld als Vertrauensordnung."
+      },
+      {
+        prompt: "Was macht den Münzschatz von Ueken historisch bedeutsam?",
+        options: [
+          "Münzen verraten etwas über Umlauf, Herrschaft und Krisen.",
+          "Er ist nur dekorativ.",
+          "Sachquellen sagen grundsätzlich nichts aus."
+        ],
+        correctIndex: 0,
+        explanation: "Der Fund wird als auswertbare Quelle gelesen."
+      },
+      {
+        prompt: "Welche Funktion hat 'Grosse Völker' in diesem Modul?",
+        options: [
+          "Es erweitert Handel und Vernetzung über Rom hinaus.",
+          "Es ersetzt alle Quellenkritik.",
+          "Es behandelt nur lokale Dorfgeschichte."
+        ],
+        correctIndex: 0,
+        explanation: "Fernhandel und Wissenstransfer werden dadurch breiter verortet."
+      }
+    ]
+  },
+  "modul-9": {
+    title: "Inhaltssicherung Modul 9",
+    questions: [
+      {
+        prompt: "Wie wird Religion im Modul verstanden?",
+        options: [
+          "Nur als private Meinung einzelner Menschen.",
+          "Als Ordnungs- und Deutungssystem für große Gemeinschaften.",
+          "Als Gegenteil jeder Vernetzung."
+        ],
+        correctIndex: 1,
+        explanation: "Religion strukturiert Normen, Zugehörigkeit und Herrschaft."
+      },
+      {
+        prompt: "Warum beginnt Hararis Religionskapitel mit Samarkand und Mekka?",
+        options: [
+          "Um Religion räumlich als Netzwerk und Begegnung sichtbar zu machen.",
+          "Weil Europa im Mittelalter keine Rolle spielt.",
+          "Weil dort keine Händler vorkamen."
+        ],
+        correctIndex: 0,
+        explanation: "Pilgerorte und Märkte machen Vereinigungsprozesse konkret."
+      },
+      {
+        prompt: "Was stützt 'Grosse Völker' in diesem Modul?",
+        options: [
+          "Die Verbindung von Wissensleistungen, Austausch und großen Kultur Räumen.",
+          "Die Behauptung, Religion und Wissen seien immer getrennt.",
+          "Nur die Geschichte einzelner Schlachten."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource öffnet den Blick auf arabische Wissens- und Vernetzungsräume."
+      }
+    ]
+  },
+  "modul-10": {
+    title: "Inhaltssicherung Modul 10",
+    questions: [
+      {
+        prompt: "Warum ist das Bild vom 'dunklen Mittelalter' zu simpel?",
+        options: [
+          "Weil das Mittelalter zugleich harte Lebensbedingungen und große kulturelle Leistungen zeigt.",
+          "Weil im Mittelalter nichts Schwieriges geschah.",
+          "Weil es nur Burgen und Feste gab."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul arbeitet bewusst gegen einfache Klischees."
+      },
+      {
+        prompt: "Was zeigt 'Mittelalter in der Schweiz' besonders gut?",
+        options: [
+          "Alltagsgeschichte mit Hygiene, Küche, Verteidigung und Statussymbolen.",
+          "Nur abstrakte Philosophie.",
+          "Ausschließlich antike Geschichte."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource erdet die Epoche in konkreten Lebensformen."
+      },
+      {
+        prompt: "Welche Funktion hat 'Das verrückte Mittelalter' im Kurs?",
+        options: [
+          "Es dient als motivierender Einstieg, der anschließend differenziert wird.",
+          "Es ersetzt alle vertiefenden Materialien vollständig.",
+          "Es behandelt keine Hierarchien."
+        ],
+        correctIndex: 0,
+        explanation: "Humorvoller Zugang und fachliche Nachschärfung gehören zusammen."
+      }
+    ]
+  },
+  "modul-11": {
+    title: "Inhaltssicherung Modul 11",
+    questions: [
+      {
+        prompt: "Warum eignet sich der Kinderkreuzzug für Quellenkritik?",
+        options: [
+          "Weil spektakuläre Überlieferungen geprüft werden müssen.",
+          "Weil mittelalterliche Chroniken immer automatisch wahr sind.",
+          "Weil Quellenkritik nur für die Neuzeit gilt."
+        ],
+        correctIndex: 0,
+        explanation: "Das Modul trainiert genau das Prüfen von Überlieferung."
+      },
+      {
+        prompt: "Was ergänzt Hararis Samarkand-Bild in diesem Modul?",
+        options: [
+          "Die Vorstellung einer vernetzten mittelalterlichen Welt.",
+          "Die These, dass Märkte unwichtig waren.",
+          "Die Idee völliger Isolation aller Regionen."
+        ],
+        correctIndex: 0,
+        explanation: "Mittelalter erscheint hier als Kontakt- und Bewegungsraum."
+      },
+      {
+        prompt: "Welche historische Grundfrage steht im Zentrum?",
+        options: [
+          "Welche Quellen gibt es und wie zuverlässig sind sie?",
+          "Wie lautet die schönste Legende?",
+          "Welche Erzählung ist am populärsten im Internet?"
+        ],
+        correctIndex: 0,
+        explanation: "Quellenlage und Zuverlässigkeit stehen über bloßer Nacherzählung."
+      }
+    ]
+  },
+  "modul-12": {
+    title: "Inhaltssicherung Modul 12",
+    questions: [
+      {
+        prompt: "Welche Perspektivkorrektur leistet '1491' im Abschluss?",
+        options: [
+          "1492 ist Einschnitt, aber nicht Beginn aller Geschichte Amerikas.",
+          "Amerika beginnt historisch erst mit Kolumbus.",
+          "Vor 1492 gab es dort keine komplexen Gesellschaften."
+        ],
+        correctIndex: 0,
+        explanation: "Die Ressource korrigiert eurozentrische Anfangspunkte."
+      },
+      {
+        prompt: "Warum taucht das Anthropozän im Schluss erneut auf?",
+        options: [
+          "Um Langzeitfolgen früher Entwicklungen sichtbar zu machen.",
+          "Weil der Kurs plötzlich keine Geschichte mehr behandelt.",
+          "Weil nur Industriegeschichte zählt."
+        ],
+        correctIndex: 0,
+        explanation: "Frühe Innovationen werden in ihren Fernwirkungen reflektiert."
+      },
+      {
+        prompt: "Welche Langzeitlinie gehört eindeutig zur Kursbilanz?",
+        options: [
+          "Kooperation, Sesshaftigkeit und Vernetzung prägen viele Epochen.",
+          "Geschichte verläuft völlig ohne wiederkehrende Muster.",
+          "Nur einzelne Herrscher erklären alles."
+        ],
+        correctIndex: 0,
+        explanation: "Das Abschlussmodul bündelt genau solche durchgehenden Linien."
+      }
+    ]
+  }
+};
+
 function normalize(value) {
   return String(value || "")
     .toLowerCase()
@@ -1344,8 +1767,38 @@ function saveState(state) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function getModuleInteractionIds(module) {
+  return [module.task.id, module.selftest.id, module.transfer.id, `${module.id}-content-check`];
+}
+
+function getModuleProgress(state, module) {
+  const ids = getModuleInteractionIds(module);
+  const completed = ids.filter((id) => Boolean(state[id])).length;
+  return {
+    completed,
+    total: ids.length,
+    percentage: (completed / ids.length) * 100
+  };
+}
+
+function getContentCheckScore(state, moduleId) {
+  return Number(state[`${moduleId}-content-score`] || 0);
+}
+
+function isModulePassed(state, moduleId) {
+  return getContentCheckScore(state, moduleId) >= 60;
+}
+
+function isModuleUnlocked(state, moduleIndex) {
+  if (moduleIndex === 0) {
+    return true;
+  }
+
+  return isModulePassed(state, modules[moduleIndex - 1].id);
+}
+
 function updateProgress(state) {
-  const interactionIds = modules.flatMap((module) => [module.task.id, module.selftest.id, module.transfer.id]);
+  const interactionIds = modules.flatMap((module) => getModuleInteractionIds(module));
   const total = interactionIds.length;
   const completed = interactionIds.filter((id) => Boolean(state[id])).length;
   const percentage = total ? (completed / total) * 100 : 0;
@@ -1353,22 +1806,29 @@ function updateProgress(state) {
   document.getElementById("progress-bar").style.width = `${percentage}%`;
 }
 
-function createTimeline() {
+function createTimeline(state) {
   const timeline = document.getElementById("timeline");
+  timeline.innerHTML = "";
   modules.forEach((module) => {
     const link = document.createElement("a");
-    link.href = `#${module.id}`;
+    const unlocked = isModuleUnlocked(state, module.number - 1);
+    link.href = unlocked ? `#${module.id}` : "#";
+    link.className = `${unlocked ? "" : "is-locked"} ${isModulePassed(state, module.id) ? "is-ready" : ""}`.trim();
     link.innerHTML = `<strong>Modul ${module.number}</strong><span>${module.phase}</span>`;
     timeline.appendChild(link);
   });
 }
 
-function createNavigation() {
+function createNavigation(state) {
   const nav = document.getElementById("module-nav");
+  nav.innerHTML = "";
   modules.forEach((module) => {
     const link = document.createElement("a");
-    link.href = `#${module.id}`;
-    link.innerHTML = `<strong>${module.title}</strong><span>${module.era}</span>`;
+    const unlocked = isModuleUnlocked(state, module.number - 1);
+    const score = getContentCheckScore(state, module.id);
+    link.href = unlocked ? `#${module.id}` : "#";
+    link.className = `${unlocked ? "" : "is-locked"} ${isModulePassed(state, module.id) ? "is-ready" : ""}`.trim();
+    link.innerHTML = `<strong>${module.title}</strong><span>${module.era}${score ? ` · Sicherung ${Math.round(score)}%` : unlocked ? "" : " · gesperrt"}</span>`;
     nav.appendChild(link);
   });
 }
@@ -1429,16 +1889,73 @@ function renderSelftest(test) {
   `;
 }
 
+function renderStoredFeedback(stored) {
+  if (!stored) {
+    return "";
+  }
+
+  return `<div class="feedback is-visible ${stored.level}"><strong>${stored.title}</strong><p>${stored.body}</p></div>`;
+}
+
+function renderContentCheck(module, state) {
+  const check = contentChecks[module.id];
+  const questions = check.questions
+    .map((question, questionIndex) => {
+      const options = question.options
+        .map((option, optionIndex) => {
+          const checked = state[`${module.id}-content-answer-${questionIndex}`] === optionIndex ? "checked" : "";
+          return `
+            <label class="radio-item">
+              <input type="radio" name="${module.id}-content-${questionIndex}" value="${optionIndex}" ${checked} />
+              <span>${option}</span>
+            </label>
+          `;
+        })
+        .join("");
+
+      return `
+        <div class="check-question">
+          <p><strong>${questionIndex + 1}.</strong> ${question.prompt}</p>
+          <div class="radio-list">${options}</div>
+        </div>
+      `;
+    })
+    .join("");
+
+  const storedFeedback = state[`${module.id}-content-feedback`];
+
+  return `
+    <div class="selftest-box">
+      <p><strong>${check.title}:</strong> Erreiche mindestens 60 Prozent. Erst dann wird das nächste Modul freigeschaltet.</p>
+      <div class="check-grid">${questions}</div>
+      <div class="selftest-actions">
+        <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
+      </div>
+      ${renderStoredFeedback(storedFeedback)}
+    </div>
+  `;
+}
+
 function renderTakeaway(items) {
   return items.map((item) => `<div class="takeaway">${item}</div>`).join("");
 }
 
-function renderModules() {
+function renderModules(state) {
   const list = document.getElementById("module-list");
+  list.innerHTML = "";
 
-  modules.forEach((module) => {
+  modules.forEach((module, moduleIndex) => {
+    const unlocked = isModuleUnlocked(state, moduleIndex);
+    const moduleProgress = getModuleProgress(state, module);
+    const contentScore = getContentCheckScore(state, module.id);
+    const contentStatus = isModulePassed(state, module.id)
+      ? `Inhaltssicherung bestanden: ${Math.round(contentScore)}%`
+      : contentScore
+        ? `Inhaltssicherung noch offen: ${Math.round(contentScore)}%`
+        : "Inhaltssicherung noch nicht bearbeitet";
+
     const section = document.createElement("section");
-    section.className = "panel module-card";
+    section.className = `panel module-card ${unlocked ? "" : "is-locked"}`.trim();
     section.id = module.id;
     section.innerHTML = `
       <header class="module-header">
@@ -1459,8 +1976,22 @@ function renderModules() {
             <p class="section-kicker">Leitfrage</p>
             <p>${module.guidingQuestion}</p>
           </div>
+          <div class="module-progress-card">
+            <strong>Modulfortschritt</strong>
+            <span>${moduleProgress.completed} von ${moduleProgress.total} Bausteinen bearbeitet</span>
+            <div class="progress-track compact" aria-hidden="true">
+              <span style="width: ${moduleProgress.percentage}%"></span>
+            </div>
+            <p class="module-progress-status ${isModulePassed(state, module.id) ? "is-ready" : ""}">${contentStatus}</p>
+          </div>
         </div>
       </header>
+
+      ${
+        unlocked
+          ? ""
+          : `<div class="module-lock-note"><p><strong>Gesperrt:</strong> Dieses Modul wird freigeschaltet, sobald du im vorherigen Modul in der Inhaltssicherung mindestens 60 Prozent erreichst.</p></div>`
+      }
 
       <div class="module-grid">
         <section class="module-section">
@@ -1505,6 +2036,11 @@ function renderModules() {
           <p class="section-kicker">8. Transferfrage</p>
           ${renderShortAnswerBox(module.transfer, "Transferfrage")}
         </section>
+
+        <section class="module-section">
+          <p class="section-kicker">9. Inhaltssicherung</p>
+          ${renderContentCheck(module, state)}
+        </section>
       </div>
     `;
 
@@ -1514,6 +2050,7 @@ function renderModules() {
 
 function renderSourceCatalog() {
   const container = document.getElementById("source-catalog");
+  container.innerHTML = "";
   sourceCatalog.forEach((source) => {
     const card = document.createElement("article");
     card.className = "catalog-card";
@@ -1622,23 +2159,36 @@ function bindShortAnswerTasks(state) {
       answerField.value = state[`${task.id}-text`];
     }
 
+    if (state[`${task.id}-feedback`]) {
+      const stored = state[`${task.id}-feedback`];
+      feedbackBox.className = `feedback is-visible ${stored.level}`;
+      feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
+    }
+
     checkButton.addEventListener("click", () => {
       const result = evaluateTask(answerField.value, task);
       feedbackBox.className = `feedback is-visible ${result.level}`;
       feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
       state[task.id] = true;
       state[`${task.id}-text`] = answerField.value;
+      state[`${task.id}-feedback`] = result;
       saveState(state);
-      updateProgress(state);
+      renderApp(state);
     });
 
     showButton.addEventListener("click", () => {
+      const result = {
+        level: "mid",
+        title: "Musterantwort",
+        body: task.sampleAnswer
+      };
       feedbackBox.className = "feedback is-visible mid";
-      feedbackBox.innerHTML = `<strong>Musterantwort</strong><p>${task.sampleAnswer}</p>`;
+      feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
       state[task.id] = true;
       state[`${task.id}-text`] = answerField.value;
+      state[`${task.id}-feedback`] = result;
       saveState(state);
-      updateProgress(state);
+      renderApp(state);
     });
   });
 }
@@ -1648,37 +2198,124 @@ function bindSelftests(state) {
     const test = module.selftest;
     const button = document.querySelector(`[data-selftest="${test.id}"]`);
     const feedbackBox = document.querySelector(`[data-feedback="${test.id}"]`);
+    const selectedValue = state[`${test.id}-selected`];
+
+    if (selectedValue !== undefined && selectedValue !== null) {
+      const selectedInput = document.querySelector(`input[name="${test.id}"][value="${selectedValue}"]`);
+      if (selectedInput) {
+        selectedInput.checked = true;
+      }
+    }
+
+    if (state[`${test.id}-feedback`]) {
+      const stored = state[`${test.id}-feedback`];
+      feedbackBox.className = `feedback is-visible ${stored.level}`;
+      feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
+    }
 
     button.addEventListener("click", () => {
       const selected = document.querySelector(`input[name="${test.id}"]:checked`);
 
       if (!selected) {
+        const result = {
+          level: "low",
+          title: "Noch keine Auswahl",
+          body: "Wähle zuerst eine Antwortmöglichkeit aus und prüfe sie dann."
+        };
         feedbackBox.className = "feedback is-visible low";
-        feedbackBox.innerHTML =
-          "<strong>Noch keine Auswahl</strong><p>Wähle zuerst eine Antwortmöglichkeit aus und prüfe sie dann.</p>";
+        feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+        state[`${test.id}-feedback`] = result;
+        saveState(state);
         return;
       }
 
       const option = test.options[Number(selected.value)];
-      feedbackBox.className = `feedback is-visible ${option.correct ? "good" : "mid"}`;
-      feedbackBox.innerHTML = `<strong>${option.correct ? "Treffer" : "Noch nicht ganz"}</strong><p>${option.feedback}</p>`;
+      const result = {
+        level: option.correct ? "good" : "mid",
+        title: option.correct ? "Treffer" : "Noch nicht ganz",
+        body: option.feedback
+      };
+      feedbackBox.className = `feedback is-visible ${result.level}`;
+      feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
       state[test.id] = true;
+      state[`${test.id}-selected`] = Number(selected.value);
+      state[`${test.id}-feedback`] = result;
       saveState(state);
-      updateProgress(state);
+      renderApp(state);
     });
   });
 }
 
-function init() {
-  const state = loadState();
-  createTimeline();
-  createNavigation();
-  renderModules();
+function bindContentChecks(state) {
+  modules.forEach((module) => {
+    const button = document.querySelector(`[data-content-check="${module.id}"]`);
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const check = contentChecks[module.id];
+      let correctCount = 0;
+
+      check.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="${module.id}-content-${questionIndex}"]:checked`);
+        const selectedValue = selected ? Number(selected.value) : null;
+        state[`${module.id}-content-answer-${questionIndex}`] = selectedValue;
+        if (selectedValue === question.correctIndex) {
+          correctCount += 1;
+        }
+      });
+
+      const totalCount = check.questions.length;
+      const percent = Math.round((correctCount / totalCount) * 100);
+      const bestPercent = Math.max(percent, getContentCheckScore(state, module.id));
+      const wrongDetails = check.questions
+        .map((question, questionIndex) => {
+          const selectedValue = state[`${module.id}-content-answer-${questionIndex}`];
+          if (selectedValue === question.correctIndex) {
+            return null;
+          }
+
+          return `${questionIndex + 1}. ${question.explanation}`;
+        })
+        .filter(Boolean);
+
+      const body = percent >= 60
+        ? `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Das nächste Modul ist jetzt freigeschaltet.${wrongDetails.length ? ` Prüfe trotzdem noch: ${wrongDetails.join(" ")}` : ""}`
+        : `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Für die Freischaltung brauchst du mindestens 60%. Wiederhole besonders: ${wrongDetails.join(" ")}`;
+
+      state[`${module.id}-content-score`] = bestPercent;
+      state[`${module.id}-content-feedback`] = {
+        level: bestPercent >= 60 ? "good" : percent >= 34 ? "mid" : "low",
+        title: bestPercent >= 60 ? "Inhalt gesichert" : "Inhalt noch nicht gesichert",
+        body:
+          bestPercent >= 60 && percent < 60
+            ? `${body} Deine frühere Bestleistung bleibt jedoch gespeichert, deshalb bleibt das nächste Modul offen.`
+            : body
+      };
+      state[`${module.id}-content-check`] = bestPercent >= 60;
+
+      saveState(state);
+      renderApp(state);
+    });
+  });
+}
+
+function renderApp(state) {
+  createTimeline(state);
+  createNavigation(state);
+  renderModules(state);
   renderSourceCatalog();
   bindSourceToggles();
   bindShortAnswerTasks(state);
   bindSelftests(state);
+  bindContentChecks(state);
   updateProgress(state);
+}
+
+function init() {
+  const state = loadState();
+  renderApp(state);
 }
 
 init();

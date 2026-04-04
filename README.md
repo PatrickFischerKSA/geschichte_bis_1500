@@ -13,10 +13,12 @@ werden.
 - 12 vollständig ausgearbeitete Module
 - jedes Modul mit fester Struktur:
   Einstieg, Wissensinput, interaktive Quelle, Aufgaben, Vertiefung, Selbsttest, Merkkasten,
-  Transferfrage
+  Transferfrage, Inhaltssicherung
 - Textfragen mit Musterantworten
 - qualifiziertes Sofortfeedback auf Basis von Kriterien
 - Fortschrittsanzeige im Browser
+- Modulfreischaltung: das nächste Modul öffnet sich erst nach mindestens 60 Prozent in der
+  Inhaltssicherung
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
 
 ## Quellenbasis
