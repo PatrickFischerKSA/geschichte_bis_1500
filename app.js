@@ -2135,6 +2135,7 @@ const sourceDetails = {
     badge: "S. 132 · Kooperationsnetze",
     locator: "Harari-PDF, S. 132",
     pdfPage: 132,
+    pdfSearch: "erfundene Ordnungen",
     quote: "„erfundene Ordnungen“",
     passage:
       "Harari erklärt große Reiche und Gesellschaften als Kooperationsnetze, die nicht auf Instinkt, sondern auf gemeinsamen Glaubensvorstellungen beruhen. Genau dieser Gedanke trägt im Kurs die Unterscheidung zwischen bloßer Vergangenheit und Geschichte als menschlich geordneter Welt."
@@ -2149,6 +2150,7 @@ const sourceDetails = {
     badge: "S. 30 · Frühe Sapiens",
     locator: "Harari-PDF, S. 30",
     pdfPage: 30,
+    pdfSearch: "kaum einen Vorteil",
     quote: "„kaum einen Vorteil“",
     passage:
       "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die äußerlich modern wirken, gegenüber anderen Menschenarten aber zunächst keinen klaren Vorsprung hatten. Damit rückt er Ausbreitung nicht als Selbstläufer, sondern als offenes historisches Problem in den Blick."
@@ -2163,6 +2165,7 @@ const sourceDetails = {
     badge: "S. 33 · Kognitive Revolution",
     locator: "Harari-PDF, S. 33",
     pdfPage: 33,
+    pdfSearch: "kognitive Revolution",
     quote: "„kognitive Revolution“",
     passage:
       "Auf dieser Seite benennt Harari den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist die Entstehung neuer Denk- und Kommunikationsformen, durch die Homo sapiens über Abwesendes, Zukünftiges und gemeinsam Vorgestelltes sprechen konnte."
@@ -2183,6 +2186,7 @@ const sourceDetails = {
     badge: "S. 100 · Vor der Sesshaftigkeit",
     locator: "Harari-PDF, S. 100",
     pdfPage: 100,
+    pdfSearch: "Zweieinhalb Millionen Jahre lang",
     quote: "„Zweieinhalb Millionen Jahre lang“",
     passage:
       "Harari hält fest, dass Menschen über extrem lange Zeit von Pflanzen und Tieren lebten, die ohne menschliche Eingriffe existierten. Die Stelle eignet sich hier als harte Erinnerung daran, dass Jäger-und-Sammler-Gesellschaften nicht Randphänomen, sondern die längste normale Lebensform der Menschheit waren."
@@ -2191,6 +2195,7 @@ const sourceDetails = {
     badge: "S. 100 · Streitstelle",
     locator: "Harari-PDF, S. 100",
     pdfPage: 100,
+    pdfSearch: "Der größte Betrug der Geschichte",
     quote: "„Der größte Betrug der Geschichte“",
     passage:
       "Harari überschreibt das Kapitel zur Landwirtschaft mit einer bewussten Provokation. Dahinter steht die These, dass Sesshaftigkeit, Ackerbau und Viehzucht zwar Überschüsse und größere Siedlungen ermöglichten, zugleich aber härtere Arbeit, stärkere Abhängigkeit und neue Ungleichheiten hervorbrachten."
@@ -2205,6 +2210,7 @@ const sourceDetails = {
     badge: "S. 155–161 · Schrift und Bürokratie",
     locator: "Harari-PDF, S. 155 und S. 161",
     pdfPage: 155,
+    pdfSearch: "mit der Stimme ihrer Protagonisten",
     quote: "„mit der Stimme ihrer Protagonisten“",
     passage:
       "Harari erklärt erstens, dass Geschichte mit der Erfindung der Schrift die Stimme ihrer Protagonisten hörbar macht. Zweitens verknüpft er Schrift ausdrücklich mit Steuerbuchhaltung und bürokratischen Systemen. Genau diese Verbindung von Schreiben, Zählen und Organisieren trägt das Modul zu frühen Staaten."
@@ -2246,6 +2252,7 @@ const sourceDetails = {
     badge: "S. 212 · Geld",
     locator: "Harari-PDF, S. 212",
     pdfPage: 212,
+    pdfSearch: "Der Geruch des Geldes",
     quote: "„Der Geruch des Geldes“",
     passage:
       "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Die Passage macht klar, dass Geld nicht einfach durch Material wirkt, sondern nur dann, wenn Menschen ihm gemeinsam Wert und Tauschfähigkeit zuschreiben."
@@ -2281,6 +2288,7 @@ const sourceDetails = {
     badge: "S. 251 · Religion im Raum",
     locator: "Harari-PDF, S. 251",
     pdfPage: 251,
+    pdfSearch: "Auf dem mittelalterlichen Markt von Samarkand",
     quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
     passage:
       "Harari beginnt das Religionskapitel nicht mit einer Definition, sondern mit dem Markt von Samarkand. Dort treffen Händler, Steppenkrieger, Münzen, Seide und Menschen aus Ost, West, Nord und Süd aufeinander. Religion erscheint so von Anfang an als Teil vernetzter Räume und nicht bloß als innerer Glaube."
@@ -2375,6 +2383,7 @@ const sourceDetails = {
     badge: "S. 251 · Samarkand",
     locator: "Harari-PDF, S. 251",
     pdfPage: 251,
+    pdfSearch: "Auf dem mittelalterlichen Markt von Samarkand",
     quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
     passage:
       "Die Stelle versammelt Seide, Goldmünzen, Sklaven, Händler und Menschen aus verschiedenen Weltregionen in einem einzigen Bild. Für das Modul ist das wichtig, weil Kreuzzüge, Märkte, Pilgerwege und Fernhandel nicht getrennte Geschichten sind, sondern in denselben Räumen zusammentreffen."
@@ -2395,6 +2404,7 @@ const sourceDetails = {
     badge: "S. 150 · Weltreiche und Netze",
     locator: "Harari-PDF, S. 150",
     pdfPage: 150,
+    pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
     quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
     passage:
       "Harari verwendet an dieser Stelle das gemeinsame Fußballspiel als Vergleich dafür, wie große geteilte Ordnungen funktionieren. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Das eignet sich im Abschlussmodul als kurze Formel für die großen Verbindungslinien des Kurses."
@@ -2405,12 +2415,20 @@ function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
 
-function getHarariPdfLink(page) {
+function getHarariPdfLink(page, search) {
   const base = isHarariPdfAvailable() ? HARARI_PDF_URL : HARARI_LOCAL_PREVIEW_BASE;
+  const params = [];
+  if (page) {
+    params.push(`page=${page}`);
+    params.push("zoom=page-fit");
+  }
+  if (search) {
+    params.push(`search=${encodeURIComponent(search)}`);
+  }
   if (!page) {
     return base;
   }
-  return `${base}#page=${page}`;
+  return `${base}#${params.join("&")}`;
 }
 
 function isHarariPdfAvailable() {
@@ -2430,11 +2448,11 @@ function renderHarariPdfButton(detail) {
 
   return `
     <div class="source-actions">
-      <a class="btn primary" href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
+      <a class="btn primary" href="${getHarariPdfLink(detail.pdfPage, detail.pdfSearch)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
       <span class="source-locator-note">${
         isLocal
-          ? "springt in deine lokale PDF an die passende Stelle"
-          : "springt auf deine lokale Vorschau unter 127.0.0.1:4173, wo die PDF bereitliegt"
+          ? "springt in deine lokale PDF an die passende Stelle und sucht den Ausdruck im Text"
+          : "springt auf deine lokale Vorschau unter 127.0.0.1:4173, oeffnet die Zielseite und sucht den Ausdruck im Text"
       }</span>
     </div>
   `;
@@ -2600,7 +2618,7 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
-  const harariPdfLink = source.title === "Harari-PDF" ? getHarariPdfLink(detail.pdfPage) : null;
+  const harariPdfLink = source.title === "Harari-PDF" ? getHarariPdfLink(detail.pdfPage, detail.pdfSearch) : null;
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
       ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
