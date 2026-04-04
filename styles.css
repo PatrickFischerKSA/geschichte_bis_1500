@@ -1007,6 +1007,13 @@ p {
   font-style: italic;
 }
 
+.source-locator-note {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .scene-hero,
 .scene-side {
   position: relative;
