@@ -37,9 +37,15 @@ Quellenbasis mit Einsatzfunktion aufgeführt.
 3. Antworten direkt in die Textfelder schreiben
 4. `Antwort prüfen` oder `Musterantwort zeigen` verwenden
 
+## Zusatzseite für Lehrpersonen
+
+- `lehrpersonen.html`: Modulmatrix, Zeitplanung, Kompetenzübersicht, Differenzierung und
+  Vorschläge für Leistungsnachweise
+
 ## Dateiübersicht
 
 - `index.html`: Oberfläche der Lernumgebung
+- `lehrpersonen.html`: didaktische Begleitseite für Lehrpersonen
 - `styles.css`: Layout und Gestaltung
 - `app.js`: Moduldaten, Renderlogik, Sofortfeedback und Fortschritt
 - `.github/workflows/pages.yml`: automatische Veröffentlichung über GitHub Pages

@@ -162,6 +162,13 @@ p {
   font-size: 1.05rem;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
 .compact {
   margin-top: 14px;
   color: var(--muted);
@@ -311,11 +318,34 @@ p {
   padding: 26px;
 }
 
+.teacher-content {
+  grid-template-columns: 1fr;
+}
+
+.teacher-summary {
+  display: grid;
+  gap: 14px;
+}
+
+.summary-item {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 251, 246, 0.84);
+}
+
 .structure-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
 }
 
 .structure-grid article {
@@ -567,11 +597,46 @@ p {
   word-break: break-word;
 }
 
+.matrix-table {
+  margin-top: 18px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.matrix-row > div {
+  padding: 14px 16px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 251, 246, 0.8);
+}
+
+.matrix-row > div:last-child {
+  border-right: none;
+}
+
+.matrix-head > div {
+  font-weight: 700;
+  color: var(--navy);
+  background: rgba(240, 232, 221, 0.96);
+}
+
+.matrix-table .matrix-row:last-child > div {
+  border-bottom: none;
+}
+
 @media (max-width: 1180px) {
   .hero,
   .layout,
   .module-header,
-  .structure-grid {
+  .structure-grid,
+  .teacher-grid {
     grid-template-columns: 1fr;
   }
 
@@ -581,6 +646,14 @@ p {
 
   .hero-facts {
     grid-template-columns: 1fr;
+  }
+
+  .matrix-row {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-row > div {
+    border-right: none;
   }
 }
 
