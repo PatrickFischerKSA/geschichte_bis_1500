@@ -141,9 +141,10 @@ const modules = [
       "erste Verbindungslinien zwischen frühen Veränderungen und späteren Weltordnungen erkennen"
     ],
     input: [
-      "Zu Beginn unterscheiden wir drei Ebenen. Erstens gibt es Naturgeschichte: Dazu gehören Erde, Klima, Gesteine, Tiere und Pflanzen. Zweitens gibt es die Entwicklung des Menschen als Lebewesen. Drittens gibt es Geschichte im engeren Sinn: Sie beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Symbole, Erinnerungen und gemeinsame Vorstellungen gestalten.",
-      "Ein Historiker namens Yuval Noah Harari schlägt in seinem Buch vor, Menschheitsgeschichte nicht nur nach Epochen, sondern auch nach großen Veränderungen zu betrachten. Man muss ihn nicht kennen, um mit dem Kurs arbeiten zu können. Wichtig ist nur die Grundidee: Manche Veränderungen wirken so stark, dass sie viele spätere Entwicklungen vorbereiten, zum Beispiel Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld oder Religion.",
-      "Die SRF-Ressource zum Anthropozän hilft als Ausblick. Sie zeigt, dass frühe menschliche Eingriffe nicht einfach folgenlos bleiben. Wer Feuer nutzt, Wälder rodet, Felder anlegt, Metalle verarbeitet oder Städte baut, verändert die Welt langfristig. Darum beginnt der Kurs mit Grundbegriffen und nicht sofort mit einzelnen Reichen oder Herrschern."
+      "Zu Beginn unterscheiden wir drei Ebenen. Erstens gibt es Naturgeschichte. Dazu gehören die Entstehung der Erde, Veränderungen des Klimas, Gesteine, Tiere und Pflanzen. Zweitens gibt es die Entwicklung des Menschen als Lebewesen. Hier geht es um Evolution, verschiedene Menschenarten und körperliche Veränderungen. Drittens gibt es Geschichte im engeren Sinn. Sie beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Symbole, Erinnerungen und gemeinsame Vorstellungen gestalten.",
+      "Diese Unterscheidung ist wichtig, weil Geschichtsunterricht nicht einfach alles Vergangene in einen Topf wirft. Ein Vulkanausbruch oder die Eiszeit gehören zwar zur Vergangenheit, aber noch nicht automatisch zur Geschichte im engeren Sinn. Historisch wird es dort, wo Menschen handeln, Regeln erfinden, Werkzeuge bewusst einsetzen, Wissen weitergeben und sich in Gruppen organisieren. Geschichte ist deshalb immer auch eine Geschichte von Kultur.",
+      "Für diesen Kurs ist außerdem wichtig, dass wir nicht nur Jahr für Jahr oder Reich für Reich vorgehen. Stattdessen arbeiten wir mit großen Veränderungen, die viele spätere Entwicklungen vorbereiten. Dazu gehören zum Beispiel Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion. Solche Veränderungen helfen uns, sehr lange Zeiträume besser zu verstehen.",
+      "Die SRF-Ressource zum Anthropozän öffnet dafür den Blick in die Ferne. Sie zeigt, dass menschliches Handeln Folgen hat, die weit über den Augenblick hinausgehen. Wer Feuer nutzt, Wälder rodet, Felder anlegt, Metalle verarbeitet oder Städte baut, verändert die Welt dauerhaft. Darum beginnt der Kurs mit Grundbegriffen und Entwicklungslinien und nicht sofort mit einzelnen Herrschern oder Kriegen."
     ],
     sources: [
       {
@@ -239,9 +240,10 @@ const modules = [
       "Ausbreitung des Menschen als globale Migrationsgeschichte lesen"
     ],
     input: [
-      "Hararis Kapitel 1 beschreibt Homo sapiens zunächst als 'ziemlich unauffälliges Tier'. Zentral ist die Einsicht, dass es lange mehrere Menschenarten gleichzeitig gab: Neandertaler, Homo erectus, Denisova-Menschen und andere. Das rückt den modernen Menschen aus einer linearen Fortschrittserzählung heraus.",
-      "Biologisch wichtig sind großer Energiebedarf des Gehirns, freie Hände durch den aufrechten Gang und die lange Hilfsbedürftigkeit menschlicher Kinder. Gerade diese Hilfsbedürftigkeit fördert Kooperation, Erziehung und soziale Bindungen. Der Mensch ist also nicht trotz, sondern wegen seiner Abhängigkeit historisch erfolgreich.",
-      "Die SRF-Ressource zu '1491' ergänzt diesen Blick global: Sie erinnert daran, dass Menschen Amerika schon vor 18 000 bis 20 000 Jahren erreichen, auf unterschiedlichen Routen einwandern und ihre Lebensweisen kreativ an neue Räume anpassen. Migration ist daher kein Randthema, sondern Grundstruktur der Menschheitsgeschichte."
+      "Wenn wir an frühe Menschen denken, stellen wir uns oft eine einfache Entwicklungslinie vor: erst primitive Vorformen, dann irgendwann den modernen Menschen. So einfach war es aber nicht. Über lange Zeit lebten mehrere Menschenarten gleichzeitig. Dazu gehörten zum Beispiel Neandertaler, Homo erectus, Denisova-Menschen und Homo sapiens. Der heutige Mensch war also nicht von Anfang an allein auf der Welt.",
+      "Außerdem war Homo sapiens zunächst kein unaufhaltsamer Sieger. Frühe Menschen waren über sehr lange Zeit nur ein Teil vieler Tier- und Menschenwelten. Sie beherrschten die Erde nicht einfach sofort. Das macht die eigentliche historische Frage spannend: Warum setzte sich gerade diese Menschenart später in so vielen Räumen durch?",
+      "Ein Teil der Antwort liegt in biologischen Voraussetzungen. Das menschliche Gehirn ist leistungsfähig, braucht aber viel Energie. Der aufrechte Gang macht die Hände frei, bringt aber auch neue Belastungen mit sich. Menschenkinder bleiben lange hilfsbedürftig. Genau dadurch entstehen enge Bindungen, gemeinsames Lernen und soziale Abhängigkeiten. Der Mensch ist also nicht trotz, sondern auch wegen seiner Abhängigkeit erfolgreich.",
+      "Die SRF-Ressource zu '1491' ergänzt diesen Blick global. Sie erinnert daran, dass Menschen schon sehr früh große Räume erschlossen, neue Wege fanden und sich an sehr unterschiedliche Umwelten anpassten. Migration ist daher kein Randthema der Geschichte, sondern ein Grundmuster. Menschen bewegen sich, lernen neue Räume kennen und verändern dabei ihre Lebensweisen."
     ],
     sources: [
       {
@@ -337,9 +339,10 @@ const modules = [
       "frühe Kunst als Ausdruck symbolischer Welterzeugung deuten"
     ],
     input: [
-      "Hararis Kapitel zur kognitiven Revolution fragt nicht bloß nach Lautsprache, sondern nach ihrem historischen Mehrwert. Tiere warnen vor Gefahren oder weisen auf Futter hin. Menschen können zusätzlich von Abwesendem, Vergangenem, Zukünftigem und Vorgestelltem sprechen. Darin liegt die Grundlage für Regeln, Götter, Grenzen, Stämme, Reiche und Unternehmen.",
-      "Besonders didaktisch ergiebig ist Hararis Gedanke der 'juristischen Fiktionen': Gruppen halten sich an Ordnungen, weil sie gemeinsam an sie glauben. Im Unterricht wird daraus die Brücke zu späteren Themen wie Staat, Geld, Kirche und Imperium.",
-      "Die SRF-Ressource '1491' liefert dafür starkes Bildmaterial: Felsbilder, Totempfähle und Mayaschrift verweisen darauf, dass Kulturen Welt nicht nur wahrnehmen, sondern symbolisch gestalten. Frühgeschichte ist daher keine sprachlose Vorstufe, sondern bereits eine Sinnwelt."
+      "Mit Sprache ist hier nicht bloß gemeint, dass Menschen Laute bilden können. Entscheidend ist, worüber sie sprechen können. Tiere können warnen, locken oder Signale geben. Menschen können zusätzlich über Vergangenes, Zukünftiges, Abwesendes und Vorgestelltes reden. Sie können also nicht nur auf die Welt reagieren, sondern gemeinsame Vorstellungen von der Welt entwickeln.",
+      "Genau darin liegt ein historischer Wendepunkt. Wenn Menschen über Dinge sprechen können, die man nicht direkt sieht, dann können sie Regeln aufstellen, Zugehörigkeit definieren, Aufgaben verteilen und Geschichten über ihre Herkunft erzählen. So entstehen Mythen, Verbote, Rituale und gemeinsame Identitäten. Sprache macht also nicht nur Verständigung möglich, sondern Ordnung.",
+      "Das ist wichtig, weil viele spätere Entwicklungen genau darauf aufbauen. Staaten funktionieren nicht nur mit Waffen, sondern auch mit Gesetzen. Geld funktioniert nicht nur als Metall, sondern als gemeinsam anerkannter Wert. Religion wirkt nicht nur innerlich, sondern auch durch geteilte Vorstellungen von Welt und Gemeinschaft. All das setzt voraus, dass Menschen an dieselben Dinge glauben oder sich zumindest darauf beziehen können.",
+      "Die SRF-Ressource '1491' hilft, das sichtbar zu machen. Felsbilder, Totempfähle, Schriftzeichen und andere kulturelle Spuren zeigen, dass Menschen ihre Welt nicht nur bewohnen, sondern deuten. Frühgeschichte ist deshalb keine stumme Vorstufe, sondern bereits eine Welt aus Zeichen, Bedeutungen und gemeinsamen Erzählungen."
     ],
     sources: [
       {
@@ -434,9 +437,10 @@ const modules = [
       "mündliche Wissensweitergabe und Spiritualität einordnen"
     ],
     input: [
-      "Das Modul vertieft die Welt vor der Sesshaftigkeit. Jäger-und-Sammler-Gruppen lebten in kleineren Verbänden, bewegten sich saisonal und passten Ernährung, Werkzeuge und Unterkünfte an ihre Umgebung an. Hararis Struktur hilft hier, weil sie diese Epoche nicht als Defizit, sondern als eigenständige Lebensform auffasst.",
-      "Die SRF-Ressource '1491' ist didaktisch besonders wertvoll, weil sie unterschiedliche Formen der Anpassung sichtbar macht: Zelte, Lehmhäuser und Iglus entstehen nicht zufällig, sondern als Antworten auf Klima, Mobilität und Lebensweise. Ebenso wichtig ist die Verbindung von Jagd und Spiritualität.",
-      "Damit lässt sich im Unterricht zeigen, dass frühe Gesellschaften hoch kompetent waren: Sie verfügten über Landschaftswissen, Tierbeobachtung, kollektive Erinnerung und flexible Techniken. Diese Kompetenzen verschwinden nicht einfach mit der Landwirtschaft, sondern werden teilweise überformt."
+      "Bevor Menschen sesshaft wurden, lebten sie sehr lange in kleineren, mobilen Gruppen. Sie zogen nicht planlos umher, sondern bewegten sich oft nach Jahreszeiten, Tierwanderungen, Wasserstellen oder Pflanzenvorkommen. Diese Lebensweise verlangte ständige Beobachtung der Umwelt und eine gute Abstimmung innerhalb der Gruppe.",
+      "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Ihre Lebensform konnte sehr anpassungsfähig und vielseitig sein. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen brauchte man andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Die SRF-Ressource '1491' zeigt genau diese Vielfalt sehr anschaulich.",
+      "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Erzählen, Zeigen, Nachahmen und Rituale werden dadurch zu wichtigen Techniken des Überlebens.",
+      "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging."
     ],
     sources: [
       {
@@ -532,9 +536,10 @@ const modules = [
       "Jungsteinzeitliche Alltagswelt konkret fassen"
     ],
     input: [
-      "Harari beschreibt die landwirtschaftliche Revolution als radikalen Wendepunkt: Menschen konzentrieren ihre Arbeit auf wenige Pflanzen und Tiere, bauen Vorräte auf und binden sich an Orte. Das erzeugt Bevölkerungswachstum, aber auch neue Abhängigkeiten, härtere Arbeitsrhythmen und Verwundbarkeit gegenüber Ernteausfällen.",
-      "Die SRF-Ressource 'Pfahlbauer von Pfyn' macht diesen Wandel lebensweltlich zugänglich. Hütten, Werkzeuge, Kleidung und Nahrung erscheinen dort nicht als Vokabelliste, sondern als rekonstruierte Alltagspraxis. Experimentalarchäologie hilft hier, historische Lebensbedingungen zu konkretisieren.",
-      "Gerade aus der Kombination beider Ressourcen entsteht ein gutes Unterrichtsgespräch: Landwirtschaft ist kein lineares Glücksversprechen. Sie schafft Versorgungsspielräume und zugleich neue Risiken, soziale Unterschiede und Verwaltungsnotwendigkeiten."
+      "Mit Landwirtschaft verändert sich das Leben tiefgreifend. Menschen bauen nun gezielt Pflanzen an, halten Tiere, legen Vorräte an und bleiben länger an einem Ort. Dadurch entstehen feste Häuser, Dörfer und eine engere Bindung an Boden, Wasser und Jahreszeiten. Aus Bewegung wird stärkeres Bleiben, aus flexibler Nahrungssuche wird planbare, aber auch riskante Erzeugung.",
+      "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in größeren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
+      "Aber derselbe Wandel hat auch einen Preis. Wer von wenigen Pflanzen oder Tierarten lebt, wird von Ernten, Wetter und Krankheiten stärker abhängig. Harte körperliche Arbeit nimmt oft zu. Besitz, Felder und Vorräte können Ungleichheiten fördern. Aus gemeinsamer Nutzung entstehen leichter Konflikte um Land, Wasser und Reichtum.",
+      "Die SRF-Ressource 'Pfahlbauer von Pfyn' macht das konkret. Dort sieht man nicht bloß abstrakte Begriffe wie Sesshaftigkeit oder Jungsteinzeit, sondern Hütten, Werkzeuge, Kleidung, Nahrung und tägliche Arbeit. Genau so wird verständlich, dass Landwirtschaft kein einfaches Glücksversprechen ist, sondern ein tiefgreifender Umbruch mit Gewinnen und Verlusten."
     ],
     sources: [
       {
@@ -630,9 +635,10 @@ const modules = [
       "Ägypten als Fallbeispiel langfristiger Stabilität deuten"
     ],
     input: [
-      "Hararis Kapitel 'Pyramiden bauen', 'Speicher voll' und die Passage zur Schrift machen deutlich: Sobald Nahrung, Arbeit und Besitz in großem Maßstab organisiert werden, braucht es Listen, Zuständigkeiten und Zeichen. Schrift entsteht zunächst nicht primär als Literatur, sondern als Werkzeug von Verwaltung und Buchführung.",
-      "Die SRF-Ressource 'Eine kurze Geschichte über…' beschreibt das Alte Ägypten als außergewöhnlich langlebige Ordnung. Nil, Beamtentum und Hieroglyphenschrift erscheinen dort als zentrale Gründe für Stabilität. Dadurch wird sichtbar, dass Staaten nicht nur durch Gewalt, sondern durch Organisation und symbolische Herrschaft zusammengehalten werden.",
-      "Didaktisch entscheidend ist: Hochkultur meint nicht nur Pyramiden und Pharaonen, sondern ein komplexes Zusammenspiel aus Nahrung, Arbeitsteilung, Religion, Kalenderwissen und Verwaltung."
+      "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je größer eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Maße, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
+      "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
+      "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil schafft verlässliche landwirtschaftliche Grundlagen. Beamtentum und Schreiber organisieren Abgaben, Bauarbeiten und Versorgung. Hieroglyphenschrift hilft, Ordnung sichtbar zu machen und über längere Zeit zu sichern. Gleichzeitig wird Herrschaft religiös aufgeladen, etwa durch die besondere Stellung des Pharao.",
+      "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also nicht nur Monumente betrachten, sondern auch Speicher, Listen, Tempel, Schreiber und Regeln."
     ],
     sources: [
       {
@@ -729,9 +735,10 @@ const modules = [
       "Alltag und Herrschaft miteinander verknüpfen"
     ],
     input: [
-      "Hararis Kapitel zum Weltreich fragt nicht zuerst moralisch, sondern strukturell: Wie können politische Ordnungen sehr große Räume zusammenhalten? Das Imperium antwortet mit Infrastruktur, Verwaltung, militärischer Macht und kultureller Integration oder Überformung.",
-      "Die SRF-Reihe 'Römer in der Schweiz' macht dies regional fassbar. Sprache, Architektur, Währung, Gesetze, Straßen und Brücken hinterlassen Spuren bis in die Gegenwart. Gleichzeitig zeigt die Ressource, dass Römer nicht in leeren Raum kamen, sondern auf keltische Siedlungen trafen und strategische Orte weiterentwickelten.",
-      "Das 'Römer-Experiment' ergänzt diese Makroperspektive um Alltagsgeschichte. Werkzeuge, Kochen und rekonstruierte Situationen zeigen, dass Imperien nur funktionieren, wenn Herrschaft im Alltag materialisiert wird."
+      "Ein Imperium ist nicht einfach nur ein großes Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Straßen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
+      "Rom ist dafür ein besonders gutes Beispiel. Das Reich verband große Räume rund um das Mittelmeer und darüber hinaus. Seine Macht zeigte sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
+      "Die SRF-Reihe 'Römer in der Schweiz' macht das an einem konkreten Raum sichtbar. Dort zeigt sich, wie Straßen, Brücken, Weinbau, Tierhaltung, Sprache, Recht und Siedlungen den Alltag verändern. Gleichzeitig wird deutlich, dass die Römer nicht in leere Räume kamen. Sie trafen auf bestehende keltische Siedlungen und banden diese in ihre Ordnung ein.",
+      "Das 'Römer-Experiment' ergänzt diese große Perspektive durch Alltag. Es zeigt Werkzeuge, Kochen, Kleidung, Kampf und Arbeit. Dadurch wird sichtbar, dass ein Imperium nur dann dauerhaft wirkt, wenn seine Ordnung im täglichen Leben spürbar wird. Reichsgeschichte ist also immer auch Alltagsgeschichte."
     ],
     sources: [
       {
@@ -826,9 +833,10 @@ const modules = [
       "Fernhandel und kulturelle Vernetzung historisch einordnen"
     ],
     input: [
-      "Hararis Kapitel 'Der Geruch des Geldes' beschreibt Geld nicht nur als Zahlungsmittel, sondern als vielleicht erfolgreichste gegenseitige Vertrauensordnung der Geschichte. Menschen nehmen es an, weil sie erwarten, dass auch andere daran glauben und es weiter akzeptieren.",
-      "Der SRF-Fall 'Der Münzschatz von Ueken' macht diese Abstraktion anschaulich. Ein Fund von über 4000 römischen Silbermünzen ist historisch aufschlussreich, weil Münzen Informationen über Wert, Herrschaft, Zirkulation und Krisen enthalten. Der Schatz ist also kein stummes Objekt, sondern Quelle.",
-      "Die SRF-Ressource 'Grosse Völker' erweitert diesen Fokus um Fernhandel, Schriftsysteme und Wissensleistungen. Karthager, Araber und andere Akteure zeigen, dass Vernetzung nicht nur römisch und nicht nur europäisch gedacht werden darf."
+      "Geld wirkt auf den ersten Blick einfach: Man gibt Münzen oder Scheine ab und bekommt etwas dafür. Historisch ist Geld aber komplizierter. Es funktioniert nur, wenn Menschen darauf vertrauen, dass andere es ebenfalls annehmen. Sein Wert liegt also nicht nur im Material, sondern in gemeinsamer Akzeptanz. Darum kann Geld Menschen verbinden, die sich gar nicht persönlich kennen.",
+      "Für den Handel ist das entscheidend. Ohne Geld müsste man Ware direkt gegen Ware tauschen und immer jemanden finden, der genau das Gegenstück will. Geld erleichtert diesen Austausch. Es macht Märkte beweglicher und verbindet Orte über größere Entfernungen. So wird Handel planbarer und Räume werden stärker vernetzt.",
+      "Der Münzschatz von Ueken macht diese abstrakte Ordnung greifbar. Ein Fund aus vielen Münzen ist nicht einfach ein Haufen Silber, sondern eine historische Sachquelle. Münzen verraten etwas über Herrschaft, Umlauf, Wertvorstellungen, Verkehrswege und manchmal auch über Unsicherheit, wenn Vermögen versteckt wurde.",
+      "Die SRF-Ressource 'Grosse Völker' erweitert den Blick noch einmal. Sie zeigt, dass Handel, Wissen und Vernetzung nicht nur römisch oder nur europäisch gedacht werden dürfen. Araber, Karthager und andere Akteure gehören ebenso in diese Geschichte. Vernetzung ist daher immer eine Geschichte von Räumen, Waren, Ideen und kulturellen Begegnungen."
     ],
     sources: [
       {
@@ -932,9 +940,10 @@ const modules = [
       "Religion nicht auf 'Glauben privat' reduzieren"
     ],
     input: [
-      "Harari beschreibt Religion als Kraft, die sehr unterschiedliche Menschen in gemeinsame normative Ordnungen einbindet. Pilgerorte, Rituale, Verbote, Feiertage und heilige Schriften strukturieren Zeit, Raum und Zugehörigkeit. Religion wirkt somit nicht nur innerlich, sondern sozial und politisch.",
-      "Die SRF-Ressource 'Grosse Völker' stützt diese Perspektive indirekt, weil sie arabische Wissensleistungen und Fernverbindungen hervorhebt. Religion, Gelehrsamkeit, Handel und Übersetzung lassen sich historisch oft nicht sauber trennen. Der islamisch geprägte Raum des Mittelalters ist dafür ein starkes Beispiel.",
-      "Im Unterricht sollte dieses Modul als Brücke zum Mittelalter funktionieren: Herrschaft, Kirche, Pilgerwesen, Kreuzzüge und Alltagsnormen werden erst verständlich, wenn Religion als tragendes Ordnungssystem begriffen wird."
+      "Religion ist in vormodernen Gesellschaften weit mehr als privater Glaube. Sie erklärt, wie die Welt verstanden werden soll, welche Regeln gelten, was erlaubt oder verboten ist und wie Menschen ihren Platz in der Gemeinschaft sehen. Religion wirkt deshalb auf Denken, Alltag und politische Ordnung zugleich.",
+      "Das zeigt sich an Ritualen, Feiertagen, Pilgerorten, heiligen Texten und religiösen Verboten. Sie ordnen Zeit, Raum und Zugehörigkeit. Wer gemeinsam betet, dieselben Feste feiert oder dieselben heiligen Orte kennt, erlebt sich als Teil einer größeren Gemeinschaft. Religion verbindet also Menschen, auch wenn sie weit voneinander entfernt leben.",
+      "Historisch wichtig ist außerdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. Die SRF-Ressource 'Grosse Völker' hilft, diese Zusammenhänge sichtbar zu machen, besonders mit Blick auf arabische Wissenswelten und Fernverbindungen.",
+      "Für die nächsten Module ist das ein Schlüssel. Kirche, Herrschaft, Pilgerwesen, Kreuzzüge und Alltagsregeln im Mittelalter lassen sich nur verstehen, wenn Religion nicht als Nebenthema erscheint, sondern als tragende Ordnung vieler Gesellschaften."
     ],
     sources: [
       {
@@ -1029,9 +1038,10 @@ const modules = [
       "archäologische und narrative Zugänge zur Epoche nutzen"
     ],
     input: [
-      "Die SRF-Seite 'Das verrückte Mittelalter' eignet sich als Einstieg, weil sie niederschwellig Themen wie Burgen, Minnesang, Hierarchien, Pest, Handel und Hygiene bündelt. Gerade weil sie humorvoll vereinfacht, verlangt sie nach historischer Nachschärfung.",
-      "Die Ressource 'Mittelalter in der Schweiz' liefert diese Nachschärfung mit alltagsgeschichtlichen Beispielen: Latrinen, Kochen, Rollenbilder, Verteidigung, Statussymbole und archäologische Funde. So wird deutlich, dass mittelalterliche Gesellschaften konkret organisiert, materiell strukturiert und sozial differenziert waren.",
-      "Ergänzend betont 'Eine kurze Geschichte über…', dass das Mittelalter zwar stark vom christlichen Glauben geprägt war, aber nicht einfach rückständig. Burgen, Kathedralen, Manuskripte und vielfältige Lebensformen sprechen für eine komplexe Epoche."
+      "Viele Menschen verbinden das Mittelalter sofort mit Rittern, Burgen, dunklen Straßen oder großen Kathedralen. Solche Bilder sind nicht völlig falsch, aber sie reichen nicht aus. Das Mittelalter war eine lange und sehr unterschiedliche Epoche. Es gab harte Lebensbedingungen, aber auch beeindruckende Bauleistungen, religiöse Kultur, wachsende Städte und komplexe Herrschaftsformen.",
+      "Die SRF-Seite 'Das verrückte Mittelalter' eignet sich als Einstieg, weil sie typische Themen schnell sichtbar macht: Burgen, Minnesang, Pest, Handel, Hierarchien und Hygiene. Gerade weil sie einfach und humorvoll erzählt, braucht sie eine zweite, genauere Perspektive. Sonst bleiben nur Klischees zurück.",
+      "Diese genauere Perspektive liefert 'Mittelalter in der Schweiz'. Dort erscheinen Latrinen, Küche, Verteidigung, Kleidung, Rollenbilder, Statussymbole und archäologische Funde. Dadurch wird sichtbar, dass mittelalterliche Gesellschaften sehr konkret organisiert waren. Menschen lebten nicht in einem Märchenraum, sondern in einer materiellen Welt mit Regeln, Arbeit, Rang und Mangel.",
+      "Zusammen mit 'Eine kurze Geschichte über…' wird daraus ein differenziertes Bild. Das Mittelalter war stark christlich geprägt, aber nicht einfach rückständig. Wer Burgen, Kathedralen, Handschriften, Bauernarbeit, Stadtleben und soziale Unterschiede zusammendenkt, erkennt eine widersprüchliche, aber historisch hoch interessante Epoche."
     ],
     sources: [
       {
@@ -1134,9 +1144,10 @@ const modules = [
       "Städte und Märkte als Kontaktzonen deuten"
     ],
     input: [
-      "Die SRF-Dokumentation zum 'Kreuzzug der Kinder' stellt nicht einfach eine sensationelle Geschichte nach, sondern fragt ausdrücklich nach Quellenlage, Zuverlässigkeit und Rekonstruktion. Genau das ist für historisches Lernen entscheidend: Mittelalterliche Chroniken berichten nicht neutral, sondern aus bestimmten Perspektiven und Interessen.",
-      "Hararis Bild von Samarkand als mittelalterlichem Knotenpunkt hilft, den größeren Rahmen zu sehen. Mittelalterliche Welt war nicht bloß lokal. Märkte, Pilgerwege, Herrschaftsräume und religiöse Bewegungen verbanden Menschen über enorme Distanzen hinweg.",
-      "Das Modul soll deshalb zeigen, dass Mittelaltergeschichte immer auch Vernetzungsgeschichte ist. Frömmigkeit, Handel, Erzählungen und politische Macht verlaufen durch dieselben Räume."
+      "Das Thema 'Kinderkreuzzug' wirkt auf den ersten Blick wie eine spektakuläre Erzählung. Gerade deshalb ist es historisch so interessant. Historikerinnen und Historiker dürfen eine solche Geschichte nicht einfach nacherzählen. Sie müssen fragen, welche Quellen es gibt, wann sie entstanden sind, wer sie geschrieben hat und wie zuverlässig ihre Aussagen sind.",
+      "Damit wird dieses Modul zu einem besonders wichtigen Methodenmodul. Es zeigt, dass Geschichte nicht fertig vorliegt, sondern aus Spuren und Überlieferungen rekonstruiert wird. Mittelalterliche Chroniken berichten nicht neutral. Sie deuten, übertreiben, verkürzen oder verfolgen bestimmte Interessen. Quellenkritik ist deshalb kein Zusatz, sondern ein Kern historischer Arbeit.",
+      "Gleichzeitig geht es nicht nur um Texte, sondern auch um Räume. Märkte, Pilgerwege, Städte, Herrschaftszentren und religiöse Bewegungen verbanden Menschen über große Entfernungen. Die mittelalterliche Welt war nicht nur lokal und abgeschlossen, sondern in vieler Hinsicht mobil und vernetzt.",
+      "Deshalb zeigt dieses Modul beides zugleich: wie man Quellen prüft und wie stark Frömmigkeit, Handel, Bewegung und Macht zusammenhängen. Mittelaltergeschichte ist hier also nicht nur eine Geschichte von Glauben oder Konflikt, sondern auch eine Geschichte von Wegen, Begegnungen und Austausch."
     ],
     sources: [
       {
@@ -1231,9 +1242,10 @@ const modules = [
       "frühe Geschichte mit langfristigen Umwelt- und Weltfolgen verbinden"
     ],
     input: [
-      "Die SRF-Ressource '1491' ist für das Abschlussmodul ideal, weil sie kurz vor 1500 einen Perspektivwechsel erzwingt. Geschichte vor 1500 ist nicht nur Europa, Rom und Mittelalter, sondern auch eine Vielzahl indigener Gesellschaften mit Landwirtschaft, Kunst, politischen Strukturen und Spiritualität in Amerika.",
-      "Die Anthropozän-Ressource liefert anschließend den Langzeitblick: Von Feuer, Landwirtschaft, Metall und vormodernen Innovationen führen Linien zu massiven planetaren Eingriffen. Für den Kurs heißt das nicht, plötzlich Moderne zu unterrichten, sondern die Tragweite vormoderner Entwicklungspfade zu erkennen.",
-      "Im Schlussmodul werden daher keine neuen Faktenmengen eröffnet, sondern die großen Zusammenhänge geordnet: Sprache ermöglicht Kooperation, Sesshaftigkeit erzeugt Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und unterschiedliche Weltregionen entwickeln eigene historische Ordnungen."
+      "Im Schlussmodul ordnen wir nicht einfach noch einmal alle Themen, sondern ziehen eine historische Bilanz. Dabei hilft die SRF-Ressource '1491' besonders stark. Sie zeigt, dass Geschichte vor 1500 nicht nur Europa, Rom und Mittelalter umfasst. In Amerika gab es lange vor Kolumbus Gesellschaften mit Landwirtschaft, Kunst, Sprachen, politischen Ordnungen und religiösen Vorstellungen.",
+      "Damit wird ein wichtiger Perspektivwechsel möglich. 1492 ist für Amerika ein Einschnitt, aber nicht der Anfang aller Geschichte dort. Wer das versteht, merkt, wie schnell Geschichte eurozentrisch erzählt wird. Die Abschlussphase des Kurses soll genau diese Verkürzung korrigieren und den Blick auf mehrere Weltregionen öffnen.",
+      "Danach richtet sich der Blick noch einmal auf lange Folgen. Die Anthropozän-Ressource macht deutlich, dass menschliche Innovationen wie Feuergebrauch, Landwirtschaft, Metallverarbeitung, Städtebau oder Fernhandel nicht folgenlos bleiben. Sie greifen tief in Umwelt und Lebensverhältnisse ein. Auch wenn der Kurs um 1500 endet, reichen viele seiner Entwicklungslinien weit darüber hinaus.",
+      "Am Ende werden deshalb die großen Zusammenhänge sichtbar: Sprache ermöglicht größere Kooperation, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 ist so keine lose Folge von Brocken, sondern eine zusammenhängende Entwicklung menschlicher Weltgestaltung."
     ],
     sources: [
       {
