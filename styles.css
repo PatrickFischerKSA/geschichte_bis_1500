@@ -981,6 +981,32 @@ p {
   color: var(--muted);
 }
 
+.source-list-block {
+  margin-top: 12px;
+}
+
+.source-list {
+  margin: 8px 0 0 20px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.source-list li span {
+  display: block;
+  margin-top: 3px;
+}
+
+.source-list a {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.source-quote q {
+  font-style: italic;
+}
+
 .scene-hero,
 .scene-side {
   position: relative;

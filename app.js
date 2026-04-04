@@ -2124,6 +2124,297 @@ function normalize(value) {
     .replace(/ß/g, "ss");
 }
 
+function makeSourceKey(moduleId, title) {
+  return `${moduleId}::${normalize(title)}`;
+}
+
+const sourceDetails = {
+  [makeSourceKey("modul-1", "Harari-PDF")]: {
+    badge: "S. 132 · Kooperationsnetze",
+    locator: "Harari-PDF, S. 132",
+    quote: "„erfundene Ordnungen“",
+    passage:
+      "Harari erklärt große Reiche und Gesellschaften als Kooperationsnetze, die nicht auf Instinkt, sondern auf gemeinsamen Glaubensvorstellungen beruhen. Genau dieser Gedanke trägt im Kurs die Unterscheidung zwischen bloßer Vergangenheit und Geschichte als menschlich geordneter Welt."
+  },
+  [makeSourceKey("modul-1", "SRF: Anthropozän")]: {
+    badge: "SRF-school-Seite · Langzeitlinie",
+    locator: "SRF school: Anthropozän – Das Zeitalter des Menschen",
+    passage:
+      "Die Seite spannt ausdrücklich den Bogen von Feuer über Landwirtschaft, Metall und Hochmittelalter bis zu Industrialisierung und fossilen Brennstoffen. Für das Modul ist daran entscheidend, dass Geschichte als Folge aufeinander aufbauender Eingriffe in Landschaft, Rohstoffe und Lebensräume sichtbar wird."
+  },
+  [makeSourceKey("modul-2", "Harari-PDF")]: {
+    badge: "S. 30 · Frühe Sapiens",
+    locator: "Harari-PDF, S. 30",
+    quote: "„kaum einen Vorteil“",
+    passage:
+      "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die äußerlich modern wirken, gegenüber anderen Menschenarten aber zunächst keinen klaren Vorsprung hatten. Damit rückt er Ausbreitung nicht als Selbstläufer, sondern als offenes historisches Problem in den Blick."
+  },
+  [makeSourceKey("modul-2", "SRF: 1491")]: {
+    badge: "SRF-school-Film · Migration",
+    locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    passage:
+      "Der Film arbeitet mit der Frühbesiedlung Amerikas vor etwa 18'000 bis 20'000 Jahren, mit Wegen über die Landbrücke zwischen Ostsibirien und Alaska sowie mit Fahrten in Kanus. Er zeigt damit konkret, dass Anpassung, Bewegung und Umweltwissen Grundmuster früher Menschheitsgeschichte sind."
+  },
+  [makeSourceKey("modul-3", "Harari-PDF")]: {
+    badge: "S. 33 · Kognitive Revolution",
+    locator: "Harari-PDF, S. 33",
+    quote: "„kognitive Revolution“",
+    passage:
+      "Auf dieser Seite benennt Harari den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist die Entstehung neuer Denk- und Kommunikationsformen, durch die Homo sapiens über Abwesendes, Zukünftiges und gemeinsam Vorgestelltes sprechen konnte."
+  },
+  [makeSourceKey("modul-3", "SRF: 1491")]: {
+    badge: "SRF-school-Film · Zeichenwelten",
+    locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    passage:
+      "Für dieses Modul sind besonders die sichtbaren Zeichenwelten wichtig: Felsbilder, Totempfähle, Alltagsgegenstände und Mayaschrift. Der Film macht daran anschaulich, dass frühe Gesellschaften ihre Welt nicht nur praktisch nutzten, sondern auch deuteten, erinnerten und symbolisch ordneten."
+  },
+  [makeSourceKey("modul-4", "SRF: 1491")]: {
+    badge: "SRF-school-Film · Lebensformen",
+    locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    passage:
+      "Der Film zeigt verschiedene Lebensformen in unterschiedlichen Räumen: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Gerade diese Kontraste machen sichtbar, dass mobile Gesellschaften hochgradig an Klima, Landschaft und verfügbare Ressourcen angepasst waren."
+  },
+  [makeSourceKey("modul-4", "Harari-PDF")]: {
+    badge: "S. 100 · Vor der Sesshaftigkeit",
+    locator: "Harari-PDF, S. 100",
+    quote: "„Zweieinhalb Millionen Jahre lang“",
+    passage:
+      "Harari hält fest, dass Menschen über extrem lange Zeit von Pflanzen und Tieren lebten, die ohne menschliche Eingriffe existierten. Die Stelle eignet sich hier als harte Erinnerung daran, dass Jäger-und-Sammler-Gesellschaften nicht Randphänomen, sondern die längste normale Lebensform der Menschheit waren."
+  },
+  [makeSourceKey("modul-5", "Harari-PDF")]: {
+    badge: "S. 100 · Streitstelle",
+    locator: "Harari-PDF, S. 100",
+    quote: "„Der größte Betrug der Geschichte“",
+    passage:
+      "Harari überschreibt das Kapitel zur Landwirtschaft mit einer bewussten Provokation. Dahinter steht die These, dass Sesshaftigkeit, Ackerbau und Viehzucht zwar Überschüsse und größere Siedlungen ermöglichten, zugleich aber härtere Arbeit, stärkere Abhängigkeit und neue Ungleichheiten hervorbrachten."
+  },
+  [makeSourceKey("modul-5", "SRF: Pfahlbauer von Pfyn")]: {
+    badge: "SRF-school-Film · Experimentalarchäologie",
+    locator: "SRF school: Pfahlbauer von Pfyn",
+    passage:
+      "Im Zentrum stehen zwei Familien und zwei junge Männer, die vier Wochen wie vor rund 5700 Jahren leben. Der Film macht Sesshaftigkeit konkret über Hüttenbau, Steinbeile, Kolbenpfeile, Kleidung, Feuerstellen, Nahrung und die ständige Handarbeit, die eine feste Siedlung überhaupt erst trägt."
+  },
+  [makeSourceKey("modul-6", "Harari-PDF")]: {
+    badge: "S. 155–161 · Schrift und Bürokratie",
+    locator: "Harari-PDF, S. 155 und S. 161",
+    quote: "„mit der Stimme ihrer Protagonisten“",
+    passage:
+      "Harari erklärt erstens, dass Geschichte mit der Erfindung der Schrift die Stimme ihrer Protagonisten hörbar macht. Zweitens verknüpft er Schrift ausdrücklich mit Steuerbuchhaltung und bürokratischen Systemen. Genau diese Verbindung von Schreiben, Zählen und Organisieren trägt das Modul zu frühen Staaten."
+  },
+  [makeSourceKey("modul-6", "SRF: Eine kurze Geschichte über…")]: {
+    badge: "dreiteilige Reihe · Folge Ägypten",
+    locator: "SRF school: Eine kurze Geschichte über…",
+    passage:
+      "Für dieses Modul ist auf der Seite ausdrücklich die Folge zum Alten Ägypten entscheidend. Dort werden Nil, Beamtentum und Hieroglyphenschrift als Gründe für die ungewöhnlich lange Stabilität Ägyptens zusammengeführt.",
+    itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
+    relevantItems: [
+      {
+        title: "Eine kurze Geschichte über... – Das Alte Ägypten",
+        note: "Nil, Beamte und Hieroglyphenschrift als Basis dauerhafter Herrschaft."
+      }
+    ]
+  },
+  [makeSourceKey("modul-7", "SRF: Römer in der Schweiz")]: {
+    badge: "fünfteilige Reihe · Römer konkret",
+    locator: "SRF school: Römer in der Schweiz",
+    passage:
+      "Die SRF-Seite ist keine Einzelfolge, sondern eine fünfteilige Reihe. Für das Modul tragen gerade diese konkreten Teilfilme die Wissensvermittlung: Kulturkontakt zwischen Kelten und Römern, Legionärsalltag, Bauten und Siedlungen, Familienleben und Ernährung sowie Straßen, Handel und bleibende Spuren römischer Herrschaft.",
+    itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
+    relevantItems: [
+      { title: "Die Kelten und die Römer", note: "Kulturkontakt, Eroberung und Überlagerung bestehender Siedlungen." },
+      { title: "Was sind Legionäre?", note: "Vindonissa, Militäralltag und die Rolle des einzigen Legionslagers im Gebiet der heutigen Schweiz." },
+      { title: "Wo lebten die Römer in der Schweiz?", note: "Gutshöfe, Wasserleitungen, Heizungen, Bäder und römische Baukunst." },
+      { title: "Wie lebten die Römer in der Schweiz?", note: "Wein, Aprikosen, Walnüsse, Familienleben, Religion und Alltag." },
+      { title: "Strassen, Handel und was von den Römern geblieben ist", note: "Straßennetz, Tunnel, Handel, Zahlungsmittel und langfristige Infrastrukturfolgen." }
+    ]
+  },
+  [makeSourceKey("modul-7", "SRF: Das Römer-Experiment")]: {
+    badge: "SRF-school-Film · Rekonstruktion",
+    locator: "SRF school: Das Römer-Experiment",
+    passage:
+      "Der Film arbeitet mit Rekonstruktion statt bloßer Beschreibung: Kochen, Werkzeuge, Gladiatorenausbildung und nachgestellte Alltagssituationen zeigen, wie stark imperiale Ordnung im Materiellen steckt. Genau deshalb ergänzt er die politische Reichsgeschichte durch Körper, Gegenstände und Routinen."
+  },
+  [makeSourceKey("modul-8", "Harari-PDF")]: {
+    badge: "S. 212 · Geld",
+    locator: "Harari-PDF, S. 212",
+    quote: "„Der Geruch des Geldes“",
+    passage:
+      "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Die Passage macht klar, dass Geld nicht einfach durch Material wirkt, sondern nur dann, wenn Menschen ihm gemeinsam Wert und Tauschfähigkeit zuschreiben."
+  },
+  [makeSourceKey("modul-8", "SRF: Münzschatz von Ueken")]: {
+    badge: "SRF-school-Film · Sachquelle",
+    locator: "SRF school: Der Münzschatz von Ueken",
+    passage:
+      "Der Film verfolgt die Untersuchung von über 4000 römischen Silbermünzen aus dem Fricktal. Reinigung mit Sandstrahl- und Ultraschallgeräten, Bilder, Inschriften und Prägungen machen anschaulich, wie Historiker aus einem Fund Aussagen zu Herrschaft, Umlauf, Vermögen und möglicher Unsicherheit gewinnen."
+  },
+  [makeSourceKey("modul-8", "SRF: Grosse Völker")]: {
+    badge: "dreiteilige Reihe · Fernhandel",
+    locator: "SRF school: Grosse Völker",
+    passage:
+      "Die SRF-Seite ist eine dreiteilige Dokumentation. Für dieses Modul ist die ganze Reihe wichtig, weil sie Handel, Schriftsysteme, Wissenschaft und Reichsbildung ausdrücklich an drei verschiedenen Großräumen zeigt.",
+    itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
+    relevantItems: [
+      {
+        title: "Grosse Völker – Die Karthager",
+        note: "Purpurhandel, See- und Handelsmacht, Alphabet als bleibendes Vermächtnis."
+      },
+      {
+        title: "Grosse Völker – Die Araber",
+        note: "Großreich, Islam, Mathematik, Medizin und offene Bildungsinstitutionen."
+      },
+      {
+        title: "Grosse Völker – Die Germanen",
+        note: "Siedlungen, Begegnung mit Rom, Wanderungen und kulturelle Nachwirkung."
+      }
+    ]
+  },
+  [makeSourceKey("modul-9", "Harari-PDF")]: {
+    badge: "S. 251 · Religion im Raum",
+    locator: "Harari-PDF, S. 251",
+    quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
+    passage:
+      "Harari beginnt das Religionskapitel nicht mit einer Definition, sondern mit dem Markt von Samarkand. Dort treffen Händler, Steppenkrieger, Münzen, Seide und Menschen aus Ost, West, Nord und Süd aufeinander. Religion erscheint so von Anfang an als Teil vernetzter Räume und nicht bloß als innerer Glaube."
+  },
+  [makeSourceKey("modul-9", "SRF: Grosse Völker")]: {
+    badge: "dreiteilige Reihe · Arabische Wissenswelten",
+    locator: "SRF school: Grosse Völker",
+    passage:
+      "Für dieses Modul ist auf der SRF-Seite besonders die Araber-Folge wichtig. Sie zeigt die Verbindung von islamischer Herrschaft, Bildung, Mathematik, Medizin und kultureller Offenheit und macht damit sichtbar, wie Glauben, Wissen und Reichsbildung zusammenwirken.",
+    itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
+    relevantItems: [
+      {
+        title: "Grosse Völker – Die Araber",
+        note: "Islamischer Glaube, Großreich, Wissenschaft, Medizin und Mathematik in einem Zusammenhang."
+      }
+    ]
+  },
+  [makeSourceKey("modul-10", "SRF: Das verrückte Mittelalter")]: {
+    badge: "Serienseite · viele Einzelfilme",
+    locator: "SRF: Das verrückte Mittelalter",
+    passage:
+      "Die Seite enthält viele Einzelfilme und darf deshalb nicht pauschal abgehandelt werden. Für dieses Modul sind vor allem die Folgen zu Burgen, Rittern, Turnieren, Stadtschmutz, Pest, Handel und Minnesang relevant, weil sie die bekannten Mittelalterbilder konkretisieren und zugleich korrigierbar machen.",
+    itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
+    relevantItems: [
+      {
+        title: "Burgen erobern",
+        note: "Burg als Schutzraum, Belagerung und militärische Technik."
+      },
+      {
+        title: "Die Ritter",
+        note: "Ausbildung, Aufgaben und soziale Stellung des Rittertums.",
+        link: "https://www.srf.ch/play/tv/das-verrueckte-mittelalter/video/die-ritter?urn=urn%3Asrf%3Avideo%3Ac499b7df-092c-42ff-8ada-8bc6b0363c23"
+      },
+      {
+        title: "Ritterturniere",
+        note: "Spektakel, Ruhm, Reichtum und Gewalt im adeligen Freizeit- und Statussystem.",
+        link: "https://www.srf.ch/play/tv/das-verrueckte-mittelalter/video/ritterturniere?urn=urn%3Asrf%3Avideo%3Adf6aa2b4-7990-4453-b5b2-effb5da5e29b"
+      },
+      {
+        title: "Der Schmutz",
+        note: "Abfälle, Gosse, Regeln und urbane Hygieneprobleme.",
+        link: "https://www.srf.ch/play/tv/das-verrueckte-mittelalter/video/der-schmutz?urn=urn%3Asrf%3Avideo%3A3a470dbc-4249-4c81-875b-c27605199985"
+      },
+      {
+        title: "Die Pest",
+        note: "Ausbreitung, Angst und langfristige Wirkung einer Seuche."
+      },
+      {
+        title: "Handelsrouten",
+        note: "Messen, Kaufleute, Wege und Risiko des Fernhandels."
+      },
+      {
+        title: "Troubadoure und Minnesänger",
+        note: "Musik, Hofkultur und adelige Öffentlichkeit."
+      }
+    ]
+  },
+  [makeSourceKey("modul-10", "SRF: Mittelalter in der Schweiz")]: {
+    badge: "fünfteilige Reihe · Burgen und Schlösser",
+    locator: "SRF school: Mittelalter in der Schweiz",
+    passage:
+      "Auch diese SRF-Seite enthält nicht nur einen Film, sondern fünf thematisch klar getrennte Folgen. Das Modul stützt sich genau auf diese alltagsgeschichtlichen Einzelstücke, weil sie Wohnen, Hygiene, Küche, Verteidigung, Status und Funde aus dem Stoff selbst heraus erklären.",
+    itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
+    relevantItems: [
+      { title: "Schloss Habsburg – Was Ausgrabungen zu erzählen haben", note: "Archäologische Funde als Zugang zu Lebenswelt und Herrschaft." },
+      { title: "Hygiene und Gesundheit auf Schloss Hallwyl", note: "Wasser, Badekultur, Krankheiten und Mangel an Hygiene." },
+      { title: "Schloss Spiez – Lebenswelt und Statussymbole der Schlossbewohner", note: "Kleidung, Rang, Zeichen von Stand und höfischer Welt." },
+      { title: "Schloss Lenzburg – Kochen in der Schlossküche", note: "Speisen, Zutaten, Küche und Alltagsorganisation." },
+      { title: "Verteidigung auf der Kyburg", note: "Rüstung, Wehrhaftigkeit und Schutzfunktion der Burg." }
+    ]
+  },
+  [makeSourceKey("modul-10", "SRF: Eine kurze Geschichte über…")]: {
+    badge: "dreiteilige Reihe · Folge Mittelalter",
+    locator: "SRF school: Eine kurze Geschichte über…",
+    passage:
+      "Auf dieser Seite ist für Modul 10 ausdrücklich die Mittelalter-Folge gemeint. Sie fragt direkt nach dem Klischee des angeblich dunklen Mittelalters und stellt ihm Städte, Handwerk, Medizin, Kathedralen und den Übergang zur Moderne entgegen.",
+    itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
+    relevantItems: [
+      {
+        title: "Eine kurze Geschichte über ... – Das Mittelalter",
+        note: "Gegen das Klischee vom rückständigen Mittelalter; mit Städten, Handwerk, Medizin und Kathedralen."
+      }
+    ]
+  },
+  [makeSourceKey("modul-11", "SRF: Der Kreuzzug der Kinder")]: {
+    badge: "SRF-school-Film · Quellenkritik",
+    locator: "SRF school: Mythos oder historischer Fakt – Der Kreuzzug der Kinder",
+    passage:
+      "Der Film verfolgt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes-les-Trois-Rivières, die Reise von 1212 und die Frage, was Chroniken tatsächlich belegen. Seine Stärke liegt genau darin, dass er das Ereignis nicht nur erzählt, sondern seine historische Unsicherheit offenlegt."
+  },
+  [makeSourceKey("modul-11", "Harari-PDF")]: {
+    badge: "S. 251 · Samarkand",
+    locator: "Harari-PDF, S. 251",
+    quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
+    passage:
+      "Die Stelle versammelt Seide, Goldmünzen, Sklaven, Händler und Menschen aus verschiedenen Weltregionen in einem einzigen Bild. Für das Modul ist das wichtig, weil Kreuzzüge, Märkte, Pilgerwege und Fernhandel nicht getrennte Geschichten sind, sondern in denselben Räumen zusammentreffen."
+  },
+  [makeSourceKey("modul-12", "SRF: 1491")]: {
+    badge: "SRF-school-Film · Perspektivwechsel",
+    locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    passage:
+      "Der Film bündelt noch einmal die zentrale Korrektur des Kurses: Geschichte in Amerika beginnt lange vor 1492. Sprachenvielfalt, Landwirtschaft, politische Ordnungen, Kunst und Spiritualität zeigen, dass die Vormoderne nicht nur aus einer europäischen Entwicklungslinie besteht."
+  },
+  [makeSourceKey("modul-12", "SRF: Anthropozän")]: {
+    badge: "SRF-school-Seite · Langzeitfolgen",
+    locator: "SRF school: Anthropozän – Das Zeitalter des Menschen",
+    passage:
+      "Für die Bilanz ist die Seite deshalb stark, weil sie frühe Innovationen nicht als abgeschlossene Kapitel behandelt. Feuer, Landwirtschaft, Metallbau, Straßen, Städte und fossile Brennstoffe erscheinen als aufeinanderfolgende Stufen wachsender Eingriffe in Boden, Wasser, Luft und Rohstoffe."
+  },
+  [makeSourceKey("modul-12", "Harari-PDF")]: {
+    badge: "S. 150 · Weltreiche und Netze",
+    locator: "Harari-PDF, S. 150",
+    quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
+    passage:
+      "Harari verwendet an dieser Stelle das gemeinsame Fußballspiel als Vergleich dafür, wie große geteilte Ordnungen funktionieren. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Das eignet sich im Abschlussmodul als kurze Formel für die großen Verbindungslinien des Kurses."
+  }
+};
+
+function getSourceDetail(moduleId, source) {
+  return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
+}
+
+function renderRelevantItems(items, label) {
+  if (!items?.length) {
+    return "";
+  }
+
+  return `
+    <div class="source-list-block">
+      <p><strong>${label}</strong></p>
+      <ul class="source-list">
+        ${items
+          .map((item) => {
+            const content = item.link
+              ? `<a href="${item.link}" target="_blank" rel="noreferrer">${item.title}</a>`
+              : item.title;
+            return `<li><strong>${content}</strong>${item.note ? `<span>${item.note}</span>` : ""}</li>`;
+          })
+          .join("")}
+      </ul>
+    </div>
+  `;
+}
+
 function cleanStudentText(text) {
   return String(text || "")
     .replace(/^Didaktisch entscheidend ist:\s*/i, "Wichtig ist: ")
@@ -2143,13 +2434,13 @@ function cleanStudentText(text) {
 
 function cleanPromptText(text) {
   return cleanStudentText(text)
-    .replace(/Hararis Bild vom /gi, "das Bild aus dem Buchauszug vom ")
-    .replace(/Hararis Bild /gi, "das Bild aus dem Buchauszug ")
-    .replace(/Hararis These/gi, "die These im Buchauszug")
-    .replace(/Hararis Zuspitzung/gi, "die Zuspitzung im Buchauszug")
-    .replace(/Hararis Einstieg/gi, "den Einstieg im Buchauszug")
-    .replace(/Hararis Kapitel/gi, "das Kapitel im Buchauszug")
-    .replace(/Harari-PDF/gi, "Buchauszug")
+    .replace(/Hararis Bild vom /gi, "das Bild aus der Harari-Stelle vom ")
+    .replace(/Hararis Bild /gi, "das Bild aus der Harari-Stelle ")
+    .replace(/Hararis These/gi, "die These in der Harari-Stelle")
+    .replace(/Hararis Zuspitzung/gi, "die Zuspitzung in der Harari-Stelle")
+    .replace(/Hararis Einstieg/gi, "den Einstieg in der Harari-Stelle")
+    .replace(/Hararis Kapitel/gi, "das Kapitel in der Harari-Stelle")
+    .replace(/Harari-PDF/gi, "Harari-Stelle im PDF")
     .replace(/\bHarari\b/gi, "den Historiker Harari");
 }
 
@@ -2258,16 +2549,23 @@ function createNavigation(state) {
   });
 }
 
-function renderSourceCard(source) {
+function renderSourceCard(source, module) {
+  const detail = getSourceDetail(module.id, source);
+  const badge = detail.badge || source.meta;
+  const passage = cleanStudentText(detail.passage || source.extracted);
+
   return `
     <article class="source-card">
       <header>
         <div>
           <h4>${source.title}</h4>
-          <span class="source-meta">${source.meta}</span>
+          <span class="source-meta">${badge}</span>
         </div>
       </header>
-      <p><strong>Das zeigt die Ressource:</strong> ${cleanStudentText(source.extracted)}</p>
+      ${detail.locator ? `<p><strong>Verortung:</strong> ${detail.locator}</p>` : ""}
+      ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
+      <p><strong>Konkrete Passage:</strong> ${passage}</p>
+      ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
     </article>
   `;
 }
@@ -2328,18 +2626,25 @@ function renderFilmFoundation(module) {
       <div class="film-grid">
         ${filmSources
           .map(
-            ({ source, catalog }) => `
+            ({ source, catalog }) => {
+              const detail = getSourceDetail(module.id, source);
+              const badge = detail.badge || source.meta;
+              const passage = cleanStudentText(detail.passage || source.extracted);
+              return `
               <article class="film-card">
                 <div class="film-card-head">
                   <div>
                     <h3>${source.title}</h3>
-                    <span class="source-meta">${source.meta}</span>
+                    <span class="source-meta">${badge}</span>
                   </div>
                   <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
                 </div>
-                <p><strong>Zentrale Informationen aus dem Film:</strong> ${cleanStudentText(source.extracted)}</p>
+                ${detail.locator ? `<p><strong>Verortung:</strong> ${detail.locator}</p>` : ""}
+                <p><strong>Zentrale Informationen:</strong> ${passage}</p>
+                ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf dieser SRF-Seite besonders wichtig:")}
               </article>
-            `
+            `;
+            }
           )
           .join("")}
       </div>
@@ -2646,7 +2951,7 @@ function renderModules(state) {
           <p class="section-kicker">3. Quellen und konkrete Beispiele</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
-            ${module.sources.map(renderSourceCard).join("")}
+            ${module.sources.map((source) => renderSourceCard(source, module)).join("")}
           </div>
         </section>
 
