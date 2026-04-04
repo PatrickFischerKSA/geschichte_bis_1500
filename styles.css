@@ -1029,6 +1029,51 @@ p {
   margin-top: 12px;
 }
 
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.support-card {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(31, 109, 102, 0.14);
+  background: rgba(255, 250, 244, 0.92);
+}
+
+.support-card-wide {
+  grid-column: 1 / -1;
+}
+
+.term-list,
+.storyline-list,
+.learning-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.term-item,
+.storyline-step,
+.learning-step {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(30, 44, 52, 0.1);
+  background: rgba(255, 253, 249, 0.96);
+}
+
+.term-item p,
+.learning-step p {
+  margin-top: 8px;
+}
+
+.term-item p,
+.storyline-step,
+.learning-step p {
+  color: var(--muted);
+}
+
 .source-grid,
 .source-catalog {
   display: grid;
@@ -1088,7 +1133,9 @@ p {
 }
 
 .task-box textarea,
-.transfer-box textarea {
+.selftest-box textarea,
+.transfer-box textarea,
+.check-question textarea {
   width: 100%;
   min-height: 130px;
   margin-top: 14px;
@@ -1176,6 +1223,11 @@ p {
   background: rgba(236, 248, 240, 0.92);
 }
 
+.check-question.mid {
+  border-color: rgba(200, 155, 60, 0.28);
+  background: rgba(252, 245, 220, 0.92);
+}
+
 .check-question.low {
   border-color: rgba(180, 75, 63, 0.24);
   background: rgba(251, 239, 236, 0.92);
@@ -1183,6 +1235,10 @@ p {
 
 .check-question p {
   margin-bottom: 10px;
+}
+
+.check-question .feedback {
+  margin-top: 12px;
 }
 
 .question-status {
@@ -1385,6 +1441,10 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
   .teacher-walkthrough-grid {
     grid-template-columns: 1fr;
   }
@@ -1421,8 +1481,7 @@ p {
   .matrix-table,
   .task-actions,
   .selftest-actions,
-  .transfer-actions,
-  .source-toggle {
+  .transfer-actions {
     display: none !important;
   }
 

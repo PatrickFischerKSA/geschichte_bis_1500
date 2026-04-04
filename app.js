@@ -1,4 +1,4 @@
-const STORAGE_KEY = "geschichte_bis_1500-progress-v1";
+const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 
 const sourceCatalog = [
   {
@@ -562,7 +562,7 @@ const modules = [
         "Nimm Stellung zu Hararis Zuspitzung, Landwirtschaft sei der 'größte Betrug der Geschichte'. Begründe differenziert.",
       placeholder: "Formuliere ein abgewogenes Urteil statt nur Zustimmung oder Ablehnung.",
       sampleAnswer:
-        "Hararis Zuspitzung ist übertrieben, aber didaktisch nützlich. Landwirtschaft brachte mehr Vorräte, Bevölkerungswachstum und dauerhafte Siedlungen hervor. Gleichzeitig mussten Menschen härter und einseitiger arbeiten, wurden stärker von Ernten abhängig und entwickelten soziale Ungleichheiten. Deshalb war Landwirtschaft weder nur Fortschritt noch nur Betrug, sondern ein ambivalenter Umbruch.",
+        "Hararis Zuspitzung ist übertrieben, aber nützlich, weil sie zum Nachdenken zwingt. Landwirtschaft brachte mehr Vorräte, Bevölkerungswachstum und dauerhafte Siedlungen hervor. Gleichzeitig mussten Menschen härter und einseitiger arbeiten, wurden stärker von Ernten abhängig und entwickelten soziale Ungleichheiten. Deshalb war Landwirtschaft weder nur Fortschritt noch nur Betrug, sondern ein ambivalenter Umbruch.",
       criteria: [
         { label: "Überschüsse/Siedlungen genannt", keywords: ["vorräte", "überschuss", "dörfer", "siedlungen", "bevölkerungswachstum"] },
         { label: "Belastungen genannt", keywords: ["härter", "arbeit", "abhängig", "ernte", "krankheit", "risiko"] },
@@ -1314,9 +1314,9 @@ const modules = [
         "Warum endet der Kurs zwar um 1500, aber nicht das historische Denken? Formuliere eine reflektierte Antwort.",
       placeholder: "Verbinde Zeitgrenze, Perspektive und Langzeitfolgen.",
       sampleAnswer:
-        "Der Kurs endet um 1500 aus didaktischen Gründen, nicht weil dort Geschichte aufhört. Viele Entwicklungen reichen weiter: Kooperation, Staatenbildung, religiöse Netzwerke, Handelsräume und Mensch-Umwelt-Beziehungen prägen spätere Jahrhunderte mit. Historisches Denken fragt deshalb nach Voraussetzungen, Folgen und Perspektiven über Epochengrenzen hinweg.",
+        "Der Kurs endet um 1500 als gesetzte Zeitgrenze, nicht weil dort Geschichte aufhört. Viele Entwicklungen reichen weiter: Kooperation, Staatenbildung, religiöse Netzwerke, Handelsräume und Mensch-Umwelt-Beziehungen prägen spätere Jahrhunderte mit. Historisches Denken fragt deshalb nach Voraussetzungen, Folgen und Perspektiven über Epochengrenzen hinweg.",
       criteria: [
-        { label: "didaktische Zeitgrenze", keywords: ["zeitgrenze", "didaktisch", "kurs endet"] },
+        { label: "gesetzte Zeitgrenze", keywords: ["zeitgrenze", "gesetzt", "kurs endet"] },
         { label: "Langzeitfolgen", keywords: ["folgen", "reichen weiter", "spätere jahrhunderte"] },
         { label: "reflektiertes Geschichtsdenken", keywords: ["voraussetzungen", "perspektiven", "epochengrenzen", "historisches denken"] }
       ]
@@ -1324,39 +1324,369 @@ const modules = [
   }
 ];
 
+const moduleSupports = {
+  "modul-1": {
+    overview:
+      "In diesem Modul klärst du zuerst eine Grundfrage: Nicht alles Vergangene ist automatisch Geschichte im engeren Sinn. Geschichte beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Erinnerungen und gemeinsame Vorstellungen ordnen.",
+    terms: [
+      { term: "Naturgeschichte", description: "Entwicklung von Erde, Klima, Gesteinen und Lebewesen ohne Blick auf menschliche Kultur." },
+      { term: "Evolution", description: "Langsame biologische Veränderung von Lebewesen, also auch der verschiedenen Menschenarten." },
+      { term: "Kultur", description: "Alles, was Menschen gemeinsam hervorbringen: Sprache, Regeln, Rituale, Erzählungen und Werkzeuge." }
+    ],
+    storyline: [
+      "Zuerst trennst du Natur, biologische Entwicklung und menschliche Geschichte.",
+      "Dann erkennst du, dass Geschichte stark mit Kultur zusammenhängt.",
+      "Am Ende verstehst du, warum der Kurs nicht einfach mit Jahreszahlen, sondern mit großen Veränderungen startet."
+    ],
+    connection:
+      "Diese Unterscheidung trägt die ganze Einheit. Erst dadurch wird verständlich, warum in den nächsten Modulen Sprache, Sesshaftigkeit, Schrift, Geld und Religion zu Schlüsselthemen werden."
+  },
+  "modul-2": {
+    overview:
+      "Hier lernst du, dass der moderne Mensch nicht von Anfang an allein und überlegen war. Über lange Zeit lebten mehrere Menschenarten gleichzeitig, und der Erfolg des Homo sapiens musste sich erst entwickeln.",
+    terms: [
+      { term: "Homo sapiens", description: "Die Menschenart, zu der wir heute gehören." },
+      { term: "Migration", description: "Wanderung von Gruppen in neue Räume, oft über viele Generationen hinweg." },
+      { term: "Anpassung", description: "Veränderung von Verhalten, Werkzeugen und Lebensweise an Klima und Landschaft." }
+    ],
+    storyline: [
+      "Du lernst verschiedene Menschenarten kennen.",
+      "Du verstehst, warum große Gehirne und lange Kindheit Chancen und Belastungen zugleich waren.",
+      "Du siehst, dass die Ausbreitung des Menschen eine globale Migrationsgeschichte ist."
+    ],
+    connection:
+      "Ohne diese Grundlagen wirkt die kognitive Revolution später wie ein Wunder. Mit ihnen wird klar: Biologische Voraussetzungen und soziales Lernen greifen ineinander."
+  },
+  "modul-3": {
+    overview:
+      "In diesem Modul geht es um den vielleicht wichtigsten Schritt der frühen Menschheitsgeschichte: Menschen können nicht nur warnen oder rufen, sondern über Abwesendes, Zukünftiges und Vorgestelltes sprechen.",
+    terms: [
+      { term: "Symbol", description: "Ein Zeichen, das für etwas steht, etwa ein Bild, ein Wort oder ein Ritual." },
+      { term: "Mythos", description: "Eine erzählte Vorstellung, die einer Gruppe Sinn, Regeln oder Zugehörigkeit gibt." },
+      { term: "Kooperation", description: "Zusammenarbeit mehrerer Menschen an einem gemeinsamen Ziel." }
+    ],
+    storyline: [
+      "Zuerst unterscheidest du Tierkommunikation und menschliche Sprache.",
+      "Dann erkennst du, dass gemeinsame Vorstellungen Regeln und Zugehörigkeit schaffen.",
+      "Schließlich verstehst du, warum spätere Staaten, Religionen und Geldsysteme darauf aufbauen."
+    ],
+    connection:
+      "Dieses Modul ist der Schlüssel für fast alles Spätere: Große Gruppen funktionieren nur, weil Menschen an gemeinsame Ordnungen glauben und darüber sprechen können."
+  },
+  "modul-4": {
+    overview:
+      "Bevor Menschen sesshaft wurden, lebten sie sehr lange in mobilen Gruppen. Diese Lebensweise war nicht primitiv, sondern verlangte viel Wissen über Tiere, Pflanzen, Wege, Wetter und Jahreszeiten.",
+    terms: [
+      { term: "mobil", description: "Nicht dauerhaft an einem Ort lebend, sondern wandernd oder saisonal unterwegs." },
+      { term: "mündliche Überlieferung", description: "Weitergabe von Wissen durch Erzählen, Vorzeigen und gemeinsames Erinnern." },
+      { term: "Spiritualität", description: "Vorstellungen über Sinn, Geister, Ahnen oder Kräfte der Welt." }
+    ],
+    storyline: [
+      "Du untersuchst, wie mobile Gruppen wohnen und sich ernähren.",
+      "Du erkennst, dass diese Lebensform sehr gut an Räume angepasst war.",
+      "Du verstehst, warum Wissen, Erinnerung und Rituale überlebenswichtig waren."
+    ],
+    connection:
+      "Der Vergleich mit sesshaften Dörfern wird erst sinnvoll, wenn du die Leistungsfähigkeit mobiler Gesellschaften wirklich ernst nimmst."
+  },
+  "modul-5": {
+    overview:
+      "Mit Landwirtschaft beginnt kein einfaches Glückskapitel, sondern ein großer Umbruch. Menschen bauen Häuser, legen Vorräte an und werden gleichzeitig abhängiger von Ernten, Boden und Besitzordnung.",
+    terms: [
+      { term: "Sesshaftigkeit", description: "Dauerhaftes Leben an einem festen Ort." },
+      { term: "Überschuss", description: "Mehr erzeugte Nahrung oder Güter, als sofort verbraucht werden." },
+      { term: "Arbeitsteilung", description: "Nicht mehr alle tun dasselbe, sondern einzelne übernehmen besondere Aufgaben." }
+    ],
+    storyline: [
+      "Du klärst, warum Menschen überhaupt sesshaft wurden.",
+      "Du siehst, welche Vorteile Vorräte und Häuser brachten.",
+      "Du erkennst die neuen Risiken: mehr Arbeit, Abhängigkeit und Ungleichheit."
+    ],
+    connection:
+      "Aus Dörfern mit Vorräten entstehen später Verwaltung, Abgaben, soziale Unterschiede und schließlich Staaten."
+  },
+  "modul-6": {
+    overview:
+      "Dieses Modul zeigt, wie aus Vorräten und Organisation frühe Staaten werden. Sobald Nahrung, Arbeit und Besitz für viele Menschen geregelt werden müssen, entstehen Schrift, Listen, Verwaltung und neue Formen der Herrschaft.",
+    terms: [
+      { term: "Hochkultur", description: "Frühe komplexe Gesellschaft mit Städten, Schrift, Arbeitsteilung und Herrschaft." },
+      { term: "Verwaltung", description: "Organisation von Abgaben, Arbeit, Vorräten und Zuständigkeiten." },
+      { term: "Legitimation", description: "Begründung dafür, warum Herrschaft als gültig gelten soll." }
+    ],
+    storyline: [
+      "Du gehst vom Vorrat zum Speicher und von dort zur Organisation.",
+      "Dann lernst du Schrift als Werkzeug der Macht kennen.",
+      "Am Beispiel Ägyptens siehst du, wie Umwelt, Verwaltung und Religion zusammenwirken."
+    ],
+    connection:
+      "Wer frühe Staaten verstehen will, muss nicht nur Könige kennen, sondern auch Schreiber, Speicher, Kalender und Abgaben."
+  },
+  "modul-7": {
+    overview:
+      "Imperien verbinden große Räume. Das geschieht nicht nur durch Eroberung, sondern auch durch Straßen, Brücken, Gesetze, Handel, Sprache und feste Verwaltungsorte.",
+    terms: [
+      { term: "Imperium", description: "Großreich, das viele Regionen und Bevölkerungsgruppen politisch zusammenfasst." },
+      { term: "Infrastruktur", description: "Straßen, Brücken, Häfen, Bauten und andere Grundlagen für Verkehr und Versorgung." },
+      { term: "Kulturkontakt", description: "Begegnung verschiedener Gruppen mit Austausch, Anpassung und Konflikt." }
+    ],
+    storyline: [
+      "Du untersuchst, wie Rom große Räume ordnet.",
+      "Du beobachtest die Folgen dieser Ordnung in der Schweiz.",
+      "Du erkennst, dass Imperien den Alltag ebenso verändern wie Politik und Raum."
+    ],
+    connection:
+      "Von hier führt der Weg direkt zu Geld, Handel und Vernetzung, denn Imperien schaffen oft die Rahmenbedingungen für weite Austauschbeziehungen."
+  },
+  "modul-8": {
+    overview:
+      "Geld ist mehr als Metall. Es funktioniert nur, wenn Menschen ihm vertrauen und es als Wert anerkennen. Darum verbindet Geld auch Menschen, die sich persönlich gar nicht kennen.",
+    terms: [
+      { term: "Währung", description: "Ein geregeltes Geldsystem mit allgemein anerkannten Zahlungsmitteln." },
+      { term: "Vertrauen", description: "Erwartung, dass andere dieselbe Ordnung ebenfalls anerkennen." },
+      { term: "Sachquelle", description: "Gegenstand aus der Vergangenheit, etwa eine Münze, ein Werkzeug oder ein Kleidungsstück." }
+    ],
+    storyline: [
+      "Du klärst, warum Geld ohne geteilte Akzeptanz nicht funktioniert.",
+      "Du liest einen Münzfund als historische Quelle.",
+      "Du weitest den Blick auf Fernhandel und Vernetzung über einzelne Reiche hinaus."
+    ],
+    connection:
+      "Geld steht an der Schnittstelle von Politik, Wirtschaft und Kultur. Es zeigt, wie unsichtbare Ordnung ganz konkrete Folgen für den Alltag hat."
+  },
+  "modul-9": {
+    overview:
+      "Religionen ordnen die Welt. Sie geben Antworten auf Sinnfragen, regeln Verhalten, schaffen Zugehörigkeit und können Herrschaft stützen oder kritisieren.",
+    terms: [
+      { term: "Polytheismus", description: "Glaube an mehrere Götter." },
+      { term: "Monotheismus", description: "Glaube an einen einzigen Gott." },
+      { term: "Weltbild", description: "Vorstellung davon, wie Welt, Mensch und Ordnung zusammenhängen." }
+    ],
+    storyline: [
+      "Du unterscheidest verschiedene religiöse Grundformen.",
+      "Du untersuchst, wie Religion Gemeinschaft und Normen schafft.",
+      "Du erkennst, warum Glauben, Wissen und Vernetzung historisch oft zusammengehören."
+    ],
+    connection:
+      "Diese Einsichten brauchst du für das Mittelalter, weil dort Kirche, Herrschaft, Bildung und Alltag eng miteinander verflochten sind."
+  },
+  "modul-10": {
+    overview:
+      "Das Mittelalter war weder nur dunkel noch nur romantisch. Menschen lebten in einer harten, aber auch sehr organisierten Welt mit Herrschaft, Frömmigkeit, Arbeit, Konflikten, Städten und kulturellen Leistungen.",
+    terms: [
+      { term: "Stände", description: "Vorstellung einer gesellschaftlichen Ordnung aus klar abgegrenzten Gruppen." },
+      { term: "Kirche", description: "Religiöse Institution mit großem Einfluss auf Alltag, Bildung und Herrschaft." },
+      { term: "Alltagsgeschichte", description: "Geschichte des gewöhnlichen Lebens, also Wohnen, Essen, Arbeiten und Zusammenleben." }
+    ],
+    storyline: [
+      "Du prüfst verbreitete Mittelalterklischees.",
+      "Du betrachtest Burgen, Dörfer, Kleidung, Hygiene und Verteidigung als Teil wirklicher Lebenswelt.",
+      "Du lernst das Mittelalter als widersprüchliche Epoche kennen."
+    ],
+    connection:
+      "Dieses Modul schafft die Basis dafür, Stadtentwicklung, Handel, Frömmigkeit und Krisen im späteren Mittelalter genauer zu verstehen."
+  },
+  "modul-11": {
+    overview:
+      "Im späteren Mittelalter nehmen Kontakte, Märkte, Städte und religiöse Bewegungen zu. Gleichzeitig lernst du hier besonders deutlich, dass Geschichtswissen nie einfach gegeben ist, sondern aus Quellen kritisch erschlossen werden muss.",
+    terms: [
+      { term: "Quelle", description: "Alles, woran sich Vergangenheit untersuchen lässt: Texte, Bilder, Gegenstände oder Gebäude." },
+      { term: "Chronik", description: "Schriftliche Aufzeichnung historischer Ereignisse aus einer bestimmten Perspektive." },
+      { term: "Quellenkritik", description: "Prüfung, wie zuverlässig, interessengeleitet oder lückenhaft eine Quelle ist." }
+    ],
+    storyline: [
+      "Du arbeitest an einem spektakulären Überlieferungsfall: dem Kinderkreuzzug.",
+      "Du unterscheidest zwischen Erzählung, Quelle und historischer Wahrscheinlichkeit.",
+      "Du verbindest das mit Städten, Märkten und einer mobilen mittelalterlichen Welt."
+    ],
+    connection:
+      "Damit erreichst du eine zentrale historische Kompetenz: Nicht bloß nacherzählen, sondern prüfen, was wir überhaupt wissen können."
+  },
+  "modul-12": {
+    overview:
+      "Zum Schluss bündelst du die ganze Lernreise. Dabei wird deutlich: Geschichte bis 1500 ist nicht nur Europa, und sie endet nicht einfach in einer geraden Fortschrittsgeschichte.",
+    terms: [
+      { term: "Perspektivwechsel", description: "Bewusstes Wechseln des Blickwinkels, um ein Thema anders und oft genauer zu verstehen." },
+      { term: "Eurozentrismus", description: "Sichtweise, die Europa zum natürlichen Mittelpunkt der Geschichte macht." },
+      { term: "Langzeitlinie", description: "Entwicklung, die sich über sehr lange Zeiträume hinweg verfolgen lässt." }
+    ],
+    storyline: [
+      "Du nimmst mit '1491' einen nicht-eurozentrischen Schlussblick ein.",
+      "Du verbindest frühe Innovationen mit sehr langen Folgen.",
+      "Du formulierst eine eigene Bilanz der Einheit."
+    ],
+    connection:
+      "Das Schlussmodul zeigt, dass historische Orientierung mehr ist als das Lernen einzelner Epochen: Sie verbindet Räume, Zeiten und Deutungen."
+  }
+};
+
+const quickChecks = {
+  "modul-1": {
+    id: "m1-quick",
+    question: "Warum beginnt dieser Kurs nicht einfach beim Urknall oder beim ersten Steinwerkzeug? Antworte in 2 bis 4 Sätzen.",
+    placeholder: "Erkläre die Schwelle zwischen Natur und Geschichte.",
+    sampleAnswer:
+      "Der Kurs beginnt nicht einfach beim Urknall, weil der Urknall Naturgeschichte ist. Er beginnt auch nicht automatisch beim ersten Werkzeug, weil biologische Entwicklung noch nicht dasselbe ist wie Geschichte im engeren Sinn. Entscheidend ist die Schwelle, an der Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln und gemeinsamen Vorstellungen.",
+    criteria: [
+      { label: "Naturgeschichte abgegrenzt", keywords: ["urknall", "naturgeschichte", "natur"] },
+      { label: "bloße Biologie reicht nicht", keywords: ["biologie", "evolution", "werkzeug", "nicht genug"] },
+      { label: "Kultur als Schwelle genannt", keywords: ["kultur", "sprache", "regeln", "vorstellungen"] }
+    ]
+  },
+  "modul-2": {
+    id: "m2-quick",
+    question: "Warum war die lange Hilfsbedürftigkeit menschlicher Kinder historisch wichtig?",
+    placeholder: "Nenne den Zusammenhang von Kindheit, Lernen und Kooperation.",
+    sampleAnswer:
+      "Die lange Hilfsbedürftigkeit menschlicher Kinder zwang Gruppen zu Fürsorge, Lernen und enger Zusammenarbeit. Gerade dadurch konnten Wissen, Sprache und soziale Regeln intensiv weitergegeben werden.",
+    criteria: [
+      { label: "lange Kindheit erwähnt", keywords: ["kindheit", "kinder", "hilfsbedurftig"] },
+      { label: "Lernen oder Erziehung", keywords: ["lernen", "erziehung", "weitergabe"] },
+      { label: "Kooperation oder Bindung", keywords: ["kooperation", "bindung", "zusammenarbeit", "fursorge"] }
+    ]
+  },
+  "modul-3": {
+    id: "m3-quick",
+    question: "Warum kann ein Mythos historisch wirksam sein, obwohl man ihn nicht anfassen kann?",
+    placeholder: "Denke an Regeln, Zugehörigkeit und gemeinsames Handeln.",
+    sampleAnswer:
+      "Ein Mythos ist historisch wirksam, wenn viele Menschen gemeinsam an ihn glauben. Dann kann er Regeln stützen, Zugehörigkeit herstellen und gemeinsames Handeln ermöglichen.",
+    criteria: [
+      { label: "gemeinsamer Glaube", keywords: ["glauben", "gemeinsam"] },
+      { label: "Regeln oder Ordnung", keywords: ["regeln", "ordnung", "gesetz"] },
+      { label: "Handeln oder Gemeinschaft", keywords: ["handeln", "gemeinschaft", "kooperation"] }
+    ]
+  },
+  "modul-4": {
+    id: "m4-quick",
+    question: "Warum brauchten mobile Gruppen besonders viel Wissen über ihre Umwelt?",
+    placeholder: "Nenne mindestens zwei Bereiche dieses Wissens.",
+    sampleAnswer:
+      "Mobile Gruppen brauchten viel Umweltwissen, weil sie Wege, Jahreszeiten, Tiere, essbare Pflanzen und Gefahren kennen mussten. Ohne dieses Wissen konnten sie nicht sicher überleben.",
+    criteria: [
+      { label: "Umweltwissen genannt", keywords: ["umwelt", "landschaft", "natur"] },
+      { label: "konkrete Wissensbereiche", keywords: ["wege", "jahreszeiten", "tiere", "pflanzen", "gefahren"] },
+      { label: "Überlebensfunktion", keywords: ["uberleben", "sicher", "orientierung"] }
+    ]
+  },
+  "modul-5": {
+    id: "m5-quick",
+    question: "Nenne einen Gewinn und einen Preis der Sesshaftigkeit.",
+    placeholder: "Schreibe knapp, aber genau.",
+    sampleAnswer:
+      "Ein Gewinn der Sesshaftigkeit ist, dass Menschen Vorräte anlegen und feste Häuser bauen konnten. Ein Preis war die stärkere Abhängigkeit von Ernten und die größere Arbeitsbelastung.",
+    criteria: [
+      { label: "ein Gewinn", keywords: ["vorrat", "hauser", "sicherheit", "dorf"] },
+      { label: "ein Preis", keywords: ["arbeit", "abhangig", "ernte", "risiko", "ungleich"] }
+    ]
+  },
+  "modul-6": {
+    id: "m6-quick",
+    question: "Warum war Schrift für frühe Staaten ein Machtmittel?",
+    placeholder: "Denke an Listen, Abgaben und Organisation.",
+    sampleAnswer:
+      "Schrift war ein Machtmittel, weil mit ihr Abgaben, Vorräte, Arbeitsleistungen und Besitz festgehalten werden konnten. Wer schreiben und verwalten konnte, gewann Einfluss auf die ganze Ordnung.",
+    criteria: [
+      { label: "Schrift genannt", keywords: ["schrift", "schreiben"] },
+      { label: "Verwaltung oder Listen", keywords: ["verwaltung", "listen", "festhalten", "buchhaltung"] },
+      { label: "Machtwirkung", keywords: ["macht", "einfluss", "ordnung", "abgaben"] }
+    ]
+  },
+  "modul-7": {
+    id: "m7-quick",
+    question: "Wie verändert ein Imperium den Alltag der Menschen vor Ort?",
+    placeholder: "Nenne zwei konkrete Veränderungen.",
+    sampleAnswer:
+      "Ein Imperium verändert den Alltag durch Straßen, neue Waren, Gesetze, Bauten oder Sprache. Menschen leben dadurch in stärker geregelten und vernetzten Räumen.",
+    criteria: [
+      { label: "Alltag genannt", keywords: ["alltag", "leben"] },
+      { label: "konkrete Veränderungen", keywords: ["strassen", "waren", "gesetze", "bauten", "sprache"] },
+      { label: "Vernetzung oder Ordnung", keywords: ["vernetzt", "ordnung", "geregelt"] }
+    ]
+  },
+  "modul-8": {
+    id: "m8-quick",
+    question: "Warum kann Geld auch zwischen Fremden funktionieren?",
+    placeholder: "Erkläre das mit einem Schlüsselbegriff.",
+    sampleAnswer:
+      "Geld funktioniert zwischen Fremden, wenn beide Seiten darauf vertrauen, dass andere es ebenfalls anerkennen. Dieses gemeinsame Vertrauen macht Tausch über persönliche Beziehungen hinaus möglich.",
+    criteria: [
+      { label: "Fremde oder unbekannte Menschen", keywords: ["fremde", "unbekannt", "nicht kennen"] },
+      { label: "Vertrauen", keywords: ["vertrauen", "anerkennen"] },
+      { label: "Tausch oder Handel", keywords: ["tausch", "handel", "bezahlen"] }
+    ]
+  },
+  "modul-9": {
+    id: "m9-quick",
+    question: "Was bedeutet es, Religion als Ordnungssystem zu verstehen?",
+    placeholder: "Denke an Regeln, Gemeinschaft und Weltdeutung.",
+    sampleAnswer:
+      "Religion ist ein Ordnungssystem, wenn sie nicht nur glaubt, sondern Verhalten regelt, Gemeinschaft stiftet und die Welt deutet. Sie kann dadurch Alltag und Herrschaft mitprägen.",
+    criteria: [
+      { label: "Regeln oder Normen", keywords: ["regeln", "normen", "verhalten"] },
+      { label: "Gemeinschaft", keywords: ["gemeinschaft", "zugehorigkeit"] },
+      { label: "Deutung oder Herrschaft", keywords: ["deutung", "weltbild", "herrschaft"] }
+    ]
+  },
+  "modul-10": {
+    id: "m10-quick",
+    question: "Warum hilft Alltagsgeschichte dabei, das Mittelalter besser zu verstehen?",
+    placeholder: "Nenne Beispiele aus dem täglichen Leben.",
+    sampleAnswer:
+      "Alltagsgeschichte hilft, weil sie zeigt, wie Menschen im Mittelalter wirklich wohnten, aßen, arbeiteten und sich schützten. So verschwindet das bloße Klischee vom romantischen oder dunklen Mittelalter.",
+    criteria: [
+      { label: "Alltag benannt", keywords: ["wohnen", "essen", "arbeiten", "schutz", "hygiene"] },
+      { label: "Mittelalterbild korrigiert", keywords: ["klischee", "nicht nur", "dunkel", "romantisch"] }
+    ]
+  },
+  "modul-11": {
+    id: "m11-quick",
+    question: "Warum reicht es beim Kinderkreuzzug nicht, eine spannende Erzählung einfach zu glauben?",
+    placeholder: "Erkläre die Rolle der Quellenkritik.",
+    sampleAnswer:
+      "Eine spannende Erzählung reicht nicht, weil Historikerinnen und Historiker prüfen müssen, welche Quellen es gibt, wann sie entstanden sind und wie zuverlässig sie sind. Erst dann lässt sich einschätzen, was wahrscheinlich passiert ist.",
+    criteria: [
+      { label: "Erzählung reicht nicht", keywords: ["nicht genug", "nicht einfach glauben", "erzahlung"] },
+      { label: "Quellenkritik", keywords: ["quelle", "quellenkritik", "prufen"] },
+      { label: "Zuverlässigkeit", keywords: ["zuverlassig", "wahrscheinlich", "entstanden"] }
+    ]
+  },
+  "modul-12": {
+    id: "m12-quick",
+    question: "Warum ist 1492 für Amerika ein Einschnitt, aber nicht der Anfang von Geschichte?",
+    placeholder: "Antworte mit Blick auf die Zeit davor.",
+    sampleAnswer:
+      "1492 ist ein Einschnitt, weil sich Begegnung, Gewalt und Herrschaft stark verändern. Aber Amerikas Geschichte beginnt viel früher, denn dort gab es bereits lange zuvor Gesellschaften mit Landwirtschaft, Kunst, Sprachen und politischer Ordnung.",
+    criteria: [
+      { label: "1492 als Einschnitt", keywords: ["einschnitt", "veranderung", "1492"] },
+      { label: "frühere Geschichte Amerikas", keywords: ["fruher", "amerika", "gesellschaften", "indigen"] },
+      { label: "konkrete Leistungen genannt", keywords: ["landwirtschaft", "kunst", "sprachen", "ordnung"] }
+    ]
+  }
+};
+
 const contentChecks = {
   "modul-1": {
     title: "Inhaltssicherung Modul 1",
     questions: [
       {
-        prompt: "Was unterscheidet Geschichte im engeren Sinn von Naturgeschichte?",
-        options: [
-          "Geschichte meint kulturell geordnete menschliche Welt, Naturgeschichte nicht.",
-          "Geschichte ist einfach alles, was vor heute passiert ist.",
-          "Naturgeschichte beginnt erst mit der Schrift."
-        ],
-        correctIndex: 0,
-        explanation: "Der Kurs trennt Naturgeschichte, biologische Entwicklung und Kulturgeschichte ausdrücklich."
+        prompt: "Erkläre den Unterschied zwischen Naturgeschichte und Geschichte im engeren Sinn.",
+        placeholder: "Formuliere den Unterschied in eigenen Worten.",
+        sampleAnswer:
+          "Naturgeschichte beschreibt die Entwicklung von Erde, Klima und Lebewesen. Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln, Symbolen und gemeinsamen Erinnerungen.",
+        criteria: [
+          { label: "Naturgeschichte erklärt", keywords: ["erde", "klima", "lebewesen", "naturgeschichte"] },
+          { label: "kulturelle Schwelle genannt", keywords: ["kultur", "sprache", "regeln", "symbole", "erinnerungen"] }
+        ]
       },
       {
-        prompt: "Welche Strukturachse übernimmt die Einheit von Harari?",
-        options: [
-          "Nur die klassische Dreiteilung Antike, Mittelalter, Neuzeit.",
-          "Kognitive Revolution, Landwirtschaft und Vereinigungsprozesse.",
-          "Nur große Schlachten und Herrscher."
-        ],
-        correctIndex: 1,
-        explanation: "Hararis Großstruktur bildet die Tiefenfolie der Einheit."
-      },
-      {
-        prompt: "Warum taucht das Anthropozän schon im Einstieg auf?",
-        options: [
-          "Weil der Kurs eigentlich erst mit dem 20. Jahrhundert beginnt.",
-          "Weil es den Blick auf Langzeitfolgen menschlichen Handelns öffnet.",
-          "Weil es Hararis einziges Thema ist."
-        ],
-        correctIndex: 1,
-        explanation: "Der Begriff dient im Kurs als Langzeitperspektive, nicht als neues Kapitel ab der Moderne."
+        prompt: "Warum verändert diese Unterscheidung den Blick auf den ganzen Kurs?",
+        placeholder: "Denke an die kommenden Themen der Einheit.",
+        sampleAnswer:
+          "Die Unterscheidung verändert den Kurs, weil dann nicht bloß Daten oder Ereignisse im Mittelpunkt stehen. Wichtiger werden Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion als große Entwicklungslinien menschlicher Geschichte.",
+        criteria: [
+          { label: "Bedeutung für den Kurs", keywords: ["kurs", "blick", "verandert"] },
+          { label: "große Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
+        ]
       }
     ]
   },
@@ -1364,34 +1694,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 2",
     questions: [
       {
-        prompt: "Welche Aussage trifft auf frühe Menschen nach Harari zu?",
-        options: [
-          "Es gab lange mehrere Menschenarten gleichzeitig.",
-          "Homo sapiens war von Anfang an allein.",
-          "Menschen waren sofort ökologisch dominant."
-        ],
-        correctIndex: 0,
-        explanation: "Gerade die Gleichzeitigkeit verschiedener Menschenarten ist ein zentrales Argument."
+        prompt: "Warum war Homo sapiens lange kein automatisch überlegenes Wesen?",
+        placeholder: "Nenne biologische und historische Gründe.",
+        sampleAnswer:
+          "Homo sapiens war lange nicht automatisch überlegen, weil mehrere Menschenarten gleichzeitig lebten und frühe Menschen insgesamt nur begrenzten Einfluss auf ihre Umwelt hatten. Große Gehirne kosteten viel Energie und Menschenkinder waren lange hilfsbedürftig.",
+        criteria: [
+          { label: "mehrere Menschenarten", keywords: ["mehrere", "menschenarten", "gleichzeitig", "neandertaler"] },
+          { label: "keine automatische Dominanz", keywords: ["nicht uberlegen", "unauffallig", "begrenzt"] },
+          { label: "biologische Belastung", keywords: ["gehirn", "energie", "hilfsbedurftig", "kinder"] }
+        ]
       },
       {
-        prompt: "Was macht die Ressource '1491' für dieses Modul besonders wichtig?",
-        options: [
-          "Sie zeigt frühe Migration und Anpassung außerhalb Europas.",
-          "Sie beweist, dass Menschen erst ab 1492 in Amerika lebten.",
-          "Sie behandelt ausschließlich das Mittelalter in Europa."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource erweitert die Frühgeschichte global."
-      },
-      {
-        prompt: "Warum spielt die lange Hilfsbedürftigkeit menschlicher Kinder eine Rolle?",
-        options: [
-          "Weil sie Kooperation, Erziehung und soziale Bindungen fördert.",
-          "Weil sie Geschichte verhindert.",
-          "Weil sie den Werkzeuggebrauch überflüssig macht."
-        ],
-        correctIndex: 0,
-        explanation: "Harari verbindet frühe Abhängigkeit mit sozialer Lernfähigkeit."
+        prompt: "Erkläre, warum Migration und Anpassung zentrale Teile der Frühgeschichte sind.",
+        placeholder: "Arbeite mit Beispielen aus neuen Räumen.",
+        sampleAnswer:
+          "Migration und Anpassung sind zentral, weil Menschen neue Räume nicht nur erreichten, sondern dort auch neue Lebensweisen entwickelten. Behausungen, Nahrung, Werkzeuge und Wege wurden an Klima und Landschaft angepasst.",
+        criteria: [
+          { label: "Migration genannt", keywords: ["migration", "wandern", "ausbreitung"] },
+          { label: "Anpassung beschrieben", keywords: ["anpassung", "klima", "landschaft", "behausungen"] },
+          { label: "konkrete Lebensweise", keywords: ["nahrung", "werkzeuge", "wege"] }
+        ]
       }
     ]
   },
@@ -1399,34 +1721,25 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 3",
     questions: [
       {
-        prompt: "Was ist laut Harari das historisch Neue an menschlicher Sprache?",
-        options: [
-          "Sie ist lauter als jede Tierkommunikation.",
-          "Sie kann über Vorgestelltes und Abwesendes sprechen.",
-          "Sie braucht keine Gemeinschaft."
-        ],
-        correctIndex: 1,
-        explanation: "Nicht Lautstärke, sondern Abstraktionsfähigkeit ist der Schlüssel."
+        prompt: "Was kann menschliche Sprache, was Tierkommunikation meist nicht kann?",
+        placeholder: "Erkläre den Unterschied knapp und genau.",
+        sampleAnswer:
+          "Menschliche Sprache kann auch über Abwesendes, Vergangenes, Zukünftiges und Vorgestelltes sprechen. Tierkommunikation ist oft stärker an unmittelbare Situationen gebunden.",
+        criteria: [
+          { label: "Abwesendes oder Vorgestelltes", keywords: ["abwesend", "vorgestellt", "zukunftig", "vergangen"] },
+          { label: "Tierkommunikation abgegrenzt", keywords: ["tier", "unmittelbar", "situation"] }
+        ]
       },
       {
-        prompt: "Warum sind Mythen historisch wichtig?",
-        options: [
-          "Weil sie immer wahr sind.",
-          "Weil sie gemeinsame Ordnungen und Kooperation ermöglichen.",
-          "Weil sie nur Unterhaltung bieten."
-        ],
-        correctIndex: 1,
-        explanation: "Geteilte Vorstellungen können soziale Wirklichkeit erzeugen."
-      },
-      {
-        prompt: "Wie stützt '1491' dieses Modul?",
-        options: [
-          "Durch Beispiele für Felsbilder, Totempfähle und Schriftkultur.",
-          "Durch römische Legionen in der Schweiz.",
-          "Durch moderne Umweltpolitik."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource macht Symbolfähigkeit materiell sichtbar."
+        prompt: "Wie helfen gemeinsame Vorstellungen dabei, große Gruppen zu organisieren?",
+        placeholder: "Denke an Regeln, Zugehörigkeit und Vertrauen.",
+        sampleAnswer:
+          "Gemeinsame Vorstellungen helfen, weil Menschen dadurch an dieselben Regeln, Götter, Gesetze oder Zugehörigkeiten glauben. So können auch viele Fremde zusammenarbeiten, ohne sich alle persönlich zu kennen.",
+        criteria: [
+          { label: "gemeinsame Vorstellung", keywords: ["gemeinsame", "vorstellungen", "glauben"] },
+          { label: "Regeln oder Zugehörigkeit", keywords: ["regeln", "gesetze", "zugehorigkeit", "gotter"] },
+          { label: "Großgruppen", keywords: ["fremde", "große gruppen", "zusammenarbeiten"] }
+        ]
       }
     ]
   },
@@ -1434,34 +1747,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 4",
     questions: [
       {
-        prompt: "Welche Lebensform beschreibt das Modul vor allem?",
-        options: [
-          "Starre Stadtgesellschaften mit Bürokratie.",
-          "Mobile Gesellschaften mit Anpassung an Räume und Jahreszeiten.",
-          "Industrielle Arbeitswelten."
-        ],
-        correctIndex: 1,
-        explanation: "Jäger-und-Sammler-Gesellschaften sind hochgradig mobil und angepasst."
+        prompt: "Vergleiche mobile Jäger-und-Sammler-Gruppen mit sesshaften Dörfern.",
+        placeholder: "Nenne mindestens drei Unterschiede.",
+        sampleAnswer:
+          "Mobile Gruppen wanderten stärker, passten sich saisonal an und lebten nicht von festen Feldern. Sesshafte Dörfer bauten Häuser, legten Vorräte an und waren stärker an Boden und Ernten gebunden.",
+        criteria: [
+          { label: "Mobilität", keywords: ["mobil", "wandern", "saisonal"] },
+          { label: "Sesshaftigkeit", keywords: ["hauser", "felder", "dorfer", "sesshaft"] },
+          { label: "Vorräte oder Ernten", keywords: ["vorrate", "ernte", "speicher"] }
+        ]
       },
       {
-        prompt: "Was zeigt '1491' über Unterkünfte früher Gesellschaften?",
-        options: [
-          "Sie waren überall gleich gebaut.",
-          "Sie waren an Klima, Mobilität und Lebensweise angepasst.",
-          "Sie bestanden fast nur aus Steinburgen."
-        ],
-        correctIndex: 1,
-        explanation: "Zelte, Lehmhäuser und Iglus zeigen funktionale Vielfalt."
-      },
-      {
-        prompt: "Warum ist mündliche Weitergabe hier zentral?",
-        options: [
-          "Weil frühe Gesellschaften kein praktisches Wissen brauchten.",
-          "Weil Orientierung, Jagd- und Umweltwissen gemeinschaftlich erinnert werden mussten.",
-          "Weil Schrift immer verboten war."
-        ],
-        correctIndex: 1,
-        explanation: "Erzählen und Erinnern sichern Überleben."
+        prompt: "Warum waren mündliche Weitergabe und Rituale für mobile Gruppen wichtig?",
+        placeholder: "Verbinde Wissen, Erinnerung und Gemeinschaft.",
+        sampleAnswer:
+          "Mündliche Weitergabe und Rituale waren wichtig, weil Wissen über Wege, Tiere, Jahreszeiten und Regeln ohne Schrift erinnert werden musste. Rituale stärkten zudem Zusammenhalt und gemeinsame Deutungen der Welt.",
+        criteria: [
+          { label: "Wissen ohne Schrift", keywords: ["ohne schrift", "mündlich", "weitergabe"] },
+          { label: "praktisches Wissen", keywords: ["wege", "tiere", "jahreszeiten", "regeln"] },
+          { label: "Gemeinschaft oder Ritual", keywords: ["gemeinschaft", "zusammenhalt", "ritual"] }
+        ]
       }
     ]
   },
@@ -1469,34 +1774,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 5",
     questions: [
       {
-        prompt: "Warum ist Hararis Formel vom 'größten Betrug' didaktisch nützlich?",
-        options: [
-          "Weil sie zu einem abgewogenen Urteil über Landwirtschaft zwingt.",
-          "Weil Landwirtschaft eindeutig nur negativ war.",
-          "Weil danach keine Geschichte mehr passiert."
-        ],
-        correctIndex: 0,
-        explanation: "Die Zuspitzung fordert differenziertes Abwägen heraus."
+        prompt: "Warum ist Landwirtschaft zugleich Fortschritt und Belastung?",
+        placeholder: "Schreibe ein ausgewogenes Urteil.",
+        sampleAnswer:
+          "Landwirtschaft brachte Vorräte, Bevölkerungswachstum und feste Siedlungen. Gleichzeitig wurden Menschen abhängiger von Ernten, arbeiteten härter und entwickelten neue soziale Unterschiede.",
+        criteria: [
+          { label: "Vorteile genannt", keywords: ["vorrate", "siedlungen", "bevolkerungswachstum", "hauser"] },
+          { label: "Belastungen genannt", keywords: ["abhangig", "harter", "arbeit", "ernte", "risiko"] },
+          { label: "Abwägung", keywords: ["zugleich", "sowohl", "ambivalent", "nicht nur"] }
+        ]
       },
       {
-        prompt: "Welche Folge der Sesshaftigkeit ist zentral?",
-        options: [
-          "Mehr Überschüsse, aber auch neue Abhängigkeiten.",
-          "Völlige Gleichheit in allen Gesellschaften.",
-          "Ende jeder Arbeitsteilung."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul betont gerade die Ambivalenz von Sicherheit und Abhängigkeit."
-      },
-      {
-        prompt: "Was leistet 'Pfahlbauer von Pfyn' für das Modul?",
-        options: [
-          "Es macht jungsteinzeitlichen Alltag experimentell greifbar.",
-          "Es behandelt nur moderne Technik.",
-          "Es erklärt die Reformation."
-        ],
-        correctIndex: 0,
-        explanation: "Experimentalarchäologie konkretisiert Sesshaftigkeit im Alltag."
+        prompt: "Was veränderte sich im Alltag, wenn Menschen sesshaft wurden?",
+        placeholder: "Denke an Wohnen, Arbeit und Besitz.",
+        sampleAnswer:
+          "Mit Sesshaftigkeit entstanden feste Häuser, Speicher und stärker geregelte Arbeitsabläufe. Besitz und Felder wurden wichtiger, und Konflikte um Vorräte oder Land nahmen zu.",
+        criteria: [
+          { label: "Wohnen oder Speicher", keywords: ["hauser", "speicher", "dorf"] },
+          { label: "Arbeit", keywords: ["arbeit", "arbeitsablaufe", "anbau"] },
+          { label: "Besitz oder Konflikte", keywords: ["besitz", "land", "konflikte", "vorrate"] }
+        ]
       }
     ]
   },
@@ -1504,34 +1801,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 6",
     questions: [
       {
-        prompt: "Wofür wird frühe Schrift in diesem Modul besonders wichtig?",
-        options: [
-          "Vor allem für Verwaltung und Buchhaltung.",
-          "Nur für Theaterstücke.",
-          "Nur für private Briefe."
-        ],
-        correctIndex: 0,
-        explanation: "Schrift erscheint hier zuerst als Verwaltungstechnik."
+        prompt: "Erkläre den Weg vom Überschuss zum Staat.",
+        placeholder: "Denke an Vorräte, Verwaltung und Herrschaft.",
+        sampleAnswer:
+          "Wenn Überschüsse entstehen, müssen Vorräte erfasst, geschützt und verteilt werden. Dafür entstehen Verwalter, Schreiber und feste Zuständigkeiten. So wächst aus wirtschaftlicher Organisation politische Herrschaft.",
+        criteria: [
+          { label: "Überschuss oder Vorrat", keywords: ["uberschuss", "vorrate", "speicher"] },
+          { label: "Verwaltung", keywords: ["verwalter", "verwaltung", "schreiber", "zustandigkeiten"] },
+          { label: "Herrschaft", keywords: ["herrschaft", "staat", "politisch"] }
+        ]
       },
       {
-        prompt: "Welche Kombination stabilisiert frühe Staaten besonders?",
-        options: [
-          "Überschuss, Verwaltung, Schrift und Legitimation.",
-          "Zufall und einzelne Heldengestalten allein.",
-          "Nur gutes Wetter."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul verbindet materielle und symbolische Ordnung."
-      },
-      {
-        prompt: "Warum wird Ägypten als Fallbeispiel genutzt?",
-        options: [
-          "Weil Nil, Beamtentum und Schrift Langzeitstabilität erklären helfen.",
-          "Weil Ägypten keine Verwaltung kannte.",
-          "Weil Ägypten nichts mit Religion zu tun hatte."
-        ],
-        correctIndex: 0,
-        explanation: "Genau diese Strukturfaktoren hebt die SRF-Ressource hervor."
+        prompt: "Warum ist Ägypten ein gutes Beispiel für frühe Staatlichkeit?",
+        placeholder: "Verbinde Umwelt, Schrift und Herrschaft.",
+        sampleAnswer:
+          "Ägypten ist ein gutes Beispiel, weil der Nil verlässliche Landwirtschaft ermöglichte, Verwaltung und Schrift Ordnung schufen und der Pharao Herrschaft religiös absicherte.",
+        criteria: [
+          { label: "Nil oder Umwelt", keywords: ["nil", "fluss", "landwirtschaft"] },
+          { label: "Schrift oder Verwaltung", keywords: ["schrift", "hieroglyph", "verwaltung", "beamtentum"] },
+          { label: "Herrschaft oder Religion", keywords: ["pharao", "herrschaft", "religion", "legitimation"] }
+        ]
       }
     ]
   },
@@ -1539,34 +1828,25 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 7",
     questions: [
       {
-        prompt: "Wie ordnen Imperien große Räume?",
-        options: [
-          "Über Infrastruktur, Militär, Recht und Verwaltung.",
-          "Nur durch Gerüchte.",
-          "Gar nicht, sie bestehen nur auf Karten."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul erklärt Imperien als reale Ordnungsmodelle."
+        prompt: "Wodurch hält ein Imperium große Räume zusammen?",
+        placeholder: "Nenne mehrere Bausteine dieser Ordnung.",
+        sampleAnswer:
+          "Ein Imperium hält große Räume durch Militär, Verwaltung, Infrastruktur, Gesetze und gemeinsame Wirtschaftsformen zusammen. Dadurch werden entfernte Regionen stärker verbunden.",
+        criteria: [
+          { label: "Militär oder Macht", keywords: ["militar", "macht", "armee"] },
+          { label: "Verwaltung oder Recht", keywords: ["verwaltung", "gesetze", "recht"] },
+          { label: "Infrastruktur oder Verbindung", keywords: ["strassen", "brucken", "infrastruktur", "verbunden"] }
+        ]
       },
       {
-        prompt: "Was zeigt 'Römer in der Schweiz' besonders gut?",
-        options: [
-          "Wie Expansion Alltag, Verkehrswege und Kulturkontakt verändert.",
-          "Dass die Römer ohne lokale Räume planten.",
-          "Dass römische Herrschaft nur auf Tempeln beruhte."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource regionalisiert imperiale Strukturen."
-      },
-      {
-        prompt: "Warum ergänzt das 'Römer-Experiment' das Modul sinnvoll?",
-        options: [
-          "Weil es römischen Alltag über rekonstruierte Praxis sichtbar macht.",
-          "Weil es nur moderne Computerspiele erklärt.",
-          "Weil es ausschließlich Diplomatie der Neuzeit behandelt."
-        ],
-        correctIndex: 0,
-        explanation: "Alltagsgeschichte und materielle Kultur werden dadurch greifbar."
+        prompt: "Zeige an zwei Beispielen, wie die Römer den Alltag in der Schweiz veränderten.",
+        placeholder: "Nutze konkrete Dinge aus der Ressource.",
+        sampleAnswer:
+          "Die Römer veränderten den Alltag durch Straßen und Brücken, die Bewegung und Handel erleichterten. Auch neue Waren, Bauweisen, Rechtsformen oder Ernährungsgewohnheiten wirkten bis in lokale Lebenswelten hinein.",
+        criteria: [
+          { label: "konkrete Beispiele", keywords: ["strassen", "brucken", "waren", "weinbau", "recht", "bauten"] },
+          { label: "Alltagswirkung", keywords: ["alltag", "handel", "leben", "ernahrung"] }
+        ]
       }
     ]
   },
@@ -1574,34 +1854,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 8",
     questions: [
       {
-        prompt: "Warum kann Geld Menschen verbinden, die sich nicht kennen?",
-        options: [
-          "Weil es auf geteilter Akzeptanz und Vertrauen beruht.",
-          "Weil jedes Metall automatisch wertvoll ist.",
-          "Weil Geld keine politische Ordnung braucht."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul erklärt Geld als Vertrauensordnung."
+        prompt: "Warum ist Geld eine Vertrauensordnung und nicht nur Metall?",
+        placeholder: "Formuliere mit dem Begriff Vertrauen.",
+        sampleAnswer:
+          "Geld ist eine Vertrauensordnung, weil sein Wert davon abhängt, dass viele Menschen es anerkennen und im Tausch akzeptieren. Das Metall allein erklärt die Wirkung nicht.",
+        criteria: [
+          { label: "Vertrauen", keywords: ["vertrauen", "anerkennen", "akzeptieren"] },
+          { label: "nicht nur Metall", keywords: ["nicht nur metall", "metall allein", "mehr als metall"] },
+          { label: "Tausch oder Wert", keywords: ["tausch", "wert", "bezahlen"] }
+        ]
       },
       {
-        prompt: "Was macht den Münzschatz von Ueken historisch bedeutsam?",
-        options: [
-          "Münzen verraten etwas über Umlauf, Herrschaft und Krisen.",
-          "Er ist nur dekorativ.",
-          "Sachquellen sagen grundsätzlich nichts aus."
-        ],
-        correctIndex: 0,
-        explanation: "Der Fund wird als auswertbare Quelle gelesen."
-      },
-      {
-        prompt: "Welche Funktion hat 'Grosse Völker' in diesem Modul?",
-        options: [
-          "Es erweitert Handel und Vernetzung über Rom hinaus.",
-          "Es ersetzt alle Quellenkritik.",
-          "Es behandelt nur lokale Dorfgeschichte."
-        ],
-        correctIndex: 0,
-        explanation: "Fernhandel und Wissenstransfer werden dadurch breiter verortet."
+        prompt: "Was kann ein Münzschatz über eine Gesellschaft verraten?",
+        placeholder: "Denke an Wirtschaft, Herrschaft und Unsicherheit.",
+        sampleAnswer:
+          "Ein Münzschatz kann zeigen, welche Währung umlief, welche Herrschaft anerkannt wurde und ob Menschen vielleicht in unsicheren Zeiten Vermögen versteckten. Er ist deshalb eine wichtige Sachquelle.",
+        criteria: [
+          { label: "Währung oder Umlauf", keywords: ["wahrung", "umlief", "umlauf", "münzen"] },
+          { label: "Herrschaft", keywords: ["herrschaft", "anerkannt", "macht"] },
+          { label: "Unsicherheit oder Verstecken", keywords: ["unsicher", "versteckt", "krise", "vermog"] }
+        ]
       }
     ]
   },
@@ -1609,34 +1881,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 9",
     questions: [
       {
-        prompt: "Wie wird Religion im Modul verstanden?",
-        options: [
-          "Nur als private Meinung einzelner Menschen.",
-          "Als Ordnungs- und Deutungssystem für große Gemeinschaften.",
-          "Als Gegenteil jeder Vernetzung."
-        ],
-        correctIndex: 1,
-        explanation: "Religion strukturiert Normen, Zugehörigkeit und Herrschaft."
+        prompt: "Erkläre, wie Religion Gemeinschaft ordnen kann.",
+        placeholder: "Denke an Regeln, Zugehörigkeit und Sinn.",
+        sampleAnswer:
+          "Religion kann Gemeinschaft ordnen, weil sie gemeinsame Regeln, Rituale und Deutungen vorgibt. Menschen wissen dadurch eher, wer dazugehört und wie richtiges Verhalten aussehen soll.",
+        criteria: [
+          { label: "Regeln oder Rituale", keywords: ["regeln", "rituale", "normen"] },
+          { label: "Zugehörigkeit", keywords: ["zugehorigkeit", "gemeinschaft", "dazugehort"] },
+          { label: "Sinn oder Deutung", keywords: ["sinn", "deutung", "weltbild"] }
+        ]
       },
       {
-        prompt: "Warum beginnt Hararis Religionskapitel mit Samarkand und Mekka?",
-        options: [
-          "Um Religion räumlich als Netzwerk und Begegnung sichtbar zu machen.",
-          "Weil Europa im Mittelalter keine Rolle spielt.",
-          "Weil dort keine Händler vorkamen."
-        ],
-        correctIndex: 0,
-        explanation: "Pilgerorte und Märkte machen Vereinigungsprozesse konkret."
-      },
-      {
-        prompt: "Was stützt 'Grosse Völker' in diesem Modul?",
-        options: [
-          "Die Verbindung von Wissensleistungen, Austausch und großen Kultur Räumen.",
-          "Die Behauptung, Religion und Wissen seien immer getrennt.",
-          "Nur die Geschichte einzelner Schlachten."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource öffnet den Blick auf arabische Wissens- und Vernetzungsräume."
+        prompt: "Warum lassen sich Religion, Wissen und Handel historisch oft nicht sauber trennen?",
+        placeholder: "Arbeite mit Netzwerken und Begegnungen.",
+        sampleAnswer:
+          "Religion, Wissen und Handel lassen sich oft nicht trennen, weil Pilgerwege, Gelehrte, Übersetzungen, Märkte und Städte miteinander verbunden waren. Menschen tauschten nicht nur Waren, sondern auch Ideen und Texte aus.",
+        criteria: [
+          { label: "Netzwerke oder Wege", keywords: ["wege", "netzwerke", "pilger", "stadte", "markte"] },
+          { label: "Wissen", keywords: ["gelehrte", "texte", "ubersetzungen", "ideen"] },
+          { label: "Handel", keywords: ["handel", "waren", "austausch"] }
+        ]
       }
     ]
   },
@@ -1644,34 +1908,25 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 10",
     questions: [
       {
-        prompt: "Warum ist das Bild vom 'dunklen Mittelalter' zu simpel?",
-        options: [
-          "Weil das Mittelalter zugleich harte Lebensbedingungen und große kulturelle Leistungen zeigt.",
-          "Weil im Mittelalter nichts Schwieriges geschah.",
-          "Weil es nur Burgen und Feste gab."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul arbeitet bewusst gegen einfache Klischees."
+        prompt: "Warum ist das Klischee vom 'dunklen Mittelalter' zu einfach?",
+        placeholder: "Formuliere eine differenzierte Antwort.",
+        sampleAnswer:
+          "Das Klischee ist zu einfach, weil das Mittelalter harte Lebensbedingungen hatte, aber zugleich Städte, Bildung, Handwerk, religiöse Kultur und komplexe Herrschaftsformen hervorbrachte. Es war also widersprüchlich, nicht einfach nur dunkel.",
+        criteria: [
+          { label: "harte Lebensbedingungen", keywords: ["hart", "armut", "krankheit", "pest", "belastung"] },
+          { label: "Leistungen oder Komplexität", keywords: ["stadte", "bildung", "handwerk", "kultur", "herrschaft"] },
+          { label: "differenziertes Urteil", keywords: ["zugleich", "widerspruchlich", "nicht einfach"] }
+        ]
       },
       {
-        prompt: "Was zeigt 'Mittelalter in der Schweiz' besonders gut?",
-        options: [
-          "Alltagsgeschichte mit Hygiene, Küche, Verteidigung und Statussymbolen.",
-          "Nur abstrakte Philosophie.",
-          "Ausschließlich antike Geschichte."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource erdet die Epoche in konkreten Lebensformen."
-      },
-      {
-        prompt: "Welche Funktion hat 'Das verrückte Mittelalter' im Kurs?",
-        options: [
-          "Es dient als motivierender Einstieg, der anschließend differenziert wird.",
-          "Es ersetzt alle vertiefenden Materialien vollständig.",
-          "Es behandelt keine Hierarchien."
-        ],
-        correctIndex: 0,
-        explanation: "Humorvoller Zugang und fachliche Nachschärfung gehören zusammen."
+        prompt: "Was zeigt Alltagsgeschichte über das Mittelalter, das Ritterbilder oft verdecken?",
+        placeholder: "Nenne mehrere Bereiche des täglichen Lebens.",
+        sampleAnswer:
+          "Alltagsgeschichte zeigt Wohnen, Kochen, Hygiene, Verteidigung, Kleidung und soziale Unterschiede. Dadurch wird das Mittelalter als konkrete Lebenswelt sichtbar und nicht nur als Bühne für Rittergeschichten.",
+        criteria: [
+          { label: "konkrete Alltagsbereiche", keywords: ["wohnen", "kochen", "hygiene", "verteidigung", "kleidung"] },
+          { label: "soziale Unterschiede oder Lebenswelt", keywords: ["unterschiede", "lebenswelt", "alltag"] }
+        ]
       }
     ]
   },
@@ -1679,34 +1934,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 11",
     questions: [
       {
-        prompt: "Warum eignet sich der Kinderkreuzzug für Quellenkritik?",
-        options: [
-          "Weil spektakuläre Überlieferungen geprüft werden müssen.",
-          "Weil mittelalterliche Chroniken immer automatisch wahr sind.",
-          "Weil Quellenkritik nur für die Neuzeit gilt."
-        ],
-        correctIndex: 0,
-        explanation: "Das Modul trainiert genau das Prüfen von Überlieferung."
+        prompt: "Warum ist der Kinderkreuzzug ein guter Fall für Quellenkritik?",
+        placeholder: "Erkläre, was Historikerinnen und Historiker prüfen müssen.",
+        sampleAnswer:
+          "Der Kinderkreuzzug ist ein guter Fall für Quellenkritik, weil die Überlieferung spektakulär klingt, aber erst geprüft werden muss. Historikerinnen und Historiker fragen nach Entstehungszeit, Absicht und Zuverlässigkeit der Texte.",
+        criteria: [
+          { label: "spektakuläre Überlieferung", keywords: ["spektakular", "uberlieferung", "legende"] },
+          { label: "Quellen prüfen", keywords: ["quelle", "prufen", "entstehungszeit"] },
+          { label: "Zuverlässigkeit oder Absicht", keywords: ["zuverlassig", "absicht", "perspektive"] }
+        ]
       },
       {
-        prompt: "Was ergänzt Hararis Samarkand-Bild in diesem Modul?",
-        options: [
-          "Die Vorstellung einer vernetzten mittelalterlichen Welt.",
-          "Die These, dass Märkte unwichtig waren.",
-          "Die Idee völliger Isolation aller Regionen."
-        ],
-        correctIndex: 0,
-        explanation: "Mittelalter erscheint hier als Kontakt- und Bewegungsraum."
-      },
-      {
-        prompt: "Welche historische Grundfrage steht im Zentrum?",
-        options: [
-          "Welche Quellen gibt es und wie zuverlässig sind sie?",
-          "Wie lautet die schönste Legende?",
-          "Welche Erzählung ist am populärsten im Internet?"
-        ],
-        correctIndex: 0,
-        explanation: "Quellenlage und Zuverlässigkeit stehen über bloßer Nacherzählung."
+        prompt: "Warum war das Mittelalter stärker vernetzt, als das Klischee von der abgeschlossenen Burg vermuten lässt?",
+        placeholder: "Arbeite mit Städten, Märkten oder Pilgerwegen.",
+        sampleAnswer:
+          "Das Mittelalter war vernetzter, weil Städte, Märkte, Handelswege und Pilgerbewegungen Menschen miteinander verbanden. Waren, Ideen und religiöse Vorstellungen bewegten sich über große Räume.",
+        criteria: [
+          { label: "Städte oder Märkte", keywords: ["stadte", "markte", "handel"] },
+          { label: "Wege oder Bewegung", keywords: ["wege", "pilger", "bewegung", "reisen"] },
+          { label: "Austausch", keywords: ["waren", "ideen", "vorstellungen", "verbunden"] }
+        ]
       }
     ]
   },
@@ -1714,34 +1961,26 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 12",
     questions: [
       {
-        prompt: "Welche Perspektivkorrektur leistet '1491' im Abschluss?",
-        options: [
-          "1492 ist Einschnitt, aber nicht Beginn aller Geschichte Amerikas.",
-          "Amerika beginnt historisch erst mit Kolumbus.",
-          "Vor 1492 gab es dort keine komplexen Gesellschaften."
-        ],
-        correctIndex: 0,
-        explanation: "Die Ressource korrigiert eurozentrische Anfangspunkte."
+        prompt: "Warum ist '1491' ein wichtiger Perspektivwechsel für die ganze Einheit?",
+        placeholder: "Erkläre, was dadurch am Geschichtsbild anders wird.",
+        sampleAnswer:
+          "1491 ist ein wichtiger Perspektivwechsel, weil dadurch deutlich wird, dass Geschichte vor 1500 nicht nur europäische Geschichte ist. Amerikas Gesellschaften hatten schon lange vor Kolumbus Landwirtschaft, Kunst, Sprachen und politische Ordnung.",
+        criteria: [
+          { label: "Perspektivwechsel", keywords: ["perspektivwechsel", "anders", "geschichtsbild"] },
+          { label: "nicht nur Europa", keywords: ["nicht nur europa", "europaisch", "amerika"] },
+          { label: "frühere Gesellschaften", keywords: ["landwirtschaft", "kunst", "sprachen", "ordnung", "indigen"] }
+        ]
       },
       {
-        prompt: "Warum taucht das Anthropozän im Schluss erneut auf?",
-        options: [
-          "Um Langzeitfolgen früher Entwicklungen sichtbar zu machen.",
-          "Weil der Kurs plötzlich keine Geschichte mehr behandelt.",
-          "Weil nur Industriegeschichte zählt."
-        ],
-        correctIndex: 0,
-        explanation: "Frühe Innovationen werden in ihren Fernwirkungen reflektiert."
-      },
-      {
-        prompt: "Welche Langzeitlinie gehört eindeutig zur Kursbilanz?",
-        options: [
-          "Kooperation, Sesshaftigkeit und Vernetzung prägen viele Epochen.",
-          "Geschichte verläuft völlig ohne wiederkehrende Muster.",
-          "Nur einzelne Herrscher erklären alles."
-        ],
-        correctIndex: 0,
-        explanation: "Das Abschlussmodul bündelt genau solche durchgehenden Linien."
+        prompt: "Formuliere eine Langzeitlinie von der Frühgeschichte bis kurz vor 1500.",
+        placeholder: "Verbinde mindestens drei große Entwicklungsschritte.",
+        sampleAnswer:
+          "Eine Langzeitlinie führt von Sprache und Kooperation über Sesshaftigkeit und Vorräte zu Schrift, Staat, Handel und Religion. So wird sichtbar, wie sich menschliche Ordnungen immer weiter verdichten und größere Räume verbinden.",
+        criteria: [
+          { label: "früher Schritt", keywords: ["sprache", "kooperation", "kognitiv"] },
+          { label: "mittlerer Schritt", keywords: ["sesshaftigkeit", "vorrate", "landwirtschaft"] },
+          { label: "späterer Schritt", keywords: ["schrift", "staat", "handel", "religion", "imperium"] }
+        ]
       }
     ]
   }
@@ -1847,6 +2086,23 @@ function normalize(value) {
     .replace(/ß/g, "ss");
 }
 
+function cleanStudentText(text) {
+  return String(text || "")
+    .replace(/^Didaktisch entscheidend ist:\s*/i, "Wichtig ist: ")
+    .replace(/^Didaktisch besonders ergiebig ist\s*/i, "Besonders wichtig ist ")
+    .replace(/^Didaktisch besonders wichtig ist:\s*/i, "Wichtig ist: ")
+    .replace(/^Didaktisch lohnt es sich hier,\s*/i, "")
+    .replace(/^Aus didaktischer Sicht\s*/i, "")
+    .replace(/^Die Ressource wird genutzt, um\s*/i, "")
+    .replace(/^Die Ressource wird als\s*/i, "")
+    .replace(/^Im Modul dient dies als\s*/i, "")
+    .replace(/^Die Quelle wird genutzt, um\s*/i, "")
+    .replace(/Didaktisch wird sie eingesetzt, um\s*/gi, "Sie hilft dabei, ")
+    .replace(/Die Serie wird didaktisch als\s*/gi, "Die Serie dient als ")
+    .replace(/\bdidaktisch\s+/gi, "")
+    .trim();
+}
+
 function loadState() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
@@ -1860,7 +2116,7 @@ function saveState(state) {
 }
 
 function getModuleInteractionIds(module) {
-  return [module.task.id, module.selftest.id, module.transfer.id, `${module.id}-content-check`];
+  return [module.task.id, quickChecks[module.id].id, module.transfer.id, `${module.id}-content-check`];
 }
 
 function getModuleProgress(state, module) {
@@ -2062,7 +2318,7 @@ function updateProgress(state) {
   const total = interactionIds.length;
   const completed = interactionIds.filter((id) => Boolean(state[id])).length;
   const percentage = total ? (completed / total) * 100 : 0;
-  document.getElementById("progress-label").textContent = `${completed} von ${total} Interaktionen bearbeitet`;
+  document.getElementById("progress-label").textContent = `${completed} von ${total} Arbeitsschritten bearbeitet`;
   document.getElementById("progress-bar").style.width = `${percentage}%`;
 }
 
@@ -2103,12 +2359,8 @@ function renderSourceCard(source) {
           <h4>${source.title}</h4>
           <span class="source-meta">${source.meta}</span>
         </div>
-        <button class="btn ghost source-toggle" type="button">Didaktische Lesart</button>
       </header>
-      <p><strong>Herausgelesen:</strong> ${source.extracted}</p>
-      <div class="source-extra">
-        <p><strong>Didaktisiert:</strong> ${source.didacticUse}</p>
-      </div>
+      <p><strong>Das zeigt die Ressource:</strong> ${cleanStudentText(source.extracted)}</p>
     </article>
   `;
 }
@@ -2120,35 +2372,15 @@ function renderShortAnswerBox(task, kindLabel) {
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
         <button class="btn primary" type="button" data-check="${task.id}">Antwort prüfen</button>
-        <button class="btn ghost" type="button" data-show="${task.id}">Musterantwort zeigen</button>
+        <button class="btn ghost" type="button" data-show="${task.id}">Beispiellösung zeigen</button>
       </div>
       <div class="feedback" data-feedback="${task.id}"></div>
     </div>
   `;
 }
 
-function renderSelftest(test) {
-  const options = test.options
-    .map(
-      (option, index) => `
-        <label class="radio-item">
-          <input type="radio" name="${test.id}" value="${index}" />
-          <span>${option.text}</span>
-        </label>
-      `
-    )
-    .join("");
-
-  return `
-    <div class="selftest-box">
-      <p><strong>Selbsttest:</strong> ${test.question}</p>
-      <div class="radio-list">${options}</div>
-      <div class="selftest-actions">
-        <button class="btn primary" type="button" data-selftest="${test.id}">Auswahl prüfen</button>
-      </div>
-      <div class="feedback" data-feedback="${test.id}"></div>
-    </div>
-  `;
+function renderQuickCheck(module) {
+  return renderShortAnswerBox(quickChecks[module.id], "Schnellcheck");
 }
 
 function renderStoredFeedback(stored) {
@@ -2159,34 +2391,76 @@ function renderStoredFeedback(stored) {
   return `<div class="feedback is-visible ${stored.level}"><strong>${stored.title}</strong><p>${stored.body}</p></div>`;
 }
 
+function renderSupportSection(module) {
+  const support = moduleSupports[module.id];
+  if (!support) {
+    return "";
+  }
+
+  return `
+    <div class="support-grid">
+      <article class="support-card support-card-wide">
+        <p class="section-kicker">Ohne Vorwissen starten</p>
+        <p>${support.overview}</p>
+      </article>
+      <article class="support-card">
+        <p class="section-kicker">Grundbegriffe</p>
+        <div class="term-list">
+          ${support.terms
+            .map(
+              (item) => `
+                <div class="term-item">
+                  <strong>${item.term}</strong>
+                  <p>${item.description}</p>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      </article>
+      <article class="support-card">
+        <p class="section-kicker">So baut sich das Thema auf</p>
+        <div class="storyline-list">
+          ${support.storyline.map((step) => `<div class="storyline-step">${step}</div>`).join("")}
+        </div>
+      </article>
+    </div>
+  `;
+}
+
+function renderLearningSteps(module) {
+  return `
+    <div class="learning-steps">
+      ${module.input
+        .map(
+          (paragraph, index) => `
+            <article class="learning-step">
+              <span class="source-meta">Lernschritt ${index + 1}</span>
+              <p>${cleanStudentText(paragraph)}</p>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function renderContentCheck(module, state) {
   const check = contentChecks[module.id];
-  const attempted = Boolean(state[`${module.id}-content-attempted`]);
   const questions = check.questions
     .map((question, questionIndex) => {
-      const selectedValue = state[`${module.id}-content-answer-${questionIndex}`];
-      const isCorrect = attempted && selectedValue === question.correctIndex;
-      const statusBadge = attempted
-        ? `<span class="question-status status-badge ${isCorrect ? "ready" : "locked"}">${isCorrect ? "richtig" : "überarbeiten"}</span>`
+      const answerId = `${module.id}-content-question-${questionIndex}`;
+      const stored = state[`${answerId}-feedback`];
+      const statusBadge = stored
+        ? `<span class="question-status status-badge ${stored.score >= 60 ? "ready" : "locked"}">${stored.score >= 60 ? "gesichert" : "überarbeiten"}</span>`
         : "";
-      const options = question.options
-        .map((option, optionIndex) => {
-          const checked = state[`${module.id}-content-answer-${questionIndex}`] === optionIndex ? "checked" : "";
-          return `
-            <label class="radio-item">
-              <input type="radio" name="${module.id}-content-${questionIndex}" value="${optionIndex}" ${checked} />
-              <span>${option}</span>
-            </label>
-          `;
-        })
-        .join("");
 
       return `
-        <div class="check-question ${attempted ? (isCorrect ? "good" : "low") : ""}">
+        <div class="check-question ${stored ? stored.level : ""}">
           ${statusBadge}
           <p><strong>${questionIndex + 1}.</strong> ${question.prompt}</p>
-          <div class="radio-list">${options}</div>
-          ${attempted ? `<p class="question-explanation">${question.explanation}</p>` : ""}
+          <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
+          ${renderStoredFeedback(stored)}
         </div>
       `;
     })
@@ -2196,7 +2470,7 @@ function renderContentCheck(module, state) {
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Erreiche mindestens 60 Prozent. Erst dann wird das nächste Modul freigeschaltet.</p>
+      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich. Für die Freischaltung braucht das Modul im Durchschnitt mindestens 60 Prozent.</p>
       <div class="check-grid">${questions}</div>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
@@ -2227,8 +2501,8 @@ function renderModuleScene(module) {
       </div>
       <div class="scene-side" style="background-image: url('${visual.side}')">
         <div class="scene-copy">
-          <p class="scene-kicker">SRF-Bildimpuls</p>
-          <p>Atmosphärisch aus den eingebauten SRF-Ressourcen entwickelt und lokal in die Einheit integriert.</p>
+          <p class="scene-kicker">Zweiter Bildimpuls</p>
+          <p>Achte auf Gegenstände, Kleidung, Bauten oder Landschaft. Solche Details verraten oft mehr über eine Epoche als bloße Schlagworte.</p>
         </div>
       </div>
     </section>
@@ -2305,7 +2579,7 @@ function renderCompletionPanel(state) {
           <div class="certificate-frame">
             <p class="panel-kicker">Zertifikat</p>
             <h3>Zertifikat „Geschichte bis 1500“</h3>
-            <p>Diese Bescheinigung dokumentiert den erfolgreichen Abschluss der vollständigen interaktiven Lerneinheit im Repository <code>geschichte_bis_1500</code>.</p>
+            <p>Diese Bescheinigung dokumentiert den erfolgreichen Abschluss der vollständigen interaktiven Lerneinheit „Geschichte bis 1500“.</p>
             <div class="certificate-line">
               <p><strong>Status:</strong> ${allPassed ? "vollständig abgeschlossen" : "noch nicht vollständig abgeschlossen"}</p>
               <p><strong>Name:</strong> ${getLearnerName(state)}</p>
@@ -2353,7 +2627,7 @@ function renderModules(state) {
             <h2>${module.title}</h2>
             <span class="status-badge ${status.className}">${status.label}</span>
           </div>
-          <p class="lead">${module.hook}</p>
+          <p class="lead">${cleanStudentText(module.hook)}</p>
           <div class="goals">
             ${module.goals.map((goal) => `<div class="goal">${goal}</div>`).join("")}
           </div>
@@ -2389,16 +2663,17 @@ function renderModules(state) {
       <div class="module-grid">
         <section class="module-section">
           <p class="section-kicker">1. Einstieg</p>
-          <p>${module.hook}</p>
+          <p>${cleanStudentText(module.hook)}</p>
         </section>
 
         <section class="module-section">
           <p class="section-kicker">2. Wissensinput</p>
-          ${module.input.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+          ${renderSupportSection(module)}
+          ${renderLearningSteps(module)}
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Interaktive Quelle / Karte / Bild</p>
+          <p class="section-kicker">3. Quellenarbeit</p>
           <p>${module.sourcePrompt}</p>
           <div class="source-grid">
             ${module.sources.map(renderSourceCard).join("")}
@@ -2411,13 +2686,13 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">5. Vertiefung</p>
-          <p>${module.deepening}</p>
+          <p class="section-kicker">5. So hängt es zusammen</p>
+          <p>${moduleSupports[module.id]?.connection || cleanStudentText(module.deepening)}</p>
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">6. Selbsttest</p>
-          ${renderSelftest(module.selftest)}
+          <p class="section-kicker">6. Schnellcheck</p>
+          ${renderQuickCheck(module)}
         </section>
 
         <section class="module-section">
@@ -2454,8 +2729,8 @@ function renderSourceCatalog() {
           <span class="source-meta">${source.type}</span>
         </div>
       </header>
-      <p><strong>Einsatzfunktion:</strong> ${source.role}</p>
-      <p><strong>Didaktisierte Nutzung:</strong> ${source.didactics}</p>
+      <p><strong>Worum es inhaltlich geht:</strong> ${cleanStudentText(source.role)}</p>
+      <p><strong>Was dir die Ressource erklärt:</strong> ${cleanStudentText(source.didactics)}</p>
       <p>
         <strong>Original:</strong>
         ${
@@ -2469,12 +2744,21 @@ function renderSourceCatalog() {
   });
 }
 
-function evaluateTask(answer, task) {
+function analyzeAnswer(answer, task) {
   const normalized = normalize(answer);
   const matched = task.criteria.filter((criterion) =>
     criterion.keywords.some((keyword) => normalized.includes(normalize(keyword)))
   );
   const missing = task.criteria.filter((criterion) => !matched.includes(criterion));
+  const wordCount = String(answer || "").trim() ? String(answer || "").trim().split(/\s+/).length : 0;
+  const rawScore = task.criteria.length ? Math.round((matched.length / task.criteria.length) * 100) : 0;
+
+  return { matched, missing, wordCount, rawScore };
+}
+
+function evaluateTask(answer, task) {
+  const { matched, missing, wordCount } = analyzeAnswer(answer, task);
+  const minimumWords = task.minWords || (task.id.includes("-quick") ? 8 : 18);
 
   if (!answer.trim()) {
     return {
@@ -2485,7 +2769,7 @@ function evaluateTask(answer, task) {
     };
   }
 
-  if (answer.trim().split(/\s+/).length < 18) {
+  if (wordCount < minimumWords) {
     return {
       level: "mid",
       title: "Ansatz erkennbar, aber noch zu knapp",
@@ -2528,25 +2812,62 @@ function evaluateTask(answer, task) {
   };
 }
 
-function bindSourceToggles() {
-  document.querySelectorAll(".source-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const extra = button.closest(".source-card").querySelector(".source-extra");
-      extra.classList.toggle("is-open");
-      button.textContent = extra.classList.contains("is-open")
-        ? "Didaktische Lesart ausblenden"
-        : "Didaktische Lesart";
-    });
-  });
+function evaluateCheckQuestion(answer, question) {
+  const { matched, missing, wordCount, rawScore } = analyzeAnswer(answer, question);
+  const adjustedScore = wordCount === 0
+    ? 0
+    : wordCount < 6
+      ? Math.min(rawScore, 40)
+      : wordCount < 10
+        ? Math.min(rawScore, 70)
+        : rawScore;
+
+  if (!answer.trim()) {
+    return {
+      score: 0,
+      level: "low",
+      title: "Noch keine auswertbare Antwort",
+      body: `Schreibe zuerst eine kurze eigene Antwort. Beispiellösung: ${question.sampleAnswer}`
+    };
+  }
+
+  if (adjustedScore >= 80) {
+    return {
+      score: adjustedScore,
+      level: "good",
+      title: "Inhalt sicher erfasst",
+      body: `Stark. Du deckst die Kernpunkte ab: ${matched.map((criterion) => criterion.label).join(", ")}.`
+    };
+  }
+
+  if (adjustedScore >= 60) {
+    return {
+      score: adjustedScore,
+      level: "mid",
+      title: "Im Kern richtig",
+      body: `Das reicht für diese Teilfrage schon gut. Ergänze beim Überarbeiten noch: ${missing.map((criterion) => criterion.label).join(", ")}. Beispiellösung: ${question.sampleAnswer}`
+    };
+  }
+
+  return {
+    score: adjustedScore,
+    level: "low",
+    title: "Noch nicht sicher genug",
+    body: `Es fehlt noch Wesentliches: ${missing.map((criterion) => criterion.label).join(", ")}. Beispiellösung: ${question.sampleAnswer}`
+  };
 }
 
 function bindShortAnswerTasks(state) {
-  const tasks = modules.flatMap((module) => [module.task, module.transfer]);
+  const tasks = modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer]);
   tasks.forEach((task) => {
     const answerField = document.querySelector(`[data-answer="${task.id}"]`);
     const feedbackBox = document.querySelector(`[data-feedback="${task.id}"]`);
     const checkButton = document.querySelector(`[data-check="${task.id}"]`);
     const showButton = document.querySelector(`[data-show="${task.id}"]`);
+
+    if (!answerField || !feedbackBox || !checkButton || !showButton) {
+      return;
+    }
 
     if (state[`${task.id}-text`]) {
       answerField.value = state[`${task.id}-text`];
@@ -2587,56 +2908,7 @@ function bindShortAnswerTasks(state) {
 }
 
 function bindSelftests(state) {
-  modules.forEach((module) => {
-    const test = module.selftest;
-    const button = document.querySelector(`[data-selftest="${test.id}"]`);
-    const feedbackBox = document.querySelector(`[data-feedback="${test.id}"]`);
-    const selectedValue = state[`${test.id}-selected`];
-
-    if (selectedValue !== undefined && selectedValue !== null) {
-      const selectedInput = document.querySelector(`input[name="${test.id}"][value="${selectedValue}"]`);
-      if (selectedInput) {
-        selectedInput.checked = true;
-      }
-    }
-
-    if (state[`${test.id}-feedback`]) {
-      const stored = state[`${test.id}-feedback`];
-      feedbackBox.className = `feedback is-visible ${stored.level}`;
-      feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
-    }
-
-    button.addEventListener("click", () => {
-      const selected = document.querySelector(`input[name="${test.id}"]:checked`);
-
-      if (!selected) {
-        const result = {
-          level: "low",
-          title: "Noch keine Auswahl",
-          body: "Wähle zuerst eine Antwortmöglichkeit aus und prüfe sie dann."
-        };
-        feedbackBox.className = "feedback is-visible low";
-        feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
-        state[`${test.id}-feedback`] = result;
-        saveState(state);
-        return;
-      }
-
-      const option = test.options[Number(selected.value)];
-      const result = {
-        level: option.correct ? "good" : "mid",
-        title: option.correct ? "Treffer" : "Noch nicht ganz",
-        body: option.feedback
-      };
-      feedbackBox.className = `feedback is-visible ${result.level}`;
-      feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
-      state[test.id] = true;
-      state[`${test.id}-selected`] = Number(selected.value);
-      state[`${test.id}-feedback`] = result;
-      saveState(state);
-      renderApp(state);
-    });
-  });
+  return state;
 }
 
 function bindContentChecks(state) {
@@ -2646,38 +2918,40 @@ function bindContentChecks(state) {
       return;
     }
 
+    contentChecks[module.id].questions.forEach((question, questionIndex) => {
+      const answerId = `${module.id}-content-question-${questionIndex}`;
+      const field = document.querySelector(`[data-content-answer="${answerId}"]`);
+      if (field && state[`${answerId}-text`]) {
+        field.value = state[`${answerId}-text`];
+      }
+    });
+
     button.addEventListener("click", () => {
       const check = contentChecks[module.id];
-      let correctCount = 0;
+      const scores = [];
+      const weakQuestions = [];
 
       check.questions.forEach((question, questionIndex) => {
-        const selected = document.querySelector(`input[name="${module.id}-content-${questionIndex}"]:checked`);
-        const selectedValue = selected ? Number(selected.value) : null;
-        state[`${module.id}-content-answer-${questionIndex}`] = selectedValue;
-        if (selectedValue === question.correctIndex) {
-          correctCount += 1;
+        const answerId = `${module.id}-content-question-${questionIndex}`;
+        const field = document.querySelector(`[data-content-answer="${answerId}"]`);
+        const answerText = String(field?.value || "");
+        const result = evaluateCheckQuestion(answerText, question);
+
+        state[`${answerId}-text`] = answerText;
+        state[`${answerId}-feedback`] = result;
+        scores.push(result.score);
+
+        if (result.score < 60) {
+          weakQuestions.push(`${questionIndex + 1}. ${question.prompt}`);
         }
       });
 
-      const totalCount = check.questions.length;
-      const percent = Math.round((correctCount / totalCount) * 100);
+      const percent = Math.round(scores.reduce((sum, score) => sum + score, 0) / scores.length);
       const bestPercent = Math.max(percent, getContentCheckScore(state, module.id));
-      const wrongDetails = check.questions
-        .map((question, questionIndex) => {
-          const selectedValue = state[`${module.id}-content-answer-${questionIndex}`];
-          if (selectedValue === question.correctIndex) {
-            return null;
-          }
-
-          return `${questionIndex + 1}. ${question.explanation}`;
-        })
-        .filter(Boolean);
-
       const body = percent >= 60
-        ? `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Das nächste Modul ist jetzt freigeschaltet.${wrongDetails.length ? ` Prüfe trotzdem noch: ${wrongDetails.join(" ")}` : ""}`
-        : `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Für die Freischaltung brauchst du mindestens 60%. Wiederhole besonders: ${wrongDetails.join(" ")}`;
+        ? `Du erreichst im Durchschnitt ${percent}%. Das nächste Modul ist damit freigeschaltet.${weakQuestions.length ? ` Überarbeite bei Gelegenheit noch: ${weakQuestions.join(" ")}` : ""}`
+        : `Du erreichst im Durchschnitt ${percent}%. Für die Freischaltung brauchst du mindestens 60%. Überarbeite besonders: ${weakQuestions.join(" ")}`;
 
-      state[`${module.id}-content-attempted`] = true;
       state[`${module.id}-content-score`] = bestPercent;
       state[`${module.id}-content-feedback`] = {
         level: bestPercent >= 60 ? "good" : percent >= 34 ? "mid" : "low",
@@ -2720,7 +2994,7 @@ function renderWelcomeOverlay(state) {
       <div class="welcome-copy">
         <p class="panel-kicker">Willkommen</p>
         <h2>Geschichte bis 1500 als geführte Lernreise</h2>
-        <p>Diese Lernumgebung arbeitet mit einem klaren Fortschrittssystem. Du bearbeitest jedes Modul in einer festen Abfolge und sicherst den Inhalt anschließend mit einer kleinen Quizstrecke.</p>
+        <p>Diese Lernumgebung führt dich Schritt für Schritt durch den Stoff. Jedes Modul erklärt die Grundlagen zuerst verständlich und sichert den Inhalt danach mit kurzen schriftlichen Aufgaben.</p>
         <div class="welcome-list">
           <div class="takeaway">Nach jedem Modul folgt eine eigene Inhaltssicherung.</div>
           <div class="takeaway">Das nächste Modul wird erst freigeschaltet, wenn du dort mindestens 60 Prozent erreichst.</div>
@@ -2818,7 +3092,6 @@ function renderApp(state) {
   renderModules(state);
   renderCompletionPanel(state);
   renderSourceCatalog();
-  bindSourceToggles();
   bindShortAnswerTasks(state);
   bindSelftests(state);
   bindContentChecks(state);
