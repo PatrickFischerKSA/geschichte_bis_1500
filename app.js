@@ -1,6 +1,5 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
-const HARARI_PDF_FILE = "/Users/patrickfischer/Desktop/Harari-Y._Eine-kurze-Geschicht_9783641104986.pdf";
-const HARARI_PDF_URL = `file://${encodeURI(HARARI_PDF_FILE)}`;
+const HARARI_PDF_URL = "assets/local/harari.pdf";
 
 const sourceCatalog = [
   {
