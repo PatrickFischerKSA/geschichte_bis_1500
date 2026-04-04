@@ -2112,11 +2112,6 @@ const moduleVisuals = {
   }
 };
 
-let ambientContext = null;
-let ambientMasterGain = null;
-let ambientNodes = [];
-let ambientNoiseSource = null;
-
 function normalize(value) {
   return String(value || "")
     .toLowerCase()
@@ -2221,153 +2216,6 @@ function getLearnerName(state) {
   return value || "Lernende Person";
 }
 
-function cleanupAmbient() {
-  ambientNodes.forEach((node) => {
-    try {
-      node.stop?.();
-    } catch {}
-    try {
-      node.disconnect?.();
-    } catch {}
-  });
-  ambientNodes = [];
-
-  if (ambientNoiseSource) {
-    try {
-      ambientNoiseSource.stop?.();
-    } catch {}
-    try {
-      ambientNoiseSource.disconnect?.();
-    } catch {}
-  }
-  ambientNoiseSource = null;
-
-  if (ambientMasterGain) {
-    try {
-      ambientMasterGain.disconnect();
-    } catch {}
-  }
-  ambientMasterGain = null;
-}
-
-function createNoiseBuffer(context) {
-  const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < data.length; i += 1) {
-    data[i] = (Math.random() * 2 - 1) * 0.08;
-  }
-  return buffer;
-}
-
-async function startAmbient(state) {
-  if (!ambientContext) {
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) {
-      return false;
-    }
-    ambientContext = new AudioContextClass();
-  }
-
-  if (ambientContext.state === "suspended") {
-    await ambientContext.resume();
-  }
-
-  cleanupAmbient();
-
-  ambientMasterGain = ambientContext.createGain();
-  ambientMasterGain.gain.value = 0.018;
-
-  const outputHighpass = ambientContext.createBiquadFilter();
-  outputHighpass.type = "highpass";
-  outputHighpass.frequency.value = 180;
-  outputHighpass.Q.value = 0.7;
-
-  const outputLowpass = ambientContext.createBiquadFilter();
-  outputLowpass.type = "lowpass";
-  outputLowpass.frequency.value = 3800;
-  outputLowpass.Q.value = 0.5;
-
-  ambientMasterGain.connect(outputHighpass);
-  outputHighpass.connect(outputLowpass);
-  outputLowpass.connect(ambientContext.destination);
-
-  const shimmerPad = ambientContext.createOscillator();
-  shimmerPad.type = "sine";
-  shimmerPad.frequency.value = 392;
-  const shimmerPadGain = ambientContext.createGain();
-  shimmerPadGain.gain.value = 0.028;
-
-  const lightPad = ambientContext.createOscillator();
-  lightPad.type = "triangle";
-  lightPad.frequency.value = 523.25;
-  const lightPadGain = ambientContext.createGain();
-  lightPadGain.gain.value = 0.014;
-
-  const lfo = ambientContext.createOscillator();
-  lfo.type = "sine";
-  lfo.frequency.value = 0.11;
-  const lfoGain = ambientContext.createGain();
-  lfoGain.gain.value = 0.006;
-
-  lfo.connect(lfoGain);
-  lfoGain.connect(shimmerPadGain.gain);
-  lfoGain.connect(lightPadGain.gain);
-
-  shimmerPad.connect(shimmerPadGain);
-  lightPad.connect(lightPadGain);
-  shimmerPadGain.connect(ambientMasterGain);
-  lightPadGain.connect(ambientMasterGain);
-
-  const noiseHighpass = ambientContext.createBiquadFilter();
-  noiseHighpass.type = "highpass";
-  noiseHighpass.frequency.value = 1400;
-  noiseHighpass.Q.value = 0.7;
-
-  const noiseLowpass = ambientContext.createBiquadFilter();
-  noiseLowpass.type = "lowpass";
-  noiseLowpass.frequency.value = 4200;
-  noiseLowpass.Q.value = 0.4;
-
-  const noiseGain = ambientContext.createGain();
-  noiseGain.gain.value = 0.012;
-  ambientNoiseSource = ambientContext.createBufferSource();
-  ambientNoiseSource.buffer = createNoiseBuffer(ambientContext);
-  ambientNoiseSource.loop = true;
-  ambientNoiseSource.connect(noiseHighpass);
-  noiseHighpass.connect(noiseLowpass);
-  noiseLowpass.connect(noiseGain);
-  noiseGain.connect(ambientMasterGain);
-
-  [shimmerPad, lightPad, lfo].forEach((osc) => osc.start());
-  ambientNoiseSource.start();
-  ambientNodes = [
-    shimmerPad,
-    lightPad,
-    lfo,
-    shimmerPadGain,
-    lightPadGain,
-    lfoGain,
-    noiseHighpass,
-    noiseLowpass,
-    noiseGain,
-    outputHighpass,
-    outputLowpass
-  ];
-
-  state.ambientEnabled = true;
-  saveState(state);
-  return true;
-}
-
-function stopAmbient(state) {
-  cleanupAmbient();
-  if (ambientContext && ambientContext.state === "running") {
-    ambientContext.suspend().catch(() => {});
-  }
-  state.ambientEnabled = false;
-  saveState(state);
-}
-
 function updateProgress(state) {
   const interactionIds = modules.flatMap((module) => getModuleInteractionIds(module));
   const total = interactionIds.length;
@@ -2458,7 +2306,7 @@ function renderSupportSection(module) {
         support.entryNote
           ? `
             <article class="support-card support-card-wide">
-              <p class="section-kicker">Vor dem Start</p>
+              <p class="section-kicker">Zuerst klären</p>
               <p>${support.entryNote}</p>
             </article>
           `
@@ -2475,7 +2323,7 @@ function renderSupportSection(module) {
           : ""
       }
       <article class="support-card support-card-wide">
-        <p class="section-kicker">Ohne Vorwissen starten</p>
+        <p class="section-kicker">Das musst du zuerst wissen</p>
         <p>${support.overview}</p>
       </article>
       <article class="support-card">
@@ -2494,7 +2342,7 @@ function renderSupportSection(module) {
         </div>
       </article>
       <article class="support-card">
-        <p class="section-kicker">So baut sich das Thema auf</p>
+        <p class="section-kicker">So entwickelt sich das Thema</p>
         <div class="storyline-list">
           ${support.storyline.map((step) => `<div class="storyline-step">${step}</div>`).join("")}
         </div>
@@ -2510,7 +2358,7 @@ function renderLearningSteps(module) {
         .map(
           (paragraph, index) => `
             <article class="learning-step">
-              <span class="source-meta">Lernschritt ${index + 1}</span>
+              <span class="source-meta">Sachtext ${index + 1}</span>
               <p>${cleanStudentText(paragraph)}</p>
             </article>
           `
@@ -2545,7 +2393,7 @@ function renderContentCheck(module, state) {
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich. Für die Freischaltung braucht das Modul im Durchschnitt mindestens 60 Prozent.</p>
+      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
       <div class="check-grid">${questions}</div>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
@@ -2708,9 +2556,6 @@ function renderModules(state) {
               : ""
           }
           <p class="lead">${getModuleIntroText(module)}</p>
-          <div class="goals">
-            ${module.goals.map((goal) => `<div class="goal">${cleanStudentText(goal)}</div>`).join("")}
-          </div>
         </div>
         <div class="module-meta">
           <div class="meta-box">
@@ -2747,13 +2592,13 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">2. Wissensinput</p>
+          <p class="section-kicker">2. Grundwissen</p>
           ${renderSupportSection(module)}
           ${renderLearningSteps(module)}
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Quellenarbeit</p>
+          <p class="section-kicker">3. Quellen und Beispiele</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map(renderSourceCard).join("")}
@@ -2766,12 +2611,12 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">5. So hängt es zusammen</p>
+          <p class="section-kicker">5. Historischer Zusammenhang</p>
           <p>${moduleSupports[module.id]?.connection || cleanStudentText(module.deepening)}</p>
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">6. Schnellcheck</p>
+          <p class="section-kicker">6. Kurze Sicherung</p>
           ${renderQuickCheck(module)}
         </section>
 
@@ -2786,7 +2631,7 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">9. Inhaltssicherung</p>
+          <p class="section-kicker">9. Schriftliche Sicherung</p>
           ${renderContentCheck(module, state)}
         </section>
       </div>
@@ -3053,7 +2898,7 @@ function renderLearnerBanner(state) {
   const banner = document.getElementById("learner-banner");
   banner.innerHTML = `
     <strong>${getLearnerName(state)}</strong>
-    <span>Freischaltsystem aktiv: Das nächste Modul öffnet sich jeweils nach mindestens 60% in der Inhaltssicherung.</span>
+    <span>Arbeite Modul für Modul: Nach einer bestandenen schriftlichen Sicherung wird das nächste Kapitel geöffnet.</span>
   `;
 }
 
@@ -3073,13 +2918,13 @@ function renderWelcomeOverlay(state) {
     <div class="welcome-panel">
       <div class="welcome-copy">
         <p class="panel-kicker">Willkommen</p>
-        <h2>Geschichte bis 1500 als geführte Lernreise</h2>
-        <p>Diese Lernumgebung führt dich Schritt für Schritt durch den Stoff. Jedes Modul erklärt die Grundlagen zuerst verständlich und sichert den Inhalt danach mit kurzen schriftlichen Aufgaben.</p>
+        <h2>Geschichte bis 1500 Schritt für Schritt verstehen</h2>
+        <p>Diese Lernumgebung erklärt den Stoff von Grund auf: von frühen Menschen über Sesshaftigkeit und Staaten bis zu Antike und Mittelalter. Du arbeitest mit Sachtexten, Quellen und schriftlichen Antworten statt mit bloßen Schlagworten.</p>
         <div class="welcome-list">
-          <div class="takeaway">Nach jedem Modul folgt eine eigene Inhaltssicherung.</div>
-          <div class="takeaway">Das nächste Modul wird erst freigeschaltet, wenn du dort mindestens 60 Prozent erreichst.</div>
-          <div class="takeaway">Dein Fortschritt wird global und pro Modul angezeigt.</div>
-          <div class="takeaway">Wenn du alle 12 Module bestehst, wird ein personalisiertes Zertifikat freigeschaltet.</div>
+          <div class="takeaway">Jedes Modul beginnt mit verständlichem Grundwissen und führt dann in Quellen und Zusammenhänge.</div>
+          <div class="takeaway">Nach jedem Modul folgt eine schriftliche Sicherung mit direktem Feedback.</div>
+          <div class="takeaway">Das nächste Modul öffnet sich jeweils nach mindestens 60 Prozent.</div>
+          <div class="takeaway">Wenn alle 12 Module bestanden sind, wird das Zertifikat freigeschaltet.</div>
         </div>
         <label class="welcome-name">
           <strong>Name für Lernstand und Zertifikat</strong>
@@ -3091,7 +2936,7 @@ function renderWelcomeOverlay(state) {
       </div>
       <div class="welcome-side">
         <div class="welcome-visual"></div>
-        <p class="compact">Die visuelle Welt der Einheit basiert auf lokal eingebauten SRF-Bildressourcen und führt von Frühgeschichte über Antike bis in mittelalterliche Lebenswelten.</p>
+        <p class="compact">Die Einheit verbindet große Entwicklungslinien mit konkreten Beispielen aus den SRF-Ressourcen: Frühgeschichte, Antike, Handel, Religion und mittelalterliche Lebenswelten.</p>
       </div>
     </div>
   `;
@@ -3131,38 +2976,6 @@ function bindCompletionActions() {
   });
 }
 
-function updateAmbientButton(state) {
-  const button = document.getElementById("ambient-toggle");
-  if (!button) {
-    return;
-  }
-
-  button.textContent = state.ambientEnabled ? "Klangfläche stoppen" : "Klangfläche starten";
-  button.classList.toggle("is-active", Boolean(state.ambientEnabled));
-  button.setAttribute("aria-pressed", state.ambientEnabled ? "true" : "false");
-}
-
-function bindAmbientButton(state) {
-  const button = document.getElementById("ambient-toggle");
-  if (!button) {
-    return;
-  }
-
-  updateAmbientButton(state);
-  button.onclick = async () => {
-    if (state.ambientEnabled) {
-      stopAmbient(state);
-      updateAmbientButton(state);
-      return;
-    }
-
-    const started = await startAmbient(state);
-    if (started) {
-      updateAmbientButton(state);
-    }
-  };
-}
-
 function renderApp(state) {
   renderWelcomeOverlay(state);
   createTimeline(state);
@@ -3177,7 +2990,6 @@ function renderApp(state) {
   bindContentChecks(state);
   bindWelcomeOverlay(state);
   bindCompletionActions();
-  bindAmbientButton(state);
   updateProgress(state);
 }
 
