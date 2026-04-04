@@ -57,7 +57,7 @@
       return pdfPage.render({ canvasContext: context, viewport }).promise;
     })
     .then(() => {
-      status.textContent = `Seite ${page} wurde korrekt gerendert.`;
+      status.remove();
     })
     .catch((error) => {
       console.error(error);
