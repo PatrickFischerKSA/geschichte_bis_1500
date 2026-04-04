@@ -19,6 +19,7 @@ werden.
 - Fortschrittsanzeige im Browser
 - Modulfreischaltung: das nächste Modul öffnet sich erst nach mindestens 60 Prozent in der
   Inhaltssicherung
+- sichtbare Status-Badges pro Modul und Abschlusszertifikat nach bestandenen 12 Modulen
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
 
 ## Quellenbasis

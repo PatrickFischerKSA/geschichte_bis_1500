@@ -1797,6 +1797,22 @@ function isModuleUnlocked(state, moduleIndex) {
   return isModulePassed(state, modules[moduleIndex - 1].id);
 }
 
+function getModuleStatus(state, module, moduleIndex) {
+  if (!isModuleUnlocked(state, moduleIndex)) {
+    return { label: "gesperrt", className: "locked" };
+  }
+
+  if (isModulePassed(state, module.id)) {
+    return { label: "bestanden", className: "ready" };
+  }
+
+  return { label: "offen", className: "open" };
+}
+
+function getPassedModuleCount(state) {
+  return modules.filter((module) => isModulePassed(state, module.id)).length;
+}
+
 function updateProgress(state) {
   const interactionIds = modules.flatMap((module) => getModuleInteractionIds(module));
   const total = interactionIds.length;
@@ -1809,12 +1825,13 @@ function updateProgress(state) {
 function createTimeline(state) {
   const timeline = document.getElementById("timeline");
   timeline.innerHTML = "";
-  modules.forEach((module) => {
+  modules.forEach((module, moduleIndex) => {
     const link = document.createElement("a");
     const unlocked = isModuleUnlocked(state, module.number - 1);
+    const status = getModuleStatus(state, module, moduleIndex);
     link.href = unlocked ? `#${module.id}` : "#";
     link.className = `${unlocked ? "" : "is-locked"} ${isModulePassed(state, module.id) ? "is-ready" : ""}`.trim();
-    link.innerHTML = `<strong>Modul ${module.number}</strong><span>${module.phase}</span>`;
+    link.innerHTML = `<strong>Modul ${module.number}</strong><span>${module.phase}</span><span class="nav-status status-badge ${status.className}">${status.label}</span>`;
     timeline.appendChild(link);
   });
 }
@@ -1822,13 +1839,14 @@ function createTimeline(state) {
 function createNavigation(state) {
   const nav = document.getElementById("module-nav");
   nav.innerHTML = "";
-  modules.forEach((module) => {
+  modules.forEach((module, moduleIndex) => {
     const link = document.createElement("a");
     const unlocked = isModuleUnlocked(state, module.number - 1);
     const score = getContentCheckScore(state, module.id);
+    const status = getModuleStatus(state, module, moduleIndex);
     link.href = unlocked ? `#${module.id}` : "#";
     link.className = `${unlocked ? "" : "is-locked"} ${isModulePassed(state, module.id) ? "is-ready" : ""}`.trim();
-    link.innerHTML = `<strong>${module.title}</strong><span>${module.era}${score ? ` · Sicherung ${Math.round(score)}%` : unlocked ? "" : " · gesperrt"}</span>`;
+    link.innerHTML = `<strong>${module.title}</strong><span>${module.era}${score ? ` · Sicherung ${Math.round(score)}%` : unlocked ? "" : " · gesperrt"}</span><span class="nav-status status-badge ${status.className}">${status.label}</span>`;
     nav.appendChild(link);
   });
 }
@@ -1940,6 +1958,69 @@ function renderTakeaway(items) {
   return items.map((item) => `<div class="takeaway">${item}</div>`).join("");
 }
 
+function renderCompletionPanel(state) {
+  const panel = document.getElementById("completion-panel");
+  const passedModules = getPassedModuleCount(state);
+  const allPassed = passedModules === modules.length;
+  const today = new Date().toLocaleDateString("de-CH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const remaining = modules
+    .filter((module, moduleIndex) => !isModulePassed(state, module.id))
+    .map((module, moduleIndex) => {
+      const actualIndex = modules.findIndex((entry) => entry.id === module.id);
+      const status = getModuleStatus(state, module, actualIndex);
+      return `<div class="takeaway">Modul ${module.number}: ${module.title} · Status: ${status.label}</div>`;
+    })
+    .join("");
+
+  panel.innerHTML = `
+    <p class="panel-kicker">Abschlussübersicht</p>
+    <h2>${allPassed ? "Alle Module erfolgreich abgeschlossen" : "Dein Kursstand im Überblick"}</h2>
+    <div class="completion-panel">
+      <div class="completion-hero">
+        <div class="completion-card">
+          <p>${allPassed
+            ? "Du hast alle 12 Module bestanden. Die komplette Lernstrecke ist freigeschaltet, und du kannst dein Zertifikat drucken."
+            : "Hier siehst du auf einen Blick, wie viele Module bereits bestanden sind und welche noch für den vollständigen Abschluss fehlen."}</p>
+          <div class="completion-stats">
+            <div class="meta-box">
+              <p class="section-kicker">Bestandene Module</p>
+              <p><strong>${passedModules} von ${modules.length}</strong></p>
+            </div>
+            <div class="meta-box">
+              <p class="section-kicker">Zertifikatsstatus</p>
+              <p><strong>${allPassed ? "freigeschaltet" : "noch gesperrt"}</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="certificate-card">
+          <div class="certificate-frame">
+            <p class="panel-kicker">Zertifikat</p>
+            <h3>Zertifikat „Geschichte bis 1500“</h3>
+            <p>Diese Bescheinigung dokumentiert den erfolgreichen Abschluss der vollständigen interaktiven Lerneinheit im Repository <code>geschichte_bis_1500</code>.</p>
+            <div class="certificate-line">
+              <p><strong>Status:</strong> ${allPassed ? "vollständig abgeschlossen" : "noch nicht vollständig abgeschlossen"}</p>
+              <p><strong>Bestandene Module:</strong> ${passedModules} / ${modules.length}</p>
+              <p><strong>Datum:</strong> ${today}</p>
+            </div>
+            <div class="hero-actions">
+              <button class="btn primary" type="button" data-print-certificate ${allPassed ? "" : "disabled"}>Zertifikat drucken</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      ${
+        allPassed
+          ? `<div class="completion-card"><p class="section-kicker">Leistung sichtbar machen</p><div class="completion-list"><div class="takeaway">Alle zwölf Inhaltssicherungen sind bestanden.</div><div class="takeaway">Die komplette Modulfolge wurde erfolgreich freigeschaltet.</div><div class="takeaway">Das Zertifikat kann jetzt über die Druckfunktion ausgegeben werden.</div></div></div>`
+          : `<div class="completion-card"><p class="section-kicker">Noch offen</p><div class="completion-list">${remaining}</div></div>`
+      }
+    </div>
+  `;
+}
+
 function renderModules(state) {
   const list = document.getElementById("module-list");
   list.innerHTML = "";
@@ -1948,6 +2029,7 @@ function renderModules(state) {
     const unlocked = isModuleUnlocked(state, moduleIndex);
     const moduleProgress = getModuleProgress(state, module);
     const contentScore = getContentCheckScore(state, module.id);
+    const status = getModuleStatus(state, module, moduleIndex);
     const contentStatus = isModulePassed(state, module.id)
       ? `Inhaltssicherung bestanden: ${Math.round(contentScore)}%`
       : contentScore
@@ -1961,7 +2043,10 @@ function renderModules(state) {
       <header class="module-header">
         <div>
           <p class="module-kicker">Modul ${module.number}</p>
-          <h2>${module.title}</h2>
+          <div class="module-title-row">
+            <h2>${module.title}</h2>
+            <span class="status-badge ${status.className}">${status.label}</span>
+          </div>
           <p class="lead">${module.hook}</p>
           <div class="goals">
             ${module.goals.map((goal) => `<div class="goal">${goal}</div>`).join("")}
@@ -2301,15 +2386,28 @@ function bindContentChecks(state) {
   });
 }
 
+function bindCompletionActions() {
+  const button = document.querySelector("[data-print-certificate]");
+  if (!button) {
+    return;
+  }
+
+  button.addEventListener("click", () => {
+    window.print();
+  });
+}
+
 function renderApp(state) {
   createTimeline(state);
   createNavigation(state);
   renderModules(state);
+  renderCompletionPanel(state);
   renderSourceCatalog();
   bindSourceToggles();
   bindShortAnswerTasks(state);
   bindSelftests(state);
   bindContentChecks(state);
+  bindCompletionActions();
   updateProgress(state);
 }
 
