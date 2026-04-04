@@ -1,5 +1,6 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 const HARARI_PDF_URL = "assets/local/harari.pdf";
+const HARARI_LOCAL_PREVIEW_BASE = "http://127.0.0.1:4173/assets/local/harari.pdf";
 
 const sourceCatalog = [
   {
@@ -2405,13 +2406,11 @@ function getSourceDetail(moduleId, source) {
 }
 
 function getHarariPdfLink(page) {
-  if (!isHarariPdfAvailable()) {
-    return null;
-  }
+  const base = isHarariPdfAvailable() ? HARARI_PDF_URL : HARARI_LOCAL_PREVIEW_BASE;
   if (!page) {
-    return HARARI_PDF_URL;
+    return base;
   }
-  return `${HARARI_PDF_URL}#page=${page}`;
+  return `${base}#page=${page}`;
 }
 
 function isHarariPdfAvailable() {
@@ -2427,20 +2426,16 @@ function renderHarariPdfButton(detail) {
   if (!detail.pdfPage) {
     return "";
   }
-
-  if (!isHarariPdfAvailable()) {
-    return `
-      <div class="source-actions">
-        <span class="btn ghost disabled" aria-disabled="true">S. ${detail.pdfPage} nur lokal</span>
-        <span class="source-locator-note">Auf GitHub Pages nicht verfuegbar; in der lokalen Vorschau funktioniert der direkte PDF-Sprung.</span>
-      </div>
-    `;
-  }
+  const isLocal = isHarariPdfAvailable();
 
   return `
     <div class="source-actions">
       <a class="btn primary" href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
-      <span class="source-locator-note">springt in deine lokale PDF an die passende Stelle</span>
+      <span class="source-locator-note">${
+        isLocal
+          ? "springt in deine lokale PDF an die passende Stelle"
+          : "springt auf deine lokale Vorschau unter 127.0.0.1:4173, wo die PDF bereitliegt"
+      }</span>
     </div>
   `;
 }
@@ -2608,9 +2603,9 @@ function renderSourceCard(source, module) {
   const harariPdfLink = source.title === "Harari-PDF" ? getHarariPdfLink(detail.pdfPage) : null;
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
-      ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">lokale PDF-Navigation</span>`
-      : source.title === "Harari-PDF" && detail.pdfPage
-        ? `${detail.locator}<span class="source-locator-note">direkter PDF-Sprung nur in der lokalen Vorschau</span>`
+      ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
+          isHarariPdfAvailable() ? "lokale PDF-Navigation" : "Link zur lokalen Vorschau-PDF"
+        }</span>`
       : detail.locator || "";
 
   return `
