@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geschichte bis 1500</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GitHub-Lerneinheit</p>
+        <h1>Geschichte bis 1500</h1>
+        <p class="lead">
+          Eine ausführliche, quellenbasierte Lernumgebung auf der Großstruktur von Yuval Noah
+          Harari und den angegebenen SRF-Ressourcen. Die Einheit arbeitet konsequent mit
+          Entwicklungsphasen, Fallbeispielen, Textfragen, Musterantworten und qualifiziertem
+          Sofortfeedback.
+        </p>
+        <div class="hero-facts">
+          <article class="fact">
+            <span class="fact-label">Module</span>
+            <strong>12 Lernmodule</strong>
+            <p>vom Geschichtsbegriff bis zum Übergang um 1500</p>
+          </article>
+          <article class="fact">
+            <span class="fact-label">Struktur</span>
+            <strong>8 feste Bausteine</strong>
+            <p>Einstieg, Input, Quelle, Aufgaben, Vertiefung, Selbsttest, Merkkasten, Transfer</p>
+          </article>
+          <article class="fact">
+            <span class="fact-label">Feedback</span>
+            <strong>Sofort und qualifiziert</strong>
+            <p>mit Kriterien, Musterantworten und Hinweisen auf fehlende Aspekte</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="hero-panel panel">
+        <p class="panel-kicker">Didaktische Leitidee</p>
+        <h2>Geschichte als Verbindung von Kultur, Macht, Glauben und Lebenswelt</h2>
+        <p class="compact">
+          Hararis Tiefenstruktur ordnet die Einheit: kognitive Revolution, Sesshaftigkeit,
+          Verwaltung, Geld, Reiche und Religionen. Die SRF-Fälle konkretisieren diese Linien an
+          anschaulichen Lernanlässen aus Steinzeit, Antike, Mittelalter, Alpenraum und globaler
+          Perspektive.
+        </p>
+        <div class="progress-card">
+          <div class="progress-copy">
+            <span class="fact-label">Fortschritt</span>
+            <strong id="progress-label">0 von 36 Interaktionen bearbeitet</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progress-bar"></span>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar panel">
+        <section>
+          <p class="panel-kicker">Zeitleiste</p>
+          <div id="timeline" class="timeline"></div>
+        </section>
+        <section>
+          <p class="panel-kicker">Navigation</p>
+          <nav id="module-nav" class="module-nav" aria-label="Modulnavigation"></nav>
+        </section>
+        <section>
+          <p class="panel-kicker">Quellenbasis</p>
+          <p class="sidebar-note">
+            Alle Ressourcen werden in den Modulen didaktisch verarbeitet. Unten findest du
+            zusätzlich die Gesamtübersicht mit Einsatzfunktion und Originalverweis.
+          </p>
+          <a class="btn ghost" href="#quellenbasis">Zur Quellenbasis</a>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="panel intro-panel">
+          <p class="panel-kicker">Arbeitsweise</p>
+          <h2>So ist jedes Modul aufgebaut</h2>
+          <div class="structure-grid">
+            <article><strong>1. Einstieg</strong><p>knappe Leitfrage, Irritation oder Bildimpuls</p></article>
+            <article><strong>2. Wissensinput</strong><p>fachlich verdichtete Orientierung</p></article>
+            <article><strong>3. Interaktive Quelle</strong><p>Ressourcen werden als Lernmaterial erschlossen</p></article>
+            <article><strong>4. Aufgaben</strong><p>Textfrage mit Musterantwort und kriterialem Feedback</p></article>
+            <article><strong>5. Vertiefung</strong><p>größere Zusammenhänge, Perspektivwechsel, Vergleich</p></article>
+            <article><strong>6. Selbsttest</strong><p>kurze Überprüfung mit unmittelbarer Rückmeldung</p></article>
+            <article><strong>7. Merkkasten</strong><p>Begriffe, Thesen, Langzeitlinien</p></article>
+            <article><strong>8. Transferfrage</strong><p>Anwendung auf neue Situationen oder Gegenwartsbezüge</p></article>
+          </div>
+        </section>
+
+        <div id="module-list" class="module-list"></div>
+
+        <section id="quellenbasis" class="panel sources-panel">
+          <p class="panel-kicker">Gesamte Ressourcenbasis</p>
+          <h2>Wie die Materialien didaktisch eingesetzt werden</h2>
+          <div id="source-catalog" class="source-catalog"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
