@@ -812,15 +812,6 @@ p {
   gap: 12px;
 }
 
-.module-entry-note {
-  margin: 12px 0 14px;
-  padding: 12px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(31, 109, 102, 0.14);
-  background: rgba(255, 248, 236, 0.92);
-  color: var(--text);
-}
-
 .module-tag {
   display: inline-flex;
   padding: 7px 12px;
@@ -950,6 +941,46 @@ p {
   margin-bottom: 20px;
 }
 
+.film-foundation {
+  margin: 0 0 24px;
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(31, 109, 102, 0.14);
+  background:
+    linear-gradient(180deg, rgba(248, 244, 236, 0.95), rgba(244, 236, 223, 0.9));
+}
+
+.film-foundation-head p:last-child {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.film-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.film-card {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(30, 44, 52, 0.08);
+  background: rgba(255, 253, 249, 0.92);
+}
+
+.film-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.film-card p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
 .scene-hero,
 .scene-side {
   position: relative;
@@ -1043,24 +1074,8 @@ p {
   margin: 4px 0 20px;
 }
 
-.study-callout {
-  margin: 0 0 12px;
-  padding: 12px 14px;
-  border-left: 4px solid rgba(200, 155, 60, 0.7);
-  background: rgba(255, 248, 236, 0.82);
-}
-
-.study-callout.is-secondary {
-  border-left-color: rgba(31, 109, 102, 0.45);
-  background: rgba(247, 251, 248, 0.8);
-}
-
 .study-block + .study-block {
   margin-top: 18px;
-}
-
-.study-block p:last-child {
-  color: var(--muted);
 }
 
 .term-glossary {

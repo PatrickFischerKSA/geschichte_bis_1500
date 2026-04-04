@@ -2271,6 +2271,81 @@ function renderSourceCard(source) {
   `;
 }
 
+function resolveSourceLink(source) {
+  const title = normalize(source.title);
+  if (title.includes("anthropo")) {
+    return sourceCatalog.find((entry) => entry.id === "anthropozaen");
+  }
+  if (title.includes("1491")) {
+    return sourceCatalog.find((entry) => entry.id === "1491");
+  }
+  if (title.includes("pfahlbauer")) {
+    return sourceCatalog.find((entry) => entry.id === "pfahlbauer");
+  }
+  if (title.includes("romer in der schweiz") || title.includes("romer in der schweiz")) {
+    return sourceCatalog.find((entry) => entry.id === "roemer-schweiz");
+  }
+  if (title.includes("romer-experiment") || title.includes("roemer-experiment")) {
+    return sourceCatalog.find((entry) => entry.id === "roemer-experiment");
+  }
+  if (title.includes("munzschatz") || title.includes("münzschatz")) {
+    return sourceCatalog.find((entry) => entry.id === "ueken");
+  }
+  if (title.includes("grosse volker") || title.includes("grosse völker")) {
+    return sourceCatalog.find((entry) => entry.id === "grosse-voelker");
+  }
+  if (title.includes("kreuzzug")) {
+    return sourceCatalog.find((entry) => entry.id === "kreuzzug");
+  }
+  if (title.includes("eine kurze geschichte")) {
+    return sourceCatalog.find((entry) => entry.id === "spurensuche");
+  }
+  if (title.includes("mittelalter in der schweiz")) {
+    return sourceCatalog.find((entry) => entry.id === "mittelalter-schweiz");
+  }
+  if (title.includes("verruckte mittelalter") || title.includes("verrueckte mittelalter")) {
+    return sourceCatalog.find((entry) => entry.id === "verruecktes-mittelalter");
+  }
+  return null;
+}
+
+function renderFilmFoundation(module) {
+  const filmSources = module.sources
+    .map((source) => ({ source, catalog: resolveSourceLink(source) }))
+    .filter((entry) => entry.catalog && entry.source.title.startsWith("SRF:"));
+
+  if (!filmSources.length) {
+    return "";
+  }
+
+  return `
+    <section class="film-foundation">
+      <div class="film-foundation-head">
+        <p class="section-kicker">Filmgrundlage</p>
+        <p>Diese SRF-Filme und Filmseiten tragen das Modul. Öffne sie direkt aus dem Kapitel heraus und arbeite mit den dort gezeigten Beispielen weiter.</p>
+      </div>
+      <div class="film-grid">
+        ${filmSources
+          .map(
+            ({ source, catalog }) => `
+              <article class="film-card">
+                <div class="film-card-head">
+                  <div>
+                    <h3>${source.title}</h3>
+                    <span class="source-meta">${source.meta}</span>
+                  </div>
+                  <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
+                </div>
+                <p><strong>Zentrale Informationen aus dem Film:</strong> ${cleanStudentText(source.extracted)}</p>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderShortAnswerBox(task, kindLabel) {
   return `
     <div class="${kindLabel === "Transferfrage" ? "transfer-box" : "task-box"}">
@@ -2299,32 +2374,14 @@ function renderStoredFeedback(stored) {
 
 function renderSupportSection(module) {
   const support = moduleSupports[module.id];
-  if (!support) {
+  if (!support || !support.terms?.length) {
     return "";
   }
 
   return `
     <div class="study-sheet">
-      ${
-        support.entryNote
-          ? `
-            <p class="study-callout"><strong>Zuerst klären:</strong> ${support.entryNote}</p>
-          `
-          : ""
-      }
-      ${
-        support.authorIntro
-          ? `
-            <p class="study-callout is-secondary"><strong>Zur Einordnung:</strong> ${support.authorIntro}</p>
-          `
-          : ""
-      }
       <section class="study-block">
-        <p class="section-kicker">Grundorientierung</p>
-        <p>${support.overview}</p>
-      </section>
-      <section class="study-block">
-        <p class="section-kicker">Grundbegriffe</p>
+        <p class="section-kicker">Begriffe für dieses Modul</p>
         <dl class="term-glossary">
           ${support.terms
             .map(
@@ -2337,12 +2394,6 @@ function renderSupportSection(module) {
             )
             .join("")}
         </dl>
-      </section>
-      <section class="study-block">
-        <p class="section-kicker">So entwickelt sich das Thema</p>
-        <ol class="storyline-flow">
-          ${support.storyline.map((step) => `<li>${step}</li>`).join("")}
-        </ol>
       </section>
     </div>
   `;
@@ -2547,11 +2598,6 @@ function renderModules(state) {
             <h2>${module.title}</h2>
             <span class="status-badge ${status.className}">${status.label}</span>
           </div>
-          ${
-            moduleSupports[module.id]?.entryNote
-              ? `<div class="module-entry-note">${moduleSupports[module.id].entryNote}</div>`
-              : ""
-          }
           <p class="lead">${getModuleIntroText(module)}</p>
         </div>
         <div class="module-meta">
@@ -2575,6 +2621,7 @@ function renderModules(state) {
       </header>
 
       ${renderModuleScene(module)}
+      ${renderFilmFoundation(module)}
 
       ${
         unlocked
