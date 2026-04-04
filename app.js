@@ -539,7 +539,7 @@ const modules = [
       "Mit Landwirtschaft verändert sich das Leben tiefgreifend. Menschen bauen nun gezielt Pflanzen an, halten Tiere, legen Vorräte an und bleiben länger an einem Ort. Dadurch entstehen feste Häuser, Dörfer und eine engere Bindung an Boden, Wasser und Jahreszeiten. Aus Bewegung wird stärkeres Bleiben, aus flexibler Nahrungssuche wird planbare, aber auch riskante Erzeugung.",
       "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in größeren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
       "Aber derselbe Wandel hat auch einen Preis. Wer von wenigen Pflanzen oder Tierarten lebt, wird von Ernten, Wetter und Krankheiten stärker abhängig. Harte körperliche Arbeit nimmt oft zu. Besitz, Felder und Vorräte können Ungleichheiten fördern. Aus gemeinsamer Nutzung entstehen leichter Konflikte um Land, Wasser und Reichtum.",
-      "Die SRF-Ressource 'Pfahlbauer von Pfyn' macht das konkret. Dort sieht man nicht bloß abstrakte Begriffe wie Sesshaftigkeit oder Jungsteinzeit, sondern Hütten, Werkzeuge, Kleidung, Nahrung und tägliche Arbeit. Genau so wird verständlich, dass Landwirtschaft kein einfaches Glücksversprechen ist, sondern ein tiefgreifender Umbruch mit Gewinnen und Verlusten."
+      "Die SRF-Ressource 'Pfahlbauer von Pfyn' macht das konkret. Dort sieht man nicht bloß abstrakte Begriffe wie Sesshaftigkeit oder Jungsteinzeit, sondern Hüttenbau, Steinbeile, Kleidung, Feuerstellen, Nahrungsvorbereitung und mühsame Handarbeit. Gerade daran wird sichtbar, was Sesshaftigkeit wirklich bedeutet: Häuser müssen instand gehalten, Nahrung muss gelagert und Geräte müssen ständig hergestellt oder repariert werden. Landwirtschaft ist deshalb kein bequemes Endziel, sondern ein Alltag aus Planung, Arbeit und Abhängigkeit."
     ],
     sources: [
       {
@@ -560,7 +560,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Beurteile Hararis These mit Hilfe der Pfahlbauer-Ressource: Was gewinnen sesshafte Gruppen, was verlieren sie?",
+      "Arbeite am Beispiel der Pfahlbauer heraus, wie sich Wohnen, Arbeiten, Essen und Zeitrhythmus durch Sesshaftigkeit verändern.",
     task: {
       id: "m5-task",
       question:
@@ -637,8 +637,8 @@ const modules = [
     input: [
       "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je größer eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Maße, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
       "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
-      "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil schafft verlässliche landwirtschaftliche Grundlagen. Beamtentum und Schreiber organisieren Abgaben, Bauarbeiten und Versorgung. Hieroglyphenschrift hilft, Ordnung sichtbar zu machen und über längere Zeit zu sichern. Gleichzeitig wird Herrschaft religiös aufgeladen, etwa durch die besondere Stellung des Pharao.",
-      "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also nicht nur Monumente betrachten, sondern auch Speicher, Listen, Tempel, Schreiber und Regeln."
+      "Am Beispiel Ägyptens wird das besonders deutlich. Die SRF-Reihe 'Eine kurze Geschichte über…' zeigt, dass der Nil nicht nur eine Landschaft ist, sondern die Grundlage für regelmäßige Ernten, Versorgung und Planung. Beamtentum und Schreiber organisieren Abgaben, Bauarbeiten und Versorgung. Hieroglyphenschrift hilft, Ordnung sichtbar zu machen und über längere Zeit zu sichern. Gleichzeitig wird Herrschaft religiös aufgeladen, etwa durch die besondere Stellung des Pharao.",
+      "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also nicht nur Monumente betrachten, sondern auch Speicher, Listen, Tempel, Schreiber, Abgaben und die Frage, wer für wen arbeitet."
     ],
     sources: [
       {
@@ -737,8 +737,8 @@ const modules = [
     input: [
       "Ein Imperium ist nicht einfach nur ein großes Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Straßen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
       "Rom ist dafür ein besonders gutes Beispiel. Das Reich verband große Räume rund um das Mittelmeer und darüber hinaus. Seine Macht zeigte sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
-      "Die SRF-Reihe 'Römer in der Schweiz' macht das an einem konkreten Raum sichtbar. Dort zeigt sich, wie Straßen, Brücken, Weinbau, Tierhaltung, Sprache, Recht und Siedlungen den Alltag verändern. Gleichzeitig wird deutlich, dass die Römer nicht in leere Räume kamen. Sie trafen auf bestehende keltische Siedlungen und banden diese in ihre Ordnung ein.",
-      "Das 'Römer-Experiment' ergänzt diese große Perspektive durch Alltag. Es zeigt Werkzeuge, Kochen, Kleidung, Kampf und Arbeit. Dadurch wird sichtbar, dass ein Imperium nur dann dauerhaft wirkt, wenn seine Ordnung im täglichen Leben spürbar wird. Reichsgeschichte ist also immer auch Alltagsgeschichte."
+      "Die SRF-Reihe 'Römer in der Schweiz' macht das an einem konkreten Raum sichtbar. Dort zeigt sich, wie Straßen und Brücken Bewegung erleichtern, wie Weinbau, Hühnerhaltung oder Walnüsse neue Gewohnheiten mitbringen und wie römisches Recht und Städte lokale Räume verändern. Gleichzeitig wird deutlich, dass die Römer nicht in leere Räume kamen. Sie trafen auf bestehende keltische Siedlungen und banden diese in ihre Ordnung ein.",
+      "Das 'Römer-Experiment' ergänzt diese große Perspektive durch Alltag. Es zeigt Werkzeuge, Kochen, Kleidung, Kampf und Arbeit so, dass man sich fragen muss: Wie fühlt sich römische Herrschaft im täglichen Leben an? Wer badet, arbeitet, isst oder kämpft, lebt in einer materiellen Ordnung. Genau daran wird sichtbar, dass ein Imperium nicht nur auf dem Schlachtfeld existiert, sondern in Küchen, Werkstätten, Straßen und Häusern."
     ],
     sources: [
       {
@@ -759,7 +759,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Untersuche, wie Imperium zugleich Herrschaft über Raum und Eingriff in Lebenswelt bedeutet.",
+      "Untersuche an Straßen, Lebensmitteln, Siedlungen und Alltagsgegenständen, wie römische Herrschaft den Raum und den Alltag veränderte.",
     task: {
       id: "m7-task",
       question:
@@ -835,8 +835,8 @@ const modules = [
     input: [
       "Geld wirkt auf den ersten Blick einfach: Man gibt Münzen oder Scheine ab und bekommt etwas dafür. Historisch ist Geld aber komplizierter. Es funktioniert nur, wenn Menschen darauf vertrauen, dass andere es ebenfalls annehmen. Sein Wert liegt also nicht nur im Material, sondern in gemeinsamer Akzeptanz. Darum kann Geld Menschen verbinden, die sich gar nicht persönlich kennen.",
       "Für den Handel ist das entscheidend. Ohne Geld müsste man Ware direkt gegen Ware tauschen und immer jemanden finden, der genau das Gegenstück will. Geld erleichtert diesen Austausch. Es macht Märkte beweglicher und verbindet Orte über größere Entfernungen. So wird Handel planbarer und Räume werden stärker vernetzt.",
-      "Der Münzschatz von Ueken macht diese abstrakte Ordnung greifbar. Ein Fund aus vielen Münzen ist nicht einfach ein Haufen Silber, sondern eine historische Sachquelle. Münzen verraten etwas über Herrschaft, Umlauf, Wertvorstellungen, Verkehrswege und manchmal auch über Unsicherheit, wenn Vermögen versteckt wurde.",
-      "Die SRF-Ressource 'Grosse Völker' erweitert den Blick noch einmal. Sie zeigt, dass Handel, Wissen und Vernetzung nicht nur römisch oder nur europäisch gedacht werden dürfen. Araber, Karthager und andere Akteure gehören ebenso in diese Geschichte. Vernetzung ist daher immer eine Geschichte von Räumen, Waren, Ideen und kulturellen Begegnungen."
+      "Der Münzschatz von Ueken macht diese abstrakte Ordnung greifbar. Ein Fund aus tausenden römischen Silbermünzen ist nicht einfach ein Haufen Metall, sondern eine historische Sachquelle. Münzen verraten etwas über Herrschaft, Umlauf, Wertvorstellungen, Verkehrswege und manchmal auch über Unsicherheit, wenn Vermögen versteckt wurde. Gerade Reinigung, Sortierung und Datierung machen sichtbar, wie viel Geschichte in einem kleinen Gegenstand stecken kann.",
+      "Die SRF-Ressource 'Grosse Völker' erweitert den Blick noch einmal. Sie zeigt, dass Handel, Wissen und Vernetzung nicht nur römisch oder nur europäisch gedacht werden dürfen. Araber, Karthager und andere Akteure gehören ebenso in diese Geschichte. Vernetzung ist daher immer eine Geschichte von Schiffen, Märkten, Waren, Schrift, Rechenwissen und kulturellen Begegnungen."
     ],
     sources: [
       {
@@ -942,7 +942,7 @@ const modules = [
     input: [
       "Religion ist in vormodernen Gesellschaften weit mehr als privater Glaube. Sie erklärt, wie die Welt verstanden werden soll, welche Regeln gelten, was erlaubt oder verboten ist und wie Menschen ihren Platz in der Gemeinschaft sehen. Religion wirkt deshalb auf Denken, Alltag und politische Ordnung zugleich.",
       "Das zeigt sich an Ritualen, Feiertagen, Pilgerorten, heiligen Texten und religiösen Verboten. Sie ordnen Zeit, Raum und Zugehörigkeit. Wer gemeinsam betet, dieselben Feste feiert oder dieselben heiligen Orte kennt, erlebt sich als Teil einer größeren Gemeinschaft. Religion verbindet also Menschen, auch wenn sie weit voneinander entfernt leben.",
-      "Historisch wichtig ist außerdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. Die SRF-Ressource 'Grosse Völker' hilft, diese Zusammenhänge sichtbar zu machen, besonders mit Blick auf arabische Wissenswelten und Fernverbindungen.",
+      "Historisch wichtig ist außerdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. Die SRF-Ressource 'Grosse Völker' hilft, diese Zusammenhänge sichtbar zu machen, besonders mit Blick auf arabische Wissenswelten, Mathematik, Medizin und Fernverbindungen. Religion erscheint dann nicht als abgeschottete Innenwelt, sondern als Teil größerer kultureller Netze.",
       "Für die nächsten Module ist das ein Schlüssel. Kirche, Herrschaft, Pilgerwesen, Kreuzzüge und Alltagsregeln im Mittelalter lassen sich nur verstehen, wenn Religion nicht als Nebenthema erscheint, sondern als tragende Ordnung vieler Gesellschaften."
     ],
     sources: [
@@ -1039,9 +1039,9 @@ const modules = [
     ],
     input: [
       "Viele Menschen verbinden das Mittelalter sofort mit Rittern, Burgen, dunklen Straßen oder großen Kathedralen. Solche Bilder sind nicht völlig falsch, aber sie reichen nicht aus. Das Mittelalter war eine lange und sehr unterschiedliche Epoche. Es gab harte Lebensbedingungen, aber auch beeindruckende Bauleistungen, religiöse Kultur, wachsende Städte und komplexe Herrschaftsformen.",
-      "Die SRF-Seite 'Das verrückte Mittelalter' eignet sich als Einstieg, weil sie typische Themen schnell sichtbar macht: Burgen, Minnesang, Pest, Handel, Hierarchien und Hygiene. Gerade weil sie einfach und humorvoll erzählt, braucht sie eine zweite, genauere Perspektive. Sonst bleiben nur Klischees zurück.",
-      "Diese genauere Perspektive liefert 'Mittelalter in der Schweiz'. Dort erscheinen Latrinen, Küche, Verteidigung, Kleidung, Rollenbilder, Statussymbole und archäologische Funde. Dadurch wird sichtbar, dass mittelalterliche Gesellschaften sehr konkret organisiert waren. Menschen lebten nicht in einem Märchenraum, sondern in einer materiellen Welt mit Regeln, Arbeit, Rang und Mangel.",
-      "Zusammen mit 'Eine kurze Geschichte über…' wird daraus ein differenziertes Bild. Das Mittelalter war stark christlich geprägt, aber nicht einfach rückständig. Wer Burgen, Kathedralen, Handschriften, Bauernarbeit, Stadtleben und soziale Unterschiede zusammendenkt, erkennt eine widersprüchliche, aber historisch hoch interessante Epoche."
+      "Die SRF-Seite 'Das verrückte Mittelalter' eignet sich als Einstieg, weil sie typische Themen schnell sichtbar macht: Burgen, Minnesang, Pest, Handel, Hierarchien und Hygiene. Das ist als erster Zugriff nützlich, aber noch kein ausreichendes Geschichtsbild. Die Begriffe müssen mit echter Lebenswirklichkeit gefüllt werden.",
+      "Diese genauere Perspektive liefert 'Mittelalter in der Schweiz'. Dort erscheinen Latrinen, Küche, Verteidigung, Kleidung, Rollenbilder, Statussymbole und archäologische Funde. Dadurch wird sichtbar, dass mittelalterliche Gesellschaften sehr konkret organisiert waren. Menschen lebten nicht in einem Märchenraum, sondern in Häusern mit Rauch, in Städten mit Abfallproblemen, in Burgen mit enger Rangordnung und in einer Welt, in der Besitz, Herkunft und Glaube das Leben stark bestimmten.",
+      "Zusammen mit 'Eine kurze Geschichte über…' wird daraus ein differenziertes Bild. Das Mittelalter war stark christlich geprägt, aber nicht einfach rückständig. Wer Burgen, Kathedralen, Handschriften, Bauernarbeit, Stadtleben, Krankheit, Frömmigkeit und soziale Unterschiede zusammendenkt, erkennt eine widersprüchliche, aber historisch hoch interessante Epoche."
     ],
     sources: [
       {
@@ -1070,7 +1070,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Prüfe, welche Mittelalterbilder die Ressourcen anbieten und wie aus ihnen ein differenziertes Epochenverständnis entsteht.",
+      "Prüfe an Wohnen, Essen, Hygiene, Verteidigung und Rangsymbolen, wie aus Klischees ein genaueres Bild mittelalterlicher Lebenswelt entsteht.",
     task: {
       id: "m10-task",
       question:
@@ -1145,9 +1145,9 @@ const modules = [
     ],
     input: [
       "Das Thema 'Kinderkreuzzug' wirkt auf den ersten Blick wie eine spektakuläre Erzählung. Gerade deshalb ist es historisch so interessant. Historikerinnen und Historiker dürfen eine solche Geschichte nicht einfach nacherzählen. Sie müssen fragen, welche Quellen es gibt, wann sie entstanden sind, wer sie geschrieben hat und wie zuverlässig ihre Aussagen sind.",
-      "Damit wird dieses Modul zu einem besonders wichtigen Methodenmodul. Es zeigt, dass Geschichte nicht fertig vorliegt, sondern aus Spuren und Überlieferungen rekonstruiert wird. Mittelalterliche Chroniken berichten nicht neutral. Sie deuten, übertreiben, verkürzen oder verfolgen bestimmte Interessen. Quellenkritik ist deshalb kein Zusatz, sondern ein Kern historischer Arbeit.",
-      "Gleichzeitig geht es nicht nur um Texte, sondern auch um Räume. Märkte, Pilgerwege, Städte, Herrschaftszentren und religiöse Bewegungen verbanden Menschen über große Entfernungen. Die mittelalterliche Welt war nicht nur lokal und abgeschlossen, sondern in vieler Hinsicht mobil und vernetzt.",
-      "Deshalb zeigt dieses Modul beides zugleich: wie man Quellen prüft und wie stark Frömmigkeit, Handel, Bewegung und Macht zusammenhängen. Mittelaltergeschichte ist hier also nicht nur eine Geschichte von Glauben oder Konflikt, sondern auch eine Geschichte von Wegen, Begegnungen und Austausch."
+      "Damit wird dieses Modul zu einem besonders wichtigen Methodenmodul. Es zeigt, dass Geschichte nicht fertig vorliegt, sondern aus Spuren und Überlieferungen rekonstruiert wird. Mittelalterliche Chroniken berichten nicht neutral. Sie deuten, übertreiben, verkürzen oder verfolgen bestimmte Interessen. Gerade bei einer so eindrücklichen Geschichte wie dem Kinderkreuzzug muss man deshalb fragen, was wirklich belegt ist und was erst später ausgeschmückt wurde.",
+      "Gleichzeitig geht es nicht nur um Texte, sondern auch um Räume. Märkte, Pilgerwege, Städte, Herrschaftszentren und religiöse Bewegungen verbanden Menschen über große Entfernungen. Wer aufbricht, predigt, pilgert oder handelt, bewegt sich in Netzen aus Straßen, Herbergen, Hafenorten und religiösen Erwartungen. Die mittelalterliche Welt war nicht nur lokal und abgeschlossen, sondern in vieler Hinsicht mobil und vernetzt.",
+      "Deshalb zeigt dieses Modul beides zugleich: wie man Quellen prüft und wie stark Frömmigkeit, Handel, Bewegung und Macht zusammenhängen. Mittelaltergeschichte ist hier also nicht nur eine Geschichte von Glauben oder Konflikt, sondern auch eine Geschichte von Wegen, Begegnungen, Gerüchten und Austausch."
     ],
     sources: [
       {
