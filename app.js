@@ -126,6 +126,116 @@ const sourceCatalog = [
       "Die Serie wird didaktisch als niederschwelliger Einstieg genutzt, um Burgen, Minnesänger, Hierarchien, Pest und Handel anzusprechen. Im Kurs wird sie immer mit Korrekturfragen verbunden, damit Humor und Vereinfachung nicht bei Stereotypen stehen bleiben.",
     linkLabel: "Original öffnen",
     link: "https://www.srf.ch/sendungen/school/geschichte-geografie/wie-lebten-die-leute-frueher-das-verrueckte-mittelalter"
+  },
+  {
+    id: "fruehmenschen-video",
+    title: "YouTube: Frühmenschen und Menschwerdung",
+    type: "YouTube",
+    role: "Ergänzungsfilm zu Menschenarten, Werkzeugen, Feuer und Entwicklung",
+    didactics:
+      "Der vom Nutzer eingebrachte Film dient als zusätzliche Filmgrundlage für Modul 2. Er soll die biologischen und technischen Voraussetzungen der Menschwerdung sichtbarer machen als es 1491 allein leisten kann.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=oxfAKidgl_8"
+  },
+  {
+    id: "hoehlenmalereien",
+    title: "SRF Einstein: Rätselhafte Höhlenmalereien",
+    type: "SRF / Einstein",
+    role: "Vertiefung zu Symbolik, Kunst und Vorstellungswelten",
+    didactics:
+      "Der Film erweitert Modul 3 um ein direktes Material zu früher Bildsymbolik und prähistorischer Kunst.",
+    linkLabel: "Film öffnen",
+    link: "https://www.srf.ch/play/tv/einstein/video/raetselhafte-hoehlenmalereien?urn=urn:srf:video:d86c7be1-4c71-4660-868b-e3bd63cf95e6"
+  },
+  {
+    id: "jaeger-sammler-video",
+    title: "YouTube: Jäger und Sammler",
+    type: "YouTube",
+    role: "Zusätzliche Filmgrundlage zu mobilen Lebensformen",
+    didactics:
+      "Der vom Nutzer eingebrachte Film soll Modul 4 direkter auf Jagd, Sammeln, Mobilität und Umweltwissen beziehen.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=6xSNuCXNZmw"
+  },
+  {
+    id: "neolithische-revolution-video",
+    title: "YouTube: Neolithische Revolution",
+    type: "YouTube",
+    role: "Zusätzliche Streitfolie zur Sesshaftigkeit",
+    didactics:
+      "Der Film ergänzt Modul 5 um die zugespitzte Frage, ob die neolithische Revolution eher Gewinn oder Fehlentwicklung war.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=hoKPh0u4YjY"
+  },
+  {
+    id: "hochkulturen-video",
+    title: "YouTube: Hochkulturen",
+    type: "YouTube",
+    role: "Zusätzliche Übersicht zu Schrift, Verwaltung und Staat",
+    didactics:
+      "Der Film ergänzt Modul 6 um eine breitere Übersicht zu Hochkulturen jenseits des Ägypten-Beispiels.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=kDarvo1XSMA"
+  },
+  {
+    id: "christentum-video",
+    title: "YouTube: Christentum",
+    type: "YouTube",
+    role: "Filmgrundlage zu christlichem Glauben und Ausbreitung",
+    didactics:
+      "Der Film ergänzt Modul 9 um eine explizite Einführung in Christentum, Glaubensinhalte und historische Ausbreitung.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=oUzail_XJsc"
+  },
+  {
+    id: "judentum-video",
+    title: "YouTube: Judentum",
+    type: "YouTube",
+    role: "Filmgrundlage zu Judentum und jüdischer Tradition",
+    didactics:
+      "Der Film ergänzt Modul 9 um eine explizite Einführung in Judentum, Tora, Tradition und historische Kontinuität.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=NlL0NWSLYVA"
+  },
+  {
+    id: "islam-video",
+    title: "YouTube: Islam",
+    type: "YouTube",
+    role: "Filmgrundlage zu Islam und islamischer Welt",
+    didactics:
+      "Der Film ergänzt Modul 9 um eine explizite Einführung in Islam, Koran, Glaubenspraxis und historische Ausbreitung.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=8iCXOd4TzQU"
+  },
+  {
+    id: "stadt-mittelalter-video",
+    title: "YouTube: Stadt im Mittelalter",
+    type: "YouTube",
+    role: "Filmgrundlage zu Stadtleben, Märkten und Wandel",
+    didactics:
+      "Der Film ergänzt Modul 11 um eine direkt städtische Perspektive auf Hoch- und Spätmittelalter.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=U0cnJDPC06Q"
+  },
+  {
+    id: "kloester-video",
+    title: "YouTube: Klöster im Mittelalter",
+    type: "YouTube",
+    role: "Filmgrundlage zu Kirche, Bildung und Klosterleben",
+    didactics:
+      "Der Film ergänzt Modul 10 um Klöster als Räume von Religion, Arbeit, Ordnung und Bildung.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=xPiOlNDZlgk"
+  },
+  {
+    id: "eidgenossenschaft-video",
+    title: "YouTube: Entstehung der Eidgenossenschaft",
+    type: "YouTube",
+    role: "Filmgrundlage zu Herrschaftsordnung und spätmittelalterlicher Politik",
+    didactics:
+      "Der Film ergänzt Modul 10 um ein konkretes spätmittelalterliches Herrschafts- und Bündnisbeispiel aus dem schweizerischen Raum.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=eNJrvZpz7lo"
   }
 ];
 
@@ -265,6 +375,14 @@ const modules = [
           "Die ersten Menschen Amerikas gelangen auf verschiedenen Wegen auf den Doppelkontinent, passen Behausungen und Lebensweisen an Klima und Landschaft an und geben Wissen in vielen Sprachen weiter.",
         didacticUse:
           "Die Lernenden verstehen Ausbreitung nicht als bloßes 'Besiedeln', sondern als fortlaufende Anpassungs- und Kulturleistung."
+      },
+      {
+        title: "YouTube: Frühmenschen und Menschwerdung",
+        meta: "Menschenarten, Werkzeuge, Feuer",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Filmgrundlage zu Frühmenschen, Werkzeuggebrauch, Feuer und der Entwicklung verschiedener Menschenarten.",
+        didacticUse:
+          "Die Ressource soll die biologische und technische Seite der frühen Menschheitsgeschichte sichtbarer machen als es die Migrationsperspektive allein kann."
       }
     ],
     sourcePrompt:
@@ -364,6 +482,14 @@ const modules = [
           "Felsbilder, Totempfähle, Alltagsobjekte und Mayaschrift erscheinen als materielle Spuren symbolischer Welten.",
         didacticUse:
           "Die Ressource macht Symbolfähigkeit sichtbar und eignet sich für eine Quellensimulation: Was sagt ein Bild oder Monument über eine Gesellschaft?"
+      },
+      {
+        title: "SRF Einstein: Rätselhafte Höhlenmalereien",
+        meta: "Frühe Bildwelten",
+        extracted:
+          "Der Einstein-Film ergänzt das Modul um direkte Fragen nach Sinn, Entstehung und Funktion prähistorischer Höhlenmalereien.",
+        didacticUse:
+          "Die Ressource soll die Symbol- und Vorstellungswelt früher Menschen nicht nur über allgemeine Zeichen, sondern über ein präzises Kunstbeispiel erschließen."
       }
     ],
     sourcePrompt:
@@ -462,6 +588,14 @@ const modules = [
           "Hararis Großstruktur macht deutlich, dass Jäger-und-Sammler-Gesellschaften über sehr lange Zeit die normale menschliche Lebensform darstellen.",
         didacticUse:
           "Dadurch werden spätere Veränderungen wie Sesshaftigkeit als historischer Bruch lesbar."
+      },
+      {
+        title: "YouTube: Jäger und Sammler",
+        meta: "Mobile Lebensform",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine eigene Filmgrundlage zu Jagd, Sammeln, Mobilität und Umweltwissen.",
+        didacticUse:
+          "Die Ressource soll Jäger-und-Sammler-Gesellschaften als eigenständige Lebensform direkt absichern."
       }
     ],
     sourcePrompt:
@@ -561,6 +695,14 @@ const modules = [
           "Die Jungsteinzeit wird über rekonstruiertes Wohnen, Werkzeuge, Kleidung und Essen greifbar gemacht. Im Zentrum steht forschendes, fächerübergreifendes Lernen.",
         didacticUse:
           "Die Ressource wird als konkretes Lebensweltfenster genutzt: Was bedeutet Sesshaftigkeit im Alltag wirklich?"
+      },
+      {
+        title: "YouTube: Neolithische Revolution",
+        meta: "Streitfrage",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um die zugespitzte Frage, ob die neolithische Revolution als Fortschritt, Belastung oder Fehlentwicklung verstanden werden sollte.",
+        didacticUse:
+          "Die Ressource verschärft die Urteilsfrage des Moduls und zwingt zu einer klar begründeten Abwägung."
       }
     ],
     sourcePrompt:
@@ -660,6 +802,14 @@ const modules = [
           "Die SRF-Seite nennt Nil, Beamtentum und Hieroglyphenschrift als Gründe dafür, dass das Alte Ägypten rund 3000 Jahre bestehen konnte.",
         didacticUse:
           "Im Modul dient dies als Fallbeispiel dafür, wie Umwelt, Organisation und Symbolsysteme zusammenwirken."
+      },
+      {
+        title: "YouTube: Hochkulturen",
+        meta: "Überblick",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung und frühen Staaten.",
+        didacticUse:
+          "Die Ressource weitet das Modul über Ägypten hinaus und sichert den Hochkultur-Begriff über mehrere Beispiele ab."
       }
     ],
     sourcePrompt:
@@ -965,6 +1115,30 @@ const modules = [
           "Die Araber erscheinen als Pioniere von Mathematik, Medizin und Wissenschaft und als Teil weitreichender kultureller Vernetzungen.",
         didacticUse:
           "Dadurch kann Religion im Unterricht mit Wissenstransfer und Zivilisationsgeschichte verbunden werden statt nur mit Dogmen."
+      },
+      {
+        title: "YouTube: Christentum",
+        meta: "Religion im Überblick",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Christentum, Glaubenspraxis und historische Ausbreitung.",
+        didacticUse:
+          "Die Ressource soll das Christentum nicht nur implizit, sondern ausdrücklich als historische Religion einführen."
+      },
+      {
+        title: "YouTube: Judentum",
+        meta: "Religion im Überblick",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Judentum, Tora und jüdische Tradition.",
+        didacticUse:
+          "Die Ressource soll jüdische Religion und Kontinuität eigenständig sichtbar machen."
+      },
+      {
+        title: "YouTube: Islam",
+        meta: "Religion im Überblick",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Islam, Koran und islamische Glaubenspraxis.",
+        didacticUse:
+          "Die Ressource soll den Islam ausdrücklich als Weltreligion und historischen Ordnungsraum einführen."
       }
     ],
     sourcePrompt:
@@ -1071,6 +1245,22 @@ const modules = [
           "Die Seite problematisiert das Bild des rückständigen Mittelalters und betont die Vielfalt sowie beeindruckende Leistungen der Zeit.",
         didacticUse:
           "Sie eignet sich für eine explizite Urteilsaufgabe: Welche Bilder vom Mittelalter tragen, welche sind zu simpel?"
+      },
+      {
+        title: "YouTube: Klöster im Mittelalter",
+        meta: "Kirche und Bildung",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um Klöster als Räume von Religion, Arbeit, Bildung und Ordnung.",
+        didacticUse:
+          "Die Ressource soll Kirche und Gesellschaft im Mittelalter materieller und institutioneller greifbar machen."
+      },
+      {
+        title: "YouTube: Entstehung der Eidgenossenschaft",
+        meta: "Herrschaft und Bündnisse",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um ein spätmittelalterliches Beispiel für Bündnisse, Herrschaft und politische Ordnung im schweizerischen Raum.",
+        didacticUse:
+          "Die Ressource verankert das Modul stärker im regionalen politischen Wandel."
       }
     ],
     sourcePrompt:
@@ -1170,6 +1360,14 @@ const modules = [
           "Harari schildert Samarkand als mittelalterliche Kreuzung von Handelswegen und Kulturen.",
         didacticUse:
           "So lässt sich Kreuzzugsgeschichte aus der Enge reiner Kampfgeschichte lösen und in eine Geschichte von Mobilität und Vernetzung einordnen."
+      },
+      {
+        title: "YouTube: Stadt im Mittelalter",
+        meta: "Stadtleben und Märkte",
+        extracted:
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Filmgrundlage zu mittelalterlicher Stadt, Markt, Handwerk und verdichtetem Zusammenleben.",
+        didacticUse:
+          "Die Ressource soll das Modul stärker auf urbane Räume und nicht nur auf Quellenkritik stützen."
       }
     ],
     sourcePrompt:
@@ -1781,6 +1979,17 @@ const contentChecks = {
           { label: "frühe Besiedlung", keywords: ["18000", "20000", "landbrucke", "kanus"] },
           { label: "entwickelte Gesellschaften", keywords: ["sprachen", "gesellschaften", "reiche", "landwirtschaft"] }
         ]
+      },
+      {
+        prompt: "Was trägt der Nutzerfilm zu Frühmenschen zusätzlich bei, was in 1491 nicht im Zentrum steht? Antworte mit Menschenarten, Werkzeugen oder Feuer.",
+        placeholder: "Erkläre, warum diese Filmgrundlage Modul 2 stofflich ergänzt.",
+        sampleAnswer:
+          "Der Nutzerfilm ergänzt Frühmenschen, Menschenarten, Werkzeuge und Feuer direkter als 1491. Während 1491 vor allem Migration und spätere Gesellschaften zeigt, klärt dieser Film die biologische und technische Frühphase der Menschheitsgeschichte.",
+        criteria: [
+          { label: "Menschenarten", keywords: ["menschenarten", "fruhmenschen", "homo erectus", "neandertaler"] },
+          { label: "Werkzeuge oder Feuer", keywords: ["werkzeuge", "feuer", "technik"] },
+          { label: "Ergänzungsfunktion", keywords: ["erganzt", "fruhphase", "biologisch", "technisch"] }
+        ]
       }
     ]
   },
@@ -1818,6 +2027,17 @@ const contentChecks = {
           { label: "Felsbilder", keywords: ["felsbilder", "hohle", "handabdrucke", "bilder"] },
           { label: "Totempfähle", keywords: ["totempfahle", "familie", "herkunft", "holzmonumente"] },
           { label: "Schrift", keywords: ["mayaschrift", "hieroglyphen", "zeichen", "wissen"] }
+        ]
+      },
+      {
+        prompt: "Was zeigt der Film zu den Höhlenmalereien darüber, warum frühe Kunst historisch ernst genommen werden muss?",
+        placeholder: "Verbinde Höhlenmalerei mit Symbolen, Ritual oder Weltdeutung.",
+        sampleAnswer:
+          "Der Film zeigt, dass Höhlenmalereien historische Quellen sind und nicht nur Schmuck. Sie verweisen auf Symbolfähigkeit, mögliche Rituale und eine bildliche Deutung der Welt. Deshalb gehören sie zur Geschichte menschlicher Vorstellungswelten.",
+        criteria: [
+          { label: "historische Quelle", keywords: ["quelle", "historisch ernst", "nicht nur schmuck"] },
+          { label: "Symbol oder Ritual", keywords: ["symbol", "ritual", "weltdeutung"] },
+          { label: "Kunst als Teil von Geschichte", keywords: ["kunst", "vorstellungswelten", "geschichte"] }
         ]
       }
     ]
@@ -1858,6 +2078,17 @@ const contentChecks = {
           { label: "Anpassung", keywords: ["anpassung", "klima", "material", "landschaft"] },
           { label: "Fehldeutung korrigiert", keywords: ["nicht ruckstandig", "spezialisiert", "eigenstandig"] }
         ]
+      },
+      {
+        prompt: "Welche drei Dinge müssen Lernende aus dem zusätzlichen Film zu Jägern und Sammlern mitnehmen?",
+        placeholder: "Arbeite mit Umweltwissen, Mobilität und mündlicher Weitergabe.",
+        sampleAnswer:
+          "Erstens brauchen Jäger und Sammler dichtes Umweltwissen. Zweitens ist ihre Mobilität organisiert und an Räume angepasst. Drittens sichern sie Wissen vor allem mündlich und praktisch. Genau dadurch wird ihre Lebensform historisch ernst genommen.",
+        criteria: [
+          { label: "Umweltwissen", keywords: ["umweltwissen", "tiere", "pflanzen", "wege"] },
+          { label: "Mobilität", keywords: ["mobilitat", "mobil", "wandern", "angepasst"] },
+          { label: "mündliche Weitergabe", keywords: ["mundlich", "weitergabe", "praktisch"] }
+        ]
       }
     ]
   },
@@ -1896,6 +2127,17 @@ const contentChecks = {
           { label: "Werkzeuge", keywords: ["steinbeile", "kolbenpfeile", "werkzeuge"] },
           { label: "Alltag", keywords: ["kleidung", "nahrung", "vorrate", "arbeit"] }
         ]
+      },
+      {
+        prompt: "Warum verschärft der Nutzerfilm zur neolithischen Revolution die Kernfrage dieses Moduls?",
+        placeholder: "Erkläre, warum Sesshaftigkeit als Streitfrage und nicht als Selbstverständlichkeit erscheint.",
+        sampleAnswer:
+          "Der Film verschärft die Kernfrage, weil er Sesshaftigkeit nicht automatisch als Fortschritt darstellt. Er zwingt dazu, Gewinne wie Vorräte und Dörfer gegen Belastungen wie Arbeit, Abhängigkeit und Ungleichheit abzuwägen.",
+        criteria: [
+          { label: "keine Selbstverständlichkeit", keywords: ["nicht automatisch", "streitfrage", "nicht nur fortschritt"] },
+          { label: "Gewinne", keywords: ["vorrate", "dorfer", "sicherheit"] },
+          { label: "Belastungen", keywords: ["arbeit", "abhangigkeit", "ungleichheit"] }
+        ]
       }
     ]
   },
@@ -1933,6 +2175,17 @@ const contentChecks = {
           { label: "Nil", keywords: ["nil", "landwirtschaft", "planbar"] },
           { label: "Beamtentum", keywords: ["beamtentum", "abgaben", "organisiert"] },
           { label: "Hieroglyphenschrift", keywords: ["hieroglyph", "schrift", "verwaltung"] }
+        ]
+      },
+      {
+        prompt: "Was ergänzt der Nutzerfilm zu Hochkulturen gegenüber der Ägypten-Folge?",
+        placeholder: "Erkläre den Unterschied zwischen Fallbeispiel und breiterem Überblick.",
+        sampleAnswer:
+          "Die Ägypten-Folge zeigt ein konkretes Beispiel sehr genau. Der Nutzerfilm zu Hochkulturen ergänzt dazu den breiteren Überblick über Schrift, Verwaltung, Religion und Staat in mehreren frühen Kulturen. So wird der Begriff Hochkultur allgemeiner abgesichert.",
+        criteria: [
+          { label: "Ägypten als Fallbeispiel", keywords: ["agypten", "fallbeispiel", "konkret"] },
+          { label: "breiter Überblick", keywords: ["uberblick", "mehrere", "hochkulturen"] },
+          { label: "zentrale Strukturmerkmale", keywords: ["schrift", "verwaltung", "religion", "staat"] }
         ]
       }
     ]
@@ -2047,6 +2300,17 @@ const contentChecks = {
           { label: "Wissensfelder", keywords: ["mathematik", "medizin", "wissenschaft", "bildung"] },
           { label: "Verknüpfung", keywords: ["zusammen", "ineinander", "herrschaft", "religion"] }
         ]
+      },
+      {
+        prompt: "Vergleiche die drei zusätzlichen Religionsfilme zu Christentum, Judentum und Islam. Warum ist es für dieses Modul wichtig, alle drei ausdrücklich einzuführen?",
+        placeholder: "Arbeite mit Eigenständigkeit, Schrift, Gemeinschaft und historischen Räumen.",
+        sampleAnswer:
+          "Es ist wichtig, alle drei einzuführen, weil keine dieser Religionen bloß vorausgesetzt werden darf. Judentum, Christentum und Islam sind eigenständige religiöse Ordnungsräume mit Texten, Gemeinschaften und historischen Ausbreitungen. Erst durch den Vergleich wird Religion im Modul konkret und nicht nur abstrakt.",
+        criteria: [
+          { label: "alle drei Religionen genannt", keywords: ["judentum", "christentum", "islam"] },
+          { label: "Eigenständigkeit", keywords: ["eigenstandig", "nicht nur vorausgesetzt", "vergleich"] },
+          { label: "Schrift/Gemeinschaft/Räume", keywords: ["schrift", "gemeinschaft", "ausbreitung", "raume"] }
+        ]
       }
     ]
   },
@@ -2083,6 +2347,17 @@ const contentChecks = {
           { label: "Einstieg über populäre Bilder", keywords: ["ritter", "burgen", "pest", "minnesanger", "einstieg"] },
           { label: "Alltagsgeschichte", keywords: ["hygiene", "kuche", "verteidigung", "statussymbole", "funde"] },
           { label: "unterschiedliche Funktion", keywords: ["motiviert", "prazisiert", "korrigiert", "vergleicht"] }
+        ]
+      },
+      {
+        prompt: "Was ergänzen Klöster und die Entstehung der Eidgenossenschaft für das Verständnis von Herrschaft, Kirche und Gesellschaft im Mittelalter?",
+        placeholder: "Verbinde Kloster, Bildung, Ordnung, Bündnisse und politische Herrschaft.",
+        sampleAnswer:
+          "Klöster zeigen Kirche als Raum von Bildung, Schrift, Arbeit und Ordnung. Die Entstehung der Eidgenossenschaft zeigt politische Bündnisse und Herrschaft im spätmittelalterlichen Raum. Zusammen ergänzen beide Filme die Alltagsgeschichte um institutionelle und politische Strukturen.",
+        criteria: [
+          { label: "Klöster", keywords: ["kloster", "bildung", "schrift", "arbeit", "ordnung"] },
+          { label: "Eidgenossenschaft", keywords: ["eidgenossenschaft", "bundnisse", "herrschaft", "politisch"] },
+          { label: "Ergänzungsfunktion", keywords: ["erganzt", "institutionell", "politisch", "gesellschaft"] }
         ]
       }
     ]
@@ -2121,6 +2396,17 @@ const contentChecks = {
           { label: "Nikolaus oder Stephan", keywords: ["nikolaus", "stephan", "cologne", "cloyes"] },
           { label: "1212 oder Kreuzzugsüberlieferung", keywords: ["1212", "kinderkreuzzug", "uberlieferung"] },
           { label: "Zuverlässigkeit der Chroniken", keywords: ["chroniken", "zuverlassigkeit", "belegen", "prufen"] }
+        ]
+      },
+      {
+        prompt: "Warum ist der zusätzliche Film zur Stadt im Mittelalter für dieses Modul wichtig? Arbeite mit Stadt, Markt, Handwerk und Vernetzung.",
+        placeholder: "Erkläre, warum Mittelalter nicht nur Burggeschichte ist.",
+        sampleAnswer:
+          "Der Film ist wichtig, weil er mittelalterliche Städte als Räume von Markt, Handwerk und dichtem Zusammenleben zeigt. Dadurch wird klar, dass Vernetzung, Handel und Wandel über urbane Räume liefen und das Mittelalter nicht nur aus Burgen bestand.",
+        criteria: [
+          { label: "Stadt", keywords: ["stadt", "stadtleben", "urban"] },
+          { label: "Markt oder Handwerk", keywords: ["markt", "handwerk", "handel"] },
+          { label: "Vernetzung statt Burgklischee", keywords: ["vernetzung", "nicht nur burg", "wandel"] }
         ]
       }
     ]
@@ -2342,6 +2628,23 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Amerikas Geschichte beginne erst mit Kolumbus oder lasse sich als leere Bühne vor der europäischen Ankunft erzählen."
   },
+  [makeSourceKey("modul-2", "YouTube: Frühmenschen und Menschwerdung")]: {
+    badge: "YouTube-Film · Frühmenschen",
+    locator: "YouTube-Video: Frühmenschen und Menschwerdung",
+    thesis:
+      "Der Film soll Frühgeschichte direkter an Menschenarten, Werkzeugen, Feuer und körperlicher Entwicklung festmachen als die bloße Langzeitperspektive.",
+    passage:
+      "Für dieses Modul dient der Nutzerfilm als ergänzende Filmgrundlage zu Menschenarten, Werkzeuggebrauch, Feuer und früher Anpassung. Er stärkt genau den Teil, der in 1491 kaum vorkommt: frühe Menschenformen vor den späteren komplexen Gesellschaften.",
+    whyHere:
+      "Der Film gehört in Modul 2, weil hier die biologische und technische Frühphase des Menschen sichtbar werden muss, bevor Sprache, Mythen oder Staaten behandelt werden.",
+    mustKnow: [
+      "Frühgeschichte umfasst mehrere Menschenarten und nicht nur Homo sapiens.",
+      "Werkzeuggebrauch und Feuer sind keine Randdetails, sondern historische Wendepunkte.",
+      "Die Entwicklung des Menschen verläuft nicht als einfache Gerade."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Frühmenschen seien bloß primitive Vorformen ohne eigene historische Bedeutung."
+  },
   [makeSourceKey("modul-3", "Harari-PDF")]: {
     badge: "S. 33 · Kognitive Revolution",
     locator: "Harari-PDF, S. 33",
@@ -2375,6 +2678,23 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Vorzeit sei eine stumme, symbolarme Phase ohne komplexe Ordnungssysteme."
   },
+  [makeSourceKey("modul-3", "SRF Einstein: Rätselhafte Höhlenmalereien")]: {
+    badge: "SRF Einstein · Höhlenmalereien",
+    locator: "SRF Einstein: Rätselhafte Höhlenmalereien",
+    thesis:
+      "Der Film macht klar, dass frühe Bilder nicht nur Schmuck sind, sondern Fragen nach Symbolen, Erzählung, Ritual und Weltdeutung öffnen.",
+    passage:
+      "Die Ressource bringt ein direktes Beispiel prähistorischer Kunst in das Modul: Höhlenmalereien als Spur dafür, dass Menschen Erlebnisse, Tiere, Rituale und Vorstellungen bildlich festhielten.",
+    whyHere:
+      "Der Film gehört in Modul 3, weil die kognitive Revolution an konkreten Symbolspuren sichtbar werden muss und nicht bloß als abstrakte Sprachtheorie stehen darf.",
+    mustKnow: [
+      "Höhlenmalereien sind historische Quellen für Symbolfähigkeit.",
+      "Bilder können Erinnerung, Ritual oder Weltdeutung tragen.",
+      "Kunst gehört von Anfang an zur Geschichte menschlicher Ordnungen."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, frühe Kunst sei nur Dekoration und sage wenig über Gesellschaft aus."
+  },
   [makeSourceKey("modul-4", "SRF: 1491")]: {
     badge: "SRF-school-Film · Lebensformen",
     locator: "SRF school: 1491 – Amerika vor Kolumbus",
@@ -2397,6 +2717,23 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, mobile Gruppen hätten planlos oder nur mangelhaft gelebt."
+  },
+  [makeSourceKey("modul-4", "YouTube: Jäger und Sammler")]: {
+    badge: "YouTube-Film · Lebensform",
+    locator: "YouTube-Video: Jäger und Sammler",
+    thesis:
+      "Der Film soll Jäger-und-Sammler-Gesellschaften ausdrücklich als eigenständige, wissensintensive Lebensform sichtbar machen.",
+    passage:
+      "Für dieses Modul ergänzt der Nutzerfilm die SRF-Ressource um eine direkte Auseinandersetzung mit Jagd, Sammeln, Mobilität, Umweltbeobachtung und alltäglicher Organisation.",
+    whyHere:
+      "Der Film gehört in Modul 4, weil dieses Modul die Vorzeit nicht als bloßen Mangelzustand, sondern als hoch angepasste Lebensform erklären muss.",
+    mustKnow: [
+      "Jagd und Sammeln verlangen genaue Umweltkenntnis.",
+      "Mobilität folgt nicht dem Zufall, sondern saisonalen und räumlichen Logiken.",
+      "Wissen wird vor allem praktisch und mündlich gesichert."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Jäger und Sammler hätten planlos oder ohne komplexe Ordnung gelebt."
   },
   [makeSourceKey("modul-4", "Harari-PDF")]: {
     badge: "S. 100 · Vor der Sesshaftigkeit",
@@ -2431,6 +2768,23 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Sesshaftigkeit sei einfach bequemer oder automatisch fortschrittlicher gewesen."
   },
+  [makeSourceKey("modul-5", "YouTube: Neolithische Revolution")]: {
+    badge: "YouTube-Film · Streitfrage",
+    locator: "YouTube-Video: Neolithische Revolution",
+    thesis:
+      "Der Film verschärft die Kernfrage des Moduls: Sesshaftigkeit ist nicht einfach Fortschritt, sondern zugleich Gewinn, Belastung und möglicher historischer Fehler.",
+    passage:
+      "Als zusätzliche Filmgrundlage setzt der Nutzerfilm die neolithische Revolution ausdrücklich unter Urteilsspannung. Damit passt er genau zur Frage, warum Landwirtschaft bei Harari so provokant beschrieben wird.",
+    whyHere:
+      "Der Film gehört in Modul 5, weil dieses Modul gerade nicht mit einer simplen Fortschrittserzählung enden darf.",
+    mustKnow: [
+      "Sesshaftigkeit bringt Vorräte und neue Siedlungen hervor.",
+      "Sie erhöht zugleich Arbeit, Abhängigkeit und Ungleichheit.",
+      "Die Bewertung der neolithischen Revolution bleibt eine begründete Urteilsfrage."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Landwirtschaft sei selbstverständlich nur ein historischer Gewinn gewesen."
+  },
   [makeSourceKey("modul-6", "Harari-PDF")]: {
     badge: "S. 155–161 · Schrift und Bürokratie",
     locator: "Harari-PDF, S. 155 und S. 161",
@@ -2461,6 +2815,23 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, frühe Hochkulturen ließen sich vor allem durch Monumente und große Herrscher erklären."
+  },
+  [makeSourceKey("modul-6", "YouTube: Hochkulturen")]: {
+    badge: "YouTube-Film · Hochkulturen",
+    locator: "YouTube-Video: Hochkulturen",
+    thesis:
+      "Der Film soll Hochkulturen als Verbindung von Überschuss, Schrift, Verwaltung, Religion und Herrschaft verdichten.",
+    passage:
+      "Für dieses Modul ergänzt der Nutzerfilm die ägyptische Fallstudie um einen breiteren Überblick zum Hochkultur-Begriff und zu frühen Staatenbildungen.",
+    whyHere:
+      "Der Film gehört in Modul 6, weil Ägypten als Fallbeispiel stark ist, aber der Begriff Hochkultur zusätzlich über mehrere Kontexte abgesichert werden muss.",
+    mustKnow: [
+      "Hochkulturen beruhen auf Vorrat, Arbeitsteilung und Verwaltung.",
+      "Schrift ist eng mit Ordnung und Herrschaft verbunden.",
+      "Religion und politische Macht stabilisieren frühe Staaten."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Hochkulturen bestünden nur aus prachtvollen Monumenten."
   },
   [makeSourceKey("modul-7", "SRF: Römer in der Schweiz")]: {
     badge: "fünfteilige Reihe · Römer konkret",
@@ -2589,6 +2960,57 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Religion sei in vormodernen Gesellschaften nur Privatglaube oder Gegenspielerin von Wissen."
   },
+  [makeSourceKey("modul-9", "YouTube: Christentum")]: {
+    badge: "YouTube-Film · Christentum",
+    locator: "YouTube-Video: Christentum",
+    thesis:
+      "Der Film führt das Christentum als eigene historische Religion mit Glaubensinhalten, Ausbreitung und Gemeinschaftsformen ein.",
+    passage:
+      "Die Ressource ergänzt das Modul um eine ausdrückliche Einführung in das Christentum, damit Religionen nicht nur strukturell, sondern auch in ihren Eigenformen greifbar werden.",
+    whyHere:
+      "Der Film gehört in Modul 9, weil das Christentum für Antike und Mittelalter nicht bloß vorausgesetzt werden darf.",
+    mustKnow: [
+      "Christentum ist eine eigenständige monotheistische Religion.",
+      "Es bildet Gemeinschaften, Rituale und Ordnungsvorstellungen aus.",
+      "Seine historische Ausbreitung prägt Europa und den Mittelmeerraum tief."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Christentum sei so bekannt, dass es im Kurs nicht eigens eingeführt werden müsse."
+  },
+  [makeSourceKey("modul-9", "YouTube: Judentum")]: {
+    badge: "YouTube-Film · Judentum",
+    locator: "YouTube-Video: Judentum",
+    thesis:
+      "Der Film führt das Judentum als eigenständige Religion, Tradition und Schriftkultur ein.",
+    passage:
+      "Die Ressource ergänzt das Modul um einen direkten Zugang zu Judentum, Tora, Tradition und historischer Kontinuität.",
+    whyHere:
+      "Der Film gehört in Modul 9, weil jüdische Religion und Tradition im Kurs nicht nur als Vorstufe anderer Religionen erscheinen dürfen.",
+    mustKnow: [
+      "Judentum ist eigenständig und schriftbezogen.",
+      "Tradition, Gesetz und Gemeinschaft spielen eine zentrale Rolle.",
+      "Jüdische Geschichte gehört zur Geschichte Antike und Mittelalter unmittelbar dazu."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Judentum müsse nur indirekt oder randständig behandelt werden."
+  },
+  [makeSourceKey("modul-9", "YouTube: Islam")]: {
+    badge: "YouTube-Film · Islam",
+    locator: "YouTube-Video: Islam",
+    thesis:
+      "Der Film führt den Islam als Weltreligion, Textreligion und historischen Ordnungsraum ein.",
+    passage:
+      "Die Ressource ergänzt das Modul um eine direkte Einführung in den Islam, seine Glaubenspraxis und seine historische Ausbreitung.",
+    whyHere:
+      "Der Film gehört in Modul 9, weil der Islam im Kurs ausdrücklich erklärt und nicht nur beiläufig erwähnt werden soll.",
+    mustKnow: [
+      "Der Islam ist eine monotheistische Weltreligion.",
+      "Koran, Glaubenspraxis und Gemeinschaft strukturieren den religiösen Raum.",
+      "Der Islam prägt große politische und kulturelle Räume weit über Arabien hinaus."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Islam sei für die Geschichte bis 1500 nur ein Nebenthema."
+  },
   [makeSourceKey("modul-10", "SRF: Das verrückte Mittelalter")]: {
     badge: "Serienseite · viele Einzelfilme",
     locator: "SRF: Das verrückte Mittelalter",
@@ -2700,6 +3122,40 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Epochen ließen sich mit einem einzigen Etikett wie dunkel, glanzvoll oder rückständig erklären."
   },
+  [makeSourceKey("modul-10", "YouTube: Klöster im Mittelalter")]: {
+    badge: "YouTube-Film · Klöster",
+    locator: "YouTube-Video: Klöster im Mittelalter",
+    thesis:
+      "Der Film zeigt Klöster als Räume von Religion, Arbeit, Disziplin, Bildung und Schriftkultur.",
+    passage:
+      "Die Ressource ergänzt Modul 10 um ein institutionelles Zentrum mittelalterlicher Gesellschaft: das Kloster als Ort von Gebet, Alltag, Arbeit und Wissen.",
+    whyHere:
+      "Der Film gehört in Modul 10, weil Kirche und Gesellschaft ohne Klöster als Bildungs- und Ordnungsräume unverständlich bleiben.",
+    mustKnow: [
+      "Klöster sind nicht nur religiöse Orte, sondern auch Arbeits- und Bildungsräume.",
+      "Schrift, Abschreiben und Ordnung gehören zu ihrem historischen Gewicht.",
+      "Klöster verbinden Alltag, Frömmigkeit und gesellschaftliche Struktur."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, mittelalterliche Kirche bestehe nur aus Gottesdiensten und Kathedralen."
+  },
+  [makeSourceKey("modul-10", "YouTube: Entstehung der Eidgenossenschaft")]: {
+    badge: "YouTube-Film · Eidgenossenschaft",
+    locator: "YouTube-Video: Entstehung der Eidgenossenschaft",
+    thesis:
+      "Der Film führt spätmittelalterliche Bündnisse und Herrschaftsordnungen im schweizerischen Raum als konkretes politisches Beispiel ein.",
+    passage:
+      "Die Ressource ergänzt Modul 10 um ein regionales Beispiel von Herrschaft, Bündnisbildung und politischem Wandel im Spätmittelalter.",
+    whyHere:
+      "Der Film gehört in Modul 10, weil Herrschaft und Gesellschaft nicht nur allgemein, sondern auch an einem vertrauten politischen Raum konkretisiert werden sollen.",
+    mustKnow: [
+      "Herrschaft im Mittelalter wird auch durch Bündnisse und regionale Ordnungen organisiert.",
+      "Die Eidgenossenschaft entsteht nicht aus dem Nichts, sondern in einem spätmittelalterlichen Machtgefüge.",
+      "Schweizer Geschichte ist Teil allgemeiner mittelalterlicher Herrschafts- und Gesellschaftsfragen."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, die Eidgenossenschaft sei völlig losgelöst von mittelalterlichen Macht- und Sozialstrukturen entstanden."
+  },
   [makeSourceKey("modul-11", "SRF: Der Kreuzzug der Kinder")]: {
     badge: "SRF-school-Film · Quellenkritik",
     locator: "SRF school: Mythos oder historischer Fakt – Der Kreuzzug der Kinder",
@@ -2714,6 +3170,23 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, alte Chroniken seien automatisch wahr oder historische Wahrheit bestehe nur aus dem Nacherzählen spektakulärer Geschichten."
+  },
+  [makeSourceKey("modul-11", "YouTube: Stadt im Mittelalter")]: {
+    badge: "YouTube-Film · Stadtleben",
+    locator: "YouTube-Video: Stadt im Mittelalter",
+    thesis:
+      "Der Film macht sichtbar, dass mittelalterliche Welt nicht nur aus Burgen bestand, sondern aus Städten, Märkten, Handwerk und verdichtetem Zusammenleben.",
+    passage:
+      "Die Ressource ergänzt Modul 11 um eine urbane Perspektive auf Hoch- und Spätmittelalter: Stadtmauern, Märkte, Handwerk, Handel und soziale Dichte.",
+    whyHere:
+      "Der Film gehört in Modul 11, weil Wandel und Vernetzung im Mittelalter ohne Städte und Märkte zu abstrakt bleiben würden.",
+    mustKnow: [
+      "Städte sind Zentren von Markt, Handwerk und Austausch.",
+      "Stadtleben unterscheidet sich deutlich von Burg- und Landwelt.",
+      "Vernetzung im Mittelalter läuft wesentlich über urbane Räume."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, Mittelalter bestehe vor allem aus abgeschlossenen Burgen und ländlicher Abgeschlossenheit."
   },
   [makeSourceKey("modul-11", "Harari-PDF")]: {
     badge: "S. 251 · Samarkand",
@@ -3062,6 +3535,39 @@ function resolveSourceLink(source) {
   if (title.includes("1491")) {
     return sourceCatalog.find((entry) => entry.id === "1491");
   }
+  if (title.includes("fruhmenschen") || title.includes("fruehmenschen")) {
+    return sourceCatalog.find((entry) => entry.id === "fruehmenschen-video");
+  }
+  if (title.includes("hohlenmalereien") || title.includes("hoehlenmalereien")) {
+    return sourceCatalog.find((entry) => entry.id === "hoehlenmalereien");
+  }
+  if (title.includes("jager und sammler") || title.includes("jaeger und sammler")) {
+    return sourceCatalog.find((entry) => entry.id === "jaeger-sammler-video");
+  }
+  if (title.includes("neolithische revolution")) {
+    return sourceCatalog.find((entry) => entry.id === "neolithische-revolution-video");
+  }
+  if (title.includes("hochkulturen")) {
+    return sourceCatalog.find((entry) => entry.id === "hochkulturen-video");
+  }
+  if (title.includes("christentum")) {
+    return sourceCatalog.find((entry) => entry.id === "christentum-video");
+  }
+  if (title.includes("judentum")) {
+    return sourceCatalog.find((entry) => entry.id === "judentum-video");
+  }
+  if (title.includes("islam")) {
+    return sourceCatalog.find((entry) => entry.id === "islam-video");
+  }
+  if (title.includes("stadt im mittelalter")) {
+    return sourceCatalog.find((entry) => entry.id === "stadt-mittelalter-video");
+  }
+  if (title.includes("kloster")) {
+    return sourceCatalog.find((entry) => entry.id === "kloester-video");
+  }
+  if (title.includes("eidgenossenschaft")) {
+    return sourceCatalog.find((entry) => entry.id === "eidgenossenschaft-video");
+  }
   if (title.includes("pfahlbauer")) {
     return sourceCatalog.find((entry) => entry.id === "pfahlbauer");
   }
@@ -3095,7 +3601,7 @@ function resolveSourceLink(source) {
 function renderFilmFoundation(module) {
   const filmSources = module.sources
     .map((source) => ({ source, catalog: resolveSourceLink(source) }))
-    .filter((entry) => entry.catalog && entry.source.title.startsWith("SRF:"));
+    .filter((entry) => entry.catalog && entry.source.title !== "Harari-PDF");
 
   if (!filmSources.length) {
     return "";
