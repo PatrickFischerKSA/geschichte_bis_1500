@@ -134,25 +134,25 @@ const modules = [
     phase: "Geschichtsbegriff",
     guidingQuestion: "Wann beginnt Geschichte eigentlich?",
     hook:
-      "Harari setzt Geschichte nicht beim Urknall und nicht einfach beim ersten Steinwerkzeug an, sondern dort, wo Homo sapiens Kulturen aufbaut. Das zwingt dazu, Naturgeschichte, Menschheitsgeschichte und Kulturgeschichte sauber zu unterscheiden.",
+      "Bevor wir mit Frühmenschen, Antike oder Mittelalter arbeiten, müssen wir zuerst klären, was im Kurs überhaupt mit Geschichte gemeint ist. Nicht alles Vergangene ist schon Geschichte im engeren Sinn.",
     goals: [
-      "Naturgeschichte, biologische Entwicklung und Geschichte im engeren Sinn unterscheiden",
-      "Hararis Drei-Revolutionen-Modell als Grundgerüst der Einheit verstehen",
-      "erste Langzeitlinien zwischen Frühzeit und späteren Weltveränderungen erkennen"
+      "Naturgeschichte, Entwicklung des Menschen und Geschichte im engeren Sinn unterscheiden",
+      "verstehen, warum dieser Kurs mit großen Veränderungen statt mit bloßen Jahreszahlen arbeitet",
+      "erste Verbindungslinien zwischen frühen Veränderungen und späteren Weltordnungen erkennen"
     ],
     input: [
-      "Im Auftakt ordnen die Lernenden drei Ebenen: Physik und Chemie erklären Entstehung von Materie; Biologie beschreibt Organismen; Geschichte beginnt dort, wo Menschen kulturelle Ordnungen, Regeln, Erzählungen und Tradierungen aufbauen. Harari formuliert diese Unterscheidung ausdrücklich und macht daraus zugleich eine Grobgliederung der Menschheitsgeschichte.",
-      "Damit wird Geschichte nicht als bloße Datenfolge verstanden, sondern als Prozess kultureller Verdichtung. Aus dieser Perspektive sind Sprache, Symbole, Vorratshaltung, Schrift, Herrschaft, Geld und Religion keine Nebenthemen, sondern Schlüsselinstrumente historischer Entwicklung.",
-      "Die SRF-Ressource zum Anthropozän ergänzt diesen Einstieg produktiv: Sie zeigt, dass menschliche Eingriffe in Wasser, Luft und Boden nicht erst in der Moderne aus dem Nichts entstehen, sondern auf älteren Innovationsketten beruhen. Für einen Kurs bis 1500 ist das kein thematischer Sprung, sondern ein Ausblick auf die Reichweite früher Entscheidungen."
+      "Zu Beginn unterscheiden wir drei Ebenen. Erstens gibt es Naturgeschichte: Dazu gehören Erde, Klima, Gesteine, Tiere und Pflanzen. Zweitens gibt es die Entwicklung des Menschen als Lebewesen. Drittens gibt es Geschichte im engeren Sinn: Sie beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Symbole, Erinnerungen und gemeinsame Vorstellungen gestalten.",
+      "Ein Historiker namens Yuval Noah Harari schlägt in seinem Buch vor, Menschheitsgeschichte nicht nur nach Epochen, sondern auch nach großen Veränderungen zu betrachten. Man muss ihn nicht kennen, um mit dem Kurs arbeiten zu können. Wichtig ist nur die Grundidee: Manche Veränderungen wirken so stark, dass sie viele spätere Entwicklungen vorbereiten, zum Beispiel Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld oder Religion.",
+      "Die SRF-Ressource zum Anthropozän hilft als Ausblick. Sie zeigt, dass frühe menschliche Eingriffe nicht einfach folgenlos bleiben. Wer Feuer nutzt, Wälder rodet, Felder anlegt, Metalle verarbeitet oder Städte baut, verändert die Welt langfristig. Darum beginnt der Kurs mit Grundbegriffen und nicht sofort mit einzelnen Reichen oder Herrschern."
     ],
     sources: [
       {
         title: "Harari-PDF",
-        meta: "Grundgerüst",
+        meta: "Buchauszug",
         extracted:
-          "Harari trennt Physik, Chemie, Biologie und Geschichte und beschreibt Geschichte als Entwicklung menschlicher Kulturen. Außerdem nennt er kognitive, landwirtschaftliche und wissenschaftliche Revolution als große Strukturachsen.",
+          "Der Historiker Yuval Noah Harari unterscheidet Natur, biologische Entwicklung und menschliche Kulturgeschichte. In seinem Buch ordnet er die Menschheitsgeschichte nach großen Veränderungen, die vieles andere nach sich ziehen.",
         didacticUse:
-          "Im Modul wird daraus keine reine Buchzusammenfassung, sondern eine begriffliche Startfolie: Was zählt als Geschichte, was als Vorgeschichte, und nach welchen Entwicklungslinien wird der Kurs geordnet?"
+          "Im Kurs dient dieser Text als Orientierung: Nicht weil alle Lernenden Harari kennen müssen, sondern weil er eine gut verständliche Grundfrage stellt, nämlich was als Geschichte zählt und was noch nicht."
       },
       {
         title: "SRF: Anthropozän",
@@ -164,7 +164,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, welche Schwelle im Kurs als Beginn von Geschichte gilt und warum diese Entscheidung den Blick auf alle folgenden Module verändert.",
+      "Arbeite heraus, ab welcher Schwelle dieser Kurs von Geschichte spricht und warum diese Entscheidung für alle folgenden Module wichtig ist.",
     task: {
       id: "m1-task",
       question:
@@ -207,7 +207,7 @@ const modules = [
     },
     takeaway: [
       "Geschichte ist mehr als Vergangenheit: Sie meint kulturell geordnete menschliche Welt.",
-      "Hararis Drei-Revolutionen-Modell ist ein Deutungsraster, kein starres Schulbuchschema.",
+      "Ein Geschichtsbuch kann helfen, große Entwicklungsschritte sichtbar zu machen, auch wenn man den Autor vorher nicht kennt.",
       "Frühe Innovationen lassen sich als Vorgeschichte späterer Großveränderungen lesen."
     ],
     transfer: {
@@ -1328,15 +1328,18 @@ const moduleSupports = {
   "modul-1": {
     overview:
       "In diesem Modul klärst du zuerst eine Grundfrage: Nicht alles Vergangene ist automatisch Geschichte im engeren Sinn. Geschichte beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Erinnerungen und gemeinsame Vorstellungen ordnen.",
+    authorIntro:
+      "Yuval Noah Harari ist ein Historiker und Autor eines bekannten Überblicksbuchs zur Menschheitsgeschichte. Du musst ihn nicht kennen. Für diesen Kurs ist nur wichtig: Er hilft dabei, sehr lange Entwicklungen in wenige große Veränderungen zu gliedern, damit der Stoff verständlicher wird.",
     terms: [
       { term: "Naturgeschichte", description: "Entwicklung von Erde, Klima, Gesteinen und Lebewesen ohne Blick auf menschliche Kultur." },
       { term: "Evolution", description: "Langsame biologische Veränderung von Lebewesen, also auch der verschiedenen Menschenarten." },
-      { term: "Kultur", description: "Alles, was Menschen gemeinsam hervorbringen: Sprache, Regeln, Rituale, Erzählungen und Werkzeuge." }
+      { term: "Kultur", description: "Alles, was Menschen gemeinsam hervorbringen: Sprache, Regeln, Rituale, Erzählungen und Werkzeuge." },
+      { term: "große Veränderung", description: "Ein Einschnitt, der vieles andere nach sich zieht, zum Beispiel neue Lebensweisen, neue Ordnungen oder neue Machtformen." }
     ],
     storyline: [
-      "Zuerst trennst du Natur, biologische Entwicklung und menschliche Geschichte.",
-      "Dann erkennst du, dass Geschichte stark mit Kultur zusammenhängt.",
-      "Am Ende verstehst du, warum der Kurs nicht einfach mit Jahreszahlen, sondern mit großen Veränderungen startet."
+      "Zuerst trennst du Natur, Entwicklung des Menschen und menschliche Geschichte.",
+      "Dann lernst du, warum Sprache, Regeln und Symbole für Geschichte wichtig sind.",
+      "Am Ende verstehst du, warum der Kurs nach großen Veränderungen statt nur nach Jahreszahlen aufgebaut ist."
     ],
     connection:
       "Diese Unterscheidung trägt die ganze Einheit. Erst dadurch wird verständlich, warum in den nächsten Modulen Sprache, Sesshaftigkeit, Schrift, Geld und Religion zu Schlüsselthemen werden."
@@ -2399,6 +2402,16 @@ function renderSupportSection(module) {
 
   return `
     <div class="support-grid">
+      ${
+        support.authorIntro
+          ? `
+            <article class="support-card support-card-wide">
+              <p class="section-kicker">Wer ist das überhaupt?</p>
+              <p>${support.authorIntro}</p>
+            </article>
+          `
+          : ""
+      }
       <article class="support-card support-card-wide">
         <p class="section-kicker">Ohne Vorwissen starten</p>
         <p>${support.overview}</p>
