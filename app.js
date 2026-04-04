@@ -2304,64 +2304,58 @@ function renderSupportSection(module) {
   }
 
   return `
-    <div class="support-grid">
+    <div class="study-sheet">
       ${
         support.entryNote
           ? `
-            <article class="support-card support-card-wide">
-              <p class="section-kicker">Zuerst klären</p>
-              <p>${support.entryNote}</p>
-            </article>
+            <p class="study-callout"><strong>Zuerst klären:</strong> ${support.entryNote}</p>
           `
           : ""
       }
       ${
         support.authorIntro
           ? `
-            <article class="support-card support-card-wide">
-              <p class="section-kicker">Wer ist das überhaupt?</p>
-              <p>${support.authorIntro}</p>
-            </article>
+            <p class="study-callout is-secondary"><strong>Zur Einordnung:</strong> ${support.authorIntro}</p>
           `
           : ""
       }
-      <article class="support-card support-card-wide">
-        <p class="section-kicker">Das musst du zuerst wissen</p>
+      <section class="study-block">
+        <p class="section-kicker">Grundorientierung</p>
         <p>${support.overview}</p>
-      </article>
-      <article class="support-card">
+      </section>
+      <section class="study-block">
         <p class="section-kicker">Grundbegriffe</p>
-        <div class="term-list">
+        <dl class="term-glossary">
           ${support.terms
             .map(
               (item) => `
-                <div class="term-item">
-                  <strong>${item.term}</strong>
-                  <p>${item.description}</p>
+                <div class="term-glossary-item">
+                  <dt>${item.term}</dt>
+                  <dd>${item.description}</dd>
                 </div>
               `
             )
             .join("")}
-        </div>
-      </article>
-      <article class="support-card">
+        </dl>
+      </section>
+      <section class="study-block">
         <p class="section-kicker">So entwickelt sich das Thema</p>
-        <div class="storyline-list">
-          ${support.storyline.map((step) => `<div class="storyline-step">${step}</div>`).join("")}
-        </div>
-      </article>
+        <ol class="storyline-flow">
+          ${support.storyline.map((step) => `<li>${step}</li>`).join("")}
+        </ol>
+      </section>
     </div>
   `;
 }
 
 function renderLearningSteps(module) {
   return `
-    <div class="learning-steps">
+    <div class="reading-flow">
       ${module.input
         .map(
           (paragraph, index) => `
-            <article class="learning-step">
-              <span class="source-meta">Sachtext ${index + 1}</span>
+            <article class="reading-block">
+              <p class="reading-label">Abschnitt ${index + 1}</p>
               <p>${cleanStudentText(paragraph)}</p>
             </article>
           `
@@ -2595,13 +2589,13 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">2. Grundwissen</p>
+          <p class="section-kicker">2. Stoff und Grundwissen</p>
           ${renderSupportSection(module)}
           ${renderLearningSteps(module)}
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Quellen und Beispiele</p>
+          <p class="section-kicker">3. Quellen und konkrete Beispiele</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map(renderSourceCard).join("")}

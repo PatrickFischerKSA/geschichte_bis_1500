@@ -794,7 +794,7 @@ p {
 }
 
 .module-card {
-  padding: 28px;
+  padding: 34px 34px 30px;
 }
 
 .module-header {
@@ -1028,73 +1028,119 @@ p {
 }
 
 .module-section {
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: rgba(255, 252, 248, 0.8);
+  padding: 24px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(30, 44, 52, 0.1);
+  border-radius: 0;
+  background: transparent;
 }
 
 .module-section p + p {
   margin-top: 12px;
 }
 
-.support-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 18px;
+.study-sheet {
+  margin: 4px 0 20px;
 }
 
-.support-card {
-  padding: 18px;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(31, 109, 102, 0.14);
-  background: rgba(255, 250, 244, 0.92);
+.study-callout {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-left: 4px solid rgba(200, 155, 60, 0.7);
+  background: rgba(255, 248, 236, 0.82);
 }
 
-.support-card-wide {
-  grid-column: 1 / -1;
+.study-callout.is-secondary {
+  border-left-color: rgba(31, 109, 102, 0.45);
+  background: rgba(247, 251, 248, 0.8);
 }
 
-.term-list,
-.storyline-list,
-.learning-steps {
-  display: grid;
-  gap: 12px;
+.study-block + .study-block {
+  margin-top: 18px;
 }
 
-.term-item,
-.storyline-step,
-.learning-step {
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(30, 44, 52, 0.1);
-  background: rgba(255, 253, 249, 0.96);
-}
-
-.term-item p,
-.learning-step p {
-  margin-top: 8px;
-}
-
-.term-item p,
-.storyline-step,
-.learning-step p {
+.study-block p:last-child {
   color: var(--muted);
+}
+
+.term-glossary {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.term-glossary-item {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(30, 44, 52, 0.08);
+}
+
+.term-glossary-item:first-child {
+  border-top: 0;
+}
+
+.term-glossary-item dt {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.term-glossary-item dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.storyline-flow {
+  margin: 10px 0 0 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.reading-flow {
+  display: grid;
+  gap: 18px;
+}
+
+.reading-block {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(30, 44, 52, 0.08);
+}
+
+.reading-block:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.reading-label {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.reading-block p:last-child {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
 }
 
 .source-grid,
 .source-catalog {
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .source-card,
 .catalog-card {
-  padding: 16px 18px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line);
-  background: rgba(255, 250, 244, 0.88);
+  padding: 14px 0 12px;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(30, 44, 52, 0.08);
+  background: transparent;
 }
 
 .source-card header,
@@ -1107,7 +1153,7 @@ p {
 
 .source-card p,
 .catalog-card p {
-  margin-top: 10px;
+  margin-top: 8px;
   color: var(--muted);
 }
 
