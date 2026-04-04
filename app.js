@@ -1747,6 +1747,93 @@ const contentChecks = {
   }
 };
 
+const moduleVisuals = {
+  "modul-1": {
+    hero: "assets/srf/m01-anthropozaen.jpg",
+    side: "assets/srf/m01-spurensuche.jpg",
+    kicker: "Langzeitblick",
+    title: "Vom Anfang der Geschichte zur Spur des Menschen",
+    text: "Der Einstieg verbindet Geschichtsbegriff, Weltdeutung und die Frage, wie menschliches Handeln überhaupt historische Wirkung entfaltet."
+  },
+  "modul-2": {
+    hero: "assets/srf/m02-1491.jpg",
+    side: "assets/srf/m02-1491-detail.jpg",
+    kicker: "Frühmenschliche Welt",
+    title: "Migration, Anpassung und mehrere Menschenarten",
+    text: "Das Modul öffnet die Frühgeschichte global und zeigt den Menschen zunächst nicht als Herrscher, sondern als anpassungsfähiges Lebewesen."
+  },
+  "modul-3": {
+    hero: "assets/srf/m02-1491-detail.jpg",
+    side: "assets/srf/m02-1491.jpg",
+    kicker: "Kognitive Revolution",
+    title: "Bilder, Mythen und Sprache als Weltbau",
+    text: "Aus Symbolen und Erzählungen entstehen gemeinsame Ordnungen, die später Herrschaft, Geld und Religion ermöglichen."
+  },
+  "modul-4": {
+    hero: "assets/srf/m02-1491.jpg",
+    side: "assets/srf/m05-pfahlbauer-detail.jpg",
+    kicker: "Vorzeitliche Lebensformen",
+    title: "Mobile Gesellschaften lesen Landschaften",
+    text: "Jäger-und-Sammler-Gruppen erscheinen als hoch spezialisierte Wissensgemeinschaften mit enger Bindung an Klima, Tiere und Jahreszeiten."
+  },
+  "modul-5": {
+    hero: "assets/srf/m05-pfahlbauer.jpg",
+    side: "assets/srf/m05-pfahlbauer-detail.jpg",
+    kicker: "Sesshaftigkeit",
+    title: "Vom Lager zur Siedlung",
+    text: "Die landwirtschaftliche Revolution wird nicht abstrakt, sondern als Umbruch in Hausbau, Arbeit, Vorrat und sozialer Abhängigkeit sichtbar."
+  },
+  "modul-6": {
+    hero: "assets/srf/m01-spurensuche.jpg",
+    side: "assets/srf/m01-anthropozaen.jpg",
+    kicker: "Hochkulturen",
+    title: "Schrift, Ordnung und monumentale Herrschaft",
+    text: "Die Bildwelt führt in frühe Staatsräume, in denen Verwaltung, Schrift und symbolische Macht zusammenwirken."
+  },
+  "modul-7": {
+    hero: "assets/srf/m07-roemer-schweiz.jpg",
+    side: "assets/srf/m07-roemer-detail.jpg",
+    kicker: "Imperien",
+    title: "Rom als gelebte Raumordnung",
+    text: "Straßen, Bauten und Alltagskultur zeigen, wie ein Imperium den Raum nicht nur erobert, sondern organisiert."
+  },
+  "modul-8": {
+    hero: "assets/srf/m08-muenzschatz.jpg",
+    side: "assets/srf/m08-roemer-experiment.jpg",
+    kicker: "Vernetzung",
+    title: "Wert, Vertrauen und Umlauf",
+    text: "Münzen und Märkte erscheinen als greifbare Spuren jener unsichtbaren Ordnungen, die Handel über Grenzen hinweg möglich machen."
+  },
+  "modul-9": {
+    hero: "assets/srf/m09-grosse-voelker.jpg",
+    side: "assets/srf/m11-kreuzzug.jpg",
+    kicker: "Religionen und Weltbilder",
+    title: "Sinnordnungen verbinden Menschenräume",
+    text: "Religiöse Gemeinschaften, Wissenswege und Pilgerbewegungen werden als reale historische Netzwerke sichtbar."
+  },
+  "modul-10": {
+    hero: "assets/srf/m10-verruecktes-mittelalter.jpg",
+    side: "assets/srf/m10-mittelalter-schweiz.jpg",
+    kicker: "Mittelalterliche Lebenswelt",
+    title: "Zwischen Burgen, Alltag und sozialen Grenzen",
+    text: "Die Module zur Epoche bekommen eine eigene Atmosphäre aus Architektur, Materialität und gelebter Alltagsordnung."
+  },
+  "modul-11": {
+    hero: "assets/srf/m11-kreuzzug.jpg",
+    side: "assets/srf/m10-mittelalter-schweiz.jpg",
+    kicker: "Quellenkritik",
+    title: "Frömmigkeit, Mobilität und Überlieferung",
+    text: "Die Bildsprache schiebt das Modul in eine Zwischenzone aus Bewegung, Glauben, Konflikt und erzählter Geschichte."
+  },
+  "modul-12": {
+    hero: "assets/srf/m01-anthropozaen.jpg",
+    side: "assets/srf/m02-1491.jpg",
+    kicker: "Bilanz bis 1500",
+    title: "Weltgeschichte offen denken",
+    text: "Der Schluss verbindet globale Perspektive und Langzeitfolgen: Nicht nur Europa, nicht nur ein Deutungsweg, sondern viele historische Linien zugleich."
+  }
+};
+
 function normalize(value) {
   return String(value || "")
     .toLowerCase()
@@ -1811,6 +1898,11 @@ function getModuleStatus(state, module, moduleIndex) {
 
 function getPassedModuleCount(state) {
   return modules.filter((module) => isModulePassed(state, module.id)).length;
+}
+
+function getLearnerName(state) {
+  const value = String(state.learnerName || "").trim();
+  return value || "Lernende Person";
 }
 
 function updateProgress(state) {
@@ -1917,8 +2009,14 @@ function renderStoredFeedback(stored) {
 
 function renderContentCheck(module, state) {
   const check = contentChecks[module.id];
+  const attempted = Boolean(state[`${module.id}-content-attempted`]);
   const questions = check.questions
     .map((question, questionIndex) => {
+      const selectedValue = state[`${module.id}-content-answer-${questionIndex}`];
+      const isCorrect = attempted && selectedValue === question.correctIndex;
+      const statusBadge = attempted
+        ? `<span class="question-status status-badge ${isCorrect ? "ready" : "locked"}">${isCorrect ? "richtig" : "überarbeiten"}</span>`
+        : "";
       const options = question.options
         .map((option, optionIndex) => {
           const checked = state[`${module.id}-content-answer-${questionIndex}`] === optionIndex ? "checked" : "";
@@ -1932,9 +2030,11 @@ function renderContentCheck(module, state) {
         .join("");
 
       return `
-        <div class="check-question">
+        <div class="check-question ${attempted ? (isCorrect ? "good" : "low") : ""}">
+          ${statusBadge}
           <p><strong>${questionIndex + 1}.</strong> ${question.prompt}</p>
           <div class="radio-list">${options}</div>
+          ${attempted ? `<p class="question-explanation">${question.explanation}</p>` : ""}
         </div>
       `;
     })
@@ -1956,6 +2056,31 @@ function renderContentCheck(module, state) {
 
 function renderTakeaway(items) {
   return items.map((item) => `<div class="takeaway">${item}</div>`).join("");
+}
+
+function renderModuleScene(module) {
+  const visual = moduleVisuals[module.id];
+  if (!visual) {
+    return "";
+  }
+
+  return `
+    <section class="module-scene" aria-label="Bildimpulse zu ${module.title}">
+      <div class="scene-hero" style="background-image: url('${visual.hero}')">
+        <div class="scene-copy">
+          <p class="scene-kicker">${visual.kicker}</p>
+          <h3>${visual.title}</h3>
+          <p>${visual.text}</p>
+        </div>
+      </div>
+      <div class="scene-side" style="background-image: url('${visual.side}')">
+        <div class="scene-copy">
+          <p class="scene-kicker">SRF-Bildimpuls</p>
+          <p>Atmosphärisch aus den eingebauten SRF-Ressourcen entwickelt und lokal in die Einheit integriert.</p>
+        </div>
+      </div>
+    </section>
+  `;
 }
 
 function renderCompletionPanel(state) {
@@ -2003,6 +2128,7 @@ function renderCompletionPanel(state) {
             <p>Diese Bescheinigung dokumentiert den erfolgreichen Abschluss der vollständigen interaktiven Lerneinheit im Repository <code>geschichte_bis_1500</code>.</p>
             <div class="certificate-line">
               <p><strong>Status:</strong> ${allPassed ? "vollständig abgeschlossen" : "noch nicht vollständig abgeschlossen"}</p>
+              <p><strong>Name:</strong> ${getLearnerName(state)}</p>
               <p><strong>Bestandene Module:</strong> ${passedModules} / ${modules.length}</p>
               <p><strong>Datum:</strong> ${today}</p>
             </div>
@@ -2071,6 +2197,8 @@ function renderModules(state) {
           </div>
         </div>
       </header>
+
+      ${renderModuleScene(module)}
 
       ${
         unlocked
@@ -2369,6 +2497,7 @@ function bindContentChecks(state) {
         ? `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Das nächste Modul ist jetzt freigeschaltet.${wrongDetails.length ? ` Prüfe trotzdem noch: ${wrongDetails.join(" ")}` : ""}`
         : `Du hast ${correctCount} von ${totalCount} Fragen richtig beantwortet und ${percent}% erreicht. Für die Freischaltung brauchst du mindestens 60%. Wiederhole besonders: ${wrongDetails.join(" ")}`;
 
+      state[`${module.id}-content-attempted`] = true;
       state[`${module.id}-content-score`] = bestPercent;
       state[`${module.id}-content-feedback`] = {
         level: bestPercent >= 60 ? "good" : percent >= 34 ? "mid" : "low",
@@ -2386,6 +2515,69 @@ function bindContentChecks(state) {
   });
 }
 
+function renderLearnerBanner(state) {
+  const banner = document.getElementById("learner-banner");
+  banner.innerHTML = `
+    <strong>${getLearnerName(state)}</strong>
+    <span>Freischaltsystem aktiv: Das nächste Modul öffnet sich jeweils nach mindestens 60% in der Inhaltssicherung.</span>
+  `;
+}
+
+function renderWelcomeOverlay(state) {
+  const overlay = document.getElementById("welcome-overlay");
+  const shouldOpen = !state.welcomeDismissed;
+
+  overlay.hidden = !shouldOpen;
+  document.body.classList.toggle("is-overlay-open", shouldOpen);
+
+  if (!shouldOpen) {
+    overlay.innerHTML = "";
+    return;
+  }
+
+  overlay.innerHTML = `
+    <div class="welcome-panel">
+      <div class="welcome-copy">
+        <p class="panel-kicker">Willkommen</p>
+        <h2>Geschichte bis 1500 als geführte Lernreise</h2>
+        <p>Diese Lernumgebung arbeitet mit einem klaren Fortschrittssystem. Du bearbeitest jedes Modul in einer festen Abfolge und sicherst den Inhalt anschließend mit einer kleinen Quizstrecke.</p>
+        <div class="welcome-list">
+          <div class="takeaway">Nach jedem Modul folgt eine eigene Inhaltssicherung.</div>
+          <div class="takeaway">Das nächste Modul wird erst freigeschaltet, wenn du dort mindestens 60 Prozent erreichst.</div>
+          <div class="takeaway">Dein Fortschritt wird global und pro Modul angezeigt.</div>
+          <div class="takeaway">Wenn du alle 12 Module bestehst, wird ein personalisiertes Zertifikat freigeschaltet.</div>
+        </div>
+        <label class="welcome-name">
+          <strong>Name für Lernstand und Zertifikat</strong>
+          <input id="welcome-name-input" type="text" placeholder="z. B. Lena Muster" value="${String(state.learnerName || "").replace(/"/g, "&quot;")}" />
+        </label>
+        <div class="welcome-actions">
+          <button class="btn primary" type="button" data-start-course>Lernreise starten</button>
+        </div>
+      </div>
+      <div class="welcome-side">
+        <div class="welcome-visual"></div>
+        <p class="compact">Die visuelle Welt der Einheit basiert auf lokal eingebauten SRF-Bildressourcen und führt von Frühgeschichte über Antike bis in mittelalterliche Lebenswelten.</p>
+      </div>
+    </div>
+  `;
+}
+
+function bindWelcomeOverlay(state) {
+  const startButton = document.querySelector("[data-start-course]");
+  if (!startButton) {
+    return;
+  }
+
+  startButton.addEventListener("click", () => {
+    const nameInput = document.getElementById("welcome-name-input");
+    state.learnerName = String(nameInput?.value || "").trim();
+    state.welcomeDismissed = true;
+    saveState(state);
+    renderApp(state);
+  });
+}
+
 function bindCompletionActions() {
   const button = document.querySelector("[data-print-certificate]");
   if (!button) {
@@ -2398,8 +2590,10 @@ function bindCompletionActions() {
 }
 
 function renderApp(state) {
+  renderWelcomeOverlay(state);
   createTimeline(state);
   createNavigation(state);
+  renderLearnerBanner(state);
   renderModules(state);
   renderCompletionPanel(state);
   renderSourceCatalog();
@@ -2407,6 +2601,7 @@ function renderApp(state) {
   bindShortAnswerTasks(state);
   bindSelftests(state);
   bindContentChecks(state);
+  bindWelcomeOverlay(state);
   bindCompletionActions();
   updateProgress(state);
 }

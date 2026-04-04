@@ -20,6 +20,9 @@ werden.
 - Modulfreischaltung: das nächste Modul öffnet sich erst nach mindestens 60 Prozent in der
   Inhaltssicherung
 - sichtbare Status-Badges pro Modul und Abschlusszertifikat nach bestandenen 12 Modulen
+- Start- und Willkommensmaske mit Erklärung des Freischaltsystems
+- Namensfeld für personalisierten Lernstand und personalisiertes Zertifikat
+- lokale atmosphärische Bildwelten auf Basis der eingebauten SRF-Ressourcen
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
 
 ## Quellenbasis
@@ -51,4 +54,5 @@ Quellenbasis mit Einsatzfunktion aufgeführt.
 - `lehrpersonen.html`: didaktische Begleitseite für Lehrpersonen
 - `styles.css`: Layout und Gestaltung
 - `app.js`: Moduldaten, Renderlogik, Sofortfeedback und Fortschritt
+- `assets/srf/`: lokal eingebundene SRF-Bildassets für die atmosphärische Modulgestaltung
 - `.github/workflows/pages.yml`: automatische Veröffentlichung über GitHub Pages
