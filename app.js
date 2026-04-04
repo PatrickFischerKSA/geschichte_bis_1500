@@ -2405,15 +2405,36 @@ function getSourceDetail(moduleId, source) {
 }
 
 function getHarariPdfLink(page) {
+  if (!isHarariPdfAvailable()) {
+    return null;
+  }
   if (!page) {
     return HARARI_PDF_URL;
   }
   return `${HARARI_PDF_URL}#page=${page}`;
 }
 
+function isHarariPdfAvailable() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const host = window.location.hostname;
+  return host === "127.0.0.1" || host === "localhost" || window.location.protocol === "file:";
+}
+
 function renderHarariPdfButton(detail) {
   if (!detail.pdfPage) {
     return "";
+  }
+
+  if (!isHarariPdfAvailable()) {
+    return `
+      <div class="source-actions">
+        <span class="btn ghost disabled" aria-disabled="true">S. ${detail.pdfPage} nur lokal</span>
+        <span class="source-locator-note">Auf GitHub Pages nicht verfuegbar; in der lokalen Vorschau funktioniert der direkte PDF-Sprung.</span>
+      </div>
+    `;
   }
 
   return `
@@ -2584,9 +2605,12 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
+  const harariPdfLink = source.title === "Harari-PDF" ? getHarariPdfLink(detail.pdfPage) : null;
   const locatorMarkup =
-    source.title === "Harari-PDF" && detail.pdfPage
-      ? `<a href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">lokale PDF-Navigation</span>`
+    source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
+      ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">lokale PDF-Navigation</span>`
+      : source.title === "Harari-PDF" && detail.pdfPage
+        ? `${detail.locator}<span class="source-locator-note">direkter PDF-Sprung nur in der lokalen Vorschau</span>`
       : detail.locator || "";
 
   return `

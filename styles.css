@@ -1026,6 +1026,13 @@ p {
   margin-left: 0;
 }
 
+.btn.disabled,
+.btn[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.55;
+  cursor: default;
+}
+
 .scene-hero,
 .scene-side {
   position: relative;
