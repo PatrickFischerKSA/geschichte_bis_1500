@@ -2145,8 +2145,22 @@ const sourceDetails = {
   [makeSourceKey("modul-1", "SRF: Anthropozän")]: {
     badge: "SRF-school-Seite · Langzeitlinie",
     locator: "SRF school: Anthropozän – Das Zeitalter des Menschen",
+    thesis:
+      "Die Hauptthese der Seite lautet: Die Erfolgsgeschichte menschlichen Fortschritts ist immer auch eine Geschichte unerwarteter Schäden. Seit Feuer, Landwirtschaft, Metallbau, Hochmittelalter, Industrialisierung und fossilen Brennstoffen greift der Mensch so tief in Erde, Luft und Wasser ein, dass sogar von einem neuen Erdzeitalter gesprochen wird.",
     passage:
-      "Die Seite spannt ausdrücklich den Bogen von Feuer über Landwirtschaft, Metall und Hochmittelalter bis zu Industrialisierung und fossilen Brennstoffen. Für das Modul ist daran entscheidend, dass Geschichte als Folge aufeinander aufbauender Eingriffe in Landschaft, Rohstoffe und Lebensräume sichtbar wird."
+      "Die Seite spannt ausdrücklich den Bogen von Feuer über Landwirtschaft, Metall und Hochmittelalter bis zu Industrialisierung und fossilen Brennstoffen. Für das Modul ist daran entscheidend, dass Geschichte als Folge aufeinander aufbauender Eingriffe in Landschaft, Rohstoffe und Lebensräume sichtbar wird.",
+    itemsLabel: "Auf der SRF-Seite angelegte Stoffstruktur:",
+    relevantItems: [
+      { title: "Die Kosten des Fortschritts", note: "Von Jungsteinzeit und Ägypten über Römer und Hochmittelalter bis zu Industrie und fossilen Brennstoffen." },
+      { title: "Ein neues Erdzeitalter?", note: "Anthropozän als Frage nach dauerhaft geologisch sichtbaren menschlichen Spuren." },
+      { title: "Lösungen und Gegenmaßnahmen", note: "Dirk Steffens trifft Forschende, Ingenieurinnen und Umweltfachleute, die Schäden mindern oder neue Lösungen suchen." }
+    ],
+    relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
+    relatedItems: [
+      { title: "Hoffnung für die Ozeane – Helden der Meere", note: "Menschliche Eingriffe, Überfischung und konkrete Schutzprojekte.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/hoffnung-fuer-die-ozeane-helden-der-meere" },
+      { title: "Erfolgreiche Renaturierung – Paradiese aus Menschenhand", note: "Drei Renaturierungsprojekte; Schäden und mögliche Umkehrprozesse.", link: "https://www.srf.ch/sendungen/school/physik-chemie-biologie/erfolgreiche-renaturierung-paradiese-aus-menschenhand" },
+      { title: "Gefährliche Desertifikation – Planet Sand", note: "Wüstenbildung, Ressourcenknappheit und menschengemachte ökologische Krisen.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/gefaehrliche-desertifikation-planet-sand" }
+    ]
   },
   [makeSourceKey("modul-2", "Harari-PDF")]: {
     badge: "S. 30 · Frühe Sapiens",
@@ -2160,8 +2174,23 @@ const sourceDetails = {
   [makeSourceKey("modul-2", "SRF: 1491")]: {
     badge: "SRF-school-Film · Migration",
     locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    thesis:
+      "Die Hauptthese der Seite lautet: Amerikas Geschichte beginnt nicht erst 1492. Lange vor Kolumbus lebten dort zahlreiche indigene Völker mit eigenen Sprachen, politischen Ordnungen, Landwirtschaftsformen, Künsten und Wissenssystemen.",
     passage:
-      "Der Film arbeitet mit der Frühbesiedlung Amerikas vor etwa 18'000 bis 20'000 Jahren, mit Wegen über die Landbrücke zwischen Ostsibirien und Alaska sowie mit Fahrten in Kanus. Er zeigt damit konkret, dass Anpassung, Bewegung und Umweltwissen Grundmuster früher Menschheitsgeschichte sind."
+      "Der Film arbeitet mit der Frühbesiedlung Amerikas vor etwa 18'000 bis 20'000 Jahren, mit Wegen über die Landbrücke zwischen Ostsibirien und Alaska sowie mit Fahrten in Kanus. Er zeigt damit konkret, dass Anpassung, Bewegung und Umweltwissen Grundmuster früher Menschheitsgeschichte sind.",
+    itemsLabel: "Auf der SRF-Seite angelegte Stoffstruktur:",
+    relevantItems: [
+      { title: "Die ersten Menschen Amerikas", note: "Landbrücke, Kanus, 18'000–20'000 Jahre, über 2000 Sprachen, mündliche Wissensweitergabe." },
+      { title: "Soziale und politische Strukturen", note: "Stämme, Bündnisse und Reiche von der Irokesen-Konföderation bis Azteken und Inka." },
+      { title: "Landwirtschaft, Jagd und Spiritualität", note: "Terrassenbau, Mais, Quinoa, Kartoffeln, Bohnen, Jagd und religiöse Weltdeutung." },
+      { title: "Kunst und kulturelles Erbe", note: "Felsbilder, Totempfähle, Mayaschrift, Steinmarkierungen und spätere Kämpfe um Rückführung." }
+    ],
+    relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
+    relatedItems: [
+      { title: "Epochale Umbrüche – Ein Moment in der Geschichte", note: "Historische Wendepunkte und Einschnitte in vergleichender Perspektive.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/epochale-umbrueche-ein-moment-in-der-geschichte" },
+      { title: "In die Neue Welt – Amerigo Vespucci", note: "Entdeckungsnarrative und europäische Benennung Amerikas.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/in-die-neue-welt-amerigo-vespucci-der-mann-der-amerika-seinen-namen-gab" },
+      { title: "Indigene Völker: Ohne Tiere keine Menschen", note: "Naturbeziehung, Mythen, Rituale und Tierwelt aus indigener Perspektive.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/indigene-voelker-ohne-tiere-keine-menschen" }
+    ]
   },
   [makeSourceKey("modul-3", "Harari-PDF")]: {
     badge: "S. 33 · Kognitive Revolution",
@@ -2175,14 +2204,31 @@ const sourceDetails = {
   [makeSourceKey("modul-3", "SRF: 1491")]: {
     badge: "SRF-school-Film · Zeichenwelten",
     locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    thesis:
+      "Die Seite macht sichtbar, dass Geschichte vor 1492 bereits in Zeichen, Bildern, Monumenten und Schrift greifbar wird. Kultur erscheint hier nicht als Nebensache, sondern als tragendes Ordnungssystem.",
     passage:
-      "Für dieses Modul sind besonders die sichtbaren Zeichenwelten wichtig: Felsbilder, Totempfähle, Alltagsgegenstände und Mayaschrift. Der Film macht daran anschaulich, dass frühe Gesellschaften ihre Welt nicht nur praktisch nutzten, sondern auch deuteten, erinnerten und symbolisch ordneten."
+      "Für dieses Modul sind besonders die sichtbaren Zeichenwelten wichtig: Felsbilder, Totempfähle, Alltagsgegenstände und Mayaschrift. Der Film macht daran anschaulich, dass frühe Gesellschaften ihre Welt nicht nur praktisch nutzten, sondern auch deuteten, erinnerten und symbolisch ordneten.",
+    itemsLabel: "Auf der SRF-Seite hier besonders wichtig:",
+    relevantItems: [
+      { title: "Felsbilder", note: "Handabdrücke, Ocker und Kohle als frühe Bildspeicher historischer Erinnerung." },
+      { title: "Totempfähle", note: "Holzmonumente als Familiengeschichte, Herkunft und öffentlicher Erinnerungsort." },
+      { title: "Schriftkultur", note: "Mayaschrift mit rund 800 Hieroglyphen als Beleg für komplexe Zeichenwelten." },
+      { title: "Steinmarkierungen", note: "Orientierung, Raumwissen und Wegführung in der Landschaft." }
+    ]
   },
   [makeSourceKey("modul-4", "SRF: 1491")]: {
     badge: "SRF-school-Film · Lebensformen",
     locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    thesis:
+      "Die Seite widerspricht der Vorstellung primitiver Frühgesellschaften. Sie zeigt vielmehr hoch angepasste Lebensformen, die Klima, Landschaft und Ressourcen sehr genau lesen und nutzen.",
     passage:
-      "Der Film zeigt verschiedene Lebensformen in unterschiedlichen Räumen: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Gerade diese Kontraste machen sichtbar, dass mobile Gesellschaften hochgradig an Klima, Landschaft und verfügbare Ressourcen angepasst waren."
+      "Der Film zeigt verschiedene Lebensformen in unterschiedlichen Räumen: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Gerade diese Kontraste machen sichtbar, dass mobile Gesellschaften hochgradig an Klima, Landschaft und verfügbare Ressourcen angepasst waren.",
+    itemsLabel: "Auf der SRF-Seite hier besonders wichtig:",
+    relevantItems: [
+      { title: "Behausungen", note: "Zelte aus Tierhäuten, Häuser aus Lehm, Iglus aus Schnee." },
+      { title: "Ernährungsweisen", note: "Jagd, Sammeln, Terrassenlandwirtschaft und regionale Anpassung." },
+      { title: "Mündliche Wissensweitergabe", note: "Überleben, Wege und Umweltwissen werden vor allem erzählt und gezeigt." }
+    ]
   },
   [makeSourceKey("modul-4", "Harari-PDF")]: {
     badge: "S. 100 · Vor der Sesshaftigkeit",
@@ -2268,6 +2314,8 @@ const sourceDetails = {
   [makeSourceKey("modul-8", "SRF: Grosse Völker")]: {
     badge: "dreiteilige Reihe · Fernhandel",
     locator: "SRF school: Grosse Völker",
+    thesis:
+      "Die Reihe argumentiert gegen einen engen Europa-Blick: Karthager, Araber und Germanen werden als eigenständige Träger von Handel, Reichsbildung, Wissenschaft und Kultur sichtbar.",
     passage:
       "Die SRF-Seite ist eine dreiteilige Dokumentation. Für dieses Modul ist die ganze Reihe wichtig, weil sie Handel, Schriftsysteme, Wissenschaft und Reichsbildung ausdrücklich an drei verschiedenen Großräumen zeigt.",
     itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
@@ -2298,6 +2346,8 @@ const sourceDetails = {
   [makeSourceKey("modul-9", "SRF: Grosse Völker")]: {
     badge: "dreiteilige Reihe · Arabische Wissenswelten",
     locator: "SRF school: Grosse Völker",
+    thesis:
+      "Die Araber-Folge zeigt Religion nicht als isolierten Glaubensraum, sondern als Verbindung von Herrschaft, Bildung, Wissenschaft und kultureller Offenheit.",
     passage:
       "Für dieses Modul ist auf der SRF-Seite besonders die Araber-Folge wichtig. Sie zeigt die Verbindung von islamischer Herrschaft, Bildung, Mathematik, Medizin und kultureller Offenheit und macht damit sichtbar, wie Glauben, Wissen und Reichsbildung zusammenwirken.",
     itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
@@ -2311,6 +2361,8 @@ const sourceDetails = {
   [makeSourceKey("modul-10", "SRF: Das verrückte Mittelalter")]: {
     badge: "Serienseite · viele Einzelfilme",
     locator: "SRF: Das verrückte Mittelalter",
+    thesis:
+      "Die Reihe bündelt typische Mittelalterbilder bewusst niedrigschwellig: Burgen, Ritter, Pest, Handel, Hofkultur und Hygiene. Für den Kurs ist entscheidend, diese Bilder nicht stehen zu lassen, sondern sie mit genauer Alltagsgeschichte und Quellenarbeit zu vertiefen.",
     passage:
       "Die Seite enthält viele Einzelfilme und darf deshalb nicht pauschal abgehandelt werden. Für dieses Modul sind vor allem die Folgen zu Burgen, Rittern, Turnieren, Stadtschmutz, Pest, Handel und Minnesang relevant, weil sie die bekannten Mittelalterbilder konkretisieren und zugleich korrigierbar machen.",
     itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
@@ -2346,11 +2398,18 @@ const sourceDetails = {
         title: "Troubadoure und Minnesänger",
         note: "Musik, Hofkultur und adelige Öffentlichkeit."
       }
+    ],
+    relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
+    relatedItems: [
+      { title: "Mittelalter in der Schweiz", note: "Alltagsgeschichte in Burgen und Schlössern.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/wie-die-leute-gelebt-haben-mittelalter-in-der-schweiz" },
+      { title: "Historische Spurensuche – Eine kurze Geschichte über…", note: "Vertiefung zu Mittelalter und Altem Ägypten.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/historische-spurensuche-eine-kurze-geschichte-ueber" }
     ]
   },
   [makeSourceKey("modul-10", "SRF: Mittelalter in der Schweiz")]: {
     badge: "fünfteilige Reihe · Burgen und Schlösser",
     locator: "SRF school: Mittelalter in der Schweiz",
+    thesis:
+      "Die Reihe verschiebt den Blick vom Klischee auf die materielle Lebenswelt: Verteidigung, Hygiene, Küche, Rangzeichen und Funde werden als konkrete Zugänge zu mittelalterlicher Gesellschaft behandelt.",
     passage:
       "Auch diese SRF-Seite enthält nicht nur einen Film, sondern fünf thematisch klar getrennte Folgen. Das Modul stützt sich genau auf diese alltagsgeschichtlichen Einzelstücke, weil sie Wohnen, Hygiene, Küche, Verteidigung, Status und Funde aus dem Stoff selbst heraus erklären.",
     itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
@@ -2365,6 +2424,8 @@ const sourceDetails = {
   [makeSourceKey("modul-10", "SRF: Eine kurze Geschichte über…")]: {
     badge: "dreiteilige Reihe · Folge Mittelalter",
     locator: "SRF school: Eine kurze Geschichte über…",
+    thesis:
+      "Die Reihe arbeitet mit zugespitzten historischen Leitfragen. Für das Mittelalter wird das Klischee der dunklen Epoche ausdrücklich aufgebrochen; für Ägypten steht die Langzeitstabilität im Mittelpunkt; für die Hexenverfolgung Gewalt, Angst und Aberglaube.",
     passage:
       "Auf dieser Seite ist für Modul 10 ausdrücklich die Mittelalter-Folge gemeint. Sie fragt direkt nach dem Klischee des angeblich dunklen Mittelalters und stellt ihm Städte, Handwerk, Medizin, Kathedralen und den Übergang zur Moderne entgegen.",
     itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
@@ -2373,6 +2434,12 @@ const sourceDetails = {
         title: "Eine kurze Geschichte über ... – Das Mittelalter",
         note: "Gegen das Klischee vom rückständigen Mittelalter; mit Städten, Handwerk, Medizin und Kathedralen."
       }
+    ],
+    relatedLabel: "Zur Einordnung der ganzen SRF-Reihe:",
+    relatedItems: [
+      { title: "Eine kurze Geschichte über ... – Das Alte Ägypten", note: "Warum Ägypten rund 3000 Jahre lang bestehen konnte." },
+      { title: "Eine kurze Geschichte über ... – Das Mittelalter", note: "Warum das Mittelalter weder nur dunkel noch nur romantisch war." },
+      { title: "Eine kurze Geschichte über ... – Die Hexenverfolgung", note: "Wie es zur Verfolgung von rund 50'000 Menschen kommen konnte." }
     ]
   },
   [makeSourceKey("modul-11", "SRF: Der Kreuzzug der Kinder")]: {
@@ -2393,14 +2460,37 @@ const sourceDetails = {
   [makeSourceKey("modul-12", "SRF: 1491")]: {
     badge: "SRF-school-Film · Perspektivwechsel",
     locator: "SRF school: 1491 – Amerika vor Kolumbus",
+    thesis:
+      "Die Hauptthese bleibt auch im Abschlussmodul dieselbe: Geschichte vor 1500 ist global, und 1492 markiert für Amerika einen Einschnitt, aber keinen Anfang.",
     passage:
-      "Der Film bündelt noch einmal die zentrale Korrektur des Kurses: Geschichte in Amerika beginnt lange vor 1492. Sprachenvielfalt, Landwirtschaft, politische Ordnungen, Kunst und Spiritualität zeigen, dass die Vormoderne nicht nur aus einer europäischen Entwicklungslinie besteht."
+      "Der Film bündelt noch einmal die zentrale Korrektur des Kurses: Geschichte in Amerika beginnt lange vor 1492. Sprachenvielfalt, Landwirtschaft, politische Ordnungen, Kunst und Spiritualität zeigen, dass die Vormoderne nicht nur aus einer europäischen Entwicklungslinie besteht.",
+    itemsLabel: "Auf der SRF-Seite gebündelte Abschlussbausteine:",
+    relevantItems: [
+      { title: "Frühbesiedlung", note: "Landbrücke, Kanus und angepasste Überlebensstrategien." },
+      { title: "Gesellschaften und Reiche", note: "Von lokalen Bündnissen bis zu Azteken und Inka." },
+      { title: "Landwirtschaft und Handel", note: "Mais, Quinoa, Kartoffeln, Bohnen und kontinentale Verbreitung." },
+      { title: "Kulturelles Erbe", note: "Felsbilder, Totempfähle, Schrift und Fragen der Rückführung." }
+    ]
   },
   [makeSourceKey("modul-12", "SRF: Anthropozän")]: {
     badge: "SRF-school-Seite · Langzeitfolgen",
     locator: "SRF school: Anthropozän – Das Zeitalter des Menschen",
+    thesis:
+      "Die Seite zugespitzt zusammengefasst: Frühere Innovationen sind nicht vorbei, sondern wirken als lange Vorgeschichte heutiger Umweltveränderungen weiter.",
     passage:
-      "Für die Bilanz ist die Seite deshalb stark, weil sie frühe Innovationen nicht als abgeschlossene Kapitel behandelt. Feuer, Landwirtschaft, Metallbau, Straßen, Städte und fossile Brennstoffe erscheinen als aufeinanderfolgende Stufen wachsender Eingriffe in Boden, Wasser, Luft und Rohstoffe."
+      "Für die Bilanz ist die Seite deshalb stark, weil sie frühe Innovationen nicht als abgeschlossene Kapitel behandelt. Feuer, Landwirtschaft, Metallbau, Straßen, Städte und fossile Brennstoffe erscheinen als aufeinanderfolgende Stufen wachsender Eingriffe in Boden, Wasser, Luft und Rohstoffe.",
+    itemsLabel: "Auf der SRF-Seite angelegte Bilanzstruktur:",
+    relevantItems: [
+      { title: "Die Kosten des Fortschritts", note: "Erfolgsgeschichte und Folgeschäden werden zusammen gelesen." },
+      { title: "Ein neues Erdzeitalter?", note: "Geologische Spuren menschlichen Handelns als Kernfrage." },
+      { title: "Lösungen", note: "SRF verknüpft die Diagnose mit Forschenden und praktischen Gegenmaßnahmen." }
+    ],
+    relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
+    relatedItems: [
+      { title: "Hoffnung für die Ozeane – Helden der Meere", note: "Schutzprojekte in bedrohten Meeresräumen.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/hoffnung-fuer-die-ozeane-helden-der-meere" },
+      { title: "Erfolgreiche Renaturierung – Paradiese aus Menschenhand", note: "Renaturierung als Gegenbild zur reinen Schadensgeschichte.", link: "https://www.srf.ch/sendungen/school/physik-chemie-biologie/erfolgreiche-renaturierung-paradiese-aus-menschenhand" },
+      { title: "Gefährliche Desertifikation – Planet Sand", note: "Wüstenbildung und Ressourcenkonflikte als konkrete Umweltfolge.", link: "https://www.srf.ch/sendungen/school/geschichte-geografie/gefaehrliche-desertifikation-planet-sand" }
+    ]
   },
   [makeSourceKey("modul-12", "Harari-PDF")]: {
     badge: "S. 150 · Weltreiche und Netze",
@@ -2649,9 +2739,11 @@ function renderSourceCard(source, module) {
       </header>
       ${detail.locator ? `<p><strong>Verortung:</strong> ${locatorMarkup}</p>` : ""}
       ${source.title === "Harari-PDF" ? renderHarariPdfButton(detail) : ""}
+      ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>Konkrete Passage:</strong> ${passage}</p>
       ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
+      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
     </article>
   `;
 }
@@ -2726,8 +2818,10 @@ function renderFilmFoundation(module) {
                   <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
                 </div>
                 ${detail.locator ? `<p><strong>Verortung:</strong> ${detail.locator}</p>` : ""}
+                ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
                 <p><strong>Zentrale Informationen:</strong> ${passage}</p>
                 ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf dieser SRF-Seite besonders wichtig:")}
+                ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
               </article>
             `;
             }
