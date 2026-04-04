@@ -2083,6 +2083,34 @@ function renderModuleScene(module) {
   `;
 }
 
+function renderChapterCards(state) {
+  const container = document.getElementById("chapter-cards");
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = modules
+    .map((module, moduleIndex) => {
+      const visual = moduleVisuals[module.id];
+      const status = getModuleStatus(state, module, moduleIndex);
+      const unlocked = isModuleUnlocked(state, moduleIndex);
+      return `
+        <a class="chapter-card ${unlocked ? "" : "is-locked"}" href="${unlocked ? `#${module.id}` : "#"}" style="background-image: url('${visual?.hero || ""}')">
+          <div class="chapter-card-copy">
+            <p class="scene-kicker">Modul ${module.number} · ${visual?.kicker || module.phase}</p>
+            <h3>${module.title}</h3>
+            <p>${module.guidingQuestion}</p>
+            <div class="chapter-card-meta">
+              <span class="status-badge ${status.className}">${status.label}</span>
+              <span class="status-badge open">${module.era}</span>
+            </div>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
+}
+
 function renderCompletionPanel(state) {
   const panel = document.getElementById("completion-panel");
   const passedModules = getPassedModuleCount(state);
@@ -2594,6 +2622,7 @@ function renderApp(state) {
   createTimeline(state);
   createNavigation(state);
   renderLearnerBanner(state);
+  renderChapterCards(state);
   renderModules(state);
   renderCompletionPanel(state);
   renderSourceCatalog();

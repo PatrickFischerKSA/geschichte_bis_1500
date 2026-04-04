@@ -20,6 +20,7 @@
         <div class="hero-actions">
           <a class="btn primary" href="index.html">Zur Lernumgebung</a>
           <a class="btn ghost" href="https://github.com/PatrickFischerKSA/geschichte_bis_1500" target="_blank" rel="noreferrer">Repo öffnen</a>
+          <button class="btn ghost" type="button" data-print-teacher>PDF-Übersicht drucken</button>
         </div>
       </div>
 
@@ -84,6 +85,39 @@
             <p class="section-kicker">Projektmodell</p>
             <p>Gruppen übernehmen je ein Modul und erstellen daraus Lernprodukte oder Mini-Ausstellungen.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="panel sources-panel teacher-print-sheet">
+        <p class="panel-kicker">Druckansicht</p>
+        <h2>Kompakte Modulübersicht für PDF oder Ausdruck</h2>
+        <div class="print-grid">
+          <article class="print-card">
+            <h3>Rahmen</h3>
+            <p>Zielgruppe: Sek I / Sek II</p>
+            <p>Umfang: 12 Module, ca. 12 bis 20 Lektionen</p>
+            <p>Struktur: 9 Bausteine pro Modul inklusive Inhaltssicherung</p>
+            <p>Freischaltung: nächstes Modul ab 60% in der Sicherung</p>
+          </article>
+          <article class="print-card">
+            <h3>Leistungsformate</h3>
+            <p>Portfolio, Quellenanalyse, Vergleichsaufsatz, Präsentation, mündliche Prüfung</p>
+            <p>Differenzierung über Tiefe der Transferfragen, Satzstarter und Quellenauswahl</p>
+          </article>
+        </div>
+        <div class="print-module-list">
+          <div class="print-module"><strong>1.</strong> Geschichtsbegriff und Langzeitblick</div>
+          <div class="print-module"><strong>2.</strong> Frühmenschen und Homo sapiens</div>
+          <div class="print-module"><strong>3.</strong> Kognitive Revolution</div>
+          <div class="print-module"><strong>4.</strong> Jäger und Sammler</div>
+          <div class="print-module"><strong>5.</strong> Landwirtschaftliche Revolution</div>
+          <div class="print-module"><strong>6.</strong> Erste Hochkulturen</div>
+          <div class="print-module"><strong>7.</strong> Antike Reiche und Imperien</div>
+          <div class="print-module"><strong>8.</strong> Geld, Handel und Vernetzung</div>
+          <div class="print-module"><strong>9.</strong> Religionen und Weltbilder</div>
+          <div class="print-module"><strong>10.</strong> Mittelalter: Herrschaft, Kirche, Gesellschaft</div>
+          <div class="print-module"><strong>11.</strong> Städte, Handel und Wandel</div>
+          <div class="print-module"><strong>12.</strong> Abschlussmodul und Langzeitlinien</div>
         </div>
       </section>
 
@@ -248,5 +282,11 @@
       </section>
     </main>
   </div>
+  <script>
+    const printButton = document.querySelector("[data-print-teacher]");
+    if (printButton) {
+      printButton.addEventListener("click", () => window.print());
+    }
+  </script>
 </body>
 </html>

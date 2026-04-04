@@ -51,6 +51,19 @@ body::before {
   opacity: 0.5;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(200, 155, 60, 0.1), transparent 18%),
+    radial-gradient(circle at 75% 18%, rgba(31, 109, 102, 0.08), transparent 20%),
+    radial-gradient(circle at 60% 78%, rgba(168, 86, 42, 0.08), transparent 18%);
+  animation: ambientDrift 22s ease-in-out infinite alternate;
+  opacity: 0.75;
+}
+
 body.is-overlay-open {
   overflow: hidden;
 }
@@ -132,6 +145,7 @@ p {
   height: 320px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(31, 109, 102, 0.14), transparent 68%);
+  animation: orbFloat 12s ease-in-out infinite alternate;
 }
 
 .hero-copy > * {
@@ -293,6 +307,92 @@ p {
   gap: 10px;
 }
 
+.showcase-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient-ribbon {
+  position: absolute;
+  inset: auto -6% 18% auto;
+  width: 380px;
+  height: 380px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(31, 109, 102, 0.14), transparent 62%);
+  filter: blur(12px);
+  animation: ribbonPulse 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.chapter-cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.chapter-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-height: 240px;
+  align-items: end;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(30, 44, 52, 0.1);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.chapter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 22, 29, 0.12), rgba(12, 22, 29, 0.7)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 28%);
+}
+
+.chapter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(28, 37, 44, 0.16);
+  border-color: rgba(31, 109, 102, 0.24);
+}
+
+.chapter-card.is-locked {
+  pointer-events: none;
+  filter: grayscale(0.34);
+  opacity: 0.62;
+}
+
+.chapter-card-copy {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.chapter-card-copy h3 {
+  margin-top: 4px;
+}
+
+.chapter-card-copy p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.chapter-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -401,6 +501,44 @@ p {
 .teacher-summary {
   display: grid;
   gap: 14px;
+}
+
+.teacher-print-sheet {
+  background:
+    linear-gradient(135deg, rgba(255, 252, 247, 0.96), rgba(247, 238, 226, 0.92)),
+    radial-gradient(circle at top right, rgba(25, 53, 71, 0.06), transparent 34%);
+}
+
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.print-card {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 251, 246, 0.88);
+}
+
+.print-card p + p {
+  margin-top: 8px;
+}
+
+.print-module-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.print-module {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 251, 246, 0.88);
 }
 
 .summary-item {
@@ -933,6 +1071,35 @@ p {
   border: 1px solid rgba(30, 44, 52, 0.08);
 }
 
+@keyframes ambientDrift {
+  0% {
+    transform: translate3d(-1%, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(1%, -1.5%, 0) scale(1.04);
+  }
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-18px, -14px, 0) scale(1.06);
+  }
+}
+
+@keyframes ribbonPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.72;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0.92;
+  }
+}
+
 .matrix-table {
   margin-top: 18px;
   border-radius: var(--radius-md);
@@ -975,7 +1142,10 @@ p {
   .teacher-grid,
   .completion-hero,
   .welcome-panel,
-  .module-scene {
+  .module-scene,
+  .chapter-cards,
+  .print-grid,
+  .print-module-list {
     grid-template-columns: 1fr;
   }
 
@@ -1001,17 +1171,29 @@ p {
     background: white;
   }
 
+  body::before,
+  body::after {
+    display: none;
+  }
+
   .sidebar,
   .hero,
   .intro-panel,
   #quellenbasis,
   .module-list,
   .hero-actions,
+  .teacher-grid,
+  .matrix-table,
   .task-actions,
   .selftest-actions,
   .transfer-actions,
   .source-toggle {
     display: none !important;
+  }
+
+  .teacher-print-sheet {
+    display: block !important;
+    break-inside: avoid;
   }
 
   #completion-panel {
@@ -1023,7 +1205,9 @@ p {
 
   .certificate-card,
   .certificate-frame,
-  .completion-card {
+  .completion-card,
+  .print-card,
+  .print-module {
     border-color: #777;
     box-shadow: none;
     background: white;

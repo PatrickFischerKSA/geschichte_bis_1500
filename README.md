@@ -23,6 +23,9 @@ werden.
 - Start- und Willkommensmaske mit Erklärung des Freischaltsystems
 - Namensfeld für personalisierten Lernstand und personalisiertes Zertifikat
 - lokale atmosphärische Bildwelten auf Basis der eingebauten SRF-Ressourcen
+- echte Startseite mit Kapitelkarten und visuellem Freischaltstatus
+- subtile Motion-Atmosphäre über animierte Licht- und Raumakzente
+- Lehrpersonen-Seite mit druckbarer Modulübersicht für PDF oder Ausdruck
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
 
 ## Quellenbasis
