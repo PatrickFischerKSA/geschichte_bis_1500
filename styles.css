@@ -1014,6 +1014,18 @@ p {
   color: var(--muted);
 }
 
+.source-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.source-actions .source-locator-note {
+  margin-left: 0;
+}
+
 .scene-hero,
 .scene-side {
   position: relative;

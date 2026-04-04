@@ -2412,6 +2412,19 @@ function getHarariPdfLink(page) {
   return `${HARARI_PDF_URL}#page=${page}`;
 }
 
+function renderHarariPdfButton(detail) {
+  if (!detail.pdfPage) {
+    return "";
+  }
+
+  return `
+    <div class="source-actions">
+      <a class="btn primary" href="${getHarariPdfLink(detail.pdfPage)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
+      <span class="source-locator-note">springt in deine lokale PDF an die passende Stelle</span>
+    </div>
+  `;
+}
+
 function renderRelevantItems(items, label) {
   if (!items?.length) {
     return "";
@@ -2586,6 +2599,7 @@ function renderSourceCard(source, module) {
         </div>
       </header>
       ${detail.locator ? `<p><strong>Verortung:</strong> ${locatorMarkup}</p>` : ""}
+      ${source.title === "Harari-PDF" ? renderHarariPdfButton(detail) : ""}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>Konkrete Passage:</strong> ${passage}</p>
       ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
