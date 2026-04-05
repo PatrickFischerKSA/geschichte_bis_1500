@@ -1,4 +1,4 @@
-const TEACHER_PASSWORD = "1500";
+const TEACHER_PASSWORD = "lehrer_1500";
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
