@@ -1625,6 +1625,25 @@ p {
   grid-template-columns: 1.1fr 0.7fr 1fr 1fr 1fr 0.9fr;
 }
 
+.teacher-module-matrix {
+  overflow-x: auto;
+}
+
+.teacher-module-head,
+.teacher-module-row {
+  grid-template-columns: 1.4fr repeat(12, minmax(76px, 0.6fr));
+}
+
+.teacher-module-head > div,
+.teacher-module-row > div {
+  text-align: center;
+}
+
+.teacher-module-head > div:first-child,
+.teacher-module-row > div:first-child {
+  text-align: left;
+}
+
 .teacher-score-pills {
   display: flex;
   flex-wrap: wrap;

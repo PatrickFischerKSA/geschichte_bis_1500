@@ -158,6 +158,42 @@ function renderTeacherDashboard() {
     return;
   }
 
+  const moduleCount = window.GESCHICHTE_DATA?.modules?.length || 12;
+  const matrixHeader = Array.from({ length: moduleCount }, (_, index) => `<div>M${index + 1}</div>`).join("");
+  const matrixRows = learners
+    .map((entry) => {
+      const snapshot = entry.snapshot;
+      const scoreMap = new Map(
+        (snapshot?.moduleScores || []).map((item) => [Number(item.number), item])
+      );
+
+      const moduleCells = Array.from({ length: moduleCount }, (_, index) => {
+        const number = index + 1;
+        const item = scoreMap.get(number);
+        if (!item) {
+          return `<div><span class="status-badge locked">-</span></div>`;
+        }
+        if (item.passed) {
+          return `<div><span class="status-badge ready">${Math.round(item.score || 100)}%</span></div>`;
+        }
+        if (item.score) {
+          return `<div><span class="status-badge open">${Math.round(item.score)}%</span></div>`;
+        }
+        return `<div><span class="status-badge locked">0%</span></div>`;
+      }).join("");
+
+      return `
+        <div class="matrix-row dashboard-row teacher-module-row">
+          <div>
+            <strong>${entry.name}</strong>
+            <p class="teacher-muted">${snapshot ? `${snapshot.passedModules} von ${snapshot.totalModules} Modulen bestanden` : "noch kein Verlauf"}</p>
+          </div>
+          ${moduleCells}
+        </div>
+      `;
+    })
+    .join("");
+
   table.innerHTML = `
     <div class="matrix-table dashboard-table">
       <div class="matrix-row matrix-head dashboard-row">
@@ -210,6 +246,13 @@ function renderTeacherDashboard() {
           `;
         })
         .join("")}
+    </div>
+    <div class="matrix-table dashboard-table teacher-module-matrix">
+      <div class="matrix-row matrix-head dashboard-row teacher-module-head">
+        <div>Lernende Person</div>
+        ${matrixHeader}
+      </div>
+      ${matrixRows}
     </div>
   `;
 }
