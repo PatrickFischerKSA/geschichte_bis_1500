@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geschichte bis 1500 – Lehrpersonen</title>
-  <link rel="stylesheet" href="styles.css?v=20260405-9" />
+  <link rel="stylesheet" href="styles.css?v=20260405-10" />
 </head>
 <body data-mode="teacher">
   <div id="welcome-overlay" class="welcome-overlay" hidden></div>
@@ -131,6 +131,17 @@
           <div id="teacher-dashboard-table" class="teacher-dashboard-table"></div>
         </section>
 
+        <section class="panel master-timeline-panel">
+          <p class="panel-kicker">Großer Zeitstrahl</p>
+          <h2>Die ganze Einheit als offene Chronologie</h2>
+          <p class="compact">
+            In der Lehrpersonen-Version liegt die gesamte Stoffabfolge offen auf einer
+            großen Zeitachse. Damit kannst du sofort prüfen, ob Frühgeschichte, Antike,
+            Religionen, Mittelalter und Abschlussmodul zeitlich sauber aufeinander bezogen sind.
+          </p>
+          <div id="master-timeline" class="master-timeline" aria-label="Großer Zeitstrahl der gesamten Einheit"></div>
+        </section>
+
         <section class="panel intro-panel">
           <p class="panel-kicker">Lehrpersonen-Hinweis</p>
           <h2>Was diese Version zusätzlich leistet</h2>
@@ -239,7 +250,7 @@
   </script>
 
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260405-9"></script>
+  <script src="app.js?v=20260405-10"></script>
   <script src="supabase-config.js?v=20260405-2"></script>
   <script src="supabase.js?v=20260405-2"></script>
   <script src="teacher.js?v=20260405-17"></script>

@@ -250,6 +250,107 @@ const sourceCatalog = [
   }
 ];
 
+const masterTimeline = [
+  {
+    time: "ca. 2,5 Mio. Jahre v. heute",
+    title: "Frühe Menschenarten und Werkzeuge",
+    body:
+      "Hier beginnt die lange Vorgeschichte des Menschen: verschiedene Menschenarten, freie Hände, Werkzeuge, Feuer und die Frage, warum Homo sapiens anfangs noch kein offensichtlicher Sieger war.",
+    modules: ["modul-2"]
+  },
+  {
+    time: "ca. 100'000–70'000 v. heute",
+    title: "Frühe Sapiens ohne klaren Vorsprung",
+    body:
+      "Die ersten Sapiens in Ostafrika sind biologisch modern, aber noch nicht automatisch überlegen. Mehrere Menschenarten leben gleichzeitig, Ausbreitung und Erfolg müssen also historisch erklärt werden.",
+    modules: ["modul-2"]
+  },
+  {
+    time: "ca. 70'000–30'000 v. heute",
+    title: "Kognitive Revolution",
+    body:
+      "Sprache, Klatsch, Mythen und fiktive Vorstellungen erweitern Kooperation weit über kleine Gruppen hinaus. Kunst, Höhlenbilder und Symbolsysteme werden zu historischen Spuren kultureller Ordnung.",
+    modules: ["modul-3"]
+  },
+  {
+    time: "ca. 45'000–18'000 v. heute",
+    title: "Migration, Australien und Amerika",
+    body:
+      "Boote, Nadeln, Kunst und weite Wanderungen machen deutlich, wie anpassungsfähig Menschen werden. Über Landbrücke und Kanus gelangen Gruppen später auch nach Amerika und entwickeln dort vielfältige Lebensweisen.",
+    modules: ["modul-2", "modul-4", "modul-12"]
+  },
+  {
+    time: "Vor 10'000 v. Chr.",
+    title: "Jäger und Sammler als Normalform",
+    body:
+      "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Unterkünfte, Nahrung, Wege, Jahreszeitenwissen und mündliche Überlieferung sichern das Überleben ohne feste Speicher und Staaten.",
+    modules: ["modul-4"]
+  },
+  {
+    time: "ab ca. 10'000 v. Chr.",
+    title: "Landwirtschaft und Sesshaftigkeit",
+    body:
+      "Ackerbau, Viehzucht, Vorrat und feste Häuser verändern Alltag und Sozialordnung. Aus Planung, Arbeit, Besitz und Ertragsrisiko entstehen Dörfer, Überschüsse und neue Ungleichheiten.",
+    modules: ["modul-5"]
+  },
+  {
+    time: "ab ca. 3500–3000 v. Chr.",
+    title: "Schrift, Listen und frühe Staaten",
+    body:
+      "Mesopotamische Tontafeln und ägyptische Verwaltung zeigen, wie Vorräte, Abgaben, Beamte und Schrift frühe Herrschaft stabilisieren. Hochkulturen beruhen auf Speicher, Ordnung und Legitimation.",
+    modules: ["modul-6"]
+  },
+  {
+    time: "ca. 2250–221 v. Chr.",
+    title: "Großreiche und Bürokratien",
+    body:
+      "Von Sargon über Assyrer und Babylon bis zur Qin-Dynastie entsteht die Logik großer Reiche: Steuern, Heere, Beamte und gemeinsame Ordnungen verbinden viele Menschen über große Räume hinweg.",
+    modules: ["modul-6", "modul-7"]
+  },
+  {
+    time: "1. Jh. v. Chr. bis 2. Jh. n. Chr.",
+    title: "Rom als Raumordnung",
+    body:
+      "Das Römische Reich verknüpft Straßen, Brücken, Lager, Recht, Münzen und Alltagskultur. Imperium bedeutet hier nicht nur Eroberung, sondern Organisation von Verkehr, Stadt und Versorgung.",
+    modules: ["modul-7", "modul-8"]
+  },
+  {
+    time: "1. Jahrtausend v. Chr. bis 7. Jh. n. Chr.",
+    title: "Weltreligionen und religiöse Ordnung",
+    body:
+      "Religionen verbinden Normen, Werte und übermenschliche Ordnung. Judentum, Christentum und Islam schaffen große Gemeinschaften, legitimieren Herrschaft und verknüpfen Glauben mit Wissen und Mobilität.",
+    modules: ["modul-9"]
+  },
+  {
+    time: "ca. 800–1300",
+    title: "Mittelalterliche Herrschaftsräume",
+    body:
+      "Kirche, Klöster, Burgen, Stände und Bündnisse prägen die mittelalterliche Gesellschaft. Alltagsgeschichte zeigt Küche, Hygiene, Verteidigung, Bildung und Herrschaft jenseits bloßer Ritterklischees.",
+    modules: ["modul-10"]
+  },
+  {
+    time: "ca. 1000–1500",
+    title: "Städte, Märkte, Pilger und Kreuzzüge",
+    body:
+      "Mittelalterliche Städte verdichten Handel, Handwerk und Mobilität. Quellen wie Chroniken zum Kinderkreuzzug zeigen zugleich, wie vorsichtig historische Überlieferung geprüft werden muss.",
+    modules: ["modul-11"]
+  },
+  {
+    time: "1491/1492",
+    title: "Amerika vor Kolumbus und der Einschnitt von 1492",
+    body:
+      "1491 markiert entwickelte indigene Gesellschaften mit Landwirtschaft, Sprachen, Kunst und politischen Ordnungen. 1492 ist daher ein Einschnitt, aber nicht der Anfang amerikanischer Geschichte.",
+    modules: ["modul-12"]
+  },
+  {
+    time: "um 1500 und darüber hinaus",
+    title: "Langzeitfolgen und Anthropozän",
+    body:
+      "Der Schluss verbindet alle Linien: Sprache, Sesshaftigkeit, Staat, Geld, Religion und globale Vernetzung wirken weit über 1500 hinaus und führen in die Frage nach den langfristigen Folgen menschlicher Eingriffe.",
+    modules: ["modul-1", "modul-12"]
+  }
+];
+
 const modules = [
   {
     id: "modul-1",
@@ -2462,6 +2563,612 @@ const contentChecks = {
   }
 };
 
+const additionalHarariDetails = {
+  [makeSourceKey("modul-1", "Harari-PDF · S. 39")]: {
+    badge: "S. 39 · Mythen tragen Großgruppen",
+    locator: "Harari-PDF, S. 39",
+    pdfPage: 39,
+    pdfSearch: "magische Grenze",
+    quote: "„magische Grenze von 150“",
+    thesis:
+      "Harari erklärt, dass persönliche Bekanntschaft nur kleine Gruppen stabil trägt. Größere Gemeinschaften brauchen gemeinsame Geschichten, die auch Fremde an dieselbe Ordnung binden.",
+    passage:
+      "Die Passage arbeitet mit der Grenze von ungefähr 150 Menschen. Kleine Gruppen können sich noch über Nähe, Rang und persönliches Wissen organisieren. Städte, Reiche und Kirchen funktionieren aber anders: Dort kooperieren Fremde, weil sie dieselben Mythen, Gesetze, Symbole und Zugehörigkeiten anerkennen. Für Modul 1 ist das zentral, weil Geschichte im engeren Sinn genau an dieser Schwelle beginnt: Menschen bauen Ordnungen, die weit über Familie und unmittelbare Umgebung hinausreichen."
+  },
+  [makeSourceKey("modul-1", "Harari-PDF · S. 151")]: {
+    badge: "S. 151 · Gesellschaft wird gelernt",
+    locator: "Harari-PDF, S. 151",
+    pdfPage: 151,
+    pdfSearch: "ohne Fußballgen",
+    quote: "„ohne Fußballgen“",
+    thesis:
+      "Menschliche Ordnung steckt nicht in den Genen. Regeln, Bräuche und Verfahren müssen gelernt und von Generation zu Generation weitergegeben werden.",
+    passage:
+      "Harari vergleicht Gesellschaft mit dem Fußballspiel. Menschen kommen nicht mit fertigen Spielregeln zur Welt, sondern müssen sie lernen. Genau deshalb ist Kultur so wichtig: Gesetze, Bräuche, Rituale und Verfahren werden nicht vererbt, sondern bewusst eingeübt. Für den Einstieg des Kurses ist das entscheidend, weil Geschichte hier nicht als Naturprozess erscheint, sondern als gelernte und weitergegebene Weltordnung."
+  },
+  [makeSourceKey("modul-2", "Harari-PDF · S. 31")]: {
+    badge: "S. 31 · Aufbruch der Sapiens",
+    locator: "Harari-PDF, S. 31",
+    pdfPage: 31,
+    pdfSearch: "bis nach Australien",
+    quote: "„bis nach Australien“",
+    thesis:
+      "Die Seite zeigt den Sprung von frühen, noch begrenzten Sapiens zu Gruppen, die Boote, Nadeln, Schmuck, Kunst und weite Wanderungen hervorbringen.",
+    passage:
+      "Harari beschreibt hier einen neuen Typ Mensch: Sapiens überqueren offenes Meer, erreichen Australien, nähen mit Nadeln warme Kleidung und hinterlassen erste Kunst- und Religionsspuren. Für Modul 2 ist die Passage wichtig, weil Ausbreitung hier nicht bloß körperliche Wanderung bedeutet, sondern eine Verbindung aus Technik, Anpassung und sozialem Lernen."
+  },
+  [makeSourceKey("modul-2", "Harari-PDF · S. 32")]: {
+    badge: "S. 32 · Löwenmensch und Vorstellungskraft",
+    locator: "Harari-PDF, S. 32",
+    pdfPage: 32,
+    pdfSearch: "Löwenmenschen",
+    quote: "„Löwenmenschen“",
+    thesis:
+      "Die Figur des Löwenmenschen steht für eine neue Fähigkeit: Menschen stellen sich Wesen vor, die in der Natur gar nicht vorkommen.",
+    passage:
+      "Mit der Elfenbeinfigur des Löwenmenschen zeigt Harari, dass sich Menschen nicht nur an ihre Umwelt anpassen, sondern gedanklich neue Wesen und Bedeutungen erzeugen. Diese Seite gehört deshalb noch in Modul 2: Frühgeschichte wird hier bereits als Verbindung von Migration, Technik und wachsender Vorstellungskraft sichtbar."
+  },
+  [makeSourceKey("modul-3", "Harari-PDF · S. 35")]: {
+    badge: "S. 35 · Klatsch als Sozialtechnik",
+    locator: "Harari-PDF, S. 35",
+    pdfPage: 35,
+    pdfSearch: "über andere zu reden",
+    quote: "„über andere zu reden“",
+    thesis:
+      "Harari nimmt den scheinbar banalen Klatsch ernst: Verlässliche Informationen über andere Menschen vergrößern Gruppen und machen engere Zusammenarbeit erst praktikabel.",
+    passage:
+      "Die Seite zeigt, dass Sprache nicht nur schöne Erzählung, sondern harte Sozialtechnik ist. Wer über Zuverlässigkeit, Beziehungen und Verhalten anderer sprechen kann, organisiert Vertrauen und Misstrauen viel genauer. Für das Modul über die kognitive Revolution ist das wichtig, weil Großgruppenkooperation nicht mit abstrakten Ideen beginnt, sondern schon mit sozialem Informationsaustausch."
+  },
+  [makeSourceKey("modul-3", "Harari-PDF · S. 36")]: {
+    badge: "S. 36 · Fiktive Sprache",
+    locator: "Harari-PDF, S. 36",
+    pdfPage: 36,
+    pdfSearch: "fiktive Sprache",
+    quote: "„fiktive Sprache“",
+    thesis:
+      "Menschen können über Dinge sprechen, die es nicht gibt. Gerade diese Fähigkeit macht Mythen, Götter, Stämme, Gesetze und Nationen historisch wirksam.",
+    passage:
+      "Harari nennt menschliche Sprache hier ausdrücklich fiktiv, weil sie erfundene Dinge transportieren kann. Genau darin liegt ihre historische Kraft: Gruppen glauben gemeinsam an Schutzgeister, Schöpfungserzählungen, Gesetze oder politische Gemeinschaften. Das Modul braucht diese Passage, weil von hier aus der Weg zu Geld, Reichsideen und Religionen offen wird."
+  },
+  [makeSourceKey("modul-4", "Harari-PDF · S. 101")]: {
+    badge: "S. 101 · Die längste Normalform",
+    locator: "Harari-PDF, S. 101",
+    pdfPage: 101,
+    pdfSearch: "wir denken und fühlen",
+    quote: "„wir denken und fühlen“",
+    thesis:
+      "Harari erinnert daran, dass Menschen bis heute psychisch stark von Jäger-und-Sammler-Vergangenheiten geprägt sind, auch wenn sie sich längst wie Bauern ernähren.",
+    passage:
+      "Die Seite bündelt zwei wichtige Gedanken: Die landwirtschaftliche Revolution setzte weltweit mehrfach ein, und trotzdem denken und fühlen wir noch stark wie Jäger und Sammler. Für Modul 4 ist das wertvoll, weil mobile Lebensformen so nicht als exotische Ausnahme, sondern als lange prägende Normalform der Menschheit erscheinen."
+  },
+  [makeSourceKey("modul-4", "Harari-PDF · S. 108")]: {
+    badge: "S. 108 · Kinder, Mobilität und Lager",
+    locator: "Harari-PDF, S. 108",
+    pdfPage: 108,
+    pdfSearch: "alle drei oder vier Jahre",
+    quote: "„alle drei oder vier Jahre“",
+    thesis:
+      "Harari verbindet Geburtenrhythmus, Stillen, Bewegung und Umweltveränderung mit der Logik mobiler Lebensweisen.",
+    passage:
+      "Die Passage erklärt, warum mobile Gesellschaften Kinder nicht in kurzen Abständen versorgen konnten und wie sich dies auf Gruppengröße und Bewegung auswirkte. Zugleich beschreibt Harari, wie Klimawandel, verlorene Körner und Brandrodung feste Lager begünstigten. Für Modul 4 ist das wichtig, weil Mobilität hier als komplexe Lebensorganisation und nicht als bloßer Zustand des Unterwegsseins erscheint."
+  },
+  [makeSourceKey("modul-5", "Harari-PDF · S. 103")]: {
+    badge: "S. 103 · Härter als erwartet",
+    locator: "Harari-PDF, S. 103",
+    pdfPage: 103,
+    pdfSearch: "Ammenmärchen",
+    quote: "„Das ist jedoch ein Ammenmärchen“",
+    thesis:
+      "Die populäre Fortschrittserzählung von klugen Menschen, die bequem Bauern wurden, wird hier ausdrücklich zurückgewiesen.",
+    passage:
+      "Harari nennt die Vorstellung vom angenehmen Bauernleben ein Ammenmärchen. Jäger und Sammler lebten oft vielfältiger, arbeiteten weniger und litten unter weniger Krankheiten als frühe Bauern. Für Modul 5 verschärft diese Seite die Urteilsfrage: Sesshaftigkeit brachte mehr Nahrung insgesamt, aber nicht automatisch ein besseres Leben für den Einzelnen."
+  },
+  [makeSourceKey("modul-5", "Harari-PDF · S. 105")]: {
+    badge: "S. 105 · Der Weizen domestiziert den Menschen",
+    locator: "Harari-PDF, S. 105",
+    pdfPage: 105,
+    pdfSearch: "der Weizen hat uns domestiziert",
+    quote: "„der Weizen hat uns domestiziert“",
+    thesis:
+      "Mit der Umkehrung von Mensch und Pflanze macht Harari klar, wie stark Landwirtschaft den Menschen an Ort, Arbeit und Risiko bindet.",
+    passage:
+      "Die Seite formuliert zugespitzt, dass nicht der Mensch den Weizen, sondern der Weizen den Menschen domestiziert habe. Gemeint ist: Felder, Arbeit, Ernährung und Siedlungsform werden nun stark auf wenige Pflanzenarten ausgerichtet. Für das Modul ist diese Passage wichtig, weil sie Sesshaftigkeit als neue Abhängigkeit sichtbar macht, nicht nur als technische Verbesserung."
+  },
+  [makeSourceKey("modul-6", "Harari-PDF · S. 157")]: {
+    badge: "S. 157 · Die ersten Texte sind Rechnungen",
+    locator: "Harari-PDF, S. 157",
+    pdfPage: 157,
+    pdfSearch: "29.086 Maß",
+    quote: "„29.086 Maß. Gerste.“",
+    thesis:
+      "Die ältesten Schriftzeugnisse sind keine großen Geschichten, sondern Gerstenmengen, Steuerlisten, Schuldscheine und Besitzurkunden.",
+    passage:
+      "Harari zeigt hier, wie unerquicklich alltäglich die ersten Texte wirken: Gerste, Monate, Namen, Zahlen. Genau darin liegt aber ihre historische Bedeutung. Schrift entsteht zunächst, um wirtschaftliche und administrative Vorgänge festzuhalten. Das ist für Modul 6 zentral, weil frühe Staatlichkeit so über Listen und Bürokratie statt über Monumente verständlich wird."
+  },
+  [makeSourceKey("modul-6", "Harari-PDF · S. 160")]: {
+    badge: "S. 160 · Wunder der Bürokratie",
+    locator: "Harari-PDF, S. 160",
+    pdfPage: 160,
+    pdfSearch: "Wunder der Bürokratie",
+    quote: "„Wunder der Bürokratie“",
+    thesis:
+      "Aus partieller Verwaltungsschrift entwickeln sich vollständige Schriftsysteme, mit denen Edikte, Briefe, Literatur und komplexe Herrschaft geregelt werden können.",
+    passage:
+      "Harari beschreibt hier den Ausbau von der Zahlen- und Listenverwaltung zur Keilschrift und zu Hieroglyphen. Für das Hochkultur-Modul ist das wichtig, weil sich daran zeigen lässt, wie stark Bürokratie, Schrift und Staatlichkeit miteinander verflochten sind."
+  },
+  [makeSourceKey("modul-7", "Harari-PDF · S. 130")]: {
+    badge: "S. 130 · Überschuss reicht nicht",
+    locator: "Harari-PDF, S. 130",
+    pdfPage: 130,
+    pdfSearch: "brechen Streitigkeiten aus",
+    quote: "„brechen Streitigkeiten aus“",
+    thesis:
+      "Nahrungsüberschuss und Transportmittel erzeugen noch kein Reich. Erst Einigung über Land, Wasser, Streitfälle und Krieg macht große politische Räume dauerhaft regierbar.",
+    passage:
+      "Die Seite erklärt, warum Städte und Imperien mehr brauchen als volle Speicher. Menschen müssen Regeln akzeptieren, Konflikte ordnen und Ressourcen verteilen. Für Modul 7 ist das wichtig, weil Imperium so nicht nur als Militär, sondern als Lösung politischer Ordnungsprobleme erscheint."
+  },
+  [makeSourceKey("modul-7", "Harari-PDF · S. 133")]: {
+    badge: "S. 133 · Hammurabi als Ordnungsmythos",
+    locator: "Harari-PDF, S. 133",
+    pdfPage: 133,
+    pdfSearch: "Kodex Hammurabi",
+    quote: "„Kodex Hammurabi“",
+    thesis:
+      "Harari nutzt Hammurabi, um zu zeigen, dass große Reiche nicht nur Gewalt, sondern auch gemeinsame Rechtsvorstellungen und Erzählungen über Gerechtigkeit benötigen.",
+    passage:
+      "Mit dem babylonischen Kodex wird sichtbar, dass Herrschaft Ordnungstexte braucht. Gesetze legen nicht nur Urteile fest, sondern definieren Hierarchien, Werte und eine Vorstellung von Gerechtigkeit. Das ergänzt Modul 7, weil Imperium hier auch als Rechts- und Sinnordnung lesbar wird."
+  },
+  [makeSourceKey("modul-8", "Harari-PDF · S. 215")]: {
+    badge: "S. 215 · Die Grenzen des Tauschhandels",
+    locator: "Harari-PDF, S. 215",
+    pdfPage: 215,
+    pdfSearch: "4950 verschiedene Wechselkurse",
+    quote: "„4950 verschiedene Wechselkurse“",
+    thesis:
+      "Harari zerlegt den Tauschhandel in praktische Probleme: Preise, Vergleichbarkeit und der Zufall, ob der andere gerade genau das will, was man selbst anbietet.",
+    passage:
+      "Die Seite rechnet vor, warum Tausch in komplexeren Gesellschaften schnell unübersichtlich wird. Wer viele Waren und Spezialisten verbinden will, braucht ein allgemeines Vergleichs- und Zahlungsmittel. Für Modul 8 erklärt diese Passage, warum Geld nicht Luxus, sondern eine historische Vereinfachung wachsender Märkte ist."
+  },
+  [makeSourceKey("modul-8", "Harari-PDF · S. 220")]: {
+    badge: "S. 220 · Universelles Vertrauen",
+    locator: "Harari-PDF, S. 220",
+    pdfPage: 220,
+    pdfSearch: "universellste und effizienteste System",
+    quote: "„das universellste ... System des Vertrauens“",
+    thesis:
+      "Geld funktioniert, weil Menschen daran glauben, dass andere es ebenfalls annehmen. Dieses Vertrauen wird politisch, gesellschaftlich und religiös gestützt.",
+    passage:
+      "Harari nennt Geld das universellste System gegenseitigen Vertrauens. Könige, Priester, Steuern und soziale Erwartungen stabilisieren seinen Wert. Für Modul 8 ist die Seite deshalb zentral: Münzen sind nur die sichtbare Oberfläche einer tieferen Vertrauensordnung."
+  },
+  [makeSourceKey("modul-9", "Harari-PDF · S. 252")]: {
+    badge: "S. 252 · Religion als Normensystem",
+    locator: "Harari-PDF, S. 252",
+    pdfPage: 252,
+    pdfSearch: "System von menschlichen Normen und Werten",
+    quote: "„System von menschlichen Normen und Werten“",
+    thesis:
+      "Harari definiert Religion nicht bloß als privaten Glauben, sondern als umfassendes Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt.",
+    passage:
+      "Die Seite erklärt, warum Religion so wirksam ist: Sie legitimiert zerbrechliche menschliche Ordnungen durch Verweis auf eine höhere Autorität. Für Modul 9 ist das wichtig, weil damit klar wird, warum Religion Gesellschaft, Alltag und Herrschaft gleichermaßen strukturieren kann."
+  },
+  [makeSourceKey("modul-9", "Harari-PDF · S. 253")]: {
+    badge: "S. 253 · Universalreligionen",
+    locator: "Harari-PDF, S. 253",
+    pdfPage: 253,
+    pdfSearch: "missionierende Universalreligionen",
+    quote: "„missionierende Universalreligionen“",
+    thesis:
+      "Große Weltreligionen wollen nicht nur lokal gelten, sondern ihren Glauben an alle Menschen weitergeben. Genau dadurch tragen sie zur Vereinigung größerer Räume bei.",
+    passage:
+      "Harari macht hier deutlich, dass die meisten Religionen ursprünglich lokal begrenzt waren. Missionierende Universalreligionen wie Christentum und Islam verändern das. Für Modul 9 ist diese Seite zentral, weil sie Religion als expansiven historischen Ordnungsraum erklärt."
+  },
+  [makeSourceKey("modul-10", "Harari-PDF · S. 261")]: {
+    badge: "S. 261 · Christentum und Islam",
+    locator: "Harari-PDF, S. 261",
+    pdfPage: 261,
+    pdfSearch: "Paulus von Tarsus",
+    quote: "„Paulus von Tarsus“",
+    thesis:
+      "Harari beschreibt, wie aus kleinen Sekten große missionierende Weltreligionen werden, die ganze Reiche prägen und den mittelalterlichen Raum ordnen.",
+    passage:
+      "Die Seite verfolgt den Weg vom frühen Christentum zu seiner Ausbreitung im Römischen Reich und schlägt dann den Bogen zum Islam. Für Modul 10 ist das wichtig, weil Herrschaft, Kirche und Gesellschaft im Mittelalter ohne diese großen religiösen Ausbreitungsprozesse nicht verstanden werden können."
+  },
+  [makeSourceKey("modul-10", "Harari-PDF · S. 263")]: {
+    badge: "S. 263 · Monotheistische Welt vor 1500",
+    locator: "Harari-PDF, S. 263",
+    pdfPage: 263,
+    pdfSearch: "Zu Beginn des 16. Jahrhunderts",
+    quote: "„Zu Beginn des 16. Jahrhunderts“",
+    thesis:
+      "Harari bilanziert, dass monotheistische Religionen bis an die Schwelle der Neuzeit weite Teile Afrikas und Eurasiens dominieren und große politische Räume legitimieren.",
+    passage:
+      "Die Passage verortet die religiöse Ordnung direkt am Ende des Kurszeitraums. Um 1500 stehen große Teile der bekannten Welt auf monotheistischen Füßen. Für Modul 10 macht das sichtbar, wie tief Glaubensordnung, Herrschaft und Gesellschaft bis ins Spätmittelalter hinein verbunden sind."
+  },
+  [makeSourceKey("modul-11", "Harari-PDF · S. 214")]: {
+    badge: "S. 214 · Städte und Spezialisten",
+    locator: "Harari-PDF, S. 214",
+    pdfPage: 214,
+    pdfSearch: "Mit dem Aufstieg von Städten",
+    quote: "„Mit dem Aufstieg von Städten“",
+    thesis:
+      "Harari zeigt, wie mit Städten und Reichen neue Spezialisierungen entstehen: Schuster, Ärzte, Priester, Soldaten und Anwälte leben nun von ihrem Beruf.",
+    passage:
+      "Die Seite verknüpft Stadtentwicklung mit Spezialisierung und Marktverdichtung. Für Modul 11 ist das wichtig, weil mittelalterliche Städte hier als Räume von Arbeitsteilung, Markt und sozialer Differenz sichtbar werden."
+  },
+  [makeSourceKey("modul-11", "Harari-PDF · S. 219")]: {
+    badge: "S. 219 · Märkte brauchen transportierbaren Wert",
+    locator: "Harari-PDF, S. 219",
+    pdfPage: 219,
+    pdfSearch: "entscheidende Voraussetzung",
+    quote: "„entscheidende Voraussetzung“",
+    thesis:
+      "Geld macht Vermögen transportabel und wird dadurch zur Voraussetzung komplexer Handelsnetze und dynamischer Märkte.",
+    passage:
+      "Harari beschreibt hier sehr anschaulich, warum Häuser, Reisfelder oder schwere Güter schlecht beweglich sind und Geld deshalb den Markt revolutioniert. Für Modul 11 stärkt die Passage den Blick auf Städte, Fernhandel und wirtschaftlichen Wandel im Hoch- und Spätmittelalter."
+  },
+  [makeSourceKey("modul-12", "Harari-PDF · S. 148")]: {
+    badge: "S. 148 · Kein Ausweg aus Ordnungen",
+    locator: "Harari-PDF, S. 148",
+    pdfPage: 148,
+    pdfSearch: "kein Ausweg aus der erfundenen Ordnung",
+    quote: "„kein Ausweg aus der erfundenen Ordnung“",
+    thesis:
+      "Menschen lösen eine Ordnung nicht einfach auf, um in reine Freiheit zu gelangen. Sie ersetzen sie meist durch eine andere, größere oder anders gebaute Ordnung.",
+    passage:
+      "Harari formuliert hier einen harten Bilanzsatz: Wer aus einer erfundenen Ordnung ausbricht, landet oft in einer neuen. Für das Abschlussmodul ist das stark, weil es alle Themen zusammenbindet: Sprache, Staat, Geld, Religion und Gesellschaft schaffen immer wieder neue Regelräume."
+  },
+  [makeSourceKey("modul-12", "Harari-PDF · S. 263")]: {
+    badge: "S. 263 · Welt bis zur Schwelle der Neuzeit",
+    locator: "Harari-PDF, S. 263",
+    pdfPage: 263,
+    pdfSearch: "Zu Beginn des 16. Jahrhunderts",
+    quote: "„Zu Beginn des 16. Jahrhunderts“",
+    thesis:
+      "Die Seite markiert den Zustand der Welt kurz vor der Neuzeit: weite Räume Afrikas und Eurasiens sind bereits durch große monotheistische und politische Ordnungen geprägt.",
+    passage:
+      "Für den Kursabschluss ist diese Stelle wertvoll, weil sie direkt an die Zeitgrenze heranführt. Harari zeigt, wie weit die langfristigen Vereinigungsprozesse bis um 1500 bereits reichen. So erscheint die Schwelle zur Neuzeit als Ergebnis langer Vorgeschichten und nicht als plötzlicher Neubeginn."
+  }
+};
+
+const additionalHarariSources = {
+  "modul-1": [
+    {
+      title: "Harari-PDF · S. 39",
+      meta: "Buchstelle · Mythen und Großgruppen",
+      extracted: "Große Gesellschaften brauchen gemeinsame Geschichten; sie können nicht nur auf Nähe und persönliche Bekanntschaft gebaut werden."
+    },
+    {
+      title: "Harari-PDF · S. 151",
+      meta: "Buchstelle · gelernte Ordnung",
+      extracted: "Gesellschaftliche Regeln und Verfahren werden nicht vererbt, sondern gelernt und weitergegeben."
+    }
+  ],
+  "modul-2": [
+    {
+      title: "Harari-PDF · S. 31",
+      meta: "Buchstelle · Technik und Aufbruch",
+      extracted: "Boote, Nadeln, Kunst und weite Migration markieren neue Fähigkeiten des Homo sapiens."
+    },
+    {
+      title: "Harari-PDF · S. 32",
+      meta: "Buchstelle · Löwenmensch",
+      extracted: "Der Löwenmensch verweist auf frühe Vorstellungskraft, Kunst und Religion."
+    }
+  ],
+  "modul-3": [
+    {
+      title: "Harari-PDF · S. 35",
+      meta: "Buchstelle · soziale Informationen",
+      extracted: "Klatsch und Wissen über andere Menschen erweitern Kooperation in größeren Gruppen."
+    },
+    {
+      title: "Harari-PDF · S. 36",
+      meta: "Buchstelle · fiktive Sprache",
+      extracted: "Menschen sprechen über Dinge, die es nicht gibt, und schaffen dadurch Mythen und Ordnungen."
+    }
+  ],
+  "modul-4": [
+    {
+      title: "Harari-PDF · S. 101",
+      meta: "Buchstelle · Normalform der Menschheit",
+      extracted: "Wir denken und fühlen lange noch wie Jäger und Sammler, obwohl wir später Bauern werden."
+    },
+    {
+      title: "Harari-PDF · S. 108",
+      meta: "Buchstelle · Mobilität und Lebensweise",
+      extracted: "Geburtenrhythmus, Bewegung und Umweltanpassung gehören zur Logik mobiler Gesellschaften."
+    }
+  ],
+  "modul-5": [
+    {
+      title: "Harari-PDF · S. 103",
+      meta: "Buchstelle · Ammenmärchen Fortschritt",
+      extracted: "Frühe Bauern lebten nicht automatisch besser als Jäger und Sammler."
+    },
+    {
+      title: "Harari-PDF · S. 105",
+      meta: "Buchstelle · Weizen domestiziert Menschen",
+      extracted: "Landwirtschaft bindet Menschen an Pflanzen, Felder, Arbeit und Risiko."
+    }
+  ],
+  "modul-6": [
+    {
+      title: "Harari-PDF · S. 157",
+      meta: "Buchstelle · erste Texte",
+      extracted: "Die ältesten Texte erfassen Gerste, Steuerlisten und Besitz statt Literatur."
+    },
+    {
+      title: "Harari-PDF · S. 160",
+      meta: "Buchstelle · Bürokratie",
+      extracted: "Aus Verwaltungsschrift entstehen vollere Schriftsysteme und neue Herrschaftsmöglichkeiten."
+    }
+  ],
+  "modul-7": [
+    {
+      title: "Harari-PDF · S. 130",
+      meta: "Buchstelle · Ordnung für große Räume",
+      extracted: "Überschüsse allein schaffen keine Reiche; Konflikte und Verteilung müssen geregelt werden."
+    },
+    {
+      title: "Harari-PDF · S. 133",
+      meta: "Buchstelle · Hammurabi",
+      extracted: "Reiche stabilisieren sich durch Kodizes, Gerechtigkeitsvorstellungen und gemeinsame Ordnungstexte."
+    }
+  ],
+  "modul-8": [
+    {
+      title: "Harari-PDF · S. 215",
+      meta: "Buchstelle · Tauschhandel",
+      extracted: "Tauschhandel scheitert an Vergleichbarkeit und an zu vielen möglichen Wechselkursen."
+    },
+    {
+      title: "Harari-PDF · S. 220",
+      meta: "Buchstelle · Vertrauen und Geld",
+      extracted: "Geld ist eine politisch und gesellschaftlich gestützte Vertrauensordnung."
+    }
+  ],
+  "modul-9": [
+    {
+      title: "Harari-PDF · S. 252",
+      meta: "Buchstelle · Religion definiert",
+      extracted: "Religion stützt Normen und Werte auf eine übermenschliche Ordnung."
+    },
+    {
+      title: "Harari-PDF · S. 253",
+      meta: "Buchstelle · Universalreligionen",
+      extracted: "Missionierende Weltreligionen vereinigen große Räume und viele Menschen."
+    }
+  ],
+  "modul-10": [
+    {
+      title: "Harari-PDF · S. 261",
+      meta: "Buchstelle · Christentum und Islam",
+      extracted: "Kleine religiöse Gruppen werden zu weltgeschichtlichen Ordnungsräumen."
+    },
+    {
+      title: "Harari-PDF · S. 263",
+      meta: "Buchstelle · religiöse Welt um 1500",
+      extracted: "Bis um 1500 prägen monotheistische Religionen weite Teile Afrikas und Eurasiens."
+    }
+  ],
+  "modul-11": [
+    {
+      title: "Harari-PDF · S. 214",
+      meta: "Buchstelle · Städte und Spezialisten",
+      extracted: "Mit Städten und Reichen entstehen Märkte, Berufe und neue urbane Arbeitsteilung."
+    },
+    {
+      title: "Harari-PDF · S. 219",
+      meta: "Buchstelle · transportierbarer Reichtum",
+      extracted: "Geld macht Vermögen beweglich und ermöglicht dynamische Märkte."
+    }
+  ],
+  "modul-12": [
+    {
+      title: "Harari-PDF · S. 148",
+      meta: "Buchstelle · Ordnungen ersetzen Ordnungen",
+      extracted: "Menschen verlassen eine Ordnung selten in die Freiheit, sondern wechseln meist in eine andere."
+    },
+    {
+      title: "Harari-PDF · S. 263",
+      meta: "Buchstelle · Welt kurz vor 1500",
+      extracted: "An der Schwelle der Neuzeit dominieren bereits große religiöse und politische Ordnungsräume."
+    }
+  ]
+};
+
+const additionalHarariChecks = {
+  "modul-1": [
+    {
+      prompt: "Arbeite mit Harari S. 39 und S. 151 heraus, warum große Gesellschaften gemeinsame Geschichten und gelernte Regeln brauchen. Warum reicht persönliche Bekanntschaft dafür nicht aus?",
+      placeholder: "Verbinde Großgruppen, Mythen, Regeln und Weitergabe.",
+      sampleAnswer:
+        "S. 39 zeigt, dass persönliche Bekanntschaft nur kleine Gruppen trägt, während größere Gemeinschaften gemeinsame Geschichten brauchen. S. 151 ergänzt, dass diese Ordnungen nicht in den Genen liegen, sondern gelernt und weitergegeben werden. Große Gesellschaften leben daher von Symbolen, Regeln und Institutionen, nicht von bloßer Nähe.",
+      criteria: [
+        { label: "Großgruppen statt bloßer Nähe", keywords: ["große gesellschaften", "fremde", "nicht nur bekanntschaft", "150"] },
+        { label: "gemeinsame Geschichten oder Mythen", keywords: ["geschichten", "mythen", "gemeinsam", "ordnung"] },
+        { label: "Regeln werden gelernt", keywords: ["gelernt", "weitergegeben", "nicht in den genen", "regeln"] }
+      ]
+    }
+  ],
+  "modul-2": [
+    {
+      prompt: "Nutze Harari S. 31 und S. 32 und erkläre, was den späteren Homo sapiens gegenüber den früheren Gruppen verändert. Arbeite mit Australien, Werkzeugen, Kunst oder dem Löwenmenschen.",
+      placeholder: "Zeige die Verbindung von Technik, Bewegung und Vorstellungskraft.",
+      sampleAnswer:
+        "S. 31 zeigt neue Fähigkeiten wie Boote, Nadeln, Schmuck und die Besiedlung Australiens. S. 32 ergänzt mit dem Löwenmenschen frühe Kunst und Vorstellungskraft. Zusammen zeigen beide Seiten, dass spätere Sapiens sich technisch, räumlich und symbolisch deutlich anders verhalten als die früheren Gruppen.",
+      criteria: [
+        { label: "Australien oder weite Migration", keywords: ["australien", "wanderung", "boote", "meer"] },
+        { label: "Werkzeuge oder Technik", keywords: ["nadeln", "werkzeuge", "boote", "technik"] },
+        { label: "Kunst oder Vorstellungskraft", keywords: ["kunst", "löwenmensch", "vorstellung", "religion"] }
+      ]
+    }
+  ],
+  "modul-3": [
+    {
+      prompt: "Erkläre mit Harari S. 35 und S. 36, warum Tratsch und fiktive Sprache für die Menschheitsgeschichte so wichtig sind.",
+      placeholder: "Verbinde soziale Informationen, Mythen und Großgruppenkooperation.",
+      sampleAnswer:
+        "S. 35 zeigt, dass Menschen über andere sprechen und so Vertrauen und Misstrauen organisieren können. S. 36 geht weiter: Menschen reden sogar über Dinge, die es nicht gibt, also über Mythen, Götter oder Regeln. Zusammen ermöglichen beide Fähigkeiten Kooperation in sehr großen Gruppen.",
+      criteria: [
+        { label: "soziale Informationen oder Tratsch", keywords: ["tratsch", "soziale informationen", "vertrauen", "misstrauen"] },
+        { label: "fiktive Sprache", keywords: ["fiktive sprache", "mythen", "götter", "vorgestellt"] },
+        { label: "Großgruppenkooperation", keywords: ["große gruppen", "zusammenarbeit", "kooperation"] }
+      ]
+    }
+  ],
+  "modul-4": [
+    {
+      prompt: "Arbeite mit Harari S. 101 und S. 108 heraus, warum mobile Lebensformen so lange funktionierten. Beziehe Denkweise, Umweltwissen und den Geburtenrhythmus ein.",
+      placeholder: "Verbinde lange Normalform, Mobilität und Kinder.",
+      sampleAnswer:
+        "S. 101 macht klar, dass Jäger und Sammler die lange Normalform der Menschheit darstellen. S. 108 zeigt, wie Mobilität sogar den Geburtenrhythmus prägte, weil kleine Kinder auf Wanderungen eine Belastung waren. Mobile Lebensformen funktionierten also über genaues Umweltwissen und angepasste Sozialorganisation.",
+      criteria: [
+        { label: "lange Normalform", keywords: ["normalform", "lange zeit", "jager und sammler"] },
+        { label: "Mobilität oder Umweltwissen", keywords: ["mobil", "umweltwissen", "wege", "anpassung"] },
+        { label: "Kinder oder Geburtenrhythmus", keywords: ["kinder", "geburten", "stillen", "alle drei oder vier jahre"] }
+      ]
+    }
+  ],
+  "modul-5": [
+    {
+      prompt: "Nutze Harari S. 103 und S. 105 und erkläre, warum Landwirtschaft vielen Menschen mehr Mühe als Freiheit brachte.",
+      placeholder: "Arbeite mit härterer Arbeit, schlechterer Ernährung und der Bindung an Pflanzen.",
+      sampleAnswer:
+        "S. 103 widerspricht der Vorstellung, frühe Bauern hätten automatisch angenehmer gelebt. S. 105 zeigt mit dem Bild vom domestizierenden Weizen, wie stark Menschen an Feldarbeit, Ertrag und Risiko gebunden wurden. Landwirtschaft brachte daher Vorräte, aber auch neue Mühen und Abhängigkeiten.",
+      criteria: [
+        { label: "härtere Arbeit oder schlechtere Ernährung", keywords: ["harter", "mehr arbeit", "schlechtere ernahrung", "weniger freizeit"] },
+        { label: "Weizen domestiziert Menschen", keywords: ["weizen", "domestiziert", "bindet", "felder"] },
+        { label: "Abhängigkeit oder Risiko", keywords: ["abhangigkeit", "risiko", "ernte", "gebunden"] }
+      ]
+    }
+  ],
+  "modul-6": [
+    {
+      prompt: "Erkläre mit Harari S. 157 und S. 160, warum frühe Schrift zuerst ein Werkzeug von Verwaltung und Bürokratie war.",
+      placeholder: "Arbeite mit Gerstenlisten, Besitz und dem Ausbau zur Keilschrift.",
+      sampleAnswer:
+        "S. 157 zeigt, dass die ältesten Texte Gerstenmengen, Besitz und Schulden festhielten. S. 160 beschreibt dann, wie aus solcher Verwaltungsschrift umfassendere Schriftsysteme wurden. Schrift ist am Anfang also vor allem ein Mittel, Vorräte, Abgaben und Herrschaft zu organisieren.",
+      criteria: [
+        { label: "Listen oder Gerste", keywords: ["gerste", "listen", "schuld", "besitz"] },
+        { label: "Verwaltung oder Bürokratie", keywords: ["verwaltung", "bürokratie", "abgaben", "ordnen"] },
+        { label: "Ausbau der Schrift", keywords: ["keilschrift", "hieroglyphen", "ausbau", "schriftsystem"] }
+      ]
+    }
+  ],
+  "modul-7": [
+    {
+      prompt: "Arbeite mit Harari S. 130 und S. 133 und erkläre, warum ein Reich nicht nur Speicher und Heere, sondern auch Regeln und Gerechtigkeitsvorstellungen braucht.",
+      placeholder: "Verbinde Überschuss, Streit, Ordnung und Hammurabi.",
+      sampleAnswer:
+        "S. 130 zeigt, dass Überschüsse allein keine stabile Großordnung schaffen, weil Verteilung und Konflikte geregelt werden müssen. S. 133 führt mit Hammurabi vor, wie Kodizes und Gerechtigkeitsvorstellungen diese Ordnung stützen. Ein Reich braucht daher nicht nur Machtmittel, sondern auch akzeptierte Regeln.",
+      criteria: [
+        { label: "Überschuss reicht nicht", keywords: ["überschuss reicht nicht", "konflikte", "verteilung", "ordnung"] },
+        { label: "Hammurabi oder Kodex", keywords: ["hammurabi", "kodex", "gesetz"] },
+        { label: "Regeln oder Gerechtigkeit", keywords: ["regeln", "gerechtigkeit", "akzeptiert", "herrschaft"] }
+      ]
+    }
+  ],
+  "modul-8": [
+    {
+      prompt: "Erkläre mit Harari S. 215 und S. 220, warum Tauschhandel an Grenzen stößt und Geld dann zur Vertrauensordnung wird.",
+      placeholder: "Arbeite mit Wechselkursen, Vergleichbarkeit und gemeinsamem Glauben an Wert.",
+      sampleAnswer:
+        "S. 215 zeigt, wie unübersichtlich direkter Tausch mit vielen Waren und Spezialisten wird. S. 220 erklärt dann, dass Geld diese Probleme löst, weil alle seinen Wert anerkennen. Geld ist deshalb nicht nur Metall, sondern ein gemeinsames Vertrauenssystem.",
+      criteria: [
+        { label: "Grenzen des Tauschhandels", keywords: ["tauschhandel", "wechselkurse", "unübersichtlich", "vergleichen"] },
+        { label: "Geld als Lösung", keywords: ["geld", "löst", "vereinfacht"] },
+        { label: "Vertrauen oder Anerkennung", keywords: ["vertrauen", "anerkennen", "wert"] }
+      ]
+    }
+  ],
+  "modul-9": [
+    {
+      prompt: "Nutze Harari S. 252 und S. 253 und erkläre, wie aus Religion ein großes, missionierendes Ordnungssystem werden kann.",
+      placeholder: "Arbeite mit Normen, Werten, übermenschlicher Ordnung und Universalreligionen.",
+      sampleAnswer:
+        "S. 252 definiert Religion als Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt. S. 253 zeigt, wie daraus missionierende Universalreligionen werden, die viele Regionen und Menschen verbinden wollen. Religion ordnet dadurch nicht nur lokal, sondern über große Räume hinweg.",
+      criteria: [
+        { label: "Normen und Werte", keywords: ["normen", "werte", "ordnung"] },
+        { label: "übermenschliche Ordnung", keywords: ["übermenschlich", "gott", "autorität"] },
+        { label: "Universalreligionen", keywords: ["universalreligion", "missionierend", "christentum", "islam"] }
+      ]
+    }
+  ],
+  "modul-10": [
+    {
+      prompt: "Erkläre mit Harari S. 261 und S. 263, warum Kirche und Religion für die mittelalterliche Gesellschaft nicht bloß Randthemen sind.",
+      placeholder: "Verbinde Ausbreitung von Religionen, Herrschaft und Alltag bis um 1500.",
+      sampleAnswer:
+        "S. 261 zeigt, wie Christentum und Islam von kleinen Gruppen zu großen Weltreligionen wurden. S. 263 macht deutlich, dass monotheistische Religionen bis um 1500 weite Teile Afrikas und Eurasiens prägten. Kirche und Religion strukturieren im Mittelalter daher Politik, Alltag und Gesellschaft insgesamt.",
+      criteria: [
+        { label: "Christentum oder Islam", keywords: ["christentum", "islam", "weltreligion"] },
+        { label: "große Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] },
+        { label: "Gesellschaft und Herrschaft", keywords: ["gesellschaft", "herrschaft", "alltag", "kirche"] }
+      ]
+    }
+  ],
+  "modul-11": [
+    {
+      prompt: "Arbeite mit Harari S. 214 und S. 219 heraus, warum Städte, Märkte und Handel im Mittelalter eng zusammenhängen.",
+      placeholder: "Verbinde Spezialisierung, transportierbares Vermögen und urbane Verdichtung.",
+      sampleAnswer:
+        "S. 214 zeigt, dass mit Städten neue Spezialisten und Märkte entstehen. S. 219 erklärt, warum Geld Vermögen beweglich macht und dadurch größere Handelsnetze ermöglicht. Mittelalterliche Städte verdichten also Arbeitsteilung, Markt und Verkehr.",
+      criteria: [
+        { label: "Städte oder Spezialisten", keywords: ["städte", "spezialisten", "berufe", "märkte"] },
+        { label: "Geld oder transportierbares Vermögen", keywords: ["geld", "vermögen", "transport", "beweglich"] },
+        { label: "Handelsnetze", keywords: ["handelsnetze", "markt", "verkehr", "verdichtung"] }
+      ]
+    }
+  ],
+  "modul-12": [
+    {
+      prompt: "Nutze Harari S. 148 und S. 263 und formuliere eine Bilanz: Warum leben Menschen immer wieder in großen gemeinsamen Ordnungen, und wie weit reichen diese Ordnungen um 1500 bereits?",
+      placeholder: "Verbinde erfundene Ordnung, große Räume und die Welt an der Schwelle der Neuzeit.",
+      sampleAnswer:
+        "S. 148 zeigt, dass Menschen selten außerhalb aller Ordnungen leben, sondern meist in neue Ordnungen wechseln. S. 263 macht sichtbar, wie weit diese großen religiösen und politischen Ordnungen bis um 1500 schon reichen. Die Bilanz lautet daher: Geschichte bis 1500 ist eine Geschichte wachsender gemeinsamer Regelräume.",
+      criteria: [
+        { label: "Ordnungen ersetzen Ordnungen", keywords: ["ordnung", "wechseln", "keine reine freiheit", "regelraum"] },
+        { label: "große Räume um 1500", keywords: ["1500", "große räume", "afrika", "eurasien"] },
+        { label: "Bilanz der Einheit", keywords: ["bilanz", "geschichte bis 1500", "gemeinsame ordnungen"] }
+      ]
+    }
+  ]
+};
+
+Object.entries(additionalHarariSources).forEach(([moduleId, sources]) => {
+  const module = modules.find((entry) => entry.id === moduleId);
+  if (!module) {
+    return;
+  }
+
+  const existingTitles = new Set(module.sources.map((source) => source.title));
+  const newSources = sources.filter((source) => !existingTitles.has(source.title));
+  if (!newSources.length) {
+    return;
+  }
+
+  const firstNonHarariIndex = module.sources.findIndex(
+    (source) => !normalize(source.title).startsWith(normalize("Harari-PDF"))
+  );
+  const insertIndex = firstNonHarariIndex === -1 ? module.sources.length : firstNonHarariIndex;
+  module.sources.splice(insertIndex, 0, ...newSources);
+});
+
+Object.entries(additionalHarariChecks).forEach(([moduleId, questions]) => {
+  const target = contentChecks[moduleId];
+  if (!target) {
+    return;
+  }
+
+  const existingPrompts = new Set(target.questions.map((question) => question.prompt));
+  questions.forEach((question) => {
+    if (!existingPrompts.has(question.prompt)) {
+      target.questions.push(question);
+    }
+  });
+});
+
 const moduleVisuals = {
   "modul-1": {
     hero: "assets/srf/m01-anthropozaen.jpg",
@@ -3293,6 +4000,8 @@ const sourceDetails = {
   }
 };
 
+Object.assign(sourceDetails, additionalHarariDetails);
+
 function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
@@ -3573,6 +4282,38 @@ function createTimeline(state) {
   });
 }
 
+function renderMasterTimeline() {
+  const container = document.getElementById("master-timeline");
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = masterTimeline
+    .map((entry) => {
+      const moduleLinks = entry.modules
+        .map((moduleId) => {
+          const module = modules.find((candidate) => candidate.id === moduleId);
+          if (!module) {
+            return "";
+          }
+          return `<a href="#${module.id}">Modul ${module.number}: ${module.title}</a>`;
+        })
+        .join("");
+
+      return `
+        <article class="master-timeline-entry">
+          <span class="master-timeline-date">${entry.time}</span>
+          <div class="master-timeline-card">
+            <h3>${entry.title}</h3>
+            <p>${entry.body}</p>
+            <div class="master-timeline-modules">${moduleLinks}</div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
 function createNavigation(state) {
   const nav = document.getElementById("module-nav");
   nav.innerHTML = "";
@@ -3592,7 +4333,7 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
-  const isHarari = source.title === "Harari-PDF";
+  const isHarari = normalize(source.title).startsWith(normalize("Harari-PDF"));
   const titleLabel = isHarari ? "Harari-Stelle" : source.title;
   const locatorTextRaw = isHarari
     ? String(detail.locator || "").replace(/^Harari-PDF,\s*/i, "Yuval Noah Harari, Eine kurze Geschichte der Menschheit, ")
@@ -3698,7 +4439,7 @@ function resolveSourceLink(source) {
 function renderFilmFoundation(module) {
   const filmSources = module.sources
     .map((source) => ({ source, catalog: resolveSourceLink(source) }))
-    .filter((entry) => entry.catalog && entry.source.title !== "Harari-PDF");
+    .filter((entry) => entry.catalog && !normalize(entry.source.title).startsWith(normalize("Harari-PDF")));
 
   if (!filmSources.length) {
     return "";
@@ -4474,6 +5215,7 @@ function bindCompletionActions() {
 function renderApp(state) {
   renderWelcomeOverlay(state);
   createTimeline(state);
+  renderMasterTimeline();
   createNavigation(state);
   renderLearnerBanner(state);
   renderChapterCards(state);

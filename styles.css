@@ -435,6 +435,113 @@ p {
   overflow: hidden;
 }
 
+.master-timeline-panel {
+  overflow: hidden;
+}
+
+.master-timeline {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 320px);
+  gap: 18px;
+  overflow-x: auto;
+  padding: 18px 6px 10px;
+  margin-top: 12px;
+  scroll-snap-type: x proximity;
+}
+
+.master-timeline-entry {
+  position: relative;
+  padding-top: 44px;
+  scroll-snap-align: start;
+}
+
+.master-timeline-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: -18px;
+  top: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(31, 109, 102, 0.34), rgba(198, 122, 62, 0.3));
+}
+
+.master-timeline-entry:last-child::before {
+  right: 0;
+}
+
+.master-timeline-entry::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal), var(--gold));
+  border: 3px solid rgba(255, 251, 246, 0.94);
+  box-shadow: 0 6px 18px rgba(31, 109, 102, 0.22);
+}
+
+.master-timeline-date {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(239, 228, 207, 0.9);
+  color: var(--rust);
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.master-timeline-card {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  min-height: 260px;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(30, 44, 52, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(250, 245, 236, 0.98)),
+    radial-gradient(circle at top right, rgba(31, 109, 102, 0.08), transparent 36%);
+  box-shadow: var(--shadow-soft);
+}
+
+.master-timeline-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.master-timeline-card p {
+  margin: 0;
+}
+
+.master-timeline-modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.master-timeline-modules a {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 109, 102, 0.18);
+  background: rgba(255, 250, 243, 0.86);
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.master-timeline-modules a:hover {
+  border-color: rgba(31, 109, 102, 0.34);
+  background: rgba(255, 252, 247, 0.95);
+}
+
 .ambient-ribbon {
   position: absolute;
   inset: auto -6% 18% auto;
@@ -1693,6 +1800,17 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
 
   .hero-facts {
     grid-template-columns: 1fr;
+  }
+
+  .master-timeline {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    overflow-x: visible;
+    padding-inline: 0;
+  }
+
+  .master-timeline-entry::before {
+    right: 0;
   }
 
   .support-grid {
