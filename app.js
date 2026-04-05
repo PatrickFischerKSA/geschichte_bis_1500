@@ -1,5 +1,4 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
-const HARARI_VIEWER_PATH = "harari-viewer.html";
 
 const sourceCatalog = [
   {
@@ -2554,8 +2553,10 @@ const sourceDetails = {
     pdfPage: 132,
     pdfSearch: "erfundene Ordnungen",
     quote: "„erfundene Ordnungen“",
+    thesis:
+      "Harari erklärt hier, dass große menschliche Gesellschaften auf gemeinsam anerkannten Vorstellungen beruhen: auf Gesetzen, Rechten, Göttern, Staaten, Ordnungen und Institutionen, an die viele Menschen zugleich glauben.",
     passage:
-      "Harari erklärt große Reiche und Gesellschaften als Kooperationsnetze, die nicht auf Instinkt, sondern auf gemeinsamen Glaubensvorstellungen beruhen. Genau dieser Gedanke trägt im Kurs die Unterscheidung zwischen bloßer Vergangenheit und Geschichte als menschlich geordneter Welt."
+      "Harari beschreibt große Gesellschaften als Kooperationsnetze, die nicht allein durch biologische Nähe oder persönliche Bekanntschaft zusammenhalten. Menschen können in viel größeren Verbänden leben, weil sie sich auf dieselben erfundenen Ordnungen beziehen: auf Gesetze, Herrschaft, Geld, religiöse Vorstellungen oder gemeinsame Rechte. Genau darin liegt der Schlüssel für den Beginn historischer Weltdeutung in diesem Kurs. Geschichte meint hier nicht einfach alles Vergangene, sondern eine von Menschen geordnete Welt, in der Regeln, Institutionen und gemeinsame Vorstellungen ganze Gesellschaften tragen."
   },
   [makeSourceKey("modul-1", "SRF: Anthropozän")]: {
     badge: "SRF-school-Seite · Langzeitlinie",
@@ -2592,8 +2593,10 @@ const sourceDetails = {
     pdfPage: 30,
     pdfSearch: "kaum einen Vorteil",
     quote: "„kaum einen Vorteil“",
+    thesis:
+      "Die Passage nimmt jede einfache Fortschrittserzählung zurück: Frühe Sapiens erscheinen zunächst nicht als selbstverständlich überlegene Sieger, sondern als eine Menschenart unter mehreren.",
     passage:
-      "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die äußerlich modern wirken, gegenüber anderen Menschenarten aber zunächst keinen klaren Vorsprung hatten. Damit rückt er Ausbreitung nicht als Selbstläufer, sondern als offenes historisches Problem in den Blick."
+      "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die zwar äußerlich modern wirken, gegenüber anderen Menschenarten aber anfangs keinen klaren Vorsprung besitzen. Damit wird die Entwicklung des Menschen bewusst entdramatisiert: Unsere Art tritt nicht von Beginn an als offensichtlicher Sieger auf. Für das Modul ist diese Passage wichtig, weil sie Frühgeschichte als offene Situation zeigt. Mehrere Menschenarten existieren nebeneinander, und Ausbreitung muss historisch erklärt werden: durch Lernen, Anpassung, Kooperation, Werkzeuggebrauch und Bewegung durch sehr unterschiedliche Räume."
   },
   [makeSourceKey("modul-2", "SRF: 1491")]: {
     badge: "SRF-school-Film · Migration",
@@ -2648,8 +2651,10 @@ const sourceDetails = {
     pdfPage: 33,
     pdfSearch: "kognitive Revolution",
     quote: "„kognitive Revolution“",
+    thesis:
+      "Harari bezeichnet die entscheidende Wende der Menschheitsgeschichte als geistige und sprachliche Veränderung: Menschen können über Abwesendes, Zukünftiges und Erfundenes sprechen.",
     passage:
-      "Auf dieser Seite benennt Harari den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist die Entstehung neuer Denk- und Kommunikationsformen, durch die Homo sapiens über Abwesendes, Zukünftiges und gemeinsam Vorgestelltes sprechen konnte."
+      "Harari benennt den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist damit nicht bloß eine größere Wortzahl, sondern eine neue Qualität des Denkens und Sprechens. Menschen können über Dinge reden, die gerade nicht vor ihnen liegen: über Vergangenes und Zukünftiges, über Gefahren, Götter, Gruppen, Regeln und gemeinsam vorgestellte Ordnungen. Diese Passage trägt das Modul, weil sie erklärt, warum aus bloßer Verständigung symbolische Welten entstehen konnten. Sprache wird hier zur Grundlage von Mythos, Ritual, Zugehörigkeit und großer Kooperation."
   },
   [makeSourceKey("modul-3", "SRF: 1491")]: {
     badge: "SRF-school-Film · Zeichenwelten",
@@ -2738,8 +2743,10 @@ const sourceDetails = {
     pdfPage: 100,
     pdfSearch: "Zweieinhalb Millionen Jahre lang",
     quote: "„Zweieinhalb Millionen Jahre lang“",
+    thesis:
+      "Harari erinnert daran, dass Jagen und Sammeln nicht Randerscheinung, sondern die mit Abstand längste normale Lebensform der Menschheit waren.",
     passage:
-      "Harari hält fest, dass Menschen über extrem lange Zeit von Pflanzen und Tieren lebten, die ohne menschliche Eingriffe existierten. Die Stelle eignet sich hier als harte Erinnerung daran, dass Jäger-und-Sammler-Gesellschaften nicht Randphänomen, sondern die längste normale Lebensform der Menschheit waren."
+      "Harari hält fest, dass Menschen über einen ungeheuer langen Zeitraum von Pflanzen und Tieren lebten, die ohne gezielte Aussaat, Zucht oder Stallhaltung existierten. Genau das verschiebt die Perspektive des Moduls: Jäger-und-Sammler-Gesellschaften erscheinen nicht als kurze primitive Vorstufe, sondern als die längste historische Normalform menschlichen Lebens. Erst vor diesem Hintergrund wird verständlich, wie tiefgreifend der Übergang zu Ackerbau, Viehzucht und Sesshaftigkeit wirklich war. Die Passage hilft deshalb, mobile Lebensweisen als ernst zu nehmende historische Ordnung zu begreifen."
   },
   [makeSourceKey("modul-5", "Harari-PDF")]: {
     badge: "S. 100 · Streitstelle",
@@ -2747,8 +2754,10 @@ const sourceDetails = {
     pdfPage: 100,
     pdfSearch: "Der größte Betrug der Geschichte",
     quote: "„Der größte Betrug der Geschichte“",
+    thesis:
+      "Die landwirtschaftliche Revolution wird hier nicht als einfache Erfolgsgeschichte gelesen, sondern als widersprüchlicher Umbruch mit Nutzen, Belastungen und neuen Abhängigkeiten.",
     passage:
-      "Harari überschreibt das Kapitel zur Landwirtschaft mit einer bewussten Provokation. Dahinter steht die These, dass Sesshaftigkeit, Ackerbau und Viehzucht zwar Überschüsse und größere Siedlungen ermöglichten, zugleich aber härtere Arbeit, stärkere Abhängigkeit und neue Ungleichheiten hervorbrachten."
+      "Harari überschreibt das Landwirtschaftskapitel bewusst provokativ und zwingt damit zu historischem Urteil. Seine Pointe ist nicht, dass Landwirtschaft nutzlos gewesen sei, sondern dass Ackerbau und Viehzucht einen widersprüchlichen Wandel auslösten: mehr Vorräte, größere Siedlungen und mehr Menschen auf der einen Seite, zugleich aber härtere Arbeit, einseitigere Ernährung, stärkere Abhängigkeit von Ernten, Eigentum und neue soziale Ungleichheiten auf der anderen. Die Passage ist für das Modul zentral, weil sie Sesshaftigkeit nicht als selbstverständlichen Fortschritt behandelt, sondern als tiefen Umbau von Alltag, Macht und Lebensrisiko."
   },
   [makeSourceKey("modul-5", "SRF: Pfahlbauer von Pfyn")]: {
     badge: "SRF-school-Film · Experimentalarchäologie",
@@ -2788,8 +2797,10 @@ const sourceDetails = {
     pdfPage: 155,
     pdfSearch: "mit der Stimme ihrer Protagonisten",
     quote: "„mit der Stimme ihrer Protagonisten“",
+    thesis:
+      "Harari verbindet hier zwei zentrale Gedanken: Mit Schrift werden historische Akteure erstmals direkt hörbar, und zugleich entsteht Schrift eng verbunden mit Listen, Abgaben und Verwaltung.",
     passage:
-      "Harari erklärt erstens, dass Geschichte mit der Erfindung der Schrift die Stimme ihrer Protagonisten hörbar macht. Zweitens verknüpft er Schrift ausdrücklich mit Steuerbuchhaltung und bürokratischen Systemen. Genau diese Verbindung von Schreiben, Zählen und Organisieren trägt das Modul zu frühen Staaten."
+      "Harari erklärt zunächst, dass Geschichte mit der Erfindung der Schrift erstmals mit der Stimme ihrer Protagonisten erzählt werden kann. Noch wichtiger für dieses Modul ist aber sein zweiter Punkt: Frühe Schrift entsteht nicht zuerst aus Literatur, sondern aus Listen, Besitzverhältnissen, Abgaben, Steuerbuchhaltung und bürokratischer Ordnung. Schreiben, Zählen und Verwalten gehören von Anfang an zusammen. Genau deshalb trägt die Passage das Hochkultur-Modul: Frühe Staaten brauchen nicht nur Herrschaft und Nahrung, sondern Verfahren, mit denen Menschen, Vorräte, Arbeit und Abgaben dauerhaft festgehalten und kontrolliert werden können."
   },
   [makeSourceKey("modul-6", "SRF: Eine kurze Geschichte über…")]: {
     badge: "dreiteilige Reihe · Folge Ägypten",
@@ -2874,8 +2885,10 @@ const sourceDetails = {
     pdfPage: 212,
     pdfSearch: "Der Geruch des Geldes",
     quote: "„Der Geruch des Geldes“",
+    thesis:
+      "Harari erklärt Geld hier nicht als bloßes Metall, sondern als Vertrauenssystem, das Menschen über kulturelle Grenzen hinweg miteinander handeln lässt.",
     passage:
-      "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Die Passage macht klar, dass Geld nicht einfach durch Material wirkt, sondern nur dann, wenn Menschen ihm gemeinsam Wert und Tauschfähigkeit zuschreiben."
+      "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Gerade an diesem Kontrast zeigt er, dass Geld nicht einfach deshalb wirkt, weil ein bestimmtes Material an sich wertvoll wäre. Entscheidend ist vielmehr, dass Menschen demselben Mittel gemeinsam Tauschfähigkeit und Vertrauen zuschreiben. Für das Modul ist die Passage zentral, weil sie Handel und Vernetzung nicht bloß technisch erklärt. Geld wird hier zu einer historischen Ordnung, die Unterschiede von Sprache, Herkunft, Religion und politischem Raum überbrücken kann, ohne sie aufzuheben."
   },
   [makeSourceKey("modul-8", "SRF: Münzschatz von Ueken")]: {
     badge: "SRF-school-Film · Sachquelle",
@@ -2930,8 +2943,10 @@ const sourceDetails = {
     pdfPage: 251,
     pdfSearch: "Auf dem mittelalterlichen Markt von Samarkand",
     quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
+    thesis:
+      "Harari beginnt Religion bewusst nicht mit einer Definition, sondern mit einem verdichteten historischen Raum, in dem Handel, Begegnung, Konkurrenz und kulturelle Vielfalt zusammenkommen.",
     passage:
-      "Harari beginnt das Religionskapitel nicht mit einer Definition, sondern mit dem Markt von Samarkand. Dort treffen Händler, Steppenkrieger, Münzen, Seide und Menschen aus Ost, West, Nord und Süd aufeinander. Religion erscheint so von Anfang an als Teil vernetzter Räume und nicht bloß als innerer Glaube."
+      "Harari beginnt das Religionskapitel mit dem Markt von Samarkand und wählt damit bewusst keinen stillen Innenraum des Glaubens, sondern einen Ort dichter Begegnung. Händler, Münzen, Stoffe, Tiere, Reisende und Menschen aus verschiedenen Weltregionen treffen aufeinander. Religion erscheint dadurch nicht bloß als innerer Glaube, sondern als Teil historischer Räume, in denen Herrschaft, Austausch, Ordnung und Weltdeutung miteinander verflochten sind. Die Passage trägt das Modul, weil sie Religion von Anfang an in Verkehr, Macht und kulturelle Vernetzung einbettet."
   },
   [makeSourceKey("modul-9", "SRF: Grosse Völker")]: {
     badge: "dreiteilige Reihe · Arabische Wissenswelten",
@@ -3191,8 +3206,10 @@ const sourceDetails = {
     pdfPage: 251,
     pdfSearch: "Auf dem mittelalterlichen Markt von Samarkand",
     quote: "„Auf dem mittelalterlichen Markt von Samarkand“",
+    thesis:
+      "Dieselbe Samarkand-Stelle bekommt im Stadt- und Handelsmodul einen anderen Akzent: Das Mittelalter erscheint als Raum von Markt, Fernbeziehungen und Verdichtung statt als abgeschlossene Burgenwelt.",
     passage:
-      "Die Stelle versammelt Seide, Goldmünzen, Sklaven, Händler und Menschen aus verschiedenen Weltregionen in einem einzigen Bild. Für das Modul ist das wichtig, weil Kreuzzüge, Märkte, Pilgerwege und Fernhandel nicht getrennte Geschichten sind, sondern in denselben Räumen zusammentreffen."
+      "Die Passage versammelt Seide, Goldmünzen, Händler, Reisende und Menschen aus verschiedenen Weltregionen in einem einzigen Bild. Genau dadurch wird für dieses Modul sichtbar, dass Märkte, Pilgerwege, Fernhandel, Begegnung und Macht im Mittelalter nicht nebeneinander herlaufen, sondern in denselben Räumen zusammentreffen. Die Stelle ist deshalb stark, weil sie das Mittelalter nicht auf Burgen und ländliche Abgeschlossenheit reduziert. Stattdessen zeigt sie eine Welt aus Verkehr, Austausch, Dichte und überregionalen Beziehungen."
   },
   [makeSourceKey("modul-12", "SRF: 1491")]: {
     badge: "SRF-school-Film · Perspektivwechsel",
@@ -3253,58 +3270,15 @@ const sourceDetails = {
     pdfPage: 150,
     pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
     quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
+    thesis:
+      "Harari verdichtet hier die große Langzeitlinie des Kurses: Menschen bauen immer größere Verbindungsräume auf, die durch Macht, Glauben, Handel und gemeinsame Regeln zusammengehalten werden.",
     passage:
-      "Harari verwendet an dieser Stelle das gemeinsame Fußballspiel als Vergleich dafür, wie große geteilte Ordnungen funktionieren. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Das eignet sich im Abschlussmodul als kurze Formel für die großen Verbindungslinien des Kurses."
+      "Harari benutzt hier ein leicht verständliches Vergleichsbild, um zu zeigen, wie große geteilte Ordnungen funktionieren: Viele Menschen halten sich an dieselben Regeln, obwohl sie einander nicht persönlich kennen. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Für das Abschlussmodul ist die Passage deshalb besonders geeignet, weil sie die ganze Einheit in eine Formel bringt: Geschichte bis 1500 ist die Geschichte wachsender Verbindungen, größerer Ordnungsräume und immer weiterer Netze aus Macht, Glauben, Handel und Kooperation."
   }
 };
 
 function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
-}
-
-function getHarariViewerLink(detail) {
-  const base = HARARI_VIEWER_PATH;
-  const params = new URLSearchParams();
-  if (detail.pdfPage) {
-    params.set("page", String(detail.pdfPage));
-  }
-  if (detail.pdfSearch) {
-    params.set("search", detail.pdfSearch);
-  }
-  if (detail.locator) {
-    params.set("label", detail.locator);
-  }
-  if (detail.quote) {
-    params.set("quote", detail.quote);
-  }
-  return `${base}?${params.toString()}`;
-}
-
-function isHarariPdfAvailable() {
-  if (typeof window === "undefined") {
-    return false;
-  }
-
-  const host = window.location.hostname;
-  return host === "127.0.0.1" || host === "localhost" || window.location.protocol === "file:";
-}
-
-function renderHarariPdfButton(detail) {
-  if (!detail.pdfPage) {
-    return "";
-  }
-  const isLocal = isHarariPdfAvailable();
-
-  return `
-    <div class="source-actions">
-      <a class="btn primary" href="${getHarariViewerLink(detail)}">S. ${detail.pdfPage} öffnen</a>
-      <span class="source-locator-note">${
-        isLocal
-          ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"
-          : "oeffnet zuerst den Harari-Viewer; dort fuehrt ein eigener Button in den lokalen Viewer unter 127.0.0.1:4173"
-      }</span>
-    </div>
-  `;
 }
 
 function renderRelevantItems(items, label) {
@@ -3487,15 +3461,9 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
-  const harariPdfLink = source.title === "Harari-PDF" && detail.pdfPage ? getHarariViewerLink(detail) : null;
-  const locatorMarkup =
-    source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
-      ? `<a href="${harariPdfLink}">${detail.locator}</a><span class="source-locator-note">${
-          isHarariPdfAvailable()
-            ? "Viewer mit exakter Seitenansicht"
-            : "oeffnet zuerst den Harari-Viewer; dort geht es weiter in den lokalen Viewer"
-        }</span>`
-      : detail.locator || "";
+  const isHarari = source.title === "Harari-PDF";
+  const locatorMarkup = detail.locator || "";
+  const passageLabel = isHarari ? "Passage im Zusammenhang" : "Konkrete Passage";
 
   return `
     <article class="source-card">
@@ -3506,11 +3474,10 @@ function renderSourceCard(source, module) {
         </div>
       </header>
       ${detail.locator ? `<p><strong>Verortung:</strong> ${locatorMarkup}</p>` : ""}
-      ${source.title === "Harari-PDF" ? renderHarariPdfButton(detail) : ""}
       ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
-      <p><strong>Konkrete Passage:</strong> ${passage}</p>
+      <p><strong>${passageLabel}:</strong> ${passage}</p>
       ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
       ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
     </article>
