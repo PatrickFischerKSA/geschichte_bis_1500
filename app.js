@@ -3296,19 +3296,14 @@ function renderHarariPdfButton(detail) {
   }
   const isLocal = isHarariPdfAvailable();
 
-  if (!isLocal) {
-    return `
-      <div class="source-actions">
-        <span class="btn primary disabled" aria-disabled="true">S. ${detail.pdfPage} nur lokal</span>
-        <span class="source-locator-note">Auf GitHub Pages ist diese PDF aus Urheberrechtsgruenden nicht hinterlegt. Der exakte Seitensprung funktioniert nur in deiner lokalen Vorschau.</span>
-      </div>
-    `;
-  }
-
   return `
     <div class="source-actions">
       <a class="btn primary" href="${getHarariViewerLink(detail)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
-      <span class="source-locator-note">oeffnet einen eigenen Viewer und rendert die exakte Zielseite</span>
+      <span class="source-locator-note">${
+        isLocal
+          ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"
+          : "oeffnet deine lokale Vorschau unter 127.0.0.1:4173 und rendert dort die exakte Zielseite"
+      }</span>
     </div>
   `;
 }
@@ -3493,16 +3488,13 @@ function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
-  const harariPdfLink =
-    source.title === "Harari-PDF" && isHarariPdfAvailable() ? getHarariViewerLink(detail) : null;
+  const harariPdfLink = source.title === "Harari-PDF" && detail.pdfPage ? getHarariViewerLink(detail) : null;
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
       ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
-          "Viewer mit exakter Seitenansicht"
+          isHarariPdfAvailable() ? "Viewer mit exakter Seitenansicht" : "oeffnet den lokalen Viewer unter 127.0.0.1:4173"
         }</span>`
-      : source.title === "Harari-PDF" && detail.locator
-        ? `${detail.locator}<span class="source-locator-note">exakter PDF-Sprung nur lokal</span>`
-        : detail.locator || "";
+      : detail.locator || "";
 
   return `
     <article class="source-card">
