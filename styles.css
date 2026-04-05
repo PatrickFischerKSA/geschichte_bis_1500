@@ -1337,6 +1337,18 @@ p {
   margin-bottom: 6px;
 }
 
+.teacher-answer-key {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(23, 54, 75, 0.14);
+  background: rgba(239, 245, 248, 0.88);
+}
+
+.teacher-answer-key p + p {
+  margin-top: 8px;
+}
+
 .check-grid {
   display: grid;
   gap: 14px;
@@ -1548,12 +1560,79 @@ p {
   border-bottom: none;
 }
 
+.teacher-dashboard-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.teacher-dashboard-controls {
+  display: grid;
+  gap: 14px;
+}
+
+.teacher-roster-field {
+  display: grid;
+  gap: 8px;
+}
+
+.teacher-roster-field textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 14px 16px;
+  resize: vertical;
+  border-radius: 16px;
+  border: 1px solid rgba(30, 44, 52, 0.14);
+  background: #fffdf9;
+  color: var(--text);
+}
+
+.teacher-dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.teacher-dashboard-table {
+  display: grid;
+  gap: 12px;
+}
+
+.dashboard-row {
+  grid-template-columns: 1.1fr 0.7fr 1fr 1fr 1fr 0.9fr;
+}
+
+.teacher-score-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.teacher-muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+body[data-mode="teacher"] .chapter-card.is-locked,
+body[data-mode="teacher"] .module-nav a.is-locked,
+body[data-mode="teacher"] .timeline a.is-locked {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body[data-mode="teacher"] .module-card.is-locked .module-grid {
+  filter: none;
+  pointer-events: auto;
+  user-select: auto;
+}
+
 @media (max-width: 1180px) {
   .hero,
   .layout,
   .module-header,
   .structure-grid,
   .teacher-grid,
+  .teacher-dashboard-summary,
   .completion-hero,
   .welcome-panel,
   .module-scene,
@@ -1582,6 +1661,10 @@ p {
   }
 
   .matrix-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-row {
     grid-template-columns: 1fr;
   }
 

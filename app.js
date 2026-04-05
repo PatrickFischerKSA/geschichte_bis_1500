@@ -1,5 +1,15 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
+const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
+const TEACHER_DASHBOARD_KEY = "geschichte_bis_1500_teacher_dashboard_v1";
 const HARARI_REFERENCE_VIEW_PATH = "http://127.0.0.1:4173/harari-viewer.html";
+
+function isTeacherMode() {
+  return document.body?.dataset?.mode === "teacher";
+}
+
+function getStorageKey() {
+  return isTeacherMode() ? TEACHER_PREVIEW_STORAGE_KEY : STORAGE_KEY;
+}
 
 const sourceCatalog = [
   {
@@ -3399,16 +3409,80 @@ function getModuleIntroText(module) {
   return moduleSupports[module.id]?.overview || cleanStudentText(module.hook);
 }
 
+function loadDashboardSnapshots() {
+  try {
+    return JSON.parse(localStorage.getItem(TEACHER_DASHBOARD_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveDashboardSnapshots(store) {
+  localStorage.setItem(TEACHER_DASHBOARD_KEY, JSON.stringify(store));
+}
+
+function getExplicitLearnerName(state) {
+  const value = String(state?.learnerName || "").trim();
+  return value || "";
+}
+
+function buildLearnerSnapshot(state) {
+  const learnerName = getExplicitLearnerName(state);
+  if (!learnerName) {
+    return null;
+  }
+
+  const interactionIds = modules.flatMap((module) => getModuleInteractionIds(module));
+  const interactionCompleted = interactionIds.filter((id) => Boolean(state[id])).length;
+  const interactionTotal = interactionIds.length;
+  const passedModules = getPassedModuleCount(state);
+  const moduleScores = modules.map((module, moduleIndex) => ({
+    id: module.id,
+    number: module.number,
+    title: module.title,
+    passed: isModulePassed(state, module.id),
+    unlocked: isModuleUnlocked(state, moduleIndex),
+    score: getContentCheckScore(state, module.id)
+  }));
+  const nextOpenModule = modules.find((module) => !isModulePassed(state, module.id));
+
+  return {
+    name: learnerName,
+    updatedAt: new Date().toISOString(),
+    passedModules,
+    totalModules: modules.length,
+    interactionCompleted,
+    interactionTotal,
+    overallPercent: interactionTotal ? Math.round((interactionCompleted / interactionTotal) * 100) : 0,
+    nextModule: nextOpenModule ? `Modul ${nextOpenModule.number}: ${nextOpenModule.title}` : "Alle Module bestanden",
+    moduleScores
+  };
+}
+
+function persistLearnerSnapshot(state) {
+  const snapshot = buildLearnerSnapshot(state);
+  if (!snapshot) {
+    return;
+  }
+
+  const store = loadDashboardSnapshots();
+  store[normalize(snapshot.name)] = snapshot;
+  saveDashboardSnapshots(store);
+}
+
 function loadState() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    return JSON.parse(localStorage.getItem(getStorageKey()) || "{}");
   } catch {
     return {};
   }
 }
 
 function saveState(state) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  localStorage.setItem(getStorageKey(), JSON.stringify(state));
+  if (!isTeacherMode()) {
+    persistLearnerSnapshot(state);
+  }
 }
 
 function getModuleInteractionIds(module) {
@@ -3434,6 +3508,10 @@ function isModulePassed(state, moduleId) {
 }
 
 function isModuleUnlocked(state, moduleIndex) {
+  if (isTeacherMode()) {
+    return true;
+  }
+
   if (moduleIndex === 0) {
     return true;
   }
@@ -3458,7 +3536,7 @@ function getPassedModuleCount(state) {
 }
 
 function getLearnerName(state) {
-  const value = String(state.learnerName || "").trim();
+  const value = getExplicitLearnerName(state);
   return value || "Lernende Person";
 }
 
@@ -3655,6 +3733,21 @@ function renderFilmFoundation(module) {
 }
 
 function renderShortAnswerBox(task, kindLabel) {
+  const teacherSolution = isTeacherMode()
+    ? `
+      <div class="teacher-answer-key">
+        <p class="section-kicker">Direkte Musterlösung</p>
+        <p>${cleanPromptText(task.sampleAnswer)}</p>
+        <div class="source-list-block">
+          <p><strong>Erwartete Gesichtspunkte:</strong></p>
+          <ul class="source-list">
+            ${task.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+    `
+    : "";
+
   return `
     <div class="${kindLabel === "Transferfrage" ? "transfer-box" : "task-box"}">
       <p><strong>${kindLabel}:</strong> ${cleanPromptText(task.question)}</p>
@@ -3664,6 +3757,7 @@ function renderShortAnswerBox(task, kindLabel) {
         <button class="btn ghost" type="button" data-show="${task.id}">Beispiellösung zeigen</button>
       </div>
       <div class="feedback" data-feedback="${task.id}"></div>
+      ${teacherSolution}
     </div>
   `;
 }
@@ -3740,6 +3834,22 @@ function renderContentCheck(module, state) {
           <p><strong>${questionIndex + 1}.</strong> ${question.prompt}</p>
           <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
           ${renderStoredFeedback(stored)}
+          ${
+            isTeacherMode()
+              ? `
+                <div class="teacher-answer-key">
+                  <p class="section-kicker">Direkte Musterlösung</p>
+                  <p>${cleanPromptText(question.sampleAnswer)}</p>
+                  <div class="source-list-block">
+                    <p><strong>Erwartete Gesichtspunkte:</strong></p>
+                    <ul class="source-list">
+                      ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
+                    </ul>
+                  </div>
+                </div>
+              `
+              : ""
+          }
         </div>
       `;
     })
@@ -4248,6 +4358,18 @@ function bindContentChecks(state) {
 
 function renderLearnerBanner(state) {
   const banner = document.getElementById("learner-banner");
+  if (!banner) {
+    return;
+  }
+
+  if (isTeacherMode()) {
+    banner.innerHTML = `
+      <strong>Lehrpersonen-Inspektionsmodus</strong>
+      <span>Alle Module sind geöffnet. Musterlösungen und Sicherungskriterien stehen direkt in den Aufgabenfeldern.</span>
+    `;
+    return;
+  }
+
   banner.innerHTML = `
     <strong>${getLearnerName(state)}</strong>
     <span>Arbeite Modul für Modul: Nach einer bestandenen schriftlichen Sicherung wird das nächste Kapitel geöffnet.</span>
@@ -4256,6 +4378,17 @@ function renderLearnerBanner(state) {
 
 function renderWelcomeOverlay(state) {
   const overlay = document.getElementById("welcome-overlay");
+  if (!overlay) {
+    return;
+  }
+
+  if (isTeacherMode()) {
+    overlay.hidden = true;
+    overlay.innerHTML = "";
+    document.body.classList.remove("is-overlay-open");
+    return;
+  }
+
   const shouldOpen = !state.welcomeDismissed;
 
   overlay.hidden = !shouldOpen;
@@ -4345,7 +4478,15 @@ function renderApp(state) {
   updateProgress(state);
 }
 
+window.GESCHICHTE_DATA = {
+  modules,
+  dashboardStorageKey: TEACHER_DASHBOARD_KEY
+};
+
 function init() {
+  if (!document.getElementById("module-list")) {
+    return;
+  }
   const state = loadState();
   renderApp(state);
 }
