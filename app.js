@@ -3479,9 +3479,15 @@ function loadState() {
 }
 
 function saveState(state) {
+  state.lastUpdatedAt = new Date().toISOString();
   localStorage.setItem(getStorageKey(), JSON.stringify(state));
   if (!isTeacherMode()) {
     persistLearnerSnapshot(state);
+  }
+  if (!isTeacherMode() && window.GESCHICHTE_SUPABASE?.syncState) {
+    window.GESCHICHTE_SUPABASE.syncState(state).catch((error) => {
+      console.error("Supabase sync failed", error);
+    });
   }
 }
 
@@ -4478,9 +4484,27 @@ function renderApp(state) {
   updateProgress(state);
 }
 
+function replaceState(nextState, options = {}) {
+  const state = { ...nextState };
+  if (options.persist !== false) {
+    saveState(state);
+  }
+  renderApp(state);
+}
+
 window.GESCHICHTE_DATA = {
   modules,
   dashboardStorageKey: TEACHER_DASHBOARD_KEY
+};
+
+window.GESCHICHTE_APP = {
+  loadState,
+  saveState,
+  renderApp,
+  replaceState,
+  getStorageKey,
+  isTeacherMode,
+  buildLearnerSnapshot
 };
 
 function init() {

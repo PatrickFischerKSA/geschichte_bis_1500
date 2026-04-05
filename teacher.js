@@ -329,6 +329,7 @@ function bindTeacherPage() {
   }
 
   window.addEventListener("storage", renderTeacherDashboard);
+  window.addEventListener("gesch-dashboard-updated", renderTeacherDashboard);
 
   const isUnlocked = localStorage.getItem(TEACHER_ACCESS_KEY) === "granted";
   renderTeacherAccess(isUnlocked);
