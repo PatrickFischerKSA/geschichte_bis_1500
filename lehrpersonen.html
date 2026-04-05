@@ -164,10 +164,83 @@
     </main>
   </div>
 
+  <script>
+    (function () {
+      const passwords = ["lehrer_1500", "lehrer1500", "1500"];
+      const accessKey = "geschichte_bis_1500_teacher_access";
+
+      function normalize(value) {
+        return String(value || "").trim().toLowerCase();
+      }
+
+      function accepted(value) {
+        const normalized = normalize(value);
+        return passwords.some((password) => normalize(password) === normalized);
+      }
+
+      function feedback(message, isError) {
+        const node = document.getElementById("teacher-gate-feedback");
+        if (!node) return;
+        node.textContent = message || "";
+        node.style.color = isError ? "#7f1d1d" : "";
+      }
+
+      function openTeacherShell() {
+        const gate = document.getElementById("teacher-gate");
+        const shell = document.getElementById("teacher-shell");
+        if (gate) gate.hidden = true;
+        if (shell) shell.hidden = false;
+        document.body.dataset.teacherAuthorized = "true";
+        localStorage.setItem(accessKey, "granted");
+        if (window.GESCHICHTE_APP?.renderApp && window.GESCHICHTE_APP?.loadState) {
+          window.GESCHICHTE_APP.renderApp(window.GESCHICHTE_APP.loadState());
+        }
+      }
+
+      window.__geschOpenTeacherShell = openTeacherShell;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("teacher-password-input");
+        const button = document.querySelector("[data-teacher-unlock]");
+
+        if (localStorage.getItem(accessKey) === "granted") {
+          openTeacherShell();
+        }
+
+        function tryOpen() {
+          const value = input ? input.value : "";
+          if (!value) {
+            feedback("Bitte das Lehrpersonen-Passwort eingeben.", true);
+            return;
+          }
+          if (!accepted(value)) {
+            feedback("Das Passwort stimmt nicht.", true);
+            return;
+          }
+          feedback("", false);
+          openTeacherShell();
+        }
+
+        if (button) {
+          button.addEventListener("click", tryOpen);
+        }
+
+        if (input) {
+          input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              tryOpen();
+            }
+          });
+        }
+      });
+    })();
+  </script>
+
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script src="app.js?v=20260405-9"></script>
   <script src="supabase-config.js?v=20260405-2"></script>
   <script src="supabase.js?v=20260405-2"></script>
-  <script src="teacher.js?v=20260405-15"></script>
+  <script src="teacher.js?v=20260405-16"></script>
 </body>
 </html>
