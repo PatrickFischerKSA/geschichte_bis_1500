@@ -3297,7 +3297,7 @@ function renderHarariPdfButton(detail) {
 
   return `
     <div class="source-actions">
-      <a class="btn primary" href="${getHarariViewerLink(detail)}" target="_blank" rel="noreferrer">S. ${detail.pdfPage} öffnen</a>
+      <a class="btn primary" href="${getHarariViewerLink(detail)}">S. ${detail.pdfPage} öffnen</a>
       <span class="source-locator-note">${
         isLocal
           ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"
@@ -3490,7 +3490,7 @@ function renderSourceCard(source, module) {
   const harariPdfLink = source.title === "Harari-PDF" && detail.pdfPage ? getHarariViewerLink(detail) : null;
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
-      ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
+      ? `<a href="${harariPdfLink}">${detail.locator}</a><span class="source-locator-note">${
           isHarariPdfAvailable()
             ? "Viewer mit exakter Seitenansicht"
             : "oeffnet zuerst den Harari-Viewer; dort geht es weiter in den lokalen Viewer"
