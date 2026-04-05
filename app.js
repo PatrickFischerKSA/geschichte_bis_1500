@@ -2796,6 +2796,7 @@ const sourceDetails = {
     badge: "S. 155–161 · Schrift und Bürokratie",
     locator: "Harari-PDF, S. 155 und S. 161",
     pdfPage: 155,
+    extraPdfPages: [161],
     pdfSearch: "mit der Stimme ihrer Protagonisten",
     quote: "„mit der Stimme ihrer Protagonisten“",
     thesis:
@@ -3290,6 +3291,39 @@ function getHarariReferenceLink(detail) {
   return `${HARARI_REFERENCE_VIEW_PATH}?${params.toString()}`;
 }
 
+function renderHarariActions(detail) {
+  if (!detail?.pdfPage) {
+    return "";
+  }
+
+  const actions = [
+    {
+      label: `Buchstelle S. ${detail.pdfPage} öffnen`,
+      href: getHarariReferenceLink(detail)
+    }
+  ];
+
+  if (Array.isArray(detail.extraPdfPages)) {
+    detail.extraPdfPages.forEach((page) => {
+      actions.push({
+        label: `Zusatzstelle S. ${page} öffnen`,
+        href: `${HARARI_REFERENCE_VIEW_PATH}?page=${encodeURIComponent(page)}`
+      });
+    });
+  }
+
+  return `
+    <div class="source-actions">
+      ${actions
+        .map(
+          (action) =>
+            `<a class="btn ghost" href="${action.href}">${action.label}</a>`
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function renderRelevantItems(items, label) {
   if (!items?.length) {
     return "";
@@ -3491,6 +3525,7 @@ function renderSourceCard(source, module) {
         </div>
       </header>
       ${locatorText ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
+      ${isHarari ? renderHarariActions(detail) : ""}
       ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
