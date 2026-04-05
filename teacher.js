@@ -1,4 +1,9 @@
-const TEACHER_PASSWORD = "lehrer_1500";
+const TEACHER_PASSWORDS = [
+  "lehrer_1500",
+  "1500",
+  "lehrer1500",
+  "lehrpersonen_1500"
+];
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
@@ -30,6 +35,20 @@ function normalizeTeacherName(name) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function normalizeTeacherPassword(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "");
+}
+
+function isAcceptedTeacherPassword(value) {
+  const normalizedValue = normalizeTeacherPassword(value);
+  return TEACHER_PASSWORDS.some(
+    (password) => normalizeTeacherPassword(password) === normalizedValue
+  );
 }
 
 function formatTeacherDate(isoString) {
@@ -231,7 +250,7 @@ function unlockTeacherAccess() {
   const feedback = document.getElementById("teacher-gate-feedback");
   const value = String(passwordInput?.value || "").trim();
 
-  if (value !== TEACHER_PASSWORD) {
+  if (!isAcceptedTeacherPassword(value)) {
     if (feedback) {
       feedback.textContent = "Das Passwort stimmt noch nicht. Bitte versuche es erneut.";
     }
