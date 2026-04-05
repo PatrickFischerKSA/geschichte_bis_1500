@@ -3287,15 +3287,6 @@ function getHarariReferenceLink(detail) {
   if (detail.pdfPage) {
     params.set("page", String(detail.pdfPage));
   }
-  if (detail.pdfSearch) {
-    params.set("search", detail.pdfSearch);
-  }
-  if (detail.locator) {
-    params.set("label", detail.locator);
-  }
-  if (detail.quote) {
-    params.set("quote", detail.quote);
-  }
   return `${HARARI_REFERENCE_VIEW_PATH}?${params.toString()}`;
 }
 

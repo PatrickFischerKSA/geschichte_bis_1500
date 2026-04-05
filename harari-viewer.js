@@ -1,9 +1,7 @@
 (function () {
   const params = new URLSearchParams(window.location.search);
   const page = Number(params.get("page") || "1");
-  const label = params.get("label") || `Harari-PDF, S. ${page}`;
-  const quote = params.get("quote") || "";
-  const search = params.get("search") || "";
+  const label = `Harari-Stelle, S. ${page}`;
   const localParams = new URLSearchParams(window.location.search);
   const isLocal =
     window.location.hostname === "127.0.0.1" ||
@@ -15,10 +13,8 @@
 
   document.getElementById("title").textContent = label;
   document.getElementById("page-pill").textContent = `Zielseite ${page}`;
-  document.getElementById("quote-note").textContent = quote ? `Kurzes Zitat: ${quote}` : "";
-  document.getElementById("search-note").textContent = search
-    ? `Gesuchte Passage: ${search}`
-    : "Keine Suchphrase übergeben.";
+  document.getElementById("quote-note").textContent = "";
+  document.getElementById("search-note").textContent = "";
   document.getElementById("local-link").href = localViewerUrl;
   document.getElementById("local-link").target = "_self";
 
