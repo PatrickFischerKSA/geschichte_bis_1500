@@ -1,4 +1,5 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
+const HARARI_REFERENCE_VIEW_PATH = "harari-viewer.html";
 
 const sourceCatalog = [
   {
@@ -3281,6 +3282,23 @@ function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
 
+function getHarariReferenceLink(detail) {
+  const params = new URLSearchParams();
+  if (detail.pdfPage) {
+    params.set("page", String(detail.pdfPage));
+  }
+  if (detail.pdfSearch) {
+    params.set("search", detail.pdfSearch);
+  }
+  if (detail.locator) {
+    params.set("label", detail.locator);
+  }
+  if (detail.quote) {
+    params.set("quote", detail.quote);
+  }
+  return `${HARARI_REFERENCE_VIEW_PATH}?${params.toString()}`;
+}
+
 function renderRelevantItems(items, label) {
   if (!items?.length) {
     return "";
@@ -3463,9 +3481,13 @@ function renderSourceCard(source, module) {
   const passage = cleanStudentText(detail.passage || source.extracted);
   const isHarari = source.title === "Harari-PDF";
   const titleLabel = isHarari ? "Harari-Stelle" : source.title;
-  const locatorText = isHarari
+  const locatorTextRaw = isHarari
     ? String(detail.locator || "").replace(/^Harari-PDF,\s*/i, "Yuval Noah Harari, Eine kurze Geschichte der Menschheit, ")
     : detail.locator || "";
+  const locatorText =
+    isHarari && detail.pdfPage
+      ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
+      : locatorTextRaw;
   const locatorLabel = isHarari ? "Buchstelle" : "Verortung";
   const passageLabel = isHarari ? "Paraphrase der Passage" : "Konkrete Passage";
 
