@@ -266,6 +266,15 @@ function setTeacherFeedback(message, isError = false) {
   feedback.style.color = isError ? "#7f1d1d" : "";
 }
 
+function setTeacherDashboardFeedback(message, isError = false) {
+  const feedback = document.getElementById("teacher-dashboard-feedback");
+  if (!feedback) {
+    return;
+  }
+  feedback.textContent = message || "";
+  feedback.style.color = isError ? "#7f1d1d" : "";
+}
+
 function setTeacherAuthorized(value) {
   document.body.dataset.teacherAuthorized = value ? "true" : "false";
 }
@@ -349,6 +358,7 @@ function saveTeacherRosterFromInput() {
 
   saveTeacherRoster(names);
   renderTeacherDashboard();
+  setTeacherDashboardFeedback(`Klassenliste gespeichert: ${names.length} Einträge.`, false);
 }
 
 function clearTeacherPreviewState() {
@@ -372,26 +382,7 @@ async function initTeacherAuthState() {
 }
 
 function bindTeacherPage() {
-  const printButton = document.querySelector("[data-print-teacher]");
-  const unlockButton = document.querySelector("[data-teacher-unlock]");
   const passwordInput = document.getElementById("teacher-password-input");
-  const lockButton = document.querySelector("[data-teacher-lock]");
-  const saveRosterButton = document.querySelector("[data-save-roster]");
-  const refreshDashboardButton = document.querySelector("[data-refresh-dashboard]");
-  const clearPreviewButton = document.querySelector("[data-clear-preview]");
-
-  if (printButton) {
-    printButton.addEventListener("click", () => window.print());
-  }
-
-  if (unlockButton) {
-    unlockButton.addEventListener("click", () => {
-      unlockTeacherAccess().catch((error) => {
-        console.error(error);
-        setTeacherFeedback(error.message, true);
-      });
-    });
-  }
 
   [passwordInput].forEach((input) => {
     if (!input) {
@@ -408,32 +399,54 @@ function bindTeacherPage() {
     });
   });
 
-  if (lockButton) {
-    lockButton.addEventListener("click", () => {
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("button, a");
+    if (!target) {
+      return;
+    }
+
+    if (target.matches("[data-teacher-unlock]")) {
+      unlockTeacherAccess().catch((error) => {
+        console.error(error);
+        setTeacherFeedback(error.message, true);
+      });
+      return;
+    }
+
+    if (target.matches("[data-teacher-lock]")) {
       lockTeacherAccess().catch((error) => {
         console.error(error);
       });
-    });
-  }
+      return;
+    }
 
-  if (saveRosterButton) {
-    saveRosterButton.addEventListener("click", saveTeacherRosterFromInput);
-  }
+    if (target.matches("[data-print-teacher]")) {
+      window.print();
+      return;
+    }
 
-  if (refreshDashboardButton) {
-    refreshDashboardButton.addEventListener("click", () => {
+    if (target.matches("[data-save-roster]")) {
+      saveTeacherRosterFromInput();
+      return;
+    }
+
+    if (target.matches("[data-refresh-dashboard]")) {
       renderTeacherDashboard();
+      setTeacherDashboardFeedback("Dashboard lokal aktualisiert.", false);
       if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
         window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((error) => {
           console.error(error);
+          setTeacherDashboardFeedback(error.message, true);
         });
       }
-    });
-  }
+      return;
+    }
 
-  if (clearPreviewButton) {
-    clearPreviewButton.addEventListener("click", clearTeacherPreviewState);
-  }
+    if (target.matches("[data-clear-preview]")) {
+      setTeacherDashboardFeedback("Lehrpersonen-Vorschau wird zurückgesetzt …", false);
+      clearTeacherPreviewState();
+    }
+  });
 
   window.addEventListener("storage", renderTeacherDashboard);
   window.addEventListener("gesch-dashboard-updated", renderTeacherDashboard);
