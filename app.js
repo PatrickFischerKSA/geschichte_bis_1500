@@ -1,5 +1,5 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
-const HARARI_REFERENCE_VIEW_PATH = "harari-viewer.html";
+const HARARI_REFERENCE_VIEW_PATH = "http://127.0.0.1:4173/harari-viewer.html";
 
 const sourceCatalog = [
   {
