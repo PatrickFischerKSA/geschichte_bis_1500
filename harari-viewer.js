@@ -20,6 +20,7 @@
     ? `Gesuchte Passage: ${search}`
     : "Keine Suchphrase übergeben.";
   document.getElementById("local-link").href = localViewerUrl;
+  document.getElementById("local-link").target = "_self";
 
   const status = document.getElementById("status");
   const canvas = document.getElementById("pdf-canvas");
