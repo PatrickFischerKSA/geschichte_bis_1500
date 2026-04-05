@@ -495,6 +495,20 @@ p {
   text-transform: uppercase;
 }
 
+.master-timeline-epoch {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(230, 225, 214, 0.9);
+}
+
 .master-timeline-card {
   margin-top: 14px;
   display: grid;
@@ -524,6 +538,20 @@ p {
   gap: 8px;
 }
 
+.master-timeline-jumps {
+  display: grid;
+  gap: 10px;
+}
+
+.master-timeline-jump-label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
 .master-timeline-modules a {
   display: inline-flex;
   align-items: center;
@@ -540,6 +568,134 @@ p {
 .master-timeline-modules a:hover {
   border-color: rgba(31, 109, 102, 0.34);
   background: rgba(255, 252, 247, 0.95);
+}
+
+.master-timeline-entry.is-prehistory::after {
+  background: linear-gradient(135deg, #4f8d83, #84bda8);
+}
+
+.master-timeline-entry.is-prehistory .master-timeline-date,
+.master-timeline-entry.is-prehistory .master-timeline-epoch {
+  background: rgba(208, 234, 224, 0.96);
+  color: #1b5c55;
+}
+
+.master-timeline-entry.is-prehistory .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(248, 255, 252, 0.97), rgba(234, 246, 240, 0.98)),
+    radial-gradient(circle at top right, rgba(79, 141, 131, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-neolithic::after {
+  background: linear-gradient(135deg, #b5813d, #d8b16e);
+}
+
+.master-timeline-entry.is-neolithic .master-timeline-date,
+.master-timeline-entry.is-neolithic .master-timeline-epoch {
+  background: rgba(246, 231, 203, 0.96);
+  color: #855413;
+}
+
+.master-timeline-entry.is-neolithic .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, 0.97), rgba(248, 238, 222, 0.98)),
+    radial-gradient(circle at top right, rgba(181, 129, 61, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-early-states::after {
+  background: linear-gradient(135deg, #955b3b, #c28a62);
+}
+
+.master-timeline-entry.is-early-states .master-timeline-date,
+.master-timeline-entry.is-early-states .master-timeline-epoch {
+  background: rgba(242, 221, 209, 0.96);
+  color: #7b3e1e;
+}
+
+.master-timeline-entry.is-early-states .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 243, 0.97), rgba(245, 228, 218, 0.98)),
+    radial-gradient(circle at top right, rgba(149, 91, 59, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-antiquity::after {
+  background: linear-gradient(135deg, #476f98, #7ea6cf);
+}
+
+.master-timeline-entry.is-antiquity .master-timeline-date,
+.master-timeline-entry.is-antiquity .master-timeline-epoch {
+  background: rgba(217, 228, 243, 0.96);
+  color: #234c74;
+}
+
+.master-timeline-entry.is-antiquity .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(247, 251, 255, 0.97), rgba(229, 238, 249, 0.98)),
+    radial-gradient(circle at top right, rgba(71, 111, 152, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-religions::after {
+  background: linear-gradient(135deg, #6a5d9d, #9b8bcf);
+}
+
+.master-timeline-entry.is-religions .master-timeline-date,
+.master-timeline-entry.is-religions .master-timeline-epoch {
+  background: rgba(229, 223, 246, 0.96);
+  color: #4d3f7b;
+}
+
+.master-timeline-entry.is-religions .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(251, 248, 255, 0.97), rgba(238, 232, 249, 0.98)),
+    radial-gradient(circle at top right, rgba(106, 93, 157, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-middle-ages::after {
+  background: linear-gradient(135deg, #705c49, #a18b74);
+}
+
+.master-timeline-entry.is-middle-ages .master-timeline-date,
+.master-timeline-entry.is-middle-ages .master-timeline-epoch {
+  background: rgba(235, 225, 214, 0.96);
+  color: #624a37;
+}
+
+.master-timeline-entry.is-middle-ages .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(253, 250, 246, 0.97), rgba(239, 230, 220, 0.98)),
+    radial-gradient(circle at top right, rgba(112, 92, 73, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-late-medieval::after {
+  background: linear-gradient(135deg, #9b3d57, #cd728b);
+}
+
+.master-timeline-entry.is-late-medieval .master-timeline-date,
+.master-timeline-entry.is-late-medieval .master-timeline-epoch {
+  background: rgba(245, 221, 229, 0.96);
+  color: #7f223d;
+}
+
+.master-timeline-entry.is-late-medieval .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 251, 0.97), rgba(247, 230, 236, 0.98)),
+    radial-gradient(circle at top right, rgba(155, 61, 87, 0.12), transparent 36%);
+}
+
+.master-timeline-entry.is-longue-duree::after {
+  background: linear-gradient(135deg, #2f6d66, #9a8748);
+}
+
+.master-timeline-entry.is-longue-duree .master-timeline-date,
+.master-timeline-entry.is-longue-duree .master-timeline-epoch {
+  background: rgba(223, 235, 228, 0.96);
+  color: #1f564f;
+}
+
+.master-timeline-entry.is-longue-duree .master-timeline-card {
+  background:
+    linear-gradient(180deg, rgba(248, 253, 250, 0.97), rgba(233, 240, 225, 0.98)),
+    radial-gradient(circle at top right, rgba(47, 109, 102, 0.12), transparent 36%);
 }
 
 .ambient-ribbon {

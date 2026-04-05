@@ -252,6 +252,7 @@ const sourceCatalog = [
 
 const masterTimeline = [
   {
+    epoch: "Frühgeschichte",
     time: "ca. 2,5 Mio. Jahre v. heute",
     title: "Frühe Menschenarten und Werkzeuge",
     body:
@@ -259,6 +260,7 @@ const masterTimeline = [
     modules: ["modul-2"]
   },
   {
+    epoch: "Frühgeschichte",
     time: "ca. 100'000–70'000 v. heute",
     title: "Frühe Sapiens ohne klaren Vorsprung",
     body:
@@ -266,6 +268,7 @@ const masterTimeline = [
     modules: ["modul-2"]
   },
   {
+    epoch: "Frühgeschichte",
     time: "ca. 70'000–30'000 v. heute",
     title: "Kognitive Revolution",
     body:
@@ -273,6 +276,7 @@ const masterTimeline = [
     modules: ["modul-3"]
   },
   {
+    epoch: "Frühgeschichte",
     time: "ca. 45'000–18'000 v. heute",
     title: "Migration, Australien und Amerika",
     body:
@@ -280,6 +284,7 @@ const masterTimeline = [
     modules: ["modul-2", "modul-4", "modul-12"]
   },
   {
+    epoch: "Frühgeschichte",
     time: "Vor 10'000 v. Chr.",
     title: "Jäger und Sammler als Normalform",
     body:
@@ -287,6 +292,7 @@ const masterTimeline = [
     modules: ["modul-4"]
   },
   {
+    epoch: "Neolithikum",
     time: "ab ca. 10'000 v. Chr.",
     title: "Landwirtschaft und Sesshaftigkeit",
     body:
@@ -294,6 +300,7 @@ const masterTimeline = [
     modules: ["modul-5"]
   },
   {
+    epoch: "Frühe Hochkulturen",
     time: "ab ca. 3500–3000 v. Chr.",
     title: "Schrift, Listen und frühe Staaten",
     body:
@@ -301,6 +308,7 @@ const masterTimeline = [
     modules: ["modul-6"]
   },
   {
+    epoch: "Frühe Hochkulturen",
     time: "ca. 2250–221 v. Chr.",
     title: "Großreiche und Bürokratien",
     body:
@@ -308,6 +316,7 @@ const masterTimeline = [
     modules: ["modul-6", "modul-7"]
   },
   {
+    epoch: "Antike",
     time: "1. Jh. v. Chr. bis 2. Jh. n. Chr.",
     title: "Rom als Raumordnung",
     body:
@@ -315,6 +324,7 @@ const masterTimeline = [
     modules: ["modul-7", "modul-8"]
   },
   {
+    epoch: "Antike bis Frühmittelalter",
     time: "1. Jahrtausend v. Chr. bis 7. Jh. n. Chr.",
     title: "Weltreligionen und religiöse Ordnung",
     body:
@@ -322,6 +332,7 @@ const masterTimeline = [
     modules: ["modul-9"]
   },
   {
+    epoch: "Mittelalter",
     time: "ca. 800–1300",
     title: "Mittelalterliche Herrschaftsräume",
     body:
@@ -329,6 +340,7 @@ const masterTimeline = [
     modules: ["modul-10"]
   },
   {
+    epoch: "Mittelalter",
     time: "ca. 1000–1500",
     title: "Städte, Märkte, Pilger und Kreuzzüge",
     body:
@@ -336,6 +348,7 @@ const masterTimeline = [
     modules: ["modul-11"]
   },
   {
+    epoch: "Spätes Mittelalter",
     time: "1491/1492",
     title: "Amerika vor Kolumbus und der Einschnitt von 1492",
     body:
@@ -343,6 +356,7 @@ const masterTimeline = [
     modules: ["modul-12"]
   },
   {
+    epoch: "Langzeitbilanz",
     time: "um 1500 und darüber hinaus",
     title: "Langzeitfolgen und Anthropozän",
     body:
@@ -4288,6 +4302,17 @@ function renderMasterTimeline() {
     return;
   }
 
+  const epochClassMap = {
+    Frühgeschichte: "is-prehistory",
+    Neolithikum: "is-neolithic",
+    "Frühe Hochkulturen": "is-early-states",
+    Antike: "is-antiquity",
+    "Antike bis Frühmittelalter": "is-religions",
+    Mittelalter: "is-middle-ages",
+    "Spätes Mittelalter": "is-late-medieval",
+    Langzeitbilanz: "is-longue-duree"
+  };
+
   container.innerHTML = masterTimeline
     .map((entry) => {
       const moduleLinks = entry.modules
@@ -4296,17 +4321,21 @@ function renderMasterTimeline() {
           if (!module) {
             return "";
           }
-          return `<a href="#${module.id}">Modul ${module.number}: ${module.title}</a>`;
+          return `<a href="#${module.id}" class="timeline-jump-link">Zu Modul ${module.number}: ${module.title}</a>`;
         })
         .join("");
 
       return `
-        <article class="master-timeline-entry">
+        <article class="master-timeline-entry ${epochClassMap[entry.epoch] || ""}">
           <span class="master-timeline-date">${entry.time}</span>
           <div class="master-timeline-card">
+            <span class="master-timeline-epoch">${entry.epoch}</span>
             <h3>${entry.title}</h3>
             <p>${entry.body}</p>
-            <div class="master-timeline-modules">${moduleLinks}</div>
+            <div class="master-timeline-jumps">
+              <p class="master-timeline-jump-label">Sprungmarken in die Einheit</p>
+              <div class="master-timeline-modules">${moduleLinks}</div>
+            </div>
           </div>
         </article>
       `;
