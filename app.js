@@ -3462,18 +3462,22 @@ function renderSourceCard(source, module) {
   const badge = detail.badge || source.meta;
   const passage = cleanStudentText(detail.passage || source.extracted);
   const isHarari = source.title === "Harari-PDF";
-  const locatorMarkup = detail.locator || "";
-  const passageLabel = isHarari ? "Passage im Zusammenhang" : "Konkrete Passage";
+  const titleLabel = isHarari ? "Harari-Stelle" : source.title;
+  const locatorText = isHarari
+    ? String(detail.locator || "").replace(/^Harari-PDF,\s*/i, "Yuval Noah Harari, Eine kurze Geschichte der Menschheit, ")
+    : detail.locator || "";
+  const locatorLabel = isHarari ? "Buchstelle" : "Verortung";
+  const passageLabel = isHarari ? "Paraphrase der Passage" : "Konkrete Passage";
 
   return `
     <article class="source-card">
       <header>
         <div>
-          <h4>${source.title}</h4>
+          <h4>${titleLabel}</h4>
           <span class="source-meta">${badge}</span>
         </div>
       </header>
-      ${detail.locator ? `<p><strong>Verortung:</strong> ${locatorMarkup}</p>` : ""}
+      ${locatorText ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
       ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
