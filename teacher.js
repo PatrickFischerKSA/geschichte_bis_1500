@@ -4,6 +4,7 @@ const TEACHER_PASSWORDS = [
   "lehrer1500",
   "lehrpersonen_1500"
 ];
+const BYPASS_LOCAL_TEACHER_GATE = true;
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
@@ -237,15 +238,22 @@ function renderTeacherAccess(isUnlocked) {
     return;
   }
 
-  gate.hidden = isUnlocked;
-  shell.hidden = !isUnlocked;
+  const effectiveUnlocked = BYPASS_LOCAL_TEACHER_GATE ? true : isUnlocked;
+  gate.hidden = effectiveUnlocked;
+  shell.hidden = !effectiveUnlocked;
 
-  if (isUnlocked) {
+  if (effectiveUnlocked) {
     renderTeacherDashboard();
   }
 }
 
 function unlockTeacherAccess() {
+  if (BYPASS_LOCAL_TEACHER_GATE) {
+    localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
+    renderTeacherAccess(true);
+    return;
+  }
+
   const passwordInput = document.getElementById("teacher-password-input");
   const feedback = document.getElementById("teacher-gate-feedback");
   const value = String(passwordInput?.value || "").trim();
@@ -269,6 +277,11 @@ function unlockTeacherAccess() {
 }
 
 function lockTeacherAccess() {
+  if (BYPASS_LOCAL_TEACHER_GATE) {
+    renderTeacherAccess(true);
+    return;
+  }
+
   localStorage.removeItem(TEACHER_ACCESS_KEY);
   renderTeacherAccess(false);
 
@@ -350,7 +363,12 @@ function bindTeacherPage() {
   window.addEventListener("storage", renderTeacherDashboard);
   window.addEventListener("gesch-dashboard-updated", renderTeacherDashboard);
 
-  const isUnlocked = localStorage.getItem(TEACHER_ACCESS_KEY) === "granted";
+  if (BYPASS_LOCAL_TEACHER_GATE) {
+    localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
+  }
+
+  const isUnlocked =
+    BYPASS_LOCAL_TEACHER_GATE || localStorage.getItem(TEACHER_ACCESS_KEY) === "granted";
   renderTeacherAccess(isUnlocked);
 
   if (!isUnlocked && passwordInput) {
