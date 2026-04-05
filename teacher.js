@@ -1,4 +1,8 @@
-const TEACHER_PASSWORD = "lehrer_1500";
+const TEACHER_PASSWORDS = [
+  "lehrer_1500",
+  "lehrer1500",
+  "1500"
+];
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
@@ -223,6 +227,17 @@ function setTeacherAuthorized(value) {
   document.body.dataset.teacherAuthorized = value ? "true" : "false";
 }
 
+function normalizeTeacherPassword(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function isAcceptedTeacherPassword(value) {
+  const normalized = normalizeTeacherPassword(value);
+  return TEACHER_PASSWORDS.some((password) => normalizeTeacherPassword(password) === normalized);
+}
+
 function renderTeacherAccess(isUnlocked) {
   const gate = document.getElementById("teacher-gate");
   const shell = document.getElementById("teacher-shell");
@@ -257,7 +272,7 @@ async function unlockTeacherAccess() {
     return;
   }
 
-  if (password !== TEACHER_PASSWORD) {
+  if (!isAcceptedTeacherPassword(password)) {
     setTeacherFeedback("Das Passwort stimmt nicht.", true);
     return;
   }
