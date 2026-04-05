@@ -4,12 +4,14 @@
   const label = params.get("label") || `Harari-PDF, S. ${page}`;
   const quote = params.get("quote") || "";
   const search = params.get("search") || "";
+  const localParams = new URLSearchParams(window.location.search);
   const isLocal =
     window.location.hostname === "127.0.0.1" ||
     window.location.hostname === "localhost" ||
     window.location.protocol === "file:";
 
   const pdfUrl = "assets/local/harari.pdf";
+  const localViewerUrl = `http://127.0.0.1:4173/harari-viewer.html?${localParams.toString()}`;
 
   document.getElementById("title").textContent = label;
   document.getElementById("page-pill").textContent = `Zielseite ${page}`;
@@ -17,10 +19,12 @@
   document.getElementById("search-note").textContent = search
     ? `Gesuchte Passage: ${search}`
     : "Keine Suchphrase übergeben.";
+  document.getElementById("local-link").href = localViewerUrl;
 
   const status = document.getElementById("status");
   const canvas = document.getElementById("pdf-canvas");
   const context = canvas.getContext("2d");
+  const localLink = document.getElementById("local-link");
 
   function setError(message) {
     status.textContent = message;
@@ -28,9 +32,13 @@
   }
 
   if (!isLocal) {
-    setError("Diese Ansicht funktioniert nur in der lokalen Vorschau unter 127.0.0.1 oder localhost.");
+    status.textContent = "Diese GitHub-Seite kann die lokale Harari-PDF nicht direkt laden.";
+    document.getElementById("search-note").textContent =
+      "Öffne den lokalen Viewer über den Button oben. Dort wird die genaue Seite gerendert, sobald die lokale Vorschau unter 127.0.0.1:4173 läuft.";
     return;
   }
+
+  localLink.style.display = "none";
 
   if (typeof window.pdfjsLib === "undefined") {
     setError("PDF.js konnte nicht geladen werden.");

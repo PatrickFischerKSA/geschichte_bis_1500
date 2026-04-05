@@ -1,6 +1,5 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 const HARARI_VIEWER_PATH = "harari-viewer.html";
-const HARARI_LOCAL_VIEWER_BASE = "http://127.0.0.1:4173/harari-viewer.html";
 
 const sourceCatalog = [
   {
@@ -3264,7 +3263,7 @@ function getSourceDetail(moduleId, source) {
 }
 
 function getHarariViewerLink(detail) {
-  const base = isHarariPdfAvailable() ? HARARI_VIEWER_PATH : HARARI_LOCAL_VIEWER_BASE;
+  const base = HARARI_VIEWER_PATH;
   const params = new URLSearchParams();
   if (detail.pdfPage) {
     params.set("page", String(detail.pdfPage));
@@ -3302,7 +3301,7 @@ function renderHarariPdfButton(detail) {
       <span class="source-locator-note">${
         isLocal
           ? "oeffnet einen eigenen Viewer und rendert die exakte Zielseite"
-          : "oeffnet deine lokale Vorschau unter 127.0.0.1:4173 und rendert dort die exakte Zielseite"
+          : "oeffnet zuerst den Harari-Viewer; dort fuehrt ein eigener Button in den lokalen Viewer unter 127.0.0.1:4173"
       }</span>
     </div>
   `;
@@ -3492,7 +3491,9 @@ function renderSourceCard(source, module) {
   const locatorMarkup =
     source.title === "Harari-PDF" && detail.pdfPage && harariPdfLink
       ? `<a href="${harariPdfLink}" target="_blank" rel="noreferrer">${detail.locator}</a><span class="source-locator-note">${
-          isHarariPdfAvailable() ? "Viewer mit exakter Seitenansicht" : "oeffnet den lokalen Viewer unter 127.0.0.1:4173"
+          isHarariPdfAvailable()
+            ? "Viewer mit exakter Seitenansicht"
+            : "oeffnet zuerst den Harari-Viewer; dort geht es weiter in den lokalen Viewer"
         }</span>`
       : detail.locator || "";
 
