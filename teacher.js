@@ -1,14 +1,7 @@
+const TEACHER_PASSWORD = "lehrer_1500";
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
-
-let teacherClient = null;
-let teacherSession = null;
-let teacherProfile = null;
-
-function teacherConfigReady() {
-  return Boolean(window.SUPABASE_CONFIG?.url && window.SUPABASE_CONFIG?.anonKey && window.supabase?.createClient);
-}
 
 function loadTeacherRoster() {
   try {
@@ -253,54 +246,19 @@ function renderTeacherAccess(isUnlocked) {
 }
 
 async function loadTeacherProfile() {
-  if (!teacherClient || !teacherSession?.user) {
-    teacherProfile = null;
-    return null;
-  }
-
-  const { data, error } = await teacherClient
-    .from("profiles")
-    .select("id, email, full_name, class_name, role")
-    .eq("id", teacherSession.user.id)
-    .single();
-
-  if (error) {
-    throw error;
-  }
-
-  teacherProfile = data;
-  return data;
+  return null;
 }
 
 async function unlockTeacherAccess() {
-  if (!teacherConfigReady()) {
-    setTeacherFeedback("Supabase ist noch nicht konfiguriert. Ohne URL, Anon-Key und Teacher-Rolle bleibt diese Ansicht gesperrt.", true);
-    return;
-  }
-
-  const email = String(document.getElementById("teacher-email-input")?.value || "").trim();
   const password = String(document.getElementById("teacher-password-input")?.value || "");
 
-  if (!email || !password) {
-    setTeacherFeedback("Bitte E-Mail und Passwort des Lehrpersonenkontos eintragen.", true);
+  if (!password) {
+    setTeacherFeedback("Bitte das Lehrpersonen-Passwort eingeben.", true);
     return;
   }
 
-  const { error } = await teacherClient.auth.signInWithPassword({ email, password });
-  if (error) {
-    setTeacherFeedback(error.message, true);
-    return;
-  }
-
-  const { data } = await teacherClient.auth.getSession();
-  teacherSession = data.session;
-  await loadTeacherProfile();
-
-  if (teacherProfile?.role !== "teacher") {
-    await teacherClient.auth.signOut();
-    teacherSession = null;
-    teacherProfile = null;
-    setTeacherFeedback("Dieses Konto ist nicht als Lehrperson freigeschaltet. Setze in Supabase in der Tabelle profiles die role auf 'teacher'.", true);
+  if (password !== TEACHER_PASSWORD) {
+    setTeacherFeedback("Das Passwort stimmt nicht.", true);
     return;
   }
 
@@ -316,11 +274,6 @@ async function unlockTeacherAccess() {
 
 async function lockTeacherAccess() {
   localStorage.removeItem(TEACHER_ACCESS_KEY);
-  if (teacherClient) {
-    await teacherClient.auth.signOut();
-  }
-  teacherSession = null;
-  teacherProfile = null;
   renderTeacherAccess(false);
   setTeacherFeedback("");
 }
@@ -346,34 +299,7 @@ function clearTeacherPreviewState() {
 }
 
 async function initTeacherAuthState() {
-  if (!teacherConfigReady()) {
-    setTeacherFeedback("Supabase ist noch nicht konfiguriert. Trage zuerst URL und Anon-Key ein und richte die Teacher-Rolle ein.", true);
-    renderTeacherAccess(false);
-    return;
-  }
-
-  teacherClient = window.supabase.createClient(
-    window.SUPABASE_CONFIG.url,
-    window.SUPABASE_CONFIG.anonKey
-  );
-
-  const { data } = await teacherClient.auth.getSession();
-  teacherSession = data.session;
-
-  if (!teacherSession?.user) {
-    renderTeacherAccess(false);
-    return;
-  }
-
-  try {
-    await loadTeacherProfile();
-  } catch (error) {
-    console.error(error);
-    renderTeacherAccess(false);
-    return;
-  }
-
-  if (teacherProfile?.role === "teacher") {
+  if (localStorage.getItem(TEACHER_ACCESS_KEY) === "granted") {
     renderTeacherAccess(true);
     if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
       window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((err) => {
@@ -384,13 +310,12 @@ async function initTeacherAuthState() {
   }
 
   renderTeacherAccess(false);
-  setTeacherFeedback("Dieses Konto ist nicht als Lehrperson markiert.", true);
+  setTeacherFeedback("");
 }
 
 function bindTeacherPage() {
   const printButton = document.querySelector("[data-print-teacher]");
   const unlockButton = document.querySelector("[data-teacher-unlock]");
-  const emailInput = document.getElementById("teacher-email-input");
   const passwordInput = document.getElementById("teacher-password-input");
   const lockButton = document.querySelector("[data-teacher-lock]");
   const saveRosterButton = document.querySelector("[data-save-roster]");
@@ -410,7 +335,7 @@ function bindTeacherPage() {
     });
   }
 
-  [emailInput, passwordInput].forEach((input) => {
+  [passwordInput].forEach((input) => {
     if (!input) {
       return;
     }

@@ -15,19 +15,15 @@
       <h1>Lehrpersonen-Version mit geschützter Vollansicht</h1>
       <p>
         Diese Ansicht enthält sensible Musterlösungen und die vollständige offene Kursstruktur.
-        Sie wird deshalb nicht mehr über ein lokales Browser-Passwort, sondern nur noch über ein
-        Supabase-Konto mit Lehrpersonenrolle freigegeben.
+        Sie wird über ein separates Lehrpersonen-Passwort freigegeben. Die Supabase-Anmeldung bleibt
+        zusätzlich im Dashboard für das Cloud-Tracking der Lernstände verfügbar.
       </p>
-      <label class="welcome-name teacher-password-field">
-        <strong>E-Mail</strong>
-        <input id="teacher-email-input" type="email" placeholder="lehrperson@schule.ch" />
-      </label>
       <label class="welcome-name teacher-password-field">
         <strong>Passwort</strong>
         <input id="teacher-password-input" type="password" placeholder="Passwort eingeben" />
       </label>
       <div class="welcome-actions">
-        <button class="btn primary" type="button" data-teacher-unlock>Mit Lehrkonto öffnen</button>
+        <button class="btn primary" type="button" data-teacher-unlock>Mit Passwort öffnen</button>
         <a class="btn ghost" href="index.html">Zur Lernumgebung</a>
       </div>
       <p id="teacher-gate-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
@@ -172,6 +168,6 @@
   <script src="app.js?v=20260405-9"></script>
   <script src="supabase-config.js?v=20260405-2"></script>
   <script src="supabase.js?v=20260405-2"></script>
-  <script src="teacher.js?v=20260405-13"></script>
+  <script src="teacher.js?v=20260405-14"></script>
 </body>
 </html>
