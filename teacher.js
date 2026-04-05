@@ -1,13 +1,14 @@
-const TEACHER_PASSWORDS = [
-  "lehrer_1500",
-  "1500",
-  "lehrer1500",
-  "lehrpersonen_1500"
-];
-const BYPASS_LOCAL_TEACHER_GATE = true;
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
+
+let teacherClient = null;
+let teacherSession = null;
+let teacherProfile = null;
+
+function teacherConfigReady() {
+  return Boolean(window.SUPABASE_CONFIG?.url && window.SUPABASE_CONFIG?.anonKey && window.supabase?.createClient);
+}
 
 function loadTeacherRoster() {
   try {
@@ -36,20 +37,6 @@ function normalizeTeacherName(name) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-}
-
-function normalizeTeacherPassword(value) {
-  return String(value || "")
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "");
-}
-
-function isAcceptedTeacherPassword(value) {
-  const normalizedValue = normalizeTeacherPassword(value);
-  return TEACHER_PASSWORDS.some(
-    (password) => normalizeTeacherPassword(password) === normalizedValue
-  );
 }
 
 function formatTeacherDate(isoString) {
@@ -168,7 +155,7 @@ function renderTeacherDashboard() {
     table.innerHTML = `
       <div class="summary-item">
         <span class="fact-label">Noch keine Klassenliste</span>
-        <p>Trage oben Namen ein oder öffne die Lernumgebung mit einem Lernenden-Namen, damit erste Datensätze erscheinen.</p>
+        <p>Trage oben Namen ein oder warte auf erste synchronisierte Lernstände.</p>
       </div>
     `;
     return;
@@ -230,6 +217,19 @@ function renderTeacherDashboard() {
   `;
 }
 
+function setTeacherFeedback(message, isError = false) {
+  const feedback = document.getElementById("teacher-gate-feedback");
+  if (!feedback) {
+    return;
+  }
+  feedback.textContent = message || "";
+  feedback.style.color = isError ? "#7f1d1d" : "";
+}
+
+function setTeacherAuthorized(value) {
+  document.body.dataset.teacherAuthorized = value ? "true" : "false";
+}
+
 function renderTeacherAccess(isUnlocked) {
   const gate = document.getElementById("teacher-gate");
   const shell = document.getElementById("teacher-shell");
@@ -238,64 +238,91 @@ function renderTeacherAccess(isUnlocked) {
     return;
   }
 
-  const effectiveUnlocked = BYPASS_LOCAL_TEACHER_GATE ? true : isUnlocked;
-  gate.hidden = effectiveUnlocked;
-  shell.hidden = !effectiveUnlocked;
+  gate.hidden = isUnlocked;
+  shell.hidden = !isUnlocked;
 
-  if (effectiveUnlocked) {
+  if (isUnlocked) {
+    setTeacherAuthorized(true);
+    if (window.GESCHICHTE_APP?.renderApp && window.GESCHICHTE_APP?.loadState) {
+      window.GESCHICHTE_APP.renderApp(window.GESCHICHTE_APP.loadState());
+    }
     renderTeacherDashboard();
+  } else {
+    setTeacherAuthorized(false);
   }
 }
 
-function unlockTeacherAccess() {
-  if (BYPASS_LOCAL_TEACHER_GATE) {
-    localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
-    renderTeacherAccess(true);
+async function loadTeacherProfile() {
+  if (!teacherClient || !teacherSession?.user) {
+    teacherProfile = null;
+    return null;
+  }
+
+  const { data, error } = await teacherClient
+    .from("profiles")
+    .select("id, email, full_name, class_name, role")
+    .eq("id", teacherSession.user.id)
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  teacherProfile = data;
+  return data;
+}
+
+async function unlockTeacherAccess() {
+  if (!teacherConfigReady()) {
+    setTeacherFeedback("Supabase ist noch nicht konfiguriert. Ohne URL, Anon-Key und Teacher-Rolle bleibt diese Ansicht gesperrt.", true);
     return;
   }
 
-  const passwordInput = document.getElementById("teacher-password-input");
-  const feedback = document.getElementById("teacher-gate-feedback");
-  const value = String(passwordInput?.value || "").trim();
+  const email = String(document.getElementById("teacher-email-input")?.value || "").trim();
+  const password = String(document.getElementById("teacher-password-input")?.value || "");
 
-  if (!isAcceptedTeacherPassword(value)) {
-    if (feedback) {
-      feedback.textContent = "Das Passwort stimmt noch nicht. Bitte versuche es erneut.";
-    }
-    if (passwordInput) {
-      passwordInput.focus();
-      passwordInput.select();
-    }
+  if (!email || !password) {
+    setTeacherFeedback("Bitte E-Mail und Passwort des Lehrpersonenkontos eintragen.", true);
+    return;
+  }
+
+  const { error } = await teacherClient.auth.signInWithPassword({ email, password });
+  if (error) {
+    setTeacherFeedback(error.message, true);
+    return;
+  }
+
+  const { data } = await teacherClient.auth.getSession();
+  teacherSession = data.session;
+  await loadTeacherProfile();
+
+  if (teacherProfile?.role !== "teacher") {
+    await teacherClient.auth.signOut();
+    teacherSession = null;
+    teacherProfile = null;
+    setTeacherFeedback("Dieses Konto ist nicht als Lehrperson freigeschaltet. Setze in Supabase in der Tabelle profiles die role auf 'teacher'.", true);
     return;
   }
 
   localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
-  if (feedback) {
-    feedback.textContent = "";
-  }
+  setTeacherFeedback("");
   renderTeacherAccess(true);
+  if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
+    window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((err) => {
+      console.error(err);
+    });
+  }
 }
 
-function lockTeacherAccess() {
-  if (BYPASS_LOCAL_TEACHER_GATE) {
-    renderTeacherAccess(true);
-    return;
-  }
-
+async function lockTeacherAccess() {
   localStorage.removeItem(TEACHER_ACCESS_KEY);
+  if (teacherClient) {
+    await teacherClient.auth.signOut();
+  }
+  teacherSession = null;
+  teacherProfile = null;
   renderTeacherAccess(false);
-
-  const passwordInput = document.getElementById("teacher-password-input");
-  const feedback = document.getElementById("teacher-gate-feedback");
-
-  if (passwordInput) {
-    passwordInput.value = "";
-    passwordInput.focus();
-  }
-
-  if (feedback) {
-    feedback.textContent = "";
-  }
+  setTeacherFeedback("");
 }
 
 function saveTeacherRosterFromInput() {
@@ -318,9 +345,52 @@ function clearTeacherPreviewState() {
   window.location.reload();
 }
 
+async function initTeacherAuthState() {
+  if (!teacherConfigReady()) {
+    setTeacherFeedback("Supabase ist noch nicht konfiguriert. Trage zuerst URL und Anon-Key ein und richte die Teacher-Rolle ein.", true);
+    renderTeacherAccess(false);
+    return;
+  }
+
+  teacherClient = window.supabase.createClient(
+    window.SUPABASE_CONFIG.url,
+    window.SUPABASE_CONFIG.anonKey
+  );
+
+  const { data } = await teacherClient.auth.getSession();
+  teacherSession = data.session;
+
+  if (!teacherSession?.user) {
+    renderTeacherAccess(false);
+    return;
+  }
+
+  try {
+    await loadTeacherProfile();
+  } catch (error) {
+    console.error(error);
+    renderTeacherAccess(false);
+    return;
+  }
+
+  if (teacherProfile?.role === "teacher") {
+    renderTeacherAccess(true);
+    if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
+      window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((err) => {
+        console.error(err);
+      });
+    }
+    return;
+  }
+
+  renderTeacherAccess(false);
+  setTeacherFeedback("Dieses Konto ist nicht als Lehrperson markiert.", true);
+}
+
 function bindTeacherPage() {
   const printButton = document.querySelector("[data-print-teacher]");
   const unlockButton = document.querySelector("[data-teacher-unlock]");
+  const emailInput = document.getElementById("teacher-email-input");
   const passwordInput = document.getElementById("teacher-password-input");
   const lockButton = document.querySelector("[data-teacher-lock]");
   const saveRosterButton = document.querySelector("[data-save-roster]");
@@ -332,20 +402,35 @@ function bindTeacherPage() {
   }
 
   if (unlockButton) {
-    unlockButton.addEventListener("click", unlockTeacherAccess);
-  }
-
-  if (passwordInput) {
-    passwordInput.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        unlockTeacherAccess();
-      }
+    unlockButton.addEventListener("click", () => {
+      unlockTeacherAccess().catch((error) => {
+        console.error(error);
+        setTeacherFeedback(error.message, true);
+      });
     });
   }
 
+  [emailInput, passwordInput].forEach((input) => {
+    if (!input) {
+      return;
+    }
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        unlockTeacherAccess().catch((error) => {
+          console.error(error);
+          setTeacherFeedback(error.message, true);
+        });
+      }
+    });
+  });
+
   if (lockButton) {
-    lockButton.addEventListener("click", lockTeacherAccess);
+    lockButton.addEventListener("click", () => {
+      lockTeacherAccess().catch((error) => {
+        console.error(error);
+      });
+    });
   }
 
   if (saveRosterButton) {
@@ -353,7 +438,14 @@ function bindTeacherPage() {
   }
 
   if (refreshDashboardButton) {
-    refreshDashboardButton.addEventListener("click", renderTeacherDashboard);
+    refreshDashboardButton.addEventListener("click", () => {
+      renderTeacherDashboard();
+      if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
+        window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((error) => {
+          console.error(error);
+        });
+      }
+    });
   }
 
   if (clearPreviewButton) {
@@ -363,17 +455,10 @@ function bindTeacherPage() {
   window.addEventListener("storage", renderTeacherDashboard);
   window.addEventListener("gesch-dashboard-updated", renderTeacherDashboard);
 
-  if (BYPASS_LOCAL_TEACHER_GATE) {
-    localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
-  }
-
-  const isUnlocked =
-    BYPASS_LOCAL_TEACHER_GATE || localStorage.getItem(TEACHER_ACCESS_KEY) === "granted";
-  renderTeacherAccess(isUnlocked);
-
-  if (!isUnlocked && passwordInput) {
-    passwordInput.focus();
-  }
+  initTeacherAuthState().catch((error) => {
+    console.error(error);
+    setTeacherFeedback(error.message, true);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", bindTeacherPage);

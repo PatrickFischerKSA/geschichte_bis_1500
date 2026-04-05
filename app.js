@@ -3,8 +3,12 @@ const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 const TEACHER_DASHBOARD_KEY = "geschichte_bis_1500_teacher_dashboard_v1";
 const HARARI_REFERENCE_VIEW_PATH = "http://127.0.0.1:4173/harari-viewer.html";
 
-function isTeacherMode() {
+function isTeacherPage() {
   return document.body?.dataset?.mode === "teacher";
+}
+
+function isTeacherMode() {
+  return isTeacherPage() && document.body?.dataset?.teacherAuthorized === "true";
 }
 
 function getStorageKey() {
@@ -4509,6 +4513,9 @@ window.GESCHICHTE_APP = {
 
 function init() {
   if (!document.getElementById("module-list")) {
+    return;
+  }
+  if (isTeacherPage() && !isTeacherMode()) {
     return;
   }
   const state = loadState();

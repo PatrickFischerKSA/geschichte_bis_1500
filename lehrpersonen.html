@@ -12,18 +12,22 @@
   <div id="teacher-gate" class="teacher-gate">
     <div class="teacher-gate-panel">
       <p class="panel-kicker">Lehrer*innenzugang</p>
-      <h1>Lehrpersonen-Version mit offener Vollansicht</h1>
+      <h1>Lehrpersonen-Version mit geschützter Vollansicht</h1>
       <p>
-        Diese Version spiegelt die Lernumgebung strukturell, hebt aber alle Sperren auf.
-        Du kannst jedes Modul vollständig prüfen, alle Musterlösungen direkt einsehen und im
-        Dashboard die lokal erfassten Lernstände verfolgen.
+        Diese Ansicht enthält sensible Musterlösungen und die vollständige offene Kursstruktur.
+        Sie wird deshalb nicht mehr über ein lokales Browser-Passwort, sondern nur noch über ein
+        Supabase-Konto mit Lehrpersonenrolle freigegeben.
       </p>
+      <label class="welcome-name teacher-password-field">
+        <strong>E-Mail</strong>
+        <input id="teacher-email-input" type="email" placeholder="lehrperson@schule.ch" />
+      </label>
       <label class="welcome-name teacher-password-field">
         <strong>Passwort</strong>
         <input id="teacher-password-input" type="password" placeholder="Passwort eingeben" />
       </label>
       <div class="welcome-actions">
-        <button class="btn primary" type="button" data-teacher-unlock>Zugang öffnen</button>
+        <button class="btn primary" type="button" data-teacher-unlock>Mit Lehrkonto öffnen</button>
         <a class="btn ghost" href="index.html">Zur Lernumgebung</a>
       </div>
       <p id="teacher-gate-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
@@ -168,6 +172,6 @@
   <script src="app.js?v=20260405-9"></script>
   <script src="supabase-config.js?v=20260405-2"></script>
   <script src="supabase.js?v=20260405-2"></script>
-  <script src="teacher.js?v=20260405-12"></script>
+  <script src="teacher.js?v=20260405-13"></script>
 </body>
 </html>
