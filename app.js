@@ -5476,7 +5476,7 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">9. Schriftliche Sicherung</p>
+          <p class="section-kicker">9. Freischaltung des nächsten Moduls</p>
           ${renderContentCheck(module, state)}
         </section>
       </div>
