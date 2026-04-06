@@ -4391,8 +4391,8 @@ function renderSourceCard(source, module) {
     isHarari && detail.pdfPage
       ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
       : locatorTextRaw;
-  const locatorLabel = isHarari ? "Buchstelle" : "Film oder Seite";
-  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Was dieses Material konkret zeigt";
+  const locatorLabel = isHarari ? "Buchstelle" : "Historisches Beispiel";
+  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Historische Informationen";
 
   return `
     <article class="source-card">
@@ -4409,7 +4409,7 @@ function renderSourceCard(source, module) {
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>${passageLabel}:</strong> ${passage}</p>
       ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Besonders wichtige Teilthemen:")}
-      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weiterführende Materialien:")}
+      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weitere Themen auf derselben Seite:")}
     </article>
   `;
 }
@@ -4497,8 +4497,8 @@ function renderFilmFoundation(module) {
   return `
     <section class="film-foundation">
       <div class="film-foundation-head">
-        <p class="section-kicker">Filme und Materialien</p>
-        <p>Diese Filme liefern die konkreten historischen Informationen des Moduls: Lebensweisen, Herrschaftsformen, Glaubenswelten, Räume, Gegenstände und langfristige Entwicklungen.</p>
+        <p class="section-kicker">Historische Fallbeispiele</p>
+        <p>Die folgenden Filme und Seiten zeigen die Entwicklungen des Moduls an konkreten Räumen, Gegenständen, Herrschaftsformen, Glaubenswelten und Lebensweisen.</p>
       </div>
       <div class="film-grid">
         ${filmSources
@@ -4516,12 +4516,12 @@ function renderFilmFoundation(module) {
                   </div>
                   <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
                 </div>
-                ${detail.locator ? `<p><strong>Film oder Seite:</strong> ${detail.locator}</p>` : ""}
+                ${detail.locator ? `<p><strong>Beispiel:</strong> ${detail.locator}</p>` : ""}
                 ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
                 ${renderSourceFocus(detail)}
-                <p><strong>Was der Film konkret zeigt:</strong> ${passage}</p>
+                <p><strong>Historische Informationen:</strong> ${passage}</p>
                 ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Besonders wichtige Teilthemen:")}
-                ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weiterführende Materialien:")}
+                ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weitere Themen auf derselben Seite:")}
               </article>
             `;
             }
@@ -4866,7 +4866,7 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Stoff, Buchstellen und Beispiele</p>
+          <p class="section-kicker">3. Entwicklungen, Buchstellen und Beispiele</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map((source) => renderSourceCard(source, module)).join("")}
@@ -4922,8 +4922,8 @@ function renderSourceCatalog() {
           <span class="source-meta">${source.type}</span>
         </div>
       </header>
-      <p><strong>Inhaltlicher Schwerpunkt:</strong> ${cleanStudentText(source.role)}</p>
-      <p><strong>Historische Informationen:</strong> ${cleanStudentText(source.didactics)}</p>
+      <p><strong>Thema:</strong> ${cleanStudentText(source.role)}</p>
+      <p><strong>Worum es historisch geht:</strong> ${cleanStudentText(source.didactics)}</p>
       <p>
         <strong>Original:</strong>
         ${
