@@ -3677,12 +3677,12 @@ Object.entries(expandedHarariChecks).forEach(([moduleId, questions]) => {
 
 const moduleVisuals = {
   "modul-1": {
-    hero: "assets/srf/m01-anthropozaen.jpg",
-    side: "assets/srf/m01-spurensuche.jpg",
+    hero: "assets/srf/m05-pfahlbauer.jpg",
+    side: "assets/srf/m08-muenzschatz.jpg",
     kicker: "Langzeitblick",
     title: "Geschichte als Entwicklung menschlicher Ordnungen",
     text: "Das Modul klärt, dass Geschichte nicht mit Urknall oder Eiszeit beginnt, sondern dort, wo Menschen ihre Welt durch Sprache, Regeln, Technik, Erinnerung und gemeinsame Vorstellungen gestalten.",
-    sideText: "Der Überblick führt von frühen menschlichen Eingriffen wie Feuer und Landwirtschaft bis zu Städten, Reichen und langfristigen Veränderungen von Landschaft und Umwelt."
+    sideText: "Frühe Siedlungen, Werkzeuge, Vorräte, Schrift, Münzen und Herrschaftszeichen machen sichtbar, dass Geschichte aus aufeinander aufbauenden Formen menschlicher Ordnung besteht."
   },
   "modul-2": {
     hero: "assets/srf/m02-1491.jpg",
