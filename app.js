@@ -5157,17 +5157,74 @@ function renderSupportSection(module) {
 }
 
 function renderLearningSteps(module) {
+  const check = contentChecks[module.id];
+
   return `
     <div class="reading-flow">
       ${module.input
-        .map(
-          (paragraph, index) => `
+        .map((paragraph, index) => {
+          const inlineQuestion = check?.questions?.[index];
+          return `
             <article class="reading-block">
               <p class="reading-label">Abschnitt ${index + 1}</p>
               <p>${cleanStudentText(paragraph)}</p>
+              ${inlineQuestion ? renderInlineCheckQuestion(module, index) : ""}
             </article>
           `
-        )
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderInlineCheckQuestion(module, questionIndex) {
+  const question = contentChecks[module.id]?.questions?.[questionIndex];
+  if (!question) {
+    return "";
+  }
+
+  const answerId = `${module.id}-content-question-${questionIndex}`;
+
+  return `
+    <div class="inline-check-block">
+      <p class="section-kicker">Kurze Inhaltssicherung</p>
+      <div class="check-question" data-inline-check="${answerId}">
+        <p><strong>Direkt sichern:</strong> ${question.prompt}</p>
+        <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
+        <div class="feedback" data-content-feedback="${answerId}"></div>
+        ${
+          isTeacherMode()
+            ? `
+              <div class="teacher-answer-key">
+                <p class="section-kicker">Direkte Musterlösung</p>
+                <p>${cleanPromptText(question.sampleAnswer)}</p>
+                <div class="source-list-block">
+                  <p><strong>Erwartete Gesichtspunkte:</strong></p>
+                  <ul class="source-list">
+                    ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+            `
+            : ""
+        }
+      </div>
+    </div>
+  `;
+}
+
+function renderFollowUpContentChecks(module) {
+  const check = contentChecks[module.id];
+  const startIndex = module.input.length;
+  if (!check || check.questions.length <= startIndex) {
+    return "";
+  }
+
+  return `
+    <div class="inline-check-stack">
+      ${check.questions
+        .slice(startIndex)
+        .map((question, offset) => renderInlineCheckQuestion(module, startIndex + offset))
         .join("")}
     </div>
   `;
@@ -5175,47 +5232,11 @@ function renderLearningSteps(module) {
 
 function renderContentCheck(module, state) {
   const check = contentChecks[module.id];
-  const questions = check.questions
-    .map((question, questionIndex) => {
-      const answerId = `${module.id}-content-question-${questionIndex}`;
-      const stored = state[`${answerId}-feedback`];
-      const statusBadge = stored
-        ? `<span class="question-status status-badge ${stored.score >= 60 ? "ready" : "locked"}">${stored.score >= 60 ? "gesichert" : "überarbeiten"}</span>`
-        : "";
-
-      return `
-        <div class="check-question ${stored ? stored.level : ""}">
-          ${statusBadge}
-          <p><strong>${questionIndex + 1}.</strong> ${question.prompt}</p>
-          <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
-          ${renderStoredFeedback(stored)}
-          ${
-            isTeacherMode()
-              ? `
-                <div class="teacher-answer-key">
-                  <p class="section-kicker">Direkte Musterlösung</p>
-                  <p>${cleanPromptText(question.sampleAnswer)}</p>
-                  <div class="source-list-block">
-                    <p><strong>Erwartete Gesichtspunkte:</strong></p>
-                    <ul class="source-list">
-                      ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
-                    </ul>
-                  </div>
-                </div>
-              `
-              : ""
-          }
-        </div>
-      `;
-    })
-    .join("");
-
   const storedFeedback = state[`${module.id}-content-feedback`];
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich mit den Informationen aus Grundwissen, Filmen, Buchstellen und Quellenkarten des Moduls. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
-      <div class="check-grid">${questions}</div>
+      <p><strong>${check.title}:</strong> Die einzelnen Fragen stehen bereits an den passenden Stoffstellen im Modul. Prüfe hier deinen Gesamtstand. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
       </div>
@@ -5426,6 +5447,7 @@ function renderModules(state) {
           <div class="source-grid">
             ${module.sources.map((source) => renderSourceCard(source, module)).join("")}
           </div>
+          ${renderFollowUpContentChecks(module)}
         </section>
 
         <section class="module-section">
@@ -5662,17 +5684,23 @@ function bindSelftests(state) {
 function bindContentChecks(state) {
   modules.forEach((module) => {
     const button = document.querySelector(`[data-content-check="${module.id}"]`);
-    if (!button) {
-      return;
-    }
-
     contentChecks[module.id].questions.forEach((question, questionIndex) => {
       const answerId = `${module.id}-content-question-${questionIndex}`;
       const field = document.querySelector(`[data-content-answer="${answerId}"]`);
+      const feedbackBox = document.querySelector(`[data-content-feedback="${answerId}"]`);
       if (field && state[`${answerId}-text`]) {
         field.value = state[`${answerId}-text`];
       }
+      if (feedbackBox && state[`${answerId}-feedback`]) {
+        const stored = state[`${answerId}-feedback`];
+        feedbackBox.className = `feedback is-visible ${stored.level}`;
+        feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
+      }
     });
+
+    if (!button) {
+      return;
+    }
 
     button.addEventListener("click", () => {
       const check = contentChecks[module.id];
@@ -5682,11 +5710,16 @@ function bindContentChecks(state) {
       check.questions.forEach((question, questionIndex) => {
         const answerId = `${module.id}-content-question-${questionIndex}`;
         const field = document.querySelector(`[data-content-answer="${answerId}"]`);
+        const feedbackBox = document.querySelector(`[data-content-feedback="${answerId}"]`);
         const answerText = String(field?.value || "");
         const result = evaluateCheckQuestion(answerText, question);
 
         state[`${answerId}-text`] = answerText;
         state[`${answerId}-feedback`] = result;
+        if (feedbackBox) {
+          feedbackBox.className = `feedback is-visible ${result.level}`;
+          feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+        }
         scores.push(result.score);
 
         if (result.score < 60) {
