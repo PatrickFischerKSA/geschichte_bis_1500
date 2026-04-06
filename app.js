@@ -3150,6 +3150,363 @@ const additionalHarariChecks = {
   ]
 };
 
+const expandedHarariDetails = {
+  [makeSourceKey("modul-1", "Harari-PDF · S. 38")]: {
+    badge: "S. 38 · Grenzen kleiner Gruppen",
+    locator: "Harari-PDF, S. 38",
+    pdfPage: 38,
+    pdfSearch: "nur von Klatsch zusammengehalten",
+    quote: "„nur von Klatsch zusammengehalten“",
+    thesis:
+      "Harari beschreibt hier die Grenze kleiner, intimer Gruppen. Frühmenschen können nicht beliebig viele Fremde integrieren; größere Verbände brauchen neue Formen von Sprache und Ordnung.",
+    passage:
+      "Die Seite erklärt, warum kleine Gruppen auf persönliche Nähe, Rang und direkte Beziehungen angewiesen sind. Schimpansenhorden und frühe Menschengruppen bleiben deshalb relativ klein und instabil, sobald sie stark anwachsen. Erst mit der kognitiven Revolution können Menschen über Klatsch, Erzählung und gemeinsame Ordnung größere und dauerhaftere Verbände aufbauen. Für das Einstiegsmodul ist die Stelle wichtig, weil sie zeigt, dass Geschichte im engeren Sinn nicht einfach mit mehr Menschen beginnt, sondern mit neuen Mitteln, große Gruppen zusammenzuhalten."
+  },
+  [makeSourceKey("modul-3", "Harari-PDF · S. 34")]: {
+    badge: "S. 34 · Sprache ist flexibel",
+    locator: "Harari-PDF, S. 34",
+    pdfPage: 34,
+    pdfSearch: "extreme Flexibilität",
+    quote: "„extreme Flexibilität“",
+    thesis:
+      "Harari erklärt die Besonderheit menschlicher Sprache über ihre enorme Beweglichkeit: Mit begrenzten Lauten und Zeichen können Menschen unendlich viele Sätze und Bedeutungen erzeugen.",
+    passage:
+      "Die Passage vergleicht menschliche Sprache mit Tierkommunikation und zeigt den entscheidenden Unterschied nicht in der Lautmenge, sondern in der Kombinierbarkeit. Menschen können Orte, Abläufe, Absichten und Beobachtungen genau beschreiben und daraus gemeinsames Handeln ableiten. Damit wird Sprache zum Werkzeug, um Wissen zu speichern, weiterzugeben und zu bündeln. Für das Modul über die kognitive Revolution ist das zentral, weil Sprache hier als historische Infrastruktur von Kooperation, Planung und Weltdeutung sichtbar wird."
+  },
+  [makeSourceKey("modul-5", "Harari-PDF · S. 104")]: {
+    badge: "S. 104 · Der Weizen zwingt zur Arbeit",
+    locator: "Harari-PDF, S. 104",
+    pdfPage: 104,
+    pdfSearch: "aufs Kreuz legte",
+    quote: "„aufs Kreuz legte“",
+    thesis:
+      "Harari schildert Landwirtschaft hier als Belastung des Menschenkörpers. Felder, Unkraut, Schädlinge und Bewässerung binden Menschen an eine harte, monotone Arbeitsform.",
+    passage:
+      "Die Seite beschreibt sehr konkret, wie stark Getreideanbau den Alltag verändert: Steine müssen gesammelt, Unkraut gejätet, Schädlinge bekämpft, Wasser geschleppt und Felder geschützt werden. Hararis Pointe lautet, dass der menschliche Körper für Jagen, Sammeln und Klettern entstanden ist, nicht für dauernde Feldarbeit. Damit verschiebt sich die Sicht auf Sesshaftigkeit. Landwirtschaft erhöht Erträge, kostet aber Kraft, Gesundheit und Zeit. Für das Modul ist die Stelle wichtig, weil sie den Alltag der neolithischen Revolution faktisch und körperlich greifbar macht."
+  },
+  [makeSourceKey("modul-5", "Harari-PDF · S. 107")]: {
+    badge: "S. 107 · Die Luxusfalle",
+    locator: "Harari-PDF, S. 107",
+    pdfPage: 107,
+    pdfSearch: "Die Luxusfalle",
+    quote: "„Die Luxusfalle“",
+    thesis:
+      "Harari deutet den Übergang zur Landwirtschaft nicht als bewussten Masterplan, sondern als Falle aus vielen kleinen Schritten, die sich langsam verfestigen.",
+    passage:
+      "Die Passage betont, dass niemand über die landwirtschaftliche Revolution abgestimmt hat. Menschen verändern ihren Alltag Schritt für Schritt: ein wenig mehr sammeln, ein wenig länger bleiben, ein wenig mehr anbauen. Erst im Rückblick wird daraus eine neue Lebensordnung. Harari nennt das eine Luxusfalle: Kleine Verbesserungen im Alltag erzeugen langfristig eine tiefere Abhängigkeit. Für das Modul ist das wichtig, weil so verständlich wird, warum Sesshaftigkeit nicht plötzlich beschlossen, sondern allmählich normal wurde."
+  },
+  [makeSourceKey("modul-6", "Harari-PDF · S. 158")]: {
+    badge: "S. 158 · Schreiben für Steuern",
+    locator: "Harari-PDF, S. 158",
+    pdfPage: 158,
+    pdfSearch: "partielle Schriftsysteme",
+    quote: "„partielle Schriftsysteme“",
+    thesis:
+      "Harari zeigt, dass frühe Schrift nicht für Gedichte erfunden wird, sondern für Aufgaben, die gesprochene Sprache schlecht leisten kann: Abgaben, Zahlen, Besitz und Verwaltung.",
+    passage:
+      "Die Seite erklärt, dass partielle Schriftsysteme zwar keine vollständige Sprache wiedergeben, aber genau das festhalten, was Herrschaft und Wirtschaft brauchen. Steuereinnahmen, Vorräte, Besitzverhältnisse und Berechnungen lassen sich so dauerhaft sichern. Damit wird Schrift nicht als kultureller Schmuck, sondern als Werkzeug staatlicher Ordnung sichtbar. Für das Modul ist diese Stelle wichtig, weil frühe Hochkulturen so als Verwaltungs- und Speicherleistungen greifbar werden."
+  },
+  [makeSourceKey("modul-6", "Harari-PDF · S. 159")]: {
+    badge: "S. 159 · Quipus und Verwaltung",
+    locator: "Harari-PDF, S. 159",
+    pdfPage: 159,
+    pdfSearch: "Quipu",
+    quote: "„Quipu“",
+    thesis:
+      "Harari erweitert den Schriftbegriff hier über Tontafeln hinaus. Auch Knotenschnüre können große Reiche verwalten, wenn sie Daten, Besitz und Abgaben systematisch speichern.",
+    passage:
+      "Mit dem Beispiel der Quipus zeigt Harari, dass Verwaltung nicht an Alphabete gebunden ist. Knotenschnüre mit Farben und Knotenmuster speichern mathematische und administrative Informationen über Jahre hinweg. Gerade das Inka-Beispiel macht sichtbar, dass frühe Staatlichkeit verschiedene Speichertechniken hervorbringen kann. Für das Modul ist die Seite wichtig, weil sie Hochkulturen nicht auf Mesopotamien und Ägypten verengt, sondern die allgemeine Funktion von Schrift und Datenspeicherung herausarbeitet."
+  },
+  [makeSourceKey("modul-7", "Harari-PDF · S. 150")]: {
+    badge: "S. 150 · Weltreiche und Netze",
+    locator: "Harari-PDF, S. 150",
+    pdfPage: 150,
+    pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
+    quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
+    thesis:
+      "Harari bündelt hier die Richtung der antiken Geschichte: Kleine Gruppen und lokale Reiche werden in größere Macht-, Glaubens- und Handelsräume eingebunden.",
+    passage:
+      "Die Passage macht klar, dass Geschichte nicht aus isolierten Inseln besteht. Menschen bauen immer größere Verbindungsräume auf, in denen Macht, Glaube und Handel zusammenwirken. Für Modul 7 ist das zentral, weil Imperien nicht nur aus Eroberungen bestehen, sondern Verbindungen schaffen: Straßen, Herrschaftsordnungen, Steuerwege, Militär und gemeinsame politische Horizonte."
+  },
+  [makeSourceKey("modul-8", "Harari-PDF · S. 216")]: {
+    badge: "S. 216 · Geld als geistige Revolution",
+    locator: "Harari-PDF, S. 216",
+    pdfPage: 216,
+    pdfSearch: "rein geistige Revolution",
+    quote: "„rein geistige Revolution“",
+    thesis:
+      "Harari erklärt Geld hier ausdrücklich als intersubjektive Erfindung. Sein Wert liegt nicht im Material, sondern in der gemeinsamen Anerkennung.",
+    passage:
+      "Die Seite führt vom Problem des Tauschhandels direkt zur Erfindung des Geldes. Geld entsteht nicht durch eine neue Maschine, sondern durch eine neue geteilte Vorstellung: Menschen akzeptieren etwas als Vergleichs- und Zahlungsmittel. Deshalb können Muscheln, Metall oder digitale Einträge Geld werden. Für Modul 8 ist diese Stelle entscheidend, weil sie Geld als historische Deutung und Vertrauensform erklärt, nicht bloß als Münze."
+  },
+  [makeSourceKey("modul-8", "Harari-PDF · S. 218")]: {
+    badge: "S. 218 · Geld tauscht alles gegen alles",
+    locator: "Harari-PDF, S. 218",
+    pdfPage: 218,
+    pdfSearch: "universelles Tauschmittel",
+    quote: "„universelles Tauschmittel“",
+    thesis:
+      "Harari beschreibt Geld hier als Mittel, mit dem sehr unterschiedliche Dinge miteinander vergleichbar werden: Güter, Wissen, Land, Sold oder sogar Sündenablässe.",
+    passage:
+      "Die Seite zeigt die Radikalität des Geldes: Es verwandelt sehr verschiedene Werte in eine gemeinsame Skala. Damit können Märkte wachsen, Spezialisten voneinander leben und Herrschaft beweglicher werden. Für das Modul ist die Passage wichtig, weil sie den historischen Durchbruch des Geldes nicht nur technisch, sondern gesellschaftlich erklärt. Geld schafft Vergleichbarkeit, Speicherbarkeit und Beweglichkeit von Wert."
+  },
+  [makeSourceKey("modul-9", "Harari-PDF · S. 254")]: {
+    badge: "S. 254 · Religiöse Revolution",
+    locator: "Harari-PDF, S. 254",
+    pdfPage: 254,
+    pdfSearch: "religiösen Revolution",
+    quote: "„religiösen Revolution“",
+    thesis:
+      "Harari verbindet hier Landwirtschaft mit einem tiefen Wandel der religiösen Weltdeutung. Tiere und Pflanzen werden von Partnern zu Besitz, und übermenschliche Mächte gewinnen an Gewicht.",
+    passage:
+      "Die Passage zeigt, dass Sesshaftigkeit nicht nur Essen und Arbeit verändert, sondern auch die religiöse Ordnung. Bauern besitzen, züchten und manipulieren Tiere und Pflanzen, statt ihnen auf Augenhöhe zu begegnen. Gleichzeitig entstehen stärkere Hoffnungen auf Götter, die Regen, Fruchtbarkeit und Schutz garantieren sollen. Für Modul 9 ist die Stelle wichtig, weil Religion hier als historische Antwort auf neue Abhängigkeiten und Kontrollwünsche erscheint."
+  },
+  [makeSourceKey("modul-9", "Harari-PDF · S. 255")]: {
+    badge: "S. 255 · Weltreiche brauchen große Götter",
+    locator: "Harari-PDF, S. 255",
+    pdfPage: 255,
+    pdfSearch: "mit der Entstehung von Weltreichen und Handelsnetzen",
+    quote: "„mit der Entstehung von Weltreichen und Handelsnetzen“",
+    thesis:
+      "Harari erklärt, warum lokale Geister für größere politische und wirtschaftliche Räume nicht mehr ausreichen. Mit Imperien und Handel wachsen auch die religiösen Maßstäbe.",
+    passage:
+      "Die Seite verbindet politische und religiöse Geschichte eng miteinander. Solange Menschen in kleinen Tälern leben, genügen lokale Geister und heilige Orte. Mit Weltreichen und Handelsnetzen brauchen sie dagegen Mächte, die weiter reichen als das eigene Tal. So erklärt Harari den Übergang zu polytheistischen Großordnungen. Für das Modul ist das stark, weil Religion hier als Begleiter wachsender Räume und nicht als loses Zusatzthema erscheint."
+  },
+  [makeSourceKey("modul-10", "Harari-PDF · S. 262")]: {
+    badge: "S. 262 · Mission und Ausschließlichkeit",
+    locator: "Harari-PDF, S. 262",
+    pdfPage: 262,
+    pdfSearch: "missionarischen Eifer",
+    quote: "„missionarischen Eifer“",
+    thesis:
+      "Harari erklärt die Dynamik monotheistischer Religionen über ihren Wahrheitsanspruch: Wer an einen einzigen wahren Gott glaubt, neigt stärker zur Mission und zur Ausbreitung.",
+    passage:
+      "Die Passage deutet den Unterschied zwischen polytheistischen und monotheistischen Religionen historisch. Polytheistische Systeme können andere Götter meist leichter neben sich dulden; monotheistische Religionen beanspruchen die ganze Wahrheit und treiben ihre Botschaft mit größerem Eifer nach außen. Für Modul 10 ist das wichtig, weil so verständlich wird, warum Kirche, Mission und Herrschaft im Mittelalter so eng verschränkt sind."
+  },
+  [makeSourceKey("modul-11", "Harari-PDF · S. 217")]: {
+    badge: "S. 217 · Vielerlei Geldformen",
+    locator: "Harari-PDF, S. 217",
+    pdfPage: 217,
+    pdfSearch: "Kaurischnecken",
+    quote: "„Kaurischnecken“",
+    thesis:
+      "Harari zeigt hier, dass Geld im Lauf der Geschichte sehr verschiedene Formen annimmt. Entscheidend ist nicht das Material, sondern seine breite Akzeptanz im Handel.",
+    passage:
+      "Die Passage führt Muscheln, Stoffe, Salz, Zigaretten und Kontogeld als historische Geldformen auf. Damit wird deutlich, dass Märkte und Städte nicht an eine einzige Währung gebunden sind, sondern an allgemeine Tauschbarkeit. Für Modul 11 ist das wichtig, weil mittelalterlicher und vormoderner Handel so als flexible Praxis sichtbar wird, die weit über die einzelne Münze hinausreicht."
+  },
+  [makeSourceKey("modul-12", "Harari-PDF · S. 255")]: {
+    badge: "S. 255 · Größere Räume, größere Ordnungen",
+    locator: "Harari-PDF, S. 255",
+    pdfPage: 255,
+    pdfSearch: "Weltreichen und Handelsnetzen",
+    quote: "„Weltreichen und Handelsnetzen“",
+    thesis:
+      "Harari zieht hier eine Langzeitlinie, die den Kursabschluss trägt: Mit wachsenden Reichen und Handelsräumen wachsen auch die religiösen und politischen Ordnungen, die Menschen zusammenhalten.",
+    passage:
+      "Die Seite eignet sich für die Schlussbilanz, weil sie nicht nur Religion erklärt, sondern den Größenwandel historischer Räume sichtbar macht. Lokale Welten werden durch Reiche, Verkehrswege und Handelsbeziehungen in größere Zusammenhänge gezogen. So erscheinen die Entwicklungen bis 1500 als Vorgeschichte einer immer enger verbundenen Welt. Für das Abschlussmodul bündelt diese Buchstelle deshalb die Hauptbewegung der Einheit: aus kleinen Ordnungen werden größere Netze."
+  }
+};
+
+const expandedHarariSources = {
+  "modul-1": [
+    {
+      title: "Harari-PDF · S. 38",
+      meta: "Buchstelle · kleine Gruppen und ihre Grenze",
+      extracted: "Frühe Menschengruppen bleiben klein; größere Verbände brauchen neue sprachliche und soziale Mittel."
+    }
+  ],
+  "modul-3": [
+    {
+      title: "Harari-PDF · S. 34",
+      meta: "Buchstelle · flexible Sprache",
+      extracted: "Menschen können mit begrenzten Lauten unendlich viele Sätze bilden und dadurch viel mehr Informationen austauschen."
+    }
+  ],
+  "modul-5": [
+    {
+      title: "Harari-PDF · S. 104",
+      meta: "Buchstelle · Feldarbeit und Körper",
+      extracted: "Ackerbau zwingt Menschen zu harter Feldarbeit, für die der menschliche Körper nicht gebaut wurde."
+    },
+    {
+      title: "Harari-PDF · S. 107",
+      meta: "Buchstelle · Luxusfalle",
+      extracted: "Landwirtschaft setzt sich schrittweise durch und wird zur Falle aus kleinen Gewohnheiten und wachsender Abhängigkeit."
+    }
+  ],
+  "modul-6": [
+    {
+      title: "Harari-PDF · S. 158",
+      meta: "Buchstelle · Schreiben für Verwaltung",
+      extracted: "Frühe Schriftsysteme speichern Steuern, Besitz und Zahlen, nicht zuerst Literatur."
+    },
+    {
+      title: "Harari-PDF · S. 159",
+      meta: "Buchstelle · Quipus und Reichsverwaltung",
+      extracted: "Auch Knotenschnüre können große Reiche verwalten, wenn sie Daten und Abgaben systematisch speichern."
+    }
+  ],
+  "modul-7": [
+    {
+      title: "Harari-PDF · S. 150",
+      meta: "Buchstelle · größere Verbindungsräume",
+      extracted: "Weltreiche, Weltreligionen und Handelsnetze binden immer mehr Menschen in gemeinsame Ordnungen ein."
+    }
+  ],
+  "modul-8": [
+    {
+      title: "Harari-PDF · S. 216",
+      meta: "Buchstelle · Geld als Idee",
+      extracted: "Geld ist eine geistige Erfindung und beruht auf gemeinsamer Anerkennung."
+    },
+    {
+      title: "Harari-PDF · S. 218",
+      meta: "Buchstelle · universelles Tauschmittel",
+      extracted: "Geld macht sehr unterschiedliche Dinge miteinander vergleichbar und austauschbar."
+    }
+  ],
+  "modul-9": [
+    {
+      title: "Harari-PDF · S. 254",
+      meta: "Buchstelle · religiöse Revolution",
+      extracted: "Mit Landwirtschaft verändern sich Besitz, Weltdeutung und die Bedeutung übermenschlicher Mächte."
+    },
+    {
+      title: "Harari-PDF · S. 255",
+      meta: "Buchstelle · große Götter für große Räume",
+      extracted: "Weltreiche und Handelsnetze fördern größere religiöse Ordnungen als lokale Tal- und Ortsgeister."
+    }
+  ],
+  "modul-10": [
+    {
+      title: "Harari-PDF · S. 262",
+      meta: "Buchstelle · Mission und Wahrheit",
+      extracted: "Monotheistische Religionen breiten sich mit starkem Wahrheitsanspruch und missionarischem Eifer aus."
+    }
+  ],
+  "modul-11": [
+    {
+      title: "Harari-PDF · S. 217",
+      meta: "Buchstelle · verschiedene Geldformen",
+      extracted: "Muscheln, Stoff, Zigaretten oder Kontogeld zeigen, dass Handel viele Formen von Geld nutzen kann."
+    }
+  ],
+  "modul-12": [
+    {
+      title: "Harari-PDF · S. 255",
+      meta: "Buchstelle · Langzeitlinie großer Räume",
+      extracted: "Mit Reichen und Handelsnetzen wachsen die religiösen und politischen Räume, in denen Menschen leben."
+    }
+  ]
+};
+
+const expandedHarariChecks = {
+  "modul-1": [
+    {
+      prompt: "Nutze Harari S. 38 und S. 39 und erkläre, warum kleine Gruppen anders funktionieren als große Gesellschaften. Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
+      placeholder: "Verbinde kleine Gruppen, Klatsch und Mythen.",
+      sampleAnswer:
+        "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Größe tragen. Große Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
+      criteria: [
+        { label: "kleine Gruppen beruhen auf Nähe", keywords: ["nähe", "kleine gruppen", "direkte beziehungen", "intim"] },
+        { label: "Klatsch oder soziale Informationen", keywords: ["klatsch", "soziale informationen", "vertrauen"] },
+        { label: "große Gruppen brauchen gemeinsame Ordnungen", keywords: ["mythen", "geschichten", "regeln", "symbole"] }
+      ]
+    }
+  ],
+  "modul-5": [
+    {
+      prompt: "Erkläre mit Harari S. 104 und S. 107, warum Landwirtschaft nicht nur Erträge brachte, sondern Menschen in neue Arbeit und Abhängigkeit hineinführte.",
+      placeholder: "Arbeite mit Feldarbeit, Körper und Luxusfalle.",
+      sampleAnswer:
+        "S. 104 zeigt die harte Feldarbeit mit Unkrautjäten, Bewässerung und Schutz der Ernte. S. 107 erklärt, dass die neue Lebensweise nicht plötzlich beschlossen wurde, sondern sich Schritt für Schritt als Luxusfalle verfestigte. Landwirtschaft brachte also mehr Nahrung, aber auch mehr Mühe und stärkere Bindung an Felder und Ernten.",
+      criteria: [
+        { label: "harte Feldarbeit", keywords: ["harte arbeit", "feldarbeit", "bewässerung", "unkraut"] },
+        { label: "menschlicher Körper", keywords: ["körper", "nicht gebaut", "jagen", "sammeln"] },
+        { label: "Luxusfalle oder schrittweiser Wandel", keywords: ["luxusfalle", "schrittweise", "falle", "gewohnheit"] }
+      ]
+    }
+  ],
+  "modul-6": [
+    {
+      prompt: "Nutze Harari S. 158 und S. 159 und erkläre, warum Schrift und Datenspeicherung für frühe Staaten so wichtig waren.",
+      placeholder: "Arbeite mit Steuern, Besitz, Zahlen und Quipus.",
+      sampleAnswer:
+        "S. 158 zeigt, dass frühe Schrift vor allem Steuern, Besitz und Zahlen festhält. S. 159 erweitert das mit den Quipus: Auch Knotenschnüre konnten große Mengen von Verwaltungsdaten speichern. Frühe Staaten brauchen solche Systeme, um Menschen, Abgaben und Vorräte über größere Räume hinweg zu ordnen.",
+      criteria: [
+        { label: "Steuern, Besitz oder Zahlen", keywords: ["steuern", "besitz", "zahlen", "abgaben"] },
+        { label: "Quipu oder Knotenschnüre", keywords: ["quipu", "knotenschnüre", "inkas"] },
+        { label: "Staat und Verwaltung", keywords: ["staat", "verwaltung", "ordnen", "reich"] }
+      ]
+    }
+  ],
+  "modul-8": [
+    {
+      prompt: "Erkläre mit Harari S. 216 und S. 218, warum Geld mehr ist als Metall oder Papier. Arbeite mit geistiger Erfindung und universellem Tauschmittel.",
+      placeholder: "Verbinde Idee, Anerkennung und Vergleichbarkeit.",
+      sampleAnswer:
+        "S. 216 beschreibt Geld als geistige Erfindung, die auf gemeinsamer Anerkennung beruht. S. 218 erklärt, dass Geld dadurch zum universellen Tauschmittel wird und sehr unterschiedliche Dinge vergleichbar macht. Geld ist also nicht nur Material, sondern eine geteilte Vorstellung von Wert.",
+      criteria: [
+        { label: "Geld als Idee", keywords: ["idee", "geistige revolution", "anerkennung", "vorstellung"] },
+        { label: "universelles Tauschmittel", keywords: ["universelles tauschmittel", "vergleichen", "austauschbar"] },
+        { label: "mehr als Metall", keywords: ["mehr als metall", "nicht nur münzen", "wert"] }
+      ]
+    }
+  ],
+  "modul-9": [
+    {
+      prompt: "Arbeite mit Harari S. 254 und S. 255 heraus, wie Landwirtschaft, Besitz und größere politische Räume religiöse Veränderungen auslösen.",
+      placeholder: "Verbinde Bauernwelt, Götter und Weltreiche.",
+      sampleAnswer:
+        "S. 254 zeigt, dass Bauern Tiere und Pflanzen als Besitz behandeln und deshalb stärker auf göttliche Kontrolle von Fruchtbarkeit und Schutz hoffen. S. 255 erklärt, dass mit Weltreichen und Handelsnetzen größere Götter und polytheistische Ordnungen wichtiger werden. Religion verändert sich also mit Besitz, Herrschaft und Raumgröße.",
+      criteria: [
+        { label: "Landwirtschaft und Besitz", keywords: ["bauern", "besitz", "tiere", "pflanzen"] },
+        { label: "übermenschliche Mächte oder Götter", keywords: ["götter", "fruchtbarkeit", "schutz", "religiöse revolution"] },
+        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "größere räume", "polytheistisch"] }
+      ]
+    }
+  ],
+  "modul-10": [
+    {
+      prompt: "Nutze Harari S. 262 und S. 263 und erkläre, warum monotheistische Religionen im Mittelalter so stark in Herrschaft und Gesellschaft eingreifen.",
+      placeholder: "Arbeite mit Wahrheitsanspruch, Mission und großen Räumen.",
+      sampleAnswer:
+        "S. 262 erklärt den missionarischen Eifer monotheistischer Religionen aus ihrem Anspruch auf die ganze Wahrheit. S. 263 zeigt, wie weit diese Religionen bis um 1500 bereits große Teile Afrikas und Eurasiens prägen. Dadurch werden sie zu zentralen Ordnungskräften von Herrschaft und Gesellschaft.",
+      criteria: [
+        { label: "Wahrheitsanspruch", keywords: ["wahrheit", "einziger gott", "vollständige botschaft"] },
+        { label: "Mission oder Ausbreitung", keywords: ["mission", "missionarisch", "ausbreitung"] },
+        { label: "große Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] }
+      ]
+    }
+  ],
+  "modul-11": [
+    {
+      prompt: "Erkläre mit Harari S. 217 und S. 219, warum städtischer Handel nicht an eine einzige Münzform gebunden ist, sondern an allgemein akzeptierten Wert.",
+      placeholder: "Arbeite mit Kaurischnecken, verschiedenen Geldformen und beweglichem Vermögen.",
+      sampleAnswer:
+        "S. 217 zeigt, dass sehr unterschiedliche Dinge wie Kaurischnecken oder Zigaretten als Geld dienen können. S. 219 ergänzt, dass Geld Vermögen beweglich macht und dadurch Märkte und Handel erleichtert. Für Städte ist also entscheidend, dass Wert allgemein anerkannt und transportierbar ist.",
+      criteria: [
+        { label: "verschiedene Geldformen", keywords: ["kaurischnecken", "verschiedene geldformen", "zigaretten", "stoff"] },
+        { label: "anerkannter Wert", keywords: ["anerkannt", "wert", "geldform"] },
+        { label: "bewegliches Vermögen oder Handel", keywords: ["beweglich", "vermögen", "handel", "markt"] }
+      ]
+    }
+  ],
+  "modul-12": [
+    {
+      prompt: "Nutze Harari S. 255 und S. 263 und erkläre als Schlussbilanz, wie aus lokalen Welten immer größere religiöse und politische Räume werden.",
+      placeholder: "Verbinde Talwelt, Weltreiche, Handelsnetze und die Lage um 1500.",
+      sampleAnswer:
+        "S. 255 zeigt den Übergang von lokalen Geistern zu größeren religiösen Ordnungen, weil Weltreiche und Handelsnetze weiter reichen als das eigene Tal. S. 263 beschreibt dann die Welt um 1500 als Raum großer monotheistischer und politischer Ordnungen. Die Schlussbilanz lautet: Geschichte bis 1500 ist eine Geschichte wachsender Verbindungsräume.",
+      criteria: [
+        { label: "lokale Welten oder Tal", keywords: ["tal", "lokal", "örtliche geister"] },
+        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "größere räume"] },
+        { label: "Bilanz um 1500", keywords: ["1500", "monotheistisch", "ordnungen", "schlussbilanz"] }
+      ]
+    }
+  ]
+};
+
 Object.entries(additionalHarariSources).forEach(([moduleId, sources]) => {
   const module = modules.find((entry) => entry.id === moduleId);
   if (!module) {
@@ -3169,7 +3526,40 @@ Object.entries(additionalHarariSources).forEach(([moduleId, sources]) => {
   module.sources.splice(insertIndex, 0, ...newSources);
 });
 
+Object.entries(expandedHarariSources).forEach(([moduleId, sources]) => {
+  const module = modules.find((entry) => entry.id === moduleId);
+  if (!module) {
+    return;
+  }
+
+  const existingTitles = new Set(module.sources.map((source) => source.title));
+  const newSources = sources.filter((source) => !existingTitles.has(source.title));
+  if (!newSources.length) {
+    return;
+  }
+
+  const firstNonHarariIndex = module.sources.findIndex(
+    (source) => !normalize(source.title).startsWith(normalize("Harari-PDF"))
+  );
+  const insertIndex = firstNonHarariIndex === -1 ? module.sources.length : firstNonHarariIndex;
+  module.sources.splice(insertIndex, 0, ...newSources);
+});
+
 Object.entries(additionalHarariChecks).forEach(([moduleId, questions]) => {
+  const target = contentChecks[moduleId];
+  if (!target) {
+    return;
+  }
+
+  const existingPrompts = new Set(target.questions.map((question) => question.prompt));
+  questions.forEach((question) => {
+    if (!existingPrompts.has(question.prompt)) {
+      target.questions.push(question);
+    }
+  });
+});
+
+Object.entries(expandedHarariChecks).forEach(([moduleId, questions]) => {
   const target = contentChecks[moduleId];
   if (!target) {
     return;
@@ -4026,7 +4416,7 @@ const sourceDetails = {
   }
 };
 
-Object.assign(sourceDetails, additionalHarariDetails);
+Object.assign(sourceDetails, additionalHarariDetails, expandedHarariDetails);
 
 function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
