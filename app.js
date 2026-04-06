@@ -4548,6 +4548,210 @@ const sourceDetails = {
 
 Object.assign(sourceDetails, additionalHarariDetails, expandedHarariDetails);
 
+const repetitionMode = {
+  memory: {
+    title: "Memory: Entwicklung und Folge zusammenbringen",
+    instructions:
+      "Öffne immer zwei Karten. Ein Paar ist richtig, wenn Entwicklung und Folge historisch direkt zusammengehören.",
+    solutionLabel: "Alle richtigen Paare",
+    pairs: [
+      {
+        id: "memory-kognition",
+        left: "Kognitive Revolution",
+        right: "Sprache, Mythen und gemeinsame Regeln machen größere Gruppen möglich."
+      },
+      {
+        id: "memory-landwirtschaft",
+        left: "Landwirtschaftliche Revolution",
+        right: "Sesshaftigkeit, Vorräte und soziale Ungleichheit verändern den Alltag grundlegend."
+      },
+      {
+        id: "memory-staat",
+        left: "Frühe Staaten",
+        right: "Schrift, Listen, Abgaben und Verwaltung stabilisieren Herrschaft."
+      },
+      {
+        id: "memory-athen",
+        left: "Attische Demokratie",
+        right: "Bürger beraten und entscheiden direkt, aber Frauen, Sklaven und Fremde bleiben ausgeschlossen."
+      },
+      {
+        id: "memory-rom",
+        left: "Römische Republik",
+        right: "Senat, Magistrate und Volksversammlungen teilen Macht, ohne soziale Konflikte zu beseitigen."
+      },
+      {
+        id: "memory-1491",
+        left: "1491",
+        right: "Amerika besitzt lange vor Kolumbus eigene Gesellschaften, Landwirtschaft und politische Ordnungen."
+      }
+    ]
+  },
+  drag: {
+    title: "Drag-and-drop: Entwicklung dem historischen Kern zuordnen",
+    instructions:
+      "Ziehe jede Entwicklung auf die passende Erklärung. Eine richtige Zuordnung bleibt stehen; eine falsche springt zurück.",
+    solutionLabel: "Komplette Zuordnung anzeigen",
+    items: [
+      {
+        id: "drag-kognition",
+        label: "Kognitive Revolution",
+        target: "drag-target-kognition",
+        explanation: "Sprache, Symbole, Mythen und geteilte Vorstellungen"
+      },
+      {
+        id: "drag-landwirtschaft",
+        label: "Landwirtschaftliche Revolution",
+        target: "drag-target-landwirtschaft",
+        explanation: "Sesshaftigkeit, Vorräte, mehr Arbeit und neue Ungleichheit"
+      },
+      {
+        id: "drag-schrift",
+        label: "Schrift und Verwaltung",
+        target: "drag-target-schrift",
+        explanation: "Listen, Abgaben, Besitz und dauerhafte Herrschaft"
+      },
+      {
+        id: "drag-athen",
+        label: "Attische Demokratie",
+        target: "drag-target-athen",
+        explanation: "Volksversammlung und direkte Beteiligung freier männlicher Bürger"
+      },
+      {
+        id: "drag-rom",
+        label: "Römische Republik",
+        target: "drag-target-rom",
+        explanation: "Senat, Konsuln, Magistrate und Machtteilung"
+      },
+      {
+        id: "drag-mittelalter",
+        label: "Mittelalterliche Städte",
+        target: "drag-target-mittelalter",
+        explanation: "Märkte, Handwerk, Fernhandel und verdichtete Lebensräume"
+      }
+    ],
+    targets: [
+      {
+        id: "drag-target-kognition",
+        title: "Sprache und Symbolwelt",
+        prompt: "Hier gehört die Entwicklung hin, die Mythen, Regeln und große Kooperation ermöglicht."
+      },
+      {
+        id: "drag-target-landwirtschaft",
+        title: "Sesshafte Lebensweise",
+        prompt: "Hier gehört die Entwicklung hin, die Felder, Vorräte und soziale Unterschiede hervorbringt."
+      },
+      {
+        id: "drag-target-schrift",
+        title: "Frühe Staatlichkeit",
+        prompt: "Hier gehört die Entwicklung hin, die Herrschaft durch Listen, Abgaben und Bürokratie stützt."
+      },
+      {
+        id: "drag-target-athen",
+        title: "Direkte Beteiligung",
+        prompt: "Hier gehört die Ordnung hin, in der Bürger in der Volksversammlung direkt mitentscheiden."
+      },
+      {
+        id: "drag-target-rom",
+        title: "Republikanische Mischform",
+        prompt: "Hier gehört die Ordnung hin, in der Senat, Magistrate und Volksversammlungen zusammenwirken."
+      },
+      {
+        id: "drag-target-mittelalter",
+        title: "Städtischer Wandel",
+        prompt: "Hier gehört die Entwicklung hin, die Märkte, Handwerk und Fernhandel verdichtet."
+      }
+    ]
+  },
+  cloze: {
+    title: "Lückentext: Die großen Umbrüche zusammenfassen",
+    instructions:
+      "Fülle die Lücken mit den passenden Begriffen. Synonyme werden erkannt, wenn sie denselben historischen Kern treffen.",
+    parts: [
+      "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die ",
+      { id: "cloze-1", answers: ["kognitive", "kognitive revolution"] },
+      ". Sie macht Sprache, ",
+      { id: "cloze-2", answers: ["mythen", "erzaehlungen", "erzählungen", "symbolwelten", "gemeinsame vorstellungen"] },
+      " und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die ",
+      { id: "cloze-3", answers: ["landwirtschaftliche", "neolithische", "agrarische", "landwirtschaftliche revolution", "neolithische revolution"] },
+      " Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale ",
+      { id: "cloze-4", answers: ["ungleichheit", "hierarchie", "hierarchien", "soziale unterschiede"] },
+      " hervor. Frühe Staaten stützen sich auf ",
+      { id: "cloze-5", answers: ["schrift", "schriftsysteme", "listen"] },
+      " und Verwaltung. In Antike und Mittelalter verbinden ",
+      { id: "cloze-6", answers: ["reiche", "imperien", "weltreiche"] },
+      ", Geld und Religion immer größere Räume."
+    ],
+    sampleAnswer:
+      "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die kognitive Revolution. Sie macht Sprache, Mythen und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die landwirtschaftliche Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale Ungleichheit hervor. Frühe Staaten stützen sich auf Schrift und Verwaltung. In Antike und Mittelalter verbinden Reiche, Geld und Religion immer größere Räume."
+  },
+  oralQuestions: [
+    {
+      id: "repetition-oral-1",
+      question:
+        "Erkläre in 4 bis 6 Sätzen, warum Geschichte hier nicht mit dem Urknall oder der Eiszeit beginnt, sondern mit menschlichen Ordnungen.",
+      placeholder: "Erkläre Sprache, Regeln, Erinnerung und gemeinsame Vorstellungen als Anfang geschichtlicher Weltordnung.",
+      sampleAnswer:
+        "Geschichte beginnt hier nicht mit Naturereignissen, sondern dort, wo Menschen ihre Welt kulturell ordnen. Entscheidend sind Sprache, Erinnerung, Regeln und gemeinsame Vorstellungen. Dadurch können Menschen Erfahrungen weitergeben, Gruppen stabilisieren und Institutionen schaffen. Geschichte meint deshalb nicht einfach alles Vergangene, sondern die von Menschen gestaltete Welt aus Normen, Ordnung und Deutung.",
+      minWords: 35,
+      criteria: [
+        { label: "Unterschied zwischen Naturgeschichte und menschlich geordneter Geschichte", keywords: ["naturgeschichte", "natur", "vergangenheit"] },
+        { label: "Sprache, Regeln oder gemeinsame Vorstellungen als Grundlage", keywords: ["sprache", "regeln", "vorstellungen", "ordnung", "mythen"] },
+        { label: "Menschen gestalten ihre Welt aktiv", keywords: ["gestalten", "kulturell", "institutionen", "erinnerung", "deutung"] }
+      ]
+    },
+    {
+      id: "repetition-oral-2",
+      question:
+        "Erkläre den Bruch zwischen mobilen Jäger-und-Sammler-Gruppen und sesshaften Agrargesellschaften.",
+      placeholder: "Gehe auf Nahrung, Siedlungen, Arbeit, Vorräte und soziale Folgen ein.",
+      sampleAnswer:
+        "Mobile Jäger-und-Sammler-Gruppen leben von Jagd, Sammeln, Bewegung und genauer Umweltbeobachtung. Mit Landwirtschaft und Viehzucht werden Menschen sesshaft, bauen Häuser und legen Vorräte an. Dadurch wächst die Bevölkerung, aber auch die Arbeitslast. Besitz und Abgaben werden wichtiger. So entstehen neue soziale Unterschiede und dauerhafte Herrschaftsformen.",
+      minWords: 35,
+      criteria: [
+        { label: "Mobilität und Umweltwissen der Jäger und Sammler", keywords: ["mobil", "jagd", "sammeln", "umweltwissen", "jahreszeiten"] },
+        { label: "Sesshaftigkeit, Vorräte oder feste Siedlungen", keywords: ["sesshaft", "vorrate", "vorräte", "dorfer", "dörfer", "hauser", "häuser"] },
+        { label: "Mehr Arbeit, Besitz oder soziale Ungleichheit", keywords: ["arbeit", "besitz", "ungleichheit", "abhangigkeit", "abhängigkeit", "hierarchie"] }
+      ]
+    },
+    {
+      id: "repetition-oral-3",
+      question:
+        "Vergleiche attische Demokratie und römische Republik in 4 bis 6 Sätzen.",
+      placeholder: "Vergleiche direkte Beteiligung, politische Ämter und Ausschlüsse.",
+      sampleAnswer:
+        "In der attischen Demokratie entscheiden freie männliche Bürger direkt in der Volksversammlung. Frauen, Sklaven und Fremde bleiben ausgeschlossen. Die römische Republik verteilt Macht auf Senat, Konsuln, Magistrate und Volksversammlungen. Sie ist also keine direkte Demokratie, sondern eine Mischform von Ämtern und Körperschaften. Auch in Rom bleibt politische Teilhabe sozial begrenzt und konfliktreich.",
+      minWords: 35,
+      criteria: [
+        { label: "Attische Demokratie mit Volksversammlung oder direkter Beteiligung", keywords: ["attische", "athen", "volksversammlung", "direkt", "burger", "bürger"] },
+        { label: "Römische Republik mit Senat, Konsuln oder Magistraten", keywords: ["romische", "römische", "republik", "senat", "konsuln", "magistrate"] },
+        { label: "Ausschlüsse oder soziale Begrenzungen", keywords: ["frauen", "sklaven", "fremde", "ausgeschlossen", "sozial", "plebejer", "patrizier"] }
+      ]
+    },
+    {
+      id: "repetition-oral-4",
+      question:
+        "Erkläre, warum 1492 ein Einschnitt, aber nicht der Anfang amerikanischer Geschichte ist.",
+      placeholder: "Beziehe dich auf Gesellschaften, Landwirtschaft, politische Ordnungen und Sprachen vor Kolumbus.",
+      sampleAnswer:
+        "1492 ist ein Einschnitt, weil die europäische Eroberung und Kolonisierung Amerika grundlegend verändert. Die Geschichte des Kontinents beginnt aber viel früher. Schon lange vor Kolumbus gibt es dort zahlreiche Gesellschaften mit eigenen Sprachen, Landwirtschaftsformen, Handelsbeziehungen und politischen Ordnungen. 1492 markiert daher keinen Anfang, sondern einen gewaltsamen Bruch in bereits bestehende historische Entwicklungen.",
+      minWords: 35,
+      criteria: [
+        { label: "1492 als Einschnitt oder gewaltsamer Umbruch", keywords: ["1492", "einschnitt", "bruch", "kolonisierung", "eroberung"] },
+        { label: "Gesellschaften vor Kolumbus", keywords: ["vor kolumbus", "indigene", "gesellschaften", "reiche", "amerika"] },
+        { label: "Sprachen, Landwirtschaft oder politische Ordnungen vor 1492", keywords: ["sprachen", "landwirtschaft", "politische ordnungen", "handel", "mais", "inka", "azteken"] }
+      ]
+    }
+  ]
+};
+
+function getMemoryCards() {
+  return repetitionMode.memory.pairs.flatMap((pair, index) => [
+    { id: `${pair.id}-a`, pairId: pair.id, text: pair.left, order: index * 2 + 1 },
+    { id: `${pair.id}-b`, pairId: pair.id, text: pair.right, order: index * 2 + 2 }
+  ]);
+}
+
 function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
@@ -5717,6 +5921,233 @@ function renderSourceCatalog() {
   });
 }
 
+function normalizeLoose(text) {
+  return normalize(text).replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function getRepetitionProgress(state) {
+  const memoryMatched = Array.isArray(state.repetitionMemoryMatched) ? state.repetitionMemoryMatched.length : 0;
+  const memoryTotal = repetitionMode.memory.pairs.length;
+  const dragAssigned = Object.keys(state.repetitionDragAssignments || {}).length;
+  const dragTotal = repetitionMode.drag.targets.length;
+  const clozeCorrect = Array.isArray(state.repetitionClozeCorrect) ? state.repetitionClozeCorrect.filter(Boolean).length : 0;
+  const clozeTotal = repetitionMode.cloze.parts.filter((part) => typeof part === "object").length;
+  const oralSolved = repetitionMode.oralQuestions.filter((question) => {
+    const feedback = state[`${question.id}-feedback`];
+    return feedback && (feedback.level === "good" || feedback.level === "mid");
+  }).length;
+  const oralTotal = repetitionMode.oralQuestions.length;
+  const completedForms = [
+    memoryMatched === memoryTotal,
+    dragAssigned === dragTotal,
+    clozeCorrect === clozeTotal,
+    oralSolved === oralTotal
+  ].filter(Boolean).length;
+
+  return {
+    memoryMatched,
+    memoryTotal,
+    dragAssigned,
+    dragTotal,
+    clozeCorrect,
+    clozeTotal,
+    oralSolved,
+    oralTotal,
+    completedForms,
+    totalForms: 4
+  };
+}
+
+function renderRepetitionMemory(state) {
+  const cards = getMemoryCards();
+  const matched = new Set(state.repetitionMemoryMatched || []);
+  const selected = state.repetitionMemorySelected || [];
+  const feedback = state.repetitionMemoryFeedback;
+  const solution = repetitionMode.memory.pairs
+    .map((pair) => `<li><strong>${pair.left}</strong><span>${pair.right}</span></li>`)
+    .join("");
+
+  return `
+    <article class="repetition-card">
+      <p class="section-kicker">1. Memory</p>
+      <h3>${repetitionMode.memory.title}</h3>
+      <p>${repetitionMode.memory.instructions}</p>
+      <div class="repetition-status-line">
+        <strong>${matched.size} von ${repetitionMode.memory.pairs.length} Paaren gefunden</strong>
+      </div>
+      <div class="memory-grid">
+        ${cards
+          .map((card) => {
+            const isMatched = matched.has(card.pairId);
+            const isSelected = selected.includes(card.id);
+            const isOpen = isMatched || isSelected;
+            return `
+              <button class="memory-card ${isMatched ? "is-matched" : isSelected ? "is-selected" : ""}" type="button" data-memory-card="${card.id}">
+                <span class="memory-card-inner">
+                  <span class="memory-card-front">${isOpen ? card.text : "?"}</span>
+                </span>
+              </button>
+            `;
+          })
+          .join("")}
+      </div>
+      <div class="task-actions">
+        <button class="btn ghost" type="button" data-memory-solution>Alle Paare anzeigen</button>
+      </div>
+      <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-memory-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
+      <div class="teacher-answer-key ${state.repetitionMemoryShowSolution || isTeacherMode() ? "" : "is-hidden"}" data-memory-solution-box>
+        <p class="section-kicker">Musterlösung</p>
+        <ul class="source-list">${solution}</ul>
+      </div>
+    </article>
+  `;
+}
+
+function renderRepetitionDrag(state) {
+  const assignments = state.repetitionDragAssignments || {};
+  const feedback = state.repetitionDragFeedback;
+  const remainingItems = repetitionMode.drag.items.filter((item) => !Object.values(assignments).includes(item.id));
+  const showSolution = state.repetitionDragShowSolution || isTeacherMode();
+
+  return `
+    <article class="repetition-card">
+      <p class="section-kicker">2. Drag-and-drop</p>
+      <h3>${repetitionMode.drag.title}</h3>
+      <p>${repetitionMode.drag.instructions}</p>
+      <div class="repetition-status-line">
+        <strong>${Object.keys(assignments).length} von ${repetitionMode.drag.targets.length} Zuordnungen richtig gelöst</strong>
+      </div>
+      <div class="drag-source-pool">
+        ${remainingItems
+          .map(
+            (item) => `
+              <button class="drag-chip" type="button" draggable="true" data-drag-item="${item.id}">
+                ${item.label}
+              </button>
+            `
+          )
+          .join("")}
+      </div>
+      <div class="drag-board">
+        ${repetitionMode.drag.targets
+          .map((target) => {
+            const assignedId = assignments[target.id];
+            const assignedItem = repetitionMode.drag.items.find((item) => item.id === assignedId);
+            const solutionItem = repetitionMode.drag.items.find((item) => item.target === target.id);
+            return `
+              <div class="drag-target ${assignedItem ? "is-solved" : ""}" data-drag-target="${target.id}">
+                <p class="drag-target-title">${target.title}</p>
+                <p class="drag-target-prompt">${target.prompt}</p>
+                <div class="drag-drop-slot">
+                  ${
+                    assignedItem
+                      ? `<span class="drag-chip is-fixed">${assignedItem.label}</span>`
+                      : `<span class="drag-placeholder">Hierher ziehen</span>`
+                  }
+                </div>
+                ${
+                  showSolution
+                    ? `<p class="drag-solution"><strong>Musterlösung:</strong> ${solutionItem.label} – ${solutionItem.explanation}</p>`
+                    : ""
+                }
+              </div>
+            `;
+          })
+          .join("")}
+      </div>
+      <div class="task-actions">
+        <button class="btn ghost" type="button" data-drag-solution>Komplette Zuordnung anzeigen</button>
+      </div>
+      <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-drag-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
+    </article>
+  `;
+}
+
+function renderRepetitionCloze(state) {
+  const feedback = state.repetitionClozeFeedback;
+  const correct = state.repetitionClozeCorrect || [];
+  const showSolution = state.repetitionClozeShowSolution || isTeacherMode();
+  const renderedText = repetitionMode.cloze.parts
+    .map((part, index) => {
+      if (typeof part === "string") {
+        return part;
+      }
+
+      const fieldId = `repetition-${part.id}`;
+      const isCorrect = Boolean(correct[index]);
+      const value = String(state[`repetition-${part.id}-text`] || "");
+
+      return `<input class="cloze-input ${isCorrect ? "is-correct" : ""}" data-cloze-input="${fieldId}" value="${value.replace(/"/g, "&quot;")}" placeholder="..." />`;
+    })
+    .join("");
+
+  return `
+    <article class="repetition-card">
+      <p class="section-kicker">3. Lückentext</p>
+      <h3>${repetitionMode.cloze.title}</h3>
+      <p>${repetitionMode.cloze.instructions}</p>
+      <div class="repetition-status-line">
+        <strong>${correct.filter(Boolean).length} von ${repetitionMode.cloze.parts.filter((part) => typeof part === "object").length} Lücken richtig</strong>
+      </div>
+      <div class="cloze-text">${renderedText}</div>
+      <div class="task-actions">
+        <button class="btn primary" type="button" data-cloze-check>Lückentext prüfen</button>
+        <button class="btn ghost" type="button" data-cloze-solution>Musterlösung zeigen</button>
+      </div>
+      <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-cloze-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
+      <div class="teacher-answer-key ${showSolution ? "" : "is-hidden"}" data-cloze-solution-box>
+        <p class="section-kicker">Musterlösung</p>
+        <p>${repetitionMode.cloze.sampleAnswer}</p>
+      </div>
+    </article>
+  `;
+}
+
+function renderRepetitionOral() {
+  return `
+    <article class="repetition-card repetition-oral-card">
+      <p class="section-kicker">4. Mündliche Probe</p>
+      <h3>Große Entwicklungen frei erklären</h3>
+      <p>Diese Fragen trainieren genau den Stoff, der in einer mündlichen Prüfung sicher und zusammenhängend abrufbar sein muss.</p>
+      <div class="repetition-oral-stack">
+        ${repetitionMode.oralQuestions.map((question) => renderShortAnswerBox(question, "Prüffrage")).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function renderRepetitionPanel(state) {
+  const container = document.getElementById("repetitionsmodus");
+  if (!container) {
+    return;
+  }
+
+  const progress = getRepetitionProgress(state);
+  container.innerHTML = `
+    <p class="panel-kicker">Repetitionsmodus</p>
+    <h2>Große Entwicklungen und Umbrüche sicher wiederholen</h2>
+    <p class="compact">
+      Dieser Bereich trainiert Überblickswissen für mündliche Prüfungen: große Entwicklungslinien, zentrale Brüche und ihre historische Bedeutung. Fakten bleiben wichtig, aber immer im Zusammenhang.
+    </p>
+    <div class="repetition-progress">
+      <div class="repetition-progress-card">
+        <span class="fact-label">Gesamtstand</span>
+        <strong>${progress.completedForms} von ${progress.totalForms} Übungsformen abgeschlossen</strong>
+        <p>Memory ${progress.memoryMatched}/${progress.memoryTotal} · Drag-and-drop ${progress.dragAssigned}/${progress.dragTotal} · Lückentext ${progress.clozeCorrect}/${progress.clozeTotal} · Mündliche Probe ${progress.oralSolved}/${progress.oralTotal}</p>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <span style="width: ${(progress.completedForms / progress.totalForms) * 100}%"></span>
+      </div>
+    </div>
+    <div class="repetition-grid">
+      ${renderRepetitionMemory(state)}
+      ${renderRepetitionDrag(state)}
+      ${renderRepetitionCloze(state)}
+      ${renderRepetitionOral()}
+    </div>
+  `;
+}
+
 function analyzeAnswer(answer, task) {
   const normalized = normalize(answer);
   const matched = task.criteria.filter((criterion) =>
@@ -5831,7 +6262,10 @@ function evaluateCheckQuestion(answer, question) {
 }
 
 function bindShortAnswerTasks(state) {
-  const tasks = modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer]);
+  const tasks = [
+    ...modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer]),
+    ...repetitionMode.oralQuestions
+  ];
   tasks.forEach((task) => {
     const answerField = document.querySelector(`[data-answer="${task.id}"]`);
     const feedbackBox = document.querySelector(`[data-feedback="${task.id}"]`);
@@ -6122,6 +6556,197 @@ function bindCompletionActions() {
   });
 }
 
+function bindRepetitionMemory(state) {
+  document.querySelectorAll("[data-memory-card]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const cardId = button.dataset.memoryCard;
+      const cards = getMemoryCards();
+      const card = cards.find((entry) => entry.id === cardId);
+      if (!card) {
+        return;
+      }
+
+      const matched = Array.isArray(state.repetitionMemoryMatched) ? [...state.repetitionMemoryMatched] : [];
+      if (matched.includes(card.pairId)) {
+        return;
+      }
+
+      const selected = Array.isArray(state.repetitionMemorySelected) ? [...state.repetitionMemorySelected] : [];
+      if (selected.includes(card.id)) {
+        return;
+      }
+
+      selected.push(card.id);
+
+      if (selected.length === 2) {
+        const first = cards.find((entry) => entry.id === selected[0]);
+        const second = cards.find((entry) => entry.id === selected[1]);
+        if (first && second && first.pairId === second.pairId) {
+          matched.push(first.pairId);
+          state.repetitionMemoryFeedback = {
+            level: "good",
+            title: "Richtig verbunden",
+            body: `Diese Entwicklung und diese Folge gehören zusammen: ${first.text} – ${second.text}.`
+          };
+        } else {
+          state.repetitionMemoryFeedback = {
+            level: "low",
+            title: "Noch nicht passend",
+            body: "Diese beiden Karten gehören historisch nicht direkt zusammen. Suche nach einer engeren Entwicklung-Folge-Verbindung."
+          };
+        }
+        state.repetitionMemorySelected = [];
+        state.repetitionMemoryMatched = [...new Set(matched)];
+      } else {
+        state.repetitionMemorySelected = selected;
+      }
+
+      saveState(state);
+      renderApp(state);
+    });
+  });
+
+  const solutionButton = document.querySelector("[data-memory-solution]");
+  if (solutionButton) {
+    solutionButton.addEventListener("click", () => {
+      state.repetitionMemoryShowSolution = true;
+      saveState(state);
+      renderApp(state);
+    });
+  }
+}
+
+function bindRepetitionDrag(state) {
+  const items = repetitionMode.drag.items;
+  const assignments = state.repetitionDragAssignments || {};
+
+  document.querySelectorAll("[data-drag-item]").forEach((element) => {
+    element.addEventListener("dragstart", (event) => {
+      event.dataTransfer?.setData("text/plain", element.dataset.dragItem || "");
+    });
+  });
+
+  document.querySelectorAll("[data-drag-target]").forEach((target) => {
+    target.addEventListener("dragover", (event) => {
+      event.preventDefault();
+    });
+
+    target.addEventListener("drop", (event) => {
+      event.preventDefault();
+      const itemId = event.dataTransfer?.getData("text/plain");
+      const item = items.find((entry) => entry.id === itemId);
+      const targetId = target.dataset.dragTarget;
+      if (!item || !targetId || assignments[targetId]) {
+        return;
+      }
+
+      if (item.target === targetId) {
+        state.repetitionDragAssignments = {
+          ...(state.repetitionDragAssignments || {}),
+          [targetId]: item.id
+        };
+        state.repetitionDragFeedback = {
+          level: "good",
+          title: "Richtig zugeordnet",
+          body: `${item.label} gehört zu ${item.explanation}.`
+        };
+      } else {
+        state.repetitionDragFeedback = {
+          level: "low",
+          title: "Noch nicht passend",
+          body: `${item.label} gehört nicht zu dieser Erklärung. Ordne die Entwicklung dem historischen Kern zu, der wirklich zu ihr passt.`
+        };
+      }
+
+      saveState(state);
+      renderApp(state);
+    });
+  });
+
+  const solutionButton = document.querySelector("[data-drag-solution]");
+  if (solutionButton) {
+    solutionButton.addEventListener("click", () => {
+      state.repetitionDragShowSolution = true;
+      state.repetitionDragAssignments = repetitionMode.drag.targets.reduce((acc, target) => {
+        const item = repetitionMode.drag.items.find((entry) => entry.target === target.id);
+        if (item) {
+          acc[target.id] = item.id;
+        }
+        return acc;
+      }, {});
+      state.repetitionDragFeedback = {
+        level: "mid",
+        title: "Musterlösung eingeblendet",
+        body: "Die vollständige Zuordnung ist jetzt sichtbar. Vergleiche damit, welche Entwicklungen und Folgen zusammengehören."
+      };
+      saveState(state);
+      renderApp(state);
+    });
+  }
+}
+
+function bindRepetitionCloze(state) {
+  const checkButton = document.querySelector("[data-cloze-check]");
+  const solutionButton = document.querySelector("[data-cloze-solution]");
+  const feedbackBox = document.querySelector("[data-cloze-feedback]");
+
+  if (checkButton) {
+    checkButton.addEventListener("click", () => {
+      const blanks = repetitionMode.cloze.parts.filter((part) => typeof part === "object");
+      const results = blanks.map((blank) => {
+        const fieldId = `repetition-${blank.id}`;
+        const field = document.querySelector(`[data-cloze-input="${fieldId}"]`);
+        const answer = String(field?.value || "");
+        state[`${fieldId}-text`] = answer;
+        const normalizedAnswer = normalizeLoose(answer);
+        return blank.answers.some((accepted) => normalizedAnswer.includes(normalizeLoose(accepted)));
+      });
+
+      state.repetitionClozeCorrect = results;
+      const correctCount = results.filter(Boolean).length;
+      state.repetitionClozeFeedback = correctCount === blanks.length
+        ? {
+            level: "good",
+            title: "Lückentext sicher gelöst",
+            body: "Alle zentralen Entwicklungsschritte sind richtig eingesetzt."
+          }
+        : {
+            level: correctCount >= Math.ceil(blanks.length / 2) ? "mid" : "low",
+            title: correctCount >= Math.ceil(blanks.length / 2) ? "Im Kern richtig" : "Noch zu viele Lücken offen",
+            body: `Du hast ${correctCount} von ${blanks.length} Lücken richtig. Ergänze vor allem die Entwicklungsbegriffe, die die großen Umbrüche benennen.`
+          };
+
+      if (feedbackBox) {
+        const result = state.repetitionClozeFeedback;
+        feedbackBox.className = `feedback is-visible ${result.level}`;
+        feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+      }
+
+      saveState(state);
+      renderApp(state);
+    });
+  }
+
+  if (solutionButton) {
+    solutionButton.addEventListener("click", () => {
+      state.repetitionClozeShowSolution = true;
+      state.repetitionClozeFeedback = {
+        level: "mid",
+        title: "Musterlösung eingeblendet",
+        body: repetitionMode.cloze.sampleAnswer
+      };
+      saveState(state);
+      renderApp(state);
+    });
+  }
+}
+
+function bindRepetitionMode(state) {
+  bindRepetitionMemory(state);
+  bindRepetitionDrag(state);
+  bindRepetitionCloze(state);
+}
+
 function renderApp(state) {
   renderWelcomeOverlay(state);
   createTimeline(state);
@@ -6129,6 +6754,7 @@ function renderApp(state) {
   createNavigation(state);
   renderLearnerBanner(state);
   renderChapterCards(state);
+  renderRepetitionPanel(state);
   renderModules(state);
   renderCompletionPanel(state);
   renderSourceCatalog();
@@ -6136,6 +6762,7 @@ function renderApp(state) {
   bindSelftests(state);
   bindContentChecks(state);
   bindSourceMicroChecks(state);
+  bindRepetitionMode(state);
   bindWelcomeOverlay(state);
   bindCompletionActions();
   updateProgress(state);

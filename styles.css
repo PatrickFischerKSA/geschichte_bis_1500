@@ -1485,6 +1485,189 @@ p {
   gap: 10px;
 }
 
+.repetition-panel {
+  margin-top: 22px;
+}
+
+.repetition-progress {
+  margin-top: 18px;
+}
+
+.repetition-progress-card {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(31, 109, 102, 0.14);
+  background: linear-gradient(180deg, rgba(250, 247, 241, 0.94), rgba(245, 237, 226, 0.9));
+}
+
+.repetition-progress-card p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.repetition-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.repetition-card {
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(31, 109, 102, 0.12);
+  background: linear-gradient(180deg, rgba(250, 247, 241, 0.94), rgba(245, 237, 226, 0.9));
+}
+
+.repetition-card h3 {
+  margin-top: 4px;
+}
+
+.repetition-card p + p {
+  margin-top: 8px;
+}
+
+.repetition-status-line {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.memory-card {
+  min-height: 112px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(30, 44, 52, 0.12);
+  background: #fffdf9;
+  color: var(--text);
+  text-align: left;
+}
+
+.memory-card.is-selected {
+  border-color: rgba(200, 155, 60, 0.34);
+  background: rgba(252, 245, 220, 0.92);
+}
+
+.memory-card.is-matched {
+  border-color: rgba(44, 122, 87, 0.28);
+  background: rgba(230, 246, 236, 0.9);
+}
+
+.memory-card-front {
+  display: block;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.drag-source-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.drag-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(30, 44, 52, 0.12);
+  background: #fffdf9;
+  color: var(--text);
+  font-weight: 600;
+  cursor: grab;
+}
+
+.drag-chip.is-fixed {
+  cursor: default;
+  background: rgba(230, 246, 236, 0.92);
+  border-color: rgba(44, 122, 87, 0.28);
+}
+
+.drag-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.drag-target {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(30, 44, 52, 0.12);
+  background: rgba(255, 252, 248, 0.9);
+}
+
+.drag-target.is-solved {
+  border-color: rgba(44, 122, 87, 0.28);
+  background: rgba(230, 246, 236, 0.9);
+}
+
+.drag-target-title {
+  font-weight: 700;
+}
+
+.drag-target-prompt {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.drag-drop-slot {
+  margin-top: 12px;
+  min-height: 54px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px dashed rgba(30, 44, 52, 0.2);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.drag-placeholder {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.drag-solution {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.cloze-text {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(30, 44, 52, 0.12);
+  background: rgba(255, 252, 248, 0.9);
+  line-height: 2.1;
+}
+
+.cloze-input {
+  display: inline-block;
+  width: 170px;
+  margin: 0 6px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 44, 52, 0.14);
+  background: #fffdf9;
+}
+
+.cloze-input.is-correct {
+  border-color: rgba(44, 122, 87, 0.28);
+  background: rgba(230, 246, 236, 0.9);
+}
+
+.repetition-oral-stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
 .source-card,
 .catalog-card {
   padding: 14px 0 12px;
@@ -1627,6 +1810,10 @@ p {
   border-radius: 16px;
   border: 1px solid rgba(23, 54, 75, 0.14);
   background: rgba(239, 245, 248, 0.88);
+}
+
+.teacher-answer-key.is-hidden {
+  display: none;
 }
 
 .cloud-sync-panel,
@@ -2022,8 +2209,27 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
     grid-template-columns: 1fr;
   }
 
+  .drag-board {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .matrix-row > div {
     border-right: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloze-input {
+    width: 100%;
+    margin: 8px 0;
   }
 }
 

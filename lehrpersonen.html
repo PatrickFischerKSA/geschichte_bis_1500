@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geschichte bis 1500 – Lehrpersonen</title>
-  <link rel="stylesheet" href="styles.css?v=20260406-2" />
+  <link rel="stylesheet" href="styles.css?v=20260406-3" />
 </head>
 <body data-mode="teacher">
   <div id="welcome-overlay" class="welcome-overlay" hidden></div>
@@ -45,6 +45,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="index.html">Zur Schüler*innenansicht</a>
+          <a class="btn ghost" href="#repetitionsmodus">Zum Repetitionsmodus</a>
           <a class="btn ghost" href="#teacher-dashboard-panel">Zum Dashboard</a>
           <button class="btn ghost" type="button" data-print-teacher>Übersicht drucken</button>
           <button class="btn ghost" type="button" data-teacher-lock>Zugang sperren</button>
@@ -163,6 +164,8 @@
           <div id="chapter-cards" class="chapter-cards"></div>
         </section>
 
+        <section id="repetitionsmodus" class="panel sources-panel repetition-panel"></section>
+
         <div id="module-list" class="module-list"></div>
 
         <section id="completion-panel" class="panel sources-panel"></section>
@@ -250,7 +253,7 @@
   </script>
 
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260406-2"></script>
+  <script src="app.js?v=20260406-3"></script>
   <script src="supabase-config.js?v=20260405-2"></script>
   <script src="supabase.js?v=20260405-2"></script>
   <script src="teacher.js?v=20260405-17"></script>
