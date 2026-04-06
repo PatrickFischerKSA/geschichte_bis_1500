@@ -2116,18 +2116,18 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum verändert diese Unterscheidung den Blick auf den ganzen Kurs?",
-        placeholder: "Denke an die kommenden Themen der Einheit.",
+        prompt: "Warum beginnt Geschichte nicht schon mit Urknall, Eiszeiten oder Dinosauriern, sondern erst dort, wo Menschen mit Sprache, Regeln und gemeinsamen Vorstellungen ihre Welt ordnen?",
+        placeholder: "Erkläre, was Kultur und bewusste Weltgestaltung daran verändern.",
         sampleAnswer:
           "Die Unterscheidung verändert den Kurs, weil dann nicht bloß Daten oder Ereignisse im Mittelpunkt stehen. Wichtiger werden Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion als große Entwicklungslinien menschlicher Geschichte.",
         criteria: [
-          { label: "Bedeutung für den Kurs", keywords: ["kurs", "blick", "verandert"] },
+          { label: "Schwelle zur Geschichte erklärt", keywords: ["sprache", "regeln", "vorstellungen", "kultur", "bewusst"] },
           { label: "große Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
         ]
       },
       {
-        prompt: "Die SRF-Seite zum Anthropozän arbeitet mit drei Schritten: Kosten des Fortschritts, neues Erdzeitalter, Lösungen. Erkläre in 4 bis 6 Sätzen, warum genau diese Struktur für Modul 1 wichtig ist.",
-        placeholder: "Verbinde Fortschritt, Folgeschäden und Langzeitblick auf Geschichte.",
+        prompt: "Erkläre in 4 bis 6 Sätzen, warum Feuer, Landwirtschaft, Metallverarbeitung und Industrie zusammen als lange Geschichte menschlicher Eingriffe in Boden, Wasser, Luft und Lebensräume verstanden werden können.",
+        placeholder: "Verbinde technische Entwicklung mit ihren langfristigen Folgen.",
         sampleAnswer:
           "Die Struktur ist für Modul 1 wichtig, weil sie Geschichte sofort als Langzeitprozess zeigt. Zuerst wird deutlich, dass Fortschritt Vorteile bringt, aber auch Schäden erzeugt. Dann stellt die Seite die Frage nach einem neuen Erdzeitalter des Menschen. Am Schluss wird sichtbar, dass Menschen auch auf ihre eigenen Folgen reagieren. So beginnt der Kurs nicht mit Einzelereignissen, sondern mit einer langen Geschichte menschlicher Eingriffe.",
         criteria: [
@@ -2164,8 +2164,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Arbeite mit der SRF-Seite 1491 heraus, warum 1492 für Amerika ein Einschnitt, aber kein Anfang ist. Nenne dabei mindestens zwei konkrete Sachinformationen aus der Ressource.",
-        placeholder: "Nutze Fakten wie Landbrücke, Kanus, Sprachen, Reiche oder Landwirtschaft.",
+        prompt: "Warum ist 1492 für Amerika ein Einschnitt, aber kein Anfang? Nenne mindestens zwei konkrete Sachinformationen zu Besiedlung, Sprachen, Landwirtschaft oder politischen Ordnungen vor Kolumbus.",
+        placeholder: "Nutze Fakten wie Landbrücke, Kanus, Reiche oder viele Sprachen.",
         sampleAnswer:
           "1492 ist ein Einschnitt, aber kein Anfang, weil Menschen Amerika schon vor 18'000 bis 20'000 Jahren erreichten. Einige kamen über die Landbrücke, andere in Kanus. Es gab dort viele Sprachen, Gesellschaften, Landwirtschaft und politische Strukturen lange vor Kolumbus. Die Ressource zeigt also eine Vorgeschichte statt einer leeren Bühne.",
         criteria: [
@@ -2175,8 +2175,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was trägt der Nutzerfilm zu Frühmenschen zusätzlich bei, was in 1491 nicht im Zentrum steht? Antworte mit Menschenarten, Werkzeugen oder Feuer.",
-        placeholder: "Erkläre, warum diese Filmgrundlage Modul 2 stofflich ergänzt.",
+        prompt: "Welche zusätzlichen Informationen zu Frühmenschen, Menschenarten, Werkzeugen und Feuer braucht man, um die frühe Menschheitsgeschichte vollständig zu verstehen?",
+        placeholder: "Antworte mit Menschenarten, Werkzeugen oder Feuer.",
         sampleAnswer:
           "Der Nutzerfilm ergänzt Frühmenschen, Menschenarten, Werkzeuge und Feuer direkter als 1491. Während 1491 vor allem Migration und spätere Gesellschaften zeigt, klärt dieser Film die biologische und technische Frühphase der Menschheitsgeschichte.",
         criteria: [
@@ -2213,8 +2213,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Nutze Felsbilder, Totempfähle und Mayaschrift aus der SRF-Seite 1491 und erkläre, was diese drei Beispiele über symbolische Ordnung verraten.",
-        placeholder: "Zeige, wie Bilder, Monumente und Schrift Erinnerung und Ordnung tragen.",
+        prompt: "Erkläre an Felsbildern, Totempfählen und Mayaschrift, wie Bilder, Monumente und Schrift Erinnerung, Zugehörigkeit und Ordnung sichern.",
+        placeholder: "Zeige, wie diese drei Formen Gesellschaft symbolisch ordnen.",
         sampleAnswer:
           "Felsbilder zeigen, dass Menschen Erlebnisse und Weltdeutungen festhalten. Totempfähle erzählen Familien- und Herkunftsgeschichte öffentlich. Mayaschrift beweist, dass komplexe Zeichenwelten Wissen dauerhaft sichern können. Alle drei Beispiele zeigen, dass Gesellschaften sich über Symbole und Erinnerung ordnen.",
         criteria: [
@@ -2224,8 +2224,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was zeigt der Film zu den Höhlenmalereien darüber, warum frühe Kunst historisch ernst genommen werden muss?",
-        placeholder: "Verbinde Höhlenmalerei mit Symbolen, Ritual oder Weltdeutung.",
+        prompt: "Was verraten Höhlenmalereien über Denken, Rituale und Weltdeutung früher Menschen?",
+        placeholder: "Erkläre, was frühe Kunst über Denken und Vorstellen verrät.",
         sampleAnswer:
           "Der Film zeigt, dass Höhlenmalereien historische Quellen sind und nicht nur Schmuck. Sie verweisen auf Symbolfähigkeit, mögliche Rituale und eine bildliche Deutung der Welt. Deshalb gehören sie zur Geschichte menschlicher Vorstellungswelten.",
         criteria: [
@@ -2274,8 +2274,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Welche drei Dinge müssen Lernende aus dem zusätzlichen Film zu Jägern und Sammlern mitnehmen?",
-        placeholder: "Arbeite mit Umweltwissen, Mobilität und mündlicher Weitergabe.",
+        prompt: "Nenne drei Grundmerkmale von Jäger-und-Sammler-Gesellschaften. Arbeite mit Umweltwissen, Mobilität und mündlicher Weitergabe.",
+        placeholder: "Beschreibe die Lebensform so, dass sie als eigenständige Ordnung verständlich wird.",
         sampleAnswer:
           "Erstens brauchen Jäger und Sammler dichtes Umweltwissen. Zweitens ist ihre Mobilität organisiert und an Räume angepasst. Drittens sichern sie Wissen vor allem mündlich und praktisch. Genau dadurch wird ihre Lebensform historisch ernst genommen.",
         criteria: [
@@ -2312,7 +2312,7 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was zeigen die Pfahlbauer von Pfyn ganz konkret über Sesshaftigkeit? Nenne drei Dinge aus dem Film, die diesen Wandel sichtbar machen.",
+        prompt: "Was zeigen Hüttenbau, Feuerstellen und Werkzeuge der Pfahlbauer von Pfyn ganz konkret über Sesshaftigkeit?",
         placeholder: "Arbeite mit Hüttenbau, Werkzeugen, Feuerstellen, Kleidung, Nahrung oder Vorräten.",
         sampleAnswer:
           "Die Pfahlbauer zeigen Sesshaftigkeit konkret durch Hüttenbau, Feuerstellen und Vorratshaltung. Auch Werkzeuge wie Steinbeile und Kolbenpfeile gehören dazu, weil eine feste Siedlung dauernde Arbeit braucht. Kleidung, Nahrung und Reparaturen zeigen, dass Sesshaftigkeit ein ganzer Alltag war.",
@@ -2323,8 +2323,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum verschärft der Nutzerfilm zur neolithischen Revolution die Kernfrage dieses Moduls?",
-        placeholder: "Erkläre, warum Sesshaftigkeit als Streitfrage und nicht als Selbstverständlichkeit erscheint.",
+        prompt: "Warum ist der Übergang zu Ackerbau und Sesshaftigkeit keine einfache Fortschrittsgeschichte, sondern eine umstrittene Wende mit Gewinnen und Belastungen?",
+        placeholder: "Erkläre, warum Sesshaftigkeit als Streitfrage erscheint.",
         sampleAnswer:
           "Der Film verschärft die Kernfrage, weil er Sesshaftigkeit nicht automatisch als Fortschritt darstellt. Er zwingt dazu, Gewinne wie Vorräte und Dörfer gegen Belastungen wie Arbeit, Abhängigkeit und Ungleichheit abzuwägen.",
         criteria: [
@@ -2361,8 +2361,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum ist die SRF-Folge zum Alten Ägypten für dieses Modul wichtiger als bloß ein Bild von Pyramiden? Arbeite mit Nil, Beamtentum und Hieroglyphenschrift.",
-        placeholder: "Zeige, wie Umwelt, Verwaltung und Schrift zusammen einen Staat tragen.",
+        prompt: "Warum erklären Nil, Beamtentum und Hieroglyphenschrift das Alte Ägypten besser als bloße Pyramidenbilder?",
+        placeholder: "Zeige, wie Umwelt, Verwaltung und Schrift zusammen Staatlichkeit tragen.",
         sampleAnswer:
           "Die Folge ist wichtiger als bloße Pyramidenbilder, weil sie Staatlichkeit erklärt. Der Nil macht Landwirtschaft planbar, das Beamtentum organisiert Abgaben und Arbeiten, und Hieroglyphenschrift stabilisiert Verwaltung. So wird Ägypten als funktionierende Ordnung sichtbar, nicht nur als Monumentenwelt.",
         criteria: [
@@ -2384,8 +2384,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was ergänzt der Nutzerfilm zu Hochkulturen gegenüber der Ägypten-Folge?",
-        placeholder: "Erkläre den Unterschied zwischen Fallbeispiel und breiterem Überblick.",
+        prompt: "Was lernt man über Hochkulturen, wenn man nicht nur auf Ägypten schaut, sondern mehrere frühe Staaten miteinander vergleicht?",
+        placeholder: "Erkläre den Gewinn eines breiteren Überblicks über Schrift, Verwaltung und Religion.",
         sampleAnswer:
           "Die Ägypten-Folge zeigt ein konkretes Beispiel sehr genau. Der Nutzerfilm zu Hochkulturen ergänzt dazu den breiteren Überblick über Schrift, Verwaltung, Religion und Staat in mehreren frühen Kulturen. So wird der Begriff Hochkultur allgemeiner abgesichert.",
         criteria: [
@@ -2519,7 +2519,7 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was zeigt die Araber-Folge von 'Grosse Völker' darüber, warum Religion, Wissen und Herrschaft zusammen gedacht werden müssen?",
+        prompt: "Erkläre am Beispiel der Araber, warum Religion, Herrschaft, Mathematik, Medizin und Bildung in großen historischen Räumen oft eng zusammenhängen.",
         placeholder: "Arbeite mit Islam, Großreich, Mathematik, Medizin oder Bildung.",
         sampleAnswer:
           "Die Araber-Folge zeigt, dass der Islam Teil eines großen politischen und kulturellen Raums war. In diesem Raum wurden Mathematik, Medizin und Wissenschaft gefördert und verbreitet. Religion, Bildung und Herrschaft greifen also ineinander, statt getrennte Bereiche zu sein.",
@@ -2530,8 +2530,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Vergleiche die drei zusätzlichen Religionsfilme zu Christentum, Judentum und Islam. Warum ist es für dieses Modul wichtig, alle drei ausdrücklich einzuführen?",
-        placeholder: "Arbeite mit Eigenständigkeit, Schrift, Gemeinschaft und historischen Räumen.",
+        prompt: "Vergleiche Judentum, Christentum und Islam. Warum muss man alle drei als eigenständige religiöse Ordnungen mit eigenen Texten, Gemeinschaften und historischen Räumen verstehen?",
+        placeholder: "Arbeite mit Eigenständigkeit, Schrift, Gemeinschaft und Ausbreitung.",
         sampleAnswer:
           "Es ist wichtig, alle drei einzuführen, weil keine dieser Religionen bloß vorausgesetzt werden darf. Judentum, Christentum und Islam sind eigenständige religiöse Ordnungsräume mit Texten, Gemeinschaften und historischen Ausbreitungen. Erst durch den Vergleich wird Religion im Modul konkret und nicht nur abstrakt.",
         criteria: [
@@ -2594,7 +2594,7 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 11",
     questions: [
       {
-        prompt: "Warum ist der Kinderkreuzzug ein guter Fall für Quellenkritik?",
+        prompt: "Warum müssen Berichte über den Kinderkreuzzug von 1212 kritisch geprüft werden, statt sie einfach zu glauben?",
         placeholder: "Erkläre, was Historikerinnen und Historiker prüfen müssen.",
         sampleAnswer:
           "Der Kinderkreuzzug ist ein guter Fall für Quellenkritik, weil die Überlieferung spektakulär klingt, aber erst geprüft werden muss. Historikerinnen und Historiker fragen nach Entstehungszeit, Absicht und Zuverlässigkeit der Texte.",
@@ -2616,8 +2616,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Was genau macht der Film zum Kinderkreuzzug mit der Überlieferung von 1212? Antworte mit Nikolaus, Stephan und der Frage nach der Zuverlässigkeit der Chroniken.",
-        placeholder: "Zeige, dass der Film nicht nur erzählt, sondern prüft.",
+        prompt: "Wie lässt sich die Überlieferung zum Kinderkreuzzug von 1212 prüfen? Antworte mit Nikolaus, Stephan und der Frage nach der Zuverlässigkeit der Chroniken.",
+        placeholder: "Arbeite mit den Namen, dem Jahr 1212 und der Prüfung von Chroniken.",
         sampleAnswer:
           "Der Film nimmt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes ernst, aber nicht unkritisch. Er fragt, was Chroniken tatsächlich belegen, wann sie entstanden und wie zuverlässig sie sind. So wird aus einer Legende ein Fall für Quellenkritik.",
         criteria: [
@@ -2627,8 +2627,8 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum ist der zusätzliche Film zur Stadt im Mittelalter für dieses Modul wichtig? Arbeite mit Stadt, Markt, Handwerk und Vernetzung.",
-        placeholder: "Erkläre, warum Mittelalter nicht nur Burggeschichte ist.",
+        prompt: "Warum gehören Stadt, Markt, Handwerk und Vernetzung genauso zum Mittelalter wie Burgen und Ritter?",
+        placeholder: "Erkläre, was Städte für Wirtschaft und Austausch bedeuten.",
         sampleAnswer:
           "Der Film ist wichtig, weil er mittelalterliche Städte als Räume von Markt, Handwerk und dichtem Zusammenleben zeigt. Dadurch wird klar, dass Vernetzung, Handel und Wandel über urbane Räume liefen und das Mittelalter nicht nur aus Burgen bestand.",
         criteria: [
@@ -2665,7 +2665,7 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Verbinde die Hauptthese von 1491 mit der Hauptthese des Anthropozäns. Warum ist diese Kombination für den Schluss des Kurses so stark?",
+        prompt: "Verbinde Amerika vor 1492 mit der Idee des Anthropozäns: Warum muss Geschichte zugleich global gedacht und nach ihren Langzeitfolgen beurteilt werden?",
         placeholder: "Arbeite mit globaler Perspektive und Langzeitfolgen.",
         sampleAnswer:
           "1491 zeigt, dass Geschichte vor 1500 global ist und nicht bei Europa endet. Das Anthropozän zeigt, dass frühe Entwicklungen lange Folgen haben und bis in Umwelt und Erdgeschichte wirken. Zusammen ergeben beide Seiten einen Schluss, der zugleich global und langfristig denkt.",
@@ -3096,7 +3096,7 @@ const additionalHarariSources = {
 const additionalHarariChecks = {
   "modul-1": [
     {
-      prompt: "Arbeite mit Harari S. 39 und S. 151 heraus, warum große Gesellschaften gemeinsame Geschichten und gelernte Regeln brauchen. Warum reicht persönliche Bekanntschaft dafür nicht aus?",
+      prompt: "Warum brauchen große Gesellschaften gemeinsame Geschichten und gelernte Regeln? Warum reicht persönliche Bekanntschaft dafür nicht aus?",
       placeholder: "Verbinde Großgruppen, Mythen, Regeln und Weitergabe.",
       sampleAnswer:
         "S. 39 zeigt, dass persönliche Bekanntschaft nur kleine Gruppen trägt, während größere Gemeinschaften gemeinsame Geschichten brauchen. S. 151 ergänzt, dass diese Ordnungen nicht in den Genen liegen, sondern gelernt und weitergegeben werden. Große Gesellschaften leben daher von Symbolen, Regeln und Institutionen, nicht von bloßer Nähe.",
@@ -3109,7 +3109,7 @@ const additionalHarariChecks = {
   ],
   "modul-2": [
     {
-      prompt: "Nutze Harari S. 31 und S. 32 und erkläre, was den späteren Homo sapiens gegenüber den früheren Gruppen verändert. Arbeite mit Australien, Werkzeugen, Kunst oder dem Löwenmenschen.",
+      prompt: "Was verändert den späteren Homo sapiens gegenüber früheren Gruppen? Arbeite mit Australien, Werkzeugen, Kunst oder dem Löwenmenschen.",
       placeholder: "Zeige die Verbindung von Technik, Bewegung und Vorstellungskraft.",
       sampleAnswer:
         "S. 31 zeigt neue Fähigkeiten wie Boote, Nadeln, Schmuck und die Besiedlung Australiens. S. 32 ergänzt mit dem Löwenmenschen frühe Kunst und Vorstellungskraft. Zusammen zeigen beide Seiten, dass spätere Sapiens sich technisch, räumlich und symbolisch deutlich anders verhalten als die früheren Gruppen.",
@@ -3122,7 +3122,7 @@ const additionalHarariChecks = {
   ],
   "modul-3": [
     {
-      prompt: "Erkläre mit Harari S. 35 und S. 36, warum Tratsch und fiktive Sprache für die Menschheitsgeschichte so wichtig sind.",
+      prompt: "Warum sind Tratsch und fiktive Sprache für die Menschheitsgeschichte so wichtig?",
       placeholder: "Verbinde soziale Informationen, Mythen und Großgruppenkooperation.",
       sampleAnswer:
         "S. 35 zeigt, dass Menschen über andere sprechen und so Vertrauen und Misstrauen organisieren können. S. 36 geht weiter: Menschen reden sogar über Dinge, die es nicht gibt, also über Mythen, Götter oder Regeln. Zusammen ermöglichen beide Fähigkeiten Kooperation in sehr großen Gruppen.",
@@ -3135,7 +3135,7 @@ const additionalHarariChecks = {
   ],
   "modul-4": [
     {
-      prompt: "Arbeite mit Harari S. 101 und S. 108 heraus, warum mobile Lebensformen so lange funktionierten. Beziehe Denkweise, Umweltwissen und den Geburtenrhythmus ein.",
+      prompt: "Warum funktionierten mobile Lebensformen so lange? Beziehe Denkweise, Umweltwissen und Geburtenrhythmus ein.",
       placeholder: "Verbinde lange Normalform, Mobilität und Kinder.",
       sampleAnswer:
         "S. 101 macht klar, dass Jäger und Sammler die lange Normalform der Menschheit darstellen. S. 108 zeigt, wie Mobilität sogar den Geburtenrhythmus prägte, weil kleine Kinder auf Wanderungen eine Belastung waren. Mobile Lebensformen funktionierten also über genaues Umweltwissen und angepasste Sozialorganisation.",
@@ -3148,7 +3148,7 @@ const additionalHarariChecks = {
   ],
   "modul-5": [
     {
-      prompt: "Nutze Harari S. 103 und S. 105 und erkläre, warum Landwirtschaft vielen Menschen mehr Mühe als Freiheit brachte.",
+      prompt: "Warum brachte Landwirtschaft vielen Menschen mehr Mühe als Freiheit?",
       placeholder: "Arbeite mit härterer Arbeit, schlechterer Ernährung und der Bindung an Pflanzen.",
       sampleAnswer:
         "S. 103 widerspricht der Vorstellung, frühe Bauern hätten automatisch angenehmer gelebt. S. 105 zeigt mit dem Bild vom domestizierenden Weizen, wie stark Menschen an Feldarbeit, Ertrag und Risiko gebunden wurden. Landwirtschaft brachte daher Vorräte, aber auch neue Mühen und Abhängigkeiten.",
@@ -3161,7 +3161,7 @@ const additionalHarariChecks = {
   ],
   "modul-6": [
     {
-      prompt: "Erkläre mit Harari S. 157 und S. 160, warum frühe Schrift zuerst ein Werkzeug von Verwaltung und Bürokratie war.",
+      prompt: "Warum war frühe Schrift zuerst ein Werkzeug von Verwaltung und Bürokratie?",
       placeholder: "Arbeite mit Gerstenlisten, Besitz und dem Ausbau zur Keilschrift.",
       sampleAnswer:
         "S. 157 zeigt, dass die ältesten Texte Gerstenmengen, Besitz und Schulden festhielten. S. 160 beschreibt dann, wie aus solcher Verwaltungsschrift umfassendere Schriftsysteme wurden. Schrift ist am Anfang also vor allem ein Mittel, Vorräte, Abgaben und Herrschaft zu organisieren.",
@@ -3174,7 +3174,7 @@ const additionalHarariChecks = {
   ],
   "modul-7": [
     {
-      prompt: "Arbeite mit Harari S. 130 und S. 133 und erkläre, warum ein Reich nicht nur Speicher und Heere, sondern auch Regeln und Gerechtigkeitsvorstellungen braucht.",
+      prompt: "Warum braucht ein Reich nicht nur Speicher und Heere, sondern auch Regeln und Gerechtigkeitsvorstellungen?",
       placeholder: "Verbinde Überschuss, Streit, Ordnung und Hammurabi.",
       sampleAnswer:
         "S. 130 zeigt, dass Überschüsse allein keine stabile Großordnung schaffen, weil Verteilung und Konflikte geregelt werden müssen. S. 133 führt mit Hammurabi vor, wie Kodizes und Gerechtigkeitsvorstellungen diese Ordnung stützen. Ein Reich braucht daher nicht nur Machtmittel, sondern auch akzeptierte Regeln.",
@@ -3187,8 +3187,8 @@ const additionalHarariChecks = {
   ],
   "modul-8": [
     {
-      prompt: "Erkläre mit Harari S. 215 und S. 220, warum Tauschhandel an Grenzen stößt und Geld dann zur Vertrauensordnung wird.",
-      placeholder: "Arbeite mit Wechselkursen, Vergleichbarkeit und gemeinsamem Glauben an Wert.",
+      prompt: "Warum stößt Tauschhandel an Grenzen und warum wird Geld dann zur Vertrauensordnung?",
+      placeholder: "Arbeite mit Vergleichbarkeit und gemeinsamem Glauben an Wert.",
       sampleAnswer:
         "S. 215 zeigt, wie unübersichtlich direkter Tausch mit vielen Waren und Spezialisten wird. S. 220 erklärt dann, dass Geld diese Probleme löst, weil alle seinen Wert anerkennen. Geld ist deshalb nicht nur Metall, sondern ein gemeinsames Vertrauenssystem.",
       criteria: [
@@ -3200,7 +3200,7 @@ const additionalHarariChecks = {
   ],
   "modul-9": [
     {
-      prompt: "Nutze Harari S. 252 und S. 253 und erkläre, wie aus Religion ein großes, missionierendes Ordnungssystem werden kann.",
+      prompt: "Wie kann aus Religion ein großes, missionierendes Ordnungssystem werden?",
       placeholder: "Arbeite mit Normen, Werten, übermenschlicher Ordnung und Universalreligionen.",
       sampleAnswer:
         "S. 252 definiert Religion als Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt. S. 253 zeigt, wie daraus missionierende Universalreligionen werden, die viele Regionen und Menschen verbinden wollen. Religion ordnet dadurch nicht nur lokal, sondern über große Räume hinweg.",
@@ -3213,7 +3213,7 @@ const additionalHarariChecks = {
   ],
   "modul-10": [
     {
-      prompt: "Erkläre mit Harari S. 261 und S. 263, warum Kirche und Religion für die mittelalterliche Gesellschaft nicht bloß Randthemen sind.",
+      prompt: "Warum sind Kirche und Religion für die mittelalterliche Gesellschaft nicht bloß Randthemen?",
       placeholder: "Verbinde Ausbreitung von Religionen, Herrschaft und Alltag bis um 1500.",
       sampleAnswer:
         "S. 261 zeigt, wie Christentum und Islam von kleinen Gruppen zu großen Weltreligionen wurden. S. 263 macht deutlich, dass monotheistische Religionen bis um 1500 weite Teile Afrikas und Eurasiens prägten. Kirche und Religion strukturieren im Mittelalter daher Politik, Alltag und Gesellschaft insgesamt.",
@@ -3226,7 +3226,7 @@ const additionalHarariChecks = {
   ],
   "modul-11": [
     {
-      prompt: "Arbeite mit Harari S. 214 und S. 219 heraus, warum Städte, Märkte und Handel im Mittelalter eng zusammenhängen.",
+      prompt: "Warum hängen Städte, Märkte und Handel im Mittelalter eng zusammen?",
       placeholder: "Verbinde Spezialisierung, transportierbares Vermögen und urbane Verdichtung.",
       sampleAnswer:
         "S. 214 zeigt, dass mit Städten neue Spezialisten und Märkte entstehen. S. 219 erklärt, warum Geld Vermögen beweglich macht und dadurch größere Handelsnetze ermöglicht. Mittelalterliche Städte verdichten also Arbeitsteilung, Markt und Verkehr.",
@@ -3239,7 +3239,7 @@ const additionalHarariChecks = {
   ],
   "modul-12": [
     {
-      prompt: "Nutze Harari S. 148 und S. 263 und formuliere eine Bilanz: Warum leben Menschen immer wieder in großen gemeinsamen Ordnungen, und wie weit reichen diese Ordnungen um 1500 bereits?",
+      prompt: "Warum leben Menschen immer wieder in großen gemeinsamen Ordnungen, und wie weit reichen diese Ordnungen um 1500 bereits?",
       placeholder: "Verbinde erfundene Ordnung, große Räume und die Welt an der Schwelle der Neuzeit.",
       sampleAnswer:
         "S. 148 zeigt, dass Menschen selten außerhalb aller Ordnungen leben, sondern meist in neue Ordnungen wechseln. S. 263 macht sichtbar, wie weit diese großen religiösen und politischen Ordnungen bis um 1500 schon reichen. Die Bilanz lautet daher: Geschichte bis 1500 ist eine Geschichte wachsender gemeinsamer Regelräume.",
@@ -3505,7 +3505,7 @@ const expandedHarariSources = {
 const expandedHarariChecks = {
   "modul-1": [
     {
-      prompt: "Nutze Harari S. 38 und S. 39 und erkläre, warum kleine Gruppen anders funktionieren als große Gesellschaften. Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
+      prompt: "Warum funktionieren kleine Gruppen anders als große Gesellschaften? Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
       placeholder: "Verbinde kleine Gruppen, Klatsch und Mythen.",
       sampleAnswer:
         "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Größe tragen. Große Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
@@ -3518,7 +3518,7 @@ const expandedHarariChecks = {
   ],
   "modul-5": [
     {
-      prompt: "Erkläre mit Harari S. 104 und S. 107, warum Landwirtschaft nicht nur Erträge brachte, sondern Menschen in neue Arbeit und Abhängigkeit hineinführte.",
+      prompt: "Warum brachte Landwirtschaft nicht nur Erträge, sondern führte Menschen auch in neue Arbeit und Abhängigkeit hinein?",
       placeholder: "Arbeite mit Feldarbeit, Körper und Luxusfalle.",
       sampleAnswer:
         "S. 104 zeigt die harte Feldarbeit mit Unkrautjäten, Bewässerung und Schutz der Ernte. S. 107 erklärt, dass die neue Lebensweise nicht plötzlich beschlossen wurde, sondern sich Schritt für Schritt als Luxusfalle verfestigte. Landwirtschaft brachte also mehr Nahrung, aber auch mehr Mühe und stärkere Bindung an Felder und Ernten.",
@@ -3531,7 +3531,7 @@ const expandedHarariChecks = {
   ],
   "modul-6": [
     {
-      prompt: "Nutze Harari S. 158 und S. 159 und erkläre, warum Schrift und Datenspeicherung für frühe Staaten so wichtig waren.",
+      prompt: "Warum waren Schrift und Datenspeicherung für frühe Staaten so wichtig?",
       placeholder: "Arbeite mit Steuern, Besitz, Zahlen und Quipus.",
       sampleAnswer:
         "S. 158 zeigt, dass frühe Schrift vor allem Steuern, Besitz und Zahlen festhält. S. 159 erweitert das mit den Quipus: Auch Knotenschnüre konnten große Mengen von Verwaltungsdaten speichern. Frühe Staaten brauchen solche Systeme, um Menschen, Abgaben und Vorräte über größere Räume hinweg zu ordnen.",
@@ -3544,7 +3544,7 @@ const expandedHarariChecks = {
   ],
   "modul-8": [
     {
-      prompt: "Erkläre mit Harari S. 216 und S. 218, warum Geld mehr ist als Metall oder Papier. Arbeite mit geistiger Erfindung und universellem Tauschmittel.",
+      prompt: "Warum ist Geld mehr als Metall oder Papier? Arbeite mit geistiger Erfindung und universellem Tauschmittel.",
       placeholder: "Verbinde Idee, Anerkennung und Vergleichbarkeit.",
       sampleAnswer:
         "S. 216 beschreibt Geld als geistige Erfindung, die auf gemeinsamer Anerkennung beruht. S. 218 erklärt, dass Geld dadurch zum universellen Tauschmittel wird und sehr unterschiedliche Dinge vergleichbar macht. Geld ist also nicht nur Material, sondern eine geteilte Vorstellung von Wert.",
@@ -3557,7 +3557,7 @@ const expandedHarariChecks = {
   ],
   "modul-9": [
     {
-      prompt: "Arbeite mit Harari S. 254 und S. 255 heraus, wie Landwirtschaft, Besitz und größere politische Räume religiöse Veränderungen auslösen.",
+      prompt: "Wie lösen Landwirtschaft, Besitz und größere politische Räume religiöse Veränderungen aus?",
       placeholder: "Verbinde Bauernwelt, Götter und Weltreiche.",
       sampleAnswer:
         "S. 254 zeigt, dass Bauern Tiere und Pflanzen als Besitz behandeln und deshalb stärker auf göttliche Kontrolle von Fruchtbarkeit und Schutz hoffen. S. 255 erklärt, dass mit Weltreichen und Handelsnetzen größere Götter und polytheistische Ordnungen wichtiger werden. Religion verändert sich also mit Besitz, Herrschaft und Raumgröße.",
@@ -3570,7 +3570,7 @@ const expandedHarariChecks = {
   ],
   "modul-10": [
     {
-      prompt: "Nutze Harari S. 262 und S. 263 und erkläre, warum monotheistische Religionen im Mittelalter so stark in Herrschaft und Gesellschaft eingreifen.",
+      prompt: "Warum greifen monotheistische Religionen im Mittelalter so stark in Herrschaft und Gesellschaft ein?",
       placeholder: "Arbeite mit Wahrheitsanspruch, Mission und großen Räumen.",
       sampleAnswer:
         "S. 262 erklärt den missionarischen Eifer monotheistischer Religionen aus ihrem Anspruch auf die ganze Wahrheit. S. 263 zeigt, wie weit diese Religionen bis um 1500 bereits große Teile Afrikas und Eurasiens prägen. Dadurch werden sie zu zentralen Ordnungskräften von Herrschaft und Gesellschaft.",
@@ -3583,8 +3583,8 @@ const expandedHarariChecks = {
   ],
   "modul-11": [
     {
-      prompt: "Erkläre mit Harari S. 217 und S. 219, warum städtischer Handel nicht an eine einzige Münzform gebunden ist, sondern an allgemein akzeptierten Wert.",
-      placeholder: "Arbeite mit Kaurischnecken, verschiedenen Geldformen und beweglichem Vermögen.",
+      prompt: "Warum ist städtischer Handel nicht an eine einzige Münzform gebunden, sondern an allgemein akzeptierten Wert?",
+      placeholder: "Arbeite mit verschiedenen Geldformen und beweglichem Vermögen.",
       sampleAnswer:
         "S. 217 zeigt, dass sehr unterschiedliche Dinge wie Kaurischnecken oder Zigaretten als Geld dienen können. S. 219 ergänzt, dass Geld Vermögen beweglich macht und dadurch Märkte und Handel erleichtert. Für Städte ist also entscheidend, dass Wert allgemein anerkannt und transportierbar ist.",
       criteria: [
@@ -3596,7 +3596,7 @@ const expandedHarariChecks = {
   ],
   "modul-12": [
     {
-      prompt: "Nutze Harari S. 255 und S. 263 und erkläre als Schlussbilanz, wie aus lokalen Welten immer größere religiöse und politische Räume werden.",
+      prompt: "Wie werden aus lokalen Welten immer größere religiöse und politische Räume?",
       placeholder: "Verbinde Talwelt, Weltreiche, Handelsnetze und die Lage um 1500.",
       sampleAnswer:
         "S. 255 zeigt den Übergang von lokalen Geistern zu größeren religiösen Ordnungen, weil Weltreiche und Handelsnetze weiter reichen als das eigene Tal. S. 263 beschreibt dann die Welt um 1500 als Raum großer monotheistischer und politischer Ordnungen. Die Schlussbilanz lautet: Geschichte bis 1500 ist eine Geschichte wachsender Verbindungsräume.",
@@ -5187,9 +5187,9 @@ function renderInlineCheckQuestion(module, questionIndex) {
 
   return `
     <div class="inline-check-block">
-      <p class="section-kicker">Kurze Inhaltssicherung</p>
+      <p class="section-kicker">Prüffrage</p>
       <div class="check-question" data-inline-check="${answerId}">
-        <p><strong>Direkt sichern:</strong> ${question.prompt}</p>
+        <p>${question.prompt}</p>
         <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
         <div class="feedback" data-content-feedback="${answerId}"></div>
         ${
