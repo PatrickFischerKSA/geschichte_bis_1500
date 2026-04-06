@@ -3188,85 +3188,97 @@ const moduleVisuals = {
     hero: "assets/srf/m01-anthropozaen.jpg",
     side: "assets/srf/m01-spurensuche.jpg",
     kicker: "Langzeitblick",
-    title: "Vom Anfang der Geschichte zur Spur des Menschen",
-    text: "Der Einstieg verbindet Geschichtsbegriff, Weltdeutung und die Frage, wie menschliches Handeln überhaupt historische Wirkung entfaltet."
+    title: "Geschichte als Entwicklung menschlicher Ordnungen",
+    text: "Das Modul klärt, dass Geschichte nicht mit Urknall oder Eiszeit beginnt, sondern dort, wo Menschen ihre Welt durch Sprache, Regeln, Technik, Erinnerung und gemeinsame Vorstellungen gestalten.",
+    sideText: "Der Überblick führt von frühen menschlichen Eingriffen wie Feuer und Landwirtschaft bis zu Städten, Reichen und langfristigen Veränderungen von Landschaft und Umwelt."
   },
   "modul-2": {
     hero: "assets/srf/m02-1491.jpg",
     side: "assets/srf/m02-1491-detail.jpg",
     kicker: "Frühmenschliche Welt",
-    title: "Migration, Anpassung und mehrere Menschenarten",
-    text: "Das Modul öffnet die Frühgeschichte global und zeigt den Menschen zunächst nicht als Herrscher, sondern als anpassungsfähiges Lebewesen."
+    title: "Mehrere Menschenarten, Migration und Anpassung",
+    text: "Frühe Menschheitsgeschichte verläuft nicht geradlinig: Homo sapiens lebt zunächst neben anderen Menschenarten und setzt sich erst durch Lernen, Technik, Kooperation und Anpassung an verschiedene Räume durch.",
+    sideText: "Wichtig sind Ausbreitung, Werkzeuggebrauch, Feuer, Boote, Kleidung und die Fähigkeit, in sehr unterschiedlichen Landschaften zu überleben."
   },
   "modul-3": {
     hero: "assets/srf/m02-1491-detail.jpg",
     side: "assets/srf/m02-1491.jpg",
     kicker: "Kognitive Revolution",
-    title: "Bilder, Mythen und Sprache als Weltbau",
-    text: "Aus Symbolen und Erzählungen entstehen gemeinsame Ordnungen, die später Herrschaft, Geld und Religion ermöglichen."
+    title: "Sprache, Zeichen und gemeinsame Vorstellungswelten",
+    text: "Menschen können über Vergangenes, Zukünftiges und Erfundenes sprechen. Dadurch entstehen Mythen, Regeln, Rituale, Zugehörigkeiten und die Grundlage späterer Staaten, Religionen und Geldordnungen.",
+    sideText: "Höhlenbilder, Totempfähle und Schriftzeichen zeigen, dass frühe Gesellschaften ihre Welt nicht nur bewohnen, sondern auch deuten und symbolisch ordnen."
   },
   "modul-4": {
     hero: "assets/srf/m02-1491.jpg",
     side: "assets/srf/m05-pfahlbauer-detail.jpg",
     kicker: "Vorzeitliche Lebensformen",
-    title: "Mobile Gesellschaften lesen Landschaften",
-    text: "Jäger-und-Sammler-Gruppen erscheinen als hoch spezialisierte Wissensgemeinschaften mit enger Bindung an Klima, Tiere und Jahreszeiten."
+    title: "Jäger und Sammler als lange Normalform",
+    text: "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Nahrung, Wege, Behausungen und Jahreszeitenwissen werden genau auf Klima, Tierwelt und Landschaft abgestimmt.",
+    sideText: "Mobile Lebensformen beruhen auf Umweltwissen, mündlicher Überlieferung und flexibler Organisation, nicht auf Unordnung oder bloßem Mangel."
   },
   "modul-5": {
     hero: "assets/srf/m05-pfahlbauer.jpg",
     side: "assets/srf/m05-pfahlbauer-detail.jpg",
     kicker: "Sesshaftigkeit",
-    title: "Vom Lager zur Siedlung",
-    text: "Die landwirtschaftliche Revolution wird nicht abstrakt, sondern als Umbruch in Hausbau, Arbeit, Vorrat und sozialer Abhängigkeit sichtbar."
+    title: "Landwirtschaft, Vorräte und feste Siedlungen",
+    text: "Mit Ackerbau und Viehzucht verändern sich Ernährung, Arbeit, Besitz und Bevölkerungszahl. Sesshaftigkeit schafft Dörfer und Speicher, bringt aber auch neue Mühen, Risiken und soziale Unterschiede hervor.",
+    sideText: "Hausbau, Vorratshaltung, Feldarbeit und Abhängigkeit von Ernten gehören zu den wichtigsten Folgen der landwirtschaftlichen Revolution."
   },
   "modul-6": {
     hero: "assets/srf/m01-spurensuche.jpg",
     side: "assets/srf/m01-anthropozaen.jpg",
     kicker: "Hochkulturen",
-    title: "Schrift, Ordnung und monumentale Herrschaft",
-    text: "Die Bildwelt führt in frühe Staatsräume, in denen Verwaltung, Schrift und symbolische Macht zusammenwirken."
+    title: "Schrift, Verwaltung und frühe Staaten",
+    text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt große Heldengeschichten.",
+    sideText: "Mesopotamien und Ägypten zeigen, dass frühe Staaten Nahrung, Herrschaft, Bürokratie und religiöse Legitimation miteinander verbinden."
   },
   "modul-7": {
     hero: "assets/srf/m07-roemer-schweiz.jpg",
     side: "assets/srf/m07-roemer-detail.jpg",
     kicker: "Imperien",
-    title: "Rom als gelebte Raumordnung",
-    text: "Straßen, Bauten und Alltagskultur zeigen, wie ein Imperium den Raum nicht nur erobert, sondern organisiert."
+    title: "Rom als Reich aus Straßen, Recht und Versorgung",
+    text: "Ein Imperium ist mehr als Eroberung. Rom verbindet Straßen, Lager, Städte, Brücken, Recht, Münzen und Verwaltung zu einem großen politischen und wirtschaftlichen Raum.",
+    sideText: "Römische Herrschaft zeigt sich im Alltag: in Verkehrswegen, Bauwerken, Militär, Haushalten, Märkten und regionaler Versorgung."
   },
   "modul-8": {
     hero: "assets/srf/m08-muenzschatz.jpg",
     side: "assets/srf/m08-roemer-experiment.jpg",
     kicker: "Vernetzung",
-    title: "Wert, Vertrauen und Umlauf",
-    text: "Münzen und Märkte erscheinen als greifbare Spuren jener unsichtbaren Ordnungen, die Handel über Grenzen hinweg möglich machen."
+    title: "Geld, Handel und Vertrauen",
+    text: "Tauschhandel stößt schnell an Grenzen. Geld vereinfacht Vergleich, Bezahlung und Fernhandel, weil viele Menschen denselben Münzen oder Werten gemeinsam Vertrauen schenken.",
+    sideText: "Münzfunde, Handelswege und Großreiche zeigen, wie wirtschaftliche Vernetzung über Regionen, Sprachen und politische Grenzen hinaus funktioniert."
   },
   "modul-9": {
     hero: "assets/srf/m09-grosse-voelker.jpg",
     side: "assets/srf/m11-kreuzzug.jpg",
     kicker: "Religionen und Weltbilder",
-    title: "Sinnordnungen verbinden Menschenräume",
-    text: "Religiöse Gemeinschaften, Wissenswege und Pilgerbewegungen werden als reale historische Netzwerke sichtbar."
+    title: "Religionen als Normen-, Werte- und Herrschaftsordnungen",
+    text: "Judentum, Christentum und Islam ordnen Welt, Gemeinschaft und Alltag. Religion wirkt historisch nicht nur als Glaube, sondern auch über Rituale, Texte, Regeln, Herrschaft und Bildungsnetze.",
+    sideText: "Weltreligionen verbinden Menschen über große Räume hinweg und prägen Politik, Recht, Wissen und gesellschaftliche Zugehörigkeit."
   },
   "modul-10": {
     hero: "assets/srf/m10-verruecktes-mittelalter.jpg",
     side: "assets/srf/m10-mittelalter-schweiz.jpg",
     kicker: "Mittelalterliche Lebenswelt",
-    title: "Zwischen Burgen, Alltag und sozialen Grenzen",
-    text: "Die Module zur Epoche bekommen eine eigene Atmosphäre aus Architektur, Materialität und gelebter Alltagsordnung."
+    title: "Herrschaft, Kirche und Alltag im Mittelalter",
+    text: "Das Mittelalter besteht nicht nur aus Burgen und Rittern. Entscheidend sind Kirche, Stände, Klöster, Verteidigung, Arbeit, Küche, Hygiene, Rangordnungen und regionale Herrschaftsräume.",
+    sideText: "Burgen, Schlösser, Klöster und Bündnisse zeigen, wie eng religiöse Ordnung, politische Macht und Alltag im Mittelalter verbunden sind."
   },
   "modul-11": {
     hero: "assets/srf/m11-kreuzzug.jpg",
     side: "assets/srf/m10-mittelalter-schweiz.jpg",
-    kicker: "Quellenkritik",
-    title: "Frömmigkeit, Mobilität und Überlieferung",
-    text: "Die Bildsprache schiebt das Modul in eine Zwischenzone aus Bewegung, Glauben, Konflikt und erzählter Geschichte."
+    kicker: "Städte und Wandel",
+    title: "Märkte, Städte, Kreuzzüge und Überlieferung",
+    text: "Das späte Mittelalter ist von wachsenden Städten, Handwerk, Märkten, Fernhandel, Pilgerwegen und religiösen Bewegungen geprägt. Zugleich müssen spektakuläre Erzählungen wie der Kinderkreuzzug kritisch geprüft werden.",
+    sideText: "Das Modul verbindet Stadtgeschichte und Quellenkritik: Märkte und Mobilität verdichten Europa, aber viele Ereignisse sind nur über spätere Chroniken überliefert."
   },
   "modul-12": {
     hero: "assets/srf/m01-anthropozaen.jpg",
     side: "assets/srf/m02-1491.jpg",
     kicker: "Bilanz bis 1500",
-    title: "Weltgeschichte offen denken",
-    text: "Der Schluss verbindet globale Perspektive und Langzeitfolgen: Nicht nur Europa, nicht nur ein Deutungsweg, sondern viele historische Linien zugleich."
+    title: "1491, 1500 und die lange Wirkung früher Entwicklungen",
+    text: "Das Abschlussmodul verbindet zwei Perspektiven: Amerika vor Kolumbus mit eigenen Gesellschaften und die Langzeitfolgen von Sprache, Landwirtschaft, Staat, Religion, Geld und Vernetzung bis an die Schwelle der Neuzeit.",
+    sideText: "1492 ist ein Einschnitt, aber nicht der Anfang amerikanischer Geschichte. Zugleich reichen viele vormoderne Entwicklungen weit über 1500 hinaus."
   }
 };
 
@@ -4084,21 +4096,20 @@ function renderRelevantItems(items, label) {
 }
 
 function renderSourceFocus(detail) {
-  if (!detail.whyHere && !detail.mustKnow?.length && !detail.misconception) {
+  if (!detail.whyHere && !detail.mustKnow?.length) {
     return "";
   }
 
   return `
     <div class="source-focus">
-      ${detail.whyHere ? `<p><strong>Warum genau in diesem Modul?</strong> ${cleanStudentText(detail.whyHere)}</p>` : ""}
+      ${detail.whyHere ? `<p><strong>Historische Einordnung:</strong> ${cleanStudentText(detail.whyHere)}</p>` : ""}
       ${
         detail.mustKnow?.length
-          ? `<div class="source-list-block"><p><strong>Drei Sachinformationen, die aus dieser Ressource heraus müssen:</strong></p><ul class="source-list">${detail.mustKnow
+          ? `<div class="source-list-block"><p><strong>Wichtige Fakten:</strong></p><ul class="source-list">${detail.mustKnow
               .map((item) => `<li>${cleanStudentText(item)}</li>`)
               .join("")}</ul></div>`
           : ""
       }
-      ${detail.misconception ? `<p><strong>Welche Fehldeutung wird korrigiert?</strong> ${cleanStudentText(detail.misconception)}</p>` : ""}
     </div>
   `;
 }
@@ -4110,12 +4121,21 @@ function cleanStudentText(text) {
     .replace(/^Didaktisch besonders wichtig ist:\s*/i, "Wichtig ist: ")
     .replace(/^Didaktisch lohnt es sich hier,\s*/i, "")
     .replace(/^Aus didaktischer Sicht\s*/i, "")
+    .replace(/^Die Seite gehört in Modul \d+, weil\s*/i, "")
+    .replace(/^Der Film gehört in Modul \d+, weil\s*/i, "")
+    .replace(/^Die Folge gehört in Modul \d+, weil\s*/i, "")
+    .replace(/^Die Reihe gehört in Modul \d+, weil\s*/i, "")
+    .replace(/^Die Ressource soll\s*/i, "")
+    .replace(/^Die Ressource ergänzt das Modul um\s*/i, "")
+    .replace(/^Die Ressource ergänzt\s*/i, "")
+    .replace(/^Die Ressource dient hier als\s*/i, "")
     .replace(/^Die Ressource wird genutzt, um\s*/i, "")
     .replace(/^Die Ressource wird als\s*/i, "")
     .replace(/^Im Modul dient dies als\s*/i, "")
     .replace(/^Die Quelle wird genutzt, um\s*/i, "")
     .replace(/Didaktisch wird sie eingesetzt, um\s*/gi, "Sie hilft dabei, ")
     .replace(/Die Serie wird didaktisch als\s*/gi, "Die Serie dient als ")
+    .replace(/für dieses Modul/gi, "hier")
     .replace(/\bdidaktisch\s+/gi, "")
     .trim();
 }
@@ -4371,8 +4391,8 @@ function renderSourceCard(source, module) {
     isHarari && detail.pdfPage
       ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
       : locatorTextRaw;
-  const locatorLabel = isHarari ? "Buchstelle" : "Verortung";
-  const passageLabel = isHarari ? "Paraphrase der Passage" : "Konkrete Passage";
+  const locatorLabel = isHarari ? "Buchstelle" : "Ressource";
+  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Was diese Ressource konkret zeigt";
 
   return `
     <article class="source-card">
@@ -4384,7 +4404,7 @@ function renderSourceCard(source, module) {
       </header>
       ${locatorText ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
       ${isHarari ? renderHarariActions(detail) : ""}
-      ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
+      ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>${passageLabel}:</strong> ${passage}</p>
@@ -4478,7 +4498,7 @@ function renderFilmFoundation(module) {
     <section class="film-foundation">
       <div class="film-foundation-head">
         <p class="section-kicker">Filmgrundlage</p>
-        <p>Hier liegen die konkreten Beispiele des Moduls: Gegenstände, Lebensweisen, Räume, Wege, Funde und historische Situationen aus den SRF-Filmen.</p>
+        <p>Diese Filme liefern die konkreten historischen Informationen des Moduls: Lebensweisen, Herrschaftsformen, Glaubenswelten, Räume, Gegenstände und langfristige Entwicklungen.</p>
       </div>
       <div class="film-grid">
         ${filmSources
@@ -4496,10 +4516,10 @@ function renderFilmFoundation(module) {
                   </div>
                   <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
                 </div>
-                ${detail.locator ? `<p><strong>Verortung:</strong> ${detail.locator}</p>` : ""}
-                ${detail.thesis ? `<p><strong>Hauptthese:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
+                ${detail.locator ? `<p><strong>Ressource:</strong> ${detail.locator}</p>` : ""}
+                ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
                 ${renderSourceFocus(detail)}
-                <p><strong>Zentrale Informationen:</strong> ${passage}</p>
+                <p><strong>Was der Film konkret zeigt:</strong> ${passage}</p>
                 ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf dieser SRF-Seite besonders wichtig:")}
                 ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
               </article>
@@ -4639,7 +4659,7 @@ function renderContentCheck(module, state) {
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich und stütze dich ausdrücklich auf Filmgrundlage, Quellenkarten und Grundwissen des Moduls. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
+      <p><strong>${check.title}:</strong> Beantworte die Fragen schriftlich mit den Informationen aus Grundwissen, Filmen, Buchstellen und Quellenkarten des Moduls. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
       <div class="check-grid">${questions}</div>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
@@ -4659,6 +4679,11 @@ function renderModuleScene(module) {
     return "";
   }
 
+  const sceneFacts = module.takeaway
+    .slice(0, 2)
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
   return `
     <section class="module-scene" aria-label="Bildimpulse zu ${module.title}">
       <div class="scene-hero" style="background-image: url('${visual.hero}')">
@@ -4670,8 +4695,9 @@ function renderModuleScene(module) {
       </div>
       <div class="scene-side" style="background-image: url('${visual.side}')">
         <div class="scene-copy">
-          <p class="scene-kicker">Zweiter Bildimpuls</p>
-          <p>Achte auf Gegenstände, Kleidung, Bauten oder Landschaft. Solche Details verraten oft mehr über eine Epoche als bloße Schlagworte.</p>
+          <p class="scene-kicker">Historischer Überblick</p>
+          <p>${visual.sideText || "Die rechte Bildfläche fasst die wichtigsten Entwicklungen des Moduls knapp zusammen."}</p>
+          <ul class="scene-facts">${sceneFacts}</ul>
         </div>
       </div>
     </section>
@@ -4896,8 +4922,8 @@ function renderSourceCatalog() {
           <span class="source-meta">${source.type}</span>
         </div>
       </header>
-      <p><strong>Worum es inhaltlich geht:</strong> ${cleanStudentText(source.role)}</p>
-      <p><strong>Was dir die Ressource erklärt:</strong> ${cleanStudentText(source.didactics)}</p>
+      <p><strong>Inhaltlicher Schwerpunkt:</strong> ${cleanStudentText(source.role)}</p>
+      <p><strong>Historische Informationen:</strong> ${cleanStudentText(source.didactics)}</p>
       <p>
         <strong>Original:</strong>
         ${

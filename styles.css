@@ -1346,6 +1346,17 @@ p {
   color: rgba(255, 255, 255, 0.86);
 }
 
+.scene-facts {
+  margin: 10px 0 0 18px;
+  display: grid;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.scene-facts li {
+  line-height: 1.45;
+}
+
 .scene-kicker {
   margin: 0;
   text-transform: uppercase;
