@@ -1508,6 +1508,16 @@ p {
   color: var(--muted);
 }
 
+.source-card > .check-question {
+  margin-top: 14px;
+}
+
+.source-card > .check-question + p,
+.source-card > .source-list-block,
+.source-card > .source-focus {
+  margin-top: 14px;
+}
+
 .source-meta {
   display: inline-flex;
   padding: 6px 10px;
@@ -1689,6 +1699,10 @@ p {
 
 .check-question p {
   margin-bottom: 10px;
+}
+
+.source-micro-check {
+  margin-left: 0;
 }
 
 .check-question .feedback {

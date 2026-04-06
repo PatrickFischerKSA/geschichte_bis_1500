@@ -4634,6 +4634,204 @@ function renderSourceFocus(detail) {
   `;
 }
 
+const SOURCE_CHECK_STOPWORDS = new Set([
+  "aber",
+  "auch",
+  "aus",
+  "bei",
+  "damit",
+  "dass",
+  "dem",
+  "den",
+  "der",
+  "des",
+  "die",
+  "dies",
+  "diese",
+  "dieser",
+  "dieses",
+  "durch",
+  "eine",
+  "einem",
+  "einen",
+  "einer",
+  "eines",
+  "einfach",
+  "einen",
+  "erste",
+  "ersten",
+  "erst",
+  "fur",
+  "fuer",
+  "ganz",
+  "hier",
+  "ihre",
+  "ihren",
+  "ihres",
+  "immer",
+  "nicht",
+  "oder",
+  "seine",
+  "seinen",
+  "seiner",
+  "sich",
+  "sind",
+  "sondern",
+  "uber",
+  "ueber",
+  "unter",
+  "viele",
+  "wird",
+  "werden",
+  "wurde",
+  "wurden",
+  "zeigt",
+  "zeigen",
+  "zwar",
+  "zwischen"
+]);
+
+function splitIntoClaims(text) {
+  return String(text || "")
+    .split(/(?<=[.!?])\s+|;\s+/)
+    .map((part) => cleanStudentText(part).replace(/\s+/g, " ").trim())
+    .filter((part) => part.length > 30);
+}
+
+function extractKeywordsFromText(text) {
+  const normalized = normalize(text).replace(/[^a-z0-9\s]/g, " ");
+  const words = normalized
+    .split(/\s+/)
+    .filter((word) => word.length > 4 && !SOURCE_CHECK_STOPWORDS.has(word));
+
+  return [...new Set(words)].slice(0, 8);
+}
+
+function buildCriteriaFromTexts(texts) {
+  return (texts || [])
+    .map((text) => cleanStudentText(text))
+    .filter(Boolean)
+    .map((text) => ({
+      label: text.replace(/[.:]\s*$/, ""),
+      keywords: extractKeywordsFromText(text)
+    }))
+    .filter((criterion) => criterion.keywords.length);
+}
+
+function splitSourcePassage(text) {
+  const sentences = String(text || "").match(/[^.!?]+[.!?]?/g) || [String(text || "")];
+  if (sentences.length < 2 || String(text || "").length < 260) {
+    return [String(text || "").trim()].filter(Boolean);
+  }
+
+  const midpoint = Math.ceil(sentences.length / 2);
+  const first = sentences.slice(0, midpoint).join(" ").trim();
+  const second = sentences.slice(midpoint).join(" ").trim();
+
+  return [first, second].filter(Boolean);
+}
+
+function buildSourceMicroCheckPrompt(heading, detail, kind) {
+  const topic = String(heading || "").trim() ? `„${String(heading || "").trim()}“` : "diesem Thema";
+
+  if (kind === "quote" && detail.quote) {
+    return `Erkläre die Aussage ${detail.quote} in eigenen Worten und verbinde sie mit ${topic}.`;
+  }
+
+  if (kind === "facts") {
+    return `Nenne zwei konkrete Punkte zu ${topic} und erkläre, warum sie zusammengehören.`;
+  }
+
+  return `Erkläre in 2 bis 4 Sätzen, was mit ${topic} historisch gemeint ist und worin der entscheidende Wandel oder Zusammenhang besteht.`;
+}
+
+function buildSourceMicroChecks(module, source, detail, heading) {
+  const sourceId = `${module.id}-${normalize(heading || source.title)}`;
+  const thesisText = cleanStudentText(detail.thesis || "");
+  const passageText = cleanStudentText(detail.passage || source.extracted || "");
+  const factTexts =
+    detail.mustKnow?.length
+      ? detail.mustKnow
+      : detail.relevantItems?.map((item) =>
+          `${item.title}${item.note ? `: ${cleanStudentText(item.note)}` : ""}`
+        ) || [];
+  const claims = splitIntoClaims(`${thesisText} ${passageText}`.trim());
+  const microChecks = [];
+
+  const firstCriteriaTexts = factTexts.length ? factTexts.slice(0, 2) : claims.slice(0, 2);
+  const firstCriteria = buildCriteriaFromTexts(firstCriteriaTexts);
+  const firstSample =
+    thesisText ||
+    firstCriteriaTexts.join(" ") ||
+    passageText;
+
+  if (firstSample && firstCriteria.length) {
+    microChecks.push({
+      id: `${sourceId}-micro-1`,
+      prompt: buildSourceMicroCheckPrompt(heading, detail, "thesis"),
+      placeholder: "Formuliere hier 2 bis 4 inhaltlich klare Sätze.",
+      sampleAnswer: firstSample,
+      criteria: firstCriteria
+    });
+  }
+
+  const secondCriteriaTexts = detail.quote
+    ? claims.slice(1, 3).length
+      ? claims.slice(1, 3)
+      : claims.slice(0, 2)
+    : factTexts.slice(0, 3);
+  const secondCriteria = buildCriteriaFromTexts(secondCriteriaTexts);
+  const secondSample = detail.quote
+    ? passageText || thesisText
+    : secondCriteriaTexts.join(" ");
+
+  if (secondSample && secondCriteria.length) {
+    microChecks.push({
+      id: `${sourceId}-micro-2`,
+      prompt: buildSourceMicroCheckPrompt(
+        heading,
+        detail,
+        detail.quote ? "quote" : "facts"
+      ),
+      placeholder: "Erkläre den Zusammenhang in eigenen Worten.",
+      sampleAnswer: secondSample,
+      criteria: secondCriteria
+    });
+  }
+
+  return microChecks.slice(0, 2);
+}
+
+function renderSourceMicroCheck(question) {
+  const teacherSolution = isTeacherMode()
+    ? `
+      <div class="teacher-answer-key">
+        <p class="section-kicker">Direkte Musterlösung</p>
+        <p>${cleanPromptText(question.sampleAnswer)}</p>
+        <div class="source-list-block">
+          <p><strong>Erwartete Gesichtspunkte:</strong></p>
+          <ul class="source-list">
+            ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+    `
+    : "";
+
+  return `
+    <div class="check-question source-micro-check" data-source-question="${question.id}">
+      <p>${cleanPromptText(question.prompt)}</p>
+      <textarea data-source-answer="${question.id}" placeholder="${question.placeholder}"></textarea>
+      <div class="task-actions">
+        <button class="btn primary" type="button" data-source-check="${question.id}">Antwort prüfen</button>
+        <button class="btn ghost" type="button" data-source-show="${question.id}">Musterlösung zeigen</button>
+      </div>
+      <div class="feedback" data-source-feedback="${question.id}"></div>
+      ${teacherSolution}
+    </div>
+  `;
+}
+
 function cleanStudentText(text) {
   return String(text || "")
     .replace(/^Didaktisch entscheidend ist:\s*/i, "Wichtig ist: ")
@@ -4933,6 +5131,8 @@ function renderSourceCard(source, module) {
   const heading = getSourceHeading(source, detail) || source.title;
   const badge = getSourceBadge(source, detail, isHarari);
   const passage = cleanStudentText(detail.passage || source.extracted);
+  const passageParts = splitSourcePassage(passage);
+  const microChecks = buildSourceMicroChecks(module, source, detail, heading);
   const locatorTextRaw = isHarari
     ? String(detail.locator || "").replace(/^Harari-PDF,\s*/i, "Yuval Noah Harari, Eine kurze Geschichte der Menschheit, ")
     : detail.locator || "";
@@ -4954,11 +5154,14 @@ function renderSourceCard(source, module) {
       ${locatorText && locatorLabel ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
       ${isHarari ? renderHarariActions(detail) : ""}
       ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
-      ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
-      <p><strong>${passageLabel}:</strong> ${passage}</p>
+      ${passageParts[0] ? `<p><strong>${passageLabel}:</strong> ${passageParts[0]}</p>` : ""}
+      ${microChecks[0] ? renderSourceMicroCheck(microChecks[0]) : ""}
+      ${renderSourceFocus(detail)}
+      ${passageParts[1] ? `<p>${passageParts[1]}</p>` : ""}
       ${renderRelevantItems(detail.relevantItems, cleanListLabel(detail.itemsLabel, "Wichtige Themen:"))}
       ${renderRelevantItems(detail.relatedItems, cleanListLabel(detail.relatedLabel, "Weiterführende Themen:"))}
+      ${microChecks[1] ? renderSourceMicroCheck(microChecks[1]) : ""}
     </article>
   `;
 }
@@ -5750,6 +5953,70 @@ function bindContentChecks(state) {
   });
 }
 
+function bindSourceMicroChecks(state) {
+  modules.forEach((module) => {
+    module.sources.forEach((source) => {
+      const detail = getSourceDetail(module.id, source);
+      const heading = getSourceHeading(source, detail) || source.title;
+      const questions = buildSourceMicroChecks(module, source, detail, heading);
+
+      questions.forEach((question) => {
+        const field = document.querySelector(`[data-source-answer="${question.id}"]`);
+        const feedbackBox = document.querySelector(`[data-source-feedback="${question.id}"]`);
+        const checkButton = document.querySelector(`[data-source-check="${question.id}"]`);
+        const showButton = document.querySelector(`[data-source-show="${question.id}"]`);
+        const wrapper = document.querySelector(`[data-source-question="${question.id}"]`);
+
+        if (!field || !feedbackBox || !checkButton || !showButton || !wrapper) {
+          return;
+        }
+
+        if (state[`${question.id}-text`]) {
+          field.value = state[`${question.id}-text`];
+        }
+
+        if (state[`${question.id}-feedback`]) {
+          const stored = state[`${question.id}-feedback`];
+          wrapper.classList.remove("good", "mid", "low");
+          wrapper.classList.add(stored.level);
+          feedbackBox.className = `feedback is-visible ${stored.level}`;
+          feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
+        }
+
+        checkButton.addEventListener("click", () => {
+          const result = evaluateCheckQuestion(field.value, question);
+          wrapper.classList.remove("good", "mid", "low");
+          wrapper.classList.add(result.level);
+          feedbackBox.className = `feedback is-visible ${result.level}`;
+          feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+          state[question.id] = true;
+          state[`${question.id}-text`] = field.value;
+          state[`${question.id}-feedback`] = result;
+          saveState(state);
+          renderApp(state);
+        });
+
+        showButton.addEventListener("click", () => {
+          const result = {
+            level: "mid",
+            title: "Musterlösung",
+            body: cleanPromptText(question.sampleAnswer)
+          };
+          wrapper.classList.remove("good", "low");
+          wrapper.classList.add("mid");
+          feedbackBox.className = "feedback is-visible mid";
+          feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+          state[question.id] = true;
+          state[`${question.id}-text`] = field.value;
+          state[`${question.id}-feedback`] = result;
+          saveState(state);
+          renderApp(state);
+        });
+      });
+    });
+  });
+}
+
 function renderLearnerBanner(state) {
   const banner = document.getElementById("learner-banner");
   if (!banner) {
@@ -5868,6 +6135,7 @@ function renderApp(state) {
   bindShortAnswerTasks(state);
   bindSelftests(state);
   bindContentChecks(state);
+  bindSourceMicroChecks(state);
   bindWelcomeOverlay(state);
   bindCompletionActions();
   updateProgress(state);
