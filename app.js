@@ -324,7 +324,15 @@ const masterTimeline = [
     time: "ab ca. 3500–3000 v. Chr.",
     title: "Schrift, Listen und frühe Staaten",
     body:
-      "Mesopotamische Tontafeln und ägyptische Verwaltung zeigen, wie Vorräte, Abgaben, Beamte und Schrift frühe Herrschaft stabilisieren. Hochkulturen beruhen auf Speicher, Ordnung und Legitimation.",
+      "Tontafeln, Hieroglyphen, Speicher und Abgaben zeigen, dass frühe Herrschaft auf Zählen, Schreiben und Verwalten beruht. Hochkulturen stabilisieren Macht nicht nur militärisch, sondern durch Listen, Beamte, Kalender und religiöse Ordnung.",
+    modules: ["modul-6"]
+  },
+  {
+    epoch: "Frühe Hochkulturen",
+    time: "ca. 3000–30 v. Chr.",
+    title: "Ägypten: Nil, Pharao und Maat",
+    body:
+      "Regelmäßige Nilüberschwemmungen sichern Ernten und Überschüsse. Pharao, Beamte, Tempel und Hieroglyphen verbinden Wirtschaft, Herrschaft und Religion zu einer langen Reichsordnung. Im Unterschied zu Mesopotamien mit mehreren konkurrierenden Stadtstaaten entsteht am Nil früh ein stärker zentralisiertes Flussreich.",
     modules: ["modul-6"]
   },
   {
@@ -940,13 +948,15 @@ const modules = [
     goals: [
       "Zusammenhang von Überschuss, Verwaltung und Schrift erklären",
       "Hochkulturen als strukturierte Machtordnungen verstehen",
-      "Ägypten als Fallbeispiel langfristiger Stabilität deuten"
+      "Ägypten als Fallbeispiel langfristiger Stabilität deuten",
+      "Nil, Pharao und Maat als Grundpfeiler ägyptischer Ordnung erklären"
     ],
     input: [
       "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je größer eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Maße, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
       "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
-      "Am Beispiel Ägyptens wird das besonders deutlich. Der Film 'Eine kurze Geschichte über…' nennt den Nil, das Beamtentum und die Hieroglyphenschrift als Gründe dafür, dass Ägypten rund 3000 Jahre bestehen konnte. Der Nil sorgt für regelmäßige Ernten, Beamtinnen und Beamte organisieren Abgaben und Bauarbeiten, und die Hieroglyphen sichern Verwaltung und Herrschaft über längere Zeiträume. Der Pharao steht dabei nicht nur politisch, sondern auch religiös an der Spitze.",
-      "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also auch Speicher, Listen, Schreiber, Tempel, Abgaben und die Organisation von Arbeit betrachten."
+      "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil überschwemmt das Land regelmäßig, hinterlässt fruchtbaren Schlamm und macht Landwirtschaft über lange Zeit planbar. Dadurch können Überschüsse entstehen, die gespeichert, verteilt und besteuert werden. Beamtinnen und Beamte erfassen Abgaben, organisieren Bauarbeiten und halten den Staat zusammen. Hieroglyphen sichern diese Ordnung schriftlich. Der Pharao steht politisch und religiös an der Spitze; mit der Vorstellung der Maat, also von richtiger göttlicher Ordnung, Gerechtigkeit und Gleichgewicht, wird Herrschaft zusätzlich begründet.",
+      "Auch Tempel, Gräber und Pyramiden gehören in diesen Zusammenhang. Sie sind nicht bloß große Bauwerke, sondern Ausdruck einer Welt, in der Herrschaft, Religion und Jenseitsvorstellungen eng verbunden sind. Wer in Ägypten baut, zählt, schreibt und opfert, stabilisiert nicht nur den Alltag, sondern eine ganze Weltordnung. Mesopotamien lässt sich dazu kurz als Gegenbild nennen: Dort entstehen zwischen Euphrat und Tigris eher mehrere konkurrierende Stadtstaaten, während Ägypten am Nil sehr früh zu einem langen, stärker zentralisierten Reich zusammenwächst.",
+      "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also auch Speicher, Listen, Schreiber, Tempel, Abgaben, Jenseitsvorstellungen und die Organisation von Arbeit betrachten."
     ],
     sources: [
       {
@@ -955,27 +965,27 @@ const modules = [
         extracted:
           "Harari betont, dass mit der Erfindung der Schrift Geschichte die Stimme ihrer Protagonisten erhält und dass frühe Schrift eng mit Buchhaltung und Organisation verbunden ist.",
         didacticUse:
-          "Die Quelle wird genutzt, um ein verbreitetes Missverständnis zu korrigieren: Schrift beginnt nicht nur als Kulturglanz, sondern auch als Verwaltungstechnik."
+          "Die Buchstellen zeigen, dass frühe Staaten ohne Listen, Abgaben, Schreiber und Bürokratie nicht dauerhaft handlungsfähig werden."
       },
       {
         title: "SRF: Eine kurze Geschichte über…",
         meta: "Ägypten",
         extracted:
-          "Die SRF-Seite nennt Nil, Beamtentum und Hieroglyphenschrift als Gründe dafür, dass das Alte Ägypten rund 3000 Jahre bestehen konnte.",
+          "Die Folge erklärt Ägypten über Nil, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und die außergewöhnlich lange Stabilität des Reiches.",
         didacticUse:
-          "Im Modul dient dies als Fallbeispiel dafür, wie Umwelt, Organisation und Symbolsysteme zusammenwirken."
+          "So wird sichtbar, wie Landwirtschaft, Verwaltung, Religion und Herrschaft am Nil ineinandergreifen."
       },
       {
         title: "YouTube: Hochkulturen",
         meta: "Überblick",
         extracted:
-          "Der Nutzerfilm ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung und frühen Staaten.",
+          "Der Film ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung, Religion und frühen Staatsordnungen.",
         didacticUse:
-          "Die Ressource weitet das Modul über Ägypten hinaus und sichert den Hochkultur-Begriff über mehrere Beispiele ab."
+          "Ägypten bleibt das Hauptbeispiel, wird aber in einen größeren Zusammenhang früher Hochkulturen eingeordnet."
       }
     ],
     sourcePrompt:
-      "Leite aus den Materialien ein Modell ab: Welche Bausteine braucht ein früher Staat, um dauerhaft zu funktionieren?",
+      "Arbeite heraus, welche Bausteine Ägypten zu einer dauerhaften Herrschaftsordnung machen und worin es sich knapp von Mesopotamien unterscheidet.",
     task: {
       id: "m6-task",
       question:
@@ -991,7 +1001,7 @@ const modules = [
       ]
     },
     deepening:
-      "Die Lernenden sollen hier Strukturen statt bloßer Ereignisse sehen. Hochkulturen lassen sich nicht allein durch 'große Herrscher' erklären. Die entscheidenden Fragen lauten: Wer zählt? Wer schreibt? Wer verteilt? Wer legitimiert? Wer baut Monumente und warum? So wird Geschichtsunterricht analytisch statt nur narrativ.",
+      "Frühe Hochkulturen werden verständlich, wenn man sie als Verbindung von Landwirtschaft, Speicherwirtschaft, Bürokratie, Religion und Herrschaft liest. Für Ägypten ist entscheidend: Der Nil macht Ernten berechenbar, Beamte organisieren Abgaben, Hieroglyphen sichern Verwaltung, der Pharao verkörpert Herrschaft und Maat ordnet die Welt religiös. Monumente und Gräber sind deshalb nicht bloß Schmuck, sondern sichtbare Form dieser Ordnung.",
     selftest: {
       id: "m6-selftest",
       question: "Welche Funktion hatte frühe Schrift besonders häufig?",
@@ -1019,20 +1029,21 @@ const modules = [
     takeaway: [
       "Überschuss verlangt Organisation.",
       "Schrift ist am Anfang oft Verwaltung, nicht nur Kulturprestige.",
-      "Frühe Staaten ruhen auf Nahrung, Bürokratie, Legitimation und Arbeitsteilung."
+      "Ägypten verbindet Nil, Pharaonenherrschaft, Maat und Bürokratie zu einer langen Reichsordnung."
     ],
     transfer: {
       id: "m6-transfer",
       question:
-        "Warum konnte das Alte Ägypten über sehr lange Zeit stabil bleiben? Formuliere eine strukturgeschichtliche Antwort.",
-      placeholder: "Verbinde Umwelt, Verwaltung, Schrift und Herrschaft.",
+        "Warum konnte das Alte Ägypten über sehr lange Zeit stabil bleiben? Formuliere eine strukturgeschichtliche Antwort und ergänze einen knappen Vergleich mit Mesopotamien.",
+      placeholder: "Verbinde Nil, Verwaltung, Maat und Herrschaft; vergleiche Mesopotamien in einem Satz.",
       sampleAnswer:
-        "Ägypten konnte lange stabil bleiben, weil mehrere Faktoren zusammenwirkten. Der Nil schuf verlässliche landwirtschaftliche Grundlagen. Verwaltung und Beamtentum organisierten Abgaben, Arbeit und Versorgung. Hieroglyphenschrift half bei Ordnung und Tradierung. Hinzu kam eine religiös aufgeladene Herrschaft, die politische Macht symbolisch absicherte.",
+        "Ägypten konnte lange stabil bleiben, weil mehrere Faktoren zusammenwirkten. Der Nil schuf verlässliche landwirtschaftliche Grundlagen. Verwaltung und Beamtentum organisierten Abgaben, Arbeit und Versorgung. Hieroglyphenschrift half bei Ordnung und Tradierung. Hinzu kam mit Pharao und Maat eine religiös aufgeladene Herrschaft, die politische Macht symbolisch absicherte. Im Unterschied dazu war Mesopotamien stärker von mehreren konkurrierenden Stadtstaaten geprägt.",
       criteria: [
         { label: "Nil/Umwelt", keywords: ["nil", "fluss", "landwirtschaft", "umwelt"] },
         { label: "Verwaltung", keywords: ["verwaltung", "beamtentum", "organisation", "abgaben"] },
         { label: "Schrift", keywords: ["hieroglyph", "schrift", "ordnung"] },
-        { label: "religiöse Legitimation", keywords: ["religion", "pharao", "herrschaft", "legitim"] }
+        { label: "religiöse Legitimation", keywords: ["religion", "pharao", "maat", "herrschaft", "legitim"] },
+        { label: "kurzer Vergleich mit Mesopotamien", keywords: ["mesopotamien", "stadtstaat", "zentralisiert", "euphrat", "tigris"] }
       ]
     }
   },
@@ -1819,15 +1830,17 @@ const moduleSupports = {
     terms: [
       { term: "Hochkultur", description: "Frühe komplexe Gesellschaft mit Städten, Schrift, Arbeitsteilung und Herrschaft." },
       { term: "Verwaltung", description: "Organisation von Abgaben, Arbeit, Vorräten und Zuständigkeiten." },
-      { term: "Legitimation", description: "Begründung dafür, warum Herrschaft als gültig gelten soll." }
+      { term: "Legitimation", description: "Begründung dafür, warum Herrschaft als gültig gelten soll." },
+      { term: "Pharao", description: "König Ägyptens, der politische und religiöse Herrschaft in einer Person bündelt." },
+      { term: "Maat", description: "Ägyptische Vorstellung von göttlicher Ordnung, Gerechtigkeit und Gleichgewicht." }
     ],
     storyline: [
       "Du gehst vom Vorrat zum Speicher und von dort zur Organisation.",
       "Dann lernst du Schrift als Werkzeug der Macht kennen.",
-      "Am Beispiel Ägyptens siehst du, wie Umwelt, Verwaltung und Religion zusammenwirken."
+      "Am Beispiel Ägyptens siehst du, wie Nil, Pharao, Maat, Verwaltung und Religion zusammenwirken."
     ],
     connection:
-      "Wer frühe Staaten verstehen will, muss nicht nur Könige kennen, sondern auch Schreiber, Speicher, Kalender und Abgaben."
+      "Wer frühe Staaten verstehen will, muss nicht nur Könige kennen, sondern auch Schreiber, Speicher, Kalender, Tempel, Abgaben und religiöse Ordnungen."
   },
   "modul-7": {
     overview:
@@ -2340,11 +2353,11 @@ const contentChecks = {
         prompt: "Warum ist Ägypten ein gutes Beispiel für frühe Staatlichkeit?",
         placeholder: "Verbinde Umwelt, Schrift und Herrschaft.",
         sampleAnswer:
-          "Ägypten ist ein gutes Beispiel, weil der Nil verlässliche Landwirtschaft ermöglichte, Verwaltung und Schrift Ordnung schufen und der Pharao Herrschaft religiös absicherte.",
+          "Ägypten ist ein gutes Beispiel, weil der Nil verlässliche Landwirtschaft ermöglichte, Verwaltung und Schrift Ordnung schufen und der Pharao Herrschaft religiös absicherte. Mit der Maat kam zudem die Vorstellung einer göttlich richtigen Ordnung hinzu.",
         criteria: [
           { label: "Nil oder Umwelt", keywords: ["nil", "fluss", "landwirtschaft"] },
           { label: "Schrift oder Verwaltung", keywords: ["schrift", "hieroglyph", "verwaltung", "beamtentum"] },
-          { label: "Herrschaft oder Religion", keywords: ["pharao", "herrschaft", "religion", "legitimation"] }
+          { label: "Herrschaft oder Religion", keywords: ["pharao", "herrschaft", "religion", "legitimation", "maat"] }
         ]
       },
       {
@@ -2356,6 +2369,18 @@ const contentChecks = {
           { label: "Nil", keywords: ["nil", "landwirtschaft", "planbar"] },
           { label: "Beamtentum", keywords: ["beamtentum", "abgaben", "organisiert"] },
           { label: "Hieroglyphenschrift", keywords: ["hieroglyph", "schrift", "verwaltung"] }
+        ]
+      },
+      {
+        prompt: "Erkläre Nil, Pharao und Maat als drei tragende Säulen der ägyptischen Ordnung und vergleiche Ägypten in einem Satz knapp mit Mesopotamien.",
+        placeholder: "Verbinde Landwirtschaft, Herrschaft und göttliche Ordnung; halte den Vergleich kurz.",
+        sampleAnswer:
+          "Der Nil machte Ernten berechenbar und schuf damit die materielle Grundlage des Reiches. Der Pharao bündelte politische und religiöse Herrschaft. Mit der Maat wurde Ordnung als göttlich richtig begründet. Im Unterschied zu Ägypten bestand Mesopotamien stärker aus mehreren konkurrierenden Stadtstaaten.",
+        criteria: [
+          { label: "Nil", keywords: ["nil", "ernten", "uberschwemmung", "landwirtschaft"] },
+          { label: "Pharao", keywords: ["pharao", "könig", "herrschaft"] },
+          { label: "Maat", keywords: ["maat", "ordnung", "gerechtigkeit", "gleichgewicht"] },
+          { label: "Mesopotamien kurz verglichen", keywords: ["mesopotamien", "stadtstaat", "konkurrierend", "zentralisiert"] }
         ]
       },
       {
@@ -3696,8 +3721,8 @@ const moduleVisuals = {
     side: "assets/srf/m01-anthropozaen.jpg",
     kicker: "Hochkulturen",
     title: "Schrift, Verwaltung und frühe Staaten",
-    text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt große Heldengeschichten.",
-    sideText: "Mesopotamien und Ägypten zeigen, dass frühe Staaten Nahrung, Herrschaft, Bürokratie und religiöse Legitimation miteinander verbinden."
+    text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt großer Heldengeschichten. In Ägypten verbinden sich Nilwirtschaft, Pharaonenherrschaft und religiöse Ordnung zu einer besonders langen Reichsstruktur.",
+    sideText: "Wichtig sind Nil, Hieroglyphen, Beamtentum, Pharao, Maat sowie Tempel- und Jenseitsvorstellungen; Mesopotamien dient nur als kurzer Vergleich einer weniger einheitlichen Frühstaatenlandschaft."
   },
   "modul-7": {
     hero: "assets/srf/m07-roemer-schweiz.jpg",
@@ -4022,7 +4047,7 @@ const sourceDetails = {
     badge: "dreiteilige Reihe · Folge Ägypten",
     locator: "SRF school: Eine kurze Geschichte über…",
     passage:
-      "Für dieses Modul ist auf der Seite ausdrücklich die Folge zum Alten Ägypten entscheidend. Dort werden Nil, Beamtentum und Hieroglyphenschrift als Gründe für die ungewöhnlich lange Stabilität Ägyptens zusammengeführt.",
+      "Die Folge zum Alten Ägypten erklärt die ungewöhnlich lange Stabilität des Reiches nicht mit einzelnen Herrschern, sondern mit festen Strukturen. Der Nil sorgt für berechenbare Ernten und Überschüsse. Beamte erfassen Abgaben, Bauleistungen und Besitz. Hieroglyphen sichern Verwaltung. Der Pharao steht an der Spitze, und mit der Maat wird Herrschaft als göttliche Ordnung verstanden. So erscheinen Tempel, Pyramiden und Gräber nicht als isolierte Monumente, sondern als Teil einer umfassenden Reichs- und Jenseitsordnung.",
     itemsLabel: "Auf der SRF-Seite hier konkret gemeint:",
     relevantItems: [
       {
@@ -4031,14 +4056,16 @@ const sourceDetails = {
       }
     ],
     whyHere:
-      "Die Folge gehört in Modul 6, weil sie frühe Staatlichkeit nicht über Pyramidenromantik, sondern über Nil, Verwaltung und Schrift erklärt.",
+      "Am Nil wird frühe Staatlichkeit besonders klar: Landwirtschaft, Bürokratie, Religion und Herrschaft greifen sichtbar ineinander.",
     mustKnow: [
       "Der Nil schafft verlässliche landwirtschaftliche Grundlagen.",
       "Beamtentum organisiert Abgaben, Arbeiten und Herrschaft.",
-      "Hieroglyphenschrift stabilisiert Verwaltung und Langzeitordnung."
+      "Hieroglyphenschrift stabilisiert Verwaltung und Langzeitordnung.",
+      "Pharao und Maat verbinden politische Herrschaft mit göttlicher Ordnung.",
+      "Tempel, Gräber und Pyramiden gehören zu einer Welt aus Herrschaft, Kult und Jenseitsvorstellungen."
     ],
     misconception:
-      "Korrigiert wird die Fehldeutung, frühe Hochkulturen ließen sich vor allem durch Monumente und große Herrscher erklären."
+      "Korrigiert wird die Fehldeutung, frühe Hochkulturen ließen sich vor allem durch Monumente und berühmte Herrscher erklären."
   },
   [makeSourceKey("modul-6", "YouTube: Hochkulturen")]: {
     badge: "YouTube-Film · Hochkulturen",
@@ -4046,9 +4073,9 @@ const sourceDetails = {
     thesis:
       "Der Film soll Hochkulturen als Verbindung von Überschuss, Schrift, Verwaltung, Religion und Herrschaft verdichten.",
     passage:
-      "Für dieses Modul ergänzt der Nutzerfilm die ägyptische Fallstudie um einen breiteren Überblick zum Hochkultur-Begriff und zu frühen Staatenbildungen.",
+      "Der Film ergänzt das Ägypten-Beispiel durch den Blick auf allgemeine Merkmale früher Hochkulturen. Dadurch wird klar, dass Ägypten zwar ein besonders gut dokumentierter Fall ist, aber nicht die einzige Form früher Staatlichkeit. Der Vergleich mit anderen frühen Kulturen schärft, was Überschuss, Schrift, Verwaltung, Religion und Herrschaft gemeinsam leisten.",
     whyHere:
-      "Der Film gehört in Modul 6, weil Ägypten als Fallbeispiel stark ist, aber der Begriff Hochkultur zusätzlich über mehrere Kontexte abgesichert werden muss.",
+      "Ägypten wird dadurch nicht relativiert, sondern in eine breitere Entwicklung früher Staatsbildungen eingeordnet.",
     mustKnow: [
       "Hochkulturen beruhen auf Vorrat, Arbeitsteilung und Verwaltung.",
       "Schrift ist eng mit Ordnung und Herrschaft verbunden.",
