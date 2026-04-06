@@ -4548,205 +4548,869 @@ const sourceDetails = {
 
 Object.assign(sourceDetails, additionalHarariDetails, expandedHarariDetails);
 
-const repetitionMode = {
-  memory: {
-    title: "Memory: Entwicklung und Folge zusammenbringen",
-    instructions:
-      "Öffne immer zwei Karten. Ein Paar ist richtig, wenn Entwicklung und Folge historisch direkt zusammengehören.",
-    solutionLabel: "Alle richtigen Paare",
-    pairs: [
+const repetitionLevels = {
+  basis: {
+    label: "Basis",
+    intro:
+      "Hier sicherst du die großen Entwicklungslinien: Sprache, Sesshaftigkeit, Staatlichkeit, Antike und mittelalterliche Verdichtung.",
+    memory: {
+      title: "Memory: Entwicklung und Folge zusammenbringen",
+      instructions:
+        "Öffne immer zwei Karten. Ein Paar ist richtig, wenn Entwicklung und Folge historisch direkt zusammengehören.",
+      pairs: [
+        {
+          id: "basis-memory-kognition",
+          left: "Kognitive Revolution",
+          right: "Sprache, Mythen und gemeinsame Regeln machen größere Gruppen möglich."
+        },
+        {
+          id: "basis-memory-landwirtschaft",
+          left: "Landwirtschaftliche Revolution",
+          right: "Sesshaftigkeit, Vorräte und soziale Ungleichheit verändern den Alltag grundlegend."
+        },
+        {
+          id: "basis-memory-staat",
+          left: "Frühe Staaten",
+          right: "Schrift, Listen, Abgaben und Verwaltung stabilisieren Herrschaft."
+        },
+        {
+          id: "basis-memory-athen",
+          left: "Attische Demokratie",
+          right: "Bürger beraten und entscheiden direkt, aber Frauen, Sklaven und Fremde bleiben ausgeschlossen."
+        },
+        {
+          id: "basis-memory-rom",
+          left: "Römische Republik",
+          right: "Senat, Magistrate und Volksversammlungen teilen Macht, ohne soziale Konflikte zu beseitigen."
+        },
+        {
+          id: "basis-memory-1491",
+          left: "1491",
+          right: "Amerika besitzt lange vor Kolumbus eigene Gesellschaften, Landwirtschaft und politische Ordnungen."
+        }
+      ]
+    },
+    drag: {
+      title: "Drag-and-drop: Entwicklung dem historischen Kern zuordnen",
+      instructions:
+        "Ziehe jede Entwicklung auf die passende Erklärung. Eine richtige Zuordnung bleibt stehen; eine falsche springt zurück.",
+      items: [
+        {
+          id: "basis-drag-kognition",
+          label: "Kognitive Revolution",
+          target: "basis-target-kognition",
+          explanation: "Sprache, Symbole, Mythen und geteilte Vorstellungen"
+        },
+        {
+          id: "basis-drag-landwirtschaft",
+          label: "Landwirtschaftliche Revolution",
+          target: "basis-target-landwirtschaft",
+          explanation: "Sesshaftigkeit, Vorräte, mehr Arbeit und neue Ungleichheit"
+        },
+        {
+          id: "basis-drag-schrift",
+          label: "Schrift und Verwaltung",
+          target: "basis-target-schrift",
+          explanation: "Listen, Abgaben, Besitz und dauerhafte Herrschaft"
+        },
+        {
+          id: "basis-drag-athen",
+          label: "Attische Demokratie",
+          target: "basis-target-athen",
+          explanation: "Volksversammlung und direkte Beteiligung freier männlicher Bürger"
+        },
+        {
+          id: "basis-drag-rom",
+          label: "Römische Republik",
+          target: "basis-target-rom",
+          explanation: "Senat, Konsuln, Magistrate und Machtteilung"
+        },
+        {
+          id: "basis-drag-mittelalter",
+          label: "Mittelalterliche Städte",
+          target: "basis-target-mittelalter",
+          explanation: "Märkte, Handwerk, Fernhandel und verdichtete Lebensräume"
+        }
+      ],
+      targets: [
+        {
+          id: "basis-target-kognition",
+          title: "Sprache und Symbolwelt",
+          prompt: "Ordne hier die Entwicklung zu, die Mythen, Regeln und große Kooperation ermöglicht."
+        },
+        {
+          id: "basis-target-landwirtschaft",
+          title: "Sesshafte Lebensweise",
+          prompt: "Ordne hier die Entwicklung zu, die Felder, Vorräte und soziale Unterschiede hervorbringt."
+        },
+        {
+          id: "basis-target-schrift",
+          title: "Frühe Staatlichkeit",
+          prompt: "Ordne hier die Entwicklung zu, die Herrschaft durch Listen, Abgaben und Bürokratie stützt."
+        },
+        {
+          id: "basis-target-athen",
+          title: "Direkte Beteiligung",
+          prompt: "Ordne hier die Ordnung zu, in der Bürger in der Volksversammlung direkt mitentscheiden."
+        },
+        {
+          id: "basis-target-rom",
+          title: "Republikanische Mischform",
+          prompt: "Ordne hier die Ordnung zu, in der Senat, Magistrate und Volksversammlungen zusammenwirken."
+        },
+        {
+          id: "basis-target-mittelalter",
+          title: "Städtischer Wandel",
+          prompt: "Ordne hier die Entwicklung zu, die Märkte, Handwerk und Fernhandel verdichtet."
+        }
+      ]
+    },
+    cloze: {
+      title: "Lückentext: Die großen Umbrüche zusammenfassen",
+      instructions:
+        "Fülle die Lücken mit den passenden Begriffen. Synonyme werden erkannt, wenn sie denselben historischen Kern treffen.",
+      parts: [
+        "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die ",
+        { id: "cloze-1", answers: ["kognitive", "kognitive revolution"] },
+        ". Sie macht Sprache, ",
+        { id: "cloze-2", answers: ["mythen", "erzaehlungen", "erzählungen", "symbolwelten", "gemeinsame vorstellungen"] },
+        " und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die ",
+        { id: "cloze-3", answers: ["landwirtschaftliche", "neolithische", "agrarische", "landwirtschaftliche revolution", "neolithische revolution"] },
+        " Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale ",
+        { id: "cloze-4", answers: ["ungleichheit", "hierarchie", "hierarchien", "soziale unterschiede"] },
+        " hervor. Frühe Staaten stützen sich auf ",
+        { id: "cloze-5", answers: ["schrift", "schriftsysteme", "listen"] },
+        " und Verwaltung. In Antike und Mittelalter verbinden ",
+        { id: "cloze-6", answers: ["reiche", "imperien", "weltreiche"] },
+        ", Geld und Religion immer größere Räume."
+      ],
+      sampleAnswer:
+        "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die kognitive Revolution. Sie macht Sprache, Mythen und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die landwirtschaftliche Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale Ungleichheit hervor. Frühe Staaten stützen sich auf Schrift und Verwaltung. In Antike und Mittelalter verbinden Reiche, Geld und Religion immer größere Räume."
+    },
+    oralQuestions: [
       {
-        id: "memory-kognition",
-        left: "Kognitive Revolution",
-        right: "Sprache, Mythen und gemeinsame Regeln machen größere Gruppen möglich."
+        id: "repetition-basis-oral-1",
+        question:
+          "Erkläre in 4 bis 6 Sätzen, warum Geschichte hier nicht mit dem Urknall oder der Eiszeit beginnt, sondern mit menschlichen Ordnungen.",
+        placeholder: "Erkläre Sprache, Regeln, Erinnerung und gemeinsame Vorstellungen als Anfang geschichtlicher Weltordnung.",
+        sampleAnswer:
+          "Geschichte beginnt hier nicht mit Naturereignissen, sondern dort, wo Menschen ihre Welt kulturell ordnen. Entscheidend sind Sprache, Erinnerung, Regeln und gemeinsame Vorstellungen. Dadurch können Menschen Erfahrungen weitergeben, Gruppen stabilisieren und Institutionen schaffen. Geschichte meint deshalb nicht einfach alles Vergangene, sondern die von Menschen gestaltete Welt aus Normen, Ordnung und Deutung.",
+        minWords: 35,
+        criteria: [
+          { label: "Unterschied zwischen Naturgeschichte und menschlich geordneter Geschichte", keywords: ["naturgeschichte", "natur", "vergangenheit"] },
+          { label: "Sprache, Regeln oder gemeinsame Vorstellungen als Grundlage", keywords: ["sprache", "regeln", "vorstellungen", "ordnung", "mythen"] },
+          { label: "Menschen gestalten ihre Welt aktiv", keywords: ["gestalten", "kulturell", "institutionen", "erinnerung", "deutung"] }
+        ]
       },
       {
-        id: "memory-landwirtschaft",
-        left: "Landwirtschaftliche Revolution",
-        right: "Sesshaftigkeit, Vorräte und soziale Ungleichheit verändern den Alltag grundlegend."
+        id: "repetition-basis-oral-2",
+        question:
+          "Erkläre den Bruch zwischen mobilen Jäger-und-Sammler-Gruppen und sesshaften Agrargesellschaften.",
+        placeholder: "Gehe auf Nahrung, Siedlungen, Arbeit, Vorräte und soziale Folgen ein.",
+        sampleAnswer:
+          "Mobile Jäger-und-Sammler-Gruppen leben von Jagd, Sammeln, Bewegung und genauer Umweltbeobachtung. Mit Landwirtschaft und Viehzucht werden Menschen sesshaft, bauen Häuser und legen Vorräte an. Dadurch wächst die Bevölkerung, aber auch die Arbeitslast. Besitz und Abgaben werden wichtiger. So entstehen neue soziale Unterschiede und dauerhafte Herrschaftsformen.",
+        minWords: 35,
+        criteria: [
+          { label: "Mobilität und Umweltwissen der Jäger und Sammler", keywords: ["mobil", "jagd", "sammeln", "umweltwissen", "jahreszeiten"] },
+          { label: "Sesshaftigkeit, Vorräte oder feste Siedlungen", keywords: ["sesshaft", "vorrate", "vorräte", "dorfer", "dörfer", "hauser", "häuser"] },
+          { label: "Mehr Arbeit, Besitz oder soziale Ungleichheit", keywords: ["arbeit", "besitz", "ungleichheit", "abhangigkeit", "abhängigkeit", "hierarchie"] }
+        ]
       },
       {
-        id: "memory-staat",
-        left: "Frühe Staaten",
-        right: "Schrift, Listen, Abgaben und Verwaltung stabilisieren Herrschaft."
+        id: "repetition-basis-oral-3",
+        question:
+          "Vergleiche attische Demokratie und römische Republik in 4 bis 6 Sätzen.",
+        placeholder: "Vergleiche direkte Beteiligung, politische Ämter und Ausschlüsse.",
+        sampleAnswer:
+          "In der attischen Demokratie entscheiden freie männliche Bürger direkt in der Volksversammlung. Frauen, Sklaven und Fremde bleiben ausgeschlossen. Die römische Republik verteilt Macht auf Senat, Konsuln, Magistrate und Volksversammlungen. Sie ist also keine direkte Demokratie, sondern eine Mischform von Ämtern und Körperschaften. Auch in Rom bleibt politische Teilhabe sozial begrenzt und konfliktreich.",
+        minWords: 35,
+        criteria: [
+          { label: "Attische Demokratie mit Volksversammlung oder direkter Beteiligung", keywords: ["attische", "athen", "volksversammlung", "direkt", "burger", "bürger"] },
+          { label: "Römische Republik mit Senat, Konsuln oder Magistraten", keywords: ["romische", "römische", "republik", "senat", "konsuln", "magistrate"] },
+          { label: "Ausschlüsse oder soziale Begrenzungen", keywords: ["frauen", "sklaven", "fremde", "ausgeschlossen", "sozial", "plebejer", "patrizier"] }
+        ]
       },
       {
-        id: "memory-athen",
-        left: "Attische Demokratie",
-        right: "Bürger beraten und entscheiden direkt, aber Frauen, Sklaven und Fremde bleiben ausgeschlossen."
-      },
-      {
-        id: "memory-rom",
-        left: "Römische Republik",
-        right: "Senat, Magistrate und Volksversammlungen teilen Macht, ohne soziale Konflikte zu beseitigen."
-      },
-      {
-        id: "memory-1491",
-        left: "1491",
-        right: "Amerika besitzt lange vor Kolumbus eigene Gesellschaften, Landwirtschaft und politische Ordnungen."
+        id: "repetition-basis-oral-4",
+        question:
+          "Erkläre, warum 1492 ein Einschnitt, aber nicht der Anfang amerikanischer Geschichte ist.",
+        placeholder: "Beziehe dich auf Gesellschaften, Landwirtschaft, politische Ordnungen und Sprachen vor Kolumbus.",
+        sampleAnswer:
+          "1492 ist ein Einschnitt, weil die europäische Eroberung und Kolonisierung Amerika grundlegend verändert. Die Geschichte des Kontinents beginnt aber viel früher. Schon lange vor Kolumbus gibt es dort zahlreiche Gesellschaften mit eigenen Sprachen, Landwirtschaftsformen, Handelsbeziehungen und politischen Ordnungen. 1492 markiert daher keinen Anfang, sondern einen gewaltsamen Bruch in bereits bestehende historische Entwicklungen.",
+        minWords: 35,
+        criteria: [
+          { label: "1492 als Einschnitt oder gewaltsamer Umbruch", keywords: ["1492", "einschnitt", "bruch", "kolonisierung", "eroberung"] },
+          { label: "Gesellschaften vor Kolumbus", keywords: ["vor kolumbus", "indigene", "gesellschaften", "reiche", "amerika"] },
+          { label: "Sprachen, Landwirtschaft oder politische Ordnungen vor 1492", keywords: ["sprachen", "landwirtschaft", "politische ordnungen", "handel", "mais", "inka", "azteken"] }
+        ]
       }
     ]
   },
-  drag: {
-    title: "Drag-and-drop: Entwicklung dem historischen Kern zuordnen",
-    instructions:
-      "Ziehe jede Entwicklung auf die passende Erklärung. Eine richtige Zuordnung bleibt stehen; eine falsche springt zurück.",
-    solutionLabel: "Komplette Zuordnung anzeigen",
-    items: [
+  leichtFortgeschritten: {
+    label: "Leicht fortgeschritten",
+    intro:
+      "Hier geht es stärker um Ursachen und Folgen: Warum entstehen neue Ordnungen, und welche alten Formen bleiben dabei erhalten?",
+    memory: {
+      title: "Memory: Umbruch und Folge genauer fassen",
+      instructions:
+        "Suche jeweils das Paar, bei dem der historische Umbruch und seine unmittelbare Folge präzise zusammenpassen.",
+      pairs: [
+        {
+          id: "lf-memory-kognition",
+          left: "Erfundene Ordnungen",
+          right: "Sie halten Großgruppen zusammen, auch wenn sich die meisten Mitglieder nicht persönlich kennen."
+        },
+        {
+          id: "lf-memory-landwirtschaft",
+          left: "Ackerbau",
+          right: "Er erhöht die Nahrungsmenge, macht Menschen aber abhängiger von Boden, Wetter und Ernte."
+        },
+        {
+          id: "lf-memory-aegypten",
+          left: "Ägyptischer Staat",
+          right: "Nil, Verwaltung, Pharao und Maat verbinden Landwirtschaft, Herrschaft und Weltordnung."
+        },
+        {
+          id: "lf-memory-athen",
+          left: "Attische Demokratie",
+          right: "Direkte Beteiligung erweitert die politische Rolle der Bürger, bleibt aber auf eine kleine Gruppe begrenzt."
+        },
+        {
+          id: "lf-memory-rom",
+          left: "Römische Republik",
+          right: "Macht wird verteilt, doch Konflikte zwischen sozialen Gruppen prägen die Ordnung dauerhaft."
+        },
+        {
+          id: "lf-memory-stadt",
+          left: "Mittelalterliche Stadt",
+          right: "Handel, Rat und Zunft schaffen neue Freiräume innerhalb einer weiterhin ständischen Gesellschaft."
+        }
+      ]
+    },
+    drag: {
+      title: "Drag-and-drop: Ursache und historische Folge",
+      instructions:
+        "Ordne jede Entwicklung der Folge zu, die unmittelbar aus ihr entsteht. Achte auf den genauen historischen Zusammenhang.",
+      items: [
+        {
+          id: "lf-drag-mythen",
+          label: "Gemeinsame Mythen",
+          target: "lf-target-mythen",
+          explanation: "Fremde können sich auf Regeln, Götter oder Rechte beziehen und dadurch gemeinsam handeln."
+        },
+        {
+          id: "lf-drag-vorraete",
+          label: "Vorratshaltung",
+          target: "lf-target-vorraete",
+          explanation: "Besitz, Abgaben und soziale Unterschiede werden dauerhaft sichtbar."
+        },
+        {
+          id: "lf-drag-schrift",
+          label: "Schrift",
+          target: "lf-target-schrift",
+          explanation: "Herrschaft kann Menschen, Güter und Arbeit über längere Zeiträume kontrollieren."
+        },
+        {
+          id: "lf-drag-geld",
+          label: "Münzgeld",
+          target: "lf-target-geld",
+          explanation: "Tausch löst sich stärker von persönlichem Vertrauen und wird über weite Räume möglich."
+        },
+        {
+          id: "lf-drag-kloester",
+          label: "Klöster",
+          target: "lf-target-kloester",
+          explanation: "Religion prägt Bildung, Schriftkultur und Herrschaftslegitimation im Mittelalter."
+        },
+        {
+          id: "lf-drag-1492",
+          label: "Europäische Expansion",
+          target: "lf-target-1492",
+          explanation: "Bestehende Gesellschaften Amerikas werden nicht entdeckt, sondern gewaltsam überformt."
+        }
+      ],
+      targets: [
+        {
+          id: "lf-target-mythen",
+          title: "Kooperation mit Fremden",
+          prompt: "Ordne hier die Entwicklung zu, die große Gruppen auch ohne persönliche Bekanntschaft stabilisiert."
+        },
+        {
+          id: "lf-target-vorraete",
+          title: "Dauerhafte Ungleichheit",
+          prompt: "Ordne hier die Entwicklung zu, die Besitz und soziale Unterschiede sichtbar verfestigt."
+        },
+        {
+          id: "lf-target-schrift",
+          title: "Herrschaft auf Distanz",
+          prompt: "Ordne hier die Entwicklung zu, die Verwaltung über Listen und Aufzeichnungen ermöglicht."
+        },
+        {
+          id: "lf-target-geld",
+          title: "Abstraktes Vertrauen",
+          prompt: "Ordne hier die Entwicklung zu, die Handel mit Unbekannten vereinfacht."
+        },
+        {
+          id: "lf-target-kloester",
+          title: "Kirche als Ordnungsmacht",
+          prompt: "Ordne hier die Entwicklung zu, die geistliche und kulturelle Macht im Mittelalter bündelt."
+        },
+        {
+          id: "lf-target-1492",
+          title: "Gewaltsamer Einschnitt",
+          prompt: "Ordne hier die Entwicklung zu, die in bereits bestehende amerikanische Gesellschaften eingreift."
+        }
+      ]
+    },
+    cloze: {
+      title: "Lückentext: Kontinuitäten und Brüche erklären",
+      instructions:
+        "Fülle die Lücken so, dass Ursachen und Folgen in einem zusammenhängenden Überblick sichtbar werden.",
+      parts: [
+        "Menschen leben sehr lange in kleinen Gruppen. Erst ",
+        { id: "cloze-1", answers: ["gemeinsame vorstellungen", "mythen", "erfundene ordnungen", "symbolische ordnungen"] },
+        " ermöglichen größere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere ",
+        { id: "cloze-2", answers: ["abhangigkeit", "abhängigkeit", "abhaengigkeit", "bindung an boden", "bindung an ernten"] },
+        " von Feldern und Ernten. Frühe Staaten stützen sich auf ",
+        { id: "cloze-3", answers: ["schrift", "listen", "verwaltung", "schriftsysteme"] },
+        ", damit Abgaben, Arbeit und Besitz kontrollierbar werden. In Athen entsteht direkte ",
+        { id: "cloze-4", answers: ["beteiligung", "demokratie", "direkte beteiligung"] },
+        ", in Rom eine republikanische Mischordnung. Im Mittelalter verdichten ",
+        { id: "cloze-5", answers: ["stadte", "städte", "markte", "märkte", "handel"] },
+        " neue Lebensformen, ohne die ständische Gesellschaft sofort aufzuheben. 1492 bringt einen gewaltsamen ",
+        { id: "cloze-6", answers: ["einschnitt", "bruch", "umbruch"] },
+        " in bereits bestehende amerikanische Gesellschaften."
+      ],
+      sampleAnswer:
+        "Menschen leben sehr lange in kleinen Gruppen. Erst gemeinsame Vorstellungen ermöglichen größere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere Abhängigkeit von Feldern und Ernten. Frühe Staaten stützen sich auf Schrift, damit Abgaben, Arbeit und Besitz kontrollierbar werden. In Athen entsteht direkte Beteiligung, in Rom eine republikanische Mischordnung. Im Mittelalter verdichten Städte neue Lebensformen, ohne die ständische Gesellschaft sofort aufzuheben. 1492 bringt einen gewaltsamen Einschnitt in bereits bestehende amerikanische Gesellschaften."
+    },
+    oralQuestions: [
       {
-        id: "drag-kognition",
-        label: "Kognitive Revolution",
-        target: "drag-target-kognition",
-        explanation: "Sprache, Symbole, Mythen und geteilte Vorstellungen"
+        id: "repetition-lf-oral-1",
+        question:
+          "Erkläre, warum gemeinsame Vorstellungen für die Bildung großer menschlicher Gruppen wichtiger waren als bloße körperliche Stärke.",
+        placeholder: "Beziehe dich auf Sprache, Regeln, Mythen und Kooperation mit Fremden.",
+        sampleAnswer:
+          "Körperliche Stärke erklärt nur kleine Gruppen, nicht große Gesellschaften. Erst Sprache und gemeinsame Vorstellungen machen es möglich, dass Menschen sich auf Regeln, Götter, Rechte oder Traditionen beziehen. So können auch Fremde zusammenarbeiten. Große Gruppen beruhen deshalb nicht nur auf biologischen Voraussetzungen, sondern auf symbolischen Ordnungen. Gerade darin liegt ein entscheidender historische Bruch.",
+        minWords: 40,
+        criteria: [
+          { label: "Sprache oder Symbolwelt als Grundlage", keywords: ["sprache", "symbol", "mythen", "vorstellungen"] },
+          { label: "Kooperation mit Fremden", keywords: ["fremde", "kooperation", "große gruppen", "grossgruppen", "zusammenarbeit"] },
+          { label: "Körperliche Stärke reicht nicht aus", keywords: ["korper", "körper", "starke", "stärke", "nicht genug"] }
+        ]
       },
       {
-        id: "drag-landwirtschaft",
-        label: "Landwirtschaftliche Revolution",
-        target: "drag-target-landwirtschaft",
-        explanation: "Sesshaftigkeit, Vorräte, mehr Arbeit und neue Ungleichheit"
+        id: "repetition-lf-oral-2",
+        question:
+          "Erkläre, warum Landwirtschaft gleichzeitig ein Fortschritt und eine neue Belastung war.",
+        placeholder: "Beziehe Nahrung, Arbeit, Bevölkerungswachstum und Abhängigkeit ein.",
+        sampleAnswer:
+          "Landwirtschaft vergrößert die verfügbare Nahrungsmenge und ermöglicht größere, sesshafte Gemeinschaften. Gleichzeitig steigt die Arbeitslast, weil Felder ständig gepflegt, Tiere versorgt und Vorräte gesichert werden müssen. Menschen werden außerdem stärker von Klima, Boden und Ernte abhängig. Aus dieser neuen Stabilität entstehen daher auch neue Verletzlichkeiten. Fortschritt und Belastung gehören hier zusammen.",
+        minWords: 40,
+        criteria: [
+          { label: "Mehr Nahrung oder größere Gemeinschaften", keywords: ["nahrung", "bevolkerung", "bevölkerung", "größere gruppen", "sesshaft"] },
+          { label: "Mehr Arbeit", keywords: ["arbeit", "arbeitslast", "pflege", "felder", "vorrate", "vorräte"] },
+          { label: "Abhängigkeit von Boden, Wetter oder Ernte", keywords: ["boden", "wetter", "ernte", "abhangigkeit", "abhängigkeit"] }
+        ]
       },
       {
-        id: "drag-schrift",
-        label: "Schrift und Verwaltung",
-        target: "drag-target-schrift",
-        explanation: "Listen, Abgaben, Besitz und dauerhafte Herrschaft"
+        id: "repetition-lf-oral-3",
+        question:
+          "Vergleiche Ägypten, Athen und Rom danach, wie politische Ordnung jeweils begründet und stabilisiert wird.",
+        placeholder: "Ordne Pharao und Maat, Volksversammlung sowie Senat und Magistrate ein.",
+        sampleAnswer:
+          "In Ägypten wird Ordnung stark religiös und königlich begründet: Pharao, Nil und Maat gehören zusammen. In Athen wird Ordnung durch die direkte Beteiligung freier Bürger in der Volksversammlung stabilisiert. In Rom entsteht eine republikanische Mischordnung aus Senat, Magistraten und Volksversammlungen. Alle drei Modelle schaffen politische Stabilität, aber auf sehr unterschiedliche Weise. Zugleich schließen alle drei große Teile der Bevölkerung aus oder ordnen sie unter.",
+        minWords: 45,
+        criteria: [
+          { label: "Ägypten mit Pharao, Nil oder Maat", keywords: ["pharao", "nil", "maat", "agypten", "ägypten"] },
+          { label: "Athen mit Volksversammlung oder Bürgern", keywords: ["athen", "volksversammlung", "burger", "bürger", "direkt"] },
+          { label: "Rom mit Senat, Magistraten oder Konsuln", keywords: ["rom", "senat", "magistrate", "konsuln", "republik"] }
+        ]
       },
       {
-        id: "drag-athen",
-        label: "Attische Demokratie",
-        target: "drag-target-athen",
-        explanation: "Volksversammlung und direkte Beteiligung freier männlicher Bürger"
-      },
-      {
-        id: "drag-rom",
-        label: "Römische Republik",
-        target: "drag-target-rom",
-        explanation: "Senat, Konsuln, Magistrate und Machtteilung"
-      },
-      {
-        id: "drag-mittelalter",
-        label: "Mittelalterliche Städte",
-        target: "drag-target-mittelalter",
-        explanation: "Märkte, Handwerk, Fernhandel und verdichtete Lebensräume"
-      }
-    ],
-    targets: [
-      {
-        id: "drag-target-kognition",
-        title: "Sprache und Symbolwelt",
-        prompt: "Hier gehört die Entwicklung hin, die Mythen, Regeln und große Kooperation ermöglicht."
-      },
-      {
-        id: "drag-target-landwirtschaft",
-        title: "Sesshafte Lebensweise",
-        prompt: "Hier gehört die Entwicklung hin, die Felder, Vorräte und soziale Unterschiede hervorbringt."
-      },
-      {
-        id: "drag-target-schrift",
-        title: "Frühe Staatlichkeit",
-        prompt: "Hier gehört die Entwicklung hin, die Herrschaft durch Listen, Abgaben und Bürokratie stützt."
-      },
-      {
-        id: "drag-target-athen",
-        title: "Direkte Beteiligung",
-        prompt: "Hier gehört die Ordnung hin, in der Bürger in der Volksversammlung direkt mitentscheiden."
-      },
-      {
-        id: "drag-target-rom",
-        title: "Republikanische Mischform",
-        prompt: "Hier gehört die Ordnung hin, in der Senat, Magistrate und Volksversammlungen zusammenwirken."
-      },
-      {
-        id: "drag-target-mittelalter",
-        title: "Städtischer Wandel",
-        prompt: "Hier gehört die Entwicklung hin, die Märkte, Handwerk und Fernhandel verdichtet."
+        id: "repetition-lf-oral-4",
+        question:
+          "Erkläre, warum mittelalterliche Städte einerseits einen Bruch, andererseits aber auch eine Fortsetzung älterer Ordnungen darstellen.",
+        placeholder: "Gehe auf Märkte, Rat, Handel, Zünfte und ständische Gesellschaft ein.",
+        sampleAnswer:
+          "Mittelalterliche Städte bringen Verdichtung, Markt, Handwerk, Rat und Fernhandel zusammen und schaffen damit neue Freiräume gegenüber rein ländlicher Herrschaft. Das ist ein Bruch, weil neue wirtschaftliche und politische Zentren entstehen. Gleichzeitig bleibt die Gesellschaft ständisch geprägt, und auch Städte sind in bestehende Herrschafts- und Religionsordnungen eingebunden. Städte verändern die Gesellschaft also tief, heben ältere Strukturen aber nicht einfach auf. Gerade diese Mischung aus Neuem und Altem ist historisch entscheidend.",
+        minWords: 45,
+        criteria: [
+          { label: "Neue städtische Elemente", keywords: ["markte", "märkte", "handel", "rat", "zunfte", "zünfte", "handwerk"] },
+          { label: "Bruch mit rein ländlicher Ordnung", keywords: ["bruch", "neu", "verdichtung", "stadt", "freiraume", "freiräume"] },
+          { label: "Fortdauer älterer Ordnungen", keywords: ["standisch", "ständisch", "herrschaft", "kirche", "fortsetzung", "nicht aufgehoben"] }
+        ]
       }
     ]
   },
-  cloze: {
-    title: "Lückentext: Die großen Umbrüche zusammenfassen",
-    instructions:
-      "Fülle die Lücken mit den passenden Begriffen. Synonyme werden erkannt, wenn sie denselben historischen Kern treffen.",
-    parts: [
-      "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die ",
-      { id: "cloze-1", answers: ["kognitive", "kognitive revolution"] },
-      ". Sie macht Sprache, ",
-      { id: "cloze-2", answers: ["mythen", "erzaehlungen", "erzählungen", "symbolwelten", "gemeinsame vorstellungen"] },
-      " und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die ",
-      { id: "cloze-3", answers: ["landwirtschaftliche", "neolithische", "agrarische", "landwirtschaftliche revolution", "neolithische revolution"] },
-      " Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale ",
-      { id: "cloze-4", answers: ["ungleichheit", "hierarchie", "hierarchien", "soziale unterschiede"] },
-      " hervor. Frühe Staaten stützen sich auf ",
-      { id: "cloze-5", answers: ["schrift", "schriftsysteme", "listen"] },
-      " und Verwaltung. In Antike und Mittelalter verbinden ",
-      { id: "cloze-6", answers: ["reiche", "imperien", "weltreiche"] },
-      ", Geld und Religion immer größere Räume."
-    ],
-    sampleAnswer:
-      "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die kognitive Revolution. Sie macht Sprache, Mythen und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die landwirtschaftliche Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale Ungleichheit hervor. Frühe Staaten stützen sich auf Schrift und Verwaltung. In Antike und Mittelalter verbinden Reiche, Geld und Religion immer größere Räume."
+  fortgeschritten: {
+    label: "Fortgeschritten",
+    intro:
+      "Hier geht es um Verbindungen zwischen mehreren Epochen: Wie tragen Geld, Religion und Reiche dazu bei, immer größere Räume zu ordnen?",
+    memory: {
+      title: "Memory: Entwicklung und Langzeitwirkung",
+      instructions:
+        "Verbinde die Entwicklung jeweils mit der übergreifenden Wirkung, die sie über mehrere Epochen hinweg entfaltet.",
+      pairs: [
+        {
+          id: "f-memory-geld",
+          left: "Geld",
+          right: "Es schafft ein abstraktes Vertrauenssystem, das Tausch über persönliche Beziehungen hinaus ermöglicht."
+        },
+        {
+          id: "f-memory-religion",
+          left: "Universalreligionen",
+          right: "Sie geben weit auseinanderliegenden Menschen gemeinsame Normen und Deutungen."
+        },
+        {
+          id: "f-memory-imperium",
+          left: "Imperien",
+          right: "Sie verbinden große Räume, vereinheitlichen aber auch Recht, Sprache und Macht unter Zwang."
+        },
+        {
+          id: "f-memory-republik",
+          left: "Römische Republik",
+          right: "Sie stabilisiert Machtteilung, trägt aber Konflikte in sich, die den Übergang zur Kaiserherrschaft vorbereiten."
+        },
+        {
+          id: "f-memory-kloester",
+          left: "Klöster",
+          right: "Sie sichern Bildung und Schriftkultur, obwohl die Gesellschaft insgesamt nicht alphabetisiert ist."
+        },
+        {
+          id: "f-memory-1491",
+          left: "1491/1492",
+          right: "Ein bestehender Kontinent mit eigenen Reichen und Agrarsystemen gerät in eine gewaltsame Neuordnung."
+        }
+      ]
+    },
+    drag: {
+      title: "Drag-and-drop: Entwicklung dem langfristigen Zusammenhang zuordnen",
+      instructions:
+        "Ordne jede Entwicklung dem historischen Zusammenhang zu, den sie über eine längere Strecke der Geschichte prägt.",
+      items: [
+        {
+          id: "f-drag-geld",
+          label: "Geld",
+          target: "f-target-geld",
+          explanation: "Es verbindet Menschen im Handel, obwohl sie sich nicht kennen und einander nicht vertrauen."
+        },
+        {
+          id: "f-drag-religion",
+          label: "Universalreligion",
+          target: "f-target-religion",
+          explanation: "Sie schafft gemeinsame Deutung und Moral über viele Gesellschaften hinweg."
+        },
+        {
+          id: "f-drag-imperium",
+          label: "Imperium",
+          target: "f-target-imperium",
+          explanation: "Es vergrößert politische Räume und vereinheitlicht Herrschaft, oft auch gewaltsam."
+        },
+        {
+          id: "f-drag-republik",
+          label: "Republikanische Ordnung",
+          target: "f-target-republik",
+          explanation: "Sie verteilt Macht, ohne soziale Konflikte oder Expansion automatisch zu bremsen."
+        },
+        {
+          id: "f-drag-kirche",
+          label: "Mittelalterliche Kirche",
+          target: "f-target-kirche",
+          explanation: "Sie bindet Herrschaft, Wissen und Alltagsnormen an religiöse Ordnung."
+        },
+        {
+          id: "f-drag-kolonisation",
+          label: "Koloniale Expansion",
+          target: "f-target-kolonisation",
+          explanation: "Sie greift in bereits bestehende außereuropäische Entwicklungen ein und deutet sie um."
+        }
+      ],
+      targets: [
+        {
+          id: "f-target-geld",
+          title: "Abstraktes Vertrauen",
+          prompt: "Ordne hier die Entwicklung zu, die wirtschaftliche Beziehungen von persönlicher Bekanntschaft löst."
+        },
+        {
+          id: "f-target-religion",
+          title: "Gemeinsame Normen großer Räume",
+          prompt: "Ordne hier die Entwicklung zu, die Menschen über Regionen hinweg an gemeinsame Deutungen bindet."
+        },
+        {
+          id: "f-target-imperium",
+          title: "Einheit unter Herrschaft",
+          prompt: "Ordne hier die Entwicklung zu, die große Räume politisch zusammenfasst und vereinheitlicht."
+        },
+        {
+          id: "f-target-republik",
+          title: "Machtteilung mit inneren Spannungen",
+          prompt: "Ordne hier die Entwicklung zu, die politische Ämter verteilt, aber soziale Konflikte nicht beendet."
+        },
+        {
+          id: "f-target-kirche",
+          title: "Religiöse Ordnung des Alltags",
+          prompt: "Ordne hier die Entwicklung zu, die Schriftkultur, Herrschaft und Moral zugleich prägt."
+        },
+        {
+          id: "f-target-kolonisation",
+          title: "Gewaltsame Neuordnung",
+          prompt: "Ordne hier die Entwicklung zu, die bestehende Gesellschaften nicht begründet, sondern unterbricht."
+        }
+      ]
+    },
+    cloze: {
+      title: "Lückentext: Große Ordnungsformen zusammenführen",
+      instructions:
+        "Fülle die Begriffe so ein, dass politische, wirtschaftliche und religiöse Integration als Gesamtlinie sichtbar wird.",
+      parts: [
+        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Große Gruppen stützen sich auf ",
+        { id: "cloze-1", answers: ["erfundene ordnungen", "gemeinsame vorstellungen", "mythen", "fiktive ordnungen"] },
+        ". Frühstaaten sichern Abgaben und Arbeit durch ",
+        { id: "cloze-2", answers: ["schrift", "verwaltung", "listen"] },
+        ". In der Antike wächst die politische Reichweite von ",
+        { id: "cloze-3", answers: ["imperien", "reichen", "imperium"] },
+        ", während ",
+        { id: "cloze-4", answers: ["geld", "munzgeld", "münzgeld"] },
+        " wirtschaftliche Beziehungen über große Räume verbindet. Im Mittelalter prägen ",
+        { id: "cloze-5", answers: ["kirche", "christentum", "religion"] },
+        " und Städte gemeinsam den Alltag. 1492 zeigt, dass globale Verflechtung oft als ",
+        { id: "cloze-6", answers: ["gewalt", "eroberung", "kolonisierung", "bruch"] },
+        " in bestehende Welten eintritt."
+      ],
+      sampleAnswer:
+        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Große Gruppen stützen sich auf erfundene Ordnungen. Frühstaaten sichern Abgaben und Arbeit durch Schrift. In der Antike wächst die politische Reichweite von Imperien, während Geld wirtschaftliche Beziehungen über große Räume verbindet. Im Mittelalter prägen Kirche und Städte gemeinsam den Alltag. 1492 zeigt, dass globale Verflechtung oft als Gewalt in bestehende Welten eintritt."
+    },
+    oralQuestions: [
+      {
+        id: "repetition-f-oral-1",
+        question:
+          "Erkläre, warum Geld, Religion und Reiche als drei verschiedene, aber zusammenwirkende Mittel zur Ordnung großer Räume verstanden werden können.",
+        placeholder: "Vergleiche wirtschaftliche, religiöse und politische Integration.",
+        sampleAnswer:
+          "Geld verbindet Menschen wirtschaftlich, weil es ein abstraktes Vertrauen in Tauschwerte schafft. Religion verbindet sie normativ, indem sie gemeinsame Deutungen, Gebote und Rituale über große Räume verbreitet. Reiche verbinden Räume politisch durch Macht, Recht, Verwaltung und Infrastruktur. Diese drei Mittel wirken verschieden, greifen historisch aber oft ineinander. Gerade dadurch können sehr große Ordnungen entstehen und stabil bleiben.",
+        minWords: 50,
+        criteria: [
+          { label: "Geld als wirtschaftliche Verbindung", keywords: ["geld", "handel", "vertrauen", "tausch"] },
+          { label: "Religion als gemeinsame Norm oder Deutung", keywords: ["religion", "normen", "deutung", "rituale", "gebote"] },
+          { label: "Reiche als politische Verbindung", keywords: ["reiche", "imperien", "macht", "verwaltung", "recht", "infrastruktur"] }
+        ]
+      },
+      {
+        id: "repetition-f-oral-2",
+        question:
+          "Erkläre, warum die römische Republik zugleich eine stabile Machtordnung und eine Übergangsform zur Kaiserherrschaft war.",
+        placeholder: "Beziehe Senat, Magistrate, Expansion und innere Konflikte ein.",
+        sampleAnswer:
+          "Die römische Republik verteilt Macht auf Senat, Konsuln, Magistrate und Volksversammlungen und wirkt dadurch zunächst stabil. Gleichzeitig bleibt sie von sozialen Spannungen und Machtkämpfen geprägt. Expansion verstärkt diese Spannungen, weil Kriegsbeute, Militär und persönliche Loyalitäten immer wichtiger werden. So wird die Republik nicht einfach zerstört, sondern aus ihren eigenen Spannungen heraus in die Kaiserherrschaft überführt. Gerade darin liegt ihre doppelte historische Bedeutung.",
+        minWords: 50,
+        criteria: [
+          { label: "Machtteilung der Republik", keywords: ["senat", "konsuln", "magistrate", "volksversammlungen", "machtteilung"] },
+          { label: "Innere Konflikte", keywords: ["konflikte", "spannungen", "patrizier", "plebejer", "machtkampfe", "machtkämpfe"] },
+          { label: "Übergang zur Kaiserherrschaft", keywords: ["kaiser", "kaiserherrschaft", "ubergang", "übergang", "expansion", "militar", "militär"] }
+        ]
+      },
+      {
+        id: "repetition-f-oral-3",
+        question:
+          "Erkläre, warum mittelalterliche Klöster weit mehr waren als Orte des Gebets.",
+        placeholder: "Gehe auf Schrift, Bildung, Herrschaft, Wirtschaft und religiöse Ordnung ein.",
+        sampleAnswer:
+          "Klöster waren Orte des Gebets, aber zugleich Zentren von Schrift, Bildung und Erinnerung. Dort wurden Texte abgeschrieben, Wissen bewahrt und Herrschaft religiös gedeutet. Viele Klöster waren außerdem wirtschaftlich bedeutsam, weil sie Land besaßen und Arbeit organisierten. Sie prägten daher nicht nur Frömmigkeit, sondern auch Macht, Alltag und Kultur. Klöster zeigen besonders deutlich, wie eng Religion und gesellschaftliche Ordnung im Mittelalter verbunden waren.",
+        minWords: 45,
+        criteria: [
+          { label: "Schrift oder Bildung", keywords: ["schrift", "texte", "bildung", "abschreiben", "wissen"] },
+          { label: "Wirtschaft oder Besitz", keywords: ["land", "besitz", "wirtschaft", "arbeit", "organisieren"] },
+          { label: "Herrschaft oder religiöse Ordnung", keywords: ["herrschaft", "religios", "religiös", "ordnung", "kultur", "alltag"] }
+        ]
+      },
+      {
+        id: "repetition-f-oral-4",
+        question:
+          "Erkläre 1492 als Teil einer längeren Geschichte weltweiter Verflechtungen und nicht nur als europäisches Erfolgsdatum.",
+        placeholder: "Beziehe bestehende Gesellschaften Amerikas, Gewalt und Neuordnung ein.",
+        sampleAnswer:
+          "1492 ist nicht nur ein Datum europäischer Expansion, sondern Teil einer längeren Geschichte globaler Verflechtungen. Entscheidend ist, dass Europa dabei nicht in einen leeren Raum eintritt. Amerika besitzt bereits Reiche, Städte, Landwirtschaft, Handelsbeziehungen und politische Ordnungen. Die koloniale Expansion bringt daher keinen Anfang, sondern Gewalt, Eroberung und Neuordnung in bestehende Welten. Gerade diese Perspektive korrigiert eine rein europäische Fortschrittserzählung.",
+        minWords: 45,
+        criteria: [
+          { label: "Bestehende Gesellschaften Amerikas", keywords: ["amerika", "reiche", "stadte", "städte", "landwirtschaft", "gesellschaften"] },
+          { label: "Gewalt oder Eroberung", keywords: ["gewalt", "eroberung", "kolonial", "kolonisierung", "neuordnung"] },
+          { label: "Nicht bloß europäisches Erfolgsdatum", keywords: ["nicht nur", "europa", "erfolgsdatum", "perspektive", "fortschrittserzahlung", "fortschrittserzählung"] }
+        ]
+      }
+    ]
   },
-  oralQuestions: [
-    {
-      id: "repetition-oral-1",
-      question:
-        "Erkläre in 4 bis 6 Sätzen, warum Geschichte hier nicht mit dem Urknall oder der Eiszeit beginnt, sondern mit menschlichen Ordnungen.",
-      placeholder: "Erkläre Sprache, Regeln, Erinnerung und gemeinsame Vorstellungen als Anfang geschichtlicher Weltordnung.",
-      sampleAnswer:
-        "Geschichte beginnt hier nicht mit Naturereignissen, sondern dort, wo Menschen ihre Welt kulturell ordnen. Entscheidend sind Sprache, Erinnerung, Regeln und gemeinsame Vorstellungen. Dadurch können Menschen Erfahrungen weitergeben, Gruppen stabilisieren und Institutionen schaffen. Geschichte meint deshalb nicht einfach alles Vergangene, sondern die von Menschen gestaltete Welt aus Normen, Ordnung und Deutung.",
-      minWords: 35,
-      criteria: [
-        { label: "Unterschied zwischen Naturgeschichte und menschlich geordneter Geschichte", keywords: ["naturgeschichte", "natur", "vergangenheit"] },
-        { label: "Sprache, Regeln oder gemeinsame Vorstellungen als Grundlage", keywords: ["sprache", "regeln", "vorstellungen", "ordnung", "mythen"] },
-        { label: "Menschen gestalten ihre Welt aktiv", keywords: ["gestalten", "kulturell", "institutionen", "erinnerung", "deutung"] }
+  experte: {
+    label: "Experte",
+    intro:
+      "Hier verbindest du mehrere Epochen zu einer Deutung: Welche Entwicklungen tragen langfristig, und welche Brüche verändern die Richtung der Geschichte?",
+    memory: {
+      title: "Memory: Harte Deutungen historischer Langzeitlinien",
+      instructions:
+        "Verbinde jeweils die Entwicklung mit der Deutung, die ihren langfristigen historischen Sinn am präzisesten trifft.",
+      pairs: [
+        {
+          id: "e-memory-ordnungen",
+          left: "Gemeinsame Ordnungen",
+          right: "Sie sind nicht natürlich gegeben, wirken aber historisch real, weil Menschen kollektiv an sie glauben."
+        },
+        {
+          id: "e-memory-agrar",
+          left: "Agrargesellschaft",
+          right: "Sie erhöht Versorgung und Bevölkerungsdichte, bindet Menschen aber enger an Arbeit, Besitz und Herrschaft."
+        },
+        {
+          id: "e-memory-imperium",
+          left: "Imperium",
+          right: "Es zerstört lokale Autonomie und schafft zugleich größere politische, rechtliche und wirtschaftliche Räume."
+        },
+        {
+          id: "e-memory-geld",
+          left: "Geldordnung",
+          right: "Sie ersetzt persönliches Vertrauen nicht völlig, verschiebt es aber auf abstrakte Werte und Systeme."
+        },
+        {
+          id: "e-memory-religion",
+          left: "Universalreligion",
+          right: "Sie verbindet sehr unterschiedliche Menschen durch gemeinsame Wahrheit, Moral und Geschichte."
+        },
+        {
+          id: "e-memory-1492",
+          left: "1492 als Bruch",
+          right: "Der Einschnitt ist global bedeutsam, weil er bestehende Welten asymmetrisch verknüpft statt sie erst zu schaffen."
+        }
       ]
     },
-    {
-      id: "repetition-oral-2",
-      question:
-        "Erkläre den Bruch zwischen mobilen Jäger-und-Sammler-Gruppen und sesshaften Agrargesellschaften.",
-      placeholder: "Gehe auf Nahrung, Siedlungen, Arbeit, Vorräte und soziale Folgen ein.",
-      sampleAnswer:
-        "Mobile Jäger-und-Sammler-Gruppen leben von Jagd, Sammeln, Bewegung und genauer Umweltbeobachtung. Mit Landwirtschaft und Viehzucht werden Menschen sesshaft, bauen Häuser und legen Vorräte an. Dadurch wächst die Bevölkerung, aber auch die Arbeitslast. Besitz und Abgaben werden wichtiger. So entstehen neue soziale Unterschiede und dauerhafte Herrschaftsformen.",
-      minWords: 35,
-      criteria: [
-        { label: "Mobilität und Umweltwissen der Jäger und Sammler", keywords: ["mobil", "jagd", "sammeln", "umweltwissen", "jahreszeiten"] },
-        { label: "Sesshaftigkeit, Vorräte oder feste Siedlungen", keywords: ["sesshaft", "vorrate", "vorräte", "dorfer", "dörfer", "hauser", "häuser"] },
-        { label: "Mehr Arbeit, Besitz oder soziale Ungleichheit", keywords: ["arbeit", "besitz", "ungleichheit", "abhangigkeit", "abhängigkeit", "hierarchie"] }
+    drag: {
+      title: "Drag-and-drop: Historische Deutung präzise zuordnen",
+      instructions:
+        "Ordne jede Entwicklung der Deutung zu, die ihren langfristigen historischen Charakter am besten beschreibt.",
+      items: [
+        {
+          id: "e-drag-ordnungen",
+          label: "Gemeinsame Ordnungen",
+          target: "e-target-ordnungen",
+          explanation: "Sie beruhen auf geteiltem Glauben und werden dadurch zu historisch wirksamer Realität."
+        },
+        {
+          id: "e-drag-landwirtschaft",
+          label: "Landwirtschaft",
+          target: "e-target-landwirtschaft",
+          explanation: "Sie verdichtet Gesellschaften, steigert aber Abhängigkeit, Arbeit und soziale Differenz."
+        },
+        {
+          id: "e-drag-imperium",
+          label: "Imperium",
+          target: "e-target-imperium",
+          explanation: "Es schafft Einheit und Gewalt gleichzeitig und darf deshalb weder nur positiv noch nur negativ gedeutet werden."
+        },
+        {
+          id: "e-drag-geld",
+          label: "Geld",
+          target: "e-target-geld",
+          explanation: "Es funktioniert als universelle Sprache des Tauschs und trägt damit Fernverflechtung."
+        },
+        {
+          id: "e-drag-religion",
+          label: "Universalreligion",
+          target: "e-target-religion",
+          explanation: "Sie stiftet Moral, Zugehörigkeit und Geschichtsdeutung über politische Grenzen hinweg."
+        },
+        {
+          id: "e-drag-1492",
+          label: "1492",
+          target: "e-target-1492",
+          explanation: "Es ist global wichtig, weil hier bestehende Entwicklungslinien gewaltsam zusammenprallen."
+        }
+      ],
+      targets: [
+        {
+          id: "e-target-ordnungen",
+          title: "Historisch wirksamer Glaube",
+          prompt: "Ordne hier die Entwicklung zu, die nur funktioniert, weil viele Menschen dieselbe Ordnung anerkennen."
+        },
+        {
+          id: "e-target-landwirtschaft",
+          title: "Verdichtung und Abhängigkeit",
+          prompt: "Ordne hier die Entwicklung zu, die Wachstum und neue Belastungen zugleich hervorbringt."
+        },
+        {
+          id: "e-target-imperium",
+          title: "Einheit und Zwang",
+          prompt: "Ordne hier die Entwicklung zu, die große Räume integriert und dabei Herrschaft mit Gewalt verbindet."
+        },
+        {
+          id: "e-target-geld",
+          title: "Universelle Tauschsprache",
+          prompt: "Ordne hier die Entwicklung zu, die Handel über kulturelle und politische Grenzen hinweg trägt."
+        },
+        {
+          id: "e-target-religion",
+          title: "Gemeinsame Wahrheit großer Räume",
+          prompt: "Ordne hier die Entwicklung zu, die moralische und historische Deutung über viele Gesellschaften hinweg verbindet."
+        },
+        {
+          id: "e-target-1492",
+          title: "Asymmetrische Weltverknüpfung",
+          prompt: "Ordne hier die Entwicklung zu, die globale Verflechtung als gewaltsamen Bruch sichtbar macht."
+        }
       ]
     },
-    {
-      id: "repetition-oral-3",
-      question:
-        "Vergleiche attische Demokratie und römische Republik in 4 bis 6 Sätzen.",
-      placeholder: "Vergleiche direkte Beteiligung, politische Ämter und Ausschlüsse.",
+    cloze: {
+      title: "Lückentext: Große Deutungslinie formulieren",
+      instructions:
+        "Fülle die Schlüsselbegriffe ein, so dass aus Einzelentwicklungen eine zusammenhängende historische Interpretation wird.",
+      parts: [
+        "Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt durch ",
+        { id: "cloze-1", answers: ["ordnungen", "regeln", "vorstellungen", "gemeinsame ordnungen"] },
+        " gestalten. Die kognitive Revolution erweitert Kooperation über persönliche Nähe hinaus. Die landwirtschaftliche Revolution verdichtet Gesellschaften, macht sie aber auch stärker von ",
+        { id: "cloze-2", answers: ["arbeit", "boden", "ernte", "vorraten", "vorräten", "ressourcen"] },
+        " abhängig. Staaten, Geld, Religion und Imperien verbinden immer größere Räume und schaffen dadurch sowohl ",
+        { id: "cloze-3", answers: ["einheit", "integration", "vernetzung", "ordnung"] },
+        " als auch neue Formen von Zwang. 1492 zeigt schließlich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoß bereits bestehender ",
+        { id: "cloze-4", answers: ["welten", "gesellschaften", "entwicklungen", "ordnungen"] },
+        " besteht. Große Geschichte ist deshalb immer auch eine Geschichte von ",
+        { id: "cloze-5", answers: ["kontinuitaten", "kontinuitäten", "umbruchen", "umbrüchen", "bruchen", "brüchen"] },
+        " und nicht bloß eine Liste einzelner Daten."
+      ],
       sampleAnswer:
-        "In der attischen Demokratie entscheiden freie männliche Bürger direkt in der Volksversammlung. Frauen, Sklaven und Fremde bleiben ausgeschlossen. Die römische Republik verteilt Macht auf Senat, Konsuln, Magistrate und Volksversammlungen. Sie ist also keine direkte Demokratie, sondern eine Mischform von Ämtern und Körperschaften. Auch in Rom bleibt politische Teilhabe sozial begrenzt und konfliktreich.",
-      minWords: 35,
-      criteria: [
-        { label: "Attische Demokratie mit Volksversammlung oder direkter Beteiligung", keywords: ["attische", "athen", "volksversammlung", "direkt", "burger", "bürger"] },
-        { label: "Römische Republik mit Senat, Konsuln oder Magistraten", keywords: ["romische", "römische", "republik", "senat", "konsuln", "magistrate"] },
-        { label: "Ausschlüsse oder soziale Begrenzungen", keywords: ["frauen", "sklaven", "fremde", "ausgeschlossen", "sozial", "plebejer", "patrizier"] }
-      ]
+        "Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt durch Ordnungen gestalten. Die kognitive Revolution erweitert Kooperation über persönliche Nähe hinaus. Die landwirtschaftliche Revolution verdichtet Gesellschaften, macht sie aber auch stärker von Arbeit und Ernte abhängig. Staaten, Geld, Religion und Imperien verbinden immer größere Räume und schaffen dadurch sowohl Einheit als auch neue Formen von Zwang. 1492 zeigt schließlich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoß bereits bestehender Welten besteht. Große Geschichte ist deshalb immer auch eine Geschichte von Kontinuitäten und Brüchen und nicht bloß eine Liste einzelner Daten."
     },
-    {
-      id: "repetition-oral-4",
-      question:
-        "Erkläre, warum 1492 ein Einschnitt, aber nicht der Anfang amerikanischer Geschichte ist.",
-      placeholder: "Beziehe dich auf Gesellschaften, Landwirtschaft, politische Ordnungen und Sprachen vor Kolumbus.",
-      sampleAnswer:
-        "1492 ist ein Einschnitt, weil die europäische Eroberung und Kolonisierung Amerika grundlegend verändert. Die Geschichte des Kontinents beginnt aber viel früher. Schon lange vor Kolumbus gibt es dort zahlreiche Gesellschaften mit eigenen Sprachen, Landwirtschaftsformen, Handelsbeziehungen und politischen Ordnungen. 1492 markiert daher keinen Anfang, sondern einen gewaltsamen Bruch in bereits bestehende historische Entwicklungen.",
-      minWords: 35,
-      criteria: [
-        { label: "1492 als Einschnitt oder gewaltsamer Umbruch", keywords: ["1492", "einschnitt", "bruch", "kolonisierung", "eroberung"] },
-        { label: "Gesellschaften vor Kolumbus", keywords: ["vor kolumbus", "indigene", "gesellschaften", "reiche", "amerika"] },
-        { label: "Sprachen, Landwirtschaft oder politische Ordnungen vor 1492", keywords: ["sprachen", "landwirtschaft", "politische ordnungen", "handel", "mais", "inka", "azteken"] }
-      ]
-    }
-  ]
+    oralQuestions: [
+      {
+        id: "repetition-e-oral-1",
+        question:
+          "Erkläre, warum menschliche Ordnungen historisch wirksam sind, obwohl sie nicht natürlich gegeben sind.",
+        placeholder: "Gehe auf geteilten Glauben, Regeln, Institutionen und ihre reale Wirkung ein.",
+        sampleAnswer:
+          "Menschliche Ordnungen sind nicht wie Berge oder Flüsse natürlich vorhanden. Sie werden durch gemeinsamen Glauben, Regeln und Institutionen erzeugt. Trotzdem wirken sie historisch real, weil Menschen sich in ihrem Handeln nach ihnen richten. Staaten, Geld, Rechte oder religiöse Normen existieren daher nicht als Natur, sondern als kollektiv getragene Ordnung. Gerade diese Verbindung von Imagination und realer Wirkung macht Geschichte möglich.",
+        minWords: 50,
+        criteria: [
+          { label: "Nicht natürlich gegeben", keywords: ["nicht natur", "nicht natürlich", "erfunden", "imaginiert"] },
+          { label: "Geteilter Glaube oder gemeinsame Anerkennung", keywords: ["glauben", "anerkennen", "gemeinsam", "vorstellungen", "regeln"] },
+          { label: "Reale historische Wirkung", keywords: ["wirkung", "handeln", "institutionen", "staat", "geld", "rechte"] }
+        ]
+      },
+      {
+        id: "repetition-e-oral-2",
+        question:
+          "Erkläre Landwirtschaft als historischen Wendepunkt, ohne sie einfach als Fortschritt oder als Fehler zu deuten.",
+        placeholder: "Verbinde Versorgung, Bevölkerungswachstum, Arbeitslast, Herrschaft und Ungleichheit.",
+        sampleAnswer:
+          "Landwirtschaft ist ein Wendepunkt, weil sie größere und dichtere Gesellschaften ermöglicht. Sie verbessert Versorgung und stützt Bevölkerungswachstum, erzeugt aber zugleich mehr Arbeitslast und stärkere Abhängigkeit von Boden, Klima und Ernte. Außerdem werden Vorräte, Besitz und Herrschaft leichter kontrollierbar. Dadurch wächst soziale Ungleichheit. Landwirtschaft ist deshalb weder bloß Fortschritt noch bloß Irrtum, sondern ein historischer Bruch mit widersprüchlichen Folgen.",
+        minWords: 55,
+        criteria: [
+          { label: "Mehr Versorgung oder Bevölkerungswachstum", keywords: ["versorgung", "nahrung", "bevolkerung", "bevölkerung", "wachstum"] },
+          { label: "Arbeitslast oder Abhängigkeit", keywords: ["arbeitslast", "arbeit", "abhangigkeit", "abhängigkeit", "ernte", "boden"] },
+          { label: "Herrschaft oder Ungleichheit", keywords: ["herrschaft", "besitz", "ungleichheit", "abgaben", "kontrollierbar"] }
+        ]
+      },
+      {
+        id: "repetition-e-oral-3",
+        question:
+          "Erkläre, warum Imperien historisch zugleich zerstörerisch und vereinheitlichend wirken.",
+        placeholder: "Gehe auf Gewalt, lokale Verluste, Recht, Infrastruktur und große Räume ein.",
+        sampleAnswer:
+          "Imperien arbeiten oft mit Eroberung, Zwang und dem Abbau lokaler Autonomie. In diesem Sinn sind sie zerstörerisch. Gleichzeitig schaffen sie größere politische Räume, verbinden Regionen durch Straßen, Recht, Verwaltung oder gemeinsame Sprachen und erleichtern Austausch. Ihre Wirkung ist deshalb doppelt: Sie unterwerfen, aber sie integrieren auch. Gerade diese Ambivalenz macht sie historisch so bedeutsam.",
+        minWords: 50,
+        criteria: [
+          { label: "Gewalt oder lokale Verluste", keywords: ["gewalt", "eroberung", "zwang", "lokal", "verluste", "unterwerfung"] },
+          { label: "Einheit oder Integration", keywords: ["einheit", "integration", "verbinden", "grosse raume", "große räume"] },
+          { label: "Recht, Infrastruktur oder Verwaltung", keywords: ["recht", "infrastruktur", "strassen", "straßen", "verwaltung", "sprache"] }
+        ]
+      },
+      {
+        id: "repetition-e-oral-4",
+        question:
+          "Erkläre die Geschichte bis 1500 als Zusammenspiel von Kontinuitäten und Brüchen.",
+        placeholder: "Verbinde mindestens drei Epochen und zeige, was sich verändert und was weitergetragen wird.",
+        sampleAnswer:
+          "Geschichte bis 1500 besteht aus Brüchen, etwa der kognitiven Revolution, der Sesshaftigkeit oder der europäischen Expansion nach 1492. Gleichzeitig wirken frühere Entwicklungen weiter: Sprache, Herrschaft, Religion, Schrift und Geld tragen über Epochen hinweg. So entstehen keine vollständig neuen Welten, sondern veränderte Ordnungen auf älteren Grundlagen. Kontinuitäten und Brüche greifen also ständig ineinander. Gerade deshalb muss Geschichte als Entwicklungslinie und nicht nur als Folge einzelner Daten verstanden werden.",
+        minWords: 55,
+        criteria: [
+          { label: "Mindestens drei Epochen oder Umbrüche", keywords: ["kognitive", "sesshaftigkeit", "staat", "antike", "mittelalter", "1492", "1491"] },
+          { label: "Weiterwirkende Strukturen", keywords: ["sprache", "herrschaft", "religion", "schrift", "geld", "weiter"] },
+          { label: "Kontinuitäten und Brüche zusammendenken", keywords: ["kontinuitat", "kontinuität", "bruch", "umbruch", "ineinander", "entwicklung"] }
+        ]
+      }
+    ]
+  }
 };
 
-function getMemoryCards() {
-  return repetitionMode.memory.pairs.flatMap((pair, index) => [
+const repetitionLevelOrder = ["basis", "leichtFortgeschritten", "fortgeschritten", "experte"];
+const repetitionLegacyOralMap = {
+  "repetition-oral-1": "repetition-basis-oral-1",
+  "repetition-oral-2": "repetition-basis-oral-2",
+  "repetition-oral-3": "repetition-basis-oral-3",
+  "repetition-oral-4": "repetition-basis-oral-4"
+};
+
+function getCurrentRepetitionLevel(state) {
+  const level = String(state.repetitionLevel || "basis");
+  return repetitionLevels[level] ? level : "basis";
+}
+
+function getRepetitionMode(stateOrLevel) {
+  const level =
+    typeof stateOrLevel === "string" ? stateOrLevel : getCurrentRepetitionLevel(stateOrLevel || {});
+  return repetitionLevels[level] || repetitionLevels.basis;
+}
+
+function getRepetitionStateKey(level, suffix) {
+  return `repetition-${level}-${suffix}`;
+}
+
+function getRepetitionTextKey(level, baseId) {
+  return `${baseId}-${level}-text`;
+}
+
+function migrateRepetitionState(state) {
+  if (!state || typeof state !== "object") {
+    return {};
+  }
+
+  const migrated = { ...state };
+  const legacyStateMap = {
+    repetitionMemoryMatched: getRepetitionStateKey("basis", "memory-matched"),
+    repetitionMemorySelected: getRepetitionStateKey("basis", "memory-selected"),
+    repetitionMemoryFeedback: getRepetitionStateKey("basis", "memory-feedback"),
+    repetitionMemoryShowSolution: getRepetitionStateKey("basis", "memory-show-solution"),
+    repetitionDragAssignments: getRepetitionStateKey("basis", "drag-assignments"),
+    repetitionDragFeedback: getRepetitionStateKey("basis", "drag-feedback"),
+    repetitionDragShowSolution: getRepetitionStateKey("basis", "drag-show-solution"),
+    repetitionClozeCorrect: getRepetitionStateKey("basis", "cloze-correct"),
+    repetitionClozeFeedback: getRepetitionStateKey("basis", "cloze-feedback"),
+    repetitionClozeShowSolution: getRepetitionStateKey("basis", "cloze-show-solution")
+  };
+
+  Object.entries(legacyStateMap).forEach(([legacyKey, nextKey]) => {
+    if (legacyKey in migrated && !(nextKey in migrated)) {
+      migrated[nextKey] = migrated[legacyKey];
+    }
+    delete migrated[legacyKey];
+  });
+
+  Object.entries(repetitionLegacyOralMap).forEach(([legacyId, nextId]) => {
+    ["", "-text", "-feedback"].forEach((suffix) => {
+      const legacyKey = `${legacyId}${suffix}`;
+      const nextKey = `${nextId}${suffix}`;
+      if (legacyKey in migrated && !(nextKey in migrated)) {
+        migrated[nextKey] = migrated[legacyKey];
+      }
+      delete migrated[legacyKey];
+    });
+  });
+
+  return migrated;
+}
+
+function getAllRepetitionOralQuestions() {
+  return repetitionLevelOrder.flatMap((level) => repetitionLevels[level].oralQuestions);
+}
+
+function getMemoryCards(stateOrLevel) {
+  const mode = getRepetitionMode(stateOrLevel);
+  return mode.memory.pairs.flatMap((pair, index) => [
     { id: `${pair.id}-a`, pairId: pair.id, text: pair.left, order: index * 2 + 1 },
     { id: `${pair.id}-b`, pairId: pair.id, text: pair.right, order: index * 2 + 2 }
   ]);
@@ -5170,7 +5834,7 @@ function persistLearnerSnapshot(state) {
 
 function loadState() {
   try {
-    return JSON.parse(localStorage.getItem(getStorageKey()) || "{}");
+    return migrateRepetitionState(JSON.parse(localStorage.getItem(getStorageKey()) || "{}"));
   } catch {
     return {};
   }
@@ -5926,54 +6590,77 @@ function normalizeLoose(text) {
 }
 
 function getRepetitionProgress(state) {
-  const memoryMatched = Array.isArray(state.repetitionMemoryMatched) ? state.repetitionMemoryMatched.length : 0;
-  const memoryTotal = repetitionMode.memory.pairs.length;
-  const dragAssigned = Object.keys(state.repetitionDragAssignments || {}).length;
-  const dragTotal = repetitionMode.drag.targets.length;
-  const clozeCorrect = Array.isArray(state.repetitionClozeCorrect) ? state.repetitionClozeCorrect.filter(Boolean).length : 0;
-  const clozeTotal = repetitionMode.cloze.parts.filter((part) => typeof part === "object").length;
-  const oralSolved = repetitionMode.oralQuestions.filter((question) => {
-    const feedback = state[`${question.id}-feedback`];
-    return feedback && (feedback.level === "good" || feedback.level === "mid");
-  }).length;
-  const oralTotal = repetitionMode.oralQuestions.length;
-  const completedForms = [
-    memoryMatched === memoryTotal,
-    dragAssigned === dragTotal,
-    clozeCorrect === clozeTotal,
-    oralSolved === oralTotal
-  ].filter(Boolean).length;
+  const currentLevel = getCurrentRepetitionLevel(state);
 
+  const getLevelProgress = (level) => {
+    const mode = getRepetitionMode(level);
+    const memoryMatched = Array.isArray(state[getRepetitionStateKey(level, "memory-matched")])
+      ? state[getRepetitionStateKey(level, "memory-matched")].length
+      : 0;
+    const memoryTotal = mode.memory.pairs.length;
+    const dragAssigned = Object.keys(state[getRepetitionStateKey(level, "drag-assignments")] || {}).length;
+    const dragTotal = mode.drag.targets.length;
+    const clozeCorrect = Array.isArray(state[getRepetitionStateKey(level, "cloze-correct")])
+      ? state[getRepetitionStateKey(level, "cloze-correct")].filter(Boolean).length
+      : 0;
+    const clozeTotal = mode.cloze.parts.filter((part) => typeof part === "object").length;
+    const oralSolved = mode.oralQuestions.filter((question) => {
+      const feedback = state[`${question.id}-feedback`];
+      return feedback && (feedback.level === "good" || feedback.level === "mid");
+    }).length;
+    const oralTotal = mode.oralQuestions.length;
+    const completedForms = [
+      memoryMatched === memoryTotal,
+      dragAssigned === dragTotal,
+      clozeCorrect === clozeTotal,
+      oralSolved === oralTotal
+    ].filter(Boolean).length;
+
+    return {
+      level,
+      label: repetitionLevels[level].label,
+      memoryMatched,
+      memoryTotal,
+      dragAssigned,
+      dragTotal,
+      clozeCorrect,
+      clozeTotal,
+      oralSolved,
+      oralTotal,
+      completedForms,
+      totalForms: 4
+    };
+  };
+
+  const levels = repetitionLevelOrder.map(getLevelProgress);
   return {
-    memoryMatched,
-    memoryTotal,
-    dragAssigned,
-    dragTotal,
-    clozeCorrect,
-    clozeTotal,
-    oralSolved,
-    oralTotal,
-    completedForms,
-    totalForms: 4
+    currentLevel,
+    currentMode: getRepetitionMode(currentLevel),
+    current: levels.find((entry) => entry.level === currentLevel),
+    levels,
+    overallCompletedForms: levels.reduce((sum, entry) => sum + entry.completedForms, 0),
+    overallTotalForms: levels.reduce((sum, entry) => sum + entry.totalForms, 0)
   };
 }
 
 function renderRepetitionMemory(state) {
-  const cards = getMemoryCards();
-  const matched = new Set(state.repetitionMemoryMatched || []);
-  const selected = state.repetitionMemorySelected || [];
-  const feedback = state.repetitionMemoryFeedback;
-  const solution = repetitionMode.memory.pairs
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
+  const cards = getMemoryCards(level);
+  const matched = new Set(state[getRepetitionStateKey(level, "memory-matched")] || []);
+  const selected = state[getRepetitionStateKey(level, "memory-selected")] || [];
+  const feedback = state[getRepetitionStateKey(level, "memory-feedback")];
+  const solution = mode.memory.pairs
     .map((pair) => `<li><strong>${pair.left}</strong><span>${pair.right}</span></li>`)
     .join("");
 
   return `
     <article class="repetition-card">
       <p class="section-kicker">1. Memory</p>
-      <h3>${repetitionMode.memory.title}</h3>
-      <p>${repetitionMode.memory.instructions}</p>
+      <h3>${mode.memory.title}</h3>
+      <p>${mode.memory.instructions}</p>
       <div class="repetition-status-line">
-        <strong>${matched.size} von ${repetitionMode.memory.pairs.length} Paaren gefunden</strong>
+        <strong>${matched.size} von ${mode.memory.pairs.length} Paaren gefunden</strong>
       </div>
       <div class="memory-grid">
         ${cards
@@ -5995,7 +6682,7 @@ function renderRepetitionMemory(state) {
         <button class="btn ghost" type="button" data-memory-solution>Alle Paare anzeigen</button>
       </div>
       <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-memory-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
-      <div class="teacher-answer-key ${state.repetitionMemoryShowSolution || isTeacherMode() ? "" : "is-hidden"}" data-memory-solution-box>
+      <div class="teacher-answer-key ${state[getRepetitionStateKey(level, "memory-show-solution")] || isTeacherMode() ? "" : "is-hidden"}" data-memory-solution-box>
         <p class="section-kicker">Musterlösung</p>
         <ul class="source-list">${solution}</ul>
       </div>
@@ -6004,18 +6691,20 @@ function renderRepetitionMemory(state) {
 }
 
 function renderRepetitionDrag(state) {
-  const assignments = state.repetitionDragAssignments || {};
-  const feedback = state.repetitionDragFeedback;
-  const remainingItems = repetitionMode.drag.items.filter((item) => !Object.values(assignments).includes(item.id));
-  const showSolution = state.repetitionDragShowSolution || isTeacherMode();
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
+  const assignments = state[getRepetitionStateKey(level, "drag-assignments")] || {};
+  const feedback = state[getRepetitionStateKey(level, "drag-feedback")];
+  const remainingItems = mode.drag.items.filter((item) => !Object.values(assignments).includes(item.id));
+  const showSolution = state[getRepetitionStateKey(level, "drag-show-solution")] || isTeacherMode();
 
   return `
     <article class="repetition-card">
       <p class="section-kicker">2. Drag-and-drop</p>
-      <h3>${repetitionMode.drag.title}</h3>
-      <p>${repetitionMode.drag.instructions}</p>
+      <h3>${mode.drag.title}</h3>
+      <p>${mode.drag.instructions}</p>
       <div class="repetition-status-line">
-        <strong>${Object.keys(assignments).length} von ${repetitionMode.drag.targets.length} Zuordnungen richtig gelöst</strong>
+        <strong>${Object.keys(assignments).length} von ${mode.drag.targets.length} Zuordnungen richtig gelöst</strong>
       </div>
       <div class="drag-source-pool">
         ${remainingItems
@@ -6029,11 +6718,11 @@ function renderRepetitionDrag(state) {
           .join("")}
       </div>
       <div class="drag-board">
-        ${repetitionMode.drag.targets
+        ${mode.drag.targets
           .map((target) => {
             const assignedId = assignments[target.id];
-            const assignedItem = repetitionMode.drag.items.find((item) => item.id === assignedId);
-            const solutionItem = repetitionMode.drag.items.find((item) => item.target === target.id);
+            const assignedItem = mode.drag.items.find((item) => item.id === assignedId);
+            const solutionItem = mode.drag.items.find((item) => item.target === target.id);
             return `
               <div class="drag-target ${assignedItem ? "is-solved" : ""}" data-drag-target="${target.id}">
                 <p class="drag-target-title">${target.title}</p>
@@ -6064,18 +6753,20 @@ function renderRepetitionDrag(state) {
 }
 
 function renderRepetitionCloze(state) {
-  const feedback = state.repetitionClozeFeedback;
-  const correct = state.repetitionClozeCorrect || [];
-  const showSolution = state.repetitionClozeShowSolution || isTeacherMode();
-  const renderedText = repetitionMode.cloze.parts
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
+  const feedback = state[getRepetitionStateKey(level, "cloze-feedback")];
+  const correct = state[getRepetitionStateKey(level, "cloze-correct")] || [];
+  const showSolution = state[getRepetitionStateKey(level, "cloze-show-solution")] || isTeacherMode();
+  const renderedText = mode.cloze.parts
     .map((part, index) => {
       if (typeof part === "string") {
         return part;
       }
 
-      const fieldId = `repetition-${part.id}`;
+      const fieldId = `${level}-${part.id}`;
       const isCorrect = Boolean(correct[index]);
-      const value = String(state[`repetition-${part.id}-text`] || "");
+      const value = String(state[getRepetitionTextKey(level, part.id)] || "");
 
       return `<input class="cloze-input ${isCorrect ? "is-correct" : ""}" data-cloze-input="${fieldId}" value="${value.replace(/"/g, "&quot;")}" placeholder="..." />`;
     })
@@ -6084,10 +6775,10 @@ function renderRepetitionCloze(state) {
   return `
     <article class="repetition-card">
       <p class="section-kicker">3. Lückentext</p>
-      <h3>${repetitionMode.cloze.title}</h3>
-      <p>${repetitionMode.cloze.instructions}</p>
+      <h3>${mode.cloze.title}</h3>
+      <p>${mode.cloze.instructions}</p>
       <div class="repetition-status-line">
-        <strong>${correct.filter(Boolean).length} von ${repetitionMode.cloze.parts.filter((part) => typeof part === "object").length} Lücken richtig</strong>
+        <strong>${correct.filter(Boolean).length} von ${mode.cloze.parts.filter((part) => typeof part === "object").length} Lücken richtig</strong>
       </div>
       <div class="cloze-text">${renderedText}</div>
       <div class="task-actions">
@@ -6097,20 +6788,21 @@ function renderRepetitionCloze(state) {
       <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-cloze-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
       <div class="teacher-answer-key ${showSolution ? "" : "is-hidden"}" data-cloze-solution-box>
         <p class="section-kicker">Musterlösung</p>
-        <p>${repetitionMode.cloze.sampleAnswer}</p>
+        <p>${mode.cloze.sampleAnswer}</p>
       </div>
     </article>
   `;
 }
 
-function renderRepetitionOral() {
+function renderRepetitionOral(state) {
+  const mode = getRepetitionMode(state);
   return `
     <article class="repetition-card repetition-oral-card">
       <p class="section-kicker">4. Mündliche Probe</p>
       <h3>Große Entwicklungen frei erklären</h3>
-      <p>Diese Fragen trainieren genau den Stoff, der in einer mündlichen Prüfung sicher und zusammenhängend abrufbar sein muss.</p>
+      <p>Diese Fragen trainieren zusammenhängende Antworten zu Entwicklungen, Brüchen und historischen Deutungen.</p>
       <div class="repetition-oral-stack">
-        ${repetitionMode.oralQuestions.map((question) => renderShortAnswerBox(question, "Prüffrage")).join("")}
+        ${mode.oralQuestions.map((question) => renderShortAnswerBox(question, "Prüffrage")).join("")}
       </div>
     </article>
   `;
@@ -6123,27 +6815,39 @@ function renderRepetitionPanel(state) {
   }
 
   const progress = getRepetitionProgress(state);
+  const mode = progress.currentMode;
   container.innerHTML = `
     <p class="panel-kicker">Repetitionsmodus</p>
     <h2>Große Entwicklungen und Umbrüche sicher wiederholen</h2>
     <p class="compact">
       Dieser Bereich trainiert Überblickswissen für mündliche Prüfungen: große Entwicklungslinien, zentrale Brüche und ihre historische Bedeutung. Fakten bleiben wichtig, aber immer im Zusammenhang.
     </p>
+    <div class="repetition-level-switch">
+      ${repetitionLevelOrder
+        .map((level) => `<button class="repetition-level-button ${level === progress.currentLevel ? "is-active" : ""}" type="button" data-repetition-level="${level}">${repetitionLevels[level].label}</button>`)
+        .join("")}
+    </div>
+    <p class="compact repetition-level-intro">${mode.intro}</p>
     <div class="repetition-progress">
       <div class="repetition-progress-card">
-        <span class="fact-label">Gesamtstand</span>
-        <strong>${progress.completedForms} von ${progress.totalForms} Übungsformen abgeschlossen</strong>
-        <p>Memory ${progress.memoryMatched}/${progress.memoryTotal} · Drag-and-drop ${progress.dragAssigned}/${progress.dragTotal} · Lückentext ${progress.clozeCorrect}/${progress.clozeTotal} · Mündliche Probe ${progress.oralSolved}/${progress.oralTotal}</p>
+        <span class="fact-label">Aktuelle Stufe: ${repetitionLevels[progress.currentLevel].label}</span>
+        <strong>${progress.current.completedForms} von ${progress.current.totalForms} Übungsformen abgeschlossen</strong>
+        <p>Memory ${progress.current.memoryMatched}/${progress.current.memoryTotal} · Drag-and-drop ${progress.current.dragAssigned}/${progress.current.dragTotal} · Lückentext ${progress.current.clozeCorrect}/${progress.current.clozeTotal} · Mündliche Probe ${progress.current.oralSolved}/${progress.current.oralTotal}</p>
+      </div>
+      <div class="repetition-progress-card">
+        <span class="fact-label">Alle Stufen</span>
+        <strong>${progress.overallCompletedForms} von ${progress.overallTotalForms} Übungsformen abgeschlossen</strong>
+        <p>${progress.levels.map((entry) => `${entry.label}: ${entry.completedForms}/${entry.totalForms}`).join(" · ")}</p>
       </div>
       <div class="progress-track" aria-hidden="true">
-        <span style="width: ${(progress.completedForms / progress.totalForms) * 100}%"></span>
+        <span style="width: ${(progress.current.completedForms / progress.current.totalForms) * 100}%"></span>
       </div>
     </div>
     <div class="repetition-grid">
       ${renderRepetitionMemory(state)}
       ${renderRepetitionDrag(state)}
       ${renderRepetitionCloze(state)}
-      ${renderRepetitionOral()}
+      ${renderRepetitionOral(state)}
     </div>
   `;
 }
@@ -6264,7 +6968,7 @@ function evaluateCheckQuestion(answer, question) {
 function bindShortAnswerTasks(state) {
   const tasks = [
     ...modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer]),
-    ...repetitionMode.oralQuestions
+    ...getAllRepetitionOralQuestions()
   ];
   tasks.forEach((task) => {
     const answerField = document.querySelector(`[data-answer="${task.id}"]`);
@@ -6557,21 +7261,27 @@ function bindCompletionActions() {
 }
 
 function bindRepetitionMemory(state) {
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
   document.querySelectorAll("[data-memory-card]").forEach((button) => {
     button.addEventListener("click", () => {
       const cardId = button.dataset.memoryCard;
-      const cards = getMemoryCards();
+      const cards = getMemoryCards(level);
       const card = cards.find((entry) => entry.id === cardId);
       if (!card) {
         return;
       }
 
-      const matched = Array.isArray(state.repetitionMemoryMatched) ? [...state.repetitionMemoryMatched] : [];
+      const matched = Array.isArray(state[getRepetitionStateKey(level, "memory-matched")])
+        ? [...state[getRepetitionStateKey(level, "memory-matched")]]
+        : [];
       if (matched.includes(card.pairId)) {
         return;
       }
 
-      const selected = Array.isArray(state.repetitionMemorySelected) ? [...state.repetitionMemorySelected] : [];
+      const selected = Array.isArray(state[getRepetitionStateKey(level, "memory-selected")])
+        ? [...state[getRepetitionStateKey(level, "memory-selected")]]
+        : [];
       if (selected.includes(card.id)) {
         return;
       }
@@ -6583,22 +7293,22 @@ function bindRepetitionMemory(state) {
         const second = cards.find((entry) => entry.id === selected[1]);
         if (first && second && first.pairId === second.pairId) {
           matched.push(first.pairId);
-          state.repetitionMemoryFeedback = {
+          state[getRepetitionStateKey(level, "memory-feedback")] = {
             level: "good",
             title: "Richtig verbunden",
             body: `Diese Entwicklung und diese Folge gehören zusammen: ${first.text} – ${second.text}.`
           };
         } else {
-          state.repetitionMemoryFeedback = {
+          state[getRepetitionStateKey(level, "memory-feedback")] = {
             level: "low",
             title: "Noch nicht passend",
             body: "Diese beiden Karten gehören historisch nicht direkt zusammen. Suche nach einer engeren Entwicklung-Folge-Verbindung."
           };
         }
-        state.repetitionMemorySelected = [];
-        state.repetitionMemoryMatched = [...new Set(matched)];
+        state[getRepetitionStateKey(level, "memory-selected")] = [];
+        state[getRepetitionStateKey(level, "memory-matched")] = [...new Set(matched)];
       } else {
-        state.repetitionMemorySelected = selected;
+        state[getRepetitionStateKey(level, "memory-selected")] = selected;
       }
 
       saveState(state);
@@ -6609,7 +7319,12 @@ function bindRepetitionMemory(state) {
   const solutionButton = document.querySelector("[data-memory-solution]");
   if (solutionButton) {
     solutionButton.addEventListener("click", () => {
-      state.repetitionMemoryShowSolution = true;
+      state[getRepetitionStateKey(level, "memory-show-solution")] = true;
+      state[getRepetitionStateKey(level, "memory-feedback")] = {
+        level: "mid",
+        title: "Musterlösung eingeblendet",
+        body: `${mode.memory.pairs.length} Entwicklung-Folge-Paare sind jetzt sichtbar.`
+      };
       saveState(state);
       renderApp(state);
     });
@@ -6617,8 +7332,10 @@ function bindRepetitionMemory(state) {
 }
 
 function bindRepetitionDrag(state) {
-  const items = repetitionMode.drag.items;
-  const assignments = state.repetitionDragAssignments || {};
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
+  const items = mode.drag.items;
+  const assignments = state[getRepetitionStateKey(level, "drag-assignments")] || {};
 
   document.querySelectorAll("[data-drag-item]").forEach((element) => {
     element.addEventListener("dragstart", (event) => {
@@ -6641,17 +7358,17 @@ function bindRepetitionDrag(state) {
       }
 
       if (item.target === targetId) {
-        state.repetitionDragAssignments = {
-          ...(state.repetitionDragAssignments || {}),
+        state[getRepetitionStateKey(level, "drag-assignments")] = {
+          ...(state[getRepetitionStateKey(level, "drag-assignments")] || {}),
           [targetId]: item.id
         };
-        state.repetitionDragFeedback = {
+        state[getRepetitionStateKey(level, "drag-feedback")] = {
           level: "good",
           title: "Richtig zugeordnet",
           body: `${item.label} gehört zu ${item.explanation}.`
         };
       } else {
-        state.repetitionDragFeedback = {
+        state[getRepetitionStateKey(level, "drag-feedback")] = {
           level: "low",
           title: "Noch nicht passend",
           body: `${item.label} gehört nicht zu dieser Erklärung. Ordne die Entwicklung dem historischen Kern zu, der wirklich zu ihr passt.`
@@ -6666,15 +7383,15 @@ function bindRepetitionDrag(state) {
   const solutionButton = document.querySelector("[data-drag-solution]");
   if (solutionButton) {
     solutionButton.addEventListener("click", () => {
-      state.repetitionDragShowSolution = true;
-      state.repetitionDragAssignments = repetitionMode.drag.targets.reduce((acc, target) => {
-        const item = repetitionMode.drag.items.find((entry) => entry.target === target.id);
+      state[getRepetitionStateKey(level, "drag-show-solution")] = true;
+      state[getRepetitionStateKey(level, "drag-assignments")] = mode.drag.targets.reduce((acc, target) => {
+        const item = mode.drag.items.find((entry) => entry.target === target.id);
         if (item) {
           acc[target.id] = item.id;
         }
         return acc;
       }, {});
-      state.repetitionDragFeedback = {
+      state[getRepetitionStateKey(level, "drag-feedback")] = {
         level: "mid",
         title: "Musterlösung eingeblendet",
         body: "Die vollständige Zuordnung ist jetzt sichtbar. Vergleiche damit, welche Entwicklungen und Folgen zusammengehören."
@@ -6686,25 +7403,27 @@ function bindRepetitionDrag(state) {
 }
 
 function bindRepetitionCloze(state) {
+  const level = getCurrentRepetitionLevel(state);
+  const mode = getRepetitionMode(level);
   const checkButton = document.querySelector("[data-cloze-check]");
   const solutionButton = document.querySelector("[data-cloze-solution]");
   const feedbackBox = document.querySelector("[data-cloze-feedback]");
 
   if (checkButton) {
     checkButton.addEventListener("click", () => {
-      const blanks = repetitionMode.cloze.parts.filter((part) => typeof part === "object");
+      const blanks = mode.cloze.parts.filter((part) => typeof part === "object");
       const results = blanks.map((blank) => {
-        const fieldId = `repetition-${blank.id}`;
+        const fieldId = `${level}-${blank.id}`;
         const field = document.querySelector(`[data-cloze-input="${fieldId}"]`);
         const answer = String(field?.value || "");
-        state[`${fieldId}-text`] = answer;
+        state[getRepetitionTextKey(level, blank.id)] = answer;
         const normalizedAnswer = normalizeLoose(answer);
         return blank.answers.some((accepted) => normalizedAnswer.includes(normalizeLoose(accepted)));
       });
 
-      state.repetitionClozeCorrect = results;
+      state[getRepetitionStateKey(level, "cloze-correct")] = results;
       const correctCount = results.filter(Boolean).length;
-      state.repetitionClozeFeedback = correctCount === blanks.length
+      state[getRepetitionStateKey(level, "cloze-feedback")] = correctCount === blanks.length
         ? {
             level: "good",
             title: "Lückentext sicher gelöst",
@@ -6717,7 +7436,7 @@ function bindRepetitionCloze(state) {
           };
 
       if (feedbackBox) {
-        const result = state.repetitionClozeFeedback;
+        const result = state[getRepetitionStateKey(level, "cloze-feedback")];
         feedbackBox.className = `feedback is-visible ${result.level}`;
         feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
       }
@@ -6729,11 +7448,11 @@ function bindRepetitionCloze(state) {
 
   if (solutionButton) {
     solutionButton.addEventListener("click", () => {
-      state.repetitionClozeShowSolution = true;
-      state.repetitionClozeFeedback = {
+      state[getRepetitionStateKey(level, "cloze-show-solution")] = true;
+      state[getRepetitionStateKey(level, "cloze-feedback")] = {
         level: "mid",
         title: "Musterlösung eingeblendet",
-        body: repetitionMode.cloze.sampleAnswer
+        body: mode.cloze.sampleAnswer
       };
       saveState(state);
       renderApp(state);
@@ -6742,6 +7461,17 @@ function bindRepetitionCloze(state) {
 }
 
 function bindRepetitionMode(state) {
+  document.querySelectorAll("[data-repetition-level]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextLevel = button.dataset.repetitionLevel;
+      if (!nextLevel || !repetitionLevels[nextLevel] || nextLevel === getCurrentRepetitionLevel(state)) {
+        return;
+      }
+      state.repetitionLevel = nextLevel;
+      saveState(state);
+      renderApp(state);
+    });
+  });
   bindRepetitionMemory(state);
   bindRepetitionDrag(state);
   bindRepetitionCloze(state);

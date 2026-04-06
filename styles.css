@@ -1493,6 +1493,32 @@ p {
   margin-top: 18px;
 }
 
+.repetition-level-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.repetition-level-button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(30, 44, 52, 0.14);
+  background: #fffdf9;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.repetition-level-button.is-active {
+  border-color: rgba(31, 109, 102, 0.26);
+  background: rgba(232, 244, 242, 0.94);
+  color: var(--accent-dark);
+}
+
+.repetition-level-intro {
+  margin-top: 12px;
+}
+
 .repetition-progress-card {
   padding: 16px 18px;
   border-radius: var(--radius-md);
@@ -2215,6 +2241,10 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
 
   .memory-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .repetition-level-switch {
+    flex-direction: column;
   }
 
   .matrix-row > div {
