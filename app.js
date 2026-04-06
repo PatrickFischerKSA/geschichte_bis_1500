@@ -189,6 +189,26 @@ const sourceCatalog = [
     link: "https://www.youtube.com/watch?v=kDarvo1XSMA"
   },
   {
+    id: "griechenland-demokratie-video",
+    title: "YouTube: Griechenland, Polis und attische Demokratie",
+    type: "YouTube",
+    role: "Filmgrundlage zu Polis, Bürgerrecht und direkter Demokratie",
+    didactics:
+      "Der Film ergänzt Modul 7 um die politische Entwicklung der griechischen Poliswelt und erklärt die attische Demokratie als konkrete antike Ordnungsform.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=QLOpPK3_Y2U&t=621s"
+  },
+  {
+    id: "rom-republik-video",
+    title: "YouTube: Rom, Republik und politische Ordnung",
+    type: "YouTube",
+    role: "Filmgrundlage zu Senat, Magistraten und republikanischer Verfassung",
+    didactics:
+      "Der Film ergänzt Modul 7 um die politische Entwicklung Roms vor der Kaiserzeit und erklärt die römische Republik als eigenständige antike Ordnungsform.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=O7LH4JmmRV8"
+  },
+  {
     id: "christentum-video",
     title: "YouTube: Christentum",
     type: "YouTube",
@@ -314,6 +334,22 @@ const masterTimeline = [
     body:
       "Von Sargon über Assyrer und Babylon bis zur Qin-Dynastie entsteht die Logik großer Reiche: Steuern, Heere, Beamte und gemeinsame Ordnungen verbinden viele Menschen über große Räume hinweg.",
     modules: ["modul-6", "modul-7"]
+  },
+  {
+    epoch: "Antike",
+    time: "5. Jh. v. Chr.",
+    title: "Athen und die attische Demokratie",
+    body:
+      "In Athen entsteht eine direkte Bürgerdemokratie mit Volksversammlung, Rat, Losverfahren und politischer Beteiligung freier männlicher Bürger. Zugleich bleiben Frauen, Metöken und Sklaven ausgeschlossen.",
+    modules: ["modul-7"]
+  },
+  {
+    epoch: "Antike",
+    time: "509–27 v. Chr.",
+    title: "Römische Republik und Mischverfassung",
+    body:
+      "Rom entwickelt eine republikanische Ordnung mit Senat, Magistraten, Volksversammlungen und jährlich wechselnden Ämtern. Die Republik verbindet Teilhabe, Konkurrenz der Eliten und Expansion.",
+    modules: ["modul-7"]
   },
   {
     epoch: "Antike",
@@ -1010,17 +1046,33 @@ const modules = [
     hook:
       "Imperien verbinden sehr unterschiedliche Menschen durch Straßen, Armeen, Gesetze, Städte und Logistik. Gerade darin liegt ihr historischer Reiz und ihre Ambivalenz.",
     goals: [
+      "attische Demokratie als antike Herrschaftsform erklären",
+      "römische Republik als politische Ordnung vor der Kaiserzeit verstehen",
       "Imperium als Ordnungsmodell erklären",
       "Römische Expansion an konkreten Beispielen der Schweiz erschließen",
       "Alltag und Herrschaft miteinander verknüpfen"
     ],
     input: [
+      "Die antike Mittelmeerwelt kennt verschiedene politische Formen. In Athen entsteht im 5. Jahrhundert v. Chr. eine direkte Bürgerdemokratie. Freie männliche Bürger stimmen in der Volksversammlung über Krieg, Gesetze und wichtige Entscheidungen ab. Zugleich ist diese Demokratie eng begrenzt: Frauen, Metöken und Sklaven sind ausgeschlossen. Attische Demokratie bedeutet daher politische Beteiligung, aber nicht Gleichheit aller Menschen.",
+      "Rom entwickelt eine andere Ordnung. In der römischen Republik gibt es keinen König, sondern jährlich wechselnde Ämter, Konsuln, Volksversammlungen und vor allem den Senat. Die Republik lebt von Konkurrenz innerhalb der Führungsschicht, von Regelbindung und von der Vorstellung, dass kein Einzelner den Staat allein verkörpern soll. Gleichzeitig ist auch sie sozial ungleich und von Konflikten zwischen Patriziern und Plebejern geprägt.",
       "Ein Imperium ist nicht einfach nur ein großes Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Straßen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
-      "Rom ist dafür ein besonders gutes Beispiel. Das Reich verband große Räume rund um das Mittelmeer und darüber hinaus. Seine Macht zeigte sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
+      "Rom ist dafür ein besonders gutes Beispiel, weil sich hier politische Ordnung verändert: aus der Republik wächst ein Reich, das große Räume rund um das Mittelmeer und darüber hinaus verbindet. Seine Macht zeigt sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
       "Die Filmreihe über die Römer in der Schweiz macht das an einem konkreten Raum sichtbar. Ob Schrift, Ortsnamen oder Hühnerhaltung: römische Herrschaft hinterließ Spuren im Alltag. Ohne den römischen Einfluss würden heute weder Weintrauben noch Walnüsse angebaut. Viele römische Straßen und Brücken wurden zur Grundlage späterer Verkehrswege. In der Schweiz trafen Römer zudem auf keltische Siedlungen und bauten Städte oft dort, wo bereits günstige Orte existierten. Vindonissa lag zum Beispiel dort, wo Aare, Reuss und Limmat zusammenfließen und Warentransport besonders gut möglich war.",
       "Das Römer-Experiment ergänzt diese Raumordnung durch Rekonstruktion. Nachgestellt werden Gegenstände, Werkzeuge, Kochen, Gladiatorenausbildung und andere Alltagssituationen. Damit wird sichtbar, dass römische Herrschaft nicht nur in Heeren und Grenzlinien bestand, sondern in Essen, Arbeit, Gebäuden, Recht und Bewegungswegen."
     ],
     sources: [
+      {
+        title: "YouTube: Griechenland, Polis und attische Demokratie",
+        meta: "Athen, Bürgerrecht und Volksversammlung",
+        extracted:
+          "Der Film erklärt die Polis als politischen Raum und zeigt, wie die attische Demokratie mit Volksversammlung, Rat und Bürgerrecht funktioniert, aber zugleich viele Menschen ausschließt."
+      },
+      {
+        title: "YouTube: Rom, Republik und politische Ordnung",
+        meta: "Senat, Magistrate und Republik",
+        extracted:
+          "Der Film zeigt Rom vor der Kaiserzeit als Republik mit Senat, Konsuln, Volksversammlungen und Konflikten zwischen sozialen Gruppen."
+      },
       {
         title: "SRF: Römer in der Schweiz",
         meta: "Regionalisierung des Imperiums",
@@ -1039,7 +1091,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Untersuche an Straßen, Lebensmitteln, Siedlungen und Alltagsgegenständen, wie römische Herrschaft den Raum und den Alltag veränderte.",
+      "Untersuche an Athen, der römischen Republik und dem römischen Reich, wie politische Ordnungen, Beteiligung, Expansion und Alltagsveränderung in der Antike zusammenhängen.",
     task: {
       id: "m7-task",
       question:
@@ -1054,7 +1106,7 @@ const modules = [
       ]
     },
     deepening:
-      "Didaktisch wichtig ist hier die Verbindung von Mikro- und Makroperspektive. Ein Imperium lässt sich nicht nur mit Karten und Schlachten erzählen. Erst wenn Lernende sehen, wie Expansion Straßennetze, Märkte, Familienleben oder Bauweisen verändert, verstehen sie, warum Imperien historisch wirksam sind.",
+      "Die politische Geschichte der Antike darf nicht erst mit dem Kaiserreich beginnen. Athen und Rom zeigen zwei verschiedene Antworten auf die Frage, wie Bürger, Ämter, Beratung, Gesetze und Macht geordnet werden. Erst vor diesem Hintergrund wird verständlich, warum das Imperium nicht nur militärische Expansion, sondern ein neuer Maßstab politischer Raumordnung ist.",
     selftest: {
       id: "m7-selftest",
       question: "Warum errichteten die Römer ihre Städte in der heutigen Schweiz oft an bereits genutzten Orten?",
@@ -1087,14 +1139,14 @@ const modules = [
     transfer: {
       id: "m7-transfer",
       question:
-        "Warum ist Vindonissa ein besonders gutes Fallbeispiel, um die Logik eines Imperiums zu erklären?",
-      placeholder: "Verbinde Lage, Militär, Transport und Herrschaft.",
+        "Vergleiche attische Demokratie, römische Republik und römisches Imperium in einem kurzen Überblick. Worin unterscheiden sich diese drei politischen Formen grundsätzlich?",
+      placeholder: "Verbinde Bürgerbeteiligung, Senat, Ämter und Herrschaft über große Räume.",
       sampleAnswer:
-        "Vindonissa eignet sich besonders, weil der Ort militärisch und verkehrsstrategisch wichtig war. Die Flüsse Aare, Reuss und Limmat erleichterten Transport und Versorgung. Ein Legionslager an einem solchen Knotenpunkt zeigt, wie das Römische Reich Raum kontrollierte, Waren bewegte und lokale Gebiete in imperiale Ordnung einband.",
+        "Die attische Demokratie organisiert politische Entscheidungen direkt über Bürger in der Volksversammlung, schließt aber viele Menschen aus. Die römische Republik verteilt Macht auf Senat, Magistrate und Volksversammlungen und kennt keinen König. Das römische Imperium geht darüber hinaus: Es ordnet große Räume mit Heer, Verwaltung, Straßen, Recht und Versorgung.",
       criteria: [
-        { label: "strategische Lage", keywords: ["strategisch", "knotenpunkt", "lage", "flüsse"] },
-        { label: "militärische Funktion", keywords: ["legionslager", "militär", "heer"] },
-        { label: "imperiale Einbindung", keywords: ["kontrolle", "versorgung", "transport", "einbinden", "ordnung"] }
+        { label: "attische Demokratie erklärt", keywords: ["volksversammlung", "bürger", "athen", "direkt"] },
+        { label: "römische Republik erklärt", keywords: ["senat", "konsul", "republik", "magistrat"] },
+        { label: "Imperium erklärt", keywords: ["imperium", "große räume", "heer", "verwaltung", "straßen"] }
       ]
     }
   },
@@ -1779,21 +1831,24 @@ const moduleSupports = {
   },
   "modul-7": {
     overview:
-      "Imperien halten große Räume nicht nur mit Heeren zusammen, sondern mit Straßen, Brücken, Städten, Gesetzen, Steuern, Sprache und geregelten Verkehrswegen.",
+      "Die antike Politik entwickelt unterschiedliche Ordnungsformen: In Athen entsteht eine direkte Bürgerdemokratie, in Rom eine Republik mit Senat, Magistraten und Volksversammlungen, und aus republikanischer Expansion wächst später ein Imperium aus Straßen, Städten, Recht und Heer.",
     entryNote:
-      "Ein Imperium ist ein Großreich, das viele Regionen und Bevölkerungsgruppen zusammenfasst. Das Wort wird im Modul erklärt; du musst es nicht vorher kennen.",
+      "In diesem Modul geht es nicht nur um das römische Reich, sondern um den politischen Wandel der Antike: Polis, Demokratie, Republik und Imperium.",
     terms: [
+      { term: "Polis", description: "Griechischer Stadtstaat mit eigener Bürgerschaft, Versammlung und politischer Ordnung." },
+      { term: "Attische Demokratie", description: "Direkte Demokratie in Athen mit Volksversammlung, Rat und Losverfahren für Bürger." },
+      { term: "Republik", description: "Staatsform ohne König, in der Ämter, Senat und Volksversammlungen die Ordnung tragen." },
       { term: "Imperium", description: "Großreich, das viele Regionen und Bevölkerungsgruppen politisch zusammenfasst." },
       { term: "Infrastruktur", description: "Straßen, Brücken, Häfen, Bauten und andere Grundlagen für Verkehr und Versorgung." },
       { term: "Kulturkontakt", description: "Begegnung verschiedener Gruppen mit Austausch, Anpassung und Konflikt." }
     ],
     storyline: [
-      "Du untersuchst, wie Rom große Räume ordnet.",
-      "Du beobachtest die Folgen dieser Ordnung in der Schweiz.",
-      "Du erkennst, dass Imperien den Alltag ebenso verändern wie Politik und Raum."
+      "Du klärst zunächst, wie die attische Demokratie Bürgerbeteiligung organisiert und zugleich viele Menschen ausschließt.",
+      "Dann untersuchst du die römische Republik mit Senat, Magistraten und Volksversammlungen als eigenständige politische Ordnung.",
+      "Erst danach verfolgst du, wie aus republikanischer Expansion das römische Imperium entsteht und ganze Räume ordnet."
     ],
     connection:
-      "Von hier führt der Weg direkt zu Geld, Handel und Vernetzung, denn Imperien schaffen oft die Rahmenbedingungen für weite Austauschbeziehungen."
+      "Von hier führt der Weg direkt zu Geld, Handel und Vernetzung, denn politische Ordnungen, Bürgerrecht, Republik und Imperium schaffen die Rahmenbedingungen für weite Austauschbeziehungen."
   },
   "modul-8": {
     overview:
@@ -1961,14 +2016,14 @@ const quickChecks = {
   },
   "modul-7": {
     id: "m7-quick",
-    question: "Wie verändert ein Imperium den Alltag der Menschen vor Ort? Nenne zwei konkrete Veränderungen wie Straßen, Weinbau, neue Waren oder Recht.",
-    placeholder: "Nenne zwei konkrete Veränderungen aus dem römischen Alltag.",
+    question: "Worin unterscheiden sich attische Demokratie, römische Republik und römisches Imperium in einem ersten Überblick?",
+    placeholder: "Schreibe knapp zu Bürgerbeteiligung, Senat und Herrschaft über große Räume.",
     sampleAnswer:
-      "Ein Imperium verändert den Alltag durch Straßen, neue Waren, Gesetze, Bauten oder Sprache. Menschen leben dadurch in stärker geregelten und vernetzten Räumen.",
+      "Die attische Demokratie organisiert Entscheidungen direkt über Bürger in der Volksversammlung. Die römische Republik verteilt Macht auf Senat, Konsuln und Volksversammlungen. Das römische Imperium ordnet dagegen große Räume mit Heer, Verwaltung, Recht und Infrastruktur.",
     criteria: [
-      { label: "Alltag genannt", keywords: ["alltag", "leben"] },
-      { label: "konkrete Veränderungen", keywords: ["strassen", "waren", "gesetze", "bauten", "sprache"] },
-      { label: "Vernetzung oder Ordnung", keywords: ["vernetzt", "ordnung", "geregelt"] }
+      { label: "attische Demokratie", keywords: ["athen", "volksversammlung", "bürger", "demokratie"] },
+      { label: "römische Republik", keywords: ["rom", "republik", "senat", "konsul"] },
+      { label: "Imperium", keywords: ["imperium", "große räume", "heer", "verwaltung"] }
     ]
   },
   "modul-8": {
@@ -2319,6 +2374,28 @@ const contentChecks = {
   "modul-7": {
     title: "Inhaltssicherung Modul 7",
     questions: [
+      {
+        prompt: "Erkläre die attische Demokratie. Nenne Volksversammlung, Bürgerbegriff und mindestens eine wichtige Grenze dieser Ordnung.",
+        placeholder: "Arbeite mit Athen, Bürgern und Ausschlüssen.",
+        sampleAnswer:
+          "Die attische Demokratie ist eine direkte Bürgerdemokratie in Athen. Freie männliche Bürger entscheiden in der Volksversammlung über wichtige Fragen. Frauen, Metöken und Sklaven sind jedoch ausgeschlossen, deshalb ist die Demokratie auf einen engen Bürgerkreis begrenzt.",
+        criteria: [
+          { label: "Athen oder attische Demokratie", keywords: ["athen", "attische demokratie", "demokratie"] },
+          { label: "Volksversammlung oder Bürger", keywords: ["volksversammlung", "bürger", "bürgerrecht"] },
+          { label: "Grenzen oder Ausschlüsse", keywords: ["frauen", "metöken", "sklaven", "ausgeschlossen"] }
+        ]
+      },
+      {
+        prompt: "Erkläre die römische Republik. Nenne Senat, Konsuln oder Volksversammlungen und beschreibe kurz, warum diese Ordnung nicht einfach Demokratie heißt.",
+        placeholder: "Verbinde Republik, Ämter und soziale Ungleichheit.",
+        sampleAnswer:
+          "Die römische Republik hat keinen König, sondern arbeitet mit Senat, Konsuln, Magistraten und Volksversammlungen. Macht ist also verteilt und zeitlich begrenzt. Trotzdem ist die Republik keine einfache Demokratie, weil die Führungsschicht großen Einfluss behält und soziale Ungleichheiten stark bleiben.",
+        criteria: [
+          { label: "Republik benannt", keywords: ["republik", "rom"] },
+          { label: "Senat, Konsuln oder Volksversammlungen", keywords: ["senat", "konsul", "volksversammlung", "magistrat"] },
+          { label: "keine einfache Demokratie", keywords: ["nicht einfach demokratie", "führungsschicht", "ungleich", "patrizier", "plebejer"] }
+        ]
+      },
       {
         prompt: "Wodurch hält ein Imperium große Räume zusammen?",
         placeholder: "Nenne mehrere Bausteine dieser Ordnung.",
@@ -3625,10 +3702,10 @@ const moduleVisuals = {
   "modul-7": {
     hero: "assets/srf/m07-roemer-schweiz.jpg",
     side: "assets/srf/m07-roemer-detail.jpg",
-    kicker: "Imperien",
-    title: "Rom als Reich aus Straßen, Recht und Versorgung",
-    text: "Ein Imperium ist mehr als Eroberung. Rom verbindet Straßen, Lager, Städte, Brücken, Recht, Münzen und Verwaltung zu einem großen politischen und wirtschaftlichen Raum.",
-    sideText: "Römische Herrschaft zeigt sich im Alltag: in Verkehrswegen, Bauwerken, Militär, Haushalten, Märkten und regionaler Versorgung."
+    kicker: "Antike Politik",
+    title: "Von Athen und der Republik zum Imperium",
+    text: "Modul 7 verbindet drei antike Ordnungsformen: die attische Demokratie mit ihrer direkten Bürgerbeteiligung, die römische Republik mit Senat und Magistraten und das römische Imperium als Herrschaft über große Räume.",
+    sideText: "So wird sichtbar, wie sich politische Ordnung in der Antike verändert: von der Polis über die Republik bis zu Straßen, Heeren, Verwaltung und Alltag im Reich."
   },
   "modul-8": {
     hero: "assets/srf/m08-muenzschatz.jpg",
@@ -3979,6 +4056,32 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, Hochkulturen bestünden nur aus prachtvollen Monumenten."
+  },
+  [makeSourceKey("modul-7", "YouTube: Griechenland, Polis und attische Demokratie")]: {
+    badge: "Athen · Polis und Demokratie",
+    locator: "YouTube-Video: Griechenland, Polis und attische Demokratie",
+    thesis:
+      "Der Film führt die Polis als politischen Grundraum Griechenlands ein und erklärt die attische Demokratie als direkte Bürgerordnung mit klaren Beteiligungsgrenzen.",
+    passage:
+      "Wichtig ist hier der Zusammenhang von Polis, Bürgerrecht und Volksversammlung. Die attische Demokratie erlaubt politischen Einfluss nicht allen Menschen, sondern freien männlichen Bürgern. Gerade deshalb eignet sich die Folge für Modul 7: Sie zeigt, dass politische Beteiligung in der Antike real und wirksam sein kann, aber immer auch Ausschlüsse produziert.",
+    mustKnow: [
+      "Die Polis ist ein Stadtstaat mit eigener Bürgerschaft und eigener politischer Ordnung.",
+      "In Athen entscheiden Bürger in der Volksversammlung direkt über zentrale Fragen.",
+      "Frauen, Metöken und Sklaven gehören nicht zum politischen Bürgerkörper."
+    ]
+  },
+  [makeSourceKey("modul-7", "YouTube: Rom, Republik und politische Ordnung")]: {
+    badge: "Rom · Republik vor dem Kaiserreich",
+    locator: "YouTube-Video: Rom, Republik und politische Ordnung",
+    thesis:
+      "Der Film erklärt Rom zunächst nicht als Kaiserreich, sondern als Republik mit Senat, Magistraten, Volksversammlungen und einer spezifischen Mischung aus Ämterordnung und Elitenherrschaft.",
+    passage:
+      "Für Modul 7 ist diese Perspektive entscheidend, weil römische Geschichte sonst zu früh mit dem Imperium beginnt. Die Republik zeigt, wie Rom Macht verteilt, Ämter zeitlich begrenzt, aber dennoch soziale Ungleichheit und politische Konkurrenz beibehält. So wird verständlich, dass das spätere Imperium aus einer älteren republikanischen Ordnung hervorgeht.",
+    mustKnow: [
+      "Die römische Republik kennt keinen König, sondern Senat, Konsuln und weitere Ämter.",
+      "Volksversammlungen und Magistrate gehören zur politischen Struktur Roms.",
+      "Die Republik bleibt sozial ungleich und von Machtkämpfen der Führungsschichten geprägt."
+    ]
   },
   [makeSourceKey("modul-7", "SRF: Römer in der Schweiz")]: {
     badge: "fünfteilige Reihe · Römer konkret",
@@ -4855,6 +4958,12 @@ function resolveSourceLink(source) {
   }
   if (title.includes("hochkulturen")) {
     return sourceCatalog.find((entry) => entry.id === "hochkulturen-video");
+  }
+  if (title.includes("griechenland") || title.includes("attische demokratie") || title.includes("polis")) {
+    return sourceCatalog.find((entry) => entry.id === "griechenland-demokratie-video");
+  }
+  if (title.includes("republik") || title.includes("politische ordnung")) {
+    return sourceCatalog.find((entry) => entry.id === "rom-republik-video");
   }
   if (title.includes("christentum")) {
     return sourceCatalog.find((entry) => entry.id === "christentum-video");
