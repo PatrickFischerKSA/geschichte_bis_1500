@@ -4532,14 +4532,43 @@ function cleanStudentText(text) {
 
 function cleanPromptText(text) {
   return cleanStudentText(text)
-    .replace(/Hararis Bild vom /gi, "das Bild aus der Harari-Stelle vom ")
-    .replace(/Hararis Bild /gi, "das Bild aus der Harari-Stelle ")
-    .replace(/Hararis These/gi, "die These in der Harari-Stelle")
-    .replace(/Hararis Zuspitzung/gi, "die Zuspitzung in der Harari-Stelle")
-    .replace(/Hararis Einstieg/gi, "den Einstieg in der Harari-Stelle")
-    .replace(/Hararis Kapitel/gi, "das Kapitel in der Harari-Stelle")
-    .replace(/Harari-PDF/gi, "Harari-Stelle im PDF")
+    .replace(/Hararis Bild vom /gi, "das Bild aus der Harari-Buchstelle vom ")
+    .replace(/Hararis Bild /gi, "das Bild aus der Harari-Buchstelle ")
+    .replace(/Hararis These/gi, "die These in der Harari-Buchstelle")
+    .replace(/Hararis Zuspitzung/gi, "die Zuspitzung in der Harari-Buchstelle")
+    .replace(/Hararis Einstieg/gi, "den Einstieg in der Harari-Buchstelle")
+    .replace(/Hararis Kapitel/gi, "das Kapitel in der Harari-Buchstelle")
+    .replace(/Harari-PDF/gi, "Harari-Buchstelle im PDF")
     .replace(/\bHarari\b/gi, "den Historiker Harari");
+}
+
+function getSourceHeading(source, detail) {
+  return String(detail.badge || source.meta || source.title || "")
+    .replace(/^S\.\s*[\d]+(?:\s*[–-]\s*[\d]+)?\s*·\s*/i, "")
+    .replace(/^(SRF-school-Seite|SRF-school-Film|SRF Einstein|YouTube-Film|YouTube-Video|dreiteilige Reihe|fünfteilige Reihe|Serienseite)\s*·\s*/i, "")
+    .replace(/^Buchstelle\s*·\s*/i, "")
+    .replace(/^Folge\s+/i, "")
+    .trim();
+}
+
+function getSourceBadge(source, detail, isHarari) {
+  if (isHarari) {
+    const match = String(detail.badge || "").match(/^(S\.\s*[\d]+(?:\s*[–-]\s*[\d]+)?)/i);
+    return match ? match[1] : "";
+  }
+  return "";
+}
+
+function cleanListLabel(label, fallback) {
+  return String(label || fallback || "")
+    .replace(/^Auf der SRF-Seite angelegte Stoffstruktur:?$/i, "Wichtige Entwicklungen:")
+    .replace(/^Auf der SRF-Seite hier besonders wichtig:?$/i, "Wichtige Themen:")
+    .replace(/^Auf der SRF-Seite hier konkret gemeint:?$/i, "Wichtige Themen:")
+    .replace(/^Von SRF auf dieser Seite zusätzlich verlinkt:?$/i, "Weiterführende Themen:")
+    .replace(/^Zur Einordnung der ganzen SRF-Reihe:?$/i, "Weitere wichtige Themen:")
+    .replace(/^Besonders wichtige Teilthemen:?$/i, "Wichtige Themen:")
+    .replace(/^Weitere Themen auf derselben Seite:?$/i, "Weiterführende Themen:")
+    .trim();
 }
 
 function getModuleIntroText(module) {
@@ -4743,7 +4772,7 @@ function renderMasterTimeline() {
             <h3>${entry.title}</h3>
             <p>${entry.body}</p>
             <div class="master-timeline-jumps">
-              <p class="master-timeline-jump-label">Sprungmarken in die Einheit</p>
+              <p class="master-timeline-jump-label">Zugehörige Module</p>
               <div class="master-timeline-modules">${moduleLinks}</div>
             </div>
           </div>
@@ -4770,10 +4799,10 @@ function createNavigation(state) {
 
 function renderSourceCard(source, module) {
   const detail = getSourceDetail(module.id, source);
-  const badge = detail.badge || source.meta;
-  const passage = cleanStudentText(detail.passage || source.extracted);
   const isHarari = normalize(source.title).startsWith(normalize("Harari-PDF"));
-  const titleLabel = isHarari ? "Harari-Stelle" : source.title;
+  const heading = getSourceHeading(source, detail) || source.title;
+  const badge = getSourceBadge(source, detail, isHarari);
+  const passage = cleanStudentText(detail.passage || source.extracted);
   const locatorTextRaw = isHarari
     ? String(detail.locator || "").replace(/^Harari-PDF,\s*/i, "Yuval Noah Harari, Eine kurze Geschichte der Menschheit, ")
     : detail.locator || "";
@@ -4781,25 +4810,25 @@ function renderSourceCard(source, module) {
     isHarari && detail.pdfPage
       ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
       : locatorTextRaw;
-  const locatorLabel = isHarari ? "Buchstelle" : "Historisches Beispiel";
-  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Historische Informationen";
+  const locatorLabel = isHarari ? "Im Buch" : "";
+  const passageLabel = "Einordnung";
 
   return `
     <article class="source-card">
       <header>
         <div>
-          <h4>${titleLabel}</h4>
-          <span class="source-meta">${badge}</span>
+          <h4>${heading}</h4>
+          ${badge ? `<span class="source-meta">${badge}</span>` : ""}
         </div>
       </header>
-      ${locatorText ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
+      ${locatorText && locatorLabel ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
       ${isHarari ? renderHarariActions(detail) : ""}
       ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>${passageLabel}:</strong> ${passage}</p>
-      ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Besonders wichtige Teilthemen:")}
-      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weitere Themen auf derselben Seite:")}
+      ${renderRelevantItems(detail.relevantItems, cleanListLabel(detail.itemsLabel, "Wichtige Themen:"))}
+      ${renderRelevantItems(detail.relatedItems, cleanListLabel(detail.relatedLabel, "Weiterführende Themen:"))}
     </article>
   `;
 }
@@ -5256,7 +5285,7 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Entwicklungen, Buchstellen und Beispiele</p>
+          <p class="section-kicker">3. Kontinuitäten und Brüche</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map((source) => renderSourceCard(source, module)).join("")}
