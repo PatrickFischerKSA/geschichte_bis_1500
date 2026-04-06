@@ -4391,8 +4391,8 @@ function renderSourceCard(source, module) {
     isHarari && detail.pdfPage
       ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
       : locatorTextRaw;
-  const locatorLabel = isHarari ? "Buchstelle" : "Ressource";
-  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Was diese Ressource konkret zeigt";
+  const locatorLabel = isHarari ? "Buchstelle" : "Film oder Seite";
+  const passageLabel = isHarari ? "Was diese Buchstelle erklärt" : "Was dieses Material konkret zeigt";
 
   return `
     <article class="source-card">
@@ -4408,8 +4408,8 @@ function renderSourceCard(source, module) {
       ${renderSourceFocus(detail)}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       <p><strong>${passageLabel}:</strong> ${passage}</p>
-      ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf der SRF-Seite besonders wichtige Einzelfilme:")}
-      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
+      ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Besonders wichtige Teilthemen:")}
+      ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weiterführende Materialien:")}
     </article>
   `;
 }
@@ -4497,7 +4497,7 @@ function renderFilmFoundation(module) {
   return `
     <section class="film-foundation">
       <div class="film-foundation-head">
-        <p class="section-kicker">Filmgrundlage</p>
+        <p class="section-kicker">Filme und Materialien</p>
         <p>Diese Filme liefern die konkreten historischen Informationen des Moduls: Lebensweisen, Herrschaftsformen, Glaubenswelten, Räume, Gegenstände und langfristige Entwicklungen.</p>
       </div>
       <div class="film-grid">
@@ -4516,12 +4516,12 @@ function renderFilmFoundation(module) {
                   </div>
                   <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
                 </div>
-                ${detail.locator ? `<p><strong>Ressource:</strong> ${detail.locator}</p>` : ""}
+                ${detail.locator ? `<p><strong>Film oder Seite:</strong> ${detail.locator}</p>` : ""}
                 ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
                 ${renderSourceFocus(detail)}
                 <p><strong>Was der Film konkret zeigt:</strong> ${passage}</p>
-                ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Auf dieser SRF-Seite besonders wichtig:")}
-                ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Von SRF auf dieser Seite zusätzlich verlinkt:")}
+                ${renderRelevantItems(detail.relevantItems, detail.itemsLabel || "Besonders wichtige Teilthemen:")}
+                ${renderRelevantItems(detail.relatedItems, detail.relatedLabel || "Weiterführende Materialien:")}
               </article>
             `;
             }
@@ -4866,7 +4866,7 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">3. Quellen und konkrete Beispiele</p>
+          <p class="section-kicker">3. Stoff, Buchstellen und Beispiele</p>
           <p>${cleanPromptText(module.sourcePrompt)}</p>
           <div class="source-grid">
             ${module.sources.map((source) => renderSourceCard(source, module)).join("")}
