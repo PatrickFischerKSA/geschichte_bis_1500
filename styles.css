@@ -1529,6 +1529,22 @@ p {
   background: transparent;
 }
 
+.module-section.is-question-section {
+  scroll-margin-top: 32px;
+  margin-top: 8px;
+  padding: 22px 20px 20px;
+  border: 1px solid rgba(31, 109, 102, 0.2);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(245, 251, 249, 0.98), rgba(237, 247, 244, 0.94));
+  box-shadow: 0 14px 34px rgba(31, 109, 102, 0.08);
+}
+
+.module-section.is-question-section.is-highlighted {
+  border-color: rgba(31, 109, 102, 0.42);
+  box-shadow: 0 0 0 4px rgba(31, 109, 102, 0.12), 0 18px 40px rgba(31, 109, 102, 0.14);
+}
+
 .module-section p + p {
   margin-top: 12px;
 }
@@ -2265,9 +2281,9 @@ p {
   display: grid;
   gap: 12px;
   padding: 16px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(31, 109, 102, 0.18);
   border-radius: var(--radius-md);
-  background: rgba(255, 252, 248, 0.9);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .teacher-question-box textarea,

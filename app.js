@@ -7197,7 +7197,7 @@ function renderTeacherQuestionQuickAction(module) {
         <span class="fact-label">Fragen</span>
         <strong>Frag die Lehrperson</strong>
         <p>Im Lehrpersonen-Dashboard erscheinen eingehende Fragen gesammelt zur Beantwortung.</p>
-        <a class="btn primary" href="#${module.id}-teacher-question">Zum Fragebereich</a>
+        <button class="btn primary" type="button" data-open-teacher-question="${module.id}">Zum Fragebereich</button>
       </div>
     `;
   }
@@ -7215,7 +7215,7 @@ function renderTeacherQuestionQuickAction(module) {
       <span class="fact-label">Fragen</span>
       <strong>Frag die Lehrperson</strong>
       <p>${helperText}</p>
-      <a class="btn primary" href="#${module.id}-teacher-question">Frag die Lehrperson</a>
+      <button class="btn primary" type="button" data-open-teacher-question="${module.id}">Frag die Lehrperson</button>
     </div>
   `;
 }
@@ -7446,7 +7446,7 @@ function renderModules(state) {
           ${renderShortAnswerBox(module.task, "Aufgabe")}
         </section>
 
-        <section id="${module.id}-teacher-question" class="module-section">
+        <section id="${module.id}-teacher-question" class="module-section is-question-section">
           <p class="section-kicker">5. Frag die Lehrperson</p>
           ${renderTeacherQuestionSection(module)}
         </section>
@@ -8427,6 +8427,25 @@ function renderApp(state) {
 }
 
 function bindTeacherQuestionButtons() {
+  document.querySelectorAll("[data-open-teacher-question]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const moduleId = button.dataset.openTeacherQuestion;
+      const section = document.getElementById(`${moduleId}-teacher-question`);
+      const field = document.querySelector(`[data-teacher-question-input="${moduleId}"]`);
+      if (!section) {
+        return;
+      }
+
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.classList.add("is-highlighted");
+      window.setTimeout(() => section.classList.remove("is-highlighted"), 1800);
+
+      if (field) {
+        window.setTimeout(() => field.focus(), 280);
+      }
+    });
+  });
+
   document.querySelectorAll("[data-teacher-question-send]").forEach((button) => {
     button.addEventListener("click", async () => {
       const moduleId = button.dataset.teacherQuestionSend;
