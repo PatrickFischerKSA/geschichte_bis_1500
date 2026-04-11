@@ -270,6 +270,57 @@ const sourceCatalog = [
   }
 ];
 
+const thinkerProfiles = {
+  harari: {
+    label: "Harari kurz",
+    title: "Yuval Noah Harari",
+    subtitle: "Historiker, geboren 1976 in Israel",
+    intro:
+      "Harari ordnet die Menschheitsgeschichte als Abfolge großer Umbrüche. Entscheidend sind für ihn nicht einzelne Herrscher, sondern Veränderungen, die viele Lebensbereiche zugleich neu ordnen.",
+    bioPoints: [
+      "lehrt und forscht zur Weltgeschichte und zur Geschichte großer Entwicklungslinien",
+      "wurde mit 'Eine kurze Geschichte der Menschheit' international bekannt",
+      "interessiert sich besonders dafür, wie große menschliche Ordnungen entstehen und stabil bleiben"
+    ],
+    thinkingPoints: [
+      "Die kognitive Revolution macht große Kooperation durch Sprache, Mythen und gemeinsame Vorstellungen möglich.",
+      "Die landwirtschaftliche Revolution verdichtet Gesellschaften, erzeugt Überschüsse, Abhängigkeiten und neue Ungleichheiten.",
+      "Reiche, Geld und Religion verbinden immer größere Räume und schaffen gemeinsame Ordnungen über große Distanzen hinweg.",
+      "Geschichte erscheint deshalb stark als Verdichtung immer größerer Netze von Kooperation, Herrschaft und Vereinheitlichung."
+    ],
+    contrastTitle: "Worauf Harari den Akzent legt",
+    contrastPoints: [
+      "große Entwicklungsschritte statt vieler paralleler Möglichkeiten",
+      "Revolutionen als Wendepunkte der Menschheitsgeschichte",
+      "wachsende Reichweite gemeinsamer Ordnungen"
+    ]
+  },
+  graeberWengrow: {
+    label: "Graeber/Wengrow kurz",
+    title: "David Graeber und David Wengrow",
+    subtitle: "Anthropologe (1961–2020) und Archäologe (geboren 1972)",
+    intro:
+      "Graeber und Wengrow widersprechen linearen Erzählungen der Tiefengeschichte. Für sie zeigt die Frühgeschichte nicht nur wenige große Stufen, sondern viele bewusste Entscheidungen, Versuche und verworfene Wege.",
+    bioPoints: [
+      "David Graeber war Anthropologe und schrieb über Macht, Schulden, Arbeit und politische Freiheit",
+      "David Wengrow ist Archäologe und forscht zu frühen Städten, Staaten und sozialen Ordnungen",
+      "gemeinsam veröffentlichten sie 'The Dawn of Everything', eine Gegenposition zu linearen Ursprungserzählungen"
+    ],
+    thinkingPoints: [
+      "Frühe Menschen lebten nicht einfach immer in denselben kleinen Gruppen, sondern konnten ihre soziale Ordnung saisonal verändern.",
+      "Landwirtschaft führt nicht automatisch zu Eliten, Steuern und Staat; Mischformen und Alternativen bleiben lange möglich.",
+      "Große Siedlungen und Städte müssen nicht zwingend Königtum oder starre Hierarchien hervorbringen.",
+      "Geschichte enthält daher auch verworfene Möglichkeiten, bewusste politische Wahl und Brüche innerhalb scheinbar großer Linien."
+    ],
+    contrastTitle: "Worauf Graeber und Wengrow den Akzent legen",
+    contrastPoints: [
+      "offene Entwicklung statt Einbahnstraße",
+      "politische Wahlmöglichkeiten schon in der Frühgeschichte",
+      "Komplexität ohne Automatismus zu Hierarchie und Staat"
+    ]
+  }
+};
+
 const masterTimeline = [
   {
     epoch: "Frühgeschichte",
@@ -6110,6 +6161,130 @@ function renderMasterTimeline() {
     .join("");
 }
 
+function ensureThinkerModal() {
+  let modal = document.getElementById("thinker-modal");
+  if (modal) {
+    return modal;
+  }
+
+  modal = document.createElement("div");
+  modal.id = "thinker-modal";
+  modal.className = "thinker-modal";
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="thinker-modal-backdrop" data-thinker-close></div>
+    <div class="thinker-modal-panel" role="dialog" aria-modal="true" aria-labelledby="thinker-modal-title">
+      <button class="thinker-modal-close" type="button" aria-label="Popup schliessen" data-thinker-close>&times;</button>
+      <div id="thinker-modal-content"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  return modal;
+}
+
+function renderThinkerPanel() {
+  const container = document.getElementById("thinker-panel");
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = `
+    <p class="panel-kicker">Positionen im Überblick</p>
+    <h2>Harari und Graeber/Wengrow knapp einordnen</h2>
+    <p class="compact">
+      Die Einheit arbeitet mit zwei Deutungen der Tiefengeschichte. Hier kannst du beide
+      Grundpositionen kurz öffnen und global einordnen, bevor du ihre Unterschiede in den
+      einzelnen Modulen prüfst.
+    </p>
+    <div class="thinker-compare-grid">
+      <article class="thinker-summary-card">
+        <span class="fact-label">Harari</span>
+        <strong>Große Umbrüche und wachsende Ordnungen</strong>
+        <p>Sprache, Landwirtschaft, Reiche, Geld und Religion verdichten die Geschichte zu immer größeren Verbindungsräumen.</p>
+        <button class="btn primary" type="button" data-thinker-open="harari">Harari öffnen</button>
+      </article>
+      <article class="thinker-summary-card">
+        <span class="fact-label">Graeber/Wengrow</span>
+        <strong>Offene Wege und politische Wahl</strong>
+        <p>Frühe Gesellschaften probieren unterschiedliche Formen aus; Komplexität führt nicht automatisch in dieselbe Ordnung.</p>
+        <button class="btn primary" type="button" data-thinker-open="graeberWengrow">Graeber/Wengrow öffnen</button>
+      </article>
+    </div>
+  `;
+
+  ensureThinkerModal();
+}
+
+function openThinkerModal(key) {
+  const profile = thinkerProfiles[key];
+  const modal = ensureThinkerModal();
+  const content = document.getElementById("thinker-modal-content");
+  if (!profile || !content || !modal) {
+    return;
+  }
+
+  content.innerHTML = `
+    <p class="panel-kicker">Denkrichtung</p>
+    <h2 id="thinker-modal-title">${profile.title}</h2>
+    <p class="thinker-modal-subtitle">${profile.subtitle}</p>
+    <p class="lead thinker-modal-lead">${profile.intro}</p>
+    <div class="thinker-modal-grid">
+      <section class="thinker-modal-block">
+        <p class="section-kicker">Kurzbiografie</p>
+        <ul class="source-list">
+          ${profile.bioPoints.map((point) => `<li>${point}</li>`).join("")}
+        </ul>
+      </section>
+      <section class="thinker-modal-block">
+        <p class="section-kicker">Grundgedanken</p>
+        <ul class="source-list">
+          ${profile.thinkingPoints.map((point) => `<li>${point}</li>`).join("")}
+        </ul>
+      </section>
+    </div>
+    <section class="thinker-modal-block thinker-contrast-block">
+      <p class="section-kicker">${profile.contrastTitle}</p>
+      <ul class="source-list">
+        ${profile.contrastPoints.map((point) => `<li>${point}</li>`).join("")}
+      </ul>
+    </section>
+  `;
+
+  modal.hidden = false;
+  document.body.classList.add("is-overlay-open");
+}
+
+function closeThinkerModal() {
+  const modal = document.getElementById("thinker-modal");
+  if (!modal) {
+    return;
+  }
+  modal.hidden = true;
+  document.body.classList.remove("is-overlay-open");
+}
+
+function bindThinkerPanel() {
+  document.querySelectorAll("[data-thinker-open]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openThinkerModal(button.dataset.thinkerOpen);
+    });
+  });
+
+  document.querySelectorAll("[data-thinker-close]").forEach((button) => {
+    button.addEventListener("click", closeThinkerModal);
+  });
+
+  const modal = document.getElementById("thinker-modal");
+  if (modal && !modal.dataset.boundEscape) {
+    modal.dataset.boundEscape = "true";
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeThinkerModal();
+      }
+    });
+  }
+}
+
 function createNavigation(state) {
   const nav = document.getElementById("module-nav");
   nav.innerHTML = "";
@@ -7615,6 +7790,7 @@ function renderApp(state) {
   renderWelcomeOverlay(state);
   createTimeline(state);
   renderMasterTimeline();
+  renderThinkerPanel();
   createNavigation(state);
   renderLearnerBanner(state);
   renderChapterCards(state);
@@ -7628,6 +7804,7 @@ function renderApp(state) {
   bindSourceMicroChecks(state);
   bindRepetitionMode(state);
   bindWelcomeOverlay(state);
+  bindThinkerPanel();
   bindCompletionActions();
   updateProgress(state);
 }
