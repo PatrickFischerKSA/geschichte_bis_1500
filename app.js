@@ -373,19 +373,22 @@ const thinkerProfiles = {
     bioPoints: [
       "lehrt und forscht zur Weltgeschichte und zur Geschichte großer Entwicklungslinien",
       "wurde mit 'Eine kurze Geschichte der Menschheit' international bekannt",
-      "interessiert sich besonders dafür, wie große menschliche Ordnungen entstehen und stabil bleiben"
+      "interessiert sich besonders dafür, wie große menschliche Ordnungen entstehen und stabil bleiben",
+      "äußert sich heute auch stark zu künstlicher Intelligenz, Datenmacht und den politischen Risiken digitaler Kontrolle"
     ],
     thinkingPoints: [
       "Die kognitive Revolution macht große Kooperation durch Sprache, Mythen und gemeinsame Vorstellungen möglich.",
       "Die landwirtschaftliche Revolution verdichtet Gesellschaften, erzeugt Überschüsse, Abhängigkeiten und neue Ungleichheiten.",
       "Reiche, Geld und Religion verbinden immer größere Räume und schaffen gemeinsame Ordnungen über große Distanzen hinweg.",
-      "Geschichte erscheint deshalb stark als Verdichtung immer größerer Netze von Kooperation, Herrschaft und Vereinheitlichung."
+      "Geschichte erscheint deshalb stark als Verdichtung immer größerer Netze von Kooperation, Herrschaft und Vereinheitlichung.",
+      "In seinen neueren Warnungen zu KI betont Harari, dass Menschen unter Bedingungen totaler Datenerfassung zu 'hackable animals' werden könnten."
     ],
     contrastTitle: "Worauf Harari den Akzent legt",
     contrastPoints: [
       "große Entwicklungsschritte statt vieler paralleler Möglichkeiten",
       "Revolutionen als Wendepunkte der Menschheitsgeschichte",
-      "wachsende Reichweite gemeinsamer Ordnungen"
+      "wachsende Reichweite gemeinsamer Ordnungen",
+      "Warnung vor Datenmacht, KI-Steuerung und manipulierbaren Menschen"
     ]
   },
   graeberWengrow: {
@@ -396,6 +399,7 @@ const thinkerProfiles = {
       "Graeber und Wengrow widersprechen linearen Erzählungen der Tiefengeschichte. Für sie zeigt die Frühgeschichte nicht nur wenige große Stufen, sondern viele bewusste Entscheidungen, Versuche und verworfene Wege.",
     bioPoints: [
       "David Graeber war Anthropologe und schrieb über Macht, Schulden, Arbeit und politische Freiheit",
+      "Graeber stand politischen Basisbewegungen nahe und wurde besonders im Umfeld von Occupy als wichtiger öffentlicher Intellektueller wahrgenommen",
       "David Wengrow ist Archäologe und forscht zu frühen Städten, Staaten und sozialen Ordnungen",
       "gemeinsam veröffentlichten sie 'The Dawn of Everything', eine Gegenposition zu linearen Ursprungserzählungen"
     ],
@@ -6653,7 +6657,7 @@ function renderThinkerPanel() {
 
   container.innerHTML = `
     <p class="panel-kicker">Positionen im Überblick</p>
-    <h2>Harari und Graeber/Wengrow knapp einordnen</h2>
+    <h2>Eine Geschichte - zwei Sichtweisen</h2>
     <p class="compact">
       Die Einheit arbeitet mit zwei Deutungen der Tiefengeschichte. Hier kannst du beide
       Grundpositionen kurz öffnen und global einordnen, bevor du ihre Unterschiede in den
