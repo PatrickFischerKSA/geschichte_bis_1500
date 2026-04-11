@@ -209,6 +209,99 @@ const sourceCatalog = [
     link: "https://www.youtube.com/watch?v=O7LH4JmmRV8"
   },
   {
+    id: "helvetier-hls",
+    title: "HLS: Helvetier",
+    type: "Historisches Lexikon der Schweiz",
+    role: "Grundlage für Siedlungsraum, politische Einordnung und Caesars Problemstellung",
+    didactics:
+      "Der Artikel bündelt den Forschungsstand zu den Helvetiern: Siedlungsgebiet, antike Überlieferung, politische Ordnung und das Problem, dass Caesar die wichtigste, aber interessengeleitete Textquelle bleibt.",
+    linkLabel: "Original öffnen",
+    link: "https://hls-dhs-dss.ch/articles/008016/2007-07-30/"
+  },
+  {
+    id: "kelten-engehalbinsel",
+    title: "SRF: Keltische Schätze der Berner Engehalbinsel",
+    type: "SRF / Schweiz aktuell",
+    role: "Archäologisches Gegenbild zum Bauernvolk-Klischee",
+    didactics:
+      "Der Beitrag macht deutlich, dass die Helvetier archäologisch nicht als armes Bauernvolk erscheinen, sondern als reiche, religiöse und weit vernetzte Gesellschaft mit anspruchsvoller materieller Kultur.",
+    linkLabel: "Film öffnen",
+    link: "https://www.srf.ch/play/tv/schweiz-aktuell/video/die-keltischen-schaetze-der-berner-engehalbinsel?urn=urn:srf:video:d4d073db-d50c-461c-9d83-c77e5f0678ee"
+  },
+  {
+    id: "kelten-nationalmuseum",
+    title: "Nationalmuseum: Warum die Kelten tapfer waren",
+    type: "Blog Nationalmuseum",
+    role: "Einführung in Hallstatt, La Tène und keltische Kultur",
+    didactics:
+      "Der Beitrag eignet sich als knapper Überblick über Hallstatt- und La-Tène-Zeit, Metallkultur, Fernhandel und die Frage, warum die Kelten als erste europäische Hochkultur beschrieben werden.",
+    linkLabel: "Original öffnen",
+    link: "https://blog.nationalmuseum.ch/2018/07/warum-die-kelten-tapfer-waren/"
+  },
+  {
+    id: "archaeologie-schweiz",
+    title: "Landesmuseum: Archäologie Schweiz",
+    type: "Landesmuseum",
+    role: "Archäologischer Rahmen für frühe Schweiz",
+    didactics:
+      "Die Seite liefert den breiten archäologischen Rahmen, in den keltische Siedlungen, Funde und Verkehrsachsen in der Schweiz eingeordnet werden können.",
+    linkLabel: "Original öffnen",
+    link: "https://www.landesmuseum.ch/archaeologie-schweiz"
+  },
+  {
+    id: "kelten-swiss-spectator",
+    title: "Swiss Spectator: Die Kelten in der Schweiz",
+    type: "Online-Artikel",
+    role: "Überblick zu Hallstatt, La Tène und keltischer Schweiz",
+    didactics:
+      "Der Text verbindet die großen archäologischen Phasen Hallstatt und La Tène mit keltischer Besiedlung, oppida, Handel und dem Übergang zur römischen Welt.",
+    linkLabel: "Original öffnen",
+    link: "https://www.swiss-spectator.ch/de/die-kelten-in-der-schweiz/"
+  },
+  {
+    id: "kelten-squix",
+    title: "Squix: Die Kelten in der Schweiz",
+    type: "Online-Artikel",
+    role: "Zusätzliche Übersicht zu keltischen Gruppen und Regionen",
+    didactics:
+      "Die Seite dient als ergänzende Übersicht, um Namen, Regionen und Grundzüge der keltischen Schweiz schneller zu wiederholen.",
+    linkLabel: "Original öffnen",
+    link: "https://www.squix.org/ottenbach/index.php?title=Die_Kelten_in_der_Schweiz"
+  },
+  {
+    id: "kempraten-pdf",
+    title: "Stadtspiegel 2018: Schwerpunkt Kempraten",
+    type: "Lokales PDF",
+    role: "Regionales Material zu Siedlungsraum am oberen Zürichsee",
+    didactics:
+      "Das PDF dient als lokale Vertiefung zum Raum Kempraten und zur Frage, wie Siedlung, Uferlage und Verkehrsraum über längere Zeit zusammenhängen.",
+    linkLabel: "Lokale Datei",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Desktop/Stadtspiegel_2018_Schwerpunkt_Kempraten.pdf"
+  },
+  {
+    id: "jahresbericht-2004-pdf",
+    title: "Archäologischer Jahresbericht 2004",
+    type: "Lokales PDF",
+    role: "Lokale archäologische Ergänzung",
+    didactics:
+      "Das PDF dient als zusätzliche lokale Vertiefung zu Funden, Grabungen und Befundlagen im schweizerischen Raum.",
+    linkLabel: "Lokale Datei",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Desktop/Archäologischer Jahresbericht 2004.pdf"
+  },
+  {
+    id: "roemische-verkehrswege-pdf",
+    title: "Römische Verkehrswege",
+    type: "Lokales PDF",
+    role: "Übergang von keltischem Siedlungsraum zu römischer Raumordnung",
+    didactics:
+      "Das PDF ergänzt die Einheit dort, wo aus vorrömischen Räumen römisch geordnete Verkehrsachsen werden.",
+    linkLabel: "Lokale Datei",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Desktop/PBA.DOK2.461p-HSpi-2021-Roemische-Verkehrswege.pdf"
+  },
+  {
     id: "christentum-video",
     title: "YouTube: Christentum",
     type: "YouTube",
@@ -393,6 +486,14 @@ const masterTimeline = [
     body:
       "Von Sargon über Assyrer und Babylon bis zur Qin-Dynastie entsteht die Logik großer Reiche: Steuern, Heere, Beamte und gemeinsame Ordnungen verbinden viele Menschen über große Räume hinweg.",
     modules: ["modul-6", "modul-7"]
+  },
+  {
+    epoch: "Späte Eisenzeit",
+    time: "ca. 800–58 v. Chr.",
+    title: "Kelten, Oppida und die Helvetier",
+    body:
+      "Hallstatt und La Tène prägen die keltische Welt in Mitteleuropa. Im Gebiet der heutigen Schweiz entstehen oppida, Fernhandelsbeziehungen, Münzgeld, Heiligtümer und regionale Machtzentren. Die Helvetier erscheinen dadurch nicht als primitive Vorstufe Roms, sondern als komplexe eisenzeitliche Gesellschaft, deren Welt 58 v. Chr. mit Caesars Eingriff einen harten Bruch erlebt.",
+    modules: ["modul-7-kelten"]
   },
   {
     epoch: "Antike",
@@ -1124,8 +1225,136 @@ const modules = [
     }
   },
   {
-    id: "modul-7",
+    id: "modul-7-kelten",
     number: 7,
+    title: "Kelten und Helvetier",
+    era: "Späte Eisenzeit im Gebiet der heutigen Schweiz",
+    phase: "Oppida, Wanderung, Krieg und Eingliederung",
+    guidingQuestion: "Wer waren die Helvetier, und was veränderte Rom an ihrer Welt?",
+    hook:
+      "Vor Rom existiert im schweizerischen Mittelland keine leere Vorstufe, sondern eine keltische Welt mit oppida, Münzen, Fernhandel, Religion, Metallhandwerk und regionalen Machtzentren.",
+    goals: [
+      "Kelten als Kulturraum und nicht als einheitlichen Staat erklären",
+      "die Helvetier im Gebiet der heutigen Schweiz historisch einordnen",
+      "Caesars Darstellung kritisch mit archäologischen Funden vergleichen",
+      "die Wanderung von 58 v. Chr. und Bibracte als Bruch verstehen",
+      "Harari und Graeber/Wengrow an einem konkreten Fall gegeneinander lesen"
+    ],
+    input: [
+      "Der Name Kelten bezeichnet keine einheitliche Nation und kein zusammenhängendes Reich. Er steht für viele Gruppen in weiten Teilen Europas, die ähnliche materielle Kultur, Waffenformen, Schmuckstile und religiöse Praktiken teilen. Für die Schweiz sind vor allem zwei große archäologische Phasen wichtig: Hallstatt und La Tène. Gerade La Tène ist für die keltische Welt im Gebiet der heutigen Schweiz zentral, weil hier oppida, Münzen, Metallhandwerk und Fernkontakte besonders deutlich werden.",
+      "Die Helvetier sind eine keltische Bevölkerungsgruppe des schweizerischen Mittellands. Antike Autoren nennen sie vor allem im Zusammenhang mit Caesar. Genau darin liegt ein Problem: Die wichtigste Textquelle stammt von einem Feldherrn, der seinen Krieg politisch rechtfertigen will. Wer die Helvetier verstehen will, darf deshalb Caesars Bericht nicht einfach übernehmen, sondern muss ihn mit archäologischen Funden vergleichen.",
+      "Archäologisch erscheint die keltische Welt keineswegs als arme und unbedeutende Vorstufe Roms. Oppida, Befestigungen, Werkstätten, Münzen, importierte Güter und reiche Funde zeigen komplexe regionale Zentren. Der Beitrag zur Berner Engehalbinsel ist hier besonders wichtig: Er widerspricht dem Bild eines bloßen Bauernvolkes und zeigt eine Gesellschaft, die reich, religiös, gebildet und weit vernetzt war.",
+      "58 v. Chr. wird zum Einschnitt. Ein Teil der Helvetier versucht, mit großen Gruppen auszuwandern. Caesar greift ein, besiegt sie bei Bibracte und zwingt sie zur Rückkehr. Historisch ist daran mehr wichtig als nur die Schlacht: Rom entscheidet damit, wer sich im Alpenvorland bewegen darf, und zieht den Raum stärker in seine eigene Ordnung hinein. Die Helvetier bleiben also nicht außerhalb der Geschichte Roms, sondern geraten nun unter römischen Druck und schließlich in den imperialen Zusammenhang.",
+      "Harari würde an diesem Punkt betonen, dass größere Reiche lokale Gruppen in weiter reichende Macht-, Rechts- und Verkehrsordnungen einbinden. Graeber und Wengrow setzen früher an: Für sie zeigen oppida, Austausch und politische Verdichtung bereits vor Rom, dass komplexe Gesellschaften nicht erst als Vorstufe eines Imperiums interessant werden. Genau an den Helvetiern wird der Unterschied deutlich: Harari liest stärker die Eingliederung in größere Netze, Graeber und Wengrow stärker die Eigenständigkeit und Offenheit vorrömischer Komplexität."
+    ],
+    sources: [
+      {
+        title: "Harari-PDF · S. 150",
+        meta: "Weltreiche und größere Netze",
+        extracted:
+          "Harari beschreibt die antike Geschichte als Ausweitung größerer Macht-, Glaubens- und Handelsräume, in die lokale Gruppen und Regionen eingebunden werden."
+      },
+      {
+        title: "Graeber/Wengrow: Oppida ohne Einbahnstraße",
+        meta: "Komplexität vor Rom",
+        extracted:
+          "Die Gegenposition betont, dass dichte Siedlungen, Fernhandel und politische Verdichtung nicht automatisch schon auf ein einziges Staatsmodell oder auf Rom zulaufen."
+      },
+      {
+        title: "HLS: Helvetier",
+        meta: "Siedlungsraum, Caesar und Forschungslage",
+        extracted:
+          "Der Lexikonartikel ordnet die Helvetier als keltische Bevölkerungsgruppe des schweizerischen Mittellands ein und macht deutlich, wie stark ihre Geschichte über Caesar und Archäologie erschlossen wird."
+      },
+      {
+        title: "SRF: Keltische Schätze der Berner Engehalbinsel",
+        meta: "Archäologie gegen das Bauernvolk-Klischee",
+        extracted:
+          "Die Funde der Engehalbinsel zeigen die Helvetier nicht als schlichtes Bauernvolk, sondern als reiche, religiöse und weit vernetzte Gesellschaft."
+      },
+      {
+        title: "Nationalmuseum: Warum die Kelten tapfer waren",
+        meta: "Hallstatt, La Tène und Metallkultur",
+        extracted:
+          "Der Beitrag führt in die keltische Welt als frühe europäische Hochkultur mit Metallhandwerk, Fernkontakten und markanter materieller Kultur ein."
+      },
+      {
+        title: "Swiss Spectator: Die Kelten in der Schweiz",
+        meta: "Keltische Schweiz im Überblick",
+        extracted:
+          "Der Überblick verbindet Hallstatt, La Tène, oppida und die keltische Besiedlung der Schweiz mit dem Übergang in die römische Zeit."
+      },
+      {
+        title: "Landesmuseum: Archäologie Schweiz",
+        meta: "Fundlandschaften und archäologischer Rahmen",
+        extracted:
+          "Die Übersicht spannt den archäologischen Rahmen, in dem keltische Fundorte, Siedlungen und Verkehrslandschaften der Schweiz eingeordnet werden."
+      }
+    ],
+    sourcePrompt:
+      "Kläre, wie sich keltische Gesellschaft, archäologische Funde, Caesars Bericht und die römische Eingliederung gegenseitig beleuchten und widersprechen.",
+    task: {
+      id: "m7k-task",
+      question:
+        "Erkläre, warum die Helvetier nicht einfach als primitives Bauernvolk beschrieben werden können. Arbeite mit Oppida, Funden und Fernkontakten.",
+      placeholder: "Verbinde Siedlungen, Metallhandwerk, Reichtum, Religion und Handel.",
+      sampleAnswer:
+        "Die Helvetier waren keine primitive Randgruppe, weil archäologische Funde komplexe Siedlungen, Befestigungen, Metallhandwerk, Münzen und Fernkontakte zeigen. Oppida und reiche Grab- oder Heiligtumsfunde sprechen für politische Verdichtung und Wohlstand. Gerade die Funde auf der Berner Engehalbinsel zeigen eine religiöse und weit vernetzte Gesellschaft statt eines bloßen Bauernvolks.",
+      criteria: [
+        { label: "Oppida oder befestigte Zentren", keywords: ["oppida", "oppidum", "befestigt", "zentrum"] },
+        { label: "Handwerk, Münzen oder Metall", keywords: ["metall", "handwerk", "münzen", "munzen", "schmuck"] },
+        { label: "Fernkontakte oder Vernetzung", keywords: ["handel", "fernkontakte", "vernetzt", "importe"] },
+        { label: "Berner Engehalbinsel oder archäologische Funde", keywords: ["engehalbinsel", "funde", "archäolog"] }
+      ]
+    },
+    deepening:
+      "Die Helvetier sind historisch wichtig, weil an ihnen drei Dinge zugleich sichtbar werden: erstens die Eigenständigkeit der keltischen Schweiz vor Rom, zweitens das Problem einer stark von Caesar geprägten Überlieferung und drittens der harte Einschnitt, mit dem römische Macht regionale Bewegungs- und Herrschaftsräume neu ordnet.",
+    selftest: {
+      id: "m7k-selftest",
+      question: "Warum ist Caesars Bericht über die Helvetier wichtig und zugleich problematisch?",
+      options: [
+        {
+          text: "Weil er eine der wichtigsten Textquellen ist, aber von einem römischen Feldherrn mit politischem Eigeninteresse stammt.",
+          correct: true,
+          feedback:
+            "Richtig. Genau deshalb muss Caesars Darstellung mit archäologischen Funden gegengeprüft werden."
+        },
+        {
+          text: "Weil er als neutraler Augenzeugenbericht jede archäologische Forschung überflüssig macht.",
+          correct: false,
+          feedback:
+            "Nein. Gerade Caesars Eigeninteresse macht archäologische Korrekturen notwendig."
+        },
+        {
+          text: "Weil er nur religiöse Rituale beschreibt und nichts über Politik oder Krieg sagt.",
+          correct: false,
+          feedback:
+            "Das trifft nicht zu. Caesar beschreibt gerade Wanderung, Krieg und politische Ordnung."
+        }
+      ]
+    },
+    takeaway: [
+      "Kelten sind ein weiter Kulturraum, kein einheitlicher Staat.",
+      "Die Helvetier erscheinen archäologisch komplexer als Caesars Klischee vom Bauernvolk.",
+      "58 v. Chr. markiert den Übergang von keltischer Eigenständigkeit zu römischer Raumordnung."
+    ],
+    transfer: {
+      id: "m7k-transfer",
+      question:
+        "Vergleiche Harari und Graeber/Wengrow am Beispiel der Helvetier. Worin liegt der Unterschied ihrer Deutung?",
+      placeholder: "Verbinde römische Eingliederung, größere Netze und vorrömische Komplexität.",
+      sampleAnswer:
+        "Harari würde stärker betonen, dass die Helvetier in größere imperiale Ordnungen aus Macht, Recht, Verkehr und Handel hineingezogen werden. Graeber und Wengrow setzen früher an und betonen, dass oppida, Handel und politische Verdichtung schon vor Rom zeigen, wie komplex die keltische Welt war. Der Streitpunkt lautet also: Liegt der Hauptakzent auf der Eingliederung in größere Netze oder auf der Eigenständigkeit nichtlinearer vorrömischer Wege?",
+      criteria: [
+        { label: "Harari mit größeren Ordnungen oder Netzen", keywords: ["harari", "reiche", "netze", "imperium", "eingliederung"] },
+        { label: "Graeber/Wengrow mit offener Entwicklung", keywords: ["graeber", "wengrow", "offen", "eigenständig", "nichtlinear", "möglichkeiten"] },
+        { label: "Helvetier oder Oppida als Beispiel", keywords: ["helvetier", "oppida", "keltisch", "vorrömisch"] }
+      ]
+    }
+  },
+  {
+    id: "modul-7",
+    number: 8,
     title: "Antike Reiche und Imperien",
     era: "Antike Mittelmeerwelt",
     phase: "Expansion, Infrastruktur, Kulturkontakt",
@@ -1239,7 +1468,7 @@ const modules = [
   },
   {
     id: "modul-8",
-    number: 8,
+    number: 9,
     title: "Geld, Handel und Vernetzung",
     era: "Antike bis Mittelalter",
     phase: "Vertrauen über Grenzen hinweg",
@@ -1346,7 +1575,7 @@ const modules = [
   },
   {
     id: "modul-9",
-    number: 9,
+    number: 10,
     title: "Religionen und Weltbilder",
     era: "Antike bis Mittelalter",
     phase: "Sinnordnungen und Legitimation",
@@ -1468,7 +1697,7 @@ const modules = [
   },
   {
     id: "modul-10",
-    number: 10,
+    number: 11,
     title: "Das Mittelalter: Herrschaft, Kirche, Gesellschaft",
     era: "ca. 500 bis 1500",
     phase: "Lebenswelt und Ordnung",
@@ -1590,7 +1819,7 @@ const modules = [
   },
   {
     id: "modul-11",
-    number: 11,
+    number: 12,
     title: "Städte, Handel und Wandel im Mittelalter",
     era: "Hoch- und Spätmittelalter",
     phase: "Kontaktzonen und Quellenkritik",
@@ -1697,7 +1926,7 @@ const modules = [
   },
   {
     id: "modul-12",
-    number: 12,
+    number: 13,
     title: "Abschlussmodul: Was verändert Menschenwelt langfristig?",
     era: "Bilanz bis 1500 mit Ausblick",
     phase: "Langzeitlinien und Perspektivwechsel",
@@ -1926,6 +2155,26 @@ const moduleSupports = {
     connection:
       "Wer frühe Staaten verstehen will, muss nicht nur Könige kennen, sondern auch Schreiber, Speicher, Kalender, Tempel, Abgaben und religiöse Ordnungen."
   },
+  "modul-7-kelten": {
+    overview:
+      "Die keltische Schweiz vor Rom ist keine leere Vorstufe, sondern ein Raum von oppida, Metallhandwerk, Münzgeld, Religion und Fernkontakten. Die Helvetier gehören in diese Welt und geraten 58 v. Chr. mit Caesars Eingriff an einen entscheidenden Bruchpunkt.",
+    entryNote:
+      "Der Name Kelten meint hier keinen einzelnen Staat, sondern viele Gruppen mit ähnlicher materieller Kultur. Die Helvetier sind eine davon und leben im Gebiet der heutigen Schweiz.",
+    terms: [
+      { term: "Hallstatt", description: "Frühe Phase der keltischen Eisenzeit ab etwa 800 v. Chr." },
+      { term: "La Tène", description: "Spätere Phase keltischer Kultur, benannt nach dem Fundort am Neuenburgersee." },
+      { term: "Oppidum", description: "Größeres befestigtes Zentrum der späten keltischen Eisenzeit." },
+      { term: "Helvetier", description: "Keltische Bevölkerungsgruppe des schweizerischen Mittellands." },
+      { term: "Bibracte", description: "Ort der Niederlage der Helvetier gegen Caesar im Jahr 58 v. Chr." }
+    ],
+    storyline: [
+      "Du klärst zuerst, warum Kelten keine einzelne Nation, sondern ein größerer Kulturraum sind.",
+      "Dann ordnest du die Helvetier mit oppida, Münzen, Handwerk und Religion in die keltische Schweiz ein.",
+      "Schließlich prüfst du Caesars Bericht, die Wanderung von 58 v. Chr. und den Bruch durch römische Eingriffe."
+    ],
+    connection:
+      "Dieses Modul schlägt die Brücke zwischen frühen Hochkulturen und der römischen Welt: Erst an den Helvetiern wird sichtbar, was Rom in bereits bestehende komplexe Gesellschaften hinein verändert."
+  },
   "modul-7": {
     overview:
       "Die antike Politik entwickelt unterschiedliche Ordnungsformen: In Athen entsteht eine direkte Bürgerdemokratie, in Rom eine Republik mit Senat, Magistraten und Volksversammlungen, und aus republikanischer Expansion wächst später ein Imperium aus Straßen, Städten, Recht und Heer.",
@@ -2109,6 +2358,18 @@ const quickChecks = {
       { label: "Schrift genannt", keywords: ["schrift", "schreiben"] },
       { label: "Verwaltung oder Listen", keywords: ["verwaltung", "listen", "festhalten", "buchhaltung"] },
       { label: "Machtwirkung", keywords: ["macht", "einfluss", "ordnung", "abgaben"] }
+    ]
+  },
+  "modul-7-kelten": {
+    id: "m7k-quick",
+    question: "Warum reicht Caesars Bild der Helvetier als Bauernvolk nicht aus? Antworte mit archäologischen Gegenargumenten.",
+    placeholder: "Nenne Oppida, Funde, Religion, Metallhandwerk oder Fernkontakte.",
+    sampleAnswer:
+      "Caesars Bild reicht nicht aus, weil archäologische Funde komplexe keltische Zentren, Metallhandwerk, Münzen, religiöse Orte und Fernkontakte zeigen. Die Helvetier erscheinen dadurch als politisch und wirtschaftlich verdichtete Gesellschaft.",
+    criteria: [
+      { label: "Caesar als Ausgangsbild", keywords: ["caesar", "bauernvolk", "bäuerlich", "bauern"] },
+      { label: "Archäologie als Korrektur", keywords: ["archäolog", "funde", "engehalbinsel", "grabung"] },
+      { label: "Komplexität genannt", keywords: ["oppida", "münzen", "metall", "handel", "religion", "vernetzt"] }
     ]
   },
   "modul-7": {
@@ -2480,8 +2741,79 @@ const contentChecks = {
       }
     ]
   },
-  "modul-7": {
+  "modul-7-kelten": {
     title: "Inhaltssicherung Modul 7",
+    questions: [
+      {
+        prompt: "Warum bezeichnet der Name Kelten keinen einzelnen Staat, sondern einen größeren Kulturraum?",
+        placeholder: "Arbeite mit vielen Gruppen, Hallstatt, La Tène oder gemeinsamer materieller Kultur.",
+        sampleAnswer:
+          "Der Name Kelten bezeichnet keinen einzelnen Staat, weil damit viele Gruppen in verschiedenen Regionen Europas gemeint sind. Zusammengehalten werden sie eher durch ähnliche materielle Kultur, Kunstformen, Waffen, Schmuck und religiöse Praktiken als durch einen einheitlichen König oder ein gemeinsames Reich.",
+        criteria: [
+          { label: "kein einzelner Staat", keywords: ["kein staat", "kein reich", "viele gruppen", "mehrere gruppen"] },
+          { label: "Hallstatt oder La Tène", keywords: ["hallstatt", "la tène", "la tene"] },
+          { label: "gemeinsame Kulturmerkmale", keywords: ["materielle kultur", "schmuck", "waffen", "kunst", "religion"] }
+        ]
+      },
+      {
+        prompt: "Erkläre, was oppida über die keltische Welt in der Schweiz verraten.",
+        placeholder: "Denke an Befestigung, Zentrum, Handwerk, Handel und politische Verdichtung.",
+        sampleAnswer:
+          "Oppida zeigen, dass die keltische Welt der Schweiz politische und wirtschaftliche Zentren kannte. Solche befestigten Orte bündeln Menschen, Handwerk, Vorräte, Tausch und Macht. Sie widerlegen deshalb die Vorstellung, vor Rom habe es nur locker verteilte bäuerliche Siedlungen gegeben.",
+        criteria: [
+          { label: "Oppida als Zentren", keywords: ["oppida", "zentren", "befestigt", "oppidum"] },
+          { label: "Handwerk oder Handel", keywords: ["handwerk", "handel", "tausch", "münzen"] },
+          { label: "Klischee korrigiert", keywords: ["nicht nur", "bauern", "vor rom", "locker verteilt", "verdichtet"] }
+        ]
+      },
+      {
+        prompt: "Warum muss man die Geschichte der Helvetier mit Caesar und zugleich gegen Caesar lesen?",
+        placeholder: "Verbinde Hauptquelle, Eigeninteresse und archäologische Korrektur.",
+        sampleAnswer:
+          "Caesar ist für die Helvetier wichtig, weil er eine der wichtigsten schriftlichen Quellen liefert. Zugleich schreibt er als römischer Feldherr mit politischem Eigeninteresse. Deshalb muss sein Bericht mit archäologischen Funden, Siedlungen und materiellen Spuren verglichen werden.",
+        criteria: [
+          { label: "Caesar als wichtige Quelle", keywords: ["caesar", "quelle", "bericht", "schriftlich"] },
+          { label: "Eigeninteresse oder Parteilichkeit", keywords: ["eigeninteresse", "parteiisch", "feldherr", "rechtfertigen"] },
+          { label: "Archäologie als Korrektiv", keywords: ["archäolog", "funde", "vergleich", "korrig"] }
+        ]
+      },
+      {
+        prompt: "Erkläre, warum die Wanderung der Helvetier von 58 v. Chr. mehr ist als eine einzelne Schlachtengeschichte.",
+        placeholder: "Arbeite mit Bibracte, erzwungener Rückkehr und römischer Kontrolle von Raum und Bewegung.",
+        sampleAnswer:
+          "Die Ereignisse von 58 v. Chr. sind mehr als eine Schlacht, weil Rom damit entscheidet, wer sich im Alpenvorland bewegen darf. Nach der Niederlage bei Bibracte werden die Helvetier zur Rückkehr gezwungen. Damit gerät ihr Raum unter stärkeren römischen Zugriff, und die politische Eigenständigkeit wird grundlegend verändert.",
+        criteria: [
+          { label: "58 v. Chr. oder Bibracte", keywords: ["58", "bibracte", "v. chr", "vor christus"] },
+          { label: "erzwungene Rückkehr", keywords: ["rückkehr", "zurück", "gezwungen"] },
+          { label: "römische Raumkontrolle", keywords: ["rom", "kontrolle", "raum", "bewegung", "eingriff"] }
+        ]
+      },
+      {
+        prompt: "Was zeigen die Funde auf der Berner Engehalbinsel über Reichtum, Religion und Vernetzung der Helvetier?",
+        placeholder: "Formuliere mit reichen Funden, Frömmigkeit und weiten Kontakten.",
+        sampleAnswer:
+          "Die Funde zeigen, dass die Helvetier nicht nur lokal und bäuerlich lebten. Reiche Objekte, religiöse Bezüge und überregionale Kontakte sprechen für Wohlstand, Frömmigkeit und weite Vernetzung. Die Engehalbinsel korrigiert damit das einfache Klischee vom ungebildeten Bauernvolk.",
+        criteria: [
+          { label: "Reichtum", keywords: ["reich", "wohlstand", "schätze", "kostbar"] },
+          { label: "Religion", keywords: ["religion", "frömmigkeit", "heiligtum", "kult"] },
+          { label: "Vernetzung", keywords: ["vernetzt", "kontakte", "fernkontakte", "überregional"] }
+        ]
+      },
+      {
+        prompt: "Worin unterscheiden sich Harari und Graeber/Wengrow bei der Deutung der Helvetier und der keltischen Welt vor Rom?",
+        placeholder: "Verbinde größere Imperien mit vorrömischer Eigenständigkeit und offenen Wegen.",
+        sampleAnswer:
+          "Harari betont stärker, dass lokale Gruppen wie die Helvetier in größere Reiche, Rechtsräume und Handelsnetze hineingezogen werden. Graeber und Wengrow heben stärker hervor, dass oppida, Austausch und politische Verdichtung schon vor Rom komplexe Gesellschaften hervorbringen konnten. Der Unterschied liegt also zwischen Eingliederung in größere Ordnungen und der Eigenständigkeit offener vorrömischer Wege.",
+        criteria: [
+          { label: "Harari", keywords: ["harari", "reiche", "netze", "einglied", "größere ordnungen", "grössere ordnungen"] },
+          { label: "Graeber/Wengrow", keywords: ["graeber", "wengrow", "offen", "eigenständig", "vorrömisch", "vorrömische"] },
+          { label: "Helvetier als Beispiel", keywords: ["helvetier", "oppida", "keltische welt", "vor rom"] }
+        ]
+      }
+    ]
+  },
+  "modul-7": {
+    title: "Inhaltssicherung Modul 8",
     questions: [
       {
         prompt: "Erkläre die attische Demokratie. Nenne Volksversammlung, Bürgerbegriff und mindestens eine wichtige Grenze dieser Ordnung.",
@@ -2540,7 +2872,7 @@ const contentChecks = {
     ]
   },
   "modul-8": {
-    title: "Inhaltssicherung Modul 8",
+    title: "Inhaltssicherung Modul 9",
     questions: [
       {
         prompt: "Warum ist Geld eine Vertrauensordnung und nicht nur Metall?",
@@ -2578,7 +2910,7 @@ const contentChecks = {
     ]
   },
   "modul-9": {
-    title: "Inhaltssicherung Modul 9",
+    title: "Inhaltssicherung Modul 10",
     questions: [
       {
         prompt: "Erkläre, wie Religion Gemeinschaft ordnen kann.",
@@ -2627,7 +2959,7 @@ const contentChecks = {
     ]
   },
   "modul-10": {
-    title: "Inhaltssicherung Modul 10",
+    title: "Inhaltssicherung Modul 11",
     questions: [
       {
         prompt: "Warum ist das Klischee vom 'dunklen Mittelalter' zu einfach?",
@@ -2675,7 +3007,7 @@ const contentChecks = {
     ]
   },
   "modul-11": {
-    title: "Inhaltssicherung Modul 11",
+    title: "Inhaltssicherung Modul 12",
     questions: [
       {
         prompt: "Warum müssen Berichte über den Kinderkreuzzug von 1212 kritisch geprüft werden, statt sie einfach zu glauben?",
@@ -2724,7 +3056,7 @@ const contentChecks = {
     ]
   },
   "modul-12": {
-    title: "Inhaltssicherung Modul 12",
+    title: "Inhaltssicherung Modul 13",
     questions: [
       {
         prompt: "Warum ist '1491' ein wichtiger Perspektivwechsel für die ganze Einheit? Erkläre, was dadurch am Geschichtsbild anders wird und nenne konkrete Leistungen indigener Gesellschaften.",
@@ -3808,6 +4140,14 @@ const moduleVisuals = {
     text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt großer Heldengeschichten. In Ägypten verbinden sich Nilwirtschaft, Pharaonenherrschaft und religiöse Ordnung zu einer besonders langen Reichsstruktur.",
     sideText: "Wichtig sind Nil, Hieroglyphen, Beamtentum, Pharao, Maat sowie Tempel- und Jenseitsvorstellungen; Mesopotamien dient nur als kurzer Vergleich einer weniger einheitlichen Frühstaatenlandschaft."
   },
+  "modul-7-kelten": {
+    hero: "assets/srf/m08-muenzschatz.jpg",
+    side: "assets/srf/m07-roemer-detail.jpg",
+    kicker: "Späte Eisenzeit",
+    title: "Kelten, Helvetier und der Bruch von 58 v. Chr.",
+    text: "Vor der römischen Eroberung existiert im Gebiet der heutigen Schweiz eine keltische Welt mit oppida, Münzgeld, Metallhandwerk, Religion und Fernkontakten. Die Helvetier gehören in diese spätkeltische Ordnung.",
+    sideText: "Wichtig sind Hallstatt und La Tène, befestigte Zentren, reiche Funde, Caesars problematischer Bericht, Bibracte und die Frage, was Rom an einer bereits komplexen Gesellschaft verändert."
+  },
   "modul-7": {
     hero: "assets/srf/m07-roemer-schweiz.jpg",
     side: "assets/srf/m07-roemer-detail.jpg",
@@ -4208,6 +4548,129 @@ const sourceDetails = {
       "Große Siedlungen sind nicht automatisch Königsstaaten.",
       "Komplexität, Arbeitsteilung und Hierarchie sind historisch nicht identisch.",
       "Ägypten ist ein Weg früher Staatlichkeit, aber kein allgemeines Naturgesetz."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Harari-PDF · S. 150")]: {
+    badge: "S. 150 · Größere Räume ziehen Gruppen in Netze",
+    locator: "Harari-PDF, S. 150",
+    pdfPage: 150,
+    pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
+    quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
+    thesis:
+      "Harari beschreibt die antike Entwicklung als Ausweitung größerer Macht-, Glaubens- und Handelsräume. Lokale Gruppen geraten dadurch in immer größere Netze von Herrschaft und Verkehr.",
+    passage:
+      "Für die Helvetier ist diese Buchstelle wichtig, weil sie den römischen Eingriff von 58 v. Chr. nicht bloß als Schlacht, sondern als Eingliederung in eine größere imperiale Ordnung lesbar macht. Rom kontrolliert Raum, Bewegung, Militär, Recht und Verkehrswege. Hararis Akzent liegt deshalb weniger auf keltischer Eigenwelt als auf der historischen Tendenz, dass immer größere Reiche kleinere politische Räume in umfassendere Ordnungen hineinziehen.",
+    whyHere:
+      "Die Buchstelle macht sichtbar, wie Harari den Bruch von der keltischen Schweiz zur römisch geordneten Welt lesen würde.",
+    mustKnow: [
+      "Harari liest antike Geschichte stark als Vergrößerung gemeinsamer Macht- und Verkehrsordnungen.",
+      "Der römische Zugriff auf die Helvetier ist deshalb mehr als Krieg: Er verändert den politischen Raum.",
+      "Wichtig ist die Eingliederung in größere Netze aus Herrschaft, Verkehr und Handel."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Graeber/Wengrow: Oppida ohne Einbahnstraße")]: {
+    quote: "„the mere fact of urban life“",
+    thesis:
+      "Graeber und Wengrow bestreiten, dass größere Siedlungen, Handel und politische Verdichtung automatisch nur als Vorstufe eines Reiches gelesen werden dürfen.",
+    passage:
+      "Am Beispiel der keltischen oppida lässt sich diese Gegenposition gut erklären. Befestigte Zentren, Münzgeld, Fernkontakte und religiöse Orte zeigen eine komplexe Gesellschaft schon vor der römischen Eingliederung. Graeber und Wengrow verschieben deshalb den Blick: Nicht Rom macht die Helvetier erst historisch interessant, sondern die vorrömische keltische Welt besitzt bereits eigene Dichte, Wahlmöglichkeiten und politische Formen. Der entscheidende Unterschied zu Harari liegt hier im Gewicht der offenen Wege vor dem Imperium.",
+    whyHere:
+      "Diese Gegenposition schärft die Leitfrage des Moduls: Ist Rom der eigentliche Anfang größerer Ordnung, oder war die keltische Welt schon vorher komplex und eigenständig?",
+    mustKnow: [
+      "Oppida, Münzen und Fernkontakte beweisen vorrömische Komplexität.",
+      "Komplexe Gesellschaften müssen nicht automatisch in einem einheitlichen Reich enden.",
+      "Graeber und Wengrow betonen stärker alternative und nichtlineare Entwicklungen."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "HLS: Helvetier")]: {
+    badge: "Historisches Lexikon der Schweiz · Grundlagenartikel",
+    locator: "Historisches Lexikon der Schweiz: Helvetier",
+    thesis:
+      "Der Artikel ordnet die Helvetier als keltische Bevölkerungsgruppe des schweizerischen Mittellands ein und zeigt zugleich, dass ihre Geschichte über antike Texte und Archäologie zusammen gelesen werden muss.",
+    passage:
+      "Für diese Einheit ist der Artikel grundlegend, weil er drei Dinge bündelt: das Siedlungsgebiet der Helvetier, die politische Bedeutung der Wanderung von 58 v. Chr. und das Quellenproblem um Caesar. Die Helvetier werden dadurch nicht als mythisches Urvolk, sondern als historisch fassbare eisenzeitliche Gesellschaft sichtbar. Wichtig ist vor allem, dass Caesars Bericht nützlich, aber nicht neutral ist.",
+    whyHere:
+      "Der Artikel liefert die historische Grundordnung des Moduls: Wer die Helvetier waren, wo sie lebten und warum Caesar allein nicht genügt.",
+    mustKnow: [
+      "Die Helvetier gehören zur keltischen Welt des schweizerischen Mittellands.",
+      "58 v. Chr. und Bibracte sind ein politischer Einschnitt.",
+      "Die Forschung muss antike Texte und Archäologie miteinander verschränken."
+    ],
+    relatedLabel: "Zusätzliche lokale Vertiefungen:",
+    relatedItems: [
+      { title: "Stadtspiegel 2018: Schwerpunkt Kempraten", note: "Lokales Material zu Siedlungsraum und Verkehrsraum am oberen Zürichsee." },
+      { title: "Archäologischer Jahresbericht 2004", note: "Ergänzendes lokales Grabungs- und Fundmaterial." },
+      { title: "Römische Verkehrswege", note: "Vertiefung zum Übergang von keltischem Raum in römisch geordnete Verkehrsachsen." }
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "SRF: Keltische Schätze der Berner Engehalbinsel")]: {
+    badge: "SRF / Schweiz aktuell · Bern",
+    locator: "SRF: Die keltischen Schätze der Berner Engehalbinsel",
+    thesis:
+      "Der Beitrag korrigiert Caesars Bild vom einfachen Bauernvolk. Die Funde sprechen für eine Gesellschaft, die reich, fromm, gebildet und weit vernetzt war.",
+    passage:
+      "Gerade dieser Beitrag ist für das Modul zentral, weil er den Streit um die Helvetier auf den Punkt bringt. Wo Caesar eher ein bäuerliches Volk beschreibt, zeigt die Archäologie kostbare Objekte, religiöse Spuren und Hinweise auf weite Kontakte. Das verändert die historische Deutung grundlegend: Die Helvetier erscheinen nicht als rohe Vorstufe Roms, sondern als komplexe spätkeltische Gesellschaft.",
+    whyHere:
+      "Hier wird das Bauernvolk-Klischee direkt archäologisch aufgebrochen.",
+    mustKnow: [
+      "Die Berner Engehalbinsel liefert starke archäologische Gegenargumente zu Caesars Klischee.",
+      "Wohlstand, Religion und Vernetzung sind an konkreten Funden sichtbar.",
+      "Archäologie kann antike Texte korrigieren."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Nationalmuseum: Warum die Kelten tapfer waren")]: {
+    badge: "Nationalmuseum · Hallstatt und La Tène",
+    locator: "Nationalmuseum: Warum die Kelten tapfer waren",
+    thesis:
+      "Der Beitrag ordnet die keltische Welt als frühe europäische Hochkultur ein und verbindet Hallstatt, La Tène, Metallhandwerk und Fernkontakte.",
+    passage:
+      "Für das Modul ist dieser Text vor allem am Anfang wichtig: Er erklärt, warum Hallstatt und La Tène keine bloßen Etiketten sind, sondern Entwicklungsphasen einer keltischen Kulturwelt mit Eisen, Schmuck, Waffen, Handel und regionalen Eliten. So wird verständlich, dass die Helvetier nicht erst mit Caesar in Erscheinung treten, sondern Teil einer längeren eisenzeitlichen Entwicklung sind.",
+    whyHere:
+      "Der Beitrag liefert den nötigen Überblick über die keltische Welt vor dem Fokus auf die Helvetier.",
+    mustKnow: [
+      "Hallstatt und La Tène sind die wichtigsten archäologischen Phasen keltischer Kultur.",
+      "Metallhandwerk und Fernkontakte gehören zum Kern der keltischen Entwicklung.",
+      "Die Helvetier sind Teil einer längeren eisenzeitlichen Vorgeschichte."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Swiss Spectator: Die Kelten in der Schweiz")]: {
+    badge: "Überblick · Kelten in der Schweiz",
+    locator: "Swiss Spectator: Die Kelten in der Schweiz",
+    thesis:
+      "Der Überblick verbindet Hallstatt, La Tène, oppida und den Übergang zur römischen Zeit zu einer längeren Entwicklung der keltischen Schweiz.",
+    passage:
+      "Diese Übersicht hilft, die Begriffe sauber zu ordnen: Hallstatt steht für eine frühe Phase, La Tène für eine spätere Blüte, und oppida markieren verdichtete Zentren kurz vor dem römischen Eingriff. Damit lässt sich die keltische Schweiz als Entwicklung verstehen und nicht nur als Episode direkt vor Caesar.",
+    whyHere:
+      "Die Übersicht schließt die Lücke zwischen allgemeiner Kelteneinführung und dem Spezialfall der Helvetier.",
+    mustKnow: [
+      "Die keltische Schweiz entwickelt sich über längere Eisenzeitphasen.",
+      "Oppida zeigen politische und wirtschaftliche Verdichtung kurz vor Rom.",
+      "Der Übergang zur römischen Zeit verändert einen bereits bestehenden Kulturraum."
+    ],
+    relatedLabel: "Weitere Überblicksmaterialien:",
+    relatedItems: [
+      { title: "Squix: Die Kelten in der Schweiz", note: "Ergänzende Übersicht zu Gruppen, Regionen und Grundzügen der keltischen Schweiz.", link: "https://www.squix.org/ottenbach/index.php?title=Die_Kelten_in_der_Schweiz" }
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Landesmuseum: Archäologie Schweiz")]: {
+    badge: "Archäologischer Rahmen · Schweiz",
+    locator: "Landesmuseum: Archäologie Schweiz",
+    thesis:
+      "Die Seite macht klar, dass Kelten und Helvetier nicht isoliert zu betrachten sind, sondern in einer viel breiteren archäologischen Landschaft der Schweiz liegen.",
+    passage:
+      "Für das Modul ist diese Seite weniger wegen eines einzelnen Arguments wichtig als wegen ihrer Einbettung: Fundorte, Siedlungsräume, Grabungen und Verkehrsachsen zeigen, dass die keltische Schweiz archäologisch dicht erschlossen und regional sehr verschieden ist. Damit wird sichtbar, warum Einzelorte wie Bern-Engehalbinsel oder Kempraten nur im Zusammenhang eines größeren Fundraums richtig verstanden werden.",
+    whyHere:
+      "Die Seite erweitert den Blick vom einzelnen Fund auf die gesamte archäologische Landschaft der Schweiz.",
+    mustKnow: [
+      "Keltische Geschichte der Schweiz ist archäologisch über viele Fundorte erschlossen.",
+      "Einzelfunde werden erst im größeren Raumzusammenhang historisch aussagekräftig.",
+      "Regionale Zentren, Verkehrsachsen und Fundlandschaften greifen ineinander."
+    ],
+    relatedLabel: "Regionale Ergänzungen:",
+    relatedItems: [
+      { title: "Stadtspiegel 2018: Schwerpunkt Kempraten", note: "Lokaler Fokus auf Siedlungsraum und Uferlage am oberen Zürichsee." },
+      { title: "Archäologischer Jahresbericht 2004", note: "Grabungs- und Fundbericht als regionale Vertiefung." },
+      { title: "Römische Verkehrswege", note: "Brücke vom keltischen Raum zur späteren römischen Infrastruktur." }
     ]
   },
   [makeSourceKey("modul-7", "YouTube: Griechenland, Polis und attische Demokratie")]: {
@@ -6366,6 +6829,24 @@ function resolveSourceLink(source) {
   if (title.includes("hochkulturen")) {
     return sourceCatalog.find((entry) => entry.id === "hochkulturen-video");
   }
+  if (title.includes("helvetier")) {
+    return sourceCatalog.find((entry) => entry.id === "helvetier-hls");
+  }
+  if (title.includes("keltische schatze") || title.includes("keltische schätze") || title.includes("engehalbinsel")) {
+    return sourceCatalog.find((entry) => entry.id === "kelten-engehalbinsel");
+  }
+  if (title.includes("kelten tapfer") || title.includes("warum die kelten tapfer waren") || title.includes("nationalmuseum")) {
+    return sourceCatalog.find((entry) => entry.id === "kelten-nationalmuseum");
+  }
+  if (title.includes("swiss spectator")) {
+    return sourceCatalog.find((entry) => entry.id === "kelten-swiss-spectator");
+  }
+  if (title.includes("archaologie schweiz") || title.includes("archäologie schweiz") || title.includes("landesmuseum")) {
+    return sourceCatalog.find((entry) => entry.id === "archaeologie-schweiz");
+  }
+  if (title.includes("squix")) {
+    return sourceCatalog.find((entry) => entry.id === "kelten-squix");
+  }
   if (title.includes("griechenland") || title.includes("attische demokratie") || title.includes("polis")) {
     return sourceCatalog.find((entry) => entry.id === "griechenland-demokratie-video");
   }
@@ -6449,7 +6930,7 @@ function renderFilmFoundation(module) {
                     <h3>${source.title}</h3>
                     <span class="source-meta">${badge}</span>
                   </div>
-                  <a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">Film öffnen</a>
+                  ${catalog.link ? `<a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">${catalog.linkLabel || "Original öffnen"}</a>` : ""}
                 </div>
                 ${detail.locator ? `<p><strong>Beispiel:</strong> ${detail.locator}</p>` : ""}
                 ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
@@ -6713,7 +7194,7 @@ function renderCompletionPanel(state) {
       <div class="completion-hero">
         <div class="completion-card">
           <p>${allPassed
-            ? "Du hast alle 12 Module bestanden. Die komplette Lernstrecke ist freigeschaltet, und du kannst dein Zertifikat drucken."
+            ? "Du hast alle 13 Module bestanden. Die komplette Lernstrecke ist freigeschaltet, und du kannst dein Zertifikat drucken."
             : "Hier siehst du auf einen Blick, wie viele Module bereits bestanden sind und welche noch für den vollständigen Abschluss fehlen."}</p>
           <div class="completion-stats">
             <div class="meta-box">
@@ -7517,7 +7998,7 @@ function renderWelcomeOverlay(state) {
           <div class="takeaway">Jedes Modul beginnt mit verständlichem Grundwissen und führt dann in Quellen und Zusammenhänge.</div>
           <div class="takeaway">Nach jedem Modul folgt eine schriftliche Sicherung mit direktem Feedback.</div>
           <div class="takeaway">Das nächste Modul öffnet sich jeweils nach mindestens 60 Prozent.</div>
-          <div class="takeaway">Wenn alle 12 Module bestanden sind, wird das Zertifikat freigeschaltet.</div>
+          <div class="takeaway">Wenn alle 13 Module bestanden sind, wird das Zertifikat freigeschaltet.</div>
         </div>
         <label class="welcome-name">
           <strong>Name für Lernstand und Zertifikat</strong>
