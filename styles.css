@@ -1233,6 +1233,28 @@ p {
   font-size: 0.95rem;
 }
 
+.module-quick-action {
+  border: 1px solid rgba(31, 109, 102, 0.22);
+  background:
+    linear-gradient(180deg, rgba(241, 248, 246, 0.98), rgba(230, 242, 239, 0.94));
+  box-shadow: 0 10px 24px rgba(31, 109, 102, 0.08);
+}
+
+.module-quick-action strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.module-quick-action p {
+  margin-top: 8px;
+}
+
+.module-quick-action .btn {
+  margin-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
 .goals {
   display: grid;
   gap: 8px;

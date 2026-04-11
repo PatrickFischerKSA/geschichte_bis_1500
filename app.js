@@ -7190,6 +7190,36 @@ function renderTeacherQuestionSection(module) {
   `;
 }
 
+function renderTeacherQuestionQuickAction(module) {
+  if (isTeacherMode()) {
+    return `
+      <div class="meta-box module-quick-action">
+        <span class="fact-label">Fragen</span>
+        <strong>Frag die Lehrperson</strong>
+        <p>Im Lehrpersonen-Dashboard erscheinen eingehende Fragen gesammelt zur Beantwortung.</p>
+        <a class="btn primary" href="#${module.id}-teacher-question">Zum Fragebereich</a>
+      </div>
+    `;
+  }
+
+  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false };
+  const helperText = !status.configured
+    ? "Der Button führt direkt zum Fragefeld. Die Cloud-Funktion wird sichtbar, sobald Supabase eingerichtet ist."
+    : !status.loggedIn
+      ? "Der Button führt direkt zum Fragefeld. Dort kannst du dich auch an den Cloud-Sync erinnern lassen."
+      : "Der Button führt direkt zum Fragefeld. Dort kannst du sofort eine konkrete Fachfrage abschicken.";
+
+  return `
+    <div class="meta-box module-quick-action">
+      <span class="fact-label">Fragen</span>
+      <strong>Frag die Lehrperson</strong>
+      <p>${helperText}</p>
+      <a class="btn primary" href="#${module.id}-teacher-question">Frag die Lehrperson</a>
+    </div>
+  `;
+}
+
 function renderContentCheck(module, state) {
   const check = contentChecks[module.id];
   const storedFeedback = state[`${module.id}-content-feedback`];
@@ -7361,6 +7391,7 @@ function renderModules(state) {
           <p class="lead">${getModuleIntroText(module)}</p>
         </div>
         <div class="module-meta">
+          ${renderTeacherQuestionQuickAction(module)}
           <div class="meta-box">
             <span class="module-tag">${module.phase}</span>
             <p><strong>Zeitraum:</strong> ${module.era}</p>
@@ -7415,7 +7446,7 @@ function renderModules(state) {
           ${renderShortAnswerBox(module.task, "Aufgabe")}
         </section>
 
-        <section class="module-section">
+        <section id="${module.id}-teacher-question" class="module-section">
           <p class="section-kicker">5. Frag die Lehrperson</p>
           ${renderTeacherQuestionSection(module)}
         </section>
