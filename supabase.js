@@ -9,6 +9,8 @@
   let client = null;
   let session = null;
   let profile = null;
+  let ownQuestions = [];
+  let teacherQuestions = [];
 
   function isConfigured() {
     return Boolean(config.url && config.anonKey);
@@ -31,6 +33,18 @@
 
   function getCurrentState() {
     return appApi?.loadState ? appApi.loadState() : {};
+  }
+
+  function dispatchQuestionsUpdated() {
+    window.dispatchEvent(new Event("gesch-questions-updated"));
+  }
+
+  function getStatus() {
+    return {
+      configured: isConfigured(),
+      loggedIn: Boolean(session?.user),
+      teacherRole: profile?.role === "teacher"
+    };
   }
 
   function renderUnconfigured() {
@@ -293,6 +307,33 @@
     }
   }
 
+  async function loadOwnQuestions() {
+    if (!client || !session?.user) {
+      ownQuestions = [];
+      dispatchQuestionsUpdated();
+      return [];
+    }
+
+    const { data, error } = await client
+      .from("student_questions")
+      .select("id, module_id, module_title, question_text, status, answer_text, created_at, updated_at, answered_at")
+      .eq("user_id", session.user.id)
+      .eq("course_id", courseId)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    ownQuestions = data || [];
+    dispatchQuestionsUpdated();
+    return ownQuestions;
+  }
+
+  function getOwnQuestionsForModule(moduleId) {
+    return ownQuestions.filter((item) => item.module_id === moduleId);
+  }
+
   async function syncState(state) {
     if (!client || !session?.user || !appApi || isTeacherPage()) {
       return;
@@ -327,6 +368,100 @@
     if (error) {
       throw error;
     }
+  }
+
+  async function submitTeacherQuestion({ moduleId, moduleTitle, questionText }) {
+    if (!client || !session?.user) {
+      throw new Error("Bitte melde dich zuerst im Cloud-Sync an.");
+    }
+
+    const trimmedQuestion = String(questionText || "").trim();
+    if (!trimmedQuestion) {
+      throw new Error("Bitte formuliere zuerst eine konkrete Frage.");
+    }
+
+    const state = getCurrentState();
+    await refreshProfile(state);
+
+    const payload = {
+      user_id: session.user.id,
+      course_id: courseId,
+      learner_name: profile?.full_name || state.learnerName || session.user.email || "Unbekannt",
+      class_name: profile?.class_name || state.className || null,
+      module_id: moduleId,
+      module_title: moduleTitle,
+      question_text: trimmedQuestion,
+      status: "offen"
+    };
+
+    const { error } = await client
+      .from("student_questions")
+      .insert(payload);
+
+    if (error) {
+      throw error;
+    }
+
+    await loadOwnQuestions();
+    return true;
+  }
+
+  async function loadTeacherQuestions() {
+    if (!client || !session?.user || profile?.role !== "teacher") {
+      teacherQuestions = [];
+      dispatchQuestionsUpdated();
+      return [];
+    }
+
+    const { data, error } = await client
+      .from("student_questions")
+      .select("id, user_id, learner_name, class_name, module_id, module_title, question_text, status, answer_text, created_at, updated_at, answered_at")
+      .eq("course_id", courseId)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    teacherQuestions = data || [];
+    dispatchQuestionsUpdated();
+    return teacherQuestions;
+  }
+
+  function getTeacherQuestions() {
+    return teacherQuestions.slice();
+  }
+
+  async function answerTeacherQuestion(questionId, answerText, status = "beantwortet") {
+    if (!client || !session?.user || profile?.role !== "teacher") {
+      throw new Error("Nur Lehrpersonen können Antworten speichern.");
+    }
+
+    const trimmedAnswer = String(answerText || "").trim();
+    if (!trimmedAnswer) {
+      throw new Error("Bitte trage zuerst eine Antwort ein.");
+    }
+
+    const nextStatus = ["offen", "in_bearbeitung", "beantwortet"].includes(status) ? status : "beantwortet";
+
+    const payload = {
+      answer_text: trimmedAnswer,
+      status: nextStatus,
+      teacher_id: session.user.id,
+      answered_at: nextStatus === "beantwortet" ? new Date().toISOString() : null
+    };
+
+    const { error } = await client
+      .from("student_questions")
+      .update(payload)
+      .eq("id", questionId);
+
+    if (error) {
+      throw error;
+    }
+
+    await loadTeacherQuestions();
+    return true;
   }
 
   async function refreshTeacherDashboardFromCloud() {
@@ -364,6 +499,7 @@
 
     localStorage.setItem(teacherDashboardKey, JSON.stringify(snapshots));
     window.dispatchEvent(new Event("gesch-dashboard-updated"));
+    await loadTeacherQuestions();
     setFeedback("teacher-cloud-feedback", `Cloud-Daten geladen: ${data?.length || 0} Lernstände.`, false);
   }
 
@@ -390,6 +526,7 @@
     document.querySelector("[data-cloud-load]")?.addEventListener("click", async () => {
       try {
         await loadOwnCloudState(true);
+        await loadOwnQuestions();
         setFeedback("cloud-sync-feedback", "Cloud-Stand geladen.", false);
       } catch (error) {
         setFeedback("cloud-sync-feedback", error.message, true);
@@ -426,7 +563,13 @@
     session = nextSession || null;
     if (!session?.user) {
       profile = null;
+      ownQuestions = [];
+      teacherQuestions = [];
       renderPanels();
+      dispatchQuestionsUpdated();
+      if (appApi?.renderApp) {
+        appApi.renderApp(getCurrentState());
+      }
       return;
     }
 
@@ -434,14 +577,21 @@
       await refreshProfile(getCurrentState());
       if (!isTeacherPage()) {
         await loadOwnCloudState(false);
+        await loadOwnQuestions();
       } else if (profile?.role === "teacher") {
         await refreshTeacherDashboardFromCloud();
+      } else {
+        teacherQuestions = [];
+        dispatchQuestionsUpdated();
       }
     } catch (error) {
       console.error(error);
     }
 
     renderPanels();
+    if (appApi?.renderApp) {
+      appApi.renderApp(getCurrentState());
+    }
   }
 
   async function init() {
@@ -465,7 +615,13 @@
 
   window.GESCHICHTE_SUPABASE = {
     syncState,
-    refreshTeacherDashboardFromCloud
+    refreshTeacherDashboardFromCloud,
+    getStatus,
+    getOwnQuestionsForModule,
+    submitTeacherQuestion,
+    getTeacherQuestions,
+    answerTeacherQuestion,
+    loadTeacherQuestions
   };
 
   document.addEventListener("DOMContentLoaded", () => {

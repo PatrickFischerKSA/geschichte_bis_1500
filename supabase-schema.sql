@@ -27,6 +27,23 @@ create table if not exists public.learner_progress (
   primary key (user_id, course_id)
 );
 
+create table if not exists public.student_questions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references public.profiles(id) on delete cascade,
+  course_id text not null,
+  learner_name text not null,
+  class_name text,
+  module_id text not null,
+  module_title text not null,
+  question_text text not null,
+  status text not null default 'offen' check (status in ('offen', 'in_bearbeitung', 'beantwortet')),
+  answer_text text,
+  teacher_id uuid references public.profiles(id) on delete set null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  answered_at timestamptz
+);
+
 create or replace function public.handle_updated_at()
 returns trigger
 language plpgsql
@@ -49,8 +66,15 @@ before update on public.learner_progress
 for each row
 execute function public.handle_updated_at();
 
+drop trigger if exists student_questions_updated_at on public.student_questions;
+create trigger student_questions_updated_at
+before update on public.student_questions
+for each row
+execute function public.handle_updated_at();
+
 alter table public.profiles enable row level security;
 alter table public.learner_progress enable row level security;
+alter table public.student_questions enable row level security;
 
 create or replace function public.is_teacher()
 returns boolean
@@ -107,6 +131,25 @@ on public.learner_progress
 for update
 using (auth.uid() = user_id)
 with check (auth.uid() = user_id);
+
+drop policy if exists "student_questions_select_own_or_teacher" on public.student_questions;
+create policy "student_questions_select_own_or_teacher"
+on public.student_questions
+for select
+using (auth.uid() = user_id or public.is_teacher());
+
+drop policy if exists "student_questions_insert_own" on public.student_questions;
+create policy "student_questions_insert_own"
+on public.student_questions
+for insert
+with check (auth.uid() = user_id);
+
+drop policy if exists "student_questions_update_own_or_teacher" on public.student_questions;
+create policy "student_questions_update_own_or_teacher"
+on public.student_questions
+for update
+using (auth.uid() = user_id or public.is_teacher())
+with check (auth.uid() = user_id or public.is_teacher());
 
 -- Nach der ersten Anmeldung die Lehrperson hochstufen, z. B.:
 -- update public.profiles set role = 'teacher' where email = 'deine.mail@schule.ch';

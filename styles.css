@@ -2239,6 +2239,67 @@ p {
   gap: 12px;
 }
 
+.teacher-question-box {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 252, 248, 0.9);
+}
+
+.teacher-question-box textarea,
+.teacher-question-reply textarea,
+.teacher-question-reply select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(30, 44, 52, 0.14);
+  background: #fffdf9;
+  color: var(--text);
+}
+
+.teacher-question-box textarea,
+.teacher-question-reply textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.teacher-question-thread-list,
+.teacher-question-list {
+  display: grid;
+  gap: 14px;
+}
+
+.teacher-question-thread,
+.teacher-question-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.teacher-question-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.teacher-question-answer,
+.teacher-question-reply {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.teacher-question-panel {
+  display: grid;
+  gap: 14px;
+}
+
 .dashboard-row {
   grid-template-columns: 1.1fr 0.7fr 1fr 1fr 1fr 0.9fr;
 }

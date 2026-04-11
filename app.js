@@ -7095,6 +7095,101 @@ function renderFollowUpContentChecks(module) {
   `;
 }
 
+function formatQuestionDate(isoString) {
+  if (!isoString) {
+    return "";
+  }
+
+  const value = new Date(isoString);
+  if (Number.isNaN(value.getTime())) {
+    return "";
+  }
+
+  return value.toLocaleString("de-CH", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+
+function renderTeacherQuestionSection(module) {
+  if (isTeacherMode()) {
+    return `
+      <div class="teacher-question-box teacher-question-box--teacher">
+        <p><strong>Frag die Lehrperson</strong></p>
+        <p>Die eingehenden Fragen zu diesem Stoff erscheinen gesammelt im Lehrpersonen-Dashboard.</p>
+      </div>
+    `;
+  }
+
+  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false };
+  const questions = cloudApi?.getOwnQuestionsForModule ? cloudApi.getOwnQuestionsForModule(module.id) : [];
+
+  const listMarkup = questions.length
+    ? `
+      <div class="teacher-question-thread-list">
+        ${questions
+          .map(
+            (item) => `
+              <article class="teacher-question-thread">
+                <div class="teacher-question-meta">
+                  <span class="status-badge ${item.status === "beantwortet" ? "ready" : item.status === "in_bearbeitung" ? "open" : "locked"}">${item.status === "beantwortet" ? "beantwortet" : item.status === "in_bearbeitung" ? "in Bearbeitung" : "offen"}</span>
+                  <span class="teacher-muted">${formatQuestionDate(item.created_at)}</span>
+                </div>
+                <p><strong>Deine Frage:</strong> ${cleanPromptText(item.question_text)}</p>
+                ${
+                  item.answer_text
+                    ? `
+                      <div class="teacher-question-answer">
+                        <p><strong>Antwort der Lehrperson:</strong> ${cleanPromptText(item.answer_text)}</p>
+                        ${item.answered_at ? `<p class="teacher-muted">${formatQuestionDate(item.answered_at)}</p>` : ""}
+                      </div>
+                    `
+                    : `<p class="teacher-muted">Noch keine Antwort eingegangen.</p>`
+                }
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    `
+    : `<p class="teacher-muted">Hier erscheinen offene und beantwortete Fragen zu diesem Thema.</p>`;
+
+  if (!status.configured) {
+    return `
+      <div class="teacher-question-box">
+        <p><strong>Frag die Lehrperson</strong></p>
+        <p>Die Fragefunktion wird sichtbar, sobald der Cloud-Sync vollständig eingerichtet ist.</p>
+      </div>
+    `;
+  }
+
+  if (!status.loggedIn) {
+    return `
+      <div class="teacher-question-box">
+        <p><strong>Frag die Lehrperson</strong></p>
+        <p>Melde dich zuerst im Cloud-Sync an. Danach kannst du zu jedem Modul konkrete Fachfragen abschicken.</p>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="teacher-question-box" data-teacher-question-module="${module.id}">
+      <p><strong>Frag die Lehrperson</strong></p>
+      <p>Stelle hier eine konkrete inhaltliche Frage zu ${module.title}. Sie erscheint direkt im Lehrpersonen-Dashboard.</p>
+      <textarea data-teacher-question-input="${module.id}" placeholder="Formuliere eine konkrete Fachfrage, z. B. zu einer Entwicklung, einem Bruch oder einer Deutung."></textarea>
+      <div class="task-actions">
+        <button class="btn primary" type="button" data-teacher-question-send="${module.id}">Frag die Lehrperson</button>
+      </div>
+      <div class="feedback" data-teacher-question-feedback="${module.id}"></div>
+      ${listMarkup}
+    </div>
+  `;
+}
+
 function renderContentCheck(module, state) {
   const check = contentChecks[module.id];
   const storedFeedback = state[`${module.id}-content-feedback`];
@@ -7321,27 +7416,32 @@ function renderModules(state) {
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">5. Historischer Zusammenhang</p>
+          <p class="section-kicker">5. Frag die Lehrperson</p>
+          ${renderTeacherQuestionSection(module)}
+        </section>
+
+        <section class="module-section">
+          <p class="section-kicker">6. Historischer Zusammenhang</p>
           <p>${moduleSupports[module.id]?.connection || cleanStudentText(module.deepening)}</p>
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">6. Kurze Sicherung</p>
+          <p class="section-kicker">7. Kurze Sicherung</p>
           ${renderQuickCheck(module)}
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">7. Merkkasten</p>
+          <p class="section-kicker">8. Merkkasten</p>
           <div class="takeaway-list">${renderTakeaway(module.takeaway)}</div>
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">8. Transferfrage</p>
+          <p class="section-kicker">9. Transferfrage</p>
           ${renderShortAnswerBox(module.transfer, "Transferfrage")}
         </section>
 
         <section class="module-section">
-          <p class="section-kicker">9. Freischaltung des nächsten Moduls</p>
+          <p class="section-kicker">10. Freischaltung des nächsten Moduls</p>
           ${renderContentCheck(module, state)}
         </section>
       </div>
@@ -8287,11 +8387,41 @@ function renderApp(state) {
   bindSelftests(state);
   bindContentChecks(state);
   bindSourceMicroChecks(state);
+  bindTeacherQuestionButtons();
   bindRepetitionMode(state);
   bindWelcomeOverlay(state);
   bindThinkerPanel();
   bindCompletionActions();
   updateProgress(state);
+}
+
+function bindTeacherQuestionButtons() {
+  document.querySelectorAll("[data-teacher-question-send]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const moduleId = button.dataset.teacherQuestionSend;
+      const module = modules.find((entry) => entry.id === moduleId);
+      const field = document.querySelector(`[data-teacher-question-input="${moduleId}"]`);
+      const feedbackBox = document.querySelector(`[data-teacher-question-feedback="${moduleId}"]`);
+      const cloudApi = window.GESCHICHTE_SUPABASE;
+
+      if (!module || !field || !feedbackBox || !cloudApi?.submitTeacherQuestion) {
+        return;
+      }
+
+      try {
+        await cloudApi.submitTeacherQuestion({
+          moduleId: module.id,
+          moduleTitle: module.title,
+          questionText: field.value
+        });
+        feedbackBox.innerHTML = `<div class="feedback is-visible good"><strong>Frage gesendet.</strong><p>Die Lehrperson sieht deine Frage jetzt im Dashboard.</p></div>`;
+        field.value = "";
+        renderApp(loadState());
+      } catch (error) {
+        feedbackBox.innerHTML = `<div class="feedback is-visible low"><strong>Frage konnte nicht gesendet werden.</strong><p>${cleanPromptText(error.message)}</p></div>`;
+      }
+    });
+  });
 }
 
 function replaceState(nextState, options = {}) {

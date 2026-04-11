@@ -7,6 +7,15 @@ const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 
+function escapeTeacherHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function loadTeacherRoster() {
   try {
     return JSON.parse(localStorage.getItem(TEACHER_ROSTER_KEY) || "[]");
@@ -107,8 +116,9 @@ function renderTeacherDashboard() {
   const rosterInput = document.getElementById("teacher-roster-input");
   const summary = document.getElementById("teacher-dashboard-summary");
   const table = document.getElementById("teacher-dashboard-table");
+  const questionPanel = document.getElementById("teacher-question-panel");
 
-  if (!rosterInput || !summary || !table) {
+  if (!rosterInput || !summary || !table || !questionPanel) {
     return;
   }
 
@@ -155,6 +165,7 @@ function renderTeacherDashboard() {
         <p>Trage oben Namen ein oder warte auf erste synchronisierte Lernstände.</p>
       </div>
     `;
+    renderTeacherQuestionPanel(questionPanel);
     return;
   }
 
@@ -253,6 +264,87 @@ function renderTeacherDashboard() {
         ${matrixHeader}
       </div>
       ${matrixRows}
+    </div>
+  `;
+
+  renderTeacherQuestionPanel(questionPanel);
+}
+
+function renderTeacherQuestionPanel(container) {
+  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false, teacherRole: false };
+  const questions = cloudApi?.getTeacherQuestions ? cloudApi.getTeacherQuestions() : [];
+
+  if (!status.configured) {
+    container.innerHTML = `
+      <div class="summary-item">
+        <span class="fact-label">Fragen an Lehrpersonen</span>
+        <p>Die Fragefunktion wird sichtbar, sobald Supabase vollständig eingerichtet ist.</p>
+      </div>
+    `;
+    return;
+  }
+
+  if (!status.loggedIn || !status.teacherRole) {
+    container.innerHTML = `
+      <div class="summary-item">
+        <span class="fact-label">Fragen an Lehrpersonen</span>
+        <p>Melde dich mit einem Lehrkonto an, damit eingehende Fragen geladen und beantwortet werden können.</p>
+      </div>
+    `;
+    return;
+  }
+
+  if (!questions.length) {
+    container.innerHTML = `
+      <div class="summary-item">
+        <span class="fact-label">Fragen an Lehrpersonen</span>
+        <strong>Noch keine Fragen eingegangen</strong>
+        <p>Sobald Schüler*innen über „Frag die Lehrperson“ schreiben, erscheinen die Einträge hier.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <p class="panel-kicker">Fragen an Lehrpersonen</p>
+    <h2>Offene und beantwortete Stofffragen</h2>
+    <div class="teacher-question-list">
+      ${questions
+        .map(
+          (item) => `
+            <article class="teacher-question-card">
+              <div class="teacher-question-meta">
+                <div>
+                  <strong>${escapeTeacherHtml(item.learner_name)}</strong>
+                  <p class="teacher-muted">${escapeTeacherHtml(item.class_name || "ohne Klasse")} · ${escapeTeacherHtml(item.module_title)}</p>
+                </div>
+                <span class="status-badge ${item.status === "beantwortet" ? "ready" : item.status === "in_bearbeitung" ? "open" : "locked"}">${item.status === "beantwortet" ? "beantwortet" : item.status === "in_bearbeitung" ? "in Bearbeitung" : "offen"}</span>
+              </div>
+              <p><strong>Frage:</strong> ${escapeTeacherHtml(item.question_text)}</p>
+              <p class="teacher-muted">Eingegangen: ${formatTeacherDate(item.created_at)}</p>
+              <div class="teacher-question-reply">
+                <label class="teacher-roster-field">
+                  <strong>Antwort</strong>
+                  <textarea data-question-answer="${item.id}" placeholder="Formuliere hier deine Antwort.">${escapeTeacherHtml(item.answer_text || "")}</textarea>
+                </label>
+                <label class="teacher-roster-field">
+                  <strong>Status</strong>
+                  <select data-question-status="${item.id}">
+                    <option value="offen" ${item.status === "offen" ? "selected" : ""}>offen</option>
+                    <option value="in_bearbeitung" ${item.status === "in_bearbeitung" ? "selected" : ""}>in Bearbeitung</option>
+                    <option value="beantwortet" ${item.status === "beantwortet" ? "selected" : ""}>beantwortet</option>
+                  </select>
+                </label>
+                <div class="teacher-access-actions">
+                  <button class="btn primary" type="button" data-save-question-answer="${item.id}">Antwort speichern</button>
+                </div>
+                ${item.answer_text ? `<p class="teacher-muted">Letzte Antwort: ${formatTeacherDate(item.answered_at || item.updated_at)}</p>` : ""}
+              </div>
+            </article>
+          `
+        )
+        .join("")}
     </div>
   `;
 }
@@ -445,11 +537,29 @@ function bindTeacherPage() {
     if (target.matches("[data-clear-preview]")) {
       setTeacherDashboardFeedback("Lehrpersonen-Vorschau wird zurückgesetzt …", false);
       clearTeacherPreviewState();
+      return;
+    }
+
+    if (target.matches("[data-save-question-answer]")) {
+      const questionId = target.dataset.saveQuestionAnswer;
+      const answerField = document.querySelector(`[data-question-answer="${questionId}"]`);
+      const statusField = document.querySelector(`[data-question-status="${questionId}"]`);
+
+      window.GESCHICHTE_SUPABASE?.answerTeacherQuestion(questionId, answerField?.value || "", statusField?.value || "beantwortet")
+        .then(() => {
+          renderTeacherDashboard();
+          setTeacherDashboardFeedback("Antwort gespeichert.", false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setTeacherDashboardFeedback(error.message, true);
+        });
     }
   });
 
   window.addEventListener("storage", renderTeacherDashboard);
   window.addEventListener("gesch-dashboard-updated", renderTeacherDashboard);
+  window.addEventListener("gesch-questions-updated", renderTeacherDashboard);
 
   initTeacherAuthState().catch((error) => {
     console.error(error);
