@@ -308,7 +308,7 @@ const masterTimeline = [
     time: "Vor 10'000 v. Chr.",
     title: "Jäger und Sammler als Normalform",
     body:
-      "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Unterkünfte, Nahrung, Wege, Jahreszeitenwissen und mündliche Überlieferung sichern das Überleben ohne feste Speicher und Staaten.",
+      "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Unterkünfte, Nahrung, Wege, Jahreszeitenwissen und mündliche Überlieferung sichern das Überleben ohne feste Speicher und Staaten. Graeber und Wengrow betonen zusätzlich, dass solche Gruppen sich saisonal sehr verschieden ordnen konnten und politisch nicht auf eine einzige Form festgelegt waren.",
     modules: ["modul-4"]
   },
   {
@@ -316,7 +316,7 @@ const masterTimeline = [
     time: "ab ca. 10'000 v. Chr.",
     title: "Landwirtschaft und Sesshaftigkeit",
     body:
-      "Ackerbau, Viehzucht, Vorrat und feste Häuser verändern Alltag und Sozialordnung. Aus Planung, Arbeit, Besitz und Ertragsrisiko entstehen Dörfer, Überschüsse und neue Ungleichheiten.",
+      "Ackerbau, Viehzucht, Vorrat und feste Häuser verändern Alltag und Sozialordnung. Aus Planung, Arbeit, Besitz und Ertragsrisiko entstehen Dörfer, Überschüsse und neue Ungleichheiten. Zugleich ist der Übergang nicht überall gleich: Landwirtschaft kann mit älteren Lebensweisen kombiniert, begrenzt oder unterschiedlich politisch organisiert werden.",
     modules: ["modul-5"]
   },
   {
@@ -324,7 +324,7 @@ const masterTimeline = [
     time: "ab ca. 3500–3000 v. Chr.",
     title: "Schrift, Listen und frühe Staaten",
     body:
-      "Tontafeln, Hieroglyphen, Speicher und Abgaben zeigen, dass frühe Herrschaft auf Zählen, Schreiben und Verwalten beruht. Hochkulturen stabilisieren Macht nicht nur militärisch, sondern durch Listen, Beamte, Kalender und religiöse Ordnung.",
+      "Tontafeln, Hieroglyphen, Speicher und Abgaben zeigen, dass frühe Herrschaft auf Zählen, Schreiben und Verwalten beruht. Hochkulturen stabilisieren Macht nicht nur militärisch, sondern durch Listen, Beamte, Kalender und religiöse Ordnung. Graeber und Wengrow setzen dagegen, dass große Siedlungen und dichte Besiedlung nicht automatisch immer in derselben Herrschaftsform enden.",
     modules: ["modul-6"]
   },
   {
@@ -404,7 +404,7 @@ const masterTimeline = [
     time: "um 1500 und darüber hinaus",
     title: "Langzeitfolgen und Anthropozän",
     body:
-      "Der Schluss verbindet alle Linien: Sprache, Sesshaftigkeit, Staat, Geld, Religion und globale Vernetzung wirken weit über 1500 hinaus und führen in die Frage nach den langfristigen Folgen menschlicher Eingriffe.",
+      "Der Schluss verbindet alle Linien: Sprache, Sesshaftigkeit, Staat, Geld, Religion und globale Vernetzung wirken weit über 1500 hinaus und führen in die Frage nach den langfristigen Folgen menschlicher Eingriffe. Harari liest diese Linie stärker als Verdichtung großer Netze, Graeber und Wengrow stärker als offenes Feld verschiedener, teils verworfener Möglichkeiten.",
     modules: ["modul-1", "modul-12"]
   }
 ];
@@ -740,7 +740,8 @@ const modules = [
       "Bevor Menschen sesshaft wurden, lebten sie sehr lange in kleineren, mobilen Gruppen. Sie zogen nicht planlos umher, sondern bewegten sich oft nach Jahreszeiten, Tierwanderungen, Wasserstellen oder Pflanzenvorkommen. Diese Lebensweise verlangte ständige Beobachtung der Umwelt und eine gute Abstimmung innerhalb der Gruppe.",
       "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen funktionierten andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Der Film 1491 nennt dafür sehr konkrete Beispiele: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Solche Behausungen waren auf Klima, Mobilität und Lebensweise abgestimmt.",
       "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Wissen über Jagd, Nahrung oder sichere Routen wird erzählt, gezeigt und nachgeahmt. Gerade deshalb konnten mobile Lebensweisen sehr genau organisiert sein. Ohne dieses dichte Umweltwissen war Bewegung über große Räume gar nicht möglich.",
-      "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging."
+      "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging.",
+      "Graeber und Wengrow setzen an diesem Punkt einen anderen Akzent als Harari. Sie bestreiten, dass die Vorzeit hauptsächlich aus kleinen, immer ähnlichen Gruppen bestand, aus denen erst sehr viel später komplexe Gesellschaften hervorgingen. Ihrer Deutung nach konnten mobile Gruppen je nach Jahreszeit, Anlass und Ort ganz unterschiedliche politische Formen annehmen. Manche versammelten sich zeitweise in großen Siedlungen, errichteten Monumente oder wechselten bewusst zwischen strengeren und gleicheren Ordnungen. Vor Landwirtschaft gab es also nicht nur Anpassung, sondern bereits politische Wahlmöglichkeiten."
     ],
     sources: [
       {
@@ -766,10 +767,17 @@ const modules = [
           "Der Nutzerfilm ergänzt das Modul um eine eigene Filmgrundlage zu Jagd, Sammeln, Mobilität und Umweltwissen.",
         didacticUse:
           "Die Ressource soll Jäger-und-Sammler-Gesellschaften als eigenständige Lebensform direkt absichern."
+      },
+      {
+        title: "Saisonale Freiheit und politische Wahl",
+        extracted:
+          "Graeber und Wengrow argumentieren, dass frühe mobile Gesellschaften nicht dauerhaft in einer einzigen sozialen Form festlagen. Sie verweisen auf saisonale Wechsel, große Versammlungen, Monumente und bewusst veränderte politische Ordnungen.",
+        didacticUse:
+          "Die Gegenposition schärft die Frage, ob Vorzeit nur aus kleinen gleichartigen Gruppen bestand oder ob Menschen schon sehr früh verschiedene soziale Modelle ausprobierten."
       }
     ],
     sourcePrompt:
-      "Arbeite an Behausungen, Jagdformen und mündlicher Weitergabe heraus, weshalb Mobilität keine Rückständigkeit, sondern eine eigene Form historischer Kompetenz ist.",
+      "Arbeite an Behausungen, Jagdformen, saisonalen Wechseln und mündlicher Weitergabe heraus, weshalb Mobilität keine Rückständigkeit, sondern eine eigene Form historischer Kompetenz und politischer Gestaltung ist.",
     task: {
       id: "m4-task",
       question:
@@ -818,14 +826,15 @@ const modules = [
     transfer: {
       id: "m4-transfer",
       question:
-        "Warum ist mündlich überliefertes Wissen in mobilen Gesellschaften besonders wichtig?",
+        "Warum ist mündlich überliefertes Wissen in mobilen Gesellschaften besonders wichtig, wenn Gruppen sich je nach Jahreszeit neu ordnen müssen?",
       placeholder: "Denke an Gedächtnis, Orientierung, Jahreszeiten und fehlende Archive.",
       sampleAnswer:
-        "Mündlich überliefertes Wissen ist in mobilen Gesellschaften zentral, weil es Orientierung, Jagdmethoden, Jahreszeitenwissen, Gefahrenorte und soziale Regeln sichert. Wo es kaum feste Archive oder Schrift gibt, wird Erinnerung gemeinschaftlich getragen. Erzählen ist dort eine Überlebenstechnik.",
+        "Mündlich überliefertes Wissen ist in mobilen Gesellschaften zentral, weil es Orientierung, Jagdmethoden, Jahreszeitenwissen, Gefahrenorte und soziale Regeln sichert. Wo es kaum feste Archive oder Schrift gibt, wird Erinnerung gemeinschaftlich getragen. Wenn Gruppen sich saisonal sammeln, trennen oder anders ordnen, müssen Regeln und Erfahrungen besonders verlässlich weitergegeben werden. Erzählen ist dort nicht nur Kultur, sondern eine Überlebenstechnik.",
       criteria: [
         { label: "fehlende feste Archive", keywords: ["keine schrift", "kein archiv", "mündlich"] },
         { label: "praktisches Wissen", keywords: ["orientierung", "jagd", "jahreszeiten", "gefahren", "wege"] },
-        { label: "gemeinschaftliche Erinnerung", keywords: ["gemeinschaft", "erinnerung", "erzählen", "weitergabe"] }
+        { label: "gemeinschaftliche Erinnerung", keywords: ["gemeinschaft", "erinnerung", "erzählen", "weitergabe"] },
+        { label: "saisonale Neuordnung erwähnt", keywords: ["jahreszeit", "saisonal", "neu ordnen", "wechsel"] }
       ]
     }
   },
@@ -847,7 +856,8 @@ const modules = [
       "Mit Landwirtschaft verändert sich das Leben tiefgreifend. Menschen bauen nun gezielt Pflanzen an, halten Tiere, legen Vorräte an und bleiben länger an einem Ort. Dadurch entstehen feste Häuser, Dörfer und eine engere Bindung an Boden, Wasser und Jahreszeiten. Aus Bewegung wird stärkeres Bleiben, aus flexibler Nahrungssuche wird planbare, aber auch riskante Erzeugung.",
       "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in größeren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
       "Aber derselbe Wandel hat auch einen Preis. Wer von wenigen Pflanzen oder Tierarten lebt, wird von Ernten, Wetter und Krankheiten stärker abhängig. Harte körperliche Arbeit nimmt oft zu. Besitz, Felder und Vorräte können Ungleichheiten fördern. Aus gemeinsamer Nutzung entstehen leichter Konflikte um Land, Wasser und Reichtum.",
-      "Der Film über die Pfahlbauer von Pfyn macht diesen Wandel konkret. Zwei Familien und zwei junge Männer leben dort vier Wochen wie vor 5700 Jahren. Sichtbar werden Hüttenbau, Steinbeile, Kolbenpfeile, Kleider, Essen, Feuerstellen und Gebrauchsgegenstände. Genau daran lässt sich Sesshaftigkeit ablesen: Häuser müssen instand gehalten, Werkzeuge hergestellt, Nahrung vorbereitet und Vorräte gesichert werden. Landwirtschaft ist deshalb kein bequemes Endziel, sondern ein Alltag aus Planung, Handarbeit und Abhängigkeit."
+      "Der Film über die Pfahlbauer von Pfyn macht diesen Wandel konkret. Zwei Familien und zwei junge Männer leben dort vier Wochen wie vor 5700 Jahren. Sichtbar werden Hüttenbau, Steinbeile, Kolbenpfeile, Kleider, Essen, Feuerstellen und Gebrauchsgegenstände. Genau daran lässt sich Sesshaftigkeit ablesen: Häuser müssen instand gehalten, Werkzeuge hergestellt, Nahrung vorbereitet und Vorräte gesichert werden. Landwirtschaft ist deshalb kein bequemes Endziel, sondern ein Alltag aus Planung, Handarbeit und Abhängigkeit.",
+      "Graeber und Wengrow widersprechen hier der einfachen Gleichung: zuerst Landwirtschaft, dann Überschuss, dann Eliten und Staat. Sie bestreiten nicht, dass Ackerbau vieles verändert, aber sie betonen, dass Menschen lange Mischformen aus Sammeln, Jagen, Gartenbau und Feldbau praktizierten. Einige Gruppen weiteten Landwirtschaft aus, andere begrenzten sie oder gaben bestimmte Formen wieder auf. Der Übergang wird dadurch nicht zu einer einzigen Stufenfolge, sondern zu einem offenen historischen Feld mit unterschiedlichen Entscheidungen und Folgen."
     ],
     sources: [
       {
@@ -873,10 +883,17 @@ const modules = [
           "Der Nutzerfilm ergänzt das Modul um die zugespitzte Frage, ob die neolithische Revolution als Fortschritt, Belastung oder Fehlentwicklung verstanden werden sollte.",
         didacticUse:
           "Die Ressource verschärft die Urteilsfrage des Moduls und zwingt zu einer klar begründeten Abwägung."
+      },
+      {
+        title: "Landwirtschaft ohne Zwangslogik",
+        extracted:
+          "Graeber und Wengrow wenden sich gegen die Erzählung, Getreidebau habe zwangsläufig in Steuern, Eliten und Staaten gemündet. Ihrer Deutung nach probierten Menschen verschiedene Formen von Landwirtschaft aus, kombinierten sie mit älteren Lebensweisen oder veränderten sie wieder.",
+        didacticUse:
+          "Die Gegenposition macht sichtbar, dass Landwirtschaft kein automatisches politisches Ergebnis produziert, sondern sehr verschiedene Ordnungen ermöglichen kann."
       }
     ],
     sourcePrompt:
-      "Arbeite am Beispiel der Pfahlbauer heraus, wie sich Wohnen, Arbeiten, Essen und Zeitrhythmus durch Sesshaftigkeit verändern.",
+      "Arbeite am Beispiel der Pfahlbauer und der Gegenposition zu Harari heraus, wie sich Wohnen, Arbeiten, Essen und Zeitrhythmus durch Sesshaftigkeit verändern und warum dieser Wandel keine historische Einbahnstraße sein muss.",
     task: {
       id: "m5-task",
       question:
@@ -925,14 +942,14 @@ const modules = [
     transfer: {
       id: "m5-transfer",
       question:
-        "Du bist Teil einer Gruppe an einem Seeufer. Solltet ihr sesshaft werden? Formuliere eine Empfehlung mit Chancen und Risiken.",
-      placeholder: "Gewichte Versorgung, Sicherheit, Arbeit und Abhängigkeit gegeneinander ab.",
+        "Warum lässt sich der Übergang zu Landwirtschaft nicht als einfache Einbahnstraße erzählen? Verbinde Chancen, Belastungen und die Möglichkeit anderer Entscheidungen.",
+      placeholder: "Erkläre, warum Landwirtschaft vieles verändert, aber nicht automatisch immer zum gleichen Ergebnis führt.",
       sampleAnswer:
-        "Ich würde Sesshaftigkeit vorsichtig empfehlen, wenn der Ort genügend Wasser, Boden und Schutz bietet. Feste Häuser und Vorräte erhöhen Versorgungssicherheit und können das Zusammenleben stabilisieren. Gleichzeitig entstehen mehr Arbeit, stärkere Abhängigkeit von Ernten und neue Konflikte um Besitz. Die Entscheidung ist also nur sinnvoll, wenn die Gruppe Speicher, Zusammenarbeit und Krisenvorsorge organisiert.",
+        "Der Übergang zu Landwirtschaft ist keine Einbahnstraße, weil Menschen neue Anbauformen zunächst erproben, mit Jagd und Sammeln kombinieren oder später wieder verändern konnten. Landwirtschaft brachte Vorräte, größere Siedlungen und Arbeitsteilung hervor, aber auch mehr Arbeit, stärkere Abhängigkeit von Ernten und neue Konflikte um Besitz. Deshalb führt Ackerbau nicht automatisch zu einer einzigen Gesellschaftsform. Historisch gab es Mischformen, Brüche und bewusste Entscheidungen.",
       criteria: [
-        { label: "Chancen genannt", keywords: ["vorrat", "sicherheit", "häuser", "versorgung"] },
+        { label: "Chancen genannt", keywords: ["vorrat", "sicherheit", "häuser", "versorgung", "arbeitsteilung"] },
         { label: "Risiken genannt", keywords: ["abhängig", "arbeit", "konflikt", "ernte", "besitz"] },
-        { label: "begründete Empfehlung", keywords: ["empfehlen", "nur wenn", "abwägen", "organisieren"] }
+        { label: "kein Automatismus behauptet", keywords: ["mischform", "kombinieren", "nicht automatisch", "anders", "verändern"] }
       ]
     }
   },
@@ -956,6 +973,7 @@ const modules = [
       "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
       "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil überschwemmt das Land regelmäßig, hinterlässt fruchtbaren Schlamm und macht Landwirtschaft über lange Zeit planbar. Dadurch können Überschüsse entstehen, die gespeichert, verteilt und besteuert werden. Beamtinnen und Beamte erfassen Abgaben, organisieren Bauarbeiten und halten den Staat zusammen. Hieroglyphen sichern diese Ordnung schriftlich. Der Pharao steht politisch und religiös an der Spitze; mit der Vorstellung der Maat, also von richtiger göttlicher Ordnung, Gerechtigkeit und Gleichgewicht, wird Herrschaft zusätzlich begründet.",
       "Auch Tempel, Gräber und Pyramiden gehören in diesen Zusammenhang. Sie sind nicht bloß große Bauwerke, sondern Ausdruck einer Welt, in der Herrschaft, Religion und Jenseitsvorstellungen eng verbunden sind. Wer in Ägypten baut, zählt, schreibt und opfert, stabilisiert nicht nur den Alltag, sondern eine ganze Weltordnung. Mesopotamien lässt sich dazu kurz als Gegenbild nennen: Dort entstehen zwischen Euphrat und Tigris eher mehrere konkurrierende Stadtstaaten, während Ägypten am Nil sehr früh zu einem langen, stärker zentralisierten Reich zusammenwächst.",
+      "Graeber und Wengrow setzen hier eine Gegenfrage: Muss große Besiedlung, Speicherwirtschaft und Koordination überhaupt zwangsläufig in Königtum, Paläste und starre Hierarchie münden? Sie verweisen auf große Orte wie Çatalhöyük oder Teotihuacan, an denen dichte Siedlung, Planung und Zusammenarbeit sichtbar sind, ohne dass daraus automatisch eine klassische Herrschaftspyramide folgt. Dadurch wird Ägypten als ein sehr wichtiger, aber nicht einziger Weg zu früher Komplexität lesbar.",
       "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also auch Speicher, Listen, Schreiber, Tempel, Abgaben, Jenseitsvorstellungen und die Organisation von Arbeit betrachten."
     ],
     sources: [
@@ -982,10 +1000,17 @@ const modules = [
           "Der Film ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung, Religion und frühen Staatsordnungen.",
         didacticUse:
           "Ägypten bleibt das Hauptbeispiel, wird aber in einen größeren Zusammenhang früher Hochkulturen eingeordnet."
+      },
+      {
+        title: "Städte ohne Könige?",
+        extracted:
+          "Graeber und Wengrow halten dagegen, dass dichte Siedlungen, Landwirtschaft und aufwendige Koordination nicht automatisch Paläste, Könige oder feste Klassen hervorbringen. Große Orte konnten lange ohne zentrale Herrschaft funktionieren oder Herrschaft zeitweise wieder abbauen.",
+        didacticUse:
+          "Die Gegenposition verhindert, dass Ägypten vorschnell als allgemeines Gesetz früher Staaten gelesen wird, und schärft den Blick für mehrere Wege politischer Verdichtung."
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, welche Bausteine Ägypten zu einer dauerhaften Herrschaftsordnung machen und worin es sich knapp von Mesopotamien unterscheidet.",
+      "Arbeite heraus, welche Bausteine Ägypten zu einer dauerhaften Herrschaftsordnung machen und warum große Siedlungen trotzdem nicht überall automatisch Königtum und feste Hierarchie hervorbringen mussten.",
     task: {
       id: "m6-task",
       question:
@@ -1034,16 +1059,16 @@ const modules = [
     transfer: {
       id: "m6-transfer",
       question:
-        "Warum konnte das Alte Ägypten über sehr lange Zeit stabil bleiben? Formuliere eine strukturgeschichtliche Antwort und ergänze einen knappen Vergleich mit Mesopotamien.",
-      placeholder: "Verbinde Nil, Verwaltung, Maat und Herrschaft; vergleiche Mesopotamien in einem Satz.",
+        "Warum ist Ägypten ein starkes Beispiel für frühe Staatlichkeit, aber kein Beweis dafür, dass jede große Siedlung automatisch im selben Muster endet?",
+      placeholder: "Verbinde Nil, Verwaltung, Maat und Herrschaft mit der Frage nach anderen Wegen politischer Verdichtung.",
       sampleAnswer:
-        "Ägypten konnte lange stabil bleiben, weil mehrere Faktoren zusammenwirkten. Der Nil schuf verlässliche landwirtschaftliche Grundlagen. Verwaltung und Beamtentum organisierten Abgaben, Arbeit und Versorgung. Hieroglyphenschrift half bei Ordnung und Tradierung. Hinzu kam mit Pharao und Maat eine religiös aufgeladene Herrschaft, die politische Macht symbolisch absicherte. Im Unterschied dazu war Mesopotamien stärker von mehreren konkurrierenden Stadtstaaten geprägt.",
+        "Ägypten ist ein starkes Beispiel für frühe Staatlichkeit, weil Nil, Überschüsse, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und Maat sehr eng zusammenwirken. Diese Verbindung erklärt die außergewöhnliche Stabilität des Reiches. Daraus folgt aber nicht, dass jede große Siedlung denselben Weg nehmen musste. Andere frühe Städte konnten dichter, kooperativer oder weniger zentralisiert organisiert sein. Mesopotamien zeigt schon im Vergleich mehrere konkurrierende Stadtstaaten statt eines so früh geschlossenen Flussreichs.",
       criteria: [
         { label: "Nil/Umwelt", keywords: ["nil", "fluss", "landwirtschaft", "umwelt"] },
         { label: "Verwaltung", keywords: ["verwaltung", "beamtentum", "organisation", "abgaben"] },
         { label: "Schrift", keywords: ["hieroglyph", "schrift", "ordnung"] },
         { label: "religiöse Legitimation", keywords: ["religion", "pharao", "maat", "herrschaft", "legitim"] },
-        { label: "kurzer Vergleich mit Mesopotamien", keywords: ["mesopotamien", "stadtstaat", "zentralisiert", "euphrat", "tigris"] }
+        { label: "kein Automatismus behauptet", keywords: ["nicht automatisch", "anderer weg", "nicht jede", "große siedlung", "zentralisiert"] }
       ]
     }
   },
@@ -1637,7 +1662,8 @@ const modules = [
       "Das Schlussmodul zieht eine historische Bilanz. Der Film 1491 macht dabei den wichtigsten Perspektivwechsel sichtbar: Lange vor Kolumbus lebten auf dem amerikanischen Doppelkontinent zahlreiche indigene Völker mit vielfältigen Sprachen, Kulturen und angepassten Lebensweisen. Ihre Geschichte beginnt nicht 1492, sondern Jahrtausende früher. Schon die ersten Menschen Amerikas entwickelten Überlebensstrategien, Unterkünfte und Wissensformen für sehr unterschiedliche Landschaften.",
       "1492 ist deshalb für Amerika ein Einschnitt, aber nicht der Beginn von Geschichte. Wer nur Europa, Rom und Mittelalter als Zentrum der Vormoderne betrachtet, übersieht andere historische Entwicklungen. Der Blick auf 1491 korrigiert dieses Problem und öffnet die Einheit für mehrere Weltregionen.",
       "Danach tritt noch einmal die Langzeitlinie des Anthropozäns hervor. Feuer, Landwirtschaft, Metallbau, Straßen, Städte, Fernhandel und fossile Brennstoffe gehören in eine Geschichte wachsender Eingriffe in Umwelt und Landschaft. Was in den Modulen als Pfahlbau, Straßenbau, Nilverwaltung oder Münzumlauf erscheint, gehört deshalb immer auch in eine Geschichte von Boden, Wasser, Luft und Ressourcen.",
-      "Am Ende verbinden sich die großen Linien: Sprache und Symbole ermöglichen Kooperation, mobile Lebensweisen sichern Anpassung an Räume, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 wird so als zusammenhängende Entwicklung menschlicher Weltgestaltung sichtbar."
+      "Am Ende verbinden sich die großen Linien: Sprache und Symbole ermöglichen Kooperation, mobile Lebensweisen sichern Anpassung an Räume, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 wird so als zusammenhängende Entwicklung menschlicher Weltgestaltung sichtbar.",
+      "Genau an dieser Bilanz trennen sich Harari und Graeber/Wengrow am stärksten. Harari ordnet die lange Geschichte über große Revolutionen und immer größere Netze von Kooperation, Herrschaft und Vereinheitlichung. Graeber und Wengrow setzen dagegen stärker auf Verzweigungen, bewusste Entscheidungen, abgebrochene Wege und politische Experimente. Die Vormoderne zeigt aus ihrer Sicht nicht nur, wie größere Ordnungen entstehen, sondern auch, dass Menschen immer wieder andere Ordnungen ausprobiert, verändert oder verworfen haben."
     ],
     sources: [
       {
@@ -1663,22 +1689,29 @@ const modules = [
           "Hararis Modell verbindet kognitive Revolution, Landwirtschaft und Vereinigungsprozesse zu einer Langzeitgeschichte menschlicher Weltgestaltung.",
         didacticUse:
           "Es liefert den begrifflichen Rahmen für die Bilanz aller Module."
+      },
+      {
+        title: "Offene Wege statt Einbahnstraße",
+        extracted:
+          "Graeber und Wengrow lesen die Tiefengeschichte nicht als feste Abfolge von Stufen, sondern als Geschichte sozialer Wahlmöglichkeiten. Menschen wechseln Ordnungen, verwerfen Modelle und probieren neue Formen aus.",
+        didacticUse:
+          "Die Gegenposition zwingt dazu, die großen Entwicklungslinien nicht als Naturgesetz zu lesen, sondern als umkämpfte und veränderbare Geschichte."
       }
     ],
     sourcePrompt:
-      "Formuliere aus den Beispielen des Kurses eine eigene Langzeitthese: Was verbinden Pfahlbauten, Münzfunde, Römerstraßen, Pilgerwege und die Perspektive von 1491?",
+      "Formuliere aus den Beispielen des Kurses eine eigene Langzeitthese: Was verbinden Pfahlbauten, Münzfunde, Römerstraßen, Pilgerwege und 1491, und wo verlaufen die stärksten Deutungsunterschiede zwischen einer linearen und einer offenen Geschichte?",
     task: {
       id: "m12-task",
       question:
-        "Formuliere drei Langzeitlinien, die sich von der Frühgeschichte bis um 1500 verfolgen lassen.",
+        "Formuliere drei Langzeitlinien von der Frühgeschichte bis um 1500 und nenne einen Punkt, an dem Harari und Graeber/Wengrow diese Entwicklung unterschiedlich deuten würden.",
       placeholder: "Zum Beispiel Kooperation, Sesshaftigkeit, Schrift, Geld, Religion oder Globalperspektive.",
       sampleAnswer:
-        "Eine erste Langzeitlinie ist die wachsende Fähigkeit zur Kooperation durch Sprache, Symbole und gemeinsame Ordnungen. Eine zweite Linie ist der Übergang von mobilen Lebensweisen zu Sesshaftigkeit, Überschuss, Verwaltung und Staatlichkeit. Eine dritte Linie ist die Vernetzung großer Räume durch Handel, Geld, Religion und Imperien. Ergänzend zeigt 1491, dass diese Entwicklungen nicht nur in Europa stattfinden.",
+        "Eine erste Langzeitlinie ist die wachsende Fähigkeit zur Kooperation durch Sprache, Symbole und gemeinsame Ordnungen. Eine zweite Linie ist der Übergang von mobilen Lebensweisen zu Sesshaftigkeit, Überschuss, Verwaltung und Staatlichkeit. Eine dritte Linie ist die Vernetzung großer Räume durch Handel, Geld, Religion und Imperien. Ein deutlicher Deutungsunterschied liegt bei Landwirtschaft und frühen Städten: Harari beschreibt hier einen starken Übergang zu größeren Ordnungen, während Graeber und Wengrow stärker betonen, dass Menschen verschiedene Wege offenhielten und nicht automatisch in Hierarchie endeten.",
       criteria: [
         { label: "Kooperation/Sprache", keywords: ["kooperation", "sprache", "symbole", "ordnung"] },
         { label: "Sesshaftigkeit/Staat", keywords: ["sesshaft", "überschuss", "verwaltung", "staat"] },
         { label: "Vernetzung", keywords: ["handel", "geld", "religion", "imperien", "räume"] },
-        { label: "Globalperspektive", keywords: ["1491", "amerika", "nicht nur europa", "global"] }
+        { label: "Deutungsunterschied benannt", keywords: ["harari", "graeber", "wengrow", "anders", "nicht automatisch", "offen"] }
       ]
     },
     deepening:
@@ -3988,6 +4021,20 @@ const sourceDetails = {
     passage:
       "Harari hält fest, dass Menschen über einen ungeheuer langen Zeitraum von Pflanzen und Tieren lebten, die ohne gezielte Aussaat, Zucht oder Stallhaltung existierten. Genau das verschiebt die Perspektive des Moduls: Jäger-und-Sammler-Gesellschaften erscheinen nicht als kurze primitive Vorstufe, sondern als die längste historische Normalform menschlichen Lebens. Erst vor diesem Hintergrund wird verständlich, wie tiefgreifend der Übergang zu Ackerbau, Viehzucht und Sesshaftigkeit wirklich war. Die Passage hilft deshalb, mobile Lebensweisen als ernst zu nehmende historische Ordnung zu begreifen."
   },
+  [makeSourceKey("modul-4", "Saisonale Freiheit und politische Wahl")]: {
+    quote: "„switching freely between modes of livelihood and organisation“",
+    thesis:
+      "Graeber und Wengrow betonen, dass frühe Gesellschaften nicht dauerhaft in einer einzigen politischen Form festlagen. Sie konnten je nach Jahreszeit, Ort und Anlass zwischen verschiedenen Lebens- und Ordnungsweisen wechseln.",
+    passage:
+      "Die Gegenposition richtet sich gegen das Bild, mobile Gesellschaften seien grundsätzlich klein, schlicht und politisch immer gleich. Graeber und Wengrow verweisen auf saisonale Wechsel zwischen verstreutem Leben und großen Zusammenkünften, auf Monumente und auf Gruppen, die bewusst zwischen strengerer und freierer Ordnung hin- und herwechselten. Vorzeit erscheint dadurch nicht nur als Anpassung an Umwelt, sondern auch als Feld sozialer Wahlmöglichkeiten. Für dieses Modul ist das wichtig, weil Mobilität dann zugleich ökologische und politische Kompetenz bedeutet.",
+    whyHere:
+      "Hier liegt einer der stärksten Unterschiede zu Harari: Er hebt die lange Normalform hervor, Graeber und Wengrow betonen innerhalb dieser Normalform die Vielfalt der politischen Möglichkeiten.",
+    mustKnow: [
+      "Mobile Gesellschaften konnten sich saisonal sehr unterschiedlich organisieren.",
+      "Große Versammlungen oder Monumente widerlegen das Bild bloß kleiner, einfacher Gruppen.",
+      "Vor Landwirtschaft gab es bereits bewusste soziale und politische Wahlmöglichkeiten."
+    ]
+  },
   [makeSourceKey("modul-5", "Harari-PDF")]: {
     badge: "S. 100 · Streitstelle",
     locator: "Harari-PDF, S. 100",
@@ -3998,6 +4045,20 @@ const sourceDetails = {
       "Die landwirtschaftliche Revolution wird hier nicht als einfache Erfolgsgeschichte gelesen, sondern als widersprüchlicher Umbruch mit Nutzen, Belastungen und neuen Abhängigkeiten.",
     passage:
       "Harari überschreibt das Landwirtschaftskapitel bewusst provokativ und zwingt damit zu historischem Urteil. Seine Pointe ist nicht, dass Landwirtschaft nutzlos gewesen sei, sondern dass Ackerbau und Viehzucht einen widersprüchlichen Wandel auslösten: mehr Vorräte, größere Siedlungen und mehr Menschen auf der einen Seite, zugleich aber härtere Arbeit, einseitigere Ernährung, stärkere Abhängigkeit von Ernten, Eigentum und neue soziale Ungleichheiten auf der anderen. Die Passage ist für das Modul zentral, weil sie Sesshaftigkeit nicht als selbstverständlichen Fortschritt behandelt, sondern als tiefen Umbau von Alltag, Macht und Lebensrisiko."
+  },
+  [makeSourceKey("modul-5", "Landwirtschaft ohne Zwangslogik")]: {
+    quote: "„the granaries-to-overlords tale simply isn’t true“",
+    thesis:
+      "Graeber und Wengrow bestreiten, dass Landwirtschaft zwangsläufig in Eliten, Steuern und Staat mündet. Für sie gibt es keinen einzigen festen Weg von Feldbau zu Unterordnung.",
+    passage:
+      "Die Gegenposition wendet sich gegen eine lineare Erzählung: zuerst Getreidebau, dann Vorräte, dann automatisch Herrschaft von oben. Graeber und Wengrow argumentieren stattdessen, dass Menschen Landwirtschaft in sehr verschiedenen Formen nutzten, mit älteren Lebensweisen kombinierten oder wieder zurücknahmen. Daraus folgt: Landwirtschaft verändert Ernährung, Arbeit und Siedlung tiefgreifend, aber sie legt nicht schon fest, ob daraus Königtum, Klassengesellschaft oder eine andere Ordnung entsteht. Für dieses Modul verschiebt das den Blick von der einen großen Revolution zu mehreren möglichen Wegen.",
+    whyHere:
+      "Genau hier prallen die Deutungen aufeinander: Harari liest den Übergang stark als belastenden Bruch, Graeber und Wengrow als offeneren Prozess mit Mischformen und Alternativen.",
+    mustKnow: [
+      "Landwirtschaft erzeugt nicht automatisch überall dieselbe politische Ordnung.",
+      "Jagen, Sammeln, Gartenbau und Feldbau konnten lange nebeneinander bestehen.",
+      "Aus dem Anbau von Pflanzen folgt nicht zwangsläufig sofort soziale Unterordnung."
+    ]
   },
   [makeSourceKey("modul-5", "SRF: Pfahlbauer von Pfyn")]: {
     badge: "SRF-school-Film · Experimentalarchäologie",
@@ -4083,6 +4144,20 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, Hochkulturen bestünden nur aus prachtvollen Monumenten."
+  },
+  [makeSourceKey("modul-6", "Städte ohne Könige?")]: {
+    quote: "„the mere fact of urban life“",
+    thesis:
+      "Graeber und Wengrow widersprechen der Vorstellung, Stadtgröße führe automatisch zu Monarchie, Palästen oder festen Klassen. Große Siedlungen konnten politisch ganz unterschiedlich organisiert sein.",
+    passage:
+      "Die Gegenposition setzt nicht bei Ägypten als Gegenbeispiel an, sondern bei der allgemeinen Deutung früher Komplexität. Graeber und Wengrow verweisen auf große Orte, deren Planung, Dichte und Koordination sichtbar sind, ohne dass sie zwangsläufig eine klassische Herrschaftspyramide hervorbringen. Das macht einen entscheidenden Unterschied: Ägypten bleibt ein starkes Beispiel für frühen Staat, aber nicht jede größere Siedlung ist automatisch ein Staat nach demselben Muster. Für das Modul ist diese Passage wichtig, weil sie zwischen Komplexität und Hierarchie unterscheidet.",
+    whyHere:
+      "Hier wird die Leitfrage des Moduls verschärft: Aus Vorräten kann ein Staat werden, aber große Besiedlung und Koordination müssen nicht immer sofort im gleichen Herrschaftsmodell enden.",
+    mustKnow: [
+      "Große Siedlungen sind nicht automatisch Königsstaaten.",
+      "Komplexität, Arbeitsteilung und Hierarchie sind historisch nicht identisch.",
+      "Ägypten ist ein Weg früher Staatlichkeit, aber kein allgemeines Naturgesetz."
+    ]
   },
   [makeSourceKey("modul-7", "YouTube: Griechenland, Polis und attische Demokratie")]: {
     badge: "Athen · Polis und Demokratie",
@@ -4543,6 +4618,20 @@ const sourceDetails = {
       "Harari verdichtet hier die große Langzeitlinie des Kurses: Menschen bauen immer größere Verbindungsräume auf, die durch Macht, Glauben, Handel und gemeinsame Regeln zusammengehalten werden.",
     passage:
       "Harari benutzt hier ein leicht verständliches Vergleichsbild, um zu zeigen, wie große geteilte Ordnungen funktionieren: Viele Menschen halten sich an dieselben Regeln, obwohl sie einander nicht persönlich kennen. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Für das Abschlussmodul ist die Passage deshalb besonders geeignet, weil sie die ganze Einheit in eine Formel bringt: Geschichte bis 1500 ist die Geschichte wachsender Verbindungen, größerer Ordnungsräume und immer weiterer Netze aus Macht, Glauben, Handel und Kooperation."
+  },
+  [makeSourceKey("modul-12", "Offene Wege statt Einbahnstraße")]: {
+    quote: "„paths not taken“",
+    thesis:
+      "Graeber und Wengrow lesen Tiefengeschichte als Geschichte nicht nur realisierter, sondern auch verworfener Möglichkeiten. Menschen sind für sie nicht einfach auf eine einzige Entwicklungslinie festgelegt.",
+    passage:
+      "Diese Gegenposition richtet sich gegen ein zu geschlossenes Bild von Geschichte. Graeber und Wengrow fragen nach Wegen, die offenstanden, aber nicht dauerhaft verfolgt wurden: nach Städten ohne Paläste, nach Landwirtschaft ohne sofortige Herrschaftspyramiden oder nach mobilen Gesellschaften mit überraschend komplexen Institutionen. Für die Schlussbilanz ist das entscheidend, weil Geschichte dann nicht nur aus großen Übergängen besteht, sondern auch aus Alternativen, Brüchen und bewussten Neuordnungen. Die Vormoderne erscheint so nicht als Vorgeschichte eines feststehenden Endes, sondern als offener Möglichkeitsraum.",
+    whyHere:
+      "Die Abschlussbilanz soll nicht nur große Linien bündeln, sondern auch zeigen, wo diese Linien umstritten sind und anders gelesen werden können.",
+    mustKnow: [
+      "Tiefengeschichte enthält auch verworfene und abgebrochene Wege.",
+      "Nicht jede große Entwicklung ist als feste Einbahnstraße zu deuten.",
+      "Die Differenz zwischen Harari und Graeber/Wengrow liegt vor allem im Maß an Offenheit und historischer Wahlmöglichkeit."
+    ]
   }
 };
 
@@ -5587,36 +5676,69 @@ function buildCriteriaFromTexts(texts) {
 }
 
 function splitSourcePassage(text) {
-  const sentences = String(text || "").match(/[^.!?]+[.!?]?/g) || [String(text || "")];
-  if (sentences.length < 2 || String(text || "").length < 260) {
-    return [String(text || "").trim()].filter(Boolean);
+  const sourceText = String(text || "").trim();
+  if (!sourceText) {
+    return [];
   }
 
-  const midpoint = Math.ceil(sentences.length / 2);
-  const first = sentences.slice(0, midpoint).join(" ").trim();
-  const second = sentences.slice(midpoint).join(" ").trim();
+  const sentences = sourceText.match(/[^.!?]+[.!?]?/g) || [sourceText];
+  const parts = [];
+  let current = "";
 
-  return [first, second].filter(Boolean);
+  sentences.forEach((sentence) => {
+    const candidate = `${current} ${sentence}`.trim();
+    if (candidate.length > 220 && current) {
+      parts.push(current.trim());
+      current = sentence.trim();
+      return;
+    }
+    current = candidate;
+  });
+
+  if (current) {
+    parts.push(current.trim());
+  }
+
+  return parts.filter(Boolean);
 }
 
-function buildSourceMicroCheckPrompt(heading, detail, kind) {
-  const topic = String(heading || "").trim() ? `„${String(heading || "").trim()}“` : "diesem Thema";
+function shortenPromptSegment(text, maxLength = 140) {
+  const cleaned = cleanStudentText(text).replace(/\s+/g, " ").trim();
+  if (cleaned.length <= maxLength) {
+    return cleaned;
+  }
+  return `${cleaned.slice(0, maxLength).replace(/[,:;]\s*$/, "").trim()} …`;
+}
+
+function buildSourceMicroCheckPrompt(heading, detail, kind, texts) {
+  const cleanedTexts = (texts || []).map((item) => cleanStudentText(item)).filter(Boolean);
+  const first = shortenPromptSegment(cleanedTexts[0] || heading || "dieser Entwicklung");
+  const second = shortenPromptSegment(cleanedTexts[1] || "");
 
   if (kind === "quote" && detail.quote) {
-    return `Erkläre die Aussage ${detail.quote} in eigenen Worten und verbinde sie mit ${topic}.`;
+    return `Erkläre präzise, was die Aussage ${detail.quote} historisch bedeutet und woran man das konkret erkennt.`;
   }
 
-  if (kind === "facts") {
-    return `Nenne zwei konkrete Punkte zu ${topic} und erkläre, warum sie zusammengehören.`;
+  if (kind === "facts" && first && second) {
+    return `Erkläre den historischen Zusammenhang zwischen ${first} und ${second}.`;
   }
 
-  return `Erkläre in 2 bis 4 Sätzen, was mit ${topic} historisch gemeint ist und worin der entscheidende Wandel oder Zusammenhang besteht.`;
+  if (kind === "contrast" && first && second) {
+    return `Zeige den Unterschied zwischen ${first} und ${second} in 2 bis 4 klaren Sätzen.`;
+  }
+
+  if (first) {
+    return `Erkläre präzise, was historisch mit ${first} gemeint ist.`;
+  }
+
+  return "Erkläre den historischen Zusammenhang in 2 bis 4 klaren Sätzen.";
 }
 
 function buildSourceMicroChecks(module, source, detail, heading) {
   const sourceId = `${module.id}-${normalize(heading || source.title)}`;
   const thesisText = cleanStudentText(detail.thesis || "");
   const passageText = cleanStudentText(detail.passage || source.extracted || "");
+  const passageSections = splitSourcePassage(passageText);
   const factTexts =
     detail.mustKnow?.length
       ? detail.mustKnow
@@ -5626,48 +5748,58 @@ function buildSourceMicroChecks(module, source, detail, heading) {
   const claims = splitIntoClaims(`${thesisText} ${passageText}`.trim());
   const microChecks = [];
 
-  const firstCriteriaTexts = factTexts.length ? factTexts.slice(0, 2) : claims.slice(0, 2);
-  const firstCriteria = buildCriteriaFromTexts(firstCriteriaTexts);
-  const firstSample =
-    thesisText ||
-    firstCriteriaTexts.join(" ") ||
-    passageText;
+  const checkBlueprints = [
+    {
+      kind: detail.quote ? "quote" : "thesis",
+      texts: thesisText ? [thesisText, claims[0] || passageSections[0] || ""] : claims.slice(0, 2),
+      sample: thesisText || passageSections[0] || claims[0] || passageText
+    },
+    {
+      kind: "facts",
+      texts: passageSections[0]
+        ? [passageSections[0], passageSections[1] || claims[1] || thesisText]
+        : claims.slice(0, 2),
+      sample: passageSections[0] || passageText
+    },
+    {
+      kind: detail.whyHere ? "contrast" : "facts",
+      texts: detail.whyHere
+        ? [detail.whyHere, factTexts[0] || factTexts[1] || claims[0] || ""]
+        : factTexts.slice(0, 2),
+      sample:
+        [detail.whyHere, ...factTexts.slice(0, 2)]
+          .filter(Boolean)
+          .join(" ") || passageSections[1] || passageText
+    },
+    {
+      kind: "facts",
+      texts:
+        factTexts.slice(1, 3).length >= 2
+          ? factTexts.slice(1, 3)
+          : passageSections.slice(1, 3),
+      sample:
+        factTexts.slice(1, 4).join(" ") ||
+        passageSections.slice(1).join(" ") ||
+        passageText
+    }
+  ];
 
-  if (firstSample && firstCriteria.length) {
+  checkBlueprints.forEach((blueprint, index) => {
+    const criteria = buildCriteriaFromTexts(blueprint.texts);
+    if (!blueprint.sample || !criteria.length) {
+      return;
+    }
+
     microChecks.push({
-      id: `${sourceId}-micro-1`,
-      prompt: buildSourceMicroCheckPrompt(heading, detail, "thesis"),
+      id: `${sourceId}-micro-${index + 1}`,
+      prompt: buildSourceMicroCheckPrompt(heading, detail, blueprint.kind, blueprint.texts),
       placeholder: "Formuliere hier 2 bis 4 inhaltlich klare Sätze.",
-      sampleAnswer: firstSample,
-      criteria: firstCriteria
+      sampleAnswer: blueprint.sample,
+      criteria
     });
-  }
+  });
 
-  const secondCriteriaTexts = detail.quote
-    ? claims.slice(1, 3).length
-      ? claims.slice(1, 3)
-      : claims.slice(0, 2)
-    : factTexts.slice(0, 3);
-  const secondCriteria = buildCriteriaFromTexts(secondCriteriaTexts);
-  const secondSample = detail.quote
-    ? passageText || thesisText
-    : secondCriteriaTexts.join(" ");
-
-  if (secondSample && secondCriteria.length) {
-    microChecks.push({
-      id: `${sourceId}-micro-2`,
-      prompt: buildSourceMicroCheckPrompt(
-        heading,
-        detail,
-        detail.quote ? "quote" : "facts"
-      ),
-      placeholder: "Erkläre den Zusammenhang in eigenen Worten.",
-      sampleAnswer: secondSample,
-      criteria: secondCriteria
-    });
-  }
-
-  return microChecks.slice(0, 2);
+  return microChecks.slice(0, 4);
 }
 
 function renderSourceMicroCheck(question) {
@@ -6022,14 +6154,16 @@ function renderSourceCard(source, module) {
       ${locatorText && locatorLabel ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
       ${isHarari ? renderHarariActions(detail) : ""}
       ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
+      ${microChecks[0] ? renderSourceMicroCheck(microChecks[0]) : ""}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}
       ${passageParts[0] ? `<p><strong>${passageLabel}:</strong> ${passageParts[0]}</p>` : ""}
-      ${microChecks[0] ? renderSourceMicroCheck(microChecks[0]) : ""}
+      ${microChecks[1] ? renderSourceMicroCheck(microChecks[1]) : ""}
       ${renderSourceFocus(detail)}
-      ${passageParts[1] ? `<p>${passageParts[1]}</p>` : ""}
+      ${microChecks[2] ? renderSourceMicroCheck(microChecks[2]) : ""}
+      ${passageParts.slice(1).map((part) => `<p>${part}</p>`).join("")}
       ${renderRelevantItems(detail.relevantItems, cleanListLabel(detail.itemsLabel, "Wichtige Themen:"))}
       ${renderRelevantItems(detail.relatedItems, cleanListLabel(detail.relatedLabel, "Weiterführende Themen:"))}
-      ${microChecks[1] ? renderSourceMicroCheck(microChecks[1]) : ""}
+      ${microChecks[3] ? renderSourceMicroCheck(microChecks[3]) : ""}
     </article>
   `;
 }
