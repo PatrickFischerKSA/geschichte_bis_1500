@@ -149,6 +149,47 @@ const sourceCatalog = [
     link: "https://www.youtube.com/watch?v=oxfAKidgl_8"
   },
   {
+    id: "planet-reise-menschheit",
+    title: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
+    type: "Planet Schule",
+    role: "Überblick über Hominisation, Migration und globale Ausbreitung",
+    didactics:
+      "Der Film bündelt Entwicklungsschritte von frühen Menschenarten bis zur weltweiten Ausbreitung des Homo sapiens und eignet sich deshalb besonders für den großen Überblick in Modul 2.",
+    linkLabel: "Film öffnen",
+    link: "https://www.planet-schule.de/thema/die-aussergewoehnliche-reise-der-menschheit-film-100.html"
+  },
+  {
+    id: "zdf-stammbaum",
+    title: "ZDF Schule: Stammbaum",
+    type: "ZDF Schule",
+    role: "Nichtlineare Entwicklung mehrerer Menschenarten",
+    didactics:
+      "Das Material zeigt Frühgeschichte nicht als einfache Leiter, sondern als verzweigten Stammbaum aus mehreren Menschenarten, die sich überschneiden, aussterben und unterschiedliche Wege nehmen.",
+    linkLabel: "Film öffnen",
+    link: "https://schule.zdf.de/video/stammbaum-100"
+  },
+  {
+    id: "faustkeil-zdf",
+    title: "ZDF / Terra X: Wissenshappen – Faustkeil",
+    type: "YouTube / ZDF",
+    role: "Werkzeugtechnik als Schlüssel zur frühen Menschheitsgeschichte",
+    didactics:
+      "Der kurze Film verdichtet, wie ein Faustkeil Rohstoffwissen, Planung, Handarbeit und Weitergabe technischen Könnens in einem einzigen Gegenstand bündelt.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=V7PBy-5lGO8"
+  },
+  {
+    id: "hominisation-zeitstrahl-ppt",
+    title: "Arbeitspräsentation: Hominisation – Zeitleiste",
+    type: "Lokale Präsentation",
+    role: "Zeitraster von Alt-, Mittel- und Jungsteinzeit",
+    didactics:
+      "Die Präsentation unterstützt Modul 2, weil sie Frühgeschichte klar in Paläolithikum, Mesolithikum und Neolithikum gliedert und die langen Zeiträume der Menschwerdung übersichtlich ordnet.",
+    linkLabel: "Lokale Präsentation",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/Hominisation_Zeitleiste_Musterlösung.pptx"
+  },
+  {
     id: "hoehlenmalereien",
     title: "SRF Einstein: Rätselhafte Höhlenmalereien",
     type: "SRF / Einstein",
@@ -157,6 +198,16 @@ const sourceCatalog = [
       "Der Film erweitert Modul 3 um ein direktes Material zu früher Bildsymbolik und prähistorischer Kunst.",
     linkLabel: "Film öffnen",
     link: "https://www.srf.ch/play/tv/einstein/video/raetselhafte-hoehlenmalereien?urn=urn:srf:video:d86c7be1-4c71-4660-868b-e3bd63cf95e6"
+  },
+  {
+    id: "natgeo-fruehgeschichte",
+    title: "National Geographic: Frühgeschichte und Höhlenkunst",
+    type: "National Geographic",
+    role: "Internationaler Themenraum zu Höhlenkunst, Frühgeschichte und Archäologie",
+    didactics:
+      "Der Themenraum erweitert Modul 3 um eine internationale Perspektive auf Höhlenkunst und frühe Bildwelten. Er dient als Ergänzung, damit Symbolik nicht nur regional, sondern als weltweites archäologisches Phänomen erscheint.",
+    linkLabel: "Themenraum öffnen",
+    link: "https://nationalgeographic.de/"
   },
   {
     id: "jaeger-sammler-video",
@@ -169,6 +220,16 @@ const sourceCatalog = [
     link: "https://www.youtube.com/watch?v=6xSNuCXNZmw"
   },
   {
+    id: "steinzeit-menschen-video",
+    title: "YouTube: Die Steinzeit-Menschen - Alles, was Du wissen musst!",
+    type: "YouTube",
+    role: "Breiter Überblick über Lebensformen der Steinzeit",
+    didactics:
+      "Der Film verdichtet Umweltanpassung, Nahrung, Werkzeuge und Lebensweise der Steinzeit in einem größeren Überblick und ergänzt damit Modul 4.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=ZjejoT1gFOc"
+  },
+  {
     id: "neolithische-revolution-video",
     title: "YouTube: Neolithische Revolution",
     type: "YouTube",
@@ -179,6 +240,58 @@ const sourceCatalog = [
     link: "https://www.youtube.com/watch?v=hoKPh0u4YjY"
   },
   {
+    id: "neolithisierung-anfaenge-doc",
+    title: "Materialdossier: Neolithisierung – Anfänge",
+    type: "Lokales Dossier",
+    role: "Fruchtbarer Halbmond, Sesshaftigkeit und Streit um die Neolithisierung",
+    didactics:
+      "Das Dossier bündelt den Beginn von Sesshaftigkeit und Nahrungsproduktion im Fruchtbaren Halbmond und bringt Harari und Graeber/Wengrow direkt in die Frage nach offenen oder linearen Wegen hinein.",
+    linkLabel: "Lokales Dokument",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/Neolithisierung_Anfänge.docx"
+  },
+  {
+    id: "neolithisierung-europa-doc",
+    title: "Materialdossier: Neolithisierung in Europa",
+    type: "Lokales Dossier",
+    role: "Ausbreitung von Ackerbau und Viehzucht nach Europa",
+    didactics:
+      "Das Dossier konkretisiert die langsame Ausbreitung nach Europa, die Rolle von Migration und Übernahme sowie die besondere Bedeutung der Pfahlbausiedlungen im Alpenraum.",
+    linkLabel: "Lokales Dokument",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/Neolithisierung_Europa.docx"
+  },
+  {
+    id: "goebekli-tepe",
+    title: "Planet Schule: Göbekli Tepe – der älteste Tempel der Menschheit",
+    type: "Planet Schule / ARD",
+    role: "Monumente und Rituale vor ausgebauter Staatlichkeit",
+    didactics:
+      "Göbekli Tepe verschiebt die Frage nach Sesshaftigkeit und Hierarchie, weil aufwendige Kultbauten sichtbar werden, bevor klassische Staatsordnungen greifbar sind.",
+    linkLabel: "Film öffnen",
+    link: "https://www.ardmediathek.de/video/planet-schule/goebekli-tepe-der-aelteste-tempel-der-menschheit/wdr/Y3JpZDovL3BsYW5ldC1zY2h1bGUuZGUvQVJEXzkxODBfdmlkZW8"
+  },
+  {
+    id: "catalhoeyuk-terrax",
+    title: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+    type: "Planet Wissen / Terra X",
+    role: "Dichte Siedlung ohne klassische Königspyramide",
+    didactics:
+      "Çatalhöyük eignet sich besonders, um dichte Besiedlung, Hausverbände, Kult und Alltag zu zeigen, ohne sofort in das bekannte Muster von Palast, König und Staat zu kippen.",
+    linkLabel: "Film öffnen",
+    link: "https://www.planet-wissen.de/geschichte/antike/das_antike_rom/terrax-grosssiedlung_Catalhoeyuek-film-100.html"
+  },
+  {
+    id: "catalhoeyuk-3d",
+    title: "YouTube: 3D Çatalhöyük Project Animation",
+    type: "YouTube",
+    role: "Räumlicher Eindruck einer frühen Großsiedlung",
+    didactics:
+      "Die Animation macht Hausdichte, Dachzugänge und Siedlungsstruktur sichtbar und hilft, abstrakte Beschreibungen einer frühen Großsiedlung räumlich zu verstehen.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=W2qypDEqNkA"
+  },
+  {
     id: "hochkulturen-video",
     title: "YouTube: Hochkulturen",
     type: "YouTube",
@@ -187,6 +300,37 @@ const sourceCatalog = [
       "Der Film ergänzt Modul 6 um eine breitere Übersicht zu Hochkulturen jenseits des Ägypten-Beispiels.",
     linkLabel: "Film öffnen",
     link: "https://www.youtube.com/watch?v=kDarvo1XSMA"
+  },
+  {
+    id: "einfach-antike-hochkultur",
+    title: "YouTube: Was ist eine \"Hochkultur\"?",
+    type: "YouTube / Einfach Antike",
+    role: "Begriffsarbeit zu Hochkultur, Schrift, Herrschaft und Arbeitsteilung",
+    didactics:
+      "Der Film hilft, den Begriff Hochkultur nicht nur an Monumenten festzumachen, sondern an Schrift, Herrschaft, Spezialisierung und Verdichtung zu klären.",
+    linkLabel: "Film öffnen",
+    link: "https://www.youtube.com/watch?v=aAdI1zca5Ys"
+  },
+  {
+    id: "archaeologie-datierung",
+    title: "Planet Schule: Altersbestimmung in der Archäologie",
+    type: "Planet Schule",
+    role: "Methoden der Datierung und Rekonstruktion",
+    didactics:
+      "Das Material erklärt, wie C14, Dendrochronologie, Fundschichten und Vergleichsfunde historische Aussagen überhaupt erst absichern.",
+    linkLabel: "Film öffnen",
+    link: "https://www.planet-schule.de/schwerpunkt/woher-wissen-wir-das/altersbestimmung-in-der-archaeologie-film-100.html"
+  },
+  {
+    id: "archaeologie-doc",
+    title: "Materialdossier: Archäologie",
+    type: "Lokales Dossier",
+    role: "Stratigraphie, Datierung und Auswertung von Funden",
+    didactics:
+      "Das Dossier erklärt Archäologie als unterirdisches Archiv und verbindet Grabung, Stratigraphie, relative und absolute Chronologie mit naturwissenschaftlichen Methoden.",
+    linkLabel: "Lokales Dokument",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/Archäologie.docx"
   },
   {
     id: "griechenland-demokratie-video",
@@ -227,6 +371,58 @@ const sourceCatalog = [
       "Der Beitrag macht deutlich, dass die Helvetier archäologisch nicht als armes Bauernvolk erscheinen, sondern als reiche, religiöse und weit vernetzte Gesellschaft mit anspruchsvoller materieller Kultur.",
     linkLabel: "Film öffnen",
     link: "https://www.srf.ch/play/tv/schweiz-aktuell/video/die-keltischen-schaetze-der-berner-engehalbinsel?urn=urn:srf:video:d4d073db-d50c-461c-9d83-c77e5f0678ee"
+  },
+  {
+    id: "kelten-doc",
+    title: "Materialdossier: Die Kelten",
+    type: "Lokales Dossier",
+    role: "Hallstatt, La Tène, Oppida und Helvetier",
+    didactics:
+      "Das Dossier bündelt Grundwissen zu Hallstatt und La Tène, Oppida, Druiden, Fernkontakten und dem Bruch durch Caesar.",
+    linkLabel: "Lokales Dokument",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/Die Kelten.docx"
+  },
+  {
+    id: "kelten-praesentation",
+    title: "Arbeitspräsentation: Kelten – Überblick",
+    type: "Lokale Präsentation",
+    role: "Keltische Welt zwischen Klischee und archäologischer Korrektur",
+    didactics:
+      "Die Präsentation eignet sich, um gängige Gallier- und Barbarenbilder ausdrücklich aufzurufen und dann mit Hallstatt, La Tène, Oppida und archäologischen Befunden zu korrigieren.",
+    linkLabel: "Lokale Präsentation",
+    link: null,
+    note: "Datei: /Users/patrickfischer/Downloads/PPP_Kelten.pptx"
+  },
+  {
+    id: "kelten-experiment",
+    title: "Planet Schule: Das Kelten-Experiment – Wie lebten die Kelten?",
+    type: "Planet Schule",
+    role: "Keltischer Alltag zwischen Hausbau, Handwerk und Vorrat",
+    didactics:
+      "Der Film macht die keltische Lebenswelt materiell greifbar und zeigt, dass Oppida und Siedlungen aus Handwerk, Bauen, Kochen, Vorräten und sozialer Ordnung bestehen.",
+    linkLabel: "Film öffnen",
+    link: "https://www.planet-schule.de/schwerpunkt/das-kelten-experiment/wie-lebten-die-kelten-film-100.html"
+  },
+  {
+    id: "kelten-roemer-srf-einzelfilm",
+    title: "SRF: Die Kelten und die Römer",
+    type: "SRF",
+    role: "Kulturkontakt und Überlagerung zwischen keltischer und römischer Welt",
+    didactics:
+      "Der Einzelfilm eignet sich, um den Übergang von keltischer Eigenständigkeit zur römischen Überformung konkret und regional zu fassen.",
+    linkLabel: "Film öffnen",
+    link: "https://www.srf.ch/play/tv/roemer-in-der-schweiz/video/die-kelten-und-die-roemer?urn=urn:srf:video:3da18acb-1a0a-4cab-97ce-0b0fb3f4f4e4"
+  },
+  {
+    id: "phbern-kelten",
+    title: "PHBern: Kelten und gallo-römische Zeit",
+    type: "PHBern",
+    role: "Schweizer Raum zwischen keltischer und römischer Ordnung",
+    didactics:
+      "Das Ideenset verbindet Kelten und gallo-römische Zeit und eignet sich deshalb besonders, um Kontinuitäten und Brüche im schweizerischen Raum herauszuarbeiten.",
+    linkLabel: "Material öffnen",
+    link: "https://www.phbern.ch/dienstleistungen/unterrichtsmedien/ideenset-gallo-roemische-zeit/kelten"
   },
   {
     id: "kelten-nationalmuseum",
@@ -461,6 +657,22 @@ const masterTimeline = [
   },
   {
     epoch: "Neolithikum",
+    time: "ca. 9600–8200 v. Chr.",
+    title: "Göbekli Tepe und frühe Kultzentren",
+    body:
+      "Noch bevor klassische Staaten sichtbar werden, entstehen mit Göbekli Tepe monumentale Kultanlagen. Das verschiebt die alte Vorstellung, erst sesshafte Bauernstaaten hätten große religiöse Zentren hervorbringen können.",
+    modules: ["modul-5", "modul-6"]
+  },
+  {
+    epoch: "Neolithikum",
+    time: "ca. 7400–6200 v. Chr.",
+    title: "Çatalhöyük und dichte Siedlungen",
+    body:
+      "Çatalhöyük zeigt dichte Hausverbände, Dachzugänge, Wandmalerei und gemeinschaftliche Ordnung, ohne dass sofort ein klarer Palast- oder Königsstaat greifbar wird. Gerade hier wird der Streit um frühe Komplexität besonders sichtbar.",
+    modules: ["modul-5", "modul-6"]
+  },
+  {
+    epoch: "Neolithikum",
     time: "ab ca. 10'000 v. Chr.",
     title: "Landwirtschaft und Sesshaftigkeit",
     body:
@@ -681,8 +893,10 @@ const modules = [
     ],
     input: [
       "Wenn wir an frühe Menschen denken, stellen wir uns oft eine einfache Entwicklungslinie vor: erst primitive Vorformen, dann irgendwann den modernen Menschen. So einfach war es aber nicht. Über lange Zeit lebten mehrere Menschenarten gleichzeitig. Dazu gehörten zum Beispiel Neandertaler, Homo erectus, Denisova-Menschen und Homo sapiens. Der heutige Mensch war also nicht von Anfang an allein auf der Welt.",
+      "Der Stammbaum der frühen Menschheit sieht deshalb eher wie ein Geflecht als wie eine Leiter aus. Linien verzweigen sich, überschneiden sich und enden wieder. Manche Menschenarten leben gleichzeitig, manche verschwinden. Wer Frühgeschichte verstehen will, muss also mit Koexistenz und Abbrüchen rechnen, nicht mit einer einzigen geraden Erfolgsbahn.",
       "Außerdem war Homo sapiens zunächst kein unaufhaltsamer Sieger. Frühe Menschen waren über sehr lange Zeit nur ein Teil vieler Tier- und Menschenwelten. Sie beherrschten die Erde nicht einfach sofort. Das macht die eigentliche historische Frage spannend: Warum setzte sich gerade diese Menschenart später in so vielen Räumen durch?",
-      "Ein Teil der Antwort liegt in biologischen Voraussetzungen. Das menschliche Gehirn ist leistungsfähig, braucht aber viel Energie. Der aufrechte Gang macht die Hände frei, bringt aber auch neue Belastungen mit sich. Menschenkinder bleiben lange hilfsbedürftig. Genau dadurch entstehen enge Bindungen, gemeinsames Lernen und soziale Abhängigkeiten. Der Mensch ist also nicht trotz, sondern auch wegen seiner Abhängigkeit erfolgreich.",
+      "Ein Teil der Antwort liegt in biologischen und technischen Voraussetzungen. Das menschliche Gehirn ist leistungsfähig, braucht aber viel Energie. Der aufrechte Gang macht die Hände frei, bringt aber auch neue Belastungen mit sich. Menschenkinder bleiben lange hilfsbedürftig. Genau dadurch entstehen enge Bindungen, gemeinsames Lernen und soziale Abhängigkeiten. Werkzeuge wie der Faustkeil zeigen dabei, dass Technik schon früh Planung, Materialkenntnis und Weitergabe von Können verlangte. Der Mensch ist also nicht trotz, sondern auch wegen seiner Abhängigkeit erfolgreich.",
+      "Die Filme zur außergewöhnlichen Reise der Menschheit und zu frühen Menschenarten verdichten diese Entwicklung: Feuer, Werkzeuge, Zusammenarbeit und Sprache werden nicht als einzelne Erfindungen behandelt, sondern als lange Kette von Anpassungen. Frühgeschichte ist darum nie nur Biologie, sondern immer auch Lernen, Erinnern und Weitergeben.",
       "Der Film über 1491 macht diese Ausbreitung konkret. Vor etwa 18'000 bis 20'000 Jahren erreichen die ersten Menschen Amerika. Einige kommen über eine Landbrücke zwischen Ostsibirien und Alaska, andere fahren mit Kanus über das Meer. In den neuen Räumen entstehen angepasste Lebensweisen: Zelte aus Tierhäuten, Häuser aus Lehm oder Iglus aus Schnee. Wissen über Wege, Nahrung und Überleben wird in mehr als 2000 Sprachen vor allem mündlich weitergegeben. Frühgeschichte ist deshalb immer auch Migrations- und Anpassungsgeschichte."
     ],
     sources: [
@@ -693,6 +907,38 @@ const modules = [
           "Harari beschreibt mehrere Menschenarten gleichzeitig und erklärt, warum große Gehirne, freie Hände und lange Kindheit entscheidende Folgen für Kooperation und Lernen hatten.",
         didacticUse:
           "Die Ressource wird genutzt, um lineare Höherentwicklung zu korrigieren und biologische Voraussetzungen als Ausgangspunkt, nicht als Enderklärung, sichtbar zu machen."
+      },
+      {
+        title: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
+        meta: "Großer Überblick",
+        extracted:
+          "Der Film spannt den Bogen von frühen Menschenarten über Werkzeuge, Feuer und soziale Entwicklung bis zur globalen Ausbreitung des Homo sapiens.",
+        didacticUse:
+          "Die Ressource liefert für Modul 2 die große Entwicklungslinie, damit Frühgeschichte als zusammenhängender Prozess statt als lose Sammlung von Fossilien erscheint."
+      },
+      {
+        title: "ZDF Schule: Stammbaum",
+        meta: "Kein gerader Aufstieg",
+        extracted:
+          "Das Material erklärt Frühgeschichte als verzweigten Stammbaum mit mehreren Menschenarten und nicht als einfache Leiter zum modernen Menschen.",
+        didacticUse:
+          "So wird die Vorstellung korrigiert, es habe von Anfang an nur eine einzige stetig verbesserte Menschheitslinie gegeben."
+      },
+      {
+        title: "ZDF / Terra X: Wissenshappen – Faustkeil",
+        meta: "Werkzeug und Planung",
+        extracted:
+          "Am Faustkeil wird sichtbar, dass frühe Werkzeuge Rohstoffwahl, Planung, Schlagtechnik und Weitergabe von handwerklichem Können voraussetzen.",
+        didacticUse:
+          "Das kurze Material eignet sich, um Technik nicht als Nebensache, sondern als Teil früher Lern- und Denkprozesse zu behandeln."
+      },
+      {
+        title: "Arbeitspräsentation: Hominisation – Zeitleiste",
+        meta: "Zeitliche Ordnung",
+        extracted:
+          "Die lokale Präsentation ordnet Frühgeschichte in Paläolithikum, Mesolithikum und Neolithikum und macht deutlich, wie lange Menschwerdung, Werkzeugentwicklung und frühe Wanderungen vor Sesshaftigkeit und Staaten verlaufen.",
+        didacticUse:
+          "Das Material hilft, die frühe Menschheitsgeschichte nicht nur thematisch, sondern auch zeitlich sauber zu staffeln."
       },
       {
         title: "SRF: 1491",
@@ -712,7 +958,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Verbinde Hararis Bild vom unauffälligen Tier mit den Beispielen aus '1491': Warum waren Bewegung, Anpassung und Lernen wichtiger als bloße Stärke?",
+      "Verbinde Menschenarten, Stammbaum, Faustkeil, Feuer und Migration: Warum wurden Lernen, Technik und Anpassung für Homo sapiens historisch wichtiger als bloße Körperkraft?",
     task: {
       id: "m2-task",
       question:
@@ -790,7 +1036,8 @@ const modules = [
       "Mit Sprache ist hier nicht bloß gemeint, dass Menschen Laute bilden können. Entscheidend ist, worüber sie sprechen können. Tiere können warnen, locken oder Signale geben. Menschen können zusätzlich über Vergangenes, Zukünftiges, Abwesendes und Vorgestelltes reden. Sie können also nicht nur auf die Welt reagieren, sondern gemeinsame Vorstellungen von der Welt entwickeln.",
       "Genau darin liegt ein historischer Wendepunkt. Wenn Menschen über Dinge sprechen können, die man nicht direkt sieht, dann können sie Regeln aufstellen, Zugehörigkeit definieren, Aufgaben verteilen und Geschichten über ihre Herkunft erzählen. So entstehen Mythen, Verbote, Rituale und gemeinsame Identitäten. Sprache macht also nicht nur Verständigung möglich, sondern Ordnung.",
       "Das ist wichtig, weil viele spätere Entwicklungen genau darauf aufbauen. Staaten funktionieren nicht nur mit Waffen, sondern auch mit Gesetzen. Geld funktioniert nicht nur als Metall, sondern als gemeinsam anerkannter Wert. Religion wirkt nicht nur innerlich, sondern auch durch geteilte Vorstellungen von Welt und Gemeinschaft. All das setzt voraus, dass Menschen an dieselben Dinge glauben oder sich zumindest darauf beziehen können.",
-      "Im Film über 1491 wird diese symbolische Welt an materiellen Spuren sichtbar. Felsbilder, Totempfähle, Gegenstände des Alltags und Mayaschrift zeigen, dass Gemeinschaften ihre Welt nicht nur bewohnen, sondern deuten und erinnern. Ein Bild an einer Felswand ist nicht bloß Dekoration, sondern Hinweis auf Jagd, Zugehörigkeit oder Weltvorstellung. Ein Totempfahl markiert Erinnerung und Herkunft. Schriftzeichen halten Wissen fest. Frühgeschichte ist deshalb bereits eine Welt aus Zeichen, Regeln und Erzählungen."
+      "Im Film über 1491 wird diese symbolische Welt an materiellen Spuren sichtbar. Felsbilder, Totempfähle, Gegenstände des Alltags und Mayaschrift zeigen, dass Gemeinschaften ihre Welt nicht nur bewohnen, sondern deuten und erinnern. Ein Bild an einer Felswand ist nicht bloß Dekoration, sondern Hinweis auf Jagd, Zugehörigkeit oder Weltvorstellung. Ein Totempfahl markiert Erinnerung und Herkunft. Schriftzeichen halten Wissen fest. Frühgeschichte ist deshalb bereits eine Welt aus Zeichen, Regeln und Erzählungen.",
+      "Die Höhlenbilder ergänzen diesen Punkt auf eindrückliche Weise. Handabdrücke, Tiere, Jagdszenen und wiederkehrende Zeichen zeigen, dass Menschen Erlebnisse nicht nur lebten, sondern bildlich festhielten und in gemeinsame Deutungen verwandelten. Gerade an Höhlenkunst wird sichtbar, dass Sprache, Erinnerung und Symbolik zusammengehören: Gesellschaften schaffen nicht nur Werkzeuge, sondern auch Bilder ihrer Welt."
     ],
     sources: [
       {
@@ -816,6 +1063,14 @@ const modules = [
           "Der Einstein-Film ergänzt das Modul um direkte Fragen nach Sinn, Entstehung und Funktion prähistorischer Höhlenmalereien.",
         didacticUse:
           "Die Ressource soll die Symbol- und Vorstellungswelt früher Menschen nicht nur über allgemeine Zeichen, sondern über ein präzises Kunstbeispiel erschließen."
+      },
+      {
+        title: "National Geographic: Frühgeschichte und Höhlenkunst",
+        meta: "Handabdrücke, Tiere, Zeichen",
+        extracted:
+          "Das Material zu Höhlenkunst führt Motive, Techniken und Deutungen zusammen und macht sichtbar, dass Bilder Erinnerung, Ritual und Weltdeutung tragen konnten.",
+        didacticUse:
+          "Die Ergänzung hilft, frühe Kunst nicht nur als Illustration, sondern als historische Quelle für Denken und Gemeinschaft zu lesen."
       }
     ],
     sourcePrompt:
@@ -896,6 +1151,7 @@ const modules = [
       "Bevor Menschen sesshaft wurden, lebten sie sehr lange in kleineren, mobilen Gruppen. Sie zogen nicht planlos umher, sondern bewegten sich oft nach Jahreszeiten, Tierwanderungen, Wasserstellen oder Pflanzenvorkommen. Diese Lebensweise verlangte ständige Beobachtung der Umwelt und eine gute Abstimmung innerhalb der Gruppe.",
       "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen funktionierten andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Der Film 1491 nennt dafür sehr konkrete Beispiele: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Solche Behausungen waren auf Klima, Mobilität und Lebensweise abgestimmt.",
       "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Wissen über Jagd, Nahrung oder sichere Routen wird erzählt, gezeigt und nachgeahmt. Gerade deshalb konnten mobile Lebensweisen sehr genau organisiert sein. Ohne dieses dichte Umweltwissen war Bewegung über große Räume gar nicht möglich.",
+      "Der zusätzliche Überblick zu den Steinzeit-Menschen macht deutlich, dass zu dieser Lebensform immer auch Werkzeugtechnik, Feuergebrauch, Schutz, Kooperation und flexible Nahrungssuche gehören. Gerade weil keine festen Speicher oder Bürokratien existieren, muss die Gruppe selbst ständig entscheiden, was mitgeführt, was geteilt und was vor Ort hergestellt wird.",
       "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging.",
       "Graeber und Wengrow setzen an diesem Punkt einen anderen Akzent als Harari. Sie bestreiten, dass die Vorzeit hauptsächlich aus kleinen, immer ähnlichen Gruppen bestand, aus denen erst sehr viel später komplexe Gesellschaften hervorgingen. Ihrer Deutung nach konnten mobile Gruppen je nach Jahreszeit, Anlass und Ort ganz unterschiedliche politische Formen annehmen. Manche versammelten sich zeitweise in großen Siedlungen, errichteten Monumente oder wechselten bewusst zwischen strengeren und gleicheren Ordnungen. Vor Landwirtschaft gab es also nicht nur Anpassung, sondern bereits politische Wahlmöglichkeiten."
     ],
@@ -923,6 +1179,14 @@ const modules = [
           "Der Nutzerfilm ergänzt das Modul um eine eigene Filmgrundlage zu Jagd, Sammeln, Mobilität und Umweltwissen.",
         didacticUse:
           "Die Ressource soll Jäger-und-Sammler-Gesellschaften als eigenständige Lebensform direkt absichern."
+      },
+      {
+        title: "YouTube: Die Steinzeit-Menschen - Alles, was Du wissen musst!",
+        meta: "Werkzeuge, Feuer, Schutz",
+        extracted:
+          "Der Überblicksfilm ergänzt das Modul um Steinzeitalltag, Werkzeugtechnik, Feuergebrauch, Schutz und die Organisation des täglichen Überlebens.",
+        didacticUse:
+          "Die Ressource verdichtet die Grundelemente mobiler Lebensformen und eignet sich als kompakte Wiederholung der materiellen Seite des Moduls."
       },
       {
         title: "Saisonale Freiheit und politische Wahl",
@@ -1010,9 +1274,12 @@ const modules = [
     ],
     input: [
       "Mit Landwirtschaft verändert sich das Leben tiefgreifend. Menschen bauen nun gezielt Pflanzen an, halten Tiere, legen Vorräte an und bleiben länger an einem Ort. Dadurch entstehen feste Häuser, Dörfer und eine engere Bindung an Boden, Wasser und Jahreszeiten. Aus Bewegung wird stärkeres Bleiben, aus flexibler Nahrungssuche wird planbare, aber auch riskante Erzeugung.",
+      "Der Anfang dieser Entwicklung liegt im Fruchtbaren Halbmond nach dem Ende der letzten Eiszeit. Dort entstehen aus Sammeln, Jagen, Vorratshaltung und ersten Anbauversuchen nach und nach neue Formen von Sesshaftigkeit. Entscheidend ist: Landwirtschaft beginnt nicht plötzlich an einem einzigen Tag, sondern als langsamer Übergang, in dem Menschen Wildgräser, Tiere, Speicher und feste Plätze immer stärker miteinander verbinden.",
       "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in größeren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
       "Aber derselbe Wandel hat auch einen Preis. Wer von wenigen Pflanzen oder Tierarten lebt, wird von Ernten, Wetter und Krankheiten stärker abhängig. Harte körperliche Arbeit nimmt oft zu. Besitz, Felder und Vorräte können Ungleichheiten fördern. Aus gemeinsamer Nutzung entstehen leichter Konflikte um Land, Wasser und Reichtum.",
+      "Die Neolithisierung Europas zeigt außerdem, dass sich diese neue Lebensweise nur langsam ausbreitet. Ackerbau und Viehzucht wandern über viele Generationen vom Vorderen Orient über Balkan und Donau sowie über Mittelmeer- und Alpenräume nach Westen. Menschen übernehmen Landwirtschaft also nicht einfach gleichzeitig, sondern in regional sehr verschiedenen Rhythmen. Gerade deshalb gehören Migration, Nachahmung und Kontaktzonen zur Geschichte der Sesshaftigkeit dazu.",
       "Der Film über die Pfahlbauer von Pfyn macht diesen Wandel konkret. Zwei Familien und zwei junge Männer leben dort vier Wochen wie vor 5700 Jahren. Sichtbar werden Hüttenbau, Steinbeile, Kolbenpfeile, Kleider, Essen, Feuerstellen und Gebrauchsgegenstände. Genau daran lässt sich Sesshaftigkeit ablesen: Häuser müssen instand gehalten, Werkzeuge hergestellt, Nahrung vorbereitet und Vorräte gesichert werden. Landwirtschaft ist deshalb kein bequemes Endziel, sondern ein Alltag aus Planung, Handarbeit und Abhängigkeit.",
+      "Göbekli Tepe verschärft die historische Frage noch einmal. Monumentale Steinkreise und Kultbilder zeigen, dass Menschen schon sehr früh große religiöse Zentren errichten konnten. Das ist wichtig, weil hier aufwendige gemeinsame Bauarbeit sichtbar wird, bevor der klassische Staatsapparat mit Palast, Beamten und Steuern greifbar wird. Religiöse Sammlung, Sesshaftigkeit und politische Ordnung lassen sich also nicht in eine allzu einfache Reihenfolge zwingen.",
       "Graeber und Wengrow widersprechen hier der einfachen Gleichung: zuerst Landwirtschaft, dann Überschuss, dann Eliten und Staat. Sie bestreiten nicht, dass Ackerbau vieles verändert, aber sie betonen, dass Menschen lange Mischformen aus Sammeln, Jagen, Gartenbau und Feldbau praktizierten. Einige Gruppen weiteten Landwirtschaft aus, andere begrenzten sie oder gaben bestimmte Formen wieder auf. Der Übergang wird dadurch nicht zu einer einzigen Stufenfolge, sondern zu einem offenen historischen Feld mit unterschiedlichen Entscheidungen und Folgen."
     ],
     sources: [
@@ -1031,6 +1298,30 @@ const modules = [
           "Die Jungsteinzeit wird über rekonstruiertes Wohnen, Werkzeuge, Kleidung und Essen greifbar gemacht. Im Zentrum steht forschendes, fächerübergreifendes Lernen.",
         didacticUse:
           "Die Ressource wird als konkretes Lebensweltfenster genutzt: Was bedeutet Sesshaftigkeit im Alltag wirklich?"
+      },
+      {
+        title: "Materialdossier: Neolithisierung – Anfänge",
+        meta: "Fruchtbarer Halbmond und langsamer Übergang",
+        extracted:
+          "Das Dossier erklärt den Beginn von Sesshaftigkeit und Nahrungsproduktion im Fruchtbaren Halbmond und zeigt, dass Landwirtschaft aus einem längeren Übergang hervorgeht statt aus einem plötzlichen Sprung.",
+        didacticUse:
+          "Das Material stützt die Grundlinie des Moduls: Sesshaftigkeit beginnt als Prozess, nicht als ein einziger revolutionärer Moment."
+      },
+      {
+        title: "Materialdossier: Neolithisierung in Europa",
+        meta: "Langsame Ausbreitung nach Europa",
+        extracted:
+          "Das Dossier beschreibt, wie sich Ackerbau und Viehzucht über Donau-, Mittelmeer- und Alpenräume langsam nach Europa ausbreiten und dabei mit Migration, Übernahme und regionalen Mischformen verbunden bleiben.",
+        didacticUse:
+          "Die Ressource macht klar, dass Neolithisierung in Europa kein einheitlicher Vorgang ist, sondern aus vielen regionalen Wegen besteht."
+      },
+      {
+        title: "Planet Schule: Göbekli Tepe – der älteste Tempel der Menschheit",
+        meta: "Monumente vor dem Staat",
+        extracted:
+          "Der Film zeigt Göbekli Tepe als frühes Kultzentrum mit monumentalen Steinsetzungen und verschiebt damit die Frage nach Religion, Sesshaftigkeit und sozialer Organisation.",
+        didacticUse:
+          "Die Ressource zwingt dazu, frühe Großbauten nicht erst aus fertigen Staaten heraus zu erklären."
       },
       {
         title: "YouTube: Neolithische Revolution",
@@ -1127,8 +1418,10 @@ const modules = [
     input: [
       "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je größer eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Maße, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
       "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
+      "Zwischen Dorf und Staat liegen zudem dichte Großsiedlungen, die nicht einfach in dasselbe Muster passen. Çatalhöyük zeigt Hunderte dicht aneinandergedrängte Häuser mit Dachzugängen, Wandmalereien, Bestattungen im Haus und gemeinschaftlicher Ordnung. Gerade daran lässt sich sehen, dass große Besiedlung, Arbeitsteilung und symbolische Verdichtung nicht automatisch schon Palast, König und Verwaltung nach späterem Muster bedeuten.",
       "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil überschwemmt das Land regelmäßig, hinterlässt fruchtbaren Schlamm und macht Landwirtschaft über lange Zeit planbar. Dadurch können Überschüsse entstehen, die gespeichert, verteilt und besteuert werden. Beamtinnen und Beamte erfassen Abgaben, organisieren Bauarbeiten und halten den Staat zusammen. Hieroglyphen sichern diese Ordnung schriftlich. Der Pharao steht politisch und religiös an der Spitze; mit der Vorstellung der Maat, also von richtiger göttlicher Ordnung, Gerechtigkeit und Gleichgewicht, wird Herrschaft zusätzlich begründet.",
       "Auch Tempel, Gräber und Pyramiden gehören in diesen Zusammenhang. Sie sind nicht bloß große Bauwerke, sondern Ausdruck einer Welt, in der Herrschaft, Religion und Jenseitsvorstellungen eng verbunden sind. Wer in Ägypten baut, zählt, schreibt und opfert, stabilisiert nicht nur den Alltag, sondern eine ganze Weltordnung. Mesopotamien lässt sich dazu kurz als Gegenbild nennen: Dort entstehen zwischen Euphrat und Tigris eher mehrere konkurrierende Stadtstaaten, während Ägypten am Nil sehr früh zu einem langen, stärker zentralisierten Reich zusammenwächst.",
+      "Die Frage, was überhaupt eine Hochkultur ausmacht, muss deshalb präzise gestellt werden. Entscheidend sind nicht einzelne Pyramiden oder spektakuläre Funde, sondern das Zusammenspiel von Überschuss, Verdichtung, Schrift oder anderen dauerhaften Zeichensystemen, religiöser Ordnung, Arbeitsteilung und Herrschaft. Gerade der Vergleich von Ägypten mit Çatalhöyük zeigt: Große Siedlung und hohe Komplexität sind vorhanden, aber nicht jedes Beispiel führt sofort zu derselben Staatsform.",
       "Graeber und Wengrow setzen hier eine Gegenfrage: Muss große Besiedlung, Speicherwirtschaft und Koordination überhaupt zwangsläufig in Königtum, Paläste und starre Hierarchie münden? Sie verweisen auf große Orte wie Çatalhöyük oder Teotihuacan, an denen dichte Siedlung, Planung und Zusammenarbeit sichtbar sind, ohne dass daraus automatisch eine klassische Herrschaftspyramide folgt. Dadurch wird Ägypten als ein sehr wichtiger, aber nicht einziger Weg zu früher Komplexität lesbar.",
       "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also auch Speicher, Listen, Schreiber, Tempel, Abgaben, Jenseitsvorstellungen und die Organisation von Arbeit betrachten."
     ],
@@ -1150,12 +1443,36 @@ const modules = [
           "So wird sichtbar, wie Landwirtschaft, Verwaltung, Religion und Herrschaft am Nil ineinandergreifen."
       },
       {
+        title: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+        meta: "Dichte Siedlung ohne Königsmodell",
+        extracted:
+          "Das Material zeigt Çatalhöyük als frühe Großsiedlung mit Hausverbänden, Dachzugängen, Kult und Bestattungen und verschärft damit die Frage, ob Komplexität immer sofort Staat bedeutet.",
+        didacticUse:
+          "Die Ressource macht den Unterschied zwischen großer Besiedlung und fertigem Königsstaat sichtbar."
+      },
+      {
+        title: "YouTube: 3D Çatalhöyük Project Animation",
+        meta: "Räumliche Rekonstruktion",
+        extracted:
+          "Die Animation macht Hausdichte, Dachzugänge und die innere Struktur einer frühen Großsiedlung räumlich anschaulich.",
+        didacticUse:
+          "Das Material hilft, aus abstrakten Beschreibungen ein konkretes Bild früher Verdichtung zu machen."
+      },
+      {
         title: "YouTube: Hochkulturen",
         meta: "Überblick",
         extracted:
           "Der Film ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung, Religion und frühen Staatsordnungen.",
         didacticUse:
           "Ägypten bleibt das Hauptbeispiel, wird aber in einen größeren Zusammenhang früher Hochkulturen eingeordnet."
+      },
+      {
+        title: "YouTube: Was ist eine \"Hochkultur\"?",
+        meta: "Begriffsarbeit",
+        extracted:
+          "Der Film klärt Hochkultur über Schrift, Herrschaft, Spezialisierung und Verdichtung statt nur über monumentale Bauten.",
+        didacticUse:
+          "Die Ressource schärft den Fachbegriff und verhindert, dass Hochkultur nur als Pyramiden- oder Prunkwort verstanden wird."
       },
       {
         title: "Städte ohne Könige?",
@@ -1246,9 +1563,12 @@ const modules = [
     ],
     input: [
       "Der Name Kelten bezeichnet keine einheitliche Nation und kein zusammenhängendes Reich. Er steht für viele Gruppen in weiten Teilen Europas, die ähnliche materielle Kultur, Waffenformen, Schmuckstile und religiöse Praktiken teilen. Für die Schweiz sind vor allem zwei große archäologische Phasen wichtig: Hallstatt und La Tène. Gerade La Tène ist für die keltische Welt im Gebiet der heutigen Schweiz zentral, weil hier oppida, Münzen, Metallhandwerk und Fernkontakte besonders deutlich werden.",
+      "Die keltische Welt wird archäologisch vor allem über Siedlungen, Gräber, Heiligtümer, Waffen, Schmuck, Münzen und Werkstätten erschlossen. Genau deshalb ist Archäologie hier keine Nebensache, sondern die zentrale Grundlage historischen Wissens. Datierung über Fundschichten, Vergleichsfunde, Münzen, Dendrochronologie oder C14 entscheidet mit darüber, wie sicher wir Bauphasen, Kontakte und Brüche überhaupt bestimmen können.",
       "Die Helvetier sind eine keltische Bevölkerungsgruppe des schweizerischen Mittellands. Antike Autoren nennen sie vor allem im Zusammenhang mit Caesar. Genau darin liegt ein Problem: Die wichtigste Textquelle stammt von einem Feldherrn, der seinen Krieg politisch rechtfertigen will. Wer die Helvetier verstehen will, darf deshalb Caesars Bericht nicht einfach übernehmen, sondern muss ihn mit archäologischen Funden vergleichen.",
       "Archäologisch erscheint die keltische Welt keineswegs als arme und unbedeutende Vorstufe Roms. Oppida, Befestigungen, Werkstätten, Münzen, importierte Güter und reiche Funde zeigen komplexe regionale Zentren. Der Beitrag zur Berner Engehalbinsel ist hier besonders wichtig: Er widerspricht dem Bild eines bloßen Bauernvolkes und zeigt eine Gesellschaft, die reich, religiös, gebildet und weit vernetzt war.",
+      "Das Kelten-Experiment und die lokalen Dossiers konkretisieren diese Welt. Häuser, Vorräte, Werkstätten, Metall, Essen, Transport und Siedlungslogik zeigen, dass keltische Gesellschaft aus materieller Organisation bestand und nicht nur aus Kriegerbildern. Der Übergang zur gallo-römischen Zeit wird dadurch als Mischung aus Kontinuitäten und Brüchen sichtbar: Vieles bleibt örtlich verankert, anderes wird von Rom überformt oder neu geordnet.",
       "58 v. Chr. wird zum Einschnitt. Ein Teil der Helvetier versucht, mit großen Gruppen auszuwandern. Caesar greift ein, besiegt sie bei Bibracte und zwingt sie zur Rückkehr. Historisch ist daran mehr wichtig als nur die Schlacht: Rom entscheidet damit, wer sich im Alpenvorland bewegen darf, und zieht den Raum stärker in seine eigene Ordnung hinein. Die Helvetier bleiben also nicht außerhalb der Geschichte Roms, sondern geraten nun unter römischen Druck und schließlich in den imperialen Zusammenhang.",
+      "Der Film Die Kelten und die Römer macht diesen Übergang räumlich besonders klar. Er zeigt, dass Rom nicht einfach eine leere Landschaft besetzt, sondern auf bestehende Siedlungen, Verkehrswege und keltische Strukturen trifft. Genau an solchen Kontaktzonen lässt sich erkennen, was übernommen, was verdrängt und was neu geordnet wird.",
       "Harari würde an diesem Punkt betonen, dass größere Reiche lokale Gruppen in weiter reichende Macht-, Rechts- und Verkehrsordnungen einbinden. Graeber und Wengrow setzen früher an: Für sie zeigen oppida, Austausch und politische Verdichtung bereits vor Rom, dass komplexe Gesellschaften nicht erst als Vorstufe eines Imperiums interessant werden. Genau an den Helvetiern wird der Unterschied deutlich: Harari liest stärker die Eingliederung in größere Netze, Graeber und Wengrow stärker die Eigenständigkeit und Offenheit vorrömischer Komplexität."
     ],
     sources: [
@@ -1271,10 +1591,40 @@ const modules = [
           "Der Lexikonartikel ordnet die Helvetier als keltische Bevölkerungsgruppe des schweizerischen Mittellands ein und macht deutlich, wie stark ihre Geschichte über Caesar und Archäologie erschlossen wird."
       },
       {
+        title: "Materialdossier: Die Kelten",
+        meta: "Hallstatt, La Tène und oppida",
+        extracted:
+          "Das lokale Dossier bündelt Hallstatt, La Tène, Oppida, Fernkontakte und den Bruch durch Caesar und legt damit die Grundstruktur der keltischen Entwicklung im Raum der heutigen Schweiz frei."
+      },
+      {
+        title: "Arbeitspräsentation: Kelten – Überblick",
+        meta: "Keltenbilder und archäologische Korrektur",
+        extracted:
+          "Die lokale Präsentation stellt gängige Gallier- und Barbarenbilder bewusst neben Hallstatt, La Tène, oppida und archäologische Befunde und eignet sich deshalb als Korrekturfolie gegen Klischees."
+      },
+      {
+        title: "Planet Schule: Das Kelten-Experiment – Wie lebten die Kelten?",
+        meta: "Materieller Alltag",
+        extracted:
+          "Der Film zeigt Hausbau, Vorräte, Handwerk und Alltag und macht damit sichtbar, dass keltische Gesellschaft aus konkreter Arbeit, Siedlungsorganisation und materieller Kultur besteht."
+      },
+      {
         title: "SRF: Keltische Schätze der Berner Engehalbinsel",
         meta: "Archäologie gegen das Bauernvolk-Klischee",
         extracted:
           "Die Funde der Engehalbinsel zeigen die Helvetier nicht als schlichtes Bauernvolk, sondern als reiche, religiöse und weit vernetzte Gesellschaft."
+      },
+      {
+        title: "Planet Schule: Altersbestimmung in der Archäologie",
+        meta: "Wie Archäologie zu Daten kommt",
+        extracted:
+          "Das Material erklärt C14, Dendrochronologie, Fundschichten und Vergleichsfunde und zeigt damit, wie archäologische Aussagen zu Kelten und Helvetiern überhaupt abgesichert werden."
+      },
+      {
+        title: "Materialdossier: Archäologie",
+        meta: "Stratigraphie, Datierung und Auswertung",
+        extracted:
+          "Das lokale Dossier erklärt Archäologie als unterirdisches Archiv und verbindet Grabung, Stratigraphie, Datierung und naturwissenschaftliche Auswertung."
       },
       {
         title: "Nationalmuseum: Warum die Kelten tapfer waren",
@@ -1283,10 +1633,22 @@ const modules = [
           "Der Beitrag führt in die keltische Welt als frühe europäische Hochkultur mit Metallhandwerk, Fernkontakten und markanter materieller Kultur ein."
       },
       {
+        title: "SRF: Die Kelten und die Römer",
+        meta: "Kontaktzone vor der Romanisierung",
+        extracted:
+          "Der Film behandelt die Begegnung von keltischer und römischer Welt konkret im Schweizer Raum und zeigt Kontinuitäten und Brüche statt eines einfachen Ersetzungsmodells."
+      },
+      {
         title: "Swiss Spectator: Die Kelten in der Schweiz",
         meta: "Keltische Schweiz im Überblick",
         extracted:
           "Der Überblick verbindet Hallstatt, La Tène, oppida und die keltische Besiedlung der Schweiz mit dem Übergang in die römische Zeit."
+      },
+      {
+        title: "PHBern: Kelten und gallo-römische Zeit",
+        meta: "Keltische Schweiz im Übergang",
+        extracted:
+          "Das Ideenset verbindet keltische und gallo-römische Zeit und ist deshalb besonders hilfreich, um Übergänge, Überlagerungen und regional unterschiedliche Entwicklungen zu erklären."
       },
       {
         title: "Landesmuseum: Archäologie Schweiz",
@@ -2533,6 +2895,28 @@ const contentChecks = {
           { label: "Werkzeuge oder Feuer", keywords: ["werkzeuge", "feuer", "technik"] },
           { label: "Ergänzungsfunktion", keywords: ["erganzt", "fruhphase", "biologisch", "technisch"] }
         ]
+      },
+      {
+        prompt: "Warum ist der Stammbaum der Menschheit eher ein Geflecht als eine Leiter?",
+        placeholder: "Erkläre Gleichzeitigkeit, Aussterben und mehrere Linien.",
+        sampleAnswer:
+          "Der Stammbaum ist eher ein Geflecht, weil mehrere Menschenarten gleichzeitig existierten, sich Entwicklungslinien verzweigten und manche Gruppen wieder ausstarben. Frühgeschichte verläuft also nicht als einfache Aufwärtsbewegung, sondern mit Koexistenz, Brüchen und unterschiedlichen Wegen.",
+        criteria: [
+          { label: "mehrere Linien", keywords: ["mehrere", "linien", "verzweigt", "geflecht"] },
+          { label: "Gleichzeitigkeit", keywords: ["gleichzeitig", "koexistenz", "nebeneinander"] },
+          { label: "Aussterben oder Brüche", keywords: ["aussterben", "abbruche", "bruche"] }
+        ]
+      },
+      {
+        prompt: "Was zeigt ein Faustkeil über Denken und Technik früher Menschen?",
+        placeholder: "Arbeite mit Rohstoffwahl, Planung und Weitergabe von Können.",
+        sampleAnswer:
+          "Ein Faustkeil zeigt, dass frühe Menschen geeignete Rohstoffe auswählen, eine Form planen und Schlagtechnik beherrschen mussten. Das Werkzeug ist deshalb ein Beleg für vorausschauendes Denken, handwerkliche Übung und die Weitergabe von technischem Wissen.",
+        criteria: [
+          { label: "Rohstoffwahl", keywords: ["rohstoff", "stein", "material"] },
+          { label: "Planung", keywords: ["plan", "planung", "zielbild"] },
+          { label: "Wissensweitergabe", keywords: ["weitergabe", "lernen", "technik", "übung"] }
+        ]
       }
     ]
   },
@@ -2581,6 +2965,17 @@ const contentChecks = {
           { label: "historische Quelle", keywords: ["quelle", "historisch ernst", "nicht nur schmuck"] },
           { label: "Symbol oder Ritual", keywords: ["symbol", "ritual", "weltdeutung"] },
           { label: "Kunst als Teil von Geschichte", keywords: ["kunst", "vorstellungswelten", "geschichte"] }
+        ]
+      },
+      {
+        prompt: "Warum sind Handabdrücke, Tierbilder und wiederkehrende Zeichen mehr als Dekoration?",
+        placeholder: "Zeige, wie Bilder Erinnerung, Zugehörigkeit oder Deutung tragen.",
+        sampleAnswer:
+          "Handabdrücke, Tierbilder und Zeichen sind mehr als Dekoration, weil sie Erlebnisse, Gruppenwissen oder Weltdeutungen festhalten können. Sie machen sichtbar, dass Menschen ihre Umwelt nicht nur nutzten, sondern ihr auch Bedeutung gaben.",
+        criteria: [
+          { label: "nicht nur Dekoration", keywords: ["nicht nur", "dekoration", "mehr als schmuck"] },
+          { label: "Erinnerung oder Weltdeutung", keywords: ["erinnerung", "weltdeutung", "bedeutung"] },
+          { label: "Zeichenfunktion", keywords: ["zeichen", "bilder", "handabdrucke", "tierbilder"] }
         ]
       }
     ]
@@ -2681,6 +3076,39 @@ const contentChecks = {
           { label: "Gewinne", keywords: ["vorrate", "dorfer", "sicherheit"] },
           { label: "Belastungen", keywords: ["arbeit", "abhangigkeit", "ungleichheit"] }
         ]
+      },
+      {
+        prompt: "Warum beginnt die Neolithisierung im Fruchtbaren Halbmond nicht als fertiges System, sondern als längerer Übergang?",
+        placeholder: "Arbeite mit Klimawechsel, Pflanzen, Tieren und schrittweisen Veränderungen.",
+        sampleAnswer:
+          "Die Neolithisierung beginnt nicht als fertiges System, weil Menschen nach der Eiszeit erst schrittweise mit Pflanzenmanagement, Tierhaltung und festen Siedlungsformen experimentieren. Klima, Nahrungssuche und neue Techniken greifen langsam ineinander, bevor daraus dauerhafter Ackerbau entsteht.",
+        criteria: [
+          { label: "Fruchtbarer Halbmond", keywords: ["fruchtbarer halbmond", "vorderasien"] },
+          { label: "schrittweiser Übergang", keywords: ["schrittweise", "langsam", "übergang", "prozess"] },
+          { label: "Pflanzen oder Tiere", keywords: ["pflanzen", "tiere", "tierhaltung", "anbau"] }
+        ]
+      },
+      {
+        prompt: "Warum ist die Ausbreitung von Landwirtschaft nach Europa keine einzige Welle, sondern eine Folge verschiedener Wege?",
+        placeholder: "Verbinde Balkan, Donau, Mittelmeer, Alpenraum, Migration und Übernahme.",
+        sampleAnswer:
+          "Die Ausbreitung verläuft über verschiedene Räume wie Balkan, Donau, Mittelmeer und Alpenraum. In manchen Regionen wandern Gruppen ein, anderswo werden Techniken übernommen oder gemischt. Deshalb ist Neolithisierung in Europa ein regional unterschiedlicher Prozess und kein einziger gleichförmiger Zug.",
+        criteria: [
+          { label: "mehrere Wege", keywords: ["balkan", "donau", "mittelmeer", "alpen"] },
+          { label: "Migration oder Übernahme", keywords: ["migration", "übernahme", "mischung"] },
+          { label: "kein einheitlicher Vorgang", keywords: ["nicht einheitlich", "verschieden", "regional"] }
+        ]
+      },
+      {
+        prompt: "Warum ist Göbekli Tepe für die Deutung der Neolithisierung so wichtig?",
+        placeholder: "Erkläre, was monumentale Kultbauten vor ausgebauter Staatlichkeit historisch verändern.",
+        sampleAnswer:
+          "Göbekli Tepe ist wichtig, weil dort monumentale Kultbauten sichtbar werden, bevor der klassische Bauernstaat mit Palast, Beamten und Steuern greifbar ist. Das zeigt, dass gemeinsame religiöse Zentren und große Bauarbeit nicht erst nach fertiger Staatlichkeit entstehen.",
+        criteria: [
+          { label: "monumentale Kultbauten", keywords: ["monumental", "kult", "steinkreise", "tempel"] },
+          { label: "vor klassischer Staatlichkeit", keywords: ["vor staat", "bevor", "ohne palast", "ohne beamte"] },
+          { label: "Deutung verändert", keywords: ["reihenfolge", "nicht erst", "neu deuten"] }
+        ]
       }
     ]
   },
@@ -2741,6 +3169,28 @@ const contentChecks = {
           { label: "Ägypten als Fallbeispiel", keywords: ["agypten", "fallbeispiel", "konkret"] },
           { label: "breiter Überblick", keywords: ["uberblick", "mehrere", "hochkulturen"] },
           { label: "zentrale Strukturmerkmale", keywords: ["schrift", "verwaltung", "religion", "staat"] }
+        ]
+      },
+      {
+        prompt: "Warum ist Çatalhöyük ein Gegenbeispiel gegen die einfache Formel 'große Siedlung = fertiger Staat'?",
+        placeholder: "Arbeite mit Hausdichte, Dachzugängen, Kult und fehlendem Palast.",
+        sampleAnswer:
+          "Çatalhöyük zeigt dichte Hausverbände, Dachzugänge, Wandmalereien und Bestattungen im Haus. Gleichzeitig fehlt das klare Bild eines Palastes oder eines Königsstaats. Dadurch wird sichtbar, dass Verdichtung und komplexes Zusammenleben nicht automatisch schon dieselbe Herrschaftsform wie im Alten Ägypten bedeuten.",
+        criteria: [
+          { label: "Hausdichte oder Dachzugänge", keywords: ["hausdichte", "dachzugange", "hausverbande"] },
+          { label: "Kult oder Bestattungen", keywords: ["kult", "bestattungen", "wandmalereien"] },
+          { label: "kein automatischer Staat", keywords: ["nicht automatisch", "kein palast", "kein königsstaat", "andere ordnung"] }
+        ]
+      },
+      {
+        prompt: "Was muss zu einer Hochkultur gehören, damit der Begriff mehr bedeutet als nur Pracht und Monumente?",
+        placeholder: "Nenne mehrere Strukturmerkmale wie Schrift, Verwaltung, Spezialisierung und Herrschaft.",
+        sampleAnswer:
+          "Zu einer Hochkultur gehören nicht nur große Bauwerke, sondern dauerhafte Ordnungen: Schrift oder andere feste Zeichensysteme, Verwaltung, Arbeitsteilung, religiöse Ordnung und politische Herrschaft. Erst das Zusammenspiel dieser Elemente macht aus monumentalen Bauten eine historisch stabile Hochkultur.",
+        criteria: [
+          { label: "Schrift oder Zeichensysteme", keywords: ["schrift", "zeichensystem", "hieroglyph"] },
+          { label: "Verwaltung oder Spezialisierung", keywords: ["verwaltung", "spezialisierung", "arbeitsteilung"] },
+          { label: "Herrschaft oder Religion", keywords: ["herrschaft", "religion", "ordnung"] }
         ]
       }
     ]
@@ -2812,6 +3262,39 @@ const contentChecks = {
           { label: "Harari", keywords: ["harari", "reiche", "netze", "einglied", "größere ordnungen", "grössere ordnungen"] },
           { label: "Graeber/Wengrow", keywords: ["graeber", "wengrow", "offen", "eigenständig", "vorrömisch", "vorrömische"] },
           { label: "Helvetier als Beispiel", keywords: ["helvetier", "oppida", "keltische welt", "vor rom"] }
+        ]
+      },
+      {
+        prompt: "Warum ist Archäologie im Fall der Helvetier wichtiger als bei vielen späteren Epochen mit vielen Schriftquellen?",
+        placeholder: "Verbinde fehlende Eigenquellen, Fundschichten und Datierung.",
+        sampleAnswer:
+          "Archäologie ist hier besonders wichtig, weil die Helvetier keine lange eigene Schriftüberlieferung hinterlassen haben, auf die man sich allein stützen könnte. Siedlungsschichten, Münzen, Werkstätten, Gräber und Datierungsmethoden liefern deshalb die wichtigste Grundlage, um ihre Geschichte jenseits von Caesar zu rekonstruieren.",
+        criteria: [
+          { label: "fehlende eigene Schriftquellen", keywords: ["keine eigenen schriftquellen", "wenig schrift", "caesar"] },
+          { label: "Fundschichten oder Funde", keywords: ["fundschichten", "gräber", "werkstätten", "münzen", "siedlungen"] },
+          { label: "Datierung", keywords: ["datierung", "c14", "dendrochronologie", "vergleichsfunde"] }
+        ]
+      },
+      {
+        prompt: "Warum korrigiert das Kelten-Experiment die Vorstellung, keltische Geschichte bestehe nur aus Krieg und Römerkontakt?",
+        placeholder: "Arbeite mit Hausbau, Vorräten, Handwerk und Alltag.",
+        sampleAnswer:
+          "Das Kelten-Experiment zeigt, dass keltische Geschichte aus Bauen, Kochen, Speichern, Handwerk und organisierter Arbeit besteht. Dadurch tritt eine alltägliche Lebenswelt hervor, die viel breiter ist als Krieg und der spätere Kontakt mit Rom.",
+        criteria: [
+          { label: "Hausbau oder Vorräte", keywords: ["hausbau", "vorräte", "speicher"] },
+          { label: "Handwerk oder Arbeit", keywords: ["handwerk", "arbeit", "werkstätten", "kochen"] },
+          { label: "Klischee korrigiert", keywords: ["nicht nur krieg", "nicht nur rom", "alltag"] }
+        ]
+      },
+      {
+        prompt: "Warum ist der Übergang zur gallo-römischen Zeit besser als Mischung aus Kontinuitäten und Brüchen zu beschreiben als als Totalersetzung?",
+        placeholder: "Erkläre mit Orten, Verkehrswegen, Siedlungen oder materiellen Spuren.",
+        sampleAnswer:
+          "Der Übergang ist keine Totalersetzung, weil Rom auf bestehende Orte, Wege und Siedlungsräume trifft. Manche Strukturen bleiben wichtig, werden aber in neue Macht- und Verkehrsordnungen eingebunden. Genau deshalb lässt sich die gallo-römische Zeit als Überlagerung und Neuordnung lesen.",
+        criteria: [
+          { label: "bestehende Orte oder Wege", keywords: ["orte", "wege", "verkehrswege", "siedlungen"] },
+          { label: "Kontinuität", keywords: ["bleibt", "weiter", "kontinuität", "übernahme"] },
+          { label: "Bruch oder Neuordnung", keywords: ["bruch", "neuordnung", "überlagerung", "rom"] }
         ]
       }
     ]
@@ -4313,6 +4796,72 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Frühmenschen seien bloß primitive Vorformen ohne eigene historische Bedeutung."
   },
+  [makeSourceKey("modul-2", "Planet Schule: Die außergewöhnliche Reise der Menschheit")]: {
+    badge: "Planet Schule · Hominisation im Überblick",
+    locator: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
+    thesis:
+      "Der Film erzählt die Menschwerdung als lange Kette von Anpassung, Werkzeugtechnik, Kooperation, Migration und weltweiter Ausbreitung statt als einzelne Wundererfindung.",
+    passage:
+      "Für Modul 2 ist dieser Überblick wichtig, weil er die sehr langen Frühphasen der Menschheit in eine zusammenhängende Entwicklung ordnet. Frühmenschen, Feuer, Werkzeuggebrauch, Wanderungen und spätere globale Ausbreitung erscheinen dadurch nicht als lose Einzelfakten, sondern als aufeinander aufbauende Schritte. Genau so wird sichtbar, dass der Aufstieg des Homo sapiens kein plötzlicher Sprung, sondern das Ergebnis vieler kleiner, oft langsamer Veränderungen ist.",
+    whyHere:
+      "Die Ressource trägt den roten Faden des Moduls: von frühen Menschenarten bis zur globalen Präsenz des Homo sapiens.",
+    mustKnow: [
+      "Menschwerdung umfasst biologische, technische und soziale Veränderungen zugleich.",
+      "Werkzeuggebrauch, Feuer und Kooperation greifen als lange Entwicklung ineinander.",
+      "Die Ausbreitung des Homo sapiens ist Teil einer globalen Migrationsgeschichte."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, die Menschheitsgeschichte beginne erst mit Sesshaftigkeit oder verlaufe in wenigen isolierten Sprüngen."
+  },
+  [makeSourceKey("modul-2", "ZDF Schule: Stammbaum")]: {
+    badge: "ZDF Schule · Verzweigte Menschwerdung",
+    locator: "ZDF Schule: Stammbaum",
+    thesis:
+      "Das Material ersetzt die alte Leiter des Fortschritts durch ein Geflecht aus mehreren Menschenarten, Überschneidungen und Abbrüchen.",
+    passage:
+      "Der Stammbaum ist für dieses Modul besonders stark, weil er Koexistenz sichtbar macht. Homo sapiens steht nicht am Ende einer sauberen Aufwärtslinie, sondern lebt zeitweise neben Neandertalern, Denisova-Menschen und anderen Gruppen. Dadurch wird klar: Frühgeschichte muss mit Gleichzeitigkeit, Aussterben und unterschiedlichen Entwicklungspfaden arbeiten. Gerade diese Offenheit macht die Frage historisch interessant, warum sich eine Linie am Ende stärker durchsetzt als andere.",
+    whyHere:
+      "Die Ressource zerschlägt die lineare Fortschrittserzählung direkt am Anfang des Moduls.",
+    mustKnow: [
+      "Frühe Menschheitsgeschichte ist verzweigt und nicht eindimensional.",
+      "Mehrere Menschenarten leben zeitweise gleichzeitig.",
+      "Aussterben und Koexistenz gehören wesentlich zur Frühgeschichte."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, der moderne Mensch sei zwangsläufig und geradlinig aus einfacheren Vorformen hervorgegangen."
+  },
+  [makeSourceKey("modul-2", "ZDF / Terra X: Wissenshappen – Faustkeil")]: {
+    badge: "Terra X · Faustkeil als Technikspur",
+    locator: "ZDF / Terra X: Wissenshappen – Faustkeil",
+    thesis:
+      "Der Faustkeil verdichtet frühe Technikgeschichte in einem einzigen Gegenstand: Materialwahl, Planen, Schlagtechnik und Weitergabe von Können.",
+    passage:
+      "Das Material ist für Modul 2 deshalb so nützlich, weil es Technikgeschichte konkret macht. Ein Faustkeil ist nicht bloß ein Stein, sondern ein bearbeitetes Werkzeug mit klarer Form, praktischer Funktion und erlernbarer Herstellung. Dahinter stehen Beobachtung geeigneter Rohstoffe, ein Zielbild im Kopf und handwerkliche Erfahrung. Genau daran wird sichtbar, dass frühe Menschen nicht nur biologisch, sondern auch technisch und kulturell lernen mussten.",
+    whyHere:
+      "Der Faustkeil verbindet Körper, Denken, Material und Weitergabe von Wissen in einer einzigen Spur.",
+    mustKnow: [
+      "Werkzeuge setzen Planung und Übung voraus.",
+      "Rohstoffwissen ist Teil früher Technik.",
+      "Technikgeschichte beginnt lange vor Metall und Schrift."
+    ],
+    misconception:
+      "Korrigiert wird die Fehldeutung, frühe Werkzeuge seien roh und historisch wenig aussagekräftig."
+  },
+  [makeSourceKey("modul-2", "Arbeitspräsentation: Hominisation – Zeitleiste")]: {
+    badge: "Lokale Präsentation · Zeitraster",
+    locator: "Arbeitspräsentation: Hominisation – Zeitleiste",
+    thesis:
+      "Die Präsentation ordnet Alt-, Mittel- und Jungsteinzeit sauber hintereinander und macht sichtbar, wie lang die Frühgeschichte vor Sesshaftigkeit und Staat eigentlich dauert.",
+    passage:
+      "Dieses Material ist vor allem als Zeitgerüst wichtig. Es hilft, die Hominisation nicht in wenige spektakuläre Momente zu zerlegen, sondern als sehr langen Zeitraum zu sehen, in dem Werkzeuggeschichte, Klimawechsel, Wanderungen und verschiedene Menschenarten ihren Platz haben. Gerade weil Schüler*innen frühe Geschichte oft zeitlich unterschätzen, schafft die Zeitleiste hier ein belastbares Überblickswissen.",
+    whyHere:
+      "Das Material stabilisiert die Chronologie des Moduls und ordnet die Frühgeschichte vor den späteren Umbrüchen.",
+    mustKnow: [
+      "Paläolithikum, Mesolithikum und Neolithikum bilden große Frühphasen.",
+      "Die längste Zeit menschlicher Geschichte liegt vor Städten und Staaten.",
+      "Chronologie ist nötig, um Brüche wie Sesshaftigkeit überhaupt zu gewichten."
+    ]
+  },
   [makeSourceKey("modul-3", "Harari-PDF")]: {
     badge: "S. 33 · Kognitive Revolution",
     locator: "Harari-PDF, S. 33",
@@ -4364,6 +4913,21 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, frühe Kunst sei nur Dekoration und sage wenig über Gesellschaft aus."
+  },
+  [makeSourceKey("modul-3", "National Geographic: Frühgeschichte und Höhlenkunst")]: {
+    badge: "National Geographic · Frühgeschichte und Bildwelten",
+    locator: "National Geographic: Frühgeschichte und Höhlenkunst",
+    thesis:
+      "Der Themenraum erweitert Höhlenkunst von einem Einzelbeispiel zu einem größeren Feld früher Bild- und Zeichenwelten.",
+    passage:
+      "Für dieses Modul ist die Seite hilfreich, weil sie Höhlenkunst nicht isoliert, sondern als Teil größerer Fragen nach Symbolik, Ritual, Erinnerung und visueller Ordnung behandelt. Handabdrücke, Tierdarstellungen, Farbpigmente und schwer zugängliche Höhlenräume zeigen, dass Bilder in frühen Gesellschaften mehr waren als bloßer Schmuck. Sie gehören zu einer Welt, in der Menschen Erlebnisse deuten, Zugehörigkeit ausdrücken und ihre Umwelt symbolisch fassen.",
+    whyHere:
+      "Das Material verbreitert den Blick von einem einzelnen Höhlenfilm zu einer größeren Geschichte früher Bildsprachen.",
+    mustKnow: [
+      "Höhlenkunst ist eine historische Quelle für Denken und Deuten.",
+      "Bilder, Zeichen und Farben schaffen gemeinsame Bedeutung.",
+      "Frühe Symbolwelten lassen sich international und nicht nur lokal betrachten."
+    ]
   },
   [makeSourceKey("modul-4", "SRF: 1491")]: {
     badge: "SRF-school-Film · Lebensformen",
@@ -4487,6 +5051,51 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, Landwirtschaft sei selbstverständlich nur ein historischer Gewinn gewesen."
   },
+  [makeSourceKey("modul-5", "Materialdossier: Neolithisierung – Anfänge")]: {
+    badge: "Lokales Dossier · Fruchtbarer Halbmond",
+    locator: "Materialdossier: Neolithisierung – Anfänge",
+    thesis:
+      "Das Dossier verortet die ersten Schritte zu Ackerbau und Sesshaftigkeit im Fruchtbaren Halbmond und macht klar, dass dieser Wandel schrittweise und regional sehr unterschiedlich beginnt.",
+    passage:
+      "Für das Modul ist dieses Material wichtig, weil es den Anfang der Neolithisierung konkret aus dem Ende der Eiszeit heraus erklärt. Sammeln, Jagen, erstes Pflanzenmanagement, Tierhaltung und feste Siedlungsansätze entstehen nicht gleichzeitig an einem Tag, sondern in längeren Übergängen. Genau hier lässt sich auch der Deutungsstreit schärfen: Harari betont die Belastungen des Umbruchs, Graeber und Wengrow die Offenheit und Uneinheitlichkeit dieser frühen Wege.",
+    whyHere:
+      "Das Dossier verankert den Beginn der Sesshaftigkeit geografisch und historisch genauer.",
+    mustKnow: [
+      "Frühe Landwirtschaft beginnt im Fruchtbaren Halbmond.",
+      "Neolithisierung ist ein Prozess, keine plötzliche Explosion.",
+      "Der Übergang verbindet Klima, Nahrung, Tiere und neue Siedlungsformen."
+    ]
+  },
+  [makeSourceKey("modul-5", "Materialdossier: Neolithisierung in Europa")]: {
+    badge: "Lokales Dossier · Ausbreitung nach Europa",
+    locator: "Materialdossier: Neolithisierung in Europa",
+    thesis:
+      "Ackerbau und Viehzucht breiten sich in Europa langsam, regional unterschiedlich und über mehrere Wege aus.",
+    passage:
+      "Das Dossier zeigt besonders klar, dass Neolithisierung nicht einfach wie eine einheitliche Welle über Europa rollt. Der Balkanraum, die Donau, das Mittelmeer und der Alpenraum werden unterschiedlich erfasst. In manchen Regionen ziehen Gruppen ein, anderswo werden Techniken übernommen oder gemischt. Gerade dadurch wird die Ausbreitung des Ackerbaus historisch greifbar: als langsame Umgestaltung Europas und nicht als kurzer Startschuss.",
+    whyHere:
+      "Das Material bringt den Übergang von den Ursprungsregionen in die europäische Entwicklungslinie des Kurses.",
+    mustKnow: [
+      "Neolithisierung Europas verläuft langsam und regional verschieden.",
+      "Migration und Übernahme spielen beide eine Rolle.",
+      "Der Alpenraum wird zu einer Kontaktzone dieser Entwicklung."
+    ]
+  },
+  [makeSourceKey("modul-5", "Planet Schule: Göbekli Tepe – der älteste Tempel der Menschheit")]: {
+    badge: "Planet Schule · Frühes Kultzentrum",
+    locator: "Planet Schule: Göbekli Tepe – der älteste Tempel der Menschheit",
+    thesis:
+      "Göbekli Tepe verschiebt die übliche Reihenfolge: monumentale Kultbauten entstehen sichtbar, bevor der klassische Bauernstaat mit Palast, Beamten und Steuern greifbar wird.",
+    passage:
+      "Gerade dieses Material macht Modul 5 historisch schärfer. Die großen Steinsetzungen zeigen, dass religiöse Sammlung, gemeinsames Bauen und symbolische Ordnung schon sehr früh hohe Koordination verlangen konnten. Dadurch gerät die einfache Formel ins Wanken, erst Landwirtschaft habe automatisch Religion, Monumente und komplexe Organisation hervorgebracht. Göbekli Tepe zwingt dazu, Sesshaftigkeit, Kult und Herrschaft neu aufeinander zu beziehen.",
+    whyHere:
+      "Der Film setzt mitten in der Neolithisierung einen starken Gegenakzent zu linearen Modellen.",
+    mustKnow: [
+      "Monumentale Kultzentren können vor klassischer Staatlichkeit entstehen.",
+      "Große Bauprojekte setzen schon früh Koordination und gemeinsame Deutung voraus.",
+      "Religion, Sesshaftigkeit und Herrschaft folgen nicht immer derselben Reihenfolge."
+    ]
+  },
   [makeSourceKey("modul-6", "Harari-PDF")]: {
     badge: "S. 155–161 · Schrift und Bürokratie",
     locator: "Harari-PDF, S. 155 und S. 161",
@@ -4552,6 +5161,51 @@ const sourceDetails = {
       "Große Siedlungen sind nicht automatisch Königsstaaten.",
       "Komplexität, Arbeitsteilung und Hierarchie sind historisch nicht identisch.",
       "Ägypten ist ein Weg früher Staatlichkeit, aber kein allgemeines Naturgesetz."
+    ]
+  },
+  [makeSourceKey("modul-6", "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung")]: {
+    badge: "Terra X · Großsiedlung ohne Palast",
+    locator: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+    thesis:
+      "Çatalhöyük zeigt dichte Besiedlung, Kult und Hausverbände, ohne dass sofort ein klassischer Königsstaat sichtbar wird.",
+    passage:
+      "Für Modul 6 ist Çatalhöyük besonders fruchtbar, weil es zwischen Dorf und Staat liegt. Viele eng gebaute Häuser, Dachzugänge, Wandmalereien und Bestattungen im Haus zeigen eine hoch verdichtete Lebensform mit klarer sozialer Ordnung. Gleichzeitig fehlt das eindeutige Bild eines Palastes oder eines zentralen Herrschers. Genau daran lässt sich lernen, dass Komplexität, Verdichtung und Staat nicht dasselbe sind.",
+    whyHere:
+      "Das Material macht den Unterschied zwischen großer Siedlung und fertigem Staat anschaulich.",
+    mustKnow: [
+      "Çatalhöyük ist eine frühe Großsiedlung mit dichter Hausordnung.",
+      "Komplexes Zusammenleben ist nicht automatisch schon Königtum.",
+      "Verdichtung kann archäologisch sichtbar sein, bevor klassische Staatssymbole auftauchen."
+    ]
+  },
+  [makeSourceKey("modul-6", "YouTube: 3D Çatalhöyük Project Animation")]: {
+    badge: "3D-Animation · Siedlungsstruktur",
+    locator: "YouTube: 3D Çatalhöyük Project Animation",
+    thesis:
+      "Die Animation übersetzt den Befund von Çatalhöyük in einen räumlichen Eindruck und macht Hausdichte, Dächer und Zugänge unmittelbar sichtbar.",
+    passage:
+      "Gerade bei frühen Großsiedlungen hilft die räumliche Vorstellung enorm. Die Animation zeigt, wie eng die Häuser stehen, warum Dächer als Verkehrsraum dienen und wie wenig das Ganze an spätere Straßensysteme oder Palastanlagen erinnert. So wird sichtbar, dass frühe Verdichtung anders organisiert sein kann als spätere Städte.",
+    whyHere:
+      "Das Material macht eine archäologische Beschreibung räumlich verständlich.",
+    mustKnow: [
+      "Dächer und Hausverbände strukturieren die Siedlung.",
+      "Großsiedlung bedeutet nicht automatisch Stadt nach späterem Muster.",
+      "Räumliche Rekonstruktion hilft, Archäologie konkret zu lesen."
+    ]
+  },
+  [makeSourceKey("modul-6", "YouTube: Was ist eine \"Hochkultur\"?")]: {
+    badge: "Begriffsfilm · Hochkultur klären",
+    locator: "YouTube: Was ist eine \"Hochkultur\"?",
+    thesis:
+      "Der Film präzisiert, dass Hochkultur nicht an Pracht allein hängt, sondern an Schrift, Herrschaft, Spezialisierung, Verdichtung und dauerhaften Ordnungen.",
+    passage:
+      "Im Modul ist dieser Film besonders nützlich, weil er den Begriff Hochkultur vom Monumentenstaunen löst. Pyramiden oder Tempel sind sichtbare Ergebnisse, aber der Begriff meint mehr: Verwaltung, Abgaben, Arbeitsteilung, religiöse Ordnung, Zeichen- und Schriftsysteme. Genau diese Präzisierung braucht es, damit Ägypten historisch als Struktur und nicht nur als Bildwelt verstanden wird.",
+    whyHere:
+      "Der Film schärft den Fachbegriff, bevor er auf Ägypten und andere Frühstaaten angewendet wird.",
+    mustKnow: [
+      "Hochkultur meint dauerhafte komplexe Ordnung, nicht nur Monumente.",
+      "Schrift, Verwaltung und Spezialisierung gehören zum Kern.",
+      "Der Begriff muss präzise und nicht bloß dekorativ verwendet werden."
     ]
   },
   [makeSourceKey("modul-7-kelten", "Harari-PDF · S. 150")]: {
@@ -4675,6 +5329,111 @@ const sourceDetails = {
       { title: "Stadtspiegel 2018: Schwerpunkt Kempraten", note: "Lokaler Fokus auf Siedlungsraum und Uferlage am oberen Zürichsee." },
       { title: "Archäologischer Jahresbericht 2004", note: "Grabungs- und Fundbericht als regionale Vertiefung." },
       { title: "Römische Verkehrswege", note: "Brücke vom keltischen Raum zur späteren römischen Infrastruktur." }
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Materialdossier: Die Kelten")]: {
+    badge: "Lokales Dossier · Hallstatt bis Caesar",
+    locator: "Materialdossier: Die Kelten",
+    thesis:
+      "Das Dossier erzählt die keltische Welt von Hallstatt über La Tène bis zu oppida und dem Einschnitt durch Caesar als längere eisenzeitliche Entwicklung.",
+    passage:
+      "Für das Modul ist dieses Dossier fast die Grundachse. Es verbindet Salz, Eliten und Wagenbestattungen der Hallstattzeit mit der künstlerisch und politisch verdichteten Welt der La-Tène-Zeit. Oppida, Druiden, Fernkontakte und Münzgeld erscheinen dadurch nicht als isolierte Schlagworte, sondern als zusammenhängende Entwicklung der späten Eisenzeit. Gerade so wird verständlich, dass die Helvetier Teil einer älteren keltischen Welt sind und nicht erst im Moment des römischen Eingriffs historisch sichtbar werden.",
+    whyHere:
+      "Das Dossier liefert die innere Entwicklung der keltischen Welt, bevor Caesar und Rom dominieren.",
+    mustKnow: [
+      "Hallstatt und La Tène markieren verschiedene Phasen keltischer Entwicklung.",
+      "Oppida, Münzgeld und Fernkontakte zeigen politische und wirtschaftliche Verdichtung.",
+      "Der Bruch durch Caesar trifft auf eine bereits komplexe Welt."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Arbeitspräsentation: Kelten – Überblick")]: {
+    badge: "Lokale Präsentation · Klischee und Korrektur",
+    locator: "Arbeitspräsentation: Kelten – Überblick",
+    thesis:
+      "Die Präsentation stellt bewusst stereotype Gallier- und Barbarenbilder neben die archäologische Wirklichkeit der keltischen Welt.",
+    passage:
+      "Dieses Material eignet sich besonders als Einstieg oder Zwischenstopp im Modul, weil es verbreitete Bilder offenlegt: Krieger, Palisadendorf, Druiden, Römerfeindschaft. Erst danach werden Hallstatt, La Tène, oppida, Funde und regionale Zentren dagegengesetzt. So wird nicht nur Stoff vermittelt, sondern auch ein verbreitetes Fehlbild der Kelten systematisch aufgebrochen.",
+    whyHere:
+      "Die Präsentation schärft den Blick dafür, was an populären Keltenbildern unhistorisch oder zu eng ist.",
+    mustKnow: [
+      "Keltenklischees stammen oft aus späteren Bildern und nationalen Erzählungen.",
+      "Archäologie zeigt weit mehr als Krieger und Dörfer.",
+      "Zwischen populärem Bild und historischem Befund liegt eine deutliche Lücke."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Planet Schule: Das Kelten-Experiment – Wie lebten die Kelten?")]: {
+    badge: "Planet Schule · Alltag der Kelten",
+    locator: "Planet Schule: Das Kelten-Experiment – Wie lebten die Kelten?",
+    thesis:
+      "Der Film macht keltische Gesellschaft materiell fassbar: Häuser, Vorräte, Handwerk, Arbeitsteilung und Versorgung stehen im Mittelpunkt.",
+    passage:
+      "Gerade dieses Material hilft, die keltische Welt aus der Sphäre bloßer Kriegerbilder zu holen. Hausbau, Werkzeuge, Kochen, Vorratshaltung und handwerkliche Arbeit zeigen, wie stark Alltag organisiert werden musste. Damit wird keltische Geschichte als Lebenswelt lesbar: mit Holz, Metall, Speicher, Körperarbeit und räumlicher Ordnung.",
+    whyHere:
+      "Der Film erdet die abstrakte Rede über Kelten in konkretem Alltag.",
+    mustKnow: [
+      "Keltische Gesellschaft besteht aus organisierter Arbeit und Versorgung.",
+      "Hausbau und Vorratshaltung sind Kernbestandteile dieser Lebenswelt.",
+      "Alltagsgeschichte korrigiert das reine Kriegerklischee."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Planet Schule: Altersbestimmung in der Archäologie")]: {
+    badge: "Planet Schule · Datierung",
+    locator: "Planet Schule: Altersbestimmung in der Archäologie",
+    thesis:
+      "Das Material erklärt, wie Archäologie überhaupt zu belastbaren Zeitangaben und Bauphasen kommt.",
+    passage:
+      "Für die Geschichte der Helvetier ist das keine Nebensache, sondern methodischer Kern. Ohne Datierungsmethoden wie C14, Dendrochronologie, Fundschichten oder Vergleichsfunde wüssten wir nicht sicher, welche Siedlung wann benutzt wurde oder wie sich Hallstatt, La Tène und gallo-römische Zeit unterscheiden lassen. Das Material sichert also die Grundlage aller Aussagen des Moduls ab.",
+    whyHere:
+      "Gerade im Kelten-Modul muss klar sein, woher historisches Wissen stammt.",
+    mustKnow: [
+      "Archäologische Zeitbestimmung beruht auf mehreren Methoden.",
+      "Fundschichten und naturwissenschaftliche Verfahren ergänzen sich.",
+      "Ohne Datierung bleiben Funde historisch viel unsicherer."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "Materialdossier: Archäologie")]: {
+    badge: "Lokales Dossier · Methoden",
+    locator: "Materialdossier: Archäologie",
+    thesis:
+      "Das Dossier erklärt Archäologie als systematische Arbeit am unterirdischen Archiv und verbindet Grabung, Stratigraphie, relative Chronologie und naturwissenschaftliche Datierung.",
+    passage:
+      "Dieses Material vertieft die methodische Seite des Moduls. Es zeigt, dass Funde nicht nur aufgehoben, sondern in Schichten, Kontexten und räumlichen Beziehungen gelesen werden. Gerade für die Kelten im Gebiet der heutigen Schweiz ist das entscheidend, weil viele Aussagen aus Siedlungsschichten, Münzfunden, Werkplätzen oder Grabkontexten stammen und nicht aus langen Eigenschilderungen der Kelten selbst.",
+    whyHere:
+      "Das Dossier macht sichtbar, warum Archäologie im Kelten-Modul die zentrale Wissensbasis bildet.",
+    mustKnow: [
+      "Archäologie liest Kontexte, nicht nur Einzelobjekte.",
+      "Stratigraphie und Datierung sind Grundwerkzeuge historischer Rekonstruktion.",
+      "Für die Kelten ersetzt Archäologie oft fehlende eigene Schriftquellen."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "SRF: Die Kelten und die Römer")]: {
+    badge: "SRF · Kontaktzone",
+    locator: "SRF: Die Kelten und die Römer",
+    thesis:
+      "Der Film zeigt den Übergang nicht als Totalersetzung, sondern als Kontaktzone aus Übernahme, Druck, Weiterleben und Neuordnung.",
+    passage:
+      "Das Material ist für die Einheit besonders stark, weil es Kelten und Römer nicht als zwei vollständig getrennte Welten behandelt. Straßen, Siedlungen, Ortslagen und materielle Spuren machen sichtbar, dass Rom auf bereits bestehende Räume trifft und diese überformt. Genau dadurch werden Kontinuitäten und Brüche konkret: Manche Orte bleiben wichtig, andere Funktionen ändern sich, neue Machtverhältnisse greifen in alte Strukturen ein.",
+    whyHere:
+      "Der Film verknüpft den späteisenzeitlichen Raum mit der gallo-römischen Überlagerung.",
+    mustKnow: [
+      "Römische Ordnung trifft auf vorhandene keltische Räume.",
+      "Der Übergang besteht aus Kontinuitäten und Brüchen zugleich.",
+      "Historische Veränderung zeigt sich oft an überlagerten Strukturen."
+    ]
+  },
+  [makeSourceKey("modul-7-kelten", "PHBern: Kelten und gallo-römische Zeit")]: {
+    badge: "PHBern · Übergänge",
+    locator: "PHBern: Kelten und gallo-römische Zeit",
+    thesis:
+      "Das Ideenset ist für das Modul vor allem deshalb wertvoll, weil es die keltische und gallo-römische Zeit als zusammenhängenden Übergangsraum behandelt.",
+    passage:
+      "Für diese Einheit liefert das Material einen besonders brauchbaren Überblick über den Wandel von der keltischen Schweiz zur gallo-römischen Welt. Statt einen harten Schnitt zu behaupten, zeigt es, wie Orte, Praktiken und materielle Kultur in neue Ordnungen hineinragen. Genau das passt zur Leitfrage des Moduls: Was bleibt, was bricht ab und was wird von Rom umgedeutet oder neu organisiert?",
+    whyHere:
+      "Das Material bringt die Kategorie Übergang direkt auf den Punkt.",
+    mustKnow: [
+      "Keltische und gallo-römische Zeit müssen zusammen gelesen werden.",
+      "Nicht alles endet abrupt mit dem römischen Eingriff.",
+      "Übergänge lassen sich an Orten, Dingen und Praktiken verfolgen."
     ]
   },
   [makeSourceKey("modul-7", "YouTube: Griechenland, Polis und attische Demokratie")]: {
