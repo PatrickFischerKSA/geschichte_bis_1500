@@ -1737,10 +1737,13 @@ const modules = [
     input: [
       "Die antike Mittelmeerwelt kennt verschiedene politische Formen. In Athen entsteht im 5. Jahrhundert v. Chr. eine direkte Bürgerdemokratie. Freie männliche Bürger stimmen in der Volksversammlung über Krieg, Gesetze und wichtige Entscheidungen ab. Zugleich ist diese Demokratie eng begrenzt: Frauen, Metöken und Sklaven sind ausgeschlossen. Attische Demokratie bedeutet daher politische Beteiligung, aber nicht Gleichheit aller Menschen.",
       "Rom entwickelt eine andere Ordnung. In der römischen Republik gibt es keinen König, sondern jährlich wechselnde Ämter, Konsuln, Volksversammlungen und vor allem den Senat. Die Republik lebt von Konkurrenz innerhalb der Führungsschicht, von Regelbindung und von der Vorstellung, dass kein Einzelner den Staat allein verkörpern soll. Gleichzeitig ist auch sie sozial ungleich und von Konflikten zwischen Patriziern und Plebejern geprägt.",
+      "Gerade diese Konflikte machen die Republik historisch interessant. Plebejer erkämpfen sich mit dem Volkstribunat, mit den Zwölftafeln und später mit dem Zugang zu höheren Ämtern mehr politische Rechte. Dennoch bleibt die res publica keine Gesellschaft gleicher Bürger, sondern eine Mischordnung mit starkem Einfluss der Nobilität. Rom zeigt also früh, dass politische Beteiligung, soziale Ungleichheit und Konkurrenz nebeneinander bestehen können.",
       "Ein Imperium ist nicht einfach nur ein großes Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Straßen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
       "Rom ist dafür ein besonders gutes Beispiel, weil sich hier politische Ordnung verändert: aus der Republik wächst ein Reich, das große Räume rund um das Mittelmeer und darüber hinaus verbindet. Seine Macht zeigt sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
-      "Die Filmreihe über die Römer in der Schweiz macht das an einem konkreten Raum sichtbar. Ob Schrift, Ortsnamen oder Hühnerhaltung: römische Herrschaft hinterließ Spuren im Alltag. Ohne den römischen Einfluss würden heute weder Weintrauben noch Walnüsse angebaut. Viele römische Straßen und Brücken wurden zur Grundlage späterer Verkehrswege. In der Schweiz trafen Römer zudem auf keltische Siedlungen und bauten Städte oft dort, wo bereits günstige Orte existierten. Vindonissa lag zum Beispiel dort, wo Aare, Reuss und Limmat zusammenfließen und Warentransport besonders gut möglich war.",
-      "Das Römer-Experiment ergänzt diese Raumordnung durch Rekonstruktion. Nachgestellt werden Gegenstände, Werkzeuge, Kochen, Gladiatorenausbildung und andere Alltagssituationen. Damit wird sichtbar, dass römische Herrschaft nicht nur in Heeren und Grenzlinien bestand, sondern in Essen, Arbeit, Gebäuden, Recht und Bewegungswegen."
+      "Diese Entwicklung verläuft nicht reibungslos. Die Expansion nach Italien, gegen Karthago und in den östlichen Mittelmeerraum bringt Beute, Provinzen und Machtzuwachs, aber auch Landkonzentration, soziale Spannungen und Bürgerkriege. Die Gracchen, Marius, Sulla, Pompeius und Caesar stehen für eine Republik in der Krise. Mit Augustus entsteht schließlich der Prinzipat: Formal bleiben republikanische Ämter bestehen, praktisch bündelt ein Einzelner militärische, politische und symbolische Macht. Die Kaiserzeit ist darum kein völliger Neuanfang, sondern eine Umformung der Republik unter dem Schein alter Begriffe.",
+      "Die römische Schweiz macht diese Großentwicklung an einem konkreten Raum sichtbar. Nach Caesars Sieg über die Helvetier von 58 v. Chr. gerät das Gebiet der heutigen Schweiz schrittweise in römische Provinzordnungen wie Germania superior und Raetia. Städte wie Aventicum und Augusta Raurica, das Legionslager Vindonissa, Gutshöfe, Straßen und Brücken zeigen, wie Rom Räume militärisch, wirtschaftlich und kulturell neu ordnet.",
+      "Gerade hier wird Romanisierung greifbar. Keltische Orte verschwinden nicht einfach, sondern werden überlagert, umgebaut oder in neue Verkehrs- und Verwaltungsräume eingebunden. Latein, Münzen, Importwaren, Wein, Bäder, Stadtrecht und Militärlager verändern den Alltag. Zugleich bleibt die gallo-römische Schweiz eine Mischwelt: Viele lokale Traditionen leben weiter, auch wenn das Imperium neue Maßstäbe von Recht, Verwaltung und Infrastruktur setzt.",
+      "Das Römer-Experiment ergänzt diese Raumordnung durch Rekonstruktion. Nachgestellt werden Gegenstände, Werkzeuge, Kochen, Gladiatorenausbildung und andere Alltagssituationen. Damit wird sichtbar, dass römische Herrschaft nicht nur in Heeren und Grenzlinien bestand, sondern in Essen, Arbeit, Gebäuden, Recht und Bewegungswegen. Die römische Welt muss also als politische, soziale und materielle Ordnung zugleich verstanden werden."
     ],
     sources: [
       {
@@ -1756,12 +1759,36 @@ const modules = [
           "Der Film zeigt Rom vor der Kaiserzeit als Republik mit Senat, Konsuln, Volksversammlungen und Konflikten zwischen sozialen Gruppen."
       },
       {
+        title: "Materialdossier: Römische Republik",
+        meta: "res publica, Ständekonflikte und Magistrate",
+        extracted:
+          "Das Dossier erklärt Senat, Konsuln, Volksversammlungen, Zwölftafeln, Volkstribunat und die Konflikte zwischen Patriziern und Plebejern als Kern der republikanischen Ordnung."
+      },
+      {
+        title: "Materialdossier: Rom – Expansion und Krise",
+        meta: "Punische Kriege, Gracchen, Caesar, Augustus",
+        extracted:
+          "Das Dossier verbindet Expansion, Provinzen, soziale Spannungen und Bürgerkriege bis zur Umformung der Republik im Prinzipat."
+      },
+      {
+        title: "Materialdossier: Römische Kaiserzeit",
+        meta: "Prinzipat, Provinzen und Reichsorganisation",
+        extracted:
+          "Das Dossier zeigt, wie Augustus die Republik formal weiterführt, aber faktisch eine monarchische Ordnung schafft, die das Reich dauerhaft stabilisiert."
+      },
+      {
         title: "SRF: Römer in der Schweiz",
         meta: "Regionalisierung des Imperiums",
         extracted:
           "Die Seite nennt Alltagsfolgen römischer Herrschaft wie Hühnerhaltung, Weinbau, Walnüsse, Verkehrswege, Recht und Kulturkontakt mit keltischen Siedlungen.",
         didacticUse:
           "Sie wird als Fallmaterial genutzt, um abstrakte Expansion in konkrete Veränderungen von Raum und Alltag zu übersetzen."
+      },
+      {
+        title: "Materialdossier: Rom in der Schweiz",
+        meta: "Helvetier, Provinzen und gallo-römische Mischwelt",
+        extracted:
+          "Das Dossier verbindet Caesars Sieg über die Helvetier mit Aventicum, Vindonissa, Provinzbildung, Romanisierung und dem Fortleben lokaler Traditionen."
       },
       {
         title: "SRF: Das Römer-Experiment",
@@ -1957,6 +1984,9 @@ const modules = [
       "Religion ist in vormodernen Gesellschaften weit mehr als privater Glaube. Sie erklärt, wie die Welt verstanden werden soll, welche Regeln gelten, was erlaubt oder verboten ist und wie Menschen ihren Platz in der Gemeinschaft sehen. Religion wirkt deshalb auf Denken, Alltag und politische Ordnung zugleich.",
       "Das zeigt sich an Ritualen, Feiertagen, Pilgerorten, heiligen Texten und religiösen Verboten. Sie ordnen Zeit, Raum und Zugehörigkeit. Wer gemeinsam betet, dieselben Feste feiert oder dieselben heiligen Orte kennt, erlebt sich als Teil einer größeren Gemeinschaft. Religion verbindet also Menschen, auch wenn sie weit voneinander entfernt leben.",
       "Historisch wichtig ist außerdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. In der Filmreihe 'Grosse Völker' erscheinen die Araber nicht nur als religiöse Gemeinschaft, sondern auch als Förderer von Medizin, Mathematik und Wissenschaft. Damit wird klar: Glaube, Wissen und Fernverbindungen lassen sich in vormodernen Gesellschaften oft nicht sauber voneinander trennen.",
+      "Das Material zum frühen Christentum zeigt dieselbe Verflechtung aus einer anderen Richtung. Jesus wirkt zunächst im jüdischen Kontext Palästinas. Erst durch Paulus und die Heidenmission breitet sich die neue Religion weit über Judäa hinaus im römischen Reich aus. Gemeinden, Briefe, Bischöfe und gemeinsame Rituale schaffen nach und nach einen eigenen religiösen Raum.",
+      "Gerade darin liegt die historische Sprengkraft des Christentums. Es wächst in einem Reich, das religiöse Loyalität auch politisch deutet, und gerät deshalb immer wieder in Konflikt mit dem römischen Staat. Die Verfolgungen unter Nero, Decius oder Diokletian zeigen, dass Religion nicht bloß inneres Bekenntnis ist, sondern Fragen von Ordnung, Gehorsam und Zugehörigkeit berührt.",
+      "Mit Konstantin und der konstantinischen Wende verändert sich die Lage grundlegend. Das Christentum wird geduldet, gefördert und später unter Theodosius zur bevorzugten Religion des Reiches. Konzilien wie Nicäa zeigen, dass religiöse Ordnung, Lehrstreit und politische Einheit eng zusammenhängen. Religion wird dadurch nicht schwächer, sondern institutionell mächtiger.",
       "Für die nächsten Module ist das ein Schlüssel. Kirche, Herrschaft, Pilgerwesen, Kreuzzüge und Alltagsregeln im Mittelalter lassen sich nur verstehen, wenn Religion nicht als Nebenthema erscheint, sondern als tragende Ordnung vieler Gesellschaften."
     ],
     sources: [
@@ -1964,41 +1994,41 @@ const modules = [
         title: "Harari-PDF",
         meta: "Samarkand und Mekka",
         extracted:
-          "Harari schildert den mittelalterlichen Markt von Samarkand und die Pilgerfahrt nach Mekka als konkrete Orte, an denen Vereinigung über Religion und Austausch sichtbar wird.",
+          "Harari schildert den mittelalterlichen Markt von Samarkand und die Pilgerfahrt nach Mekka als dichte Räume, in denen Glaube, Handel und kulturelle Vielfalt zusammenkommen.",
         didacticUse:
-          "Die Ressource eröffnet einen Raumbegriff von Religion: Glaubenssysteme strukturieren Netzwerke, Mobilität und Begegnungen."
+          "Der Text dient hier als Einstieg, weil Religion sofort mit Mobilität, Austausch und Weltdeutung verbunden erscheint."
       },
       {
         title: "SRF: Grosse Völker",
-        meta: "Arabische Wissenswelten",
+        meta: "Religion, Herrschaft und Wissen",
         extracted:
-          "Die Araber erscheinen als Pioniere von Mathematik, Medizin und Wissenschaft und als Teil weitreichender kultureller Vernetzungen.",
+          "Die Araber-Folge zeigt Religion nicht isoliert, sondern zusammen mit Bildung, Mathematik, Medizin und imperialen Wissensräumen.",
         didacticUse:
-          "Dadurch kann Religion im Unterricht mit Wissenstransfer und Zivilisationsgeschichte verbunden werden statt nur mit Dogmen."
+          "Die Ressource wird verwendet, um religiöse Ordnung direkt mit Wissenschaft und Vernetzung zusammenzudenken."
+      },
+      {
+        title: "Materialdossier: Christentum – Entstehung und Verbreitung",
+        meta: "Jesus, Paulus, Verfolgungen, Konstantin",
+        extracted:
+          "Das Dossier erklärt die Ausbreitung des Christentums von den ersten Gemeinden über Verfolgungen bis zur konstantinischen Wende und zur Reichskirche."
       },
       {
         title: "YouTube: Christentum",
-        meta: "Religion im Überblick",
+        meta: "Einführung in Glauben und Ausbreitung",
         extracted:
-          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Christentum, Glaubenspraxis und historische Ausbreitung.",
-        didacticUse:
-          "Die Ressource soll das Christentum nicht nur implizit, sondern ausdrücklich als historische Religion einführen."
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in das Christentum, damit zentrale Begriffe und Traditionen nicht stillschweigend vorausgesetzt werden."
       },
       {
         title: "YouTube: Judentum",
-        meta: "Religion im Überblick",
+        meta: "Einführung in Tradition und Schriftkultur",
         extracted:
-          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Judentum, Tora und jüdische Tradition.",
-        didacticUse:
-          "Die Ressource soll jüdische Religion und Kontinuität eigenständig sichtbar machen."
+          "Der Nutzerfilm ergänzt das Modul um einen direkten Zugang zu Judentum, Tora, Tradition und historischer Kontinuität."
       },
       {
         title: "YouTube: Islam",
-        meta: "Religion im Überblick",
+        meta: "Einführung in Glaube und historischen Ordnungsraum",
         extracted:
-          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in Islam, Koran und islamische Glaubenspraxis.",
-        didacticUse:
-          "Die Ressource soll den Islam ausdrücklich als Weltreligion und historischen Ordnungsraum einführen."
+          "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in den Islam, seine Glaubenspraxis und seine historische Ausbreitung."
       }
     ],
     sourcePrompt:
@@ -2077,11 +2107,26 @@ const modules = [
     ],
     input: [
       "Viele Menschen verbinden das Mittelalter sofort mit Rittern, Burgen, dunklen Straßen oder großen Kathedralen. Solche Bilder sind nicht völlig falsch, aber sie reichen nicht aus. Das Mittelalter war eine lange und sehr unterschiedliche Epoche. Es gab harte Lebensbedingungen, aber auch beeindruckende Bauleistungen, religiöse Kultur, wachsende Städte und komplexe Herrschaftsformen.",
+      "Das Frühmittelalter beginnt nicht in einer leeren Welt. Nach dem Ende des weströmischen Kaisertums entstehen neue Herrschaftsräume, während Byzanz und die islamische Welt weiter stark bleiben. Wer das Mittelalter verstehen will, muss also mit Kontinuitäten und Brüchen zugleich rechnen: römische Traditionen wirken fort, aber politische Ordnungen, Sprachen und religiöse Landschaften verändern sich tiefgreifend.",
+      "Das Frankenreich ist dafür ein Schlüsselraum. Mit Chlodwig, Christianisierung und später den Karolingern entstehen neue Formen von Königtum, Reichskirche und Herrschaft. Klöster folgen Regeln wie der Benediktsregel und werden zu Orten von Gebet, Schrift, Arbeit und Bildung. Gerade dadurch wird Kirche zu einer tragenden Kraft mittelalterlicher Ordnung.",
+      "Im Hochmittelalter verfestigen sich Herrschaft und Gesellschaft weiter. Lehensbindungen, Kronvasallen, Ministerialen, Burgen und Rittertum ordnen politische Macht. Zugleich wird die Gesellschaft in Ständen gedacht: Betende, Kämpfende und Arbeitende. Diese Ordnung ist nicht bloß Theorie, sondern prägt Rang, Rechte, Kleidung, Gewalt und Abhängigkeit im Alltag.",
       "Der Film 'Das verrückte Mittelalter' liefert dafür die bekannten Bilder: Burgen, Minnesänger, Hierarchien, Pest, Handel, Hygiene, Turniere und Kathedralen. Diese Motive sind nicht erfunden, aber sie zeigen nur die Oberfläche. Erst wenn man fragt, wie Menschen tatsächlich wohnten, aßen, sich verteidigten und mit Krankheiten umgingen, wird die Epoche historisch greifbar.",
       "Genau dort setzt 'Mittelalter in der Schweiz' an. In fünf Burgen und Schlössern geht es um Verteidigung, Gesundheit und Hygiene, Speisen aus der Schlossküche, Rollenbilder und Statussymbole sowie archäologische Funde. Der Film erinnert daran, dass Latrinen nicht nur Toiletten, sondern auch Müllplätze waren. Sprichwörter wie 'den Löffel abgeben' oder 'unter die Haube kommen' führen direkt in mittelalterlichen Alltag. Das Mittelalter erscheint dadurch als konkrete Lebenswelt von Nahrung, Abfall, Rang, Kleidung und Schutz.",
-      "Zusammen mit 'Eine kurze Geschichte über…' entsteht daraus ein genaueres Bild. Das Mittelalter war christlich geprägt und oft hart, aber nicht einfach düster und rückständig. Burgen, Kathedralen, Handschriften, Baukunst, Stadtleben und soziale Unterschiede gehören genauso dazu wie Krankheit, Hunger und Abhängigkeit."
+      "Die Entstehung der Eidgenossenschaft gehört in diesen Zusammenhang, weil sie ein spätmittelalterliches Beispiel für politische Neuordnung ist. Reichsunmittelbarkeit, Alpenpässe wie der Gotthard, Landfriedensbündnisse, Morgarten und spätere Bündnispolitik zeigen, wie regionale Herrschaft im Reich umgebaut wird. Die Eidgenossenschaft fällt also nicht vom Himmel, sondern wächst aus Konflikten, Verkehrsinteressen und Bündnissen des späten Mittelalters."
     ],
     sources: [
+      {
+        title: "Materialdossier: Frühmittelalter",
+        meta: "Frankenreich, Klöster und neue Herrschaftsräume",
+        extracted:
+          "Das Dossier erklärt die mittelalterliche Welt nach Rom über Frankenreich, Christianisierung, Klöster, Grundherrschaft und die neue Dreiteilung zwischen Westen, Byzanz und Islam."
+      },
+      {
+        title: "Materialdossier: Hochmittelalter – Könige und Kirche",
+        meta: "Lehen, Rittertum, Stände und Frömmigkeit",
+        extracted:
+          "Das Dossier bündelt Lehenswesen, Ministerialen, Burgen, Rittertum, Ständeordnung und religiöse Vorstellungswelten wie Jüngstes Gericht und Fegefeuer."
+      },
       {
         title: "SRF: Das verrückte Mittelalter",
         meta: "Einstieg",
@@ -2113,6 +2158,12 @@ const modules = [
           "Der Nutzerfilm ergänzt das Modul um Klöster als Räume von Religion, Arbeit, Bildung und Ordnung.",
         didacticUse:
           "Die Ressource soll Kirche und Gesellschaft im Mittelalter materieller und institutioneller greifbar machen."
+      },
+      {
+        title: "Materialdossier: Eidgenossenschaft",
+        meta: "Bündnisse, Gotthard und spätmittelalterliche Machtpolitik",
+        extracted:
+          "Das Dossier erklärt die Eidgenossenschaft aus Reichsunmittelbarkeit, Gotthardverkehr, Landfriedensbündnissen, Morgarten und der späteren Ausweitung des Bundes."
       },
       {
         title: "YouTube: Entstehung der Eidgenossenschaft",
@@ -2202,7 +2253,9 @@ const modules = [
       "Der Film über den Kinderkreuzzug nennt zwei Jungen als Ausgangspunkt der Überlieferung: Nikolaus aus Köln und Stephan aus dem französischen Cloyes-les-Trois-Rivières. Beiden soll im Frühjahr 1212 eine göttliche Botschaft erschienen sein. Daraufhin sollen Tausende Kinder und Jugendliche unbewaffnet und ohne Vorbereitung eine 3000 Kilometer lange Reise nach Palästina begonnen haben, um Jerusalem zu befreien. Genau diese dramatische Geschichte zwingt zur Prüfung der Quellen.",
       "Chroniken sind dabei nicht automatisch wahr, nur weil sie alt sind. Man muss fragen, wann sie geschrieben wurden, welche Absicht dahinterstand und ob spätere Ausschmückungen aus einer Predigtbewegung erst eine Legende gemacht haben. Der Kinderkreuzzug ist deshalb ein Musterfall dafür, wie aus religiöser Bewegung, Erzählung und späterer Überlieferung historische Unsicherheit entsteht.",
       "Gleichzeitig geht es nicht nur um Texte, sondern auch um Räume. Wer nach Jerusalem aufbrechen will, bewegt sich durch Städte, Märkte, Herbergen, Flusstäler, Alpenrouten oder Hafenorte. Pilgerwege, Handelswege und Predigtbewegungen verlaufen oft durch dieselben Räume. Die mittelalterliche Welt war also keineswegs nur die abgeschlossene Burg.",
-      "Dieses Modul verbindet deshalb Quellenprüfung mit Raumgeschichte. Mittelalterliche Geschichte besteht hier aus Frömmigkeit, Bewegung, Gerücht, Hoffnung, Handel und der Frage, was wir aus lückenhaften Quellen überhaupt sicher wissen können."
+      "Das hochmittelalterliche Dorf verändert sich in derselben Zeit stark. Landesausbau, Rodungen, Binnenkolonisation und die Dreifelderwirtschaft steigern Erträge und Bevölkerungsdichte. Dörfer werden dadurch nicht nur Wohnorte, sondern organisierte Produktionsräume mit Dorfrecht, Abgaben und gemeinsamer Nutzung von Feldern und Weiden.",
+      "Auch die Stadt kehrt als eigener historischer Raum machtvoll zurück. Stadtmauern, Märkte, Rat, Zünfte, Handwerk und Stadtrecht schaffen verdichtete Lebensformen, die sich deutlich vom Dorf unterscheiden. Städte sind Knotenpunkte von Handel, Schrift, Ausbildung und Konflikt. Wer Mittelaltergeschichte auf Burgen reduziert, übersieht also gerade die Räume, in denen Bewegung, Arbeit und Austausch besonders dicht sind.",
+      "Im Spätmittelalter verschärfen Klimaverschlechterung, Hungersnöte und die Pest die Lage. Wüstungen, Bevölkerungsverluste, Arbeitskräftemangel, Quarantäne, Pogrome und neue soziale Spannungen verändern Dorf und Stadt zugleich. Das Mittelalter endet deshalb nicht in Stillstand, sondern in tiefen Krisen und Umbrüchen, die Wirtschaft, Religion und politische Ordnung neu herausfordern."
     ],
     sources: [
       {
@@ -2212,6 +2265,24 @@ const modules = [
           "Die Dokumentation fragt explizit, was Mythos und was historischer Fakt ist, und legt den Fokus auf mittelalterliche Chroniken sowie deren Zuverlässigkeit.",
         didacticUse:
           "Die Ressource dient als Musterfall für historisches Fragen: Welche Quellen gibt es? Wann wurden sie geschrieben? Welche Interessen prägen sie?"
+      },
+      {
+        title: "Materialdossier: Hochmittelalter – Dorf",
+        meta: "Landesausbau, Dreifelderwirtschaft und Dorfrecht",
+        extracted:
+          "Das Dossier erklärt Rodungen, Binnenkolonisation, Vergetreidung, Dreifelderwirtschaft und dörfliche Selbstorganisation als Kern des hochmittelalterlichen Ausbaus."
+      },
+      {
+        title: "Materialdossier: Hochmittelalter – Stadt",
+        meta: "Stadtrecht, Märkte, Rat und Zünfte",
+        extracted:
+          "Das Dossier bündelt Stadtgründungen, Autonomiebewegungen, Stadtrecht, Rat, Zünfte, Bildung und Handwerk als zentrale Entwicklungen urbaner Räume."
+      },
+      {
+        title: "Materialdossier: Spätmittelalter",
+        meta: "Pest, Hunger, Wüstungen und soziale Spannungen",
+        extracted:
+          "Das Dossier erklärt Klimaverschlechterung, Pest, Quarantäne, Geissler, Pogrome und den tiefen Wandel von Dorf- und Stadtgesellschaften im Spätmittelalter."
       },
       {
         title: "Harari-PDF",
@@ -3325,35 +3396,58 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Wodurch hält ein Imperium große Räume zusammen?",
-        placeholder: "Nenne mehrere Bausteine dieser Ordnung.",
+        prompt: "Warum waren Zwölftafeln und Volkstribunat für Plebejer wichtig?",
+        placeholder: "Erkläre den Zusammenhang von Recht, Schutz und politischem Konflikt.",
         sampleAnswer:
-          "Ein Imperium hält große Räume durch Militär, Verwaltung, Infrastruktur, Gesetze und gemeinsame Wirtschaftsformen zusammen. Dadurch werden entfernte Regionen stärker verbunden.",
+          "Die Zwölftafeln machten Recht öffentlich und berechenbarer, während die Volkstribunen Plebejer gegen Übergriffe der Oberschicht schützen sollten. Beides gehört zum langen Konflikt zwischen Patriziern und Plebejern und zeigt, dass die Republik durch soziale Kämpfe verändert wurde.",
         criteria: [
-          { label: "Militär oder Macht", keywords: ["militar", "macht", "armee"] },
-          { label: "Verwaltung oder Recht", keywords: ["verwaltung", "gesetze", "recht"] },
-          { label: "Infrastruktur oder Verbindung", keywords: ["strassen", "brucken", "infrastruktur", "verbunden"] }
+          { label: "Zwölftafeln als öffentliches Recht", keywords: ["zwölftafeln", "recht", "öffentlich", "schriftlich"] },
+          { label: "Volkstribunat als Schutz", keywords: ["volkstribun", "schutz", "plebejer"] },
+          { label: "Ständekonflikt", keywords: ["patrizier", "plebejer", "konflikt"] }
+        ]
+      },
+      {
+        prompt: "Warum zerbrach die römische Republik nicht an einem einzigen Ereignis, sondern in einer längeren Krise?",
+        placeholder: "Arbeite mit Expansion, sozialer Ungleichheit und Bürgerkriegen.",
+        sampleAnswer:
+          "Die Republik geriet durch Expansion, Beute, Landkonzentration und soziale Spannungen unter Druck. Reformversuche der Gracchen, Machtkämpfe von Feldherren und Bürgerkriege verschärften die Krise. Der Übergang zur Kaiserzeit ist deshalb Ergebnis einer langen Zuspitzung und nicht nur eines einzelnen Bruchs.",
+        criteria: [
+          { label: "Expansion oder Provinzen", keywords: ["expansion", "provinzen", "beute"] },
+          { label: "soziale Spannungen", keywords: ["landkonzentration", "ungleichheit", "gracchen", "plebs"] },
+          { label: "Bürgerkrieg oder Machtkampf", keywords: ["bürgerkrieg", "caesar", "sulla", "marius", "pompeius"] }
+        ]
+      },
+      {
+        prompt: "Warum wirkt Augustus wie ein Republikaner und herrscht doch wie ein Monarch?",
+        placeholder: "Verbinde Prinzipat, alte Ämter und tatsächliche Macht.",
+        sampleAnswer:
+          "Augustus lässt republikanische Ämter und Begriffe bestehen, damit seine Herrschaft akzeptabler wirkt. Tatsächlich bündelt er militärische, politische und symbolische Macht in seiner Person. Der Prinzipat ist darum eine Monarchie im Gewand republikanischer Formen.",
+        criteria: [
+          { label: "republikanische Fassade", keywords: ["republik", "ämter", "senat", "fassade"] },
+          { label: "gebündelte Macht", keywords: ["macht", "augustus", "princeps", "monarchie"] },
+          { label: "Prinzipat", keywords: ["prinzipat", "kaiserzeit"] }
         ]
       },
       {
         prompt: "Zeige an zwei Beispielen, wie die Römer den Alltag in der Schweiz veränderten.",
-        placeholder: "Nutze konkrete Dinge aus der Ressource.",
+        placeholder: "Nutze konkrete Dinge aus Infrastruktur, Städten, Recht oder Ernährung.",
         sampleAnswer:
-          "Die Römer veränderten den Alltag durch Straßen und Brücken, die Bewegung und Handel erleichterten. Auch neue Waren, Bauweisen, Rechtsformen oder Ernährungsgewohnheiten wirkten bis in lokale Lebenswelten hinein.",
+          "Die Römer veränderten den Alltag durch Straßen und Brücken, die Bewegung und Handel erleichterten. Auch neue Städte wie Aventicum, Legionslager wie Vindonissa, Weinbau, Importwaren oder römische Rechtsformen wirkten bis in lokale Lebenswelten hinein.",
         criteria: [
-          { label: "konkrete Beispiele", keywords: ["strassen", "brucken", "waren", "weinbau", "recht", "bauten"] },
-          { label: "Alltagswirkung", keywords: ["alltag", "handel", "leben", "ernahrung"] }
+          { label: "Infrastruktur oder Städte", keywords: ["strassen", "brücken", "aventicum", "vindonissa", "städte"] },
+          { label: "Alltag/Güter", keywords: ["wein", "waren", "ernährung", "handel", "bäder"] },
+          { label: "Ordnungssysteme", keywords: ["recht", "provinz", "verwaltung", "romanisierung"] }
         ]
       },
       {
-        prompt: "Die Reihe 'Römer in der Schweiz' ist fünfteilig. Erkläre, warum für das Verständnis eines Imperiums genau die Verbindung aus Legionären, Siedlungen und Straßen entscheidend ist.",
-        placeholder: "Verbinde Militär, Alltagsraum und Infrastruktur.",
+        prompt: "Warum ist die gallo-römische Schweiz besser als Mischwelt zu beschreiben denn als völlige Verdrängung der Kelten?",
+        placeholder: "Arbeite mit Kontinuitäten, neuen Städten und römischer Überformung.",
         sampleAnswer:
-          "Legionäre zeigen die militärische Seite des Imperiums, Siedlungen die dauerhafte Ordnung vor Ort und Straßen die Verbindung großer Räume. Erst zusammen erklären diese drei Dinge, wie Rom Gebiete kontrollierte, versorgte und in sein Reich einband.",
+          "Die gallo-römische Schweiz ist eine Mischwelt, weil Rom auf bestehende keltische Räume trifft und sie neu ordnet. Orte, Verkehrsachsen und lokale Traditionen verschwinden nicht einfach, sondern werden überlagert, ausgebaut oder umgedeutet. Gerade so entstehen Kontinuitäten und Brüche zugleich.",
         criteria: [
-          { label: "Legionäre", keywords: ["legionare", "militar", "vindonissa"] },
-          { label: "Siedlungen", keywords: ["siedlungen", "gutshofe", "bader", "wasserleitungen"] },
-          { label: "Straßen", keywords: ["strassen", "handel", "verbindung", "infrastruktur"] }
+          { label: "bestehende keltische Räume", keywords: ["keltisch", "bestehend", "orte", "traditionen"] },
+          { label: "römische Neuordnung", keywords: ["rom", "neuordnung", "provinz", "stadt", "überformt"] },
+          { label: "Mischwelt oder Kontinuität/Bruch", keywords: ["mischwelt", "kontinuität", "bruch", "gallo-römisch"] }
         ]
       }
     ]
@@ -3411,25 +3505,47 @@ const contentChecks = {
         ]
       },
       {
+        prompt: "Warum konnte sich das Christentum nach Jesus überhaupt über den Mittelmeerraum ausbreiten?",
+        placeholder: "Arbeite mit Paulus, Gemeinden und dem römischen Verkehrsraum.",
+        sampleAnswer:
+          "Das Christentum breitete sich aus, weil Paulus und andere Missionare Gemeinden gründeten und Briefe, Predigt und persönliche Kontakte nutzten. Der römische Verkehrsraum mit Städten, Straßen und Häfen erleichterte diese Verbreitung zusätzlich.",
+        criteria: [
+          { label: "Paulus oder Mission", keywords: ["paulus", "mission", "gemeinden"] },
+          { label: "Verkehrsraum oder Städte", keywords: ["römisch", "städte", "straßen", "häfen"] },
+          { label: "Ausbreitung", keywords: ["ausbreitung", "verbreitung", "mittelmeerraum"] }
+        ]
+      },
+      {
+        prompt: "Warum verfolgten manche römische Kaiser Christinnen und Christen?",
+        placeholder: "Erkläre mit Ordnung, Loyalität und religiösem Konflikt.",
+        sampleAnswer:
+          "Christinnen und Christen wurden verfolgt, weil sie sich nicht einfach in die religiös-politische Ordnung des Reiches einfügten. Wer Opfer für den Kaiserkult verweigerte, konnte als illoyal oder gefährlich gelten. Religion war deshalb auch eine Frage von Ordnung und Gehorsam.",
+        criteria: [
+          { label: "politische Ordnung", keywords: ["ordnung", "reich", "politisch"] },
+          { label: "Loyalität oder Kaiserkult", keywords: ["loyalität", "kaiserkult", "opfer", "verweigert"] },
+          { label: "Verfolgung", keywords: ["verfolg", "nero", "decius", "diokletian"] }
+        ]
+      },
+      {
+        prompt: "Was änderte sich mit Konstantin und der konstantinischen Wende?",
+        placeholder: "Arbeite mit Duldung, Förderung und politischer Bedeutung des Christentums.",
+        sampleAnswer:
+          "Mit Konstantin wurde das Christentum nicht mehr nur verfolgt, sondern geduldet und gefördert. Dadurch gewann die Kirche institutionelle Macht, und religiöse Einheit wurde zu einer politischen Frage des Reiches. Die konstantinische Wende veränderte also das Verhältnis von Religion und Herrschaft grundlegend.",
+        criteria: [
+          { label: "Duldung oder Förderung", keywords: ["geduldet", "gefördert", "konstantin"] },
+          { label: "Kirche gewinnt Macht", keywords: ["kirche", "institutionell", "macht"] },
+          { label: "Religion und Herrschaft", keywords: ["herrschaft", "reich", "politisch"] }
+        ]
+      },
+      {
         prompt: "Warum lassen sich Religion, Wissen und Handel historisch oft nicht sauber trennen?",
         placeholder: "Arbeite mit Netzwerken und Begegnungen.",
         sampleAnswer:
           "Religion, Wissen und Handel lassen sich oft nicht trennen, weil Pilgerwege, Gelehrte, Übersetzungen, Märkte und Städte miteinander verbunden waren. Menschen tauschten nicht nur Waren, sondern auch Ideen und Texte aus.",
         criteria: [
-          { label: "Netzwerke oder Wege", keywords: ["wege", "netzwerke", "pilger", "stadte", "markte"] },
-          { label: "Wissen", keywords: ["gelehrte", "texte", "ubersetzungen", "ideen"] },
+          { label: "Netzwerke oder Wege", keywords: ["wege", "netzwerke", "pilger", "städte", "märkte"] },
+          { label: "Wissen", keywords: ["gelehrte", "texte", "übersetzungen", "ideen"] },
           { label: "Handel", keywords: ["handel", "waren", "austausch"] }
-        ]
-      },
-      {
-        prompt: "Erkläre am Beispiel der Araber, warum Religion, Herrschaft, Mathematik, Medizin und Bildung in großen historischen Räumen oft eng zusammenhängen.",
-        placeholder: "Arbeite mit Islam, Großreich, Mathematik, Medizin oder Bildung.",
-        sampleAnswer:
-          "Die Araber-Folge zeigt, dass der Islam Teil eines großen politischen und kulturellen Raums war. In diesem Raum wurden Mathematik, Medizin und Wissenschaft gefördert und verbreitet. Religion, Bildung und Herrschaft greifen also ineinander, statt getrennte Bereiche zu sein.",
-        criteria: [
-          { label: "Islamischer Raum", keywords: ["islam", "grossreich", "raum"] },
-          { label: "Wissensfelder", keywords: ["mathematik", "medizin", "wissenschaft", "bildung"] },
-          { label: "Verknüpfung", keywords: ["zusammen", "ineinander", "herrschaft", "religion"] }
         ]
       },
       {
@@ -3439,8 +3555,8 @@ const contentChecks = {
           "Es ist wichtig, alle drei einzuführen, weil keine dieser Religionen bloß vorausgesetzt werden darf. Judentum, Christentum und Islam sind eigenständige religiöse Ordnungsräume mit Texten, Gemeinschaften und historischen Ausbreitungen. Erst durch den Vergleich wird Religion im Modul konkret und nicht nur abstrakt.",
         criteria: [
           { label: "alle drei Religionen genannt", keywords: ["judentum", "christentum", "islam"] },
-          { label: "Eigenständigkeit", keywords: ["eigenstandig", "nicht nur vorausgesetzt", "vergleich"] },
-          { label: "Schrift/Gemeinschaft/Räume", keywords: ["schrift", "gemeinschaft", "ausbreitung", "raume"] }
+          { label: "Eigenständigkeit", keywords: ["eigenständig", "nicht nur vorausgesetzt", "vergleich"] },
+          { label: "Schrift/Gemeinschaft/Räume", keywords: ["schrift", "gemeinschaft", "ausbreitung", "räume"] }
         ]
       }
     ]
@@ -3455,8 +3571,41 @@ const contentChecks = {
           "Das Klischee ist zu einfach, weil das Mittelalter harte Lebensbedingungen hatte, aber zugleich Städte, Bildung, Handwerk, religiöse Kultur und komplexe Herrschaftsformen hervorbrachte. Es war also widersprüchlich, nicht einfach nur dunkel.",
         criteria: [
           { label: "harte Lebensbedingungen", keywords: ["hart", "armut", "krankheit", "pest", "belastung"] },
-          { label: "Leistungen oder Komplexität", keywords: ["stadte", "bildung", "handwerk", "kultur", "herrschaft"] },
-          { label: "differenziertes Urteil", keywords: ["zugleich", "widerspruchlich", "nicht einfach"] }
+          { label: "Leistungen oder Komplexität", keywords: ["städte", "bildung", "handwerk", "kultur", "herrschaft"] },
+          { label: "differenziertes Urteil", keywords: ["zugleich", "widersprüchlich", "nicht einfach"] }
+        ]
+      },
+      {
+        prompt: "Warum beginnt das Frühmittelalter nicht mit einem völligen Zusammenbruch aller römischen Strukturen?",
+        placeholder: "Arbeite mit Kontinuitäten, Byzanz, Islam und Frankenreich.",
+        sampleAnswer:
+          "Das Frühmittelalter beginnt nicht mit totalem Bruch, weil viele römische Traditionen weiterwirken. Byzanz bleibt stark, die islamische Welt wächst, und auch im Westen werden römische Verwaltungs- und Kirchenstrukturen teilweise übernommen. Das Mittelalter entsteht also aus Wandel und Fortleben zugleich.",
+        criteria: [
+          { label: "Kontinuitäten", keywords: ["kontinuitäten", "weiterwirken", "römisch"] },
+          { label: "Byzanz oder Islam", keywords: ["byzanz", "islam"] },
+          { label: "Franken oder Westen", keywords: ["franken", "westen", "frankenreich"] }
+        ]
+      },
+      {
+        prompt: "Warum waren Klöster für das Frühmittelalter mehr als nur religiöse Orte?",
+        placeholder: "Arbeite mit Schrift, Bildung, Arbeit und Ordnung.",
+        sampleAnswer:
+          "Klöster waren nicht nur religiöse Orte, sondern Räume von Schrift, Bildung, Arbeit und Disziplin. Dort wurden Texte kopiert, Regeln eingeübt und wirtschaftliche Abläufe organisiert. Deshalb trugen Klöster wesentlich zur Ordnung des Frühmittelalters bei.",
+        criteria: [
+          { label: "Schrift oder Bildung", keywords: ["schrift", "bildung", "texte"] },
+          { label: "Arbeit oder Ordnung", keywords: ["arbeit", "ordnung", "regel", "disziplin"] },
+          { label: "Frühmittelalter", keywords: ["frühmittelalter", "kloster"] }
+        ]
+      },
+      {
+        prompt: "Erkläre Lehenswesen und Ministerialen. Wie wurde Herrschaft im Hochmittelalter dadurch organisiert?",
+        placeholder: "Verbinde Lehen, Dienste, Adel und Bindungen.",
+        sampleAnswer:
+          "Im Lehenswesen geben Herrscher oder Adlige Land und Rechte gegen Treue, Dienste und militärische Unterstützung weiter. Ministerialen übernehmen als dienstgebundene Amtsträger wichtige Aufgaben in Verwaltung und Krieg. So wird Herrschaft über persönliche Bindungen organisiert und nicht nur über zentrale Ämter.",
+        criteria: [
+          { label: "Lehen oder Treue", keywords: ["lehen", "treue", "dienste"] },
+          { label: "Ministerialen", keywords: ["ministerialen", "dienstgebunden", "amtsträger"] },
+          { label: "Herrschaftsorganisation", keywords: ["herrschaft", "bindung", "adel", "verwaltung"] }
         ]
       },
       {
@@ -3470,25 +3619,14 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Vergleiche den Einstieg über 'Das verrückte Mittelalter' mit 'Mittelalter in der Schweiz'. Was leistet die eine Reihe, was leistet die andere?",
-        placeholder: "Unterscheide populären Einstieg und präzise Alltagsgeschichte.",
+        prompt: "Warum entstand die Eidgenossenschaft aus spätmittelalterlichen Bündnissen und nicht aus einem plötzlichen Freiheitsmoment?",
+        placeholder: "Arbeite mit Reichsunmittelbarkeit, Gotthard und Landfriedensbündnissen.",
         sampleAnswer:
-          "Das verrückte Mittelalter liefert bekannte Motive wie Ritter, Burgen, Pest oder Minnesänger als Einstieg. Mittelalter in der Schweiz geht genauer in Hygiene, Küche, Verteidigung, Statussymbole und Funde. Die erste Reihe motiviert und bündelt Bilder, die zweite präzisiert und korrigiert sie.",
+          "Die Eidgenossenschaft entstand aus konkreten Macht- und Verkehrsinteressen des Spätmittelalters. Reichsunmittelbarkeit, der Gotthardpass und Landfriedensbündnisse schufen ein Umfeld, in dem sich Orte gemeinsam absichern wollten. Der Bund wächst also aus mittelalterlicher Politik und nicht aus einer zeitlosen Legende.",
         criteria: [
-          { label: "Einstieg über populäre Bilder", keywords: ["ritter", "burgen", "pest", "minnesanger", "einstieg"] },
-          { label: "Alltagsgeschichte", keywords: ["hygiene", "kuche", "verteidigung", "statussymbole", "funde"] },
-          { label: "unterschiedliche Funktion", keywords: ["motiviert", "prazisiert", "korrigiert", "vergleicht"] }
-        ]
-      },
-      {
-        prompt: "Was ergänzen Klöster und die Entstehung der Eidgenossenschaft für das Verständnis von Herrschaft, Kirche und Gesellschaft im Mittelalter?",
-        placeholder: "Verbinde Kloster, Bildung, Ordnung, Bündnisse und politische Herrschaft.",
-        sampleAnswer:
-          "Klöster zeigen Kirche als Raum von Bildung, Schrift, Arbeit und Ordnung. Die Entstehung der Eidgenossenschaft zeigt politische Bündnisse und Herrschaft im spätmittelalterlichen Raum. Zusammen ergänzen beide Filme die Alltagsgeschichte um institutionelle und politische Strukturen.",
-        criteria: [
-          { label: "Klöster", keywords: ["kloster", "bildung", "schrift", "arbeit", "ordnung"] },
-          { label: "Eidgenossenschaft", keywords: ["eidgenossenschaft", "bundnisse", "herrschaft", "politisch"] },
-          { label: "Ergänzungsfunktion", keywords: ["erganzt", "institutionell", "politisch", "gesellschaft"] }
+          { label: "Reichsunmittelbarkeit", keywords: ["reichsunmittelbarkeit", "uri", "schwyz"] },
+          { label: "Gotthard oder Verkehr", keywords: ["gotthard", "pass", "verkehr"] },
+          { label: "Bündnisse oder Landfriede", keywords: ["bündnisse", "landfrieden", "bund"] }
         ]
       }
     ]
@@ -3502,9 +3640,31 @@ const contentChecks = {
         sampleAnswer:
           "Der Kinderkreuzzug ist ein guter Fall für Quellenkritik, weil die Überlieferung spektakulär klingt, aber erst geprüft werden muss. Historikerinnen und Historiker fragen nach Entstehungszeit, Absicht und Zuverlässigkeit der Texte.",
         criteria: [
-          { label: "spektakuläre Überlieferung", keywords: ["spektakular", "uberlieferung", "legende"] },
-          { label: "Quellen prüfen", keywords: ["quelle", "prufen", "entstehungszeit"] },
-          { label: "Zuverlässigkeit oder Absicht", keywords: ["zuverlassig", "absicht", "perspektive"] }
+          { label: "spektakuläre Überlieferung", keywords: ["spektakulär", "überlieferung", "legende"] },
+          { label: "Quellen prüfen", keywords: ["quelle", "prüfen", "entstehungszeit"] },
+          { label: "Zuverlässigkeit oder Absicht", keywords: ["zuverlässig", "absicht", "perspektive"] }
+        ]
+      },
+      {
+        prompt: "Warum veränderten Landesausbau und Dreifelderwirtschaft das hochmittelalterliche Dorf grundlegend?",
+        placeholder: "Arbeite mit Rodungen, Erträgen und dörflicher Ordnung.",
+        sampleAnswer:
+          "Landesausbau und Dreifelderwirtschaft steigerten Erträge und machten mehr Menschenversorgung möglich. Rodungen, neue Felder und geregelte Fruchtfolgen veränderten damit Arbeit, Siedlungsdichte und dörfliche Zusammenarbeit grundlegend.",
+        criteria: [
+          { label: "Rodungen oder Ausbau", keywords: ["rodungen", "landesausbau", "binnenkolonisation"] },
+          { label: "Dreifelderwirtschaft", keywords: ["dreifelderwirtschaft", "fruchtfolge"] },
+          { label: "höhere Erträge oder Dorfordnung", keywords: ["erträge", "versorgung", "dorf", "ordnung"] }
+        ]
+      },
+      {
+        prompt: "Warum sind Stadtrecht, Rat und Zünfte Schlüsselbegriffe für die mittelalterliche Stadt?",
+        placeholder: "Erkläre mit Autonomie, Handwerk und politischer Ordnung.",
+        sampleAnswer:
+          "Stadtrecht gibt der Stadt eigene Regeln, der Rat organisiert ihre politische Führung, und Zünfte ordnen Handwerk und wirtschaftliche Interessen. Zusammen erklären diese Begriffe, warum Städte im Mittelalter eigenständige politische und wirtschaftliche Räume werden.",
+        criteria: [
+          { label: "Stadtrecht", keywords: ["stadtrecht", "regeln", "autonomie"] },
+          { label: "Rat", keywords: ["rat", "führung", "kommune"] },
+          { label: "Zünfte oder Handwerk", keywords: ["zünfte", "handwerk", "gesellen"] }
         ]
       },
       {
@@ -3513,9 +3673,20 @@ const contentChecks = {
         sampleAnswer:
           "Das Mittelalter war vernetzter, weil Städte, Märkte, Handelswege und Pilgerbewegungen Menschen miteinander verbanden. Waren, Ideen und religiöse Vorstellungen bewegten sich über große Räume.",
         criteria: [
-          { label: "Städte oder Märkte", keywords: ["stadte", "markte", "handel"] },
+          { label: "Städte oder Märkte", keywords: ["städte", "märkte", "handel"] },
           { label: "Wege oder Bewegung", keywords: ["wege", "pilger", "bewegung", "reisen"] },
           { label: "Austausch", keywords: ["waren", "ideen", "vorstellungen", "verbunden"] }
+        ]
+      },
+      {
+        prompt: "Wie veränderten Pest und Klimaverschlechterung das Spätmittelalter?",
+        placeholder: "Arbeite mit Hunger, Bevölkerungsverlusten und sozialen Folgen.",
+        sampleAnswer:
+          "Pest und Klimaverschlechterung führten zu Hunger, Bevölkerungsverlusten und tiefen sozialen Spannungen. Wüstungen, Arbeitskräftemangel, Quarantäne, Geisslerbewegungen und Pogrome zeigen, wie stark diese Krisen Dorf und Stadt veränderten.",
+        criteria: [
+          { label: "Pest oder Klima", keywords: ["pest", "klima", "kälte", "hungersnot"] },
+          { label: "Bevölkerungsverluste", keywords: ["bevölkerungsverlust", "wüstungen", "sterben"] },
+          { label: "soziale Folgen", keywords: ["quarantäne", "pogrome", "geissler", "arbeitskräftemangel"] }
         ]
       },
       {
@@ -3525,19 +3696,8 @@ const contentChecks = {
           "Der Film nimmt die Überlieferung um Nikolaus aus Köln und Stephan aus Cloyes ernst, aber nicht unkritisch. Er fragt, was Chroniken tatsächlich belegen, wann sie entstanden und wie zuverlässig sie sind. So wird aus einer Legende ein Fall für Quellenkritik.",
         criteria: [
           { label: "Nikolaus oder Stephan", keywords: ["nikolaus", "stephan", "cologne", "cloyes"] },
-          { label: "1212 oder Kreuzzugsüberlieferung", keywords: ["1212", "kinderkreuzzug", "uberlieferung"] },
-          { label: "Zuverlässigkeit der Chroniken", keywords: ["chroniken", "zuverlassigkeit", "belegen", "prufen"] }
-        ]
-      },
-      {
-        prompt: "Warum gehören Stadt, Markt, Handwerk und Vernetzung genauso zum Mittelalter wie Burgen und Ritter?",
-        placeholder: "Erkläre, was Städte für Wirtschaft und Austausch bedeuten.",
-        sampleAnswer:
-          "Der Film ist wichtig, weil er mittelalterliche Städte als Räume von Markt, Handwerk und dichtem Zusammenleben zeigt. Dadurch wird klar, dass Vernetzung, Handel und Wandel über urbane Räume liefen und das Mittelalter nicht nur aus Burgen bestand.",
-        criteria: [
-          { label: "Stadt", keywords: ["stadt", "stadtleben", "urban"] },
-          { label: "Markt oder Handwerk", keywords: ["markt", "handwerk", "handel"] },
-          { label: "Vernetzung statt Burgklischee", keywords: ["vernetzung", "nicht nur burg", "wandel"] }
+          { label: "1212 oder Kreuzzugsüberlieferung", keywords: ["1212", "kinderkreuzzug", "überlieferung"] },
+          { label: "Chroniken prüfen", keywords: ["chroniken", "zuverlässigkeit", "entstehungszeit"] }
         ]
       }
     ]
@@ -5558,6 +5718,67 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, historische Vernetzung sei im Kern nur eine römische oder rein europäische Leistung."
   },
+
+  [makeSourceKey("modul-7", "Materialdossier: Römische Republik")]: {
+    badge: "Lokales Dossier · res publica und Ständekonflikte",
+    locator: "Materialdossier: Römische Antike – Republik",
+    thesis:
+      "Das Dossier erklärt die römische Republik als Mischordnung aus Senat, Magistraten, Volksversammlungen und sozialem Konflikt zwischen Patriziern und Plebejern.",
+    passage:
+      "Für das Modul ist dieses Dossier zentral, weil es die Republik nicht nur als Ämterordnung, sondern als umkämpfte politische Form zeigt. Volkstribunat, Zwölftafeln und der lange Konflikt zwischen Patriziern und Plebejern machen deutlich, dass römische Politik auf Konkurrenz, Regelbindung und sozialer Spannung zugleich beruhte. Erst dadurch wird verständlich, warum Rom keine direkte Demokratie wie Athen, aber auch keine Monarchie mehr war.",
+    whyHere:
+      "Das Dossier bringt die Republik als eigenständige politische Form auf den Punkt, bevor von Kaiserzeit und Imperium die Rede ist.",
+    mustKnow: [
+      "Die Republik verteilt Macht auf Senat, Magistrate und Volksversammlungen.",
+      "Patrizier und Plebejer ringen über Jahrhunderte um Rechte und politischen Einfluss.",
+      "Volkstribunat und Zwölftafeln zeigen, dass die Republik durch soziale Konflikte verändert wird."
+    ]
+  },
+  [makeSourceKey("modul-7", "Materialdossier: Rom – Expansion und Krise")]: {
+    badge: "Lokales Dossier · Punische Kriege bis Caesar",
+    locator: "Materialdossier: Römische Antike – Expansion und Krise",
+    thesis:
+      "Das Dossier zeigt, dass römische Expansion wirtschaftlichen Gewinn und politische Größe bringt, aber zugleich die sozialen Grundlagen der Republik untergräbt.",
+    passage:
+      "Punische Kriege, Provinzen und Beute vergrößern Roms Macht, doch gerade dieser Erfolg verschärft die innere Krise. Landkonzentration, Sklavenarbeit, Verarmung der Plebs und der Aufstieg von Feldherren wie Marius, Sulla und Caesar machen klar, dass die Republik an ihren eigenen Erfolgen destabilisiert wird. Der Weg zum Prinzipat ist deshalb kein Betriebsunfall, sondern Ergebnis einer langen republikanischen Krise.",
+    whyHere:
+      "Das Dossier erklärt den Übergang von republikanischer Konkurrenz zur monarchischen Bündelung von Macht.",
+    mustKnow: [
+      "Expansion führt zu Provinzen, Beute und neuen Machtressourcen.",
+      "Soziale Ungleichheit und Bürgerkriege verschärfen die Krise der Republik.",
+      "Die Kaiserzeit entsteht aus einer langen Zuspitzung und nicht aus einem einzelnen Ereignis."
+    ]
+  },
+  [makeSourceKey("modul-7", "Materialdossier: Römische Kaiserzeit")]: {
+    badge: "Lokales Dossier · Augustus und Prinzipat",
+    locator: "Materialdossier: Römische Antike – Kaiserzeit",
+    thesis:
+      "Das Dossier erklärt die Kaiserzeit als politische Neuordnung, in der Augustus republikanische Formen beibehält, aber tatsächliche Macht in einer Person bündelt.",
+    passage:
+      "Gerade Augustus zeigt, wie eng politische Symbolik und Herrschaft verbunden sind. Der Senat bleibt sichtbar, alte Titel bleiben in Gebrauch, und doch wird die Republik zur Fassade eines neuen Systems. Provinzen, Heer, Städte, Recht und Selbstdarstellung stabilisieren diese Ordnung. Die Kaiserzeit ist damit kein bloß militärischer Erfolg, sondern eine bewusst gestaltete Form imperialer Herrschaft.",
+    whyHere:
+      "Das Dossier macht aus dem abstrakten Begriff Kaiserzeit eine präzise politische Form.",
+    mustKnow: [
+      "Augustus bündelt Macht, ohne offen als König aufzutreten.",
+      "Der Prinzipat erhält republikanische Begriffe, verändert aber ihren politischen Inhalt.",
+      "Kaiserherrschaft stützt sich auf Heer, Provinzen, Städte, Recht und Symbolik."
+    ]
+  },
+  [makeSourceKey("modul-7", "Materialdossier: Rom in der Schweiz")]: {
+    badge: "Lokales Dossier · Helvetier, Provinzen und Romanisierung",
+    locator: "Materialdossier: Römische Antike – Schweiz",
+    thesis:
+      "Das Dossier zeigt den Raum der heutigen Schweiz als Kontaktzone von Helvetiern, römischer Provinzordnung, Städten, Lagern und gallo-römischer Mischkultur.",
+    passage:
+      "Für das Modul ist dieses Dossier wichtig, weil es Imperium regional konkret macht. Von Caesars Sieg über die Helvetier über Aventicum und Vindonissa bis zu Provinzen wie Germania superior und Raetia wird sichtbar, wie Rom Räume neu ordnet. Zugleich zeigt das Dossier, dass Romanisierung keine Totalersetzung bedeutet: keltische Grundlagen, lokale Traditionen und römische Infrastruktur überlagern sich.",
+    whyHere:
+      "Das Dossier verbindet Reichsgeschichte mit einem konkreten Raum, den die Lernenden historisch verorten können.",
+    mustKnow: [
+      "58 v. Chr. ist für die Helvetier ein Einschnitt auf dem Weg in die römische Ordnung.",
+      "Aventicum, Vindonissa und Provinzgrenzen machen römische Herrschaft sichtbar.",
+      "Die gallo-römische Schweiz ist eine Mischwelt aus Kontinuität und Neuordnung."
+    ]
+  },
   [makeSourceKey("modul-9", "Harari-PDF")]: {
     badge: "S. 251 · Religion im Raum",
     locator: "Harari-PDF, S. 251",
@@ -5643,6 +5864,22 @@ const sourceDetails = {
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, Islam sei für die Geschichte bis 1500 nur ein Nebenthema."
+  },
+
+  [makeSourceKey("modul-9", "Materialdossier: Christentum – Entstehung und Verbreitung")]: {
+    badge: "Lokales Dossier · Jesus bis Reichskirche",
+    locator: "Materialdossier: Römische Antike – Christentum",
+    thesis:
+      "Das Dossier erklärt die Ausbreitung des Christentums als historische Bewegung von den ersten Gemeinden über Verfolgungen bis zur konstantinischen Wende und zur Reichskirche.",
+    passage:
+      "Dieses Dossier schließt im Modul eine wichtige Lücke, weil es das Christentum nicht nur als Glaubenssystem, sondern als historische Bewegung mit Konflikten, Mission, Briefnetzwerken und institutioneller Verdichtung zeigt. Jesus, Paulus, Verfolgungen, Konstantin, Nicäa und Theodosius machen sichtbar, wie aus einer kleinen Bewegung eine reichsweite Kirche wird. Genau dadurch wird Religion als Ordnungskraft konkret.",
+    whyHere:
+      "Das Dossier führt die politische und institutionelle Geschichte des Christentums sauber in das Religionsmodul ein.",
+    mustKnow: [
+      "Paulus und die Heidenmission treiben die frühe Ausbreitung entscheidend voran.",
+      "Verfolgungen zeigen Religion als Frage von Ordnung, Loyalität und Gehorsam.",
+      "Mit Konstantin und später Theodosius wird das Christentum institutionell und politisch prägend."
+    ]
   },
   [makeSourceKey("modul-10", "SRF: Das verrückte Mittelalter")]: {
     badge: "Serienseite · viele Einzelfilme",
@@ -5789,6 +6026,52 @@ const sourceDetails = {
     misconception:
       "Korrigiert wird die Fehldeutung, die Eidgenossenschaft sei völlig losgelöst von mittelalterlichen Macht- und Sozialstrukturen entstanden."
   },
+
+  [makeSourceKey("modul-10", "Materialdossier: Frühmittelalter")]: {
+    badge: "Lokales Dossier · Westen, Byzanz, Islam",
+    locator: "Materialdossier: Mittelalter – Frühmittelalter",
+    thesis:
+      "Das Dossier erklärt das Frühmittelalter als Neuordnung der alten Mittelmeerwelt und nicht als bloße Zeit des Zerfalls.",
+    passage:
+      "Byzanz, die islamische Welt und das Frankenreich zeigen, dass nach Rom nicht Leere entsteht, sondern ein neuer politischer Raum. Klöster, Christianisierung, Grundherrschaft und neue Königtümer machen das Frühmittelalter zu einer Aufbauphase mit starken Kontinuitäten und tiefen Brüchen zugleich.",
+    whyHere:
+      "Das Dossier erweitert den Mittelalterblock vom Alltag auf die große politische und religiöse Raumordnung.",
+    mustKnow: [
+      "Das Frühmittelalter ist Neuordnung, nicht bloß Niedergang.",
+      "Byzanz, Islam und Frankenreich bilden drei große Macht- und Kulturräume.",
+      "Klöster und Christianisierung tragen zur neuen Ordnung entscheidend bei."
+    ]
+  },
+  [makeSourceKey("modul-10", "Materialdossier: Hochmittelalter – Könige und Kirche")]: {
+    badge: "Lokales Dossier · Lehen, Rittertum und Frömmigkeit",
+    locator: "Materialdossier: Mittelalter – Hochmittelalter, Könige und Kirche",
+    thesis:
+      "Das Dossier zeigt, wie Lehenswesen, Ministerialen, Rittertum, Ständeordnung und Frömmigkeit Herrschaft und Gesellschaft im Hochmittelalter strukturieren.",
+    passage:
+      "Gerade dieses Dossier macht sichtbar, dass Mittelalter nicht nur aus Bildern von Burgen und Rittern besteht, sondern aus einer durchdachten sozialen Ordnung. Lehen, persönliche Bindungen, geistliche Legitimation und adelige Rangzeichen greifen eng ineinander. Kirche und Adel stabilisieren sich wechselseitig, während Geburt, Stand und Frömmigkeit den sozialen Platz der Menschen festlegen.",
+    whyHere:
+      "Das Dossier liefert die harte Strukturgeschichte hinter den bekannten Mittelalterbildern.",
+    mustKnow: [
+      "Lehenswesen ordnet Herrschaft über persönliche Bindungen und Dienste.",
+      "Ministerialen und Rittertum sind tragende Formen hochmittelalterlicher Macht.",
+      "Kirche, Stand und Frömmigkeit legitimieren soziale Ungleichheit."
+    ]
+  },
+  [makeSourceKey("modul-10", "Materialdossier: Eidgenossenschaft")]: {
+    badge: "Lokales Dossier · Bündnisse und spätmittelalterliche Politik",
+    locator: "Materialdossier: Mittelalter – Eidgenossenschaft",
+    thesis:
+      "Das Dossier erklärt die Eidgenossenschaft aus Reichsunmittelbarkeit, Passpolitik, Landfriedensbündnissen und spätmittelalterlichen Machtkämpfen statt aus bloßem Gründungsmythos.",
+    passage:
+      "Für das Modul ist dieses Dossier entscheidend, weil es regionale Geschichte in allgemeine Mittelaltergeschichte zurückbindet. Uri, Schwyz, Unterwalden, der Gotthardpass, Morgarten und spätere Bündnispolitik zeigen, wie eng lokale Freiheitsbehauptungen mit Reich, Adel, Verkehr und Krieg verbunden sind. Die Eidgenossenschaft erscheint dadurch als spätmittelalterliche politische Formation und nicht als zeitlose Ursprungserzählung.",
+    whyHere:
+      "Das Dossier macht aus einem oft mythisch erzählten Thema eine präzise politische Entwicklung.",
+    mustKnow: [
+      "Reichsunmittelbarkeit und Gotthardverkehr sind zentrale Voraussetzungen.",
+      "Landfriedensbündnisse und Konflikte mit Adel und Habsburg prägen die Frühzeit des Bundes.",
+      "Die Eidgenossenschaft wächst aus spätmittelalterlicher Machtpolitik und nicht aus Legenden allein."
+    ]
+  },
   [makeSourceKey("modul-11", "SRF: Der Kreuzzug der Kinder")]: {
     badge: "SRF-school-Film · Quellenkritik",
     locator: "SRF school: Mythos oder historischer Fakt – Der Kreuzzug der Kinder",
@@ -5831,6 +6114,52 @@ const sourceDetails = {
       "Dieselbe Samarkand-Stelle bekommt im Stadt- und Handelsmodul einen anderen Akzent: Das Mittelalter erscheint als Raum von Markt, Fernbeziehungen und Verdichtung statt als abgeschlossene Burgenwelt.",
     passage:
       "Die Passage versammelt Seide, Goldmünzen, Händler, Reisende und Menschen aus verschiedenen Weltregionen in einem einzigen Bild. Genau dadurch wird für dieses Modul sichtbar, dass Märkte, Pilgerwege, Fernhandel, Begegnung und Macht im Mittelalter nicht nebeneinander herlaufen, sondern in denselben Räumen zusammentreffen. Die Stelle ist deshalb stark, weil sie das Mittelalter nicht auf Burgen und ländliche Abgeschlossenheit reduziert. Stattdessen zeigt sie eine Welt aus Verkehr, Austausch, Dichte und überregionalen Beziehungen."
+  },
+
+  [makeSourceKey("modul-11", "Materialdossier: Hochmittelalter – Dorf")]: {
+    badge: "Lokales Dossier · Dorf, Ausbau und Dreifelderwirtschaft",
+    locator: "Materialdossier: Mittelalter – Hochmittelalter, Dorf",
+    thesis:
+      "Das Dossier erklärt das hochmittelalterliche Dorf als Raum von Landesausbau, Rodungen, Dreifelderwirtschaft und neuer dörflicher Selbstorganisation.",
+    passage:
+      "Für dieses Modul ist das Dossier wichtig, weil es zeigt, dass mittelalterliche Vernetzung nicht nur über Städte läuft. Auch Dörfer verändern sich tief: Rodungen, neue Felder, Fruchtfolgen, Vergetreidung und Dorfrechte schaffen eine andere Produktions- und Lebensweise. Das Dorf ist damit kein statischer Rest, sondern Teil des großen hochmittelalterlichen Ausbaus.",
+    whyHere:
+      "Das Dossier verankert Markt- und Handelsgeschichte in der landwirtschaftlichen Grundlage des Hochmittelalters.",
+    mustKnow: [
+      "Landesausbau und Rodungen erweitern Siedlungs- und Wirtschaftsraum.",
+      "Dreifelderwirtschaft steigert Erträge und verändert Arbeit und Zeitstruktur.",
+      "Dörfer organisieren sich stärker über gemeinsames Recht und lokale Ordnung."
+    ]
+  },
+  [makeSourceKey("modul-11", "Materialdossier: Hochmittelalter – Stadt")]: {
+    badge: "Lokales Dossier · Stadtrecht, Rat und Zünfte",
+    locator: "Materialdossier: Mittelalter – Hochmittelalter, Stadt",
+    thesis:
+      "Das Dossier erklärt die mittelalterliche Stadt als Raum von Markt, Autonomie, Rat, Zünften, Handwerk und Bildung.",
+    passage:
+      "Gerade dieses Dossier macht sichtbar, dass Städte im Hochmittelalter eigene politische und wirtschaftliche Formen entwickeln. Stadtrecht, Kommune, Rat, Zünfte und Märkte schaffen verdichtete Lebensräume, die sich klar vom Dorf unterscheiden. Die Stadt ist damit nicht bloß Kulisse, sondern Schlüsselraum für Austausch, Mobilität und sozialen Wandel.",
+    whyHere:
+      "Das Dossier gibt dem Modul eine feste urbane Struktur jenseits bloßer Kreuzzugs- oder Pilgererzählungen.",
+    mustKnow: [
+      "Stadtrecht und Rat geben der Stadt eigene politische Form.",
+      "Zünfte ordnen Handwerk, Ausbildung und wirtschaftliche Interessen.",
+      "Städte bündeln Markt, Bildung, Schrift und soziale Verdichtung."
+    ]
+  },
+  [makeSourceKey("modul-11", "Materialdossier: Spätmittelalter")]: {
+    badge: "Lokales Dossier · Pest, Hunger und Krisen",
+    locator: "Materialdossier: Mittelalter – Spätmittelalter",
+    thesis:
+      "Das Dossier zeigt das Spätmittelalter als Zeit harter Krisen, die Dorf, Stadt, Frömmigkeit und soziale Ordnung tief verändern.",
+    passage:
+      "Klimaverschlechterung, Hungersnöte, Pest, Quarantäne, Geisslerbewegungen und Pogrome machen deutlich, dass das Spätmittelalter nicht nur eine späte Fortsetzung des Hochmittelalters ist. Die Krisen greifen in Arbeitswelt, Siedlungsstruktur, Frömmigkeit und Herrschaft ein. Gerade dadurch wird sichtbar, dass mittelalterliche Geschichte von tiefen Umbrüchen und nicht von bloßer Statik geprägt ist.",
+    whyHere:
+      "Das Dossier erweitert das Modul von Mobilität und Vernetzung auf Krisen und ihre sozialen Folgen.",
+    mustKnow: [
+      "Klimaverschlechterung und Pest treffen Dorf und Stadt zugleich.",
+      "Quarantäne, Geissler und Pogrome zeigen soziale und religiöse Reaktionen auf Krise.",
+      "Das Spätmittelalter ist eine Zeit tiefen Wandels und nicht bloß ein ruhiger Ausklang."
+    ]
   },
   [makeSourceKey("modul-12", "SRF: 1491")]: {
     badge: "SRF-school-Film · Perspektivwechsel",
