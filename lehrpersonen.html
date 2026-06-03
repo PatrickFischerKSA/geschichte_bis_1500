@@ -15,7 +15,7 @@
       <h1>Lehrpersonen-Version mit geschützter Vollansicht</h1>
       <p>
         Diese Ansicht enthält sensible Musterlösungen und die vollständige offene Kursstruktur.
-        Sie wird über ein separates Lehrpersonen-Passwort freigegeben. Die Supabase-Anmeldung bleibt
+        Sie wird über ein separates Lehrpersonen-Passwort freigegeben. Die Firebase-Anmeldung bleibt
         zusätzlich im Dashboard für das Cloud-Tracking der Lernstände verfügbar.
       </p>
       <label class="welcome-name teacher-password-field">
@@ -255,10 +255,12 @@
     })();
   </script>
 
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore-compat.js"></script>
   <script src="app.js?v=20260411-5"></script>
-  <script src="supabase-config.js?v=20260405-2"></script>
-  <script src="supabase.js?v=20260411-5"></script>
+  <script src="firebase-config.js?v=20260603-1"></script>
+  <script src="firebase.js?v=20260603-1"></script>
   <script src="teacher.js?v=20260411-3"></script>
 </body>
 </html>

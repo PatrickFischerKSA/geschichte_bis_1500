@@ -27,7 +27,7 @@ werden.
 - subtile Motion-Atmosphäre über animierte Licht- und Raumakzente
 - Lehrpersonen-Seite mit druckbarer Modulübersicht für PDF oder Ausdruck
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
-- vorbereitete Supabase-Anbindung für geräteübergreifenden Lernstand und Lehrpersonen-Dashboard
+- vorbereitete Firebase-Anbindung für geräteübergreifenden Lernstand und Lehrpersonen-Dashboard
 
 ## Quellenbasis
 
@@ -47,21 +47,22 @@ Quellenbasis mit Einsatzfunktion aufgeführt.
 3. Antworten direkt in die Textfelder schreiben
 4. `Antwort prüfen` oder `Musterantwort zeigen` verwenden
 
-## Supabase-Setup
+## Firebase-Setup
 
 Für geräteübergreifende Lernstände und das Lehrpersonen-Dashboard ist eine vorbereitete
-Supabase-Anbindung enthalten.
+Firebase-Anbindung enthalten.
 
-1. In Supabase ein neues Projekt anlegen
-2. den Inhalt von [supabase-schema.sql](/Users/patrickfischer/Documents/New%20project/geschichte_bis_1500/supabase-schema.sql) im SQL-Editor ausführen
-3. [supabase-config.js](/Users/patrickfischer/Documents/New%20project/geschichte_bis_1500/supabase-config.js) mit `url` und `anonKey` füllen
-4. optional zuerst [supabase-config.example.js](/Users/patrickfischer/Documents/New%20project/geschichte_bis_1500/supabase-config.example.js) als Vorlage verwenden
-5. nach der ersten Anmeldung die Lehrpersonen-Mail in Supabase auf `role = 'teacher'` hochstufen
+1. In Firebase ein neues Projekt anlegen
+2. Authentication aktivieren und als Anmeldemethode E-Mail/Passwort einschalten
+3. Firestore Database im Produktionsmodus anlegen
+4. den Inhalt von [firestore.rules](/Users/patrickfischer/Documents/zeiten_grammatikwerkstatt/geschichte_bis_1500/firestore.rules) in Firestore Rules veröffentlichen
+5. eine Web-App registrieren und die Konfiguration in [firebase-config.js](/Users/patrickfischer/Documents/zeiten_grammatikwerkstatt/geschichte_bis_1500/firebase-config.js) eintragen
+6. nach der ersten Anmeldung die Lehrpersonen-Mail in Firestore im passenden `profiles/{uid}`-Dokument auf `role = "teacher"` hochstufen
 
 Dann gilt:
 - Schüler*innen können sich im Cloud-Sync-Panel anmelden und ihren Lernstand speichern
 - die Lehrpersonen-Version kann die Cloud-Daten gesammelt laden
-- ohne Supabase-Konfiguration bleibt die Lernumgebung lokal nutzbar
+- ohne Firebase-Konfiguration bleibt die Lernumgebung lokal nutzbar
 
 ## Zusatzseite für Lehrpersonen
 
@@ -75,8 +76,8 @@ Dann gilt:
 - `styles.css`: Layout und Gestaltung
 - `app.js`: Moduldaten, Renderlogik, Sofortfeedback und Fortschritt
 - `teacher.js`: Logik für Lehrpersonen-Zugang und Dashboard
-- `supabase.js`: Cloud-Sync und Supabase-Dashboardanbindung
-- `supabase-config.js`: Projektkonfiguration für Supabase
-- `supabase-schema.sql`: Tabellen- und RLS-Schema für Supabase
+- `firebase.js`: Cloud-Sync und Firebase-Dashboardanbindung
+- `firebase-config.js`: Projektkonfiguration für Firebase
+- `firestore.rules`: Sicherheitsregeln für Firestore
 - `assets/srf/`: lokal eingebundene SRF-Bildassets für die atmosphärische Modulgestaltung
 - `.github/workflows/pages.yml`: automatische Veröffentlichung über GitHub Pages

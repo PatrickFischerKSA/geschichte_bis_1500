@@ -1,19 +1,29 @@
 (function () {
-  const config = window.SUPABASE_CONFIG || {};
+  const config = window.FIREBASE_CONFIG || {};
   const appApi = window.GESCHICHTE_APP;
   const teacherDashboardKey = window.GESCHICHTE_DATA?.dashboardStorageKey || "geschichte_bis_1500_teacher_dashboard_v1";
   const isTeacherPage = () => document.body?.dataset?.mode === "teacher";
   const courseId = config.courseId || "geschichte_bis_1500";
   const projectLabel = config.projectLabel || "Geschichte bis 1500";
+  const firebaseOptions = {
+    apiKey: config.apiKey,
+    authDomain: config.authDomain,
+    projectId: config.projectId,
+    storageBucket: config.storageBucket,
+    messagingSenderId: config.messagingSenderId,
+    appId: config.appId,
+    measurementId: config.measurementId
+  };
 
-  let client = null;
+  let auth = null;
+  let db = null;
   let session = null;
   let profile = null;
   let ownQuestions = [];
   let teacherQuestions = [];
 
   function isConfigured() {
-    return Boolean(config.url && config.anonKey);
+    return Boolean(config.apiKey && config.projectId && !String(config.apiKey).includes("YOUR_"));
   }
 
   function normalizeName(name) {
@@ -22,6 +32,14 @@
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   function setPanelHtml(selector, html) {
@@ -42,7 +60,7 @@
   function getStatus() {
     return {
       configured: isConfigured(),
-      loggedIn: Boolean(session?.user),
+      loggedIn: Boolean(session?.uid),
       teacherRole: profile?.role === "teacher"
     };
   }
@@ -50,9 +68,9 @@
   function renderUnconfigured() {
     const setupHtml = `
       <div class="summary-item">
-        <span class="fact-label">Supabase noch nicht konfiguriert</span>
+        <span class="fact-label">Firebase noch nicht konfiguriert</span>
         <strong>Cloud-Sync ist vorbereitet</strong>
-        <p>Trage URL und Anon-Key in <code>supabase-config.js</code> ein und führe <code>supabase-schema.sql</code> im SQL-Editor aus.</p>
+        <p>Trage die Web-App-Konfiguration in <code>firebase-config.js</code> ein und veröffentliche die Regeln aus <code>firestore.rules</code>.</p>
       </div>
     `;
     setPanelHtml("#cloud-sync-panel", setupHtml);
@@ -69,7 +87,7 @@
       return;
     }
 
-    if (!session?.user) {
+    if (!session) {
       setPanelHtml(
         "#cloud-sync-panel",
         `
@@ -86,11 +104,11 @@
             </label>
             <label class="teacher-roster-field">
               <strong>Name</strong>
-              <input id="cloud-full-name" type="text" value="${currentName.replace(/"/g, "&quot;")}" placeholder="wie im Kurs" />
+              <input id="cloud-full-name" type="text" value="${escapeHtml(currentName)}" placeholder="wie im Kurs" />
             </label>
             <label class="teacher-roster-field">
               <strong>Klasse</strong>
-              <input id="cloud-class-name" type="text" value="${currentClass.replace(/"/g, "&quot;")}" placeholder="z. B. FM 24A" />
+              <input id="cloud-class-name" type="text" value="${escapeHtml(currentClass)}" placeholder="z. B. FM 24A" />
             </label>
             <div class="teacher-access-actions">
               <button class="btn primary" type="button" data-cloud-signup>Konto erstellen</button>
@@ -109,8 +127,8 @@
       `
         <div class="cloud-card">
           <span class="fact-label">Cloud-Sync aktiv</span>
-          <strong>${session.user.email}</strong>
-          <p class="sidebar-note">${profile?.class_name ? `Klasse: ${profile.class_name}` : "Noch keine Klasse hinterlegt."}</p>
+          <strong>${escapeHtml(session.email)}</strong>
+          <p class="sidebar-note">${profile?.class_name ? `Klasse: ${escapeHtml(profile.class_name)}` : "Noch keine Klasse hinterlegt."}</p>
           <div class="teacher-access-actions">
             <button class="btn primary" type="button" data-cloud-sync-now>Jetzt synchronisieren</button>
             <button class="btn ghost" type="button" data-cloud-load>Cloud-Stand laden</button>
@@ -133,13 +151,13 @@
       return;
     }
 
-    if (!session?.user) {
+    if (!session) {
       setPanelHtml(
         "#teacher-cloud-auth",
         `
           <div class="summary-item">
             <span class="fact-label">Cloud-Dashboard</span>
-            <strong>Supabase-Anmeldung erforderlich</strong>
+            <strong>Firebase-Anmeldung erforderlich</strong>
             <label class="teacher-roster-field">
               <strong>E-Mail</strong>
               <input id="teacher-cloud-email" type="email" placeholder="lehrperson@schule.ch" />
@@ -165,7 +183,7 @@
       `
         <div class="summary-item">
           <span class="fact-label">Cloud-Konto</span>
-          <strong>${session.user.email}</strong>
+          <strong>${escapeHtml(session.email)}</strong>
           <p>${teacherRole ? "Lehrpersonenrolle erkannt. Dashboard kann Cloud-Daten laden." : "Dieses Konto ist noch nicht als teacher markiert."}</p>
           <div class="teacher-access-actions">
             <button class="btn primary" type="button" data-teacher-cloud-refresh ${teacherRole ? "" : "disabled"}>Cloud-Daten laden</button>
@@ -186,40 +204,32 @@
   }
 
   async function refreshProfile(state) {
-    if (!client || !session?.user) {
+    if (!db || !session) {
       profile = null;
       return null;
     }
 
     const fullName = String(state?.learnerName || "").trim();
     const className = String(state?.className || document.getElementById("cloud-class-name")?.value || "").trim();
-
-    const upsertPayload = {
-      id: session.user.id,
-      email: session.user.email || null,
-      full_name: fullName || session.user.user_metadata?.full_name || null,
-      class_name: className || session.user.user_metadata?.class_name || null
+    const profileRef = db.collection("profiles").doc(session.uid);
+    const existing = await profileRef.get();
+    const existingData = existing.exists ? existing.data() : {};
+    const payload = {
+      id: session.uid,
+      email: session.email || "",
+      full_name: fullName || session.displayName || existingData.full_name || null,
+      class_name: className || existingData.class_name || null,
+      role: existingData.role || "student",
+      updated_at: new Date().toISOString()
     };
 
-    const { error: upsertError } = await client
-      .from("profiles")
-      .upsert(upsertPayload, { onConflict: "id" });
-
-    if (upsertError) {
-      throw upsertError;
+    if (!existing.exists) {
+      payload.created_at = new Date().toISOString();
     }
 
-    const { data, error } = await client
-      .from("profiles")
-      .select("id, email, full_name, class_name, role")
-      .eq("id", session.user.id)
-      .single();
-
-    if (error) {
-      throw error;
-    }
-
-    profile = data;
+    await profileRef.set(payload, { merge: true });
+    const nextProfile = await profileRef.get();
+    profile = nextProfile.data() || payload;
     return profile;
   }
 
@@ -243,25 +253,10 @@
       appApi.saveState(nextState);
     }
 
-    const redirectTo = `${window.location.origin}${window.location.pathname}`;
-    const { error } = await client.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectTo,
-        data: {
-          full_name: fullName,
-          class_name: className
-        }
-      }
-    });
-
-    if (error) {
-      setFeedback("cloud-sync-feedback", error.message, true);
-      return;
-    }
-
-    setFeedback("cloud-sync-feedback", "Konto erstellt. Falls E-Mail-Bestätigung aktiv ist, bitte zuerst den Bestätigungslink öffnen.", false);
+    const credential = await auth.createUserWithEmailAndPassword(email, password);
+    await credential.user.updateProfile({ displayName: fullName });
+    await refreshProfile({ ...getCurrentState(), learnerName: fullName, className });
+    setFeedback("cloud-sync-feedback", "Konto erstellt und angemeldet.", false);
   }
 
   async function signInWithPassword(email, password, feedbackId) {
@@ -269,32 +264,27 @@
       setFeedback(feedbackId, "Bitte E-Mail und Passwort eintragen.", true);
       return false;
     }
-    const { error } = await client.auth.signInWithPassword({ email, password });
-    if (error) {
-      setFeedback(feedbackId, error.message, true);
-      return false;
-    }
+    await auth.signInWithEmailAndPassword(email, password);
     setFeedback(feedbackId, "Anmeldung erfolgreich.", false);
     return true;
   }
 
   async function signOut() {
-    await client.auth.signOut();
+    await auth.signOut();
+  }
+
+  function progressDocId(userId) {
+    return `${userId}_${courseId}`;
   }
 
   async function loadOwnCloudState(force = false) {
-    if (!client || !session?.user || !appApi) {
+    if (!db || !session || !appApi) {
       return;
     }
 
-    const { data, error } = await client
-      .from("learner_progress")
-      .select("state_json, updated_at")
-      .eq("user_id", session.user.id)
-      .eq("course_id", courseId)
-      .maybeSingle();
-
-    if (error || !data?.state_json) {
+    const doc = await db.collection("learner_progress").doc(progressDocId(session.uid)).get();
+    const data = doc.exists ? doc.data() : null;
+    if (!data?.state_json) {
       return;
     }
 
@@ -308,24 +298,21 @@
   }
 
   async function loadOwnQuestions() {
-    if (!client || !session?.user) {
+    if (!db || !session) {
       ownQuestions = [];
       dispatchQuestionsUpdated();
       return [];
     }
 
-    const { data, error } = await client
-      .from("student_questions")
-      .select("id, module_id, module_title, question_text, status, answer_text, created_at, updated_at, answered_at")
-      .eq("user_id", session.user.id)
-      .eq("course_id", courseId)
-      .order("created_at", { ascending: false });
+    const snapshot = await db
+      .collection("student_questions")
+      .where("user_id", "==", session.uid)
+      .where("course_id", "==", courseId)
+      .get();
 
-    if (error) {
-      throw error;
-    }
-
-    ownQuestions = data || [];
+    ownQuestions = snapshot.docs
+      .map((doc) => ({ id: doc.id, ...doc.data() }))
+      .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")));
     dispatchQuestionsUpdated();
     return ownQuestions;
   }
@@ -335,7 +322,7 @@
   }
 
   async function syncState(state) {
-    if (!client || !session?.user || !appApi || isTeacherPage()) {
+    if (!db || !session || !appApi || isTeacherPage()) {
       return;
     }
 
@@ -346,7 +333,7 @@
     }
 
     const payload = {
-      user_id: session.user.id,
+      user_id: session.uid,
       course_id: courseId,
       learner_name: snapshot.name,
       class_name: profile?.class_name || null,
@@ -361,17 +348,11 @@
       updated_at: new Date().toISOString()
     };
 
-    const { error } = await client
-      .from("learner_progress")
-      .upsert(payload, { onConflict: "user_id,course_id" });
-
-    if (error) {
-      throw error;
-    }
+    await db.collection("learner_progress").doc(progressDocId(session.uid)).set(payload, { merge: true });
   }
 
   async function submitTeacherQuestion({ moduleId, moduleTitle, questionText }) {
-    if (!client || !session?.user) {
+    if (!db || !session) {
       throw new Error("Bitte melde dich zuerst im Cloud-Sync an.");
     }
 
@@ -384,46 +365,41 @@
     await refreshProfile(state);
 
     const payload = {
-      user_id: session.user.id,
+      user_id: session.uid,
       course_id: courseId,
-      learner_name: profile?.full_name || state.learnerName || session.user.email || "Unbekannt",
+      learner_name: profile?.full_name || state.learnerName || session.email || "Unbekannt",
       class_name: profile?.class_name || state.className || null,
       module_id: moduleId,
       module_title: moduleTitle,
       question_text: trimmedQuestion,
-      status: "offen"
+      status: "offen",
+      answer_text: null,
+      teacher_id: null,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      answered_at: null
     };
 
-    const { error } = await client
-      .from("student_questions")
-      .insert(payload);
-
-    if (error) {
-      throw error;
-    }
-
+    await db.collection("student_questions").add(payload);
     await loadOwnQuestions();
     return true;
   }
 
   async function loadTeacherQuestions() {
-    if (!client || !session?.user || profile?.role !== "teacher") {
+    if (!db || !session || profile?.role !== "teacher") {
       teacherQuestions = [];
       dispatchQuestionsUpdated();
       return [];
     }
 
-    const { data, error } = await client
-      .from("student_questions")
-      .select("id, user_id, learner_name, class_name, module_id, module_title, question_text, status, answer_text, created_at, updated_at, answered_at")
-      .eq("course_id", courseId)
-      .order("created_at", { ascending: false });
+    const snapshot = await db
+      .collection("student_questions")
+      .where("course_id", "==", courseId)
+      .get();
 
-    if (error) {
-      throw error;
-    }
-
-    teacherQuestions = data || [];
+    teacherQuestions = snapshot.docs
+      .map((doc) => ({ id: doc.id, ...doc.data() }))
+      .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")));
     dispatchQuestionsUpdated();
     return teacherQuestions;
   }
@@ -433,7 +409,7 @@
   }
 
   async function answerTeacherQuestion(questionId, answerText, status = "beantwortet") {
-    if (!client || !session?.user || profile?.role !== "teacher") {
+    if (!db || !session || profile?.role !== "teacher") {
       throw new Error("Nur Lehrpersonen können Antworten speichern.");
     }
 
@@ -443,64 +419,54 @@
     }
 
     const nextStatus = ["offen", "in_bearbeitung", "beantwortet"].includes(status) ? status : "beantwortet";
-
+    const now = new Date().toISOString();
     const payload = {
       answer_text: trimmedAnswer,
       status: nextStatus,
-      teacher_id: session.user.id,
-      answered_at: nextStatus === "beantwortet" ? new Date().toISOString() : null
+      teacher_id: session.uid,
+      updated_at: now,
+      answered_at: nextStatus === "beantwortet" ? now : null
     };
 
-    const { error } = await client
-      .from("student_questions")
-      .update(payload)
-      .eq("id", questionId);
-
-    if (error) {
-      throw error;
-    }
-
+    await db.collection("student_questions").doc(questionId).set(payload, { merge: true });
     await loadTeacherQuestions();
     return true;
   }
 
   async function refreshTeacherDashboardFromCloud() {
-    if (!client || !session?.user || profile?.role !== "teacher") {
+    if (!db || !session || profile?.role !== "teacher") {
       return;
     }
 
-    const { data, error } = await client
-      .from("learner_progress")
-      .select("learner_name, class_name, passed_modules, total_modules, interaction_completed, interaction_total, overall_percent, next_module, module_scores, updated_at")
-      .eq("course_id", courseId)
-      .order("updated_at", { ascending: false });
-
-    if (error) {
-      setFeedback("teacher-cloud-feedback", error.message, true);
-      return;
-    }
+    const snapshot = await db
+      .collection("learner_progress")
+      .where("course_id", "==", courseId)
+      .get();
 
     const snapshots = {};
-    (data || []).forEach((row) => {
-      snapshots[normalizeName(row.learner_name)] = {
-        name: row.learner_name,
-        class_name: row.class_name,
-        passedModules: row.passed_modules,
-        totalModules: row.total_modules,
-        interactionCompleted: row.interaction_completed,
-        interactionTotal: row.interaction_total,
-        overallPercent: row.overall_percent,
-        nextModule: row.next_module,
-        moduleScores: row.module_scores || [],
-        updatedAt: row.updated_at,
-        source: "supabase"
-      };
-    });
+    snapshot.docs
+      .map((doc) => doc.data())
+      .sort((a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")))
+      .forEach((row) => {
+        snapshots[normalizeName(row.learner_name)] = {
+          name: row.learner_name,
+          class_name: row.class_name,
+          passedModules: row.passed_modules,
+          totalModules: row.total_modules,
+          interactionCompleted: row.interaction_completed,
+          interactionTotal: row.interaction_total,
+          overallPercent: row.overall_percent,
+          nextModule: row.next_module,
+          moduleScores: row.module_scores || [],
+          updatedAt: row.updated_at,
+          source: "firebase"
+        };
+      });
 
     localStorage.setItem(teacherDashboardKey, JSON.stringify(snapshots));
     window.dispatchEvent(new Event("gesch-dashboard-updated"));
     await loadTeacherQuestions();
-    setFeedback("teacher-cloud-feedback", `Cloud-Daten geladen: ${data?.length || 0} Lernstände.`, false);
+    setFeedback("teacher-cloud-feedback", `Cloud-Daten geladen: ${snapshot.docs.length} Lernstände.`, false);
   }
 
   function bindStudentAuthButtons() {
@@ -518,7 +484,7 @@
     document.querySelector("[data-cloud-sync-now]")?.addEventListener("click", async () => {
       try {
         await syncState(getCurrentState());
-        setFeedback("cloud-sync-feedback", "Lernstand in Supabase gespeichert.", false);
+        setFeedback("cloud-sync-feedback", "Lernstand in Firebase gespeichert.", false);
       } catch (error) {
         setFeedback("cloud-sync-feedback", error.message, true);
       }
@@ -561,7 +527,7 @@
 
   async function handleSession(nextSession) {
     session = nextSession || null;
-    if (!session?.user) {
+    if (!session) {
       profile = null;
       ownQuestions = [];
       teacherQuestions = [];
@@ -600,20 +566,26 @@
       return;
     }
 
-    if (!window.supabase?.createClient) {
+    if (!window.firebase?.initializeApp) {
       renderUnconfigured();
       return;
     }
 
-    client = window.supabase.createClient(config.url, config.anonKey);
-    const { data } = await client.auth.getSession();
-    await handleSession(data.session);
-    client.auth.onAuthStateChange(async (_event, nextSession) => {
-      await handleSession(nextSession);
+    if (!window.firebase.apps.length) {
+      window.firebase.initializeApp(firebaseOptions);
+    }
+    auth = window.firebase.auth();
+    db = window.firebase.firestore();
+    await auth.setPersistence(window.firebase.auth.Auth.Persistence.LOCAL);
+    auth.onAuthStateChanged((nextUser) => {
+      handleSession(nextUser).catch((error) => {
+        console.error(error);
+        renderPanels();
+      });
     });
   }
 
-  window.GESCHICHTE_SUPABASE = {
+  window.GESCHICHTE_FIREBASE = {
     syncState,
     refreshTeacherDashboardFromCloud,
     getStatus,

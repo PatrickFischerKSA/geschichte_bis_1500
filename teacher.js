@@ -271,7 +271,7 @@ function renderTeacherDashboard() {
 }
 
 function renderTeacherQuestionPanel(container) {
-  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const cloudApi = window.GESCHICHTE_FIREBASE;
   const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false, teacherRole: false };
   const questions = cloudApi?.getTeacherQuestions ? cloudApi.getTeacherQuestions() : [];
 
@@ -279,7 +279,7 @@ function renderTeacherQuestionPanel(container) {
     container.innerHTML = `
       <div class="summary-item">
         <span class="fact-label">Fragen an Lehrpersonen</span>
-        <p>Die Fragefunktion wird sichtbar, sobald Supabase vollständig eingerichtet ist.</p>
+        <p>Die Fragefunktion wird sichtbar, sobald Firebase vollständig eingerichtet ist.</p>
       </div>
     `;
     return;
@@ -424,8 +424,8 @@ async function unlockTeacherAccess() {
   localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
   setTeacherFeedback("");
   renderTeacherAccess(true);
-  if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
-    window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((err) => {
+  if (window.GESCHICHTE_FIREBASE?.refreshTeacherDashboardFromCloud) {
+    window.GESCHICHTE_FIREBASE.refreshTeacherDashboardFromCloud().catch((err) => {
       console.error(err);
     });
   }
@@ -461,8 +461,8 @@ function clearTeacherPreviewState() {
 async function initTeacherAuthState() {
   if (localStorage.getItem(TEACHER_ACCESS_KEY) === "granted") {
     renderTeacherAccess(true);
-    if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
-      window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((err) => {
+    if (window.GESCHICHTE_FIREBASE?.refreshTeacherDashboardFromCloud) {
+      window.GESCHICHTE_FIREBASE.refreshTeacherDashboardFromCloud().catch((err) => {
         console.error(err);
       });
     }
@@ -525,8 +525,8 @@ function bindTeacherPage() {
     if (target.matches("[data-refresh-dashboard]")) {
       renderTeacherDashboard();
       setTeacherDashboardFeedback("Dashboard lokal aktualisiert.", false);
-      if (window.GESCHICHTE_SUPABASE?.refreshTeacherDashboardFromCloud) {
-        window.GESCHICHTE_SUPABASE.refreshTeacherDashboardFromCloud().catch((error) => {
+      if (window.GESCHICHTE_FIREBASE?.refreshTeacherDashboardFromCloud) {
+        window.GESCHICHTE_FIREBASE.refreshTeacherDashboardFromCloud().catch((error) => {
           console.error(error);
           setTeacherDashboardFeedback(error.message, true);
         });
@@ -545,7 +545,7 @@ function bindTeacherPage() {
       const answerField = document.querySelector(`[data-question-answer="${questionId}"]`);
       const statusField = document.querySelector(`[data-question-status="${questionId}"]`);
 
-      window.GESCHICHTE_SUPABASE?.answerTeacherQuestion(questionId, answerField?.value || "", statusField?.value || "beantwortet")
+      window.GESCHICHTE_FIREBASE?.answerTeacherQuestion(questionId, answerField?.value || "", statusField?.value || "beantwortet")
         .then(() => {
           renderTeacherDashboard();
           setTeacherDashboardFeedback("Antwort gespeichert.", false);

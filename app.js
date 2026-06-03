@@ -7584,9 +7584,9 @@ function saveState(state) {
   if (!isTeacherMode()) {
     persistLearnerSnapshot(state);
   }
-  if (!isTeacherMode() && window.GESCHICHTE_SUPABASE?.syncState) {
-    window.GESCHICHTE_SUPABASE.syncState(state).catch((error) => {
-      console.error("Supabase sync failed", error);
+  if (!isTeacherMode() && window.GESCHICHTE_FIREBASE?.syncState) {
+    window.GESCHICHTE_FIREBASE.syncState(state).catch((error) => {
+      console.error("Firebase sync failed", error);
     });
   }
 }
@@ -8212,7 +8212,7 @@ function renderTeacherQuestionSection(module) {
     `;
   }
 
-  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const cloudApi = window.GESCHICHTE_FIREBASE;
   const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false };
   const questions = cloudApi?.getOwnQuestionsForModule ? cloudApi.getOwnQuestionsForModule(module.id) : [];
 
@@ -8290,10 +8290,10 @@ function renderTeacherQuestionQuickAction(module) {
     `;
   }
 
-  const cloudApi = window.GESCHICHTE_SUPABASE;
+  const cloudApi = window.GESCHICHTE_FIREBASE;
   const status = cloudApi?.getStatus ? cloudApi.getStatus() : { configured: false, loggedIn: false };
   const helperText = !status.configured
-    ? "Der Button führt direkt zum Fragefeld. Die Cloud-Funktion wird sichtbar, sobald Supabase eingerichtet ist."
+    ? "Der Button führt direkt zum Fragefeld. Die Cloud-Funktion wird sichtbar, sobald Firebase eingerichtet ist."
     : !status.loggedIn
       ? "Der Button führt direkt zum Fragefeld. Dort kannst du dich auch an den Cloud-Sync erinnern lassen."
       : "Der Button führt direkt zum Fragefeld. Dort kannst du sofort eine konkrete Fachfrage abschicken.";
@@ -9540,7 +9540,7 @@ function bindTeacherQuestionButtons() {
       const module = modules.find((entry) => entry.id === moduleId);
       const field = document.querySelector(`[data-teacher-question-input="${moduleId}"]`);
       const feedbackBox = document.querySelector(`[data-teacher-question-feedback="${moduleId}"]`);
-      const cloudApi = window.GESCHICHTE_SUPABASE;
+      const cloudApi = window.GESCHICHTE_FIREBASE;
 
       if (!module || !field || !feedbackBox || !cloudApi?.submitTeacherQuestion) {
         return;

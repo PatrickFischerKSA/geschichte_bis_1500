@@ -1,0 +1,49 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isTeacher() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/profiles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.role == "teacher";
+    }
+
+    match /profiles/{userId} {
+      allow read: if isOwner(userId) || isTeacher();
+      allow create: if isOwner(userId)
+        && request.resource.data.id == userId
+        && (!("role" in request.resource.data) || request.resource.data.role == "student");
+      allow update: if isOwner(userId)
+        && request.resource.data.id == userId
+        && request.resource.data.role == resource.data.role;
+      allow delete: if false;
+    }
+
+    match /learner_progress/{progressId} {
+      allow read: if isOwner(resource.data.user_id) || isTeacher();
+      allow create: if isOwner(request.resource.data.user_id)
+        && progressId == request.resource.data.user_id + "_" + request.resource.data.course_id;
+      allow update: if isOwner(resource.data.user_id)
+        && progressId == resource.data.user_id + "_" + resource.data.course_id
+        && request.resource.data.user_id == resource.data.user_id
+        && request.resource.data.course_id == resource.data.course_id;
+      allow delete: if false;
+    }
+
+    match /student_questions/{questionId} {
+      allow read: if isOwner(resource.data.user_id) || isTeacher();
+      allow create: if isOwner(request.resource.data.user_id)
+        && request.resource.data.status == "offen";
+      allow update: if isTeacher();
+      allow delete: if false;
+    }
+  }
+}
