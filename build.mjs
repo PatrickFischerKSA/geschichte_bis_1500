@@ -1,0 +1,11 @@
+import { cpSync, mkdirSync, rmSync } from "node:fs";
+
+rmSync("dist", { recursive: true, force: true });
+mkdirSync("dist/server", { recursive: true });
+mkdirSync("dist/client", { recursive: true });
+
+for (const file of ["index.html", "lehrpersonen.html", "harari-viewer.html", "app.js", "teacher.js", "cloudflare.js", "harari-viewer.js", "styles.css"]) {
+  cpSync(file, `dist/client/${file}`);
+}
+cpSync("assets", "dist/client/assets", { recursive: true });
+cpSync("worker/index.js", "dist/server/index.js");

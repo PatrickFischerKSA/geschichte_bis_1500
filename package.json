@@ -1,0 +1,8 @@
+{
+  "name": "geschichte-bis-1500",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

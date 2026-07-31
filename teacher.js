@@ -1,7 +1,5 @@
 const TEACHER_PASSWORDS = [
-  "lehrer_1500",
-  "lehrer1500",
-  "1500"
+  "FiP"
 ];
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
@@ -109,7 +107,10 @@ function collectTeacherLearners() {
     });
   });
 
-  return Array.from(entries.values()).sort((a, b) => a.name.localeCompare(b.name, "de-CH"));
+  return Array.from(entries.values()).sort((a, b) => {
+    const classCompare = String(a.snapshot?.class_name || "").localeCompare(String(b.snapshot?.class_name || ""), "de-CH");
+    return classCompare || a.name.localeCompare(b.name, "de-CH");
+  });
 }
 
 function renderTeacherDashboard() {
@@ -134,6 +135,7 @@ function renderTeacherDashboard() {
     (entry) => entry.snapshot.passedModules >= entry.snapshot.totalModules
   ).length;
   const missing = learners.filter((entry) => !entry.snapshot).length;
+  const classes = [...new Set(withData.map((entry) => entry.snapshot?.class_name).filter(Boolean))];
 
   summary.innerHTML = `
     <div class="summary-item">
@@ -142,9 +144,9 @@ function renderTeacherDashboard() {
       <p>Schüler*innen in der hinterlegten Klassenliste</p>
     </div>
     <div class="summary-item">
-      <span class="fact-label">Mit lokalem Stand</span>
+      <span class="fact-label">Mit Cloud-Stand</span>
       <strong>${withData.length}</strong>
-      <p>auf diesem Gerät bereits erfasste Lernverläufe</p>
+      <p>dauerhaft gespeicherte Lernverläufe</p>
     </div>
     <div class="summary-item">
       <span class="fact-label">Abgeschlossen</span>
@@ -152,9 +154,9 @@ function renderTeacherDashboard() {
       <p>vollständig bestandene Lernumgebungen</p>
     </div>
     <div class="summary-item">
-      <span class="fact-label">Ohne Datensatz</span>
-      <strong>${missing}</strong>
-      <p>eingeschrieben, aber lokal noch ohne gespeicherten Stand</p>
+      <span class="fact-label">Klassen</span>
+      <strong>${classes.length}</strong>
+      <p>${classes.length ? classes.map(escapeTeacherHtml).join(" · ") : `${missing} Personen noch ohne Datensatz`}</p>
     </div>
   `;
 
@@ -197,7 +199,7 @@ function renderTeacherDashboard() {
         <div class="matrix-row dashboard-row teacher-module-row">
           <div>
             <strong>${entry.name}</strong>
-            <p class="teacher-muted">${snapshot ? `${snapshot.passedModules} von ${snapshot.totalModules} Modulen bestanden` : "noch kein Verlauf"}</p>
+            <p class="teacher-muted">${snapshot ? `${escapeTeacherHtml(snapshot.class_name || "ohne Klasse")} · ${snapshot.passedModules} von ${snapshot.totalModules} Modulen bestanden` : "noch kein Verlauf"}</p>
           </div>
           ${moduleCells}
         </div>
@@ -234,7 +236,7 @@ function renderTeacherDashboard() {
             <div class="matrix-row dashboard-row">
               <div>
                 <strong>${entry.name}</strong>
-                <p class="teacher-muted">${entry.enrolled ? "in Klassenliste" : "nur lokal erfasst"}</p>
+                <p class="teacher-muted">${escapeTeacherHtml(snapshot?.class_name || (entry.enrolled ? "in Klassenliste" : "ohne Klasse"))}</p>
               </div>
               <div><span class="status-badge ${status.className}">${status.label}</span></div>
               <div>
@@ -279,7 +281,7 @@ function renderTeacherQuestionPanel(container) {
     container.innerHTML = `
       <div class="summary-item">
         <span class="fact-label">Fragen an Lehrpersonen</span>
-        <p>Die Fragefunktion wird sichtbar, sobald Firebase vollständig eingerichtet ist.</p>
+        <p>Die Fragefunktion wird sichtbar, sobald die Cloudflare-Datenbank verbunden ist.</p>
       </div>
     `;
     return;

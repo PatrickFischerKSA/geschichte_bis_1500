@@ -7586,7 +7586,7 @@ function saveState(state) {
   }
   if (!isTeacherMode() && window.GESCHICHTE_FIREBASE?.syncState) {
     window.GESCHICHTE_FIREBASE.syncState(state).catch((error) => {
-      console.error("Firebase sync failed", error);
+      console.error("Cloudflare sync failed", error);
     });
   }
 }

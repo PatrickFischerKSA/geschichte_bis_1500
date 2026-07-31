@@ -27,7 +27,7 @@ werden.
 - subtile Motion-Atmosphäre über animierte Licht- und Raumakzente
 - Lehrpersonen-Seite mit druckbarer Modulübersicht für PDF oder Ausdruck
 - konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
-- vorbereitete Firebase-Anbindung für geräteübergreifenden Lernstand und Lehrpersonen-Dashboard
+- Cloudflare-Datenbank für geräteübergreifende Lernstände und das Lehrpersonen-Dashboard
 
 ## Quellenbasis
 
@@ -47,22 +47,15 @@ Quellenbasis mit Einsatzfunktion aufgeführt.
 3. Antworten direkt in die Textfelder schreiben
 4. `Antwort prüfen` oder `Musterantwort zeigen` verwenden
 
-## Firebase-Setup
+## Cloudflare-Datenhaltung
 
-Für geräteübergreifende Lernstände und das Lehrpersonen-Dashboard ist eine vorbereitete
-Firebase-Anbindung enthalten.
+Die veröffentlichte Plattform verwendet eine Cloudflare-D1-Datenbank:
 
-1. In Firebase ein neues Projekt anlegen
-2. Authentication aktivieren und als Anmeldemethode E-Mail/Passwort einschalten
-3. Firestore Database im Produktionsmodus anlegen
-4. den Inhalt von [firestore.rules](/Users/patrickfischer/Documents/zeiten_grammatikwerkstatt/geschichte_bis_1500/firestore.rules) in Firestore Rules veröffentlichen
-5. eine Web-App registrieren und die Konfiguration in [firebase-config.js](/Users/patrickfischer/Documents/zeiten_grammatikwerkstatt/geschichte_bis_1500/firebase-config.js) eintragen
-6. nach der ersten Anmeldung die Lehrpersonen-Mail in Firestore im passenden `profiles/{uid}`-Dokument auf `role = "teacher"` hochstufen
-
-Dann gilt:
-- Schüler*innen können sich im Cloud-Sync-Panel anmelden und ihren Lernstand speichern
-- die Lehrpersonen-Version kann die Cloud-Daten gesammelt laden
-- ohne Firebase-Konfiguration bleibt die Lernumgebung lokal nutzbar
+- Schüler*innen registrieren sich mit Vorname, Nachname, Klasse und einem eigenen Passwort.
+- Passwörter werden nur als gesicherte Hashwerte gespeichert.
+- Lernstände werden automatisch dem persönlichen Konto zugeordnet.
+- Das mit `FiP` geschützte Lehrpersonen-Dashboard zeigt beide Klassen und alle Modulstände.
+- Fragen aus den Modulen können im Dashboard gelesen und beantwortet werden.
 
 ## Zusatzseite für Lehrpersonen
 
@@ -76,8 +69,8 @@ Dann gilt:
 - `styles.css`: Layout und Gestaltung
 - `app.js`: Moduldaten, Renderlogik, Sofortfeedback und Fortschritt
 - `teacher.js`: Logik für Lehrpersonen-Zugang und Dashboard
-- `firebase.js`: Cloud-Sync und Firebase-Dashboardanbindung
-- `firebase-config.js`: Projektkonfiguration für Firebase
-- `firestore.rules`: Sicherheitsregeln für Firestore
+- `cloudflare.js`: Anmeldung, Cloud-Synchronisation und Dashboardanbindung
+- `worker/index.js`: geschützte Cloudflare-API
+- `drizzle/`: Datenbankschema und Migration
 - `assets/srf/`: lokal eingebundene SRF-Bildassets für die atmosphärische Modulgestaltung
 - `.github/workflows/pages.yml`: automatische Veröffentlichung über GitHub Pages

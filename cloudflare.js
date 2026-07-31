@@ -1,0 +1,285 @@
+(function () {
+  const appApi = window.GESCHICHTE_APP;
+  const courseId = "geschichte_bis_1500";
+  const studentTokenKey = "geschichte_bis_1500_student_token";
+  const teacherTokenKey = "geschichte_bis_1500_teacher_token";
+  const dashboardKey = window.GESCHICHTE_DATA?.dashboardStorageKey || "geschichte_bis_1500_teacher_dashboard_v1";
+  const isTeacherPage = () => document.body?.dataset?.mode === "teacher";
+  let profile = null;
+  let ownQuestions = [];
+  let teacherQuestions = [];
+  let syncTimer = null;
+
+  function escapeHtml(value) {
+    return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function normalizeName(value) {
+    return String(value || "").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function token() {
+    return localStorage.getItem(isTeacherPage() ? teacherTokenKey : studentTokenKey) || "";
+  }
+
+  async function api(path, options = {}, role = isTeacherPage() ? "teacher" : "student") {
+    const authToken = localStorage.getItem(role === "teacher" ? teacherTokenKey : studentTokenKey) || "";
+    const response = await fetch(path, {
+      ...options,
+      headers: {
+        ...(options.body && !(options.body instanceof FormData) ? { "content-type": "application/json" } : {}),
+        ...(authToken ? { authorization: `Bearer ${authToken}` } : {}),
+        ...(options.headers || {})
+      }
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      if (response.status === 401) localStorage.removeItem(role === "teacher" ? teacherTokenKey : studentTokenKey);
+      throw new Error(data.error || "Die Verbindung zur Datenbank ist fehlgeschlagen.");
+    }
+    return data;
+  }
+
+  function setFeedback(id, message, isError) {
+    const node = document.getElementById(id);
+    if (!node) return;
+    node.textContent = message || "";
+    node.style.color = isError ? "#7f1d1d" : "";
+  }
+
+  function currentState() {
+    return appApi?.loadState ? appApi.loadState() : {};
+  }
+
+  function renderStudentPanel() {
+    const panel = document.getElementById("cloud-sync-panel");
+    if (!panel) return;
+    if (!profile || !token()) {
+      const state = currentState();
+      panel.innerHTML = `
+        <div class="cloud-card">
+          <span class="fact-label">Persönlicher Lernstand</span>
+          <strong>Registrieren oder anmelden</strong>
+          <p class="sidebar-note">Dein Lernstand wird geschützt in Cloudflare gespeichert und ist für die Lehrperson sichtbar.</p>
+          <label class="teacher-roster-field"><strong>Vorname</strong><input id="cloud-first-name" autocomplete="given-name" value="${escapeHtml(state.firstName || "")}" /></label>
+          <label class="teacher-roster-field"><strong>Nachname</strong><input id="cloud-last-name" autocomplete="family-name" value="${escapeHtml(state.lastName || "")}" /></label>
+          <label class="teacher-roster-field"><strong>Klasse</strong><input id="cloud-class-name" autocomplete="organization" value="${escapeHtml(state.className || "")}" placeholder="Klassenbezeichnung" /></label>
+          <label class="teacher-roster-field"><strong>Passwort</strong><input id="cloud-password" type="password" autocomplete="current-password" placeholder="mindestens 6 Zeichen" /></label>
+          <div class="teacher-access-actions">
+            <button class="btn primary" type="button" data-cloud-signup>Neu registrieren</button>
+            <button class="btn ghost" type="button" data-cloud-login>Anmelden</button>
+          </div>
+          <p id="cloud-sync-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
+        </div>`;
+      bindStudentAuth();
+      return;
+    }
+    panel.innerHTML = `
+      <div class="cloud-card">
+        <span class="fact-label">Cloud-Speicherung aktiv</span>
+        <strong>${escapeHtml(profile.firstName)} ${escapeHtml(profile.lastName)}</strong>
+        <p class="sidebar-note">${escapeHtml(profile.className)} · Lernstände werden automatisch gesichert.</p>
+        <div class="teacher-access-actions">
+          <button class="btn primary" type="button" data-cloud-sync-now>Jetzt speichern</button>
+          <button class="btn ghost" type="button" data-cloud-load>Cloud-Stand laden</button>
+          <button class="btn ghost" type="button" data-cloud-signout>Abmelden</button>
+        </div>
+        <p id="cloud-sync-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
+      </div>`;
+    bindStudentSession();
+  }
+
+  function authValues() {
+    return {
+      firstName: document.getElementById("cloud-first-name")?.value?.trim() || "",
+      lastName: document.getElementById("cloud-last-name")?.value?.trim() || "",
+      className: document.getElementById("cloud-class-name")?.value?.trim() || "",
+      password: document.getElementById("cloud-password")?.value || ""
+    };
+  }
+
+  function applyProfileToState(nextProfile) {
+    const state = currentState();
+    state.firstName = nextProfile.firstName;
+    state.lastName = nextProfile.lastName;
+    state.learnerName = `${nextProfile.firstName} ${nextProfile.lastName}`;
+    state.className = nextProfile.className;
+    appApi?.saveState?.(state);
+  }
+
+  function bindStudentAuth() {
+    document.querySelector("[data-cloud-signup]")?.addEventListener("click", async () => {
+      try {
+        setFeedback("cloud-sync-feedback", "Registrierung wird angelegt …", false);
+        const result = await api("/api/student/register", { method: "POST", body: JSON.stringify(authValues()) }, "student");
+        localStorage.setItem(studentTokenKey, result.token);
+        profile = result.profile;
+        applyProfileToState(profile);
+        renderStudentPanel();
+        await syncState(currentState());
+      } catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
+    });
+    document.querySelector("[data-cloud-login]")?.addEventListener("click", async () => {
+      try {
+        setFeedback("cloud-sync-feedback", "Anmeldung wird geprüft …", false);
+        const result = await api("/api/student/login", { method: "POST", body: JSON.stringify(authValues()) }, "student");
+        localStorage.setItem(studentTokenKey, result.token);
+        profile = result.profile;
+        applyProfileToState(profile);
+        await loadOwnCloudState(false);
+        await loadOwnQuestions();
+        renderStudentPanel();
+      } catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
+    });
+  }
+
+  function bindStudentSession() {
+    document.querySelector("[data-cloud-sync-now]")?.addEventListener("click", async () => {
+      try { await syncState(currentState()); setFeedback("cloud-sync-feedback", "Lernstand gespeichert.", false); }
+      catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
+    });
+    document.querySelector("[data-cloud-load]")?.addEventListener("click", async () => {
+      try { await loadOwnCloudState(true); setFeedback("cloud-sync-feedback", "Cloud-Stand geladen.", false); }
+      catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
+    });
+    document.querySelector("[data-cloud-signout]")?.addEventListener("click", () => {
+      localStorage.removeItem(studentTokenKey); profile = null; ownQuestions = []; renderStudentPanel();
+    });
+  }
+
+  async function restoreSession() {
+    if (!token()) return;
+    try {
+      const result = await api("/api/student/me", {}, "student");
+      profile = result.profile;
+      applyProfileToState(profile);
+      await loadOwnCloudState(false);
+      await loadOwnQuestions();
+    } catch {
+      profile = null;
+    }
+  }
+
+  async function syncState(state) {
+    if (isTeacherPage() || !localStorage.getItem(studentTokenKey) || !appApi) return;
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(async () => {
+      try {
+        const snapshot = appApi.buildLearnerSnapshot(state);
+        if (!snapshot) return;
+        await api("/api/student/progress", { method: "PUT", body: JSON.stringify({ state, snapshot }) }, "student");
+      } catch (error) { console.error("Cloudflare sync failed", error); }
+    }, 700);
+  }
+
+  async function loadOwnCloudState(force) {
+    if (!localStorage.getItem(studentTokenKey) || !appApi) return;
+    const result = await api("/api/student/progress", {}, "student");
+    if (!result.progress?.state) return;
+    const local = currentState();
+    const localTime = new Date(local.lastUpdatedAt || 0).getTime();
+    const remoteTime = new Date(result.progress.updatedAt || 0).getTime();
+    if (force || !localTime || remoteTime > localTime) appApi.replaceState(result.progress.state, { persist: true });
+  }
+
+  async function loadOwnQuestions() {
+    if (!localStorage.getItem(studentTokenKey)) return [];
+    const result = await api("/api/student/questions", {}, "student");
+    ownQuestions = result.questions || [];
+    window.dispatchEvent(new Event("gesch-questions-updated"));
+    return ownQuestions;
+  }
+
+  async function submitTeacherQuestion({ moduleId, moduleTitle, questionText }) {
+    if (!localStorage.getItem(studentTokenKey)) throw new Error("Bitte registriere dich oder melde dich zuerst an.");
+    await api("/api/student/questions", { method: "POST", body: JSON.stringify({ moduleId, moduleTitle, questionText }) }, "student");
+    await loadOwnQuestions();
+  }
+
+  function renderTeacherPanel() {
+    const panel = document.getElementById("teacher-cloud-auth");
+    if (!panel) return;
+    if (!localStorage.getItem(teacherTokenKey)) {
+      panel.innerHTML = `<div class="summary-item"><span class="fact-label">Cloud-Dashboard</span><strong>Noch nicht verbunden</strong><p>Öffne die Lehrpersonen-Seite mit dem Passwort FiP.</p></div>`;
+      return;
+    }
+    panel.innerHTML = `<div class="summary-item"><span class="fact-label">Cloudflare-Datenbank</span><strong>Lehrpersonen-Zugang aktiv</strong><p>Die Lernstände beider Klassen werden automatisch geladen.</p><div class="teacher-access-actions"><button class="btn primary" type="button" data-teacher-cloud-refresh>Neu laden</button><button class="btn ghost" type="button" data-teacher-signout>Abmelden</button></div><p id="teacher-cloud-feedback" class="teacher-gate-feedback" aria-live="polite"></p></div>`;
+    document.querySelector("[data-teacher-cloud-refresh]")?.addEventListener("click", () => refreshTeacherDashboardFromCloud());
+    document.querySelector("[data-teacher-signout]")?.addEventListener("click", () => {
+      localStorage.removeItem(teacherTokenKey);
+      localStorage.removeItem("geschichte_bis_1500_teacher_access");
+      location.reload();
+    });
+  }
+
+  async function refreshTeacherDashboardFromCloud() {
+    if (!localStorage.getItem(teacherTokenKey)) return;
+    try {
+      const result = await api("/api/teacher/dashboard", {}, "teacher");
+      const snapshots = {};
+      (result.students || []).forEach((student) => {
+        const snapshot = student.progress?.snapshot || {};
+        snapshots[normalizeName(`${student.firstName} ${student.lastName}`)] = {
+          name: `${student.firstName} ${student.lastName}`,
+          class_name: student.className,
+          passedModules: snapshot.passedModules || 0,
+          totalModules: snapshot.totalModules || 12,
+          interactionCompleted: snapshot.interactionCompleted || 0,
+          interactionTotal: snapshot.interactionTotal || 48,
+          overallPercent: snapshot.overallPercent || 0,
+          nextModule: snapshot.nextModule || "Modul 1",
+          moduleScores: snapshot.moduleScores || [],
+          updatedAt: student.progress?.updatedAt || null,
+          source: "cloudflare"
+        };
+      });
+      localStorage.setItem(dashboardKey, JSON.stringify(snapshots));
+      teacherQuestions = result.questions || [];
+      window.dispatchEvent(new Event("gesch-dashboard-updated"));
+      window.dispatchEvent(new Event("gesch-questions-updated"));
+      setFeedback("teacher-cloud-feedback", `${result.students.length} Lernstände aus ${result.classes.length} Klassen geladen.`, false);
+    } catch (error) { setFeedback("teacher-cloud-feedback", error.message, true); }
+  }
+
+  function getOwnQuestionsForModule(moduleId) {
+    return ownQuestions.filter((item) => item.module_id === moduleId);
+  }
+
+  function getTeacherQuestions() {
+    return teacherQuestions.slice();
+  }
+
+  async function answerTeacherQuestion(questionId, answerText, status = "beantwortet") {
+    await api(`/api/teacher/questions/${encodeURIComponent(questionId)}`, { method: "PATCH", body: JSON.stringify({ answerText, status }) }, "teacher");
+    await refreshTeacherDashboardFromCloud();
+  }
+
+  function getStatus() {
+    return { configured: true, loggedIn: Boolean(token()), teacherRole: isTeacherPage() && Boolean(token()) };
+  }
+
+  window.GESCHICHTE_FIREBASE = {
+    syncState,
+    refreshTeacherDashboardFromCloud,
+    getStatus,
+    getOwnQuestionsForModule,
+    submitTeacherQuestion,
+    getTeacherQuestions,
+    answerTeacherQuestion,
+    loadTeacherQuestions: refreshTeacherDashboardFromCloud
+  };
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    if (isTeacherPage()) {
+      renderTeacherPanel();
+      if (localStorage.getItem(teacherTokenKey)) await refreshTeacherDashboardFromCloud();
+      window.addEventListener("gesch-teacher-authenticated", async () => {
+        renderTeacherPanel();
+        await refreshTeacherDashboardFromCloud();
+      });
+    } else {
+      await restoreSession();
+      renderStudentPanel();
+    }
+  });
+})();

@@ -109,16 +109,16 @@
           <p class="panel-kicker">Lehrpersonen-Dashboard</p>
           <h2>Fortschritt aller eingeschriebenen Schüler*innen</h2>
           <p>
-            Die Übersicht bündelt alle auf diesem Gerät und in diesem Browser gespeicherten Lernstände.
-            Du kannst eine Klassenliste hinterlegen, fehlende Stände sofort sehen und bestehende Verläufe
-            nach bestandenen Modulen, nächstem offenen Kapitel und letzter Aktivität kontrollieren.
+            Die Übersicht lädt die in Cloudflare gespeicherten Lernstände beider Klassen.
+            Du siehst bestehende Verläufe nach Klasse, bestandenen Modulen, nächstem offenen Kapitel
+            und letzter Aktivität.
           </p>
           <div class="teacher-dashboard-controls">
             <div id="teacher-cloud-auth" class="teacher-cloud-auth">
               <p class="teacher-muted">Lade Cloud-Anbindung …</p>
             </div>
             <label class="teacher-roster-field">
-              <strong>Klassenliste</strong>
+              <strong>Ergänzende Klassenliste</strong>
               <textarea id="teacher-roster-input" placeholder="Je Zeile ein Name, z. B.&#10;Lena Muster&#10;Murat Kaya&#10;Sara Brunner"></textarea>
             </label>
             <div class="teacher-access-actions">
@@ -184,16 +184,11 @@
 
   <script>
     (function () {
-      const passwords = ["lehrer_1500", "lehrer1500", "1500"];
       const accessKey = "geschichte_bis_1500_teacher_access";
+      const tokenKey = "geschichte_bis_1500_teacher_token";
 
       function normalize(value) {
         return String(value || "").trim().toLowerCase();
-      }
-
-      function accepted(value) {
-        const normalized = normalize(value);
-        return passwords.some((password) => normalize(password) === normalized);
       }
 
       function feedback(message, isError) {
@@ -221,22 +216,32 @@
         const input = document.getElementById("teacher-password-input");
         const button = document.querySelector("[data-teacher-unlock]");
 
-        if (localStorage.getItem(accessKey) === "granted") {
+        if (localStorage.getItem(accessKey) === "granted" && localStorage.getItem(tokenKey)) {
           openTeacherShell();
         }
 
-        function tryOpen() {
+        async function tryOpen() {
           const value = input ? input.value : "";
           if (!value) {
             feedback("Bitte das Lehrpersonen-Passwort eingeben.", true);
             return;
           }
-          if (!accepted(value)) {
-            feedback("Das Passwort stimmt nicht.", true);
-            return;
+          feedback("Zugang wird geprüft …", false);
+          try {
+            const response = await fetch("/api/teacher/login", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({ password: value })
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || "Das Passwort stimmt nicht.");
+            localStorage.setItem(tokenKey, result.token);
+            feedback("", false);
+            openTeacherShell();
+            window.dispatchEvent(new Event("gesch-teacher-authenticated"));
+          } catch (error) {
+            feedback(error.message || "Anmeldung nicht möglich.", true);
           }
-          feedback("", false);
-          openTeacherShell();
         }
 
         if (button) {
@@ -255,12 +260,8 @@
     })();
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore-compat.js"></script>
   <script src="app.js?v=20260411-5"></script>
-  <script src="firebase-config.js?v=20260603-1"></script>
-  <script src="firebase.js?v=20260603-1"></script>
+  <script src="cloudflare.js?v=20260731-1"></script>
   <script src="teacher.js?v=20260411-3"></script>
 </body>
 </html>
