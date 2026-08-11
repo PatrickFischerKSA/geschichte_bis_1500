@@ -7,6 +7,7 @@
   const isTeacherPage = () => document.body?.dataset?.mode === "teacher";
   let profile = null;
   let ownQuestions = [];
+  let ownProgress = null;
   let teacherQuestions = [];
   let syncTimer = null;
 
@@ -74,6 +75,12 @@
       bindStudentAuth();
       return;
     }
+    const snapshot = ownProgress?.snapshot || appApi?.buildLearnerSnapshot?.(currentState()) || {};
+    const moduleScores = Array.isArray(snapshot.moduleScores) ? snapshot.moduleScores : [];
+    const progressUpdatedAt = ownProgress?.updatedAt
+      ? new Intl.DateTimeFormat("de-CH", { dateStyle: "medium", timeStyle: "short" }).format(new Date(ownProgress.updatedAt))
+      : "noch nicht in der Cloud gespeichert";
+    const comments = ownQuestions.filter((item) => item.module_id === "lernstand");
     panel.innerHTML = `
       <div class="cloud-card">
         <span class="fact-label">Cloud-Speicherung aktiv</span>
@@ -85,6 +92,38 @@
           <button class="btn ghost" type="button" data-cloud-signout>Abmelden</button>
         </div>
         <p id="cloud-sync-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
+        <details class="student-data-view" open>
+          <summary>Meine gespeicherten Daten und Lernstände</summary>
+          <div class="student-data-grid">
+            <div><span>Name</span><strong>${escapeHtml(profile.firstName)} ${escapeHtml(profile.lastName)}</strong></div>
+            <div><span>Klasse</span><strong>${escapeHtml(profile.className)}</strong></div>
+            <div><span>Bestandene Module</span><strong>${Number(snapshot.passedModules || 0)} von ${Number(snapshot.totalModules || 12)}</strong></div>
+            <div><span>Bearbeitete Schritte</span><strong>${Number(snapshot.interactionCompleted || 0)} von ${Number(snapshot.interactionTotal || 48)}</strong></div>
+            <div><span>Gesamtfortschritt</span><strong>${Number(snapshot.overallPercent || 0)} %</strong></div>
+            <div><span>Nächstes Modul</span><strong>${escapeHtml(snapshot.nextModule || "Modul 1")}</strong></div>
+          </div>
+          <p class="sidebar-note">Letzte Cloud-Speicherung: ${escapeHtml(progressUpdatedAt)}</p>
+          ${moduleScores.length ? `<div class="student-module-scores">${moduleScores.map((item, index) => {
+            const title = item.title || item.moduleTitle || `Modul ${index + 1}`;
+            const score = item.score ?? item.percent ?? item.percentage ?? 0;
+            return `<div><span>${escapeHtml(title)}</span><strong>${Number(score) || 0} %</strong></div>`;
+          }).join("")}</div>` : ""}
+          <div class="student-progress-comment">
+            <label for="student-progress-comment"><strong>Kommentar zu meinem Lernstand</strong></label>
+            <textarea id="student-progress-comment" maxlength="3000" placeholder="Was möchtest du zu deinen gespeicherten Daten oder deinem Lernstand festhalten?"></textarea>
+            <button class="btn primary" type="button" data-submit-progress-comment>Kommentar senden</button>
+            <p id="student-comment-feedback" class="teacher-gate-feedback" aria-live="polite"></p>
+          </div>
+          <div class="student-comment-history">
+            <strong>Meine bisherigen Kommentare</strong>
+            ${comments.length ? comments.map((item) => `
+              <article class="teacher-question-thread">
+                <div class="teacher-question-meta"><span>${escapeHtml(new Date(item.created_at).toLocaleString("de-CH"))}</span><span>${escapeHtml(item.status || "offen")}</span></div>
+                <p>${escapeHtml(item.question_text)}</p>
+                ${item.answer_text ? `<p class="teacher-question-answer"><strong>Antwort der Lehrperson:</strong> ${escapeHtml(item.answer_text)}</p>` : ""}
+              </article>`).join("") : `<p class="sidebar-note">Du hast deinen Lernstand noch nicht kommentiert.</p>`}
+          </div>
+        </details>
       </div>`;
     bindStudentSession();
   }
@@ -139,8 +178,19 @@
       catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
     });
     document.querySelector("[data-cloud-load]")?.addEventListener("click", async () => {
-      try { await loadOwnCloudState(true); setFeedback("cloud-sync-feedback", "Cloud-Stand geladen.", false); }
+      try { await loadOwnCloudState(true); await loadOwnQuestions(); renderStudentPanel(); setFeedback("cloud-sync-feedback", "Cloud-Stand geladen.", false); }
       catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
+    });
+    document.querySelector("[data-submit-progress-comment]")?.addEventListener("click", async () => {
+      const field = document.getElementById("student-progress-comment");
+      const comment = field?.value?.trim() || "";
+      if (!comment) return setFeedback("student-comment-feedback", "Bitte schreibe zuerst einen Kommentar.", true);
+      try {
+        setFeedback("student-comment-feedback", "Kommentar wird gespeichert …", false);
+        await submitTeacherQuestion({ moduleId: "lernstand", moduleTitle: "Mein Lernstand", questionText: comment });
+        renderStudentPanel();
+        setFeedback("student-comment-feedback", "Kommentar gespeichert und für die Lehrperson sichtbar.", false);
+      } catch (error) { setFeedback("student-comment-feedback", error.message, true); }
     });
     document.querySelector("[data-cloud-signout]")?.addEventListener("click", () => {
       localStorage.removeItem(studentTokenKey); profile = null; ownQuestions = []; renderStudentPanel();
@@ -175,6 +225,7 @@
   async function loadOwnCloudState(force) {
     if (!localStorage.getItem(studentTokenKey) || !appApi) return;
     const result = await api("/api/student/progress", {}, "student");
+    ownProgress = result.progress || null;
     if (!result.progress?.state) return;
     const local = currentState();
     const localTime = new Date(local.lastUpdatedAt || 0).getTime();

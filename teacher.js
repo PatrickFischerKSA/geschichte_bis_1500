@@ -300,17 +300,17 @@ function renderTeacherQuestionPanel(container) {
   if (!questions.length) {
     container.innerHTML = `
       <div class="summary-item">
-        <span class="fact-label">Fragen an Lehrpersonen</span>
-        <strong>Noch keine Fragen eingegangen</strong>
-        <p>Sobald Schüler*innen über „Frag die Lehrperson“ schreiben, erscheinen die Einträge hier.</p>
+        <span class="fact-label">Fragen und Lernstand-Kommentare</span>
+        <strong>Noch keine Einträge eingegangen</strong>
+        <p>Sobald Schüler*innen eine Stofffrage oder einen Kommentar zu ihrem Lernstand schreiben, erscheint der Eintrag hier.</p>
       </div>
     `;
     return;
   }
 
   container.innerHTML = `
-    <p class="panel-kicker">Fragen an Lehrpersonen</p>
-    <h2>Offene und beantwortete Stofffragen</h2>
+    <p class="panel-kicker">Rückmeldungen der Schüler*innen</p>
+    <h2>Stofffragen und Lernstand-Kommentare</h2>
     <div class="teacher-question-list">
       ${questions
         .map(
@@ -323,7 +323,7 @@ function renderTeacherQuestionPanel(container) {
                 </div>
                 <span class="status-badge ${item.status === "beantwortet" ? "ready" : item.status === "in_bearbeitung" ? "open" : "locked"}">${item.status === "beantwortet" ? "beantwortet" : item.status === "in_bearbeitung" ? "in Bearbeitung" : "offen"}</span>
               </div>
-              <p><strong>Frage:</strong> ${escapeTeacherHtml(item.question_text)}</p>
+              <p><strong>${item.module_id === "lernstand" ? "Kommentar zum Lernstand" : "Frage"}:</strong> ${escapeTeacherHtml(item.question_text)}</p>
               <p class="teacher-muted">Eingegangen: ${formatTeacherDate(item.created_at)}</p>
               <div class="teacher-question-reply">
                 <label class="teacher-roster-field">

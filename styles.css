@@ -1998,6 +1998,64 @@ p {
   gap: 12px;
 }
 
+.student-data-view {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(81, 60, 35, 0.18);
+  padding-top: 0.9rem;
+}
+
+.student-data-view summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.student-data-grid,
+.student-module-scores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.student-data-grid > div,
+.student-module-scores > div {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.65rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.student-data-grid span,
+.student-module-scores span {
+  font-size: 0.78rem;
+  opacity: 0.72;
+}
+
+.student-progress-comment,
+.student-comment-history {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.student-progress-comment textarea {
+  min-height: 7rem;
+  width: 100%;
+  resize: vertical;
+  border: 1px solid rgba(81, 60, 35, 0.22);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  font: inherit;
+}
+
+@media (max-width: 640px) {
+  .student-data-grid,
+  .student-module-scores {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cloud-card {
   display: grid;
   gap: 10px;
