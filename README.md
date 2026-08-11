@@ -26,7 +26,7 @@ werden.
 - echte Startseite mit Kapitelkarten und visuellem Freischaltstatus
 - subtile Motion-Atmosphäre über animierte Licht- und Raumakzente
 - Lehrpersonen-Seite mit druckbarer Modulübersicht für PDF oder Ausdruck
-- konsequente didaktische Verarbeitung der angegebenen Ressourcen statt bloßer Linksammlung
+- konsequente didaktische Verarbeitung der angegebenen Ressourcen statt blosser Linksammlung
 - Cloudflare-Datenbank für geräteübergreifende Lernstände und das Lehrpersonen-Dashboard
 
 ## Quellenbasis

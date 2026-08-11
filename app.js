@@ -22,7 +22,7 @@ const sourceCatalog = [
     type: "Buch / PDF",
     role: "Strukturgebende Tiefenfolie der gesamten Einheit",
     didactics:
-      "Aus dem PDF werden nicht bloß Schlagworte übernommen, sondern die Grobarchitektur der Einheit abgeleitet: kognitive Revolution, landwirtschaftliche Revolution, Vereinigungsprozesse durch Geld, Reiche und Religionen. Für die Module bis 1500 werden vor allem Teil 1, Teil 2 und Teil 3 didaktisch auf Frühgeschichte, Antike und Mittelalter zugeschnitten.",
+      "Aus dem PDF werden nicht bloss Schlagworte übernommen, sondern die Grobarchitektur der Einheit abgeleitet: kognitive Revolution, landwirtschaftliche Revolution, Vereinigungsprozesse durch Geld, Reiche und Religionen. Für die Module bis 1500 werden vor allem Teil 1, Teil 2 und Teil 3 didaktisch auf Frühgeschichte, Antike und Mittelalter zugeschnitten.",
     linkLabel: "Lokale Datei",
     link: null,
     note:
@@ -82,7 +82,7 @@ const sourceCatalog = [
     id: "pfahlbauer",
     title: "SRF school: Pfahlbauer von Pfyn",
     type: "SRF school",
-    role: "Jungsteinzeit durch Experimentalarchäologie erschließen",
+    role: "Jungsteinzeit durch Experimentalarchäologie erschliessen",
     didactics:
       "Die Ressource wird als Brücke von Theorie zu Lebenswelt genutzt. Sie macht Hüttenbau, Werkzeuge, Kleidung, Nahrung und Projektlernen greifbar und eignet sich besonders, um Sesshaftigkeit, Alltag und materielle Kultur konkret zu machen.",
     linkLabel: "Original öffnen",
@@ -124,7 +124,7 @@ const sourceCatalog = [
     type: "SRF school",
     role: "Alltagsgeschichte des Mittelalters",
     didactics:
-      "Die Ressource liefert konkrete Themenfelder wie Hygiene, Verteidigung, Kochen, Statussymbole und archäologische Funde. Damit wird das Mittelalter als gelebte Lebenswelt statt als bloße Ritterkulisse unterrichtet.",
+      "Die Ressource liefert konkrete Themenfelder wie Hygiene, Verteidigung, Kochen, Statussymbole und archäologische Funde. Damit wird das Mittelalter als gelebte Lebenswelt statt als blosse Ritterkulisse unterrichtet.",
     linkLabel: "Original öffnen",
     link: "https://www.srf.ch/sendungen/school/geschichte-geografie/wie-die-leute-gelebt-haben-mittelalter-in-der-schweiz"
   },
@@ -150,11 +150,11 @@ const sourceCatalog = [
   },
   {
     id: "planet-reise-menschheit",
-    title: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
+    title: "Planet Schule: Die aussergewöhnliche Reise der Menschheit",
     type: "Planet Schule",
     role: "Überblick über Hominisation, Migration und globale Ausbreitung",
     didactics:
-      "Der Film bündelt Entwicklungsschritte von frühen Menschenarten bis zur weltweiten Ausbreitung des Homo sapiens und eignet sich deshalb besonders für den großen Überblick in Modul 2.",
+      "Der Film bündelt Entwicklungsschritte von frühen Menschenarten bis zur weltweiten Ausbreitung des Homo sapiens und eignet sich deshalb besonders für den grossen Überblick in Modul 2.",
     linkLabel: "Film öffnen",
     link: "https://www.planet-schule.de/thema/die-aussergewoehnliche-reise-der-menschheit-film-100.html"
   },
@@ -225,7 +225,7 @@ const sourceCatalog = [
     type: "YouTube",
     role: "Breiter Überblick über Lebensformen der Steinzeit",
     didactics:
-      "Der Film verdichtet Umweltanpassung, Nahrung, Werkzeuge und Lebensweise der Steinzeit in einem größeren Überblick und ergänzt damit Modul 4.",
+      "Der Film verdichtet Umweltanpassung, Nahrung, Werkzeuge und Lebensweise der Steinzeit in einem grösseren Überblick und ergänzt damit Modul 4.",
     linkLabel: "Film öffnen",
     link: "https://www.youtube.com/watch?v=ZjejoT1gFOc"
   },
@@ -273,7 +273,7 @@ const sourceCatalog = [
   },
   {
     id: "catalhoeyuk-terrax",
-    title: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+    title: "Terra X / Planet Wissen: Çatalhöyük – Grosssiedlung",
     type: "Planet Wissen / Terra X",
     role: "Dichte Siedlung ohne klassische Königspyramide",
     didactics:
@@ -285,9 +285,9 @@ const sourceCatalog = [
     id: "catalhoeyuk-3d",
     title: "YouTube: 3D Çatalhöyük Project Animation",
     type: "YouTube",
-    role: "Räumlicher Eindruck einer frühen Großsiedlung",
+    role: "Räumlicher Eindruck einer frühen Grosssiedlung",
     didactics:
-      "Die Animation macht Hausdichte, Dachzugänge und Siedlungsstruktur sichtbar und hilft, abstrakte Beschreibungen einer frühen Großsiedlung räumlich zu verstehen.",
+      "Die Animation macht Hausdichte, Dachzugänge und Siedlungsstruktur sichtbar und hilft, abstrakte Beschreibungen einer frühen Grosssiedlung räumlich zu verstehen.",
     linkLabel: "Film öffnen",
     link: "https://www.youtube.com/watch?v=W2qypDEqNkA"
   },
@@ -450,7 +450,7 @@ const sourceCatalog = [
     type: "Online-Artikel",
     role: "Überblick zu Hallstatt, La Tène und keltischer Schweiz",
     didactics:
-      "Der Text verbindet die großen archäologischen Phasen Hallstatt und La Tène mit keltischer Besiedlung, oppida, Handel und dem Übergang zur römischen Welt.",
+      "Der Text verbindet die grossen archäologischen Phasen Hallstatt und La Tène mit keltischer Besiedlung, oppida, Handel und dem Übergang zur römischen Welt.",
     linkLabel: "Original öffnen",
     link: "https://www.swiss-spectator.ch/de/die-kelten-in-der-schweiz/"
   },
@@ -565,23 +565,23 @@ const thinkerProfiles = {
     title: "Yuval Noah Harari",
     subtitle: "Historiker, geboren 1976 in Israel",
     intro:
-      "Harari ordnet die Menschheitsgeschichte als Abfolge großer Umbrüche. Entscheidend sind für ihn nicht einzelne Herrscher, sondern Veränderungen, die viele Lebensbereiche zugleich neu ordnen.",
+      "Harari ordnet die Menschheitsgeschichte als Abfolge grosser Umbrüche. Entscheidend sind für ihn nicht einzelne Herrscher, sondern Veränderungen, die viele Lebensbereiche zugleich neu ordnen.",
     bioPoints: [
-      "lehrt und forscht zur Weltgeschichte und zur Geschichte großer Entwicklungslinien",
+      "lehrt und forscht zur Weltgeschichte und zur Geschichte grosser Entwicklungslinien",
       "wurde mit 'Eine kurze Geschichte der Menschheit' international bekannt",
-      "interessiert sich besonders dafür, wie große menschliche Ordnungen entstehen und stabil bleiben",
-      "äußert sich heute auch stark zu künstlicher Intelligenz, Datenmacht und den politischen Risiken digitaler Kontrolle"
+      "interessiert sich besonders dafür, wie grosse menschliche Ordnungen entstehen und stabil bleiben",
+      "äussert sich heute auch stark zu künstlicher Intelligenz, Datenmacht und den politischen Risiken digitaler Kontrolle"
     ],
     thinkingPoints: [
-      "Die kognitive Revolution macht große Kooperation durch Sprache, Mythen und gemeinsame Vorstellungen möglich.",
+      "Die kognitive Revolution macht grosse Kooperation durch Sprache, Mythen und gemeinsame Vorstellungen möglich.",
       "Die landwirtschaftliche Revolution verdichtet Gesellschaften, erzeugt Überschüsse, Abhängigkeiten und neue Ungleichheiten.",
-      "Reiche, Geld und Religion verbinden immer größere Räume und schaffen gemeinsame Ordnungen über große Distanzen hinweg.",
-      "Geschichte erscheint deshalb stark als Verdichtung immer größerer Netze von Kooperation, Herrschaft und Vereinheitlichung.",
+      "Reiche, Geld und Religion verbinden immer grössere Räume und schaffen gemeinsame Ordnungen über grosse Distanzen hinweg.",
+      "Geschichte erscheint deshalb stark als Verdichtung immer grösserer Netze von Kooperation, Herrschaft und Vereinheitlichung.",
       "In seinen neueren Warnungen zu KI betont Harari, dass Menschen unter Bedingungen totaler Datenerfassung zu 'hackable animals' werden könnten."
     ],
     contrastTitle: "Worauf Harari den Akzent legt",
     contrastPoints: [
-      "große Entwicklungsschritte statt vieler paralleler Möglichkeiten",
+      "grosse Entwicklungsschritte statt vieler paralleler Möglichkeiten",
       "Revolutionen als Wendepunkte der Menschheitsgeschichte",
       "wachsende Reichweite gemeinsamer Ordnungen",
       "Warnung vor Datenmacht, KI-Steuerung und manipulierbaren Menschen"
@@ -592,7 +592,7 @@ const thinkerProfiles = {
     title: "David Graeber und David Wengrow",
     subtitle: "Anthropologe (1961–2020) und Archäologe (geboren 1972)",
     intro:
-      "Graeber und Wengrow widersprechen linearen Erzählungen der Tiefengeschichte. Für sie zeigt die Frühgeschichte nicht nur wenige große Stufen, sondern viele bewusste Entscheidungen, Versuche und verworfene Wege.",
+      "Graeber und Wengrow widersprechen linearen Erzählungen der Tiefengeschichte. Für sie zeigt die Frühgeschichte nicht nur wenige grosse Stufen, sondern viele bewusste Entscheidungen, Versuche und verworfene Wege.",
     bioPoints: [
       "David Graeber war Anthropologe und schrieb über Macht, Schulden, Arbeit und politische Freiheit",
       "Graeber stand politischen Basisbewegungen nahe und wurde besonders im Umfeld von Occupy als wichtiger öffentlicher Intellektueller wahrgenommen",
@@ -602,12 +602,12 @@ const thinkerProfiles = {
     thinkingPoints: [
       "Frühe Menschen lebten nicht einfach immer in denselben kleinen Gruppen, sondern konnten ihre soziale Ordnung saisonal verändern.",
       "Landwirtschaft führt nicht automatisch zu Eliten, Steuern und Staat; Mischformen und Alternativen bleiben lange möglich.",
-      "Große Siedlungen und Städte müssen nicht zwingend Königtum oder starre Hierarchien hervorbringen.",
-      "Geschichte enthält daher auch verworfene Möglichkeiten, bewusste politische Wahl und Brüche innerhalb scheinbar großer Linien."
+      "Grosse Siedlungen und Städte müssen nicht zwingend Königtum oder starre Hierarchien hervorbringen.",
+      "Geschichte enthält daher auch verworfene Möglichkeiten, bewusste politische Wahl und Brüche innerhalb scheinbar grosser Linien."
     ],
     contrastTitle: "Worauf Graeber und Wengrow den Akzent legen",
     contrastPoints: [
-      "offene Entwicklung statt Einbahnstraße",
+      "offene Entwicklung statt Einbahnstrasse",
       "politische Wahlmöglichkeiten schon in der Frühgeschichte",
       "Komplexität ohne Automatismus zu Hierarchie und Staat"
     ]
@@ -652,7 +652,7 @@ const masterTimeline = [
     time: "Vor 10'000 v. Chr.",
     title: "Jäger und Sammler als Normalform",
     body:
-      "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Unterkünfte, Nahrung, Wege, Jahreszeitenwissen und mündliche Überlieferung sichern das Überleben ohne feste Speicher und Staaten. Graeber und Wengrow betonen zusätzlich, dass solche Gruppen sich saisonal sehr verschieden ordnen konnten und politisch nicht auf eine einzige Form festgelegt waren.",
+      "Über den grössten Teil der Menschheitsgeschichte leben Menschen mobil. Unterkünfte, Nahrung, Wege, Jahreszeitenwissen und mündliche Überlieferung sichern das Überleben ohne feste Speicher und Staaten. Graeber und Wengrow betonen zusätzlich, dass solche Gruppen sich saisonal sehr verschieden ordnen konnten und politisch nicht auf eine einzige Form festgelegt waren.",
     modules: ["modul-4"]
   },
   {
@@ -660,7 +660,7 @@ const masterTimeline = [
     time: "ca. 9600–8200 v. Chr.",
     title: "Göbekli Tepe und frühe Kultzentren",
     body:
-      "Noch bevor klassische Staaten sichtbar werden, entstehen mit Göbekli Tepe monumentale Kultanlagen. Das verschiebt die alte Vorstellung, erst sesshafte Bauernstaaten hätten große religiöse Zentren hervorbringen können.",
+      "Noch bevor klassische Staaten sichtbar werden, entstehen mit Göbekli Tepe monumentale Kultanlagen. Das verschiebt die alte Vorstellung, erst sesshafte Bauernstaaten hätten grosse religiöse Zentren hervorbringen können.",
     modules: ["modul-5", "modul-6"]
   },
   {
@@ -684,7 +684,7 @@ const masterTimeline = [
     time: "ab ca. 3500–3000 v. Chr.",
     title: "Schrift, Listen und frühe Staaten",
     body:
-      "Tontafeln, Hieroglyphen, Speicher und Abgaben zeigen, dass frühe Herrschaft auf Zählen, Schreiben und Verwalten beruht. Hochkulturen stabilisieren Macht nicht nur militärisch, sondern durch Listen, Beamte, Kalender und religiöse Ordnung. Graeber und Wengrow setzen dagegen, dass große Siedlungen und dichte Besiedlung nicht automatisch immer in derselben Herrschaftsform enden.",
+      "Tontafeln, Hieroglyphen, Speicher und Abgaben zeigen, dass frühe Herrschaft auf Zählen, Schreiben und Verwalten beruht. Hochkulturen stabilisieren Macht nicht nur militärisch, sondern durch Listen, Beamte, Kalender und religiöse Ordnung. Graeber und Wengrow setzen dagegen, dass grosse Siedlungen und dichte Besiedlung nicht automatisch immer in derselben Herrschaftsform enden.",
     modules: ["modul-6"]
   },
   {
@@ -692,15 +692,15 @@ const masterTimeline = [
     time: "ca. 3000–30 v. Chr.",
     title: "Ägypten: Nil, Pharao und Maat",
     body:
-      "Regelmäßige Nilüberschwemmungen sichern Ernten und Überschüsse. Pharao, Beamte, Tempel und Hieroglyphen verbinden Wirtschaft, Herrschaft und Religion zu einer langen Reichsordnung. Im Unterschied zu Mesopotamien mit mehreren konkurrierenden Stadtstaaten entsteht am Nil früh ein stärker zentralisiertes Flussreich.",
+      "Regelmässige Nilüberschwemmungen sichern Ernten und Überschüsse. Pharao, Beamte, Tempel und Hieroglyphen verbinden Wirtschaft, Herrschaft und Religion zu einer langen Reichsordnung. Im Unterschied zu Mesopotamien mit mehreren konkurrierenden Stadtstaaten entsteht am Nil früh ein stärker zentralisiertes Flussreich.",
     modules: ["modul-6"]
   },
   {
     epoch: "Frühe Hochkulturen",
     time: "ca. 2250–221 v. Chr.",
-    title: "Großreiche und Bürokratien",
+    title: "Grossreiche und Bürokratien",
     body:
-      "Von Sargon über Assyrer und Babylon bis zur Qin-Dynastie entsteht die Logik großer Reiche: Steuern, Heere, Beamte und gemeinsame Ordnungen verbinden viele Menschen über große Räume hinweg.",
+      "Von Sargon über Assyrer und Babylon bis zur Qin-Dynastie entsteht die Logik grosser Reiche: Steuern, Heere, Beamte und gemeinsame Ordnungen verbinden viele Menschen über grosse Räume hinweg.",
     modules: ["modul-6", "modul-7"]
   },
   {
@@ -732,7 +732,7 @@ const masterTimeline = [
     time: "1. Jh. v. Chr. bis 2. Jh. n. Chr.",
     title: "Rom als Raumordnung",
     body:
-      "Das Römische Reich verknüpft Straßen, Brücken, Lager, Recht, Münzen und Alltagskultur. Imperium bedeutet hier nicht nur Eroberung, sondern Organisation von Verkehr, Stadt und Versorgung.",
+      "Das Römische Reich verknüpft Strassen, Brücken, Lager, Recht, Münzen und Alltagskultur. Imperium bedeutet hier nicht nur Eroberung, sondern Organisation von Verkehr, Stadt und Versorgung.",
     modules: ["modul-7", "modul-8"]
   },
   {
@@ -740,7 +740,7 @@ const masterTimeline = [
     time: "1. Jahrtausend v. Chr. bis 7. Jh. n. Chr.",
     title: "Weltreligionen und religiöse Ordnung",
     body:
-      "Religionen verbinden Normen, Werte und übermenschliche Ordnung. Judentum, Christentum und Islam schaffen große Gemeinschaften, legitimieren Herrschaft und verknüpfen Glauben mit Wissen und Mobilität.",
+      "Religionen verbinden Normen, Werte und übermenschliche Ordnung. Judentum, Christentum und Islam schaffen grosse Gemeinschaften, legitimieren Herrschaft und verknüpfen Glauben mit Wissen und Mobilität.",
     modules: ["modul-9"]
   },
   {
@@ -748,7 +748,7 @@ const masterTimeline = [
     time: "ca. 800–1300",
     title: "Mittelalterliche Herrschaftsräume",
     body:
-      "Kirche, Klöster, Burgen, Stände und Bündnisse prägen die mittelalterliche Gesellschaft. Alltagsgeschichte zeigt Küche, Hygiene, Verteidigung, Bildung und Herrschaft jenseits bloßer Ritterklischees.",
+      "Kirche, Klöster, Burgen, Stände und Bündnisse prägen die mittelalterliche Gesellschaft. Alltagsgeschichte zeigt Küche, Hygiene, Verteidigung, Bildung und Herrschaft jenseits blosser Ritterklischees.",
     modules: ["modul-10"]
   },
   {
@@ -772,7 +772,7 @@ const masterTimeline = [
     time: "um 1500 und darüber hinaus",
     title: "Langzeitfolgen und Anthropozän",
     body:
-      "Der Schluss verbindet alle Linien: Sprache, Sesshaftigkeit, Staat, Geld, Religion und globale Vernetzung wirken weit über 1500 hinaus und führen in die Frage nach den langfristigen Folgen menschlicher Eingriffe. Harari liest diese Linie stärker als Verdichtung großer Netze, Graeber und Wengrow stärker als offenes Feld verschiedener, teils verworfener Möglichkeiten.",
+      "Der Schluss verbindet alle Linien: Sprache, Sesshaftigkeit, Staat, Geld, Religion und globale Vernetzung wirken weit über 1500 hinaus und führen in die Frage nach den langfristigen Folgen menschlicher Eingriffe. Harari liest diese Linie stärker als Verdichtung grosser Netze, Graeber und Wengrow stärker als offenes Feld verschiedener, teils verworfener Möglichkeiten.",
     modules: ["modul-1", "modul-12"]
   }
 ];
@@ -789,21 +789,21 @@ const modules = [
       "Bevor wir mit Frühmenschen, Antike oder Mittelalter arbeiten, müssen wir zuerst klären, was im Kurs überhaupt mit Geschichte gemeint ist. Nicht alles Vergangene ist schon Geschichte im engeren Sinn.",
     goals: [
       "Naturgeschichte, Entwicklung des Menschen und Geschichte im engeren Sinn unterscheiden",
-      "verstehen, warum dieser Kurs mit großen Veränderungen statt mit bloßen Jahreszahlen arbeitet",
+      "verstehen, warum dieser Kurs mit grossen Veränderungen statt mit blossen Jahreszahlen arbeitet",
       "erste Verbindungslinien zwischen frühen Veränderungen und späteren Weltordnungen erkennen"
     ],
     input: [
       "Zu Beginn unterscheiden wir drei Ebenen. Erstens gibt es Naturgeschichte. Dazu gehören die Entstehung der Erde, Veränderungen des Klimas, Gesteine, Tiere und Pflanzen. Zweitens gibt es die Entwicklung des Menschen als Lebewesen. Hier geht es um Evolution, verschiedene Menschenarten und körperliche Veränderungen. Drittens gibt es Geschichte im engeren Sinn. Sie beginnt dort, wo Menschen ihre Welt durch Sprache, Regeln, Symbole, Erinnerungen und gemeinsame Vorstellungen gestalten.",
       "Diese Unterscheidung ist wichtig, weil Geschichtsunterricht nicht einfach alles Vergangene in einen Topf wirft. Ein Vulkanausbruch oder die Eiszeit gehören zwar zur Vergangenheit, aber noch nicht automatisch zur Geschichte im engeren Sinn. Historisch wird es dort, wo Menschen handeln, Regeln erfinden, Werkzeuge bewusst einsetzen, Wissen weitergeben und sich in Gruppen organisieren. Geschichte ist deshalb immer auch eine Geschichte von Kultur.",
-      "Darum beginnt der Kurs nicht mit einer Königsliste, sondern mit Veränderungen menschlicher Lebensweisen. Im weiteren Verlauf werden diese Veränderungen an konkreten Dingen greifbar: an Unterkünften aus Tierhäuten, Lehm oder Schnee, an Pfahlbauhütten und Steinbeilen, an römischen Straßen und Brücken, an Silbermünzen aus einem vergrabenen Schatz oder an Burglatrinen und Schlossküchen. Geschichte wird an solchen Spuren lesbar.",
-      "Der Film zum Anthropozän spannt dafür den größten Bogen. Er verbindet Feuer, Landwirtschaft in Ägypten, Metallbau im Römischen Reich, Erfindungen des Hochmittelalters, Industrialisierung und fossile Brennstoffe zu einer einzigen Langzeitlinie. Damit wird sichtbar: Menschen verändern mit Technik, Landwirtschaft, Bau und Rohstoffnutzung Wasser, Luft, Boden und Lebensräume. Historische Entwicklung ist also immer auch Eingriff in Umwelt und Landschaft."
+      "Darum beginnt der Kurs nicht mit einer Königsliste, sondern mit Veränderungen menschlicher Lebensweisen. Im weiteren Verlauf werden diese Veränderungen an konkreten Dingen greifbar: an Unterkünften aus Tierhäuten, Lehm oder Schnee, an Pfahlbauhütten und Steinbeilen, an römischen Strassen und Brücken, an Silbermünzen aus einem vergrabenen Schatz oder an Burglatrinen und Schlossküchen. Geschichte wird an solchen Spuren lesbar.",
+      "Der Film zum Anthropozän spannt dafür den grössten Bogen. Er verbindet Feuer, Landwirtschaft in Ägypten, Metallbau im Römischen Reich, Erfindungen des Hochmittelalters, Industrialisierung und fossile Brennstoffe zu einer einzigen Langzeitlinie. Damit wird sichtbar: Menschen verändern mit Technik, Landwirtschaft, Bau und Rohstoffnutzung Wasser, Luft, Boden und Lebensräume. Historische Entwicklung ist also immer auch Eingriff in Umwelt und Landschaft."
     ],
     sources: [
       {
         title: "Harari-PDF",
         meta: "Buchauszug",
         extracted:
-          "Der Historiker Yuval Noah Harari unterscheidet Natur, biologische Entwicklung und menschliche Kulturgeschichte. In seinem Buch ordnet er die Menschheitsgeschichte nach großen Veränderungen, die vieles andere nach sich ziehen.",
+          "Der Historiker Yuval Noah Harari unterscheidet Natur, biologische Entwicklung und menschliche Kulturgeschichte. In seinem Buch ordnet er die Menschheitsgeschichte nach grossen Veränderungen, die vieles andere nach sich ziehen.",
         didacticUse:
           "Im Kurs dient dieser Text als Orientierung: Nicht weil alle Lernenden Harari kennen müssen, sondern weil er eine gut verständliche Grundfrage stellt, nämlich was als Geschichte zählt und was noch nicht."
       },
@@ -860,8 +860,8 @@ const modules = [
     },
     takeaway: [
       "Geschichte ist mehr als Vergangenheit: Sie meint kulturell geordnete menschliche Welt.",
-      "Ein Geschichtsbuch kann helfen, große Entwicklungsschritte sichtbar zu machen, auch wenn man den Autor vorher nicht kennt.",
-      "Frühe Innovationen lassen sich als Vorgeschichte späterer Großveränderungen lesen."
+      "Ein Geschichtsbuch kann helfen, grosse Entwicklungsschritte sichtbar zu machen, auch wenn man den Autor vorher nicht kennt.",
+      "Frühe Innovationen lassen sich als Vorgeschichte späterer Grossveränderungen lesen."
     ],
     transfer: {
       id: "m1-transfer",
@@ -894,9 +894,9 @@ const modules = [
     input: [
       "Wenn wir an frühe Menschen denken, stellen wir uns oft eine einfache Entwicklungslinie vor: erst primitive Vorformen, dann irgendwann den modernen Menschen. So einfach war es aber nicht. Über lange Zeit lebten mehrere Menschenarten gleichzeitig. Dazu gehörten zum Beispiel Neandertaler, Homo erectus, Denisova-Menschen und Homo sapiens. Der heutige Mensch war also nicht von Anfang an allein auf der Welt.",
       "Der Stammbaum der frühen Menschheit sieht deshalb eher wie ein Geflecht als wie eine Leiter aus. Linien verzweigen sich, überschneiden sich und enden wieder. Manche Menschenarten leben gleichzeitig, manche verschwinden. Wer Frühgeschichte verstehen will, muss also mit Koexistenz und Abbrüchen rechnen, nicht mit einer einzigen geraden Erfolgsbahn.",
-      "Außerdem war Homo sapiens zunächst kein unaufhaltsamer Sieger. Frühe Menschen waren über sehr lange Zeit nur ein Teil vieler Tier- und Menschenwelten. Sie beherrschten die Erde nicht einfach sofort. Das macht die eigentliche historische Frage spannend: Warum setzte sich gerade diese Menschenart später in so vielen Räumen durch?",
+      "Ausserdem war Homo sapiens zunächst kein unaufhaltsamer Sieger. Frühe Menschen waren über sehr lange Zeit nur ein Teil vieler Tier- und Menschenwelten. Sie beherrschten die Erde nicht einfach sofort. Das macht die eigentliche historische Frage spannend: Warum setzte sich gerade diese Menschenart später in so vielen Räumen durch?",
       "Ein Teil der Antwort liegt in biologischen und technischen Voraussetzungen. Das menschliche Gehirn ist leistungsfähig, braucht aber viel Energie. Der aufrechte Gang macht die Hände frei, bringt aber auch neue Belastungen mit sich. Menschenkinder bleiben lange hilfsbedürftig. Genau dadurch entstehen enge Bindungen, gemeinsames Lernen und soziale Abhängigkeiten. Werkzeuge wie der Faustkeil zeigen dabei, dass Technik schon früh Planung, Materialkenntnis und Weitergabe von Können verlangte. Der Mensch ist also nicht trotz, sondern auch wegen seiner Abhängigkeit erfolgreich.",
-      "Die Filme zur außergewöhnlichen Reise der Menschheit und zu frühen Menschenarten verdichten diese Entwicklung: Feuer, Werkzeuge, Zusammenarbeit und Sprache werden nicht als einzelne Erfindungen behandelt, sondern als lange Kette von Anpassungen. Frühgeschichte ist darum nie nur Biologie, sondern immer auch Lernen, Erinnern und Weitergeben.",
+      "Die Filme zur aussergewöhnlichen Reise der Menschheit und zu frühen Menschenarten verdichten diese Entwicklung: Feuer, Werkzeuge, Zusammenarbeit und Sprache werden nicht als einzelne Erfindungen behandelt, sondern als lange Kette von Anpassungen. Frühgeschichte ist darum nie nur Biologie, sondern immer auch Lernen, Erinnern und Weitergeben.",
       "Der Film über 1491 macht diese Ausbreitung konkret. Vor etwa 18'000 bis 20'000 Jahren erreichen die ersten Menschen Amerika. Einige kommen über eine Landbrücke zwischen Ostsibirien und Alaska, andere fahren mit Kanus über das Meer. In den neuen Räumen entstehen angepasste Lebensweisen: Zelte aus Tierhäuten, Häuser aus Lehm oder Iglus aus Schnee. Wissen über Wege, Nahrung und Überleben wird in mehr als 2000 Sprachen vor allem mündlich weitergegeben. Frühgeschichte ist deshalb immer auch Migrations- und Anpassungsgeschichte."
     ],
     sources: [
@@ -904,17 +904,17 @@ const modules = [
         title: "Harari-PDF",
         meta: "Frühmenschliche Vielfalt",
         extracted:
-          "Harari beschreibt mehrere Menschenarten gleichzeitig und erklärt, warum große Gehirne, freie Hände und lange Kindheit entscheidende Folgen für Kooperation und Lernen hatten.",
+          "Harari beschreibt mehrere Menschenarten gleichzeitig und erklärt, warum grosse Gehirne, freie Hände und lange Kindheit entscheidende Folgen für Kooperation und Lernen hatten.",
         didacticUse:
           "Die Ressource wird genutzt, um lineare Höherentwicklung zu korrigieren und biologische Voraussetzungen als Ausgangspunkt, nicht als Enderklärung, sichtbar zu machen."
       },
       {
-        title: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
-        meta: "Großer Überblick",
+        title: "Planet Schule: Die aussergewöhnliche Reise der Menschheit",
+        meta: "Grosser Überblick",
         extracted:
           "Der Film spannt den Bogen von frühen Menschenarten über Werkzeuge, Feuer und soziale Entwicklung bis zur globalen Ausbreitung des Homo sapiens.",
         didacticUse:
-          "Die Ressource liefert für Modul 2 die große Entwicklungslinie, damit Frühgeschichte als zusammenhängender Prozess statt als lose Sammlung von Fossilien erscheint."
+          "Die Ressource liefert für Modul 2 die grosse Entwicklungslinie, damit Frühgeschichte als zusammenhängender Prozess statt als lose Sammlung von Fossilien erscheint."
       },
       {
         title: "ZDF Schule: Stammbaum",
@@ -946,7 +946,7 @@ const modules = [
         extracted:
           "Die ersten Menschen Amerikas gelangen auf verschiedenen Wegen auf den Doppelkontinent, passen Behausungen und Lebensweisen an Klima und Landschaft an und geben Wissen in vielen Sprachen weiter.",
         didacticUse:
-          "Die Lernenden verstehen Ausbreitung nicht als bloßes 'Besiedeln', sondern als fortlaufende Anpassungs- und Kulturleistung."
+          "Die Lernenden verstehen Ausbreitung nicht als blosses 'Besiedeln', sondern als fortlaufende Anpassungs- und Kulturleistung."
       },
       {
         title: "YouTube: Frühmenschen und Menschwerdung",
@@ -958,14 +958,14 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Verbinde Menschenarten, Stammbaum, Faustkeil, Feuer und Migration: Warum wurden Lernen, Technik und Anpassung für Homo sapiens historisch wichtiger als bloße Körperkraft?",
+      "Verbinde Menschenarten, Stammbaum, Faustkeil, Feuer und Migration: Warum wurden Lernen, Technik und Anpassung für Homo sapiens historisch wichtiger als blosse Körperkraft?",
     task: {
       id: "m2-task",
       question:
-        "Erkläre, warum Homo sapiens lange nicht automatisch überlegen war, später aber dennoch große Räume besiedeln konnte. Beziehe die Anpassung an verschiedene Landschaften mit ein.",
+        "Erkläre, warum Homo sapiens lange nicht automatisch überlegen war, später aber dennoch grosse Räume besiedeln konnte. Beziehe die Anpassung an verschiedene Landschaften mit ein.",
       placeholder: "Arbeite mit biologischen Faktoren, Lernen und neuen Lebensweisen in unterschiedlichen Räumen.",
       sampleAnswer:
-        "Homo sapiens war lange nicht automatisch überlegen, weil auch andere Menschenarten existierten und frühe Menschen insgesamt nur begrenzt Einfluss auf ihre Umwelt hatten. Große Gehirne kosteten viel Energie, und Menschenkinder blieben lange hilfsbedürftig. Gleichzeitig förderten freie Hände, Werkzeuggebrauch, soziale Bindungen und Lernfähigkeit die Anpassung an neue Räume. Gerade diese Verbindung aus biologischer Ausstattung und sozialem Lernen machte spätere Ausbreitung möglich.",
+        "Homo sapiens war lange nicht automatisch überlegen, weil auch andere Menschenarten existierten und frühe Menschen insgesamt nur begrenzt Einfluss auf ihre Umwelt hatten. Grosse Gehirne kosteten viel Energie, und Menschenkinder blieben lange hilfsbedürftig. Gleichzeitig förderten freie Hände, Werkzeuggebrauch, soziale Bindungen und Lernfähigkeit die Anpassung an neue Räume. Gerade diese Verbindung aus biologischer Ausstattung und sozialem Lernen machte spätere Ausbreitung möglich.",
       criteria: [
         { label: "fehlende frühe Dominanz benannt", keywords: ["nicht überlegen", "unauffällig", "andere menschenarten", "gleichzeitig"] },
         { label: "biologische Faktoren erklärt", keywords: ["gehirn", "energie", "hände", "aufrechter gang", "kinder"] },
@@ -1001,7 +1001,7 @@ const modules = [
     },
     takeaway: [
       "Der moderne Mensch war nicht von Anfang an allein.",
-      "Großes Gehirn, freie Hände und lange Kindheit sind Chancen und Belastungen zugleich.",
+      "Grosses Gehirn, freie Hände und lange Kindheit sind Chancen und Belastungen zugleich.",
       "Migration ist seit Beginn der Menschheitsgeschichte ein Normalfall."
     ],
     transfer: {
@@ -1028,15 +1028,15 @@ const modules = [
     hook:
       "Harari erklärt die Sonderstellung des Homo sapiens nicht mit Muskelkraft, sondern mit Sprache: Menschen können über Dinge reden, die nicht unmittelbar sichtbar sind, und dadurch gemeinsame Ordnungen erschaffen.",
     goals: [
-      "Sprache als Voraussetzung für flexible Großgruppenkooperation verstehen",
+      "Sprache als Voraussetzung für flexible Grossgruppenkooperation verstehen",
       "Fiktionen, Mythen und Institutionen als reale historische Kräfte erkennen",
       "frühe Kunst als Ausdruck symbolischer Welterzeugung deuten"
     ],
     input: [
-      "Mit Sprache ist hier nicht bloß gemeint, dass Menschen Laute bilden können. Entscheidend ist, worüber sie sprechen können. Tiere können warnen, locken oder Signale geben. Menschen können zusätzlich über Vergangenes, Zukünftiges, Abwesendes und Vorgestelltes reden. Sie können also nicht nur auf die Welt reagieren, sondern gemeinsame Vorstellungen von der Welt entwickeln.",
+      "Mit Sprache ist hier nicht bloss gemeint, dass Menschen Laute bilden können. Entscheidend ist, worüber sie sprechen können. Tiere können warnen, locken oder Signale geben. Menschen können zusätzlich über Vergangenes, Zukünftiges, Abwesendes und Vorgestelltes reden. Sie können also nicht nur auf die Welt reagieren, sondern gemeinsame Vorstellungen von der Welt entwickeln.",
       "Genau darin liegt ein historischer Wendepunkt. Wenn Menschen über Dinge sprechen können, die man nicht direkt sieht, dann können sie Regeln aufstellen, Zugehörigkeit definieren, Aufgaben verteilen und Geschichten über ihre Herkunft erzählen. So entstehen Mythen, Verbote, Rituale und gemeinsame Identitäten. Sprache macht also nicht nur Verständigung möglich, sondern Ordnung.",
       "Das ist wichtig, weil viele spätere Entwicklungen genau darauf aufbauen. Staaten funktionieren nicht nur mit Waffen, sondern auch mit Gesetzen. Geld funktioniert nicht nur als Metall, sondern als gemeinsam anerkannter Wert. Religion wirkt nicht nur innerlich, sondern auch durch geteilte Vorstellungen von Welt und Gemeinschaft. All das setzt voraus, dass Menschen an dieselben Dinge glauben oder sich zumindest darauf beziehen können.",
-      "Im Film über 1491 wird diese symbolische Welt an materiellen Spuren sichtbar. Felsbilder, Totempfähle, Gegenstände des Alltags und Mayaschrift zeigen, dass Gemeinschaften ihre Welt nicht nur bewohnen, sondern deuten und erinnern. Ein Bild an einer Felswand ist nicht bloß Dekoration, sondern Hinweis auf Jagd, Zugehörigkeit oder Weltvorstellung. Ein Totempfahl markiert Erinnerung und Herkunft. Schriftzeichen halten Wissen fest. Frühgeschichte ist deshalb bereits eine Welt aus Zeichen, Regeln und Erzählungen.",
+      "Im Film über 1491 wird diese symbolische Welt an materiellen Spuren sichtbar. Felsbilder, Totempfähle, Gegenstände des Alltags und Mayaschrift zeigen, dass Gemeinschaften ihre Welt nicht nur bewohnen, sondern deuten und erinnern. Ein Bild an einer Felswand ist nicht bloss Dekoration, sondern Hinweis auf Jagd, Zugehörigkeit oder Weltvorstellung. Ein Totempfahl markiert Erinnerung und Herkunft. Schriftzeichen halten Wissen fest. Frühgeschichte ist deshalb bereits eine Welt aus Zeichen, Regeln und Erzählungen.",
       "Die Höhlenbilder ergänzen diesen Punkt auf eindrückliche Weise. Handabdrücke, Tiere, Jagdszenen und wiederkehrende Zeichen zeigen, dass Menschen Erlebnisse nicht nur lebten, sondern bildlich festhielten und in gemeinsame Deutungen verwandelten. Gerade an Höhlenkunst wird sichtbar, dass Sprache, Erinnerung und Symbolik zusammengehören: Gesellschaften schaffen nicht nur Werkzeuge, sondern auch Bilder ihrer Welt."
     ],
     sources: [
@@ -1046,7 +1046,7 @@ const modules = [
         extracted:
           "Harari vergleicht Tierkommunikation mit menschlicher Sprache und zeigt, dass Homo sapiens über vorgestellte Ordnungen sprechen kann. Dadurch werden Kooperationen weit über die 'magische Grenze' kleiner Gruppen hinaus möglich.",
         didacticUse:
-          "Die Lernenden arbeiten heraus, dass Mythen keine bloßen Lügen sind, sondern soziale Wirklichkeiten erzeugen können."
+          "Die Lernenden arbeiten heraus, dass Mythen keine blossen Lügen sind, sondern soziale Wirklichkeiten erzeugen können."
       },
       {
         title: "SRF: 1491",
@@ -1062,7 +1062,7 @@ const modules = [
         extracted:
           "Der Einstein-Film ergänzt das Modul um direkte Fragen nach Sinn, Entstehung und Funktion prähistorischer Höhlenmalereien.",
         didacticUse:
-          "Die Ressource soll die Symbol- und Vorstellungswelt früher Menschen nicht nur über allgemeine Zeichen, sondern über ein präzises Kunstbeispiel erschließen."
+          "Die Ressource soll die Symbol- und Vorstellungswelt früher Menschen nicht nur über allgemeine Zeichen, sondern über ein präzises Kunstbeispiel erschliessen."
       },
       {
         title: "National Geographic: Frühgeschichte und Höhlenkunst",
@@ -1078,18 +1078,18 @@ const modules = [
     task: {
       id: "m3-task",
       question:
-        "Warum können Menschen in viel größeren Gruppen kooperieren als Schimpansen? Antworte mit Blick auf Sprache, gemeinsame Vorstellungen und symbolische Zeichen.",
+        "Warum können Menschen in viel grösseren Gruppen kooperieren als Schimpansen? Antworte mit Blick auf Sprache, gemeinsame Vorstellungen und symbolische Zeichen.",
       placeholder: "Erkläre den Zusammenhang zwischen Sprache, Mythos, Zeichen und Kooperation.",
       sampleAnswer:
-        "Menschen können in größeren Gruppen kooperieren, weil sie mit Sprache nicht nur konkrete Dinge, sondern auch Vorstellungen und Regeln teilen. Sie können über Götter, Gesetze, Zugehörigkeit oder Aufgaben sprechen, selbst wenn diese nicht materiell sichtbar sind. So entsteht Vertrauen in gemeinsame Ordnungen. Dadurch wird Zusammenarbeit mit vielen Fremden möglich, nicht nur mit wenigen persönlich bekannten Mitgliedern einer Gruppe.",
+        "Menschen können in grösseren Gruppen kooperieren, weil sie mit Sprache nicht nur konkrete Dinge, sondern auch Vorstellungen und Regeln teilen. Sie können über Götter, Gesetze, Zugehörigkeit oder Aufgaben sprechen, selbst wenn diese nicht materiell sichtbar sind. So entsteht Vertrauen in gemeinsame Ordnungen. Dadurch wird Zusammenarbeit mit vielen Fremden möglich, nicht nur mit wenigen persönlich bekannten Mitgliedern einer Gruppe.",
       criteria: [
         { label: "Sprache über Abwesendes/Vorgestelltes", keywords: ["vorstellungen", "abwesend", "vorgestellt", "nicht sichtbar", "sprache"] },
         { label: "gemeinsame Ordnung/Mythos", keywords: ["mythos", "ordnung", "regeln", "götter", "gesetze"] },
-        { label: "Großgruppenkooperation", keywords: ["große gruppen", "fremde", "kooperation", "zusammenarbeit"] }
+        { label: "Grossgruppenkooperation", keywords: ["grosse gruppen", "fremde", "kooperation", "zusammenarbeit"] }
       ]
     },
     deepening:
-      "Das Modul ist die Scharnierstelle der ganzen Einheit. Wenn Lernende verstanden haben, dass gemeinsame Vorstellungen historisch wirksam sind, erschließen sich später Geld, Königtum, Religion, Reichsideen oder Ständeordnung deutlich leichter. Der rote Faden verläuft also von Höhlenbild und Totempfahl bis zur Kathedrale und Münzordnung.",
+      "Das Modul ist die Scharnierstelle der ganzen Einheit. Wenn Lernende verstanden haben, dass gemeinsame Vorstellungen historisch wirksam sind, erschliessen sich später Geld, Königtum, Religion, Reichsideen oder Ständeordnung deutlich leichter. Der rote Faden verläuft also von Höhlenbild und Totempfahl bis zur Kathedrale und Münzordnung.",
     selftest: {
       id: "m3-selftest",
       question: "Welche Fähigkeit ist nach Harari historisch entscheidend?",
@@ -1101,7 +1101,7 @@ const modules = [
             "Lautstärke ist nicht der Punkt. Entscheidend ist die Fähigkeit, über Vorgestelltes und Geteiltes zu sprechen."
         },
         {
-          text: "Menschen können über gemeinsam vorgestellte Dinge sprechen und so Großgruppen organisieren.",
+          text: "Menschen können über gemeinsam vorgestellte Dinge sprechen und so Grossgruppen organisieren.",
           correct: true,
           feedback:
             "Richtig. Genau diese Fähigkeit verknüpft Harari mit dem historischen Aufstieg des Homo sapiens."
@@ -1141,7 +1141,7 @@ const modules = [
     phase: "Lebensformen der Vorzeit",
     guidingQuestion: "Wie lebt man ohne feste Häuser, Speicher und Staaten?",
     hook:
-      "Vor Sesshaftigkeit gab es keineswegs bloß Mangel. Mobile Lebensweisen konnten hoch angepasst, vielfältig und ökologisch flexibel sein.",
+      "Vor Sesshaftigkeit gab es keineswegs bloss Mangel. Mobile Lebensweisen konnten hoch angepasst, vielfältig und ökologisch flexibel sein.",
     goals: [
       "Merkmale mobiler Lebensweisen beschreiben",
       "Anpassung an Klima, Landschaft und Tierwelt als historisches Können erkennen",
@@ -1150,10 +1150,10 @@ const modules = [
     input: [
       "Bevor Menschen sesshaft wurden, lebten sie sehr lange in kleineren, mobilen Gruppen. Sie zogen nicht planlos umher, sondern bewegten sich oft nach Jahreszeiten, Tierwanderungen, Wasserstellen oder Pflanzenvorkommen. Diese Lebensweise verlangte ständige Beobachtung der Umwelt und eine gute Abstimmung innerhalb der Gruppe.",
       "Jäger-und-Sammler-Gesellschaften lebten nicht einfach von Mangel. Unterschiedliche Räume verlangten unterschiedliche Lösungen: In kalten Regionen funktionierten andere Unterkünfte, Kleidung und Werkzeuge als in warmen oder bewaldeten Landschaften. Der Film 1491 nennt dafür sehr konkrete Beispiele: Zelte aus Tierhäuten, Häuser aus Lehm und Iglus aus Schnee. Solche Behausungen waren auf Klima, Mobilität und Lebensweise abgestimmt.",
-      "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Wissen über Jagd, Nahrung oder sichere Routen wird erzählt, gezeigt und nachgeahmt. Gerade deshalb konnten mobile Lebensweisen sehr genau organisiert sein. Ohne dieses dichte Umweltwissen war Bewegung über große Räume gar nicht möglich.",
+      "Wichtig ist auch, dass Wissen in solchen Gesellschaften anders gesichert wurde als später in Schriftkulturen. Wer keine Bibliotheken oder Archive hat, muss Wege, Tiere, Jahreszeiten, Gefahren und Regeln gemeinschaftlich erinnern. Wissen über Jagd, Nahrung oder sichere Routen wird erzählt, gezeigt und nachgeahmt. Gerade deshalb konnten mobile Lebensweisen sehr genau organisiert sein. Ohne dieses dichte Umweltwissen war Bewegung über grosse Räume gar nicht möglich.",
       "Der zusätzliche Überblick zu den Steinzeit-Menschen macht deutlich, dass zu dieser Lebensform immer auch Werkzeugtechnik, Feuergebrauch, Schutz, Kooperation und flexible Nahrungssuche gehören. Gerade weil keine festen Speicher oder Bürokratien existieren, muss die Gruppe selbst ständig entscheiden, was mitgeführt, was geteilt und was vor Ort hergestellt wird.",
-      "Dieses Modul ist deshalb kein bloßer Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging.",
-      "Graeber und Wengrow setzen an diesem Punkt einen anderen Akzent als Harari. Sie bestreiten, dass die Vorzeit hauptsächlich aus kleinen, immer ähnlichen Gruppen bestand, aus denen erst sehr viel später komplexe Gesellschaften hervorgingen. Ihrer Deutung nach konnten mobile Gruppen je nach Jahreszeit, Anlass und Ort ganz unterschiedliche politische Formen annehmen. Manche versammelten sich zeitweise in großen Siedlungen, errichteten Monumente oder wechselten bewusst zwischen strengeren und gleicheren Ordnungen. Vor Landwirtschaft gab es also nicht nur Anpassung, sondern bereits politische Wahlmöglichkeiten."
+      "Dieses Modul ist deshalb kein blosser Vorlauf zur Landwirtschaft. Es zeigt eine eigenständige historische Lebensform mit hoher Kompetenz. Erst wenn man diese Welt ernst nimmt, versteht man später wirklich, was Sesshaftigkeit verändert hat und was dabei auch verloren ging.",
+      "Graeber und Wengrow setzen an diesem Punkt einen anderen Akzent als Harari. Sie bestreiten, dass die Vorzeit hauptsächlich aus kleinen, immer ähnlichen Gruppen bestand, aus denen erst sehr viel später komplexe Gesellschaften hervorgingen. Ihrer Deutung nach konnten mobile Gruppen je nach Jahreszeit, Anlass und Ort ganz unterschiedliche politische Formen annehmen. Manche versammelten sich zeitweise in grossen Siedlungen, errichteten Monumente oder wechselten bewusst zwischen strengeren und gleicheren Ordnungen. Vor Landwirtschaft gab es also nicht nur Anpassung, sondern bereits politische Wahlmöglichkeiten."
     ],
     sources: [
       {
@@ -1168,7 +1168,7 @@ const modules = [
         title: "Harari-PDF",
         meta: "Vorland der Landwirtschaft",
         extracted:
-          "Hararis Großstruktur macht deutlich, dass Jäger-und-Sammler-Gesellschaften über sehr lange Zeit die normale menschliche Lebensform darstellen.",
+          "Hararis Grossstruktur macht deutlich, dass Jäger-und-Sammler-Gesellschaften über sehr lange Zeit die normale menschliche Lebensform darstellen.",
         didacticUse:
           "Dadurch werden spätere Veränderungen wie Sesshaftigkeit als historischer Bruch lesbar."
       },
@@ -1191,7 +1191,7 @@ const modules = [
       {
         title: "Saisonale Freiheit und politische Wahl",
         extracted:
-          "Graeber und Wengrow argumentieren, dass frühe mobile Gesellschaften nicht dauerhaft in einer einzigen sozialen Form festlagen. Sie verweisen auf saisonale Wechsel, große Versammlungen, Monumente und bewusst veränderte politische Ordnungen.",
+          "Graeber und Wengrow argumentieren, dass frühe mobile Gesellschaften nicht dauerhaft in einer einzigen sozialen Form festlagen. Sie verweisen auf saisonale Wechsel, grosse Versammlungen, Monumente und bewusst veränderte politische Ordnungen.",
         didacticUse:
           "Die Gegenposition schärft die Frage, ob Vorzeit nur aus kleinen gleichartigen Gruppen bestand oder ob Menschen schon sehr früh verschiedene soziale Modelle ausprobierten."
       }
@@ -1219,7 +1219,7 @@ const modules = [
       question: "Welche Aussage beschreibt Jäger-und-Sammler-Gesellschaften am treffendsten?",
       options: [
         {
-          text: "Sie waren grundsätzlich ortsfest und lebten hauptsächlich von großen Getreidespeichern.",
+          text: "Sie waren grundsätzlich ortsfest und lebten hauptsächlich von grossen Getreidespeichern.",
           correct: false,
           feedback:
             "Das beschreibt eher spätere sesshafte Agrargesellschaften, nicht mobile Lebensformen."
@@ -1264,7 +1264,7 @@ const modules = [
     title: "Die landwirtschaftliche Revolution",
     era: "ab ca. 10 000 v. Chr.",
     phase: "Sesshaftigkeit, Dörfer, Vorräte",
-    guidingQuestion: "Warum nennt Harari Landwirtschaft den 'größten Betrug der Geschichte'?",
+    guidingQuestion: "Warum nennt Harari Landwirtschaft den 'grössten Betrug der Geschichte'?",
     hook:
       "Hararis provokante Formulierung eignet sich didaktisch hervorragend, weil sie sofort Urteilskompetenz fordert: War Landwirtschaft Fortschritt, Belastung oder beides?",
     goals: [
@@ -1275,11 +1275,11 @@ const modules = [
     input: [
       "Mit Landwirtschaft verändert sich das Leben tiefgreifend. Menschen bauen nun gezielt Pflanzen an, halten Tiere, legen Vorräte an und bleiben länger an einem Ort. Dadurch entstehen feste Häuser, Dörfer und eine engere Bindung an Boden, Wasser und Jahreszeiten. Aus Bewegung wird stärkeres Bleiben, aus flexibler Nahrungssuche wird planbare, aber auch riskante Erzeugung.",
       "Der Anfang dieser Entwicklung liegt im Fruchtbaren Halbmond nach dem Ende der letzten Eiszeit. Dort entstehen aus Sammeln, Jagen, Vorratshaltung und ersten Anbauversuchen nach und nach neue Formen von Sesshaftigkeit. Entscheidend ist: Landwirtschaft beginnt nicht plötzlich an einem einzigen Tag, sondern als langsamer Übergang, in dem Menschen Wildgräser, Tiere, Speicher und feste Plätze immer stärker miteinander verbinden.",
-      "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in größeren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
+      "Dieser Wandel hat Vorteile. Vorräte können Hungerzeiten abfedern, Siedlungen wachsen, und in grösseren Gemeinschaften können Aufgaben verteilt werden. Nicht mehr alle müssen dasselbe tun. Manche bauen Häuser, andere stellen Werkzeuge her, wieder andere organisieren Speicher oder Rituale. Landwirtschaft schafft also neue Möglichkeiten für Verdichtung und Arbeitsteilung.",
       "Aber derselbe Wandel hat auch einen Preis. Wer von wenigen Pflanzen oder Tierarten lebt, wird von Ernten, Wetter und Krankheiten stärker abhängig. Harte körperliche Arbeit nimmt oft zu. Besitz, Felder und Vorräte können Ungleichheiten fördern. Aus gemeinsamer Nutzung entstehen leichter Konflikte um Land, Wasser und Reichtum.",
-      "Die Neolithisierung Europas zeigt außerdem, dass sich diese neue Lebensweise nur langsam ausbreitet. Ackerbau und Viehzucht wandern über viele Generationen vom Vorderen Orient über Balkan und Donau sowie über Mittelmeer- und Alpenräume nach Westen. Menschen übernehmen Landwirtschaft also nicht einfach gleichzeitig, sondern in regional sehr verschiedenen Rhythmen. Gerade deshalb gehören Migration, Nachahmung und Kontaktzonen zur Geschichte der Sesshaftigkeit dazu.",
+      "Die Neolithisierung Europas zeigt ausserdem, dass sich diese neue Lebensweise nur langsam ausbreitet. Ackerbau und Viehzucht wandern über viele Generationen vom Vorderen Orient über Balkan und Donau sowie über Mittelmeer- und Alpenräume nach Westen. Menschen übernehmen Landwirtschaft also nicht einfach gleichzeitig, sondern in regional sehr verschiedenen Rhythmen. Gerade deshalb gehören Migration, Nachahmung und Kontaktzonen zur Geschichte der Sesshaftigkeit dazu.",
       "Der Film über die Pfahlbauer von Pfyn macht diesen Wandel konkret. Zwei Familien und zwei junge Männer leben dort vier Wochen wie vor 5700 Jahren. Sichtbar werden Hüttenbau, Steinbeile, Kolbenpfeile, Kleider, Essen, Feuerstellen und Gebrauchsgegenstände. Genau daran lässt sich Sesshaftigkeit ablesen: Häuser müssen instand gehalten, Werkzeuge hergestellt, Nahrung vorbereitet und Vorräte gesichert werden. Landwirtschaft ist deshalb kein bequemes Endziel, sondern ein Alltag aus Planung, Handarbeit und Abhängigkeit.",
-      "Göbekli Tepe verschärft die historische Frage noch einmal. Monumentale Steinkreise und Kultbilder zeigen, dass Menschen schon sehr früh große religiöse Zentren errichten konnten. Das ist wichtig, weil hier aufwendige gemeinsame Bauarbeit sichtbar wird, bevor der klassische Staatsapparat mit Palast, Beamten und Steuern greifbar wird. Religiöse Sammlung, Sesshaftigkeit und politische Ordnung lassen sich also nicht in eine allzu einfache Reihenfolge zwingen.",
+      "Göbekli Tepe verschärft die historische Frage noch einmal. Monumentale Steinkreise und Kultbilder zeigen, dass Menschen schon sehr früh grosse religiöse Zentren errichten konnten. Das ist wichtig, weil hier aufwendige gemeinsame Bauarbeit sichtbar wird, bevor der klassische Staatsapparat mit Palast, Beamten und Steuern greifbar wird. Religiöse Sammlung, Sesshaftigkeit und politische Ordnung lassen sich also nicht in eine allzu einfache Reihenfolge zwingen.",
       "Graeber und Wengrow widersprechen hier der einfachen Gleichung: zuerst Landwirtschaft, dann Überschuss, dann Eliten und Staat. Sie bestreiten nicht, dass Ackerbau vieles verändert, aber sie betonen, dass Menschen lange Mischformen aus Sammeln, Jagen, Gartenbau und Feldbau praktizierten. Einige Gruppen weiteten Landwirtschaft aus, andere begrenzten sie oder gaben bestimmte Formen wieder auf. Der Übergang wird dadurch nicht zu einer einzigen Stufenfolge, sondern zu einem offenen historischen Feld mit unterschiedlichen Entscheidungen und Folgen."
     ],
     sources: [
@@ -1287,7 +1287,7 @@ const modules = [
         title: "Harari-PDF",
         meta: "Provokation",
         extracted:
-          "Das Kapitel 'Der größte Betrug der Geschichte' beschreibt den Übergang zu Ackerbau und Viehzucht als ambivalenten Prozess mit mehr Arbeit, stärkerer Abhängigkeit und neuen Zwängen.",
+          "Das Kapitel 'Der grösste Betrug der Geschichte' beschreibt den Übergang zu Ackerbau und Viehzucht als ambivalenten Prozess mit mehr Arbeit, stärkerer Abhängigkeit und neuen Zwängen.",
         didacticUse:
           "Die Zuspitzung dient als Streitfrage. Lernende sollen nicht auswendig bestätigen, sondern mit Gründen abwägen."
       },
@@ -1321,7 +1321,7 @@ const modules = [
         extracted:
           "Der Film zeigt Göbekli Tepe als frühes Kultzentrum mit monumentalen Steinsetzungen und verschiebt damit die Frage nach Religion, Sesshaftigkeit und sozialer Organisation.",
         didacticUse:
-          "Die Ressource zwingt dazu, frühe Großbauten nicht erst aus fertigen Staaten heraus zu erklären."
+          "Die Ressource zwingt dazu, frühe Grossbauten nicht erst aus fertigen Staaten heraus zu erklären."
       },
       {
         title: "YouTube: Neolithische Revolution",
@@ -1340,11 +1340,11 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Arbeite am Beispiel der Pfahlbauer und der Gegenposition zu Harari heraus, wie sich Wohnen, Arbeiten, Essen und Zeitrhythmus durch Sesshaftigkeit verändern und warum dieser Wandel keine historische Einbahnstraße sein muss.",
+      "Arbeite am Beispiel der Pfahlbauer und der Gegenposition zu Harari heraus, wie sich Wohnen, Arbeiten, Essen und Zeitrhythmus durch Sesshaftigkeit verändern und warum dieser Wandel keine historische Einbahnstrasse sein muss.",
     task: {
       id: "m5-task",
       question:
-        "Nimm Stellung zu Hararis Zuspitzung, Landwirtschaft sei der 'größte Betrug der Geschichte'. Begründe differenziert.",
+        "Nimm Stellung zu Hararis Zuspitzung, Landwirtschaft sei der 'grösste Betrug der Geschichte'. Begründe differenziert.",
       placeholder: "Formuliere ein abgewogenes Urteil statt nur Zustimmung oder Ablehnung.",
       sampleAnswer:
         "Hararis Zuspitzung ist übertrieben, aber nützlich, weil sie zum Nachdenken zwingt. Landwirtschaft brachte mehr Vorräte, Bevölkerungswachstum und dauerhafte Siedlungen hervor. Gleichzeitig mussten Menschen härter und einseitiger arbeiten, wurden stärker von Ernten abhängig und entwickelten soziale Ungleichheiten. Deshalb war Landwirtschaft weder nur Fortschritt noch nur Betrug, sondern ein ambivalenter Umbruch.",
@@ -1356,7 +1356,7 @@ const modules = [
       ]
     },
     deepening:
-      "Hier beginnt die große Strukturlinie von Vorrat und Überschuss. Aus didaktischer Sicht sollte unbedingt sichtbar werden, dass Landwirtschaft nicht einfach mehr Essen bedeutet, sondern neue Zeitregime, neue Eigentumsfragen und neue Herrschaftsformen vorbereitet. Genau daraus entstehen die nächsten Module.",
+      "Hier beginnt die grosse Strukturlinie von Vorrat und Überschuss. Aus didaktischer Sicht sollte unbedingt sichtbar werden, dass Landwirtschaft nicht einfach mehr Essen bedeutet, sondern neue Zeitregime, neue Eigentumsfragen und neue Herrschaftsformen vorbereitet. Genau daraus entstehen die nächsten Module.",
     selftest: {
       id: "m5-selftest",
       question: "Welche Aussage trifft die Folgen der landwirtschaftlichen Revolution am besten?",
@@ -1368,7 +1368,7 @@ const modules = [
             "Das ist zu harmonisch. Landwirtschaft erzeugt auch Arbeitsverdichtung und neue Ungleichheiten."
         },
         {
-          text: "Sie ermöglichte Überschüsse und größere Siedlungen, schuf aber auch neue Abhängigkeiten.",
+          text: "Sie ermöglichte Überschüsse und grössere Siedlungen, schuf aber auch neue Abhängigkeiten.",
           correct: true,
           feedback:
             "Richtig. Genau diese Ambivalenz steht im Zentrum des Moduls."
@@ -1382,17 +1382,17 @@ const modules = [
       ]
     },
     takeaway: [
-      "Sesshaftigkeit ist ein sozialer, wirtschaftlicher und kultureller Großumbau.",
+      "Sesshaftigkeit ist ein sozialer, wirtschaftlicher und kultureller Grossumbau.",
       "Mehr Nahrung bedeutet nicht automatisch mehr Freiheit.",
       "Die Jungsteinzeit ist der Einstieg in Überschuss, Verwaltung und neue Ungleichheit."
     ],
     transfer: {
       id: "m5-transfer",
       question:
-        "Warum lässt sich der Übergang zu Landwirtschaft nicht als einfache Einbahnstraße erzählen? Verbinde Chancen, Belastungen und die Möglichkeit anderer Entscheidungen.",
+        "Warum lässt sich der Übergang zu Landwirtschaft nicht als einfache Einbahnstrasse erzählen? Verbinde Chancen, Belastungen und die Möglichkeit anderer Entscheidungen.",
       placeholder: "Erkläre, warum Landwirtschaft vieles verändert, aber nicht automatisch immer zum gleichen Ergebnis führt.",
       sampleAnswer:
-        "Der Übergang zu Landwirtschaft ist keine Einbahnstraße, weil Menschen neue Anbauformen zunächst erproben, mit Jagd und Sammeln kombinieren oder später wieder verändern konnten. Landwirtschaft brachte Vorräte, größere Siedlungen und Arbeitsteilung hervor, aber auch mehr Arbeit, stärkere Abhängigkeit von Ernten und neue Konflikte um Besitz. Deshalb führt Ackerbau nicht automatisch zu einer einzigen Gesellschaftsform. Historisch gab es Mischformen, Brüche und bewusste Entscheidungen.",
+        "Der Übergang zu Landwirtschaft ist keine Einbahnstrasse, weil Menschen neue Anbauformen zunächst erproben, mit Jagd und Sammeln kombinieren oder später wieder verändern konnten. Landwirtschaft brachte Vorräte, grössere Siedlungen und Arbeitsteilung hervor, aber auch mehr Arbeit, stärkere Abhängigkeit von Ernten und neue Konflikte um Besitz. Deshalb führt Ackerbau nicht automatisch zu einer einzigen Gesellschaftsform. Historisch gab es Mischformen, Brüche und bewusste Entscheidungen.",
       criteria: [
         { label: "Chancen genannt", keywords: ["vorrat", "sicherheit", "häuser", "versorgung", "arbeitsteilung"] },
         { label: "Risiken genannt", keywords: ["abhängig", "arbeit", "konflikt", "ernte", "besitz"] },
@@ -1416,13 +1416,13 @@ const modules = [
       "Nil, Pharao und Maat als Grundpfeiler ägyptischer Ordnung erklären"
     ],
     input: [
-      "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je größer eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Maße, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
-      "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann große Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
-      "Zwischen Dorf und Staat liegen zudem dichte Großsiedlungen, die nicht einfach in dasselbe Muster passen. Çatalhöyük zeigt Hunderte dicht aneinandergedrängte Häuser mit Dachzugängen, Wandmalereien, Bestattungen im Haus und gemeinschaftlicher Ordnung. Gerade daran lässt sich sehen, dass große Besiedlung, Arbeitsteilung und symbolische Verdichtung nicht automatisch schon Palast, König und Verwaltung nach späterem Muster bedeuten.",
-      "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil überschwemmt das Land regelmäßig, hinterlässt fruchtbaren Schlamm und macht Landwirtschaft über lange Zeit planbar. Dadurch können Überschüsse entstehen, die gespeichert, verteilt und besteuert werden. Beamtinnen und Beamte erfassen Abgaben, organisieren Bauarbeiten und halten den Staat zusammen. Hieroglyphen sichern diese Ordnung schriftlich. Der Pharao steht politisch und religiös an der Spitze; mit der Vorstellung der Maat, also von richtiger göttlicher Ordnung, Gerechtigkeit und Gleichgewicht, wird Herrschaft zusätzlich begründet.",
-      "Auch Tempel, Gräber und Pyramiden gehören in diesen Zusammenhang. Sie sind nicht bloß große Bauwerke, sondern Ausdruck einer Welt, in der Herrschaft, Religion und Jenseitsvorstellungen eng verbunden sind. Wer in Ägypten baut, zählt, schreibt und opfert, stabilisiert nicht nur den Alltag, sondern eine ganze Weltordnung. Mesopotamien lässt sich dazu kurz als Gegenbild nennen: Dort entstehen zwischen Euphrat und Tigris eher mehrere konkurrierende Stadtstaaten, während Ägypten am Nil sehr früh zu einem langen, stärker zentralisierten Reich zusammenwächst.",
-      "Die Frage, was überhaupt eine Hochkultur ausmacht, muss deshalb präzise gestellt werden. Entscheidend sind nicht einzelne Pyramiden oder spektakuläre Funde, sondern das Zusammenspiel von Überschuss, Verdichtung, Schrift oder anderen dauerhaften Zeichensystemen, religiöser Ordnung, Arbeitsteilung und Herrschaft. Gerade der Vergleich von Ägypten mit Çatalhöyük zeigt: Große Siedlung und hohe Komplexität sind vorhanden, aber nicht jedes Beispiel führt sofort zu derselben Staatsform.",
-      "Graeber und Wengrow setzen hier eine Gegenfrage: Muss große Besiedlung, Speicherwirtschaft und Koordination überhaupt zwangsläufig in Königtum, Paläste und starre Hierarchie münden? Sie verweisen auf große Orte wie Çatalhöyük oder Teotihuacan, an denen dichte Siedlung, Planung und Zusammenarbeit sichtbar sind, ohne dass daraus automatisch eine klassische Herrschaftspyramide folgt. Dadurch wird Ägypten als ein sehr wichtiger, aber nicht einziger Weg zu früher Komplexität lesbar.",
+      "Wenn Gesellschaften Überschüsse erzeugen, müssen Vorräte gelagert, verteilt, gezählt und geschützt werden. Je grösser eine Gemeinschaft wird, desto schwieriger wird diese Aufgabe. Irgendwann reicht persönliches Erinnern nicht mehr aus. Dann braucht es Listen, Zuständigkeiten, Masse, Zeichen und feste Regeln. Genau hier beginnen frühe Formen von Verwaltung.",
+      "Schrift entsteht in vielen frühen Staaten deshalb nicht zuerst für schöne Geschichten oder Gedichte, sondern für Organisation. Wer Abgaben festhält, Arbeitsleistungen notiert oder Vorräte erfasst, kann grosse Gemeinschaften besser steuern. Schreiben ist am Anfang also oft ein Macht- und Verwaltungswerkzeug. Das ist wichtig, weil viele Menschen Schrift heute zuerst mit Literatur verbinden.",
+      "Zwischen Dorf und Staat liegen zudem dichte Grosssiedlungen, die nicht einfach in dasselbe Muster passen. Çatalhöyük zeigt Hunderte dicht aneinandergedrängte Häuser mit Dachzugängen, Wandmalereien, Bestattungen im Haus und gemeinschaftlicher Ordnung. Gerade daran lässt sich sehen, dass grosse Besiedlung, Arbeitsteilung und symbolische Verdichtung nicht automatisch schon Palast, König und Verwaltung nach späterem Muster bedeuten.",
+      "Am Beispiel Ägyptens wird das besonders deutlich. Der Nil überschwemmt das Land regelmässig, hinterlässt fruchtbaren Schlamm und macht Landwirtschaft über lange Zeit planbar. Dadurch können Überschüsse entstehen, die gespeichert, verteilt und besteuert werden. Beamtinnen und Beamte erfassen Abgaben, organisieren Bauarbeiten und halten den Staat zusammen. Hieroglyphen sichern diese Ordnung schriftlich. Der Pharao steht politisch und religiös an der Spitze; mit der Vorstellung der Maat, also von richtiger göttlicher Ordnung, Gerechtigkeit und Gleichgewicht, wird Herrschaft zusätzlich begründet.",
+      "Auch Tempel, Gräber und Pyramiden gehören in diesen Zusammenhang. Sie sind nicht bloss grosse Bauwerke, sondern Ausdruck einer Welt, in der Herrschaft, Religion und Jenseitsvorstellungen eng verbunden sind. Wer in Ägypten baut, zählt, schreibt und opfert, stabilisiert nicht nur den Alltag, sondern eine ganze Weltordnung. Mesopotamien lässt sich dazu kurz als Gegenbild nennen: Dort entstehen zwischen Euphrat und Tigris eher mehrere konkurrierende Stadtstaaten, während Ägypten am Nil sehr früh zu einem langen, stärker zentralisierten Reich zusammenwächst.",
+      "Die Frage, was überhaupt eine Hochkultur ausmacht, muss deshalb präzise gestellt werden. Entscheidend sind nicht einzelne Pyramiden oder spektakuläre Funde, sondern das Zusammenspiel von Überschuss, Verdichtung, Schrift oder anderen dauerhaften Zeichensystemen, religiöser Ordnung, Arbeitsteilung und Herrschaft. Gerade der Vergleich von Ägypten mit Çatalhöyük zeigt: Grosse Siedlung und hohe Komplexität sind vorhanden, aber nicht jedes Beispiel führt sofort zu derselben Staatsform.",
+      "Graeber und Wengrow setzen hier eine Gegenfrage: Muss grosse Besiedlung, Speicherwirtschaft und Koordination überhaupt zwangsläufig in Königtum, Paläste und starre Hierarchie münden? Sie verweisen auf grosse Orte wie Çatalhöyük oder Teotihuacan, an denen dichte Siedlung, Planung und Zusammenarbeit sichtbar sind, ohne dass daraus automatisch eine klassische Herrschaftspyramide folgt. Dadurch wird Ägypten als ein sehr wichtiger, aber nicht einziger Weg zu früher Komplexität lesbar.",
       "Deshalb bedeutet Hochkultur viel mehr als Pyramiden und berühmte Herrscher. Gemeint ist eine Gesellschaft, in der Umwelt, Nahrung, Verwaltung, Religion, Arbeitsteilung und Symbolsysteme eng zusammenwirken. Wer frühe Staaten verstehen will, muss also auch Speicher, Listen, Schreiber, Tempel, Abgaben, Jenseitsvorstellungen und die Organisation von Arbeit betrachten."
     ],
     sources: [
@@ -1438,23 +1438,23 @@ const modules = [
         title: "SRF: Eine kurze Geschichte über…",
         meta: "Ägypten",
         extracted:
-          "Die Folge erklärt Ägypten über Nil, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und die außergewöhnlich lange Stabilität des Reiches.",
+          "Die Folge erklärt Ägypten über Nil, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und die aussergewöhnlich lange Stabilität des Reiches.",
         didacticUse:
           "So wird sichtbar, wie Landwirtschaft, Verwaltung, Religion und Herrschaft am Nil ineinandergreifen."
       },
       {
-        title: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+        title: "Terra X / Planet Wissen: Çatalhöyük – Grosssiedlung",
         meta: "Dichte Siedlung ohne Königsmodell",
         extracted:
-          "Das Material zeigt Çatalhöyük als frühe Großsiedlung mit Hausverbänden, Dachzugängen, Kult und Bestattungen und verschärft damit die Frage, ob Komplexität immer sofort Staat bedeutet.",
+          "Das Material zeigt Çatalhöyük als frühe Grosssiedlung mit Hausverbänden, Dachzugängen, Kult und Bestattungen und verschärft damit die Frage, ob Komplexität immer sofort Staat bedeutet.",
         didacticUse:
-          "Die Ressource macht den Unterschied zwischen großer Besiedlung und fertigem Königsstaat sichtbar."
+          "Die Ressource macht den Unterschied zwischen grosser Besiedlung und fertigem Königsstaat sichtbar."
       },
       {
         title: "YouTube: 3D Çatalhöyük Project Animation",
         meta: "Räumliche Rekonstruktion",
         extracted:
-          "Die Animation macht Hausdichte, Dachzugänge und die innere Struktur einer frühen Großsiedlung räumlich anschaulich.",
+          "Die Animation macht Hausdichte, Dachzugänge und die innere Struktur einer frühen Grosssiedlung räumlich anschaulich.",
         didacticUse:
           "Das Material hilft, aus abstrakten Beschreibungen ein konkretes Bild früher Verdichtung zu machen."
       },
@@ -1464,7 +1464,7 @@ const modules = [
         extracted:
           "Der Film ergänzt das Modul um einen breiteren Überblick zu Hochkulturen, Schrift, Verwaltung, Religion und frühen Staatsordnungen.",
         didacticUse:
-          "Ägypten bleibt das Hauptbeispiel, wird aber in einen größeren Zusammenhang früher Hochkulturen eingeordnet."
+          "Ägypten bleibt das Hauptbeispiel, wird aber in einen grösseren Zusammenhang früher Hochkulturen eingeordnet."
       },
       {
         title: "YouTube: Was ist eine \"Hochkultur\"?",
@@ -1477,13 +1477,13 @@ const modules = [
       {
         title: "Städte ohne Könige?",
         extracted:
-          "Graeber und Wengrow halten dagegen, dass dichte Siedlungen, Landwirtschaft und aufwendige Koordination nicht automatisch Paläste, Könige oder feste Klassen hervorbringen. Große Orte konnten lange ohne zentrale Herrschaft funktionieren oder Herrschaft zeitweise wieder abbauen.",
+          "Graeber und Wengrow halten dagegen, dass dichte Siedlungen, Landwirtschaft und aufwendige Koordination nicht automatisch Paläste, Könige oder feste Klassen hervorbringen. Grosse Orte konnten lange ohne zentrale Herrschaft funktionieren oder Herrschaft zeitweise wieder abbauen.",
         didacticUse:
           "Die Gegenposition verhindert, dass Ägypten vorschnell als allgemeines Gesetz früher Staaten gelesen wird, und schärft den Blick für mehrere Wege politischer Verdichtung."
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, welche Bausteine Ägypten zu einer dauerhaften Herrschaftsordnung machen und warum große Siedlungen trotzdem nicht überall automatisch Königtum und feste Hierarchie hervorbringen mussten.",
+      "Arbeite heraus, welche Bausteine Ägypten zu einer dauerhaften Herrschaftsordnung machen und warum grosse Siedlungen trotzdem nicht überall automatisch Königtum und feste Hierarchie hervorbringen mussten.",
     task: {
       id: "m6-task",
       question:
@@ -1499,7 +1499,7 @@ const modules = [
       ]
     },
     deepening:
-      "Frühe Hochkulturen werden verständlich, wenn man sie als Verbindung von Landwirtschaft, Speicherwirtschaft, Bürokratie, Religion und Herrschaft liest. Für Ägypten ist entscheidend: Der Nil macht Ernten berechenbar, Beamte organisieren Abgaben, Hieroglyphen sichern Verwaltung, der Pharao verkörpert Herrschaft und Maat ordnet die Welt religiös. Monumente und Gräber sind deshalb nicht bloß Schmuck, sondern sichtbare Form dieser Ordnung.",
+      "Frühe Hochkulturen werden verständlich, wenn man sie als Verbindung von Landwirtschaft, Speicherwirtschaft, Bürokratie, Religion und Herrschaft liest. Für Ägypten ist entscheidend: Der Nil macht Ernten berechenbar, Beamte organisieren Abgaben, Hieroglyphen sichern Verwaltung, der Pharao verkörpert Herrschaft und Maat ordnet die Welt religiös. Monumente und Gräber sind deshalb nicht bloss Schmuck, sondern sichtbare Form dieser Ordnung.",
     selftest: {
       id: "m6-selftest",
       question: "Welche Funktion hatte frühe Schrift besonders häufig?",
@@ -1532,16 +1532,16 @@ const modules = [
     transfer: {
       id: "m6-transfer",
       question:
-        "Warum ist Ägypten ein starkes Beispiel für frühe Staatlichkeit, aber kein Beweis dafür, dass jede große Siedlung automatisch im selben Muster endet?",
+        "Warum ist Ägypten ein starkes Beispiel für frühe Staatlichkeit, aber kein Beweis dafür, dass jede grosse Siedlung automatisch im selben Muster endet?",
       placeholder: "Verbinde Nil, Verwaltung, Maat und Herrschaft mit der Frage nach anderen Wegen politischer Verdichtung.",
       sampleAnswer:
-        "Ägypten ist ein starkes Beispiel für frühe Staatlichkeit, weil Nil, Überschüsse, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und Maat sehr eng zusammenwirken. Diese Verbindung erklärt die außergewöhnliche Stabilität des Reiches. Daraus folgt aber nicht, dass jede große Siedlung denselben Weg nehmen musste. Andere frühe Städte konnten dichter, kooperativer oder weniger zentralisiert organisiert sein. Mesopotamien zeigt schon im Vergleich mehrere konkurrierende Stadtstaaten statt eines so früh geschlossenen Flussreichs.",
+        "Ägypten ist ein starkes Beispiel für frühe Staatlichkeit, weil Nil, Überschüsse, Beamtentum, Hieroglyphenschrift, Pharaonenherrschaft und Maat sehr eng zusammenwirken. Diese Verbindung erklärt die aussergewöhnliche Stabilität des Reiches. Daraus folgt aber nicht, dass jede grosse Siedlung denselben Weg nehmen musste. Andere frühe Städte konnten dichter, kooperativer oder weniger zentralisiert organisiert sein. Mesopotamien zeigt schon im Vergleich mehrere konkurrierende Stadtstaaten statt eines so früh geschlossenen Flussreichs.",
       criteria: [
         { label: "Nil/Umwelt", keywords: ["nil", "fluss", "landwirtschaft", "umwelt"] },
         { label: "Verwaltung", keywords: ["verwaltung", "beamtentum", "organisation", "abgaben"] },
         { label: "Schrift", keywords: ["hieroglyph", "schrift", "ordnung"] },
         { label: "religiöse Legitimation", keywords: ["religion", "pharao", "maat", "herrschaft", "legitim"] },
-        { label: "kein Automatismus behauptet", keywords: ["nicht automatisch", "anderer weg", "nicht jede", "große siedlung", "zentralisiert"] }
+        { label: "kein Automatismus behauptet", keywords: ["nicht automatisch", "anderer weg", "nicht jede", "grosse siedlung", "zentralisiert"] }
       ]
     }
   },
@@ -1562,24 +1562,24 @@ const modules = [
       "Harari und Graeber/Wengrow an einem konkreten Fall gegeneinander lesen"
     ],
     input: [
-      "Der Name Kelten bezeichnet keine einheitliche Nation und kein zusammenhängendes Reich. Er steht für viele Gruppen in weiten Teilen Europas, die ähnliche materielle Kultur, Waffenformen, Schmuckstile und religiöse Praktiken teilen. Für die Schweiz sind vor allem zwei große archäologische Phasen wichtig: Hallstatt und La Tène. Gerade La Tène ist für die keltische Welt im Gebiet der heutigen Schweiz zentral, weil hier oppida, Münzen, Metallhandwerk und Fernkontakte besonders deutlich werden.",
+      "Der Name Kelten bezeichnet keine einheitliche Nation und kein zusammenhängendes Reich. Er steht für viele Gruppen in weiten Teilen Europas, die ähnliche materielle Kultur, Waffenformen, Schmuckstile und religiöse Praktiken teilen. Für die Schweiz sind vor allem zwei grosse archäologische Phasen wichtig: Hallstatt und La Tène. Gerade La Tène ist für die keltische Welt im Gebiet der heutigen Schweiz zentral, weil hier oppida, Münzen, Metallhandwerk und Fernkontakte besonders deutlich werden.",
       "Die keltische Welt wird archäologisch vor allem über Siedlungen, Gräber, Heiligtümer, Waffen, Schmuck, Münzen und Werkstätten erschlossen. Genau deshalb ist Archäologie hier keine Nebensache, sondern die zentrale Grundlage historischen Wissens. Datierung über Fundschichten, Vergleichsfunde, Münzen, Dendrochronologie oder C14 entscheidet mit darüber, wie sicher wir Bauphasen, Kontakte und Brüche überhaupt bestimmen können.",
       "Die Helvetier sind eine keltische Bevölkerungsgruppe des schweizerischen Mittellands. Antike Autoren nennen sie vor allem im Zusammenhang mit Caesar. Genau darin liegt ein Problem: Die wichtigste Textquelle stammt von einem Feldherrn, der seinen Krieg politisch rechtfertigen will. Wer die Helvetier verstehen will, darf deshalb Caesars Bericht nicht einfach übernehmen, sondern muss ihn mit archäologischen Funden vergleichen.",
-      "Archäologisch erscheint die keltische Welt keineswegs als arme und unbedeutende Vorstufe Roms. Oppida, Befestigungen, Werkstätten, Münzen, importierte Güter und reiche Funde zeigen komplexe regionale Zentren. Der Beitrag zur Berner Engehalbinsel ist hier besonders wichtig: Er widerspricht dem Bild eines bloßen Bauernvolkes und zeigt eine Gesellschaft, die reich, religiös, gebildet und weit vernetzt war.",
+      "Archäologisch erscheint die keltische Welt keineswegs als arme und unbedeutende Vorstufe Roms. Oppida, Befestigungen, Werkstätten, Münzen, importierte Güter und reiche Funde zeigen komplexe regionale Zentren. Der Beitrag zur Berner Engehalbinsel ist hier besonders wichtig: Er widerspricht dem Bild eines blossen Bauernvolkes und zeigt eine Gesellschaft, die reich, religiös, gebildet und weit vernetzt war.",
       "Das Kelten-Experiment und die lokalen Dossiers konkretisieren diese Welt. Häuser, Vorräte, Werkstätten, Metall, Essen, Transport und Siedlungslogik zeigen, dass keltische Gesellschaft aus materieller Organisation bestand und nicht nur aus Kriegerbildern. Der Übergang zur gallo-römischen Zeit wird dadurch als Mischung aus Kontinuitäten und Brüchen sichtbar: Vieles bleibt örtlich verankert, anderes wird von Rom überformt oder neu geordnet.",
-      "58 v. Chr. wird zum Einschnitt. Ein Teil der Helvetier versucht, mit großen Gruppen auszuwandern. Caesar greift ein, besiegt sie bei Bibracte und zwingt sie zur Rückkehr. Historisch ist daran mehr wichtig als nur die Schlacht: Rom entscheidet damit, wer sich im Alpenvorland bewegen darf, und zieht den Raum stärker in seine eigene Ordnung hinein. Die Helvetier bleiben also nicht außerhalb der Geschichte Roms, sondern geraten nun unter römischen Druck und schließlich in den imperialen Zusammenhang.",
+      "58 v. Chr. wird zum Einschnitt. Ein Teil der Helvetier versucht, mit grossen Gruppen auszuwandern. Caesar greift ein, besiegt sie bei Bibracte und zwingt sie zur Rückkehr. Historisch ist daran mehr wichtig als nur die Schlacht: Rom entscheidet damit, wer sich im Alpenvorland bewegen darf, und zieht den Raum stärker in seine eigene Ordnung hinein. Die Helvetier bleiben also nicht ausserhalb der Geschichte Roms, sondern geraten nun unter römischen Druck und schliesslich in den imperialen Zusammenhang.",
       "Der Film Die Kelten und die Römer macht diesen Übergang räumlich besonders klar. Er zeigt, dass Rom nicht einfach eine leere Landschaft besetzt, sondern auf bestehende Siedlungen, Verkehrswege und keltische Strukturen trifft. Genau an solchen Kontaktzonen lässt sich erkennen, was übernommen, was verdrängt und was neu geordnet wird.",
-      "Harari würde an diesem Punkt betonen, dass größere Reiche lokale Gruppen in weiter reichende Macht-, Rechts- und Verkehrsordnungen einbinden. Graeber und Wengrow setzen früher an: Für sie zeigen oppida, Austausch und politische Verdichtung bereits vor Rom, dass komplexe Gesellschaften nicht erst als Vorstufe eines Imperiums interessant werden. Genau an den Helvetiern wird der Unterschied deutlich: Harari liest stärker die Eingliederung in größere Netze, Graeber und Wengrow stärker die Eigenständigkeit und Offenheit vorrömischer Komplexität."
+      "Harari würde an diesem Punkt betonen, dass grössere Reiche lokale Gruppen in weiter reichende Macht-, Rechts- und Verkehrsordnungen einbinden. Graeber und Wengrow setzen früher an: Für sie zeigen oppida, Austausch und politische Verdichtung bereits vor Rom, dass komplexe Gesellschaften nicht erst als Vorstufe eines Imperiums interessant werden. Genau an den Helvetiern wird der Unterschied deutlich: Harari liest stärker die Eingliederung in grössere Netze, Graeber und Wengrow stärker die Eigenständigkeit und Offenheit vorrömischer Komplexität."
     ],
     sources: [
       {
         title: "Harari-PDF · S. 150",
-        meta: "Weltreiche und größere Netze",
+        meta: "Weltreiche und grössere Netze",
         extracted:
-          "Harari beschreibt die antike Geschichte als Ausweitung größerer Macht-, Glaubens- und Handelsräume, in die lokale Gruppen und Regionen eingebunden werden."
+          "Harari beschreibt die antike Geschichte als Ausweitung grösserer Macht-, Glaubens- und Handelsräume, in die lokale Gruppen und Regionen eingebunden werden."
       },
       {
-        title: "Graeber/Wengrow: Oppida ohne Einbahnstraße",
+        title: "Graeber/Wengrow: Oppida ohne Einbahnstrasse",
         meta: "Komplexität vor Rom",
         extracted:
           "Die Gegenposition betont, dass dichte Siedlungen, Fernhandel und politische Verdichtung nicht automatisch schon auf ein einziges Staatsmodell oder auf Rom zulaufen."
@@ -1665,7 +1665,7 @@ const modules = [
         "Erkläre, warum die Helvetier nicht einfach als primitives Bauernvolk beschrieben werden können. Arbeite mit Oppida, Funden und Fernkontakten.",
       placeholder: "Verbinde Siedlungen, Metallhandwerk, Reichtum, Religion und Handel.",
       sampleAnswer:
-        "Die Helvetier waren keine primitive Randgruppe, weil archäologische Funde komplexe Siedlungen, Befestigungen, Metallhandwerk, Münzen und Fernkontakte zeigen. Oppida und reiche Grab- oder Heiligtumsfunde sprechen für politische Verdichtung und Wohlstand. Gerade die Funde auf der Berner Engehalbinsel zeigen eine religiöse und weit vernetzte Gesellschaft statt eines bloßen Bauernvolks.",
+        "Die Helvetier waren keine primitive Randgruppe, weil archäologische Funde komplexe Siedlungen, Befestigungen, Metallhandwerk, Münzen und Fernkontakte zeigen. Oppida und reiche Grab- oder Heiligtumsfunde sprechen für politische Verdichtung und Wohlstand. Gerade die Funde auf der Berner Engehalbinsel zeigen eine religiöse und weit vernetzte Gesellschaft statt eines blossen Bauernvolks.",
       criteria: [
         { label: "Oppida oder befestigte Zentren", keywords: ["oppida", "oppidum", "befestigt", "zentrum"] },
         { label: "Handwerk, Münzen oder Metall", keywords: ["metall", "handwerk", "münzen", "munzen", "schmuck"] },
@@ -1708,11 +1708,11 @@ const modules = [
       id: "m7k-transfer",
       question:
         "Vergleiche Harari und Graeber/Wengrow am Beispiel der Helvetier. Worin liegt der Unterschied ihrer Deutung?",
-      placeholder: "Verbinde römische Eingliederung, größere Netze und vorrömische Komplexität.",
+      placeholder: "Verbinde römische Eingliederung, grössere Netze und vorrömische Komplexität.",
       sampleAnswer:
-        "Harari würde stärker betonen, dass die Helvetier in größere imperiale Ordnungen aus Macht, Recht, Verkehr und Handel hineingezogen werden. Graeber und Wengrow setzen früher an und betonen, dass oppida, Handel und politische Verdichtung schon vor Rom zeigen, wie komplex die keltische Welt war. Der Streitpunkt lautet also: Liegt der Hauptakzent auf der Eingliederung in größere Netze oder auf der Eigenständigkeit nichtlinearer vorrömischer Wege?",
+        "Harari würde stärker betonen, dass die Helvetier in grössere imperiale Ordnungen aus Macht, Recht, Verkehr und Handel hineingezogen werden. Graeber und Wengrow setzen früher an und betonen, dass oppida, Handel und politische Verdichtung schon vor Rom zeigen, wie komplex die keltische Welt war. Der Streitpunkt lautet also: Liegt der Hauptakzent auf der Eingliederung in grössere Netze oder auf der Eigenständigkeit nichtlinearer vorrömischer Wege?",
       criteria: [
-        { label: "Harari mit größeren Ordnungen oder Netzen", keywords: ["harari", "reiche", "netze", "imperium", "eingliederung"] },
+        { label: "Harari mit grösseren Ordnungen oder Netzen", keywords: ["harari", "reiche", "netze", "imperium", "eingliederung"] },
         { label: "Graeber/Wengrow mit offener Entwicklung", keywords: ["graeber", "wengrow", "offen", "eigenständig", "nichtlinear", "möglichkeiten"] },
         { label: "Helvetier oder Oppida als Beispiel", keywords: ["helvetier", "oppida", "keltisch", "vorrömisch"] }
       ]
@@ -1724,25 +1724,25 @@ const modules = [
     title: "Antike Reiche und Imperien",
     era: "Antike Mittelmeerwelt",
     phase: "Expansion, Infrastruktur, Kulturkontakt",
-    guidingQuestion: "Wie ordnen Imperien große Räume?",
+    guidingQuestion: "Wie ordnen Imperien grosse Räume?",
     hook:
-      "Imperien verbinden sehr unterschiedliche Menschen durch Straßen, Armeen, Gesetze, Städte und Logistik. Gerade darin liegt ihr historischer Reiz und ihre Ambivalenz.",
+      "Imperien verbinden sehr unterschiedliche Menschen durch Strassen, Armeen, Gesetze, Städte und Logistik. Gerade darin liegt ihr historischer Reiz und ihre Ambivalenz.",
     goals: [
       "attische Demokratie als antike Herrschaftsform erklären",
       "römische Republik als politische Ordnung vor der Kaiserzeit verstehen",
       "Imperium als Ordnungsmodell erklären",
-      "Römische Expansion an konkreten Beispielen der Schweiz erschließen",
+      "Römische Expansion an konkreten Beispielen der Schweiz erschliessen",
       "Alltag und Herrschaft miteinander verknüpfen"
     ],
     input: [
       "Die antike Mittelmeerwelt kennt verschiedene politische Formen. In Athen entsteht im 5. Jahrhundert v. Chr. eine direkte Bürgerdemokratie. Freie männliche Bürger stimmen in der Volksversammlung über Krieg, Gesetze und wichtige Entscheidungen ab. Zugleich ist diese Demokratie eng begrenzt: Frauen, Metöken und Sklaven sind ausgeschlossen. Attische Demokratie bedeutet daher politische Beteiligung, aber nicht Gleichheit aller Menschen.",
       "Rom entwickelt eine andere Ordnung. In der römischen Republik gibt es keinen König, sondern jährlich wechselnde Ämter, Konsuln, Volksversammlungen und vor allem den Senat. Die Republik lebt von Konkurrenz innerhalb der Führungsschicht, von Regelbindung und von der Vorstellung, dass kein Einzelner den Staat allein verkörpern soll. Gleichzeitig ist auch sie sozial ungleich und von Konflikten zwischen Patriziern und Plebejern geprägt.",
       "Gerade diese Konflikte machen die Republik historisch interessant. Plebejer erkämpfen sich mit dem Volkstribunat, mit den Zwölftafeln und später mit dem Zugang zu höheren Ämtern mehr politische Rechte. Dennoch bleibt die res publica keine Gesellschaft gleicher Bürger, sondern eine Mischordnung mit starkem Einfluss der Nobilität. Rom zeigt also früh, dass politische Beteiligung, soziale Ungleichheit und Konkurrenz nebeneinander bestehen können.",
-      "Ein Imperium ist nicht einfach nur ein großes Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Straßen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
-      "Rom ist dafür ein besonders gutes Beispiel, weil sich hier politische Ordnung verändert: aus der Republik wächst ein Reich, das große Räume rund um das Mittelmeer und darüber hinaus verbindet. Seine Macht zeigt sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
-      "Diese Entwicklung verläuft nicht reibungslos. Die Expansion nach Italien, gegen Karthago und in den östlichen Mittelmeerraum bringt Beute, Provinzen und Machtzuwachs, aber auch Landkonzentration, soziale Spannungen und Bürgerkriege. Die Gracchen, Marius, Sulla, Pompeius und Caesar stehen für eine Republik in der Krise. Mit Augustus entsteht schließlich der Prinzipat: Formal bleiben republikanische Ämter bestehen, praktisch bündelt ein Einzelner militärische, politische und symbolische Macht. Die Kaiserzeit ist darum kein völliger Neuanfang, sondern eine Umformung der Republik unter dem Schein alter Begriffe.",
-      "Die römische Schweiz macht diese Großentwicklung an einem konkreten Raum sichtbar. Nach Caesars Sieg über die Helvetier von 58 v. Chr. gerät das Gebiet der heutigen Schweiz schrittweise in römische Provinzordnungen wie Germania superior und Raetia. Städte wie Aventicum und Augusta Raurica, das Legionslager Vindonissa, Gutshöfe, Straßen und Brücken zeigen, wie Rom Räume militärisch, wirtschaftlich und kulturell neu ordnet.",
-      "Gerade hier wird Romanisierung greifbar. Keltische Orte verschwinden nicht einfach, sondern werden überlagert, umgebaut oder in neue Verkehrs- und Verwaltungsräume eingebunden. Latein, Münzen, Importwaren, Wein, Bäder, Stadtrecht und Militärlager verändern den Alltag. Zugleich bleibt die gallo-römische Schweiz eine Mischwelt: Viele lokale Traditionen leben weiter, auch wenn das Imperium neue Maßstäbe von Recht, Verwaltung und Infrastruktur setzt.",
+      "Ein Imperium ist nicht einfach nur ein grosses Land auf einer Karte. Es ist eine politische Ordnung, die sehr viele Menschen, Orte und Regionen zusammenhält. Damit das gelingt, braucht es Strassen, Brücken, Verwaltung, militärische Macht, Recht und Versorgung. Ein Reich muss also organisiert werden, sonst zerfällt es.",
+      "Rom ist dafür ein besonders gutes Beispiel, weil sich hier politische Ordnung verändert: aus der Republik wächst ein Reich, das grosse Räume rund um das Mittelmeer und darüber hinaus verbindet. Seine Macht zeigt sich nicht nur in Legionen, sondern auch in Verkehrswegen, Städten, Steuern, Bauwerken und der Verbreitung bestimmter Lebensformen. Imperium bedeutet deshalb immer sowohl Herrschaft als auch Infrastruktur.",
+      "Diese Entwicklung verläuft nicht reibungslos. Die Expansion nach Italien, gegen Karthago und in den östlichen Mittelmeerraum bringt Beute, Provinzen und Machtzuwachs, aber auch Landkonzentration, soziale Spannungen und Bürgerkriege. Die Gracchen, Marius, Sulla, Pompeius und Caesar stehen für eine Republik in der Krise. Mit Augustus entsteht schliesslich der Prinzipat: Formal bleiben republikanische Ämter bestehen, praktisch bündelt ein Einzelner militärische, politische und symbolische Macht. Die Kaiserzeit ist darum kein völliger Neuanfang, sondern eine Umformung der Republik unter dem Schein alter Begriffe.",
+      "Die römische Schweiz macht diese Grossentwicklung an einem konkreten Raum sichtbar. Nach Caesars Sieg über die Helvetier von 58 v. Chr. gerät das Gebiet der heutigen Schweiz schrittweise in römische Provinzordnungen wie Germania superior und Raetia. Städte wie Aventicum und Augusta Raurica, das Legionslager Vindonissa, Gutshöfe, Strassen und Brücken zeigen, wie Rom Räume militärisch, wirtschaftlich und kulturell neu ordnet.",
+      "Gerade hier wird Romanisierung greifbar. Keltische Orte verschwinden nicht einfach, sondern werden überlagert, umgebaut oder in neue Verkehrs- und Verwaltungsräume eingebunden. Latein, Münzen, Importwaren, Wein, Bäder, Stadtrecht und Militärlager verändern den Alltag. Zugleich bleibt die gallo-römische Schweiz eine Mischwelt: Viele lokale Traditionen leben weiter, auch wenn das Imperium neue Massstäbe von Recht, Verwaltung und Infrastruktur setzt.",
       "Das Römer-Experiment ergänzt diese Raumordnung durch Rekonstruktion. Nachgestellt werden Gegenstände, Werkzeuge, Kochen, Gladiatorenausbildung und andere Alltagssituationen. Damit wird sichtbar, dass römische Herrschaft nicht nur in Heeren und Grenzlinien bestand, sondern in Essen, Arbeit, Gebäuden, Recht und Bewegungswegen. Die römische Welt muss also als politische, soziale und materielle Ordnung zugleich verstanden werden."
     ],
     sources: [
@@ -1750,7 +1750,7 @@ const modules = [
         title: "YouTube: Griechenland, Polis und attische Demokratie",
         meta: "Athen, Bürgerrecht und Volksversammlung",
         extracted:
-          "Der Film erklärt die Polis als politischen Raum und zeigt, wie die attische Demokratie mit Volksversammlung, Rat und Bürgerrecht funktioniert, aber zugleich viele Menschen ausschließt."
+          "Der Film erklärt die Polis als politischen Raum und zeigt, wie die attische Demokratie mit Volksversammlung, Rat und Bürgerrecht funktioniert, aber zugleich viele Menschen ausschliesst."
       },
       {
         title: "YouTube: Rom, Republik und politische Ordnung",
@@ -1807,15 +1807,15 @@ const modules = [
         "Zeige an zwei Beispielen, wie römische Expansion den Alltag in den eroberten Gebieten veränderte.",
       placeholder: "Nutze Beispiele aus Infrastruktur, Kulturkontakt, Ernährung oder Recht.",
       sampleAnswer:
-        "Römische Expansion veränderte den Alltag etwa durch Verkehrswege: Straßen und Brücken erleichterten Warentransport und banden Regionen enger an das Reich. Auch Ernährung und Landwirtschaft änderten sich, etwa durch Weinbau oder neue Formen von Tierhaltung. Hinzu kamen Sprache, Währung und römische Rechtsformen. Imperium zeigt sich also nicht nur im Heer, sondern im Alltag.",
+        "Römische Expansion veränderte den Alltag etwa durch Verkehrswege: Strassen und Brücken erleichterten Warentransport und banden Regionen enger an das Reich. Auch Ernährung und Landwirtschaft änderten sich, etwa durch Weinbau oder neue Formen von Tierhaltung. Hinzu kamen Sprache, Währung und römische Rechtsformen. Imperium zeigt sich also nicht nur im Heer, sondern im Alltag.",
       criteria: [
-        { label: "Infrastruktur genannt", keywords: ["straßen", "brücken", "verkehrswege", "transport"] },
+        { label: "Infrastruktur genannt", keywords: ["strassen", "brücken", "verkehrswege", "transport"] },
         { label: "Alltag/Güter genannt", keywords: ["wein", "walnüsse", "hühner", "essen", "ernährung"] },
         { label: "Ordnungssysteme genannt", keywords: ["recht", "sprache", "währung", "gesetze"] }
       ]
     },
     deepening:
-      "Die politische Geschichte der Antike darf nicht erst mit dem Kaiserreich beginnen. Athen und Rom zeigen zwei verschiedene Antworten auf die Frage, wie Bürger, Ämter, Beratung, Gesetze und Macht geordnet werden. Erst vor diesem Hintergrund wird verständlich, warum das Imperium nicht nur militärische Expansion, sondern ein neuer Maßstab politischer Raumordnung ist.",
+      "Die politische Geschichte der Antike darf nicht erst mit dem Kaiserreich beginnen. Athen und Rom zeigen zwei verschiedene Antworten auf die Frage, wie Bürger, Ämter, Beratung, Gesetze und Macht geordnet werden. Erst vor diesem Hintergrund wird verständlich, warum das Imperium nicht nur militärische Expansion, sondern ein neuer Massstab politischer Raumordnung ist.",
     selftest: {
       id: "m7-selftest",
       question: "Warum errichteten die Römer ihre Städte in der heutigen Schweiz oft an bereits genutzten Orten?",
@@ -1843,19 +1843,19 @@ const modules = [
     takeaway: [
       "Imperien ordnen Räume über Infrastruktur, Militär und Recht.",
       "Römische Herrschaft verändert Alltag, nicht nur Grenzen.",
-      "Kulturkontakt ist in eroberten Räumen oft Mischung statt bloße Ersetzung."
+      "Kulturkontakt ist in eroberten Räumen oft Mischung statt blosse Ersetzung."
     ],
     transfer: {
       id: "m7-transfer",
       question:
         "Vergleiche attische Demokratie, römische Republik und römisches Imperium in einem kurzen Überblick. Worin unterscheiden sich diese drei politischen Formen grundsätzlich?",
-      placeholder: "Verbinde Bürgerbeteiligung, Senat, Ämter und Herrschaft über große Räume.",
+      placeholder: "Verbinde Bürgerbeteiligung, Senat, Ämter und Herrschaft über grosse Räume.",
       sampleAnswer:
-        "Die attische Demokratie organisiert politische Entscheidungen direkt über Bürger in der Volksversammlung, schließt aber viele Menschen aus. Die römische Republik verteilt Macht auf Senat, Magistrate und Volksversammlungen und kennt keinen König. Das römische Imperium geht darüber hinaus: Es ordnet große Räume mit Heer, Verwaltung, Straßen, Recht und Versorgung.",
+        "Die attische Demokratie organisiert politische Entscheidungen direkt über Bürger in der Volksversammlung, schliesst aber viele Menschen aus. Die römische Republik verteilt Macht auf Senat, Magistrate und Volksversammlungen und kennt keinen König. Das römische Imperium geht darüber hinaus: Es ordnet grosse Räume mit Heer, Verwaltung, Strassen, Recht und Versorgung.",
       criteria: [
         { label: "attische Demokratie erklärt", keywords: ["volksversammlung", "bürger", "athen", "direkt"] },
         { label: "römische Republik erklärt", keywords: ["senat", "konsul", "republik", "magistrat"] },
-        { label: "Imperium erklärt", keywords: ["imperium", "große räume", "heer", "verwaltung", "straßen"] }
+        { label: "Imperium erklärt", keywords: ["imperium", "grosse räume", "heer", "verwaltung", "strassen"] }
       ]
     }
   },
@@ -1875,7 +1875,7 @@ const modules = [
     ],
     input: [
       "Geld wirkt auf den ersten Blick einfach: Man gibt Münzen oder Scheine ab und bekommt etwas dafür. Historisch ist Geld aber komplizierter. Es funktioniert nur, wenn Menschen darauf vertrauen, dass andere es ebenfalls annehmen. Sein Wert liegt also nicht nur im Material, sondern in gemeinsamer Akzeptanz. Darum kann Geld Menschen verbinden, die sich gar nicht persönlich kennen.",
-      "Für den Handel ist das entscheidend. Ohne Geld müsste man Ware direkt gegen Ware tauschen und immer jemanden finden, der genau das Gegenstück will. Geld erleichtert diesen Austausch. Es macht Märkte beweglicher und verbindet Orte über größere Entfernungen. So wird Handel planbarer und Räume werden stärker vernetzt.",
+      "Für den Handel ist das entscheidend. Ohne Geld müsste man Ware direkt gegen Ware tauschen und immer jemanden finden, der genau das Gegenstück will. Geld erleichtert diesen Austausch. Es macht Märkte beweglicher und verbindet Orte über grössere Entfernungen. So wird Handel planbarer und Räume werden stärker vernetzt.",
       "Der Münzschatz von Ueken macht diese abstrakte Ordnung greifbar. Im Fricktal wurden über 4000 römische Silbermünzen im Baumgarten eines Bauernhofs gefunden. Für die Menschen der Römerzeit war das ein kleines Vermögen. Im Labor werden die Stücke mit Sandstrahl- und Ultraschallgeräten von Korrosion befreit, teilweise bis zu einer Stunde pro Münze. Erst dann zeigen sich Bilder, Inschriften und Prägungen, aus denen Archäologinnen und Archäologen Informationen über Herrschaft, Umlauf und Verstecken von Vermögen gewinnen.",
       "Die Reihe 'Grosse Völker' erweitert den Blick noch einmal. Dort werden Araber, Germanen und Karthager als Träger von Fernhandel, Schriftsystemen, Medizin und Mathematik sichtbar. Die Karthager wurden durch den Handel mit Purpur reich; die Araber prägten Wissenschaft, Medizin und Mathematik. Handel ist deshalb nie nur Warentransport, sondern immer auch Austausch von Wissen, Techniken und Schrift."
     ],
@@ -1906,7 +1906,7 @@ const modules = [
       }
     ],
     sourcePrompt:
-      "Arbeite heraus, warum Münzen mehr erzählen als bloßen Wert und warum Handel Menschen auch über kulturelle Grenzen hinweg verbindet.",
+      "Arbeite heraus, warum Münzen mehr erzählen als blossen Wert und warum Handel Menschen auch über kulturelle Grenzen hinweg verbindet.",
     task: {
       id: "m8-task",
       question:
@@ -1958,7 +1958,7 @@ const modules = [
         "Was erzählen Münzfunde mehr als nur Preise? Formuliere mindestens drei historische Erkenntnismöglichkeiten.",
       placeholder: "Denk an Herrschaft, Umlauf, Krise, Kontakte und Materialität.",
       sampleAnswer:
-        "Münzfunde erzählen etwas über politische Herrschaft, weil sie Namen, Bilder oder Symbole von Machthabern tragen. Sie zeigen Handelsräume und Verkehrswege, weil Münzen in Umlauf geraten. Außerdem können sie auf Krisen oder Unsicherheit hinweisen, wenn Vermögen vergraben wurde. Material und Menge sagen zudem etwas über Wirtschaft und Reichtum aus.",
+        "Münzfunde erzählen etwas über politische Herrschaft, weil sie Namen, Bilder oder Symbole von Machthabern tragen. Sie zeigen Handelsräume und Verkehrswege, weil Münzen in Umlauf geraten. Ausserdem können sie auf Krisen oder Unsicherheit hinweisen, wenn Vermögen vergraben wurde. Material und Menge sagen zudem etwas über Wirtschaft und Reichtum aus.",
       criteria: [
         { label: "Herrschaft", keywords: ["herrschaft", "kaiser", "bilder", "symbole", "prägung"] },
         { label: "Handelsräume/Umlauf", keywords: ["handel", "verkehr", "umlauf", "kontakte"] },
@@ -1972,7 +1972,7 @@ const modules = [
     title: "Religionen und Weltbilder",
     era: "Antike bis Mittelalter",
     phase: "Sinnordnungen und Legitimation",
-    guidingQuestion: "Wie verbindet Religion Menschen über große Räume hinweg?",
+    guidingQuestion: "Wie verbindet Religion Menschen über grosse Räume hinweg?",
     hook:
       "Hararis Kapitel über Religion beginnt nicht mit Definitionen, sondern mit Samarkand und Mekka: Orte, an denen Handel, Pilgerfahrt und kulturelle Vielfalt konkrete Erfahrung werden.",
     goals: [
@@ -1982,10 +1982,10 @@ const modules = [
     ],
     input: [
       "Religion ist in vormodernen Gesellschaften weit mehr als privater Glaube. Sie erklärt, wie die Welt verstanden werden soll, welche Regeln gelten, was erlaubt oder verboten ist und wie Menschen ihren Platz in der Gemeinschaft sehen. Religion wirkt deshalb auf Denken, Alltag und politische Ordnung zugleich.",
-      "Das zeigt sich an Ritualen, Feiertagen, Pilgerorten, heiligen Texten und religiösen Verboten. Sie ordnen Zeit, Raum und Zugehörigkeit. Wer gemeinsam betet, dieselben Feste feiert oder dieselben heiligen Orte kennt, erlebt sich als Teil einer größeren Gemeinschaft. Religion verbindet also Menschen, auch wenn sie weit voneinander entfernt leben.",
-      "Historisch wichtig ist außerdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. In der Filmreihe 'Grosse Völker' erscheinen die Araber nicht nur als religiöse Gemeinschaft, sondern auch als Förderer von Medizin, Mathematik und Wissenschaft. Damit wird klar: Glaube, Wissen und Fernverbindungen lassen sich in vormodernen Gesellschaften oft nicht sauber voneinander trennen.",
+      "Das zeigt sich an Ritualen, Feiertagen, Pilgerorten, heiligen Texten und religiösen Verboten. Sie ordnen Zeit, Raum und Zugehörigkeit. Wer gemeinsam betet, dieselben Feste feiert oder dieselben heiligen Orte kennt, erlebt sich als Teil einer grösseren Gemeinschaft. Religion verbindet also Menschen, auch wenn sie weit voneinander entfernt leben.",
+      "Historisch wichtig ist ausserdem, dass Religion oft mit Wissen, Handel und Mobilität zusammenhängt. Pilger reisen, Gelehrte übersetzen Texte, Händler bewegen sich zwischen Städten und Regionen. In der Filmreihe 'Grosse Völker' erscheinen die Araber nicht nur als religiöse Gemeinschaft, sondern auch als Förderer von Medizin, Mathematik und Wissenschaft. Damit wird klar: Glaube, Wissen und Fernverbindungen lassen sich in vormodernen Gesellschaften oft nicht sauber voneinander trennen.",
       "Das Material zum frühen Christentum zeigt dieselbe Verflechtung aus einer anderen Richtung. Jesus wirkt zunächst im jüdischen Kontext Palästinas. Erst durch Paulus und die Heidenmission breitet sich die neue Religion weit über Judäa hinaus im römischen Reich aus. Gemeinden, Briefe, Bischöfe und gemeinsame Rituale schaffen nach und nach einen eigenen religiösen Raum.",
-      "Gerade darin liegt die historische Sprengkraft des Christentums. Es wächst in einem Reich, das religiöse Loyalität auch politisch deutet, und gerät deshalb immer wieder in Konflikt mit dem römischen Staat. Die Verfolgungen unter Nero, Decius oder Diokletian zeigen, dass Religion nicht bloß inneres Bekenntnis ist, sondern Fragen von Ordnung, Gehorsam und Zugehörigkeit berührt.",
+      "Gerade darin liegt die historische Sprengkraft des Christentums. Es wächst in einem Reich, das religiöse Loyalität auch politisch deutet, und gerät deshalb immer wieder in Konflikt mit dem römischen Staat. Die Verfolgungen unter Nero, Decius oder Diokletian zeigen, dass Religion nicht bloss inneres Bekenntnis ist, sondern Fragen von Ordnung, Gehorsam und Zugehörigkeit berührt.",
       "Mit Konstantin und der konstantinischen Wende verändert sich die Lage grundlegend. Das Christentum wird geduldet, gefördert und später unter Theodosius zur bevorzugten Religion des Reiches. Konzilien wie Nicäa zeigen, dass religiöse Ordnung, Lehrstreit und politische Einheit eng zusammenhängen. Religion wird dadurch nicht schwächer, sondern institutionell mächtiger.",
       "Für die nächsten Module ist das ein Schlüssel. Kirche, Herrschaft, Pilgerwesen, Kreuzzüge und Alltagsregeln im Mittelalter lassen sich nur verstehen, wenn Religion nicht als Nebenthema erscheint, sondern als tragende Ordnung vieler Gesellschaften."
     ],
@@ -2039,7 +2039,7 @@ const modules = [
         "Erkläre Religion als Ordnungs- und Deutungssystem. Was leistet sie für Gesellschaften?",
       placeholder: "Denke an Sinn, Regeln, Gemeinschaft und Herrschaft.",
       sampleAnswer:
-        "Religion ist ein Ordnungs- und Deutungssystem, weil sie erklärt, wie die Welt verstanden werden soll, und zugleich Regeln für das Zusammenleben bietet. Sie stiftet Gemeinschaft durch Rituale, Feste, heilige Orte und gemeinsame Normen. Außerdem kann sie Herrschaft legitimieren, indem Könige, Priester oder Gesetze religiös begründet werden. Damit wirkt Religion sozial, politisch und kulturell zugleich.",
+        "Religion ist ein Ordnungs- und Deutungssystem, weil sie erklärt, wie die Welt verstanden werden soll, und zugleich Regeln für das Zusammenleben bietet. Sie stiftet Gemeinschaft durch Rituale, Feste, heilige Orte und gemeinsame Normen. Ausserdem kann sie Herrschaft legitimieren, indem Könige, Priester oder Gesetze religiös begründet werden. Damit wirkt Religion sozial, politisch und kulturell zugleich.",
       criteria: [
         { label: "Sinn/Deutung", keywords: ["deutung", "sinn", "welt erklären", "verstehen"] },
         { label: "Normen/Gemeinschaft", keywords: ["regeln", "rituale", "feste", "gemeinschaft", "heilige orte"] },
@@ -2047,7 +2047,7 @@ const modules = [
       ]
     },
     deepening:
-      "Gerade für Schulgeschichte ist wichtig: Religion ist nicht bloß ein eigenes Kapitel neben Politik oder Wirtschaft. Sie durchzieht Kalender, Besitzordnungen, Bildungsformen, Kriegsdeutungen und Moralvorstellungen. Wer das versteht, kann Mittelalter und Kreuzzüge differenzierter analysieren.",
+      "Gerade für Schulgeschichte ist wichtig: Religion ist nicht bloss ein eigenes Kapitel neben Politik oder Wirtschaft. Sie durchzieht Kalender, Besitzordnungen, Bildungsformen, Kriegsdeutungen und Moralvorstellungen. Wer das versteht, kann Mittelalter und Kreuzzüge differenzierter analysieren.",
     selftest: {
       id: "m9-selftest",
       question: "Welche Aussage passt am besten?",
@@ -2059,7 +2059,7 @@ const modules = [
             "Das ist zu modern gedacht. In vormodernen Gesellschaften prägt Religion oft Recht, Zeitordnung, Herrschaft und Gemeinschaft."
         },
         {
-          text: "Religion kann große Gruppen durch gemeinsame Normen, Rituale und Sinnsysteme verbinden.",
+          text: "Religion kann grosse Gruppen durch gemeinsame Normen, Rituale und Sinnsysteme verbinden.",
           correct: true,
           feedback:
             "Richtig. Genau diese verbindende Funktion steht bei Harari im Vordergrund."
@@ -2099,18 +2099,18 @@ const modules = [
     phase: "Lebenswelt und Ordnung",
     guidingQuestion: "War das Mittelalter wirklich 'dunkel'?",
     hook:
-      "Die Frage ist bewusst provokant. Mehrere SRF-Ressourcen zeigen, dass das Mittelalter weder bloß düster noch bloß romantisch war, sondern eine widersprüchliche und hoch produktive Epoche.",
+      "Die Frage ist bewusst provokant. Mehrere SRF-Ressourcen zeigen, dass das Mittelalter weder bloss düster noch bloss romantisch war, sondern eine widersprüchliche und hoch produktive Epoche.",
     goals: [
       "Klischees über das Mittelalter überprüfen",
       "Alltag, Herrschaft, Kirche und soziale Ordnung zusammendenken",
       "archäologische und narrative Zugänge zur Epoche nutzen"
     ],
     input: [
-      "Viele Menschen verbinden das Mittelalter sofort mit Rittern, Burgen, dunklen Straßen oder großen Kathedralen. Solche Bilder sind nicht völlig falsch, aber sie reichen nicht aus. Das Mittelalter war eine lange und sehr unterschiedliche Epoche. Es gab harte Lebensbedingungen, aber auch beeindruckende Bauleistungen, religiöse Kultur, wachsende Städte und komplexe Herrschaftsformen.",
+      "Viele Menschen verbinden das Mittelalter sofort mit Rittern, Burgen, dunklen Strassen oder grossen Kathedralen. Solche Bilder sind nicht völlig falsch, aber sie reichen nicht aus. Das Mittelalter war eine lange und sehr unterschiedliche Epoche. Es gab harte Lebensbedingungen, aber auch beeindruckende Bauleistungen, religiöse Kultur, wachsende Städte und komplexe Herrschaftsformen.",
       "Das Frühmittelalter beginnt nicht in einer leeren Welt. Nach dem Ende des weströmischen Kaisertums entstehen neue Herrschaftsräume, während Byzanz und die islamische Welt weiter stark bleiben. Wer das Mittelalter verstehen will, muss also mit Kontinuitäten und Brüchen zugleich rechnen: römische Traditionen wirken fort, aber politische Ordnungen, Sprachen und religiöse Landschaften verändern sich tiefgreifend.",
       "Das Frankenreich ist dafür ein Schlüsselraum. Mit Chlodwig, Christianisierung und später den Karolingern entstehen neue Formen von Königtum, Reichskirche und Herrschaft. Klöster folgen Regeln wie der Benediktsregel und werden zu Orten von Gebet, Schrift, Arbeit und Bildung. Gerade dadurch wird Kirche zu einer tragenden Kraft mittelalterlicher Ordnung.",
-      "Im Hochmittelalter verfestigen sich Herrschaft und Gesellschaft weiter. Lehensbindungen, Kronvasallen, Ministerialen, Burgen und Rittertum ordnen politische Macht. Zugleich wird die Gesellschaft in Ständen gedacht: Betende, Kämpfende und Arbeitende. Diese Ordnung ist nicht bloß Theorie, sondern prägt Rang, Rechte, Kleidung, Gewalt und Abhängigkeit im Alltag.",
-      "Der Film 'Das verrückte Mittelalter' liefert dafür die bekannten Bilder: Burgen, Minnesänger, Hierarchien, Pest, Handel, Hygiene, Turniere und Kathedralen. Diese Motive sind nicht erfunden, aber sie zeigen nur die Oberfläche. Erst wenn man fragt, wie Menschen tatsächlich wohnten, aßen, sich verteidigten und mit Krankheiten umgingen, wird die Epoche historisch greifbar.",
+      "Im Hochmittelalter verfestigen sich Herrschaft und Gesellschaft weiter. Lehensbindungen, Kronvasallen, Ministerialen, Burgen und Rittertum ordnen politische Macht. Zugleich wird die Gesellschaft in Ständen gedacht: Betende, Kämpfende und Arbeitende. Diese Ordnung ist nicht bloss Theorie, sondern prägt Rang, Rechte, Kleidung, Gewalt und Abhängigkeit im Alltag.",
+      "Der Film 'Das verrückte Mittelalter' liefert dafür die bekannten Bilder: Burgen, Minnesänger, Hierarchien, Pest, Handel, Hygiene, Turniere und Kathedralen. Diese Motive sind nicht erfunden, aber sie zeigen nur die Oberfläche. Erst wenn man fragt, wie Menschen tatsächlich wohnten, assen, sich verteidigten und mit Krankheiten umgingen, wird die Epoche historisch greifbar.",
       "Genau dort setzt 'Mittelalter in der Schweiz' an. In fünf Burgen und Schlössern geht es um Verteidigung, Gesundheit und Hygiene, Speisen aus der Schlossküche, Rollenbilder und Statussymbole sowie archäologische Funde. Der Film erinnert daran, dass Latrinen nicht nur Toiletten, sondern auch Müllplätze waren. Sprichwörter wie 'den Löffel abgeben' oder 'unter die Haube kommen' führen direkt in mittelalterlichen Alltag. Das Mittelalter erscheint dadurch als konkrete Lebenswelt von Nahrung, Abfall, Rang, Kleidung und Schutz.",
       "Die Entstehung der Eidgenossenschaft gehört in diesen Zusammenhang, weil sie ein spätmittelalterliches Beispiel für politische Neuordnung ist. Reichsunmittelbarkeit, Alpenpässe wie der Gotthard, Landfriedensbündnisse, Morgarten und spätere Bündnispolitik zeigen, wie regionale Herrschaft im Reich umgebaut wird. Die Eidgenossenschaft fällt also nicht vom Himmel, sondern wächst aus Konflikten, Verkehrsinteressen und Bündnissen des späten Mittelalters."
     ],
@@ -2133,7 +2133,7 @@ const modules = [
         extracted:
           "Die Serie bündelt Burgen, Ritter, Hierarchien, Pest, Handel, Minnesänger und Mythen in einfach verständlicher Form.",
         didacticUse:
-          "Im Modul dient sie als motivierender Zugang, der anschließend kritisch ausdifferenziert wird."
+          "Im Modul dient sie als motivierender Zugang, der anschliessend kritisch ausdifferenziert wird."
       },
       {
         title: "SRF: Mittelalter in der Schweiz",
@@ -2182,7 +2182,7 @@ const modules = [
         "Warum ist die Vorstellung vom 'dunklen Mittelalter' historisch zu einfach? Begründe mit mindestens drei Argumenten.",
       placeholder: "Arbeite mit Alltagsgeschichte, Religion, Bauleistungen und sozialen Unterschieden.",
       sampleAnswer:
-        "Das Bild vom 'dunklen Mittelalter' ist zu einfach, weil die Epoche sehr vielfältig war. Es gab große Bauleistungen wie Burgen und Kathedralen, komplexe religiöse und politische Ordnungen sowie entwickelte Formen von Schrift- und Bildungskultur. Gleichzeitig waren Alltag, Hygiene oder Hungersnöte oft hart. Die Epoche ist also weder nur glorreich noch nur rückständig, sondern widersprüchlich.",
+        "Das Bild vom 'dunklen Mittelalter' ist zu einfach, weil die Epoche sehr vielfältig war. Es gab grosse Bauleistungen wie Burgen und Kathedralen, komplexe religiöse und politische Ordnungen sowie entwickelte Formen von Schrift- und Bildungskultur. Gleichzeitig waren Alltag, Hygiene oder Hungersnöte oft hart. Die Epoche ist also weder nur glorreich noch nur rückständig, sondern widersprüchlich.",
       criteria: [
         { label: "Vielfalt der Epoche", keywords: ["vielfältig", "nicht nur", "widersprüch", "komplex"] },
         { label: "Leistungen genannt", keywords: ["kathedral", "burgen", "schrift", "bildung", "bau"] },
@@ -2211,13 +2211,13 @@ const modules = [
           text: "Das Mittelalter war für alle Menschen ungefähr gleich.",
           correct: false,
           feedback:
-            "Nein. Stände, Geschlecht, Besitz und Ort schufen große Unterschiede."
+            "Nein. Stände, Geschlecht, Besitz und Ort schufen grosse Unterschiede."
         }
       ]
     },
     takeaway: [
       "Das Mittelalter ist eine vielschichtige Epoche, kein Etikett.",
-      "Alltagsgeschichte ist für Epochenverständnis genauso wichtig wie große Ereignisse.",
+      "Alltagsgeschichte ist für Epochenverständnis genauso wichtig wie grosse Ereignisse.",
       "Herrschaft, Kirche und soziale Ordnung greifen tief ineinander."
     ],
     transfer: {
@@ -2369,7 +2369,7 @@ const modules = [
     phase: "Langzeitlinien und Perspektivwechsel",
     guidingQuestion: "Welche Entwicklungen tragen von der Frühzeit bis an die Schwelle der Neuzeit?",
     hook:
-      "Der Kurs endet nicht mit einer bloßen Wiederholung, sondern mit einer Bilanzfrage: Welche Muster kehren immer wieder, und welche Vorstellungen vom Vergangenen müssen korrigiert werden?",
+      "Der Kurs endet nicht mit einer blossen Wiederholung, sondern mit einer Bilanzfrage: Welche Muster kehren immer wieder, und welche Vorstellungen vom Vergangenen müssen korrigiert werden?",
     goals: [
       "Langzeitlinien von Kooperation, Sesshaftigkeit, Herrschaft und Vernetzung bündeln",
       "1491 als Perspektivkorrektur vor dem Einschnitt 1492 verstehen",
@@ -2378,9 +2378,9 @@ const modules = [
     input: [
       "Das Schlussmodul zieht eine historische Bilanz. Der Film 1491 macht dabei den wichtigsten Perspektivwechsel sichtbar: Lange vor Kolumbus lebten auf dem amerikanischen Doppelkontinent zahlreiche indigene Völker mit vielfältigen Sprachen, Kulturen und angepassten Lebensweisen. Ihre Geschichte beginnt nicht 1492, sondern Jahrtausende früher. Schon die ersten Menschen Amerikas entwickelten Überlebensstrategien, Unterkünfte und Wissensformen für sehr unterschiedliche Landschaften.",
       "1492 ist deshalb für Amerika ein Einschnitt, aber nicht der Beginn von Geschichte. Wer nur Europa, Rom und Mittelalter als Zentrum der Vormoderne betrachtet, übersieht andere historische Entwicklungen. Der Blick auf 1491 korrigiert dieses Problem und öffnet die Einheit für mehrere Weltregionen.",
-      "Danach tritt noch einmal die Langzeitlinie des Anthropozäns hervor. Feuer, Landwirtschaft, Metallbau, Straßen, Städte, Fernhandel und fossile Brennstoffe gehören in eine Geschichte wachsender Eingriffe in Umwelt und Landschaft. Was in den Modulen als Pfahlbau, Straßenbau, Nilverwaltung oder Münzumlauf erscheint, gehört deshalb immer auch in eine Geschichte von Boden, Wasser, Luft und Ressourcen.",
-      "Am Ende verbinden sich die großen Linien: Sprache und Symbole ermöglichen Kooperation, mobile Lebensweisen sichern Anpassung an Räume, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden große Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 wird so als zusammenhängende Entwicklung menschlicher Weltgestaltung sichtbar.",
-      "Genau an dieser Bilanz trennen sich Harari und Graeber/Wengrow am stärksten. Harari ordnet die lange Geschichte über große Revolutionen und immer größere Netze von Kooperation, Herrschaft und Vereinheitlichung. Graeber und Wengrow setzen dagegen stärker auf Verzweigungen, bewusste Entscheidungen, abgebrochene Wege und politische Experimente. Die Vormoderne zeigt aus ihrer Sicht nicht nur, wie größere Ordnungen entstehen, sondern auch, dass Menschen immer wieder andere Ordnungen ausprobiert, verändert oder verworfen haben."
+      "Danach tritt noch einmal die Langzeitlinie des Anthropozäns hervor. Feuer, Landwirtschaft, Metallbau, Strassen, Städte, Fernhandel und fossile Brennstoffe gehören in eine Geschichte wachsender Eingriffe in Umwelt und Landschaft. Was in den Modulen als Pfahlbau, Strassenbau, Nilverwaltung oder Münzumlauf erscheint, gehört deshalb immer auch in eine Geschichte von Boden, Wasser, Luft und Ressourcen.",
+      "Am Ende verbinden sich die grossen Linien: Sprache und Symbole ermöglichen Kooperation, mobile Lebensweisen sichern Anpassung an Räume, Sesshaftigkeit schafft Überschüsse und Ungleichheiten, Schrift und Verwaltung stabilisieren Staaten, Geld und Religion verbinden grosse Räume, und verschiedene Weltregionen entwickeln eigene historische Ordnungen. Geschichte bis 1500 wird so als zusammenhängende Entwicklung menschlicher Weltgestaltung sichtbar.",
+      "Genau an dieser Bilanz trennen sich Harari und Graeber/Wengrow am stärksten. Harari ordnet die lange Geschichte über grosse Revolutionen und immer grössere Netze von Kooperation, Herrschaft und Vereinheitlichung. Graeber und Wengrow setzen dagegen stärker auf Verzweigungen, bewusste Entscheidungen, abgebrochene Wege und politische Experimente. Die Vormoderne zeigt aus ihrer Sicht nicht nur, wie grössere Ordnungen entstehen, sondern auch, dass Menschen immer wieder andere Ordnungen ausprobiert, verändert oder verworfen haben."
     ],
     sources: [
       {
@@ -2401,29 +2401,29 @@ const modules = [
       },
       {
         title: "Harari-PDF",
-        meta: "Großstruktur",
+        meta: "Grossstruktur",
         extracted:
           "Hararis Modell verbindet kognitive Revolution, Landwirtschaft und Vereinigungsprozesse zu einer Langzeitgeschichte menschlicher Weltgestaltung.",
         didacticUse:
           "Es liefert den begrifflichen Rahmen für die Bilanz aller Module."
       },
       {
-        title: "Offene Wege statt Einbahnstraße",
+        title: "Offene Wege statt Einbahnstrasse",
         extracted:
           "Graeber und Wengrow lesen die Tiefengeschichte nicht als feste Abfolge von Stufen, sondern als Geschichte sozialer Wahlmöglichkeiten. Menschen wechseln Ordnungen, verwerfen Modelle und probieren neue Formen aus.",
         didacticUse:
-          "Die Gegenposition zwingt dazu, die großen Entwicklungslinien nicht als Naturgesetz zu lesen, sondern als umkämpfte und veränderbare Geschichte."
+          "Die Gegenposition zwingt dazu, die grossen Entwicklungslinien nicht als Naturgesetz zu lesen, sondern als umkämpfte und veränderbare Geschichte."
       }
     ],
     sourcePrompt:
-      "Formuliere aus den Beispielen des Kurses eine eigene Langzeitthese: Was verbinden Pfahlbauten, Münzfunde, Römerstraßen, Pilgerwege und 1491, und wo verlaufen die stärksten Deutungsunterschiede zwischen einer linearen und einer offenen Geschichte?",
+      "Formuliere aus den Beispielen des Kurses eine eigene Langzeitthese: Was verbinden Pfahlbauten, Münzfunde, Römerstrassen, Pilgerwege und 1491, und wo verlaufen die stärksten Deutungsunterschiede zwischen einer linearen und einer offenen Geschichte?",
     task: {
       id: "m12-task",
       question:
         "Formuliere drei Langzeitlinien von der Frühgeschichte bis um 1500 und nenne einen Punkt, an dem Harari und Graeber/Wengrow diese Entwicklung unterschiedlich deuten würden.",
       placeholder: "Zum Beispiel Kooperation, Sesshaftigkeit, Schrift, Geld, Religion oder Globalperspektive.",
       sampleAnswer:
-        "Eine erste Langzeitlinie ist die wachsende Fähigkeit zur Kooperation durch Sprache, Symbole und gemeinsame Ordnungen. Eine zweite Linie ist der Übergang von mobilen Lebensweisen zu Sesshaftigkeit, Überschuss, Verwaltung und Staatlichkeit. Eine dritte Linie ist die Vernetzung großer Räume durch Handel, Geld, Religion und Imperien. Ein deutlicher Deutungsunterschied liegt bei Landwirtschaft und frühen Städten: Harari beschreibt hier einen starken Übergang zu größeren Ordnungen, während Graeber und Wengrow stärker betonen, dass Menschen verschiedene Wege offenhielten und nicht automatisch in Hierarchie endeten.",
+        "Eine erste Langzeitlinie ist die wachsende Fähigkeit zur Kooperation durch Sprache, Symbole und gemeinsame Ordnungen. Eine zweite Linie ist der Übergang von mobilen Lebensweisen zu Sesshaftigkeit, Überschuss, Verwaltung und Staatlichkeit. Eine dritte Linie ist die Vernetzung grosser Räume durch Handel, Geld, Religion und Imperien. Ein deutlicher Deutungsunterschied liegt bei Landwirtschaft und frühen Städten: Harari beschreibt hier einen starken Übergang zu grösseren Ordnungen, während Graeber und Wengrow stärker betonen, dass Menschen verschiedene Wege offenhielten und nicht automatisch in Hierarchie endeten.",
       criteria: [
         { label: "Kooperation/Sprache", keywords: ["kooperation", "sprache", "symbole", "ordnung"] },
         { label: "Sesshaftigkeit/Staat", keywords: ["sesshaft", "überschuss", "verwaltung", "staat"] },
@@ -2432,7 +2432,7 @@ const modules = [
       ]
     },
     deepening:
-      "Das Abschlussmodul sollte ausdrücklich zwischen Chronologie und Deutung unterscheiden. Chronologisch endet die Einheit um 1500. Historisches Denken endet dort aber nicht, weil wir aus der Vormoderne heraus Fragen an Gegenwart und Zukunft stellen. Genau diese reflektierte Offenheit ist fachlich wertvoller als ein bloßer Stoffabschluss.",
+      "Das Abschlussmodul sollte ausdrücklich zwischen Chronologie und Deutung unterscheiden. Chronologisch endet die Einheit um 1500. Historisches Denken endet dort aber nicht, weil wir aus der Vormoderne heraus Fragen an Gegenwart und Zukunft stellen. Genau diese reflektierte Offenheit ist fachlich wertvoller als ein blosser Stoffabschluss.",
     selftest: {
       id: "m12-selftest",
       question: "Welche Aussage ist für das Abschlussmodul besonders wichtig?",
@@ -2485,17 +2485,17 @@ const moduleSupports = {
     entryNote:
       "Du brauchst für dieses Modul kein Vorwissen. Ein Name wie Harari ist hier nur der Name eines Historikers, dessen Buch uns beim Ordnen des Stoffs hilft.",
     authorIntro:
-      "Yuval Noah Harari ist ein Historiker und Autor eines bekannten Überblicksbuchs zur Menschheitsgeschichte. Du musst ihn nicht kennen. Für diesen Kurs ist nur wichtig: Er hilft dabei, sehr lange Entwicklungen in wenige große Veränderungen zu gliedern, damit der Stoff verständlicher wird.",
+      "Yuval Noah Harari ist ein Historiker und Autor eines bekannten Überblicksbuchs zur Menschheitsgeschichte. Du musst ihn nicht kennen. Für diesen Kurs ist nur wichtig: Er hilft dabei, sehr lange Entwicklungen in wenige grosse Veränderungen zu gliedern, damit der Stoff verständlicher wird.",
     terms: [
       { term: "Naturgeschichte", description: "Entwicklung von Erde, Klima, Gesteinen und Lebewesen ohne Blick auf menschliche Kultur." },
       { term: "Evolution", description: "Langsame biologische Veränderung von Lebewesen, also auch der verschiedenen Menschenarten." },
       { term: "Kultur", description: "Alles, was Menschen gemeinsam hervorbringen: Sprache, Regeln, Rituale, Erzählungen und Werkzeuge." },
-      { term: "große Veränderung", description: "Ein Einschnitt, der vieles andere nach sich zieht, zum Beispiel neue Lebensweisen, neue Ordnungen oder neue Machtformen." }
+      { term: "grosse Veränderung", description: "Ein Einschnitt, der vieles andere nach sich zieht, zum Beispiel neue Lebensweisen, neue Ordnungen oder neue Machtformen." }
     ],
     storyline: [
       "Zuerst trennst du Natur, Entwicklung des Menschen und menschliche Geschichte.",
       "Dann lernst du, warum Sprache, Regeln und Symbole für Geschichte wichtig sind.",
-      "Am Ende verstehst du, warum der Kurs nach großen Veränderungen statt nur nach Jahreszahlen aufgebaut ist."
+      "Am Ende verstehst du, warum der Kurs nach grossen Veränderungen statt nur nach Jahreszahlen aufgebaut ist."
     ],
     connection:
       "Diese Unterscheidung trägt die ganze Einheit. Erst dadurch wird verständlich, warum in den nächsten Modulen Sprache, Sesshaftigkeit, Schrift, Geld und Religion zu Schlüsselthemen werden."
@@ -2512,7 +2512,7 @@ const moduleSupports = {
     ],
     storyline: [
       "Du lernst verschiedene Menschenarten kennen.",
-      "Du verstehst, warum große Gehirne und lange Kindheit Chancen und Belastungen zugleich waren.",
+      "Du verstehst, warum grosse Gehirne und lange Kindheit Chancen und Belastungen zugleich waren.",
       "Du siehst, dass die Ausbreitung des Menschen eine globale Migrationsgeschichte ist."
     ],
     connection:
@@ -2520,9 +2520,9 @@ const moduleSupports = {
   },
   "modul-3": {
     overview:
-      "Menschliche Sprache kann mehr als warnen oder rufen. Sie ermöglicht Aussagen über Abwesendes, Zukünftiges und Vorgestelltes und schafft dadurch Regeln, Zugehörigkeit, Mythen und größere Zusammenarbeit.",
+      "Menschliche Sprache kann mehr als warnen oder rufen. Sie ermöglicht Aussagen über Abwesendes, Zukünftiges und Vorgestelltes und schafft dadurch Regeln, Zugehörigkeit, Mythen und grössere Zusammenarbeit.",
     entryNote:
-      "Der Ausdruck kognitive Revolution klingt schwierig. Gemeint ist hier eine große Veränderung im Denken, Sprechen und Vorstellen der Menschen.",
+      "Der Ausdruck kognitive Revolution klingt schwierig. Gemeint ist hier eine grosse Veränderung im Denken, Sprechen und Vorstellen der Menschen.",
     terms: [
       { term: "Symbol", description: "Ein Zeichen, das für etwas steht, etwa ein Bild, ein Wort oder ein Ritual." },
       { term: "Mythos", description: "Eine erzählte Vorstellung, die einer Gruppe Sinn, Regeln oder Zugehörigkeit gibt." },
@@ -2531,16 +2531,16 @@ const moduleSupports = {
     storyline: [
       "Zuerst unterscheidest du Tierkommunikation und menschliche Sprache.",
       "Dann erkennst du, dass gemeinsame Vorstellungen Regeln und Zugehörigkeit schaffen.",
-      "Schließlich verstehst du, warum spätere Staaten, Religionen und Geldsysteme darauf aufbauen."
+      "Schliesslich verstehst du, warum spätere Staaten, Religionen und Geldsysteme darauf aufbauen."
     ],
     connection:
-      "Dieses Modul ist der Schlüssel für fast alles Spätere: Große Gruppen funktionieren nur, weil Menschen an gemeinsame Ordnungen glauben und darüber sprechen können."
+      "Dieses Modul ist der Schlüssel für fast alles Spätere: Grosse Gruppen funktionieren nur, weil Menschen an gemeinsame Ordnungen glauben und darüber sprechen können."
   },
   "modul-4": {
     overview:
       "Vor der Sesshaftigkeit lebten Menschen über sehr lange Zeit in mobilen Gruppen. Diese Lebensweise beruhte auf präzisem Wissen über Wege, Tiere, Pflanzen, Jahreszeiten, Unterkünfte und Gefahren.",
     entryNote:
-      "Jäger und Sammler sind Gruppen, die ohne feste Felder und große Vorratsspeicher leben. Das ist keine Vorstufe minderer Art, sondern eine eigene Lebensform.",
+      "Jäger und Sammler sind Gruppen, die ohne feste Felder und grosse Vorratsspeicher leben. Das ist keine Vorstufe minderer Art, sondern eine eigene Lebensform.",
     terms: [
       { term: "mobil", description: "Nicht dauerhaft an einem Ort lebend, sondern wandernd oder saisonal unterwegs." },
       { term: "mündliche Überlieferung", description: "Weitergabe von Wissen durch Erzählen, Vorzeigen und gemeinsames Erinnern." },
@@ -2570,7 +2570,7 @@ const moduleSupports = {
       "Du erkennst die neuen Risiken: mehr Arbeit, Abhängigkeit und Ungleichheit."
     ],
     connection:
-      "Aus Dörfern mit Vorräten entstehen später Verwaltung, Abgaben, soziale Unterschiede und schließlich Staaten."
+      "Aus Dörfern mit Vorräten entstehen später Verwaltung, Abgaben, soziale Unterschiede und schliesslich Staaten."
   },
   "modul-6": {
     overview:
@@ -2600,33 +2600,33 @@ const moduleSupports = {
     terms: [
       { term: "Hallstatt", description: "Frühe Phase der keltischen Eisenzeit ab etwa 800 v. Chr." },
       { term: "La Tène", description: "Spätere Phase keltischer Kultur, benannt nach dem Fundort am Neuenburgersee." },
-      { term: "Oppidum", description: "Größeres befestigtes Zentrum der späten keltischen Eisenzeit." },
+      { term: "Oppidum", description: "Grösseres befestigtes Zentrum der späten keltischen Eisenzeit." },
       { term: "Helvetier", description: "Keltische Bevölkerungsgruppe des schweizerischen Mittellands." },
       { term: "Bibracte", description: "Ort der Niederlage der Helvetier gegen Caesar im Jahr 58 v. Chr." }
     ],
     storyline: [
-      "Du klärst zuerst, warum Kelten keine einzelne Nation, sondern ein größerer Kulturraum sind.",
+      "Du klärst zuerst, warum Kelten keine einzelne Nation, sondern ein grösserer Kulturraum sind.",
       "Dann ordnest du die Helvetier mit oppida, Münzen, Handwerk und Religion in die keltische Schweiz ein.",
-      "Schließlich prüfst du Caesars Bericht, die Wanderung von 58 v. Chr. und den Bruch durch römische Eingriffe."
+      "Schliesslich prüfst du Caesars Bericht, die Wanderung von 58 v. Chr. und den Bruch durch römische Eingriffe."
     ],
     connection:
       "Dieses Modul schlägt die Brücke zwischen frühen Hochkulturen und der römischen Welt: Erst an den Helvetiern wird sichtbar, was Rom in bereits bestehende komplexe Gesellschaften hinein verändert."
   },
   "modul-7": {
     overview:
-      "Die antike Politik entwickelt unterschiedliche Ordnungsformen: In Athen entsteht eine direkte Bürgerdemokratie, in Rom eine Republik mit Senat, Magistraten und Volksversammlungen, und aus republikanischer Expansion wächst später ein Imperium aus Straßen, Städten, Recht und Heer.",
+      "Die antike Politik entwickelt unterschiedliche Ordnungsformen: In Athen entsteht eine direkte Bürgerdemokratie, in Rom eine Republik mit Senat, Magistraten und Volksversammlungen, und aus republikanischer Expansion wächst später ein Imperium aus Strassen, Städten, Recht und Heer.",
     entryNote:
       "In diesem Modul geht es nicht nur um das römische Reich, sondern um den politischen Wandel der Antike: Polis, Demokratie, Republik und Imperium.",
     terms: [
       { term: "Polis", description: "Griechischer Stadtstaat mit eigener Bürgerschaft, Versammlung und politischer Ordnung." },
       { term: "Attische Demokratie", description: "Direkte Demokratie in Athen mit Volksversammlung, Rat und Losverfahren für Bürger." },
       { term: "Republik", description: "Staatsform ohne König, in der Ämter, Senat und Volksversammlungen die Ordnung tragen." },
-      { term: "Imperium", description: "Großreich, das viele Regionen und Bevölkerungsgruppen politisch zusammenfasst." },
-      { term: "Infrastruktur", description: "Straßen, Brücken, Häfen, Bauten und andere Grundlagen für Verkehr und Versorgung." },
+      { term: "Imperium", description: "Grossreich, das viele Regionen und Bevölkerungsgruppen politisch zusammenfasst." },
+      { term: "Infrastruktur", description: "Strassen, Brücken, Häfen, Bauten und andere Grundlagen für Verkehr und Versorgung." },
       { term: "Kulturkontakt", description: "Begegnung verschiedener Gruppen mit Austausch, Anpassung und Konflikt." }
     ],
     storyline: [
-      "Du klärst zunächst, wie die attische Demokratie Bürgerbeteiligung organisiert und zugleich viele Menschen ausschließt.",
+      "Du klärst zunächst, wie die attische Demokratie Bürgerbeteiligung organisiert und zugleich viele Menschen ausschliesst.",
       "Dann untersuchst du die römische Republik mit Senat, Magistraten und Volksversammlungen als eigenständige politische Ordnung.",
       "Erst danach verfolgst du, wie aus republikanischer Expansion das römische Imperium entsteht und ganze Räume ordnet."
     ],
@@ -2676,7 +2676,7 @@ const moduleSupports = {
       "Auch wenn du schon Bilder aus Filmen, Spielen oder Kinderbüchern kennst, startet dieses Modul noch einmal bei den Grundfragen: Wer lebte wie, und wie sah der Alltag wirklich aus?",
     terms: [
       { term: "Stände", description: "Vorstellung einer gesellschaftlichen Ordnung aus klar abgegrenzten Gruppen." },
-      { term: "Kirche", description: "Religiöse Institution mit großem Einfluss auf Alltag, Bildung und Herrschaft." },
+      { term: "Kirche", description: "Religiöse Institution mit grossem Einfluss auf Alltag, Bildung und Herrschaft." },
       { term: "Alltagsgeschichte", description: "Geschichte des gewöhnlichen Lebens, also Wohnen, Essen, Arbeiten und Zusammenleben." }
     ],
     storyline: [
@@ -2703,13 +2703,13 @@ const moduleSupports = {
       "Du verbindest das mit Städten, Märkten und einer mobilen mittelalterlichen Welt."
     ],
     connection:
-      "Damit erreichst du eine zentrale historische Kompetenz: Nicht bloß nacherzählen, sondern prüfen, was wir überhaupt wissen können."
+      "Damit erreichst du eine zentrale historische Kompetenz: Nicht bloss nacherzählen, sondern prüfen, was wir überhaupt wissen können."
   },
   "modul-12": {
     overview:
       "Geschichte bis 1500 ist weder nur Europa noch eine einfache Fortschrittslinie. Sprachfähigkeit, Sesshaftigkeit, Staatlichkeit, Handel, Religion und unterschiedliche Weltregionen bilden lange Entwicklungslinien mit Folgen weit über 1500 hinaus.",
     entryNote:
-      "Ein Perspektivwechsel heißt, dass wir denselben Zeitraum aus einem anderen Blickwinkel betrachten. Genau das tust du hier am Ende noch einmal bewusst.",
+      "Ein Perspektivwechsel heisst, dass wir denselben Zeitraum aus einem anderen Blickwinkel betrachten. Genau das tust du hier am Ende noch einmal bewusst.",
     terms: [
       { term: "Perspektivwechsel", description: "Bewusstes Wechseln des Blickwinkels, um ein Thema anders und oft genauer zu verstehen." },
       { term: "Eurozentrismus", description: "Sichtweise, die Europa zum natürlichen Mittelpunkt der Geschichte macht." },
@@ -2734,7 +2734,7 @@ const quickChecks = {
       "Der Kurs beginnt nicht einfach beim Urknall, weil der Urknall Naturgeschichte ist. Er beginnt auch nicht automatisch beim ersten Werkzeug, weil biologische Entwicklung noch nicht dasselbe ist wie Geschichte im engeren Sinn. Entscheidend ist die Schwelle, an der Menschen ihre Welt kulturell ordnen, also mit Sprache, Regeln und gemeinsamen Vorstellungen.",
     criteria: [
       { label: "Naturgeschichte abgegrenzt", keywords: ["urknall", "naturgeschichte", "natur"] },
-      { label: "bloße Biologie reicht nicht", keywords: ["biologie", "evolution", "werkzeug", "nicht genug"] },
+      { label: "blosse Biologie reicht nicht", keywords: ["biologie", "evolution", "werkzeug", "nicht genug"] },
       { label: "Kultur als Schwelle genannt", keywords: ["kultur", "sprache", "regeln", "vorstellungen"] }
     ]
   },
@@ -2779,7 +2779,7 @@ const quickChecks = {
     question: "Nenne einen Gewinn und einen Preis der Sesshaftigkeit. Denke an Dinge, die man bei den Pfahlbauern konkret sehen kann.",
     placeholder: "Schreibe knapp über Häuser, Vorräte, Arbeit oder Abhängigkeit.",
     sampleAnswer:
-      "Ein Gewinn der Sesshaftigkeit ist, dass Menschen Vorräte anlegen und feste Häuser bauen konnten. Ein Preis war die stärkere Abhängigkeit von Ernten und die größere Arbeitsbelastung.",
+      "Ein Gewinn der Sesshaftigkeit ist, dass Menschen Vorräte anlegen und feste Häuser bauen konnten. Ein Preis war die stärkere Abhängigkeit von Ernten und die grössere Arbeitsbelastung.",
     criteria: [
       { label: "ein Gewinn", keywords: ["vorrat", "hauser", "sicherheit", "dorf"] },
       { label: "ein Preis", keywords: ["arbeit", "abhangig", "ernte", "risiko", "ungleich"] }
@@ -2812,13 +2812,13 @@ const quickChecks = {
   "modul-7": {
     id: "m7-quick",
     question: "Worin unterscheiden sich attische Demokratie, römische Republik und römisches Imperium in einem ersten Überblick?",
-    placeholder: "Schreibe knapp zu Bürgerbeteiligung, Senat und Herrschaft über große Räume.",
+    placeholder: "Schreibe knapp zu Bürgerbeteiligung, Senat und Herrschaft über grosse Räume.",
     sampleAnswer:
-      "Die attische Demokratie organisiert Entscheidungen direkt über Bürger in der Volksversammlung. Die römische Republik verteilt Macht auf Senat, Konsuln und Volksversammlungen. Das römische Imperium ordnet dagegen große Räume mit Heer, Verwaltung, Recht und Infrastruktur.",
+      "Die attische Demokratie organisiert Entscheidungen direkt über Bürger in der Volksversammlung. Die römische Republik verteilt Macht auf Senat, Konsuln und Volksversammlungen. Das römische Imperium ordnet dagegen grosse Räume mit Heer, Verwaltung, Recht und Infrastruktur.",
     criteria: [
       { label: "attische Demokratie", keywords: ["athen", "volksversammlung", "bürger", "demokratie"] },
       { label: "römische Republik", keywords: ["rom", "republik", "senat", "konsul"] },
-      { label: "Imperium", keywords: ["imperium", "große räume", "heer", "verwaltung"] }
+      { label: "Imperium", keywords: ["imperium", "grosse räume", "heer", "verwaltung"] }
     ]
   },
   "modul-8": {
@@ -2850,7 +2850,7 @@ const quickChecks = {
     question: "Warum hilft Alltagsgeschichte dabei, das Mittelalter besser zu verstehen? Nenne Beispiele wie Küche, Hygiene, Kleidung oder Verteidigung.",
     placeholder: "Nenne konkrete Bereiche des täglichen Lebens.",
     sampleAnswer:
-      "Alltagsgeschichte hilft, weil sie zeigt, wie Menschen im Mittelalter wirklich wohnten, aßen, arbeiteten und sich schützten. So verschwindet das bloße Klischee vom romantischen oder dunklen Mittelalter.",
+      "Alltagsgeschichte hilft, weil sie zeigt, wie Menschen im Mittelalter wirklich wohnten, assen, arbeiteten und sich schützten. So verschwindet das blosse Klischee vom romantischen oder dunklen Mittelalter.",
     criteria: [
       { label: "Alltag benannt", keywords: ["wohnen", "essen", "arbeiten", "schutz", "hygiene"] },
       { label: "Mittelalterbild korrigiert", keywords: ["klischee", "nicht nur", "dunkel", "romantisch"] }
@@ -2901,10 +2901,10 @@ const contentChecks = {
         prompt: "Warum beginnt Geschichte nicht schon mit Urknall, Eiszeiten oder Dinosauriern, sondern erst dort, wo Menschen mit Sprache, Regeln und gemeinsamen Vorstellungen ihre Welt ordnen?",
         placeholder: "Erkläre, was Kultur und bewusste Weltgestaltung daran verändern.",
         sampleAnswer:
-          "Die Unterscheidung verändert den Kurs, weil dann nicht bloß Daten oder Ereignisse im Mittelpunkt stehen. Wichtiger werden Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion als große Entwicklungslinien menschlicher Geschichte.",
+          "Die Unterscheidung verändert den Kurs, weil dann nicht bloss Daten oder Ereignisse im Mittelpunkt stehen. Wichtiger werden Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion als grosse Entwicklungslinien menschlicher Geschichte.",
         criteria: [
           { label: "Schwelle zur Geschichte erklärt", keywords: ["sprache", "regeln", "vorstellungen", "kultur", "bewusst"] },
-          { label: "große Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
+          { label: "grosse Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
         ]
       },
       {
@@ -2927,7 +2927,7 @@ const contentChecks = {
         prompt: "Warum war Homo sapiens lange kein automatisch überlegenes Wesen?",
         placeholder: "Nenne biologische und historische Gründe.",
         sampleAnswer:
-          "Homo sapiens war lange nicht automatisch überlegen, weil mehrere Menschenarten gleichzeitig lebten und frühe Menschen insgesamt nur begrenzten Einfluss auf ihre Umwelt hatten. Große Gehirne kosteten viel Energie und Menschenkinder waren lange hilfsbedürftig.",
+          "Homo sapiens war lange nicht automatisch überlegen, weil mehrere Menschenarten gleichzeitig lebten und frühe Menschen insgesamt nur begrenzten Einfluss auf ihre Umwelt hatten. Grosse Gehirne kosteten viel Energie und Menschenkinder waren lange hilfsbedürftig.",
         criteria: [
           { label: "mehrere Menschenarten", keywords: ["mehrere", "menschenarten", "gleichzeitig", "neandertaler"] },
           { label: "keine automatische Dominanz", keywords: ["nicht uberlegen", "unauffallig", "begrenzt"] },
@@ -3005,7 +3005,7 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Wie helfen gemeinsame Vorstellungen dabei, große Gruppen zu organisieren? Beziehe auch symbolische Zeichen wie Bilder, Pfähle oder Schriftzeichen mit ein.",
+        prompt: "Wie helfen gemeinsame Vorstellungen dabei, grosse Gruppen zu organisieren? Beziehe auch symbolische Zeichen wie Bilder, Pfähle oder Schriftzeichen mit ein.",
         placeholder: "Denke an Regeln, Zugehörigkeit, Vertrauen und Zeichen.",
         sampleAnswer:
           "Gemeinsame Vorstellungen helfen, weil Menschen dadurch an dieselben Regeln, Götter, Gesetze oder Zugehörigkeiten glauben. Zeichen wie Bilder oder Schrift machen solche Vorstellungen sichtbar und erinnerbar. So können auch viele Fremde zusammenarbeiten, ohne sich alle persönlich zu kennen.",
@@ -3013,7 +3013,7 @@ const contentChecks = {
           { label: "gemeinsame Vorstellung", keywords: ["gemeinsame", "vorstellungen", "glauben"] },
           { label: "Regeln oder Zugehörigkeit", keywords: ["regeln", "gesetze", "zugehorigkeit", "gotter"] },
           { label: "symbolische Zeichen", keywords: ["bilder", "zeichen", "schrift", "pfahl", "totem"] },
-          { label: "Großgruppen", keywords: ["fremde", "große gruppen", "zusammenarbeiten"] }
+          { label: "Grossgruppen", keywords: ["fremde", "grosse gruppen", "zusammenarbeiten"] }
         ]
       },
       {
@@ -3174,7 +3174,7 @@ const contentChecks = {
         prompt: "Warum ist Göbekli Tepe für die Deutung der Neolithisierung so wichtig?",
         placeholder: "Erkläre, was monumentale Kultbauten vor ausgebauter Staatlichkeit historisch verändern.",
         sampleAnswer:
-          "Göbekli Tepe ist wichtig, weil dort monumentale Kultbauten sichtbar werden, bevor der klassische Bauernstaat mit Palast, Beamten und Steuern greifbar ist. Das zeigt, dass gemeinsame religiöse Zentren und große Bauarbeit nicht erst nach fertiger Staatlichkeit entstehen.",
+          "Göbekli Tepe ist wichtig, weil dort monumentale Kultbauten sichtbar werden, bevor der klassische Bauernstaat mit Palast, Beamten und Steuern greifbar ist. Das zeigt, dass gemeinsame religiöse Zentren und grosse Bauarbeit nicht erst nach fertiger Staatlichkeit entstehen.",
         criteria: [
           { label: "monumentale Kultbauten", keywords: ["monumental", "kult", "steinkreise", "tempel"] },
           { label: "vor klassischer Staatlichkeit", keywords: ["vor staat", "bevor", "ohne palast", "ohne beamte"] },
@@ -3209,10 +3209,10 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum erklären Nil, Beamtentum und Hieroglyphenschrift das Alte Ägypten besser als bloße Pyramidenbilder?",
+        prompt: "Warum erklären Nil, Beamtentum und Hieroglyphenschrift das Alte Ägypten besser als blosse Pyramidenbilder?",
         placeholder: "Zeige, wie Umwelt, Verwaltung und Schrift zusammen Staatlichkeit tragen.",
         sampleAnswer:
-          "Die Folge ist wichtiger als bloße Pyramidenbilder, weil sie Staatlichkeit erklärt. Der Nil macht Landwirtschaft planbar, das Beamtentum organisiert Abgaben und Arbeiten, und Hieroglyphenschrift stabilisiert Verwaltung. So wird Ägypten als funktionierende Ordnung sichtbar, nicht nur als Monumentenwelt.",
+          "Die Folge ist wichtiger als blosse Pyramidenbilder, weil sie Staatlichkeit erklärt. Der Nil macht Landwirtschaft planbar, das Beamtentum organisiert Abgaben und Arbeiten, und Hieroglyphenschrift stabilisiert Verwaltung. So wird Ägypten als funktionierende Ordnung sichtbar, nicht nur als Monumentenwelt.",
         criteria: [
           { label: "Nil", keywords: ["nil", "landwirtschaft", "planbar"] },
           { label: "Beamtentum", keywords: ["beamtentum", "abgaben", "organisiert"] },
@@ -3243,7 +3243,7 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Warum ist Çatalhöyük ein Gegenbeispiel gegen die einfache Formel 'große Siedlung = fertiger Staat'?",
+        prompt: "Warum ist Çatalhöyük ein Gegenbeispiel gegen die einfache Formel 'grosse Siedlung = fertiger Staat'?",
         placeholder: "Arbeite mit Hausdichte, Dachzugängen, Kult und fehlendem Palast.",
         sampleAnswer:
           "Çatalhöyük zeigt dichte Hausverbände, Dachzugänge, Wandmalereien und Bestattungen im Haus. Gleichzeitig fehlt das klare Bild eines Palastes oder eines Königsstaats. Dadurch wird sichtbar, dass Verdichtung und komplexes Zusammenleben nicht automatisch schon dieselbe Herrschaftsform wie im Alten Ägypten bedeuten.",
@@ -3257,7 +3257,7 @@ const contentChecks = {
         prompt: "Was muss zu einer Hochkultur gehören, damit der Begriff mehr bedeutet als nur Pracht und Monumente?",
         placeholder: "Nenne mehrere Strukturmerkmale wie Schrift, Verwaltung, Spezialisierung und Herrschaft.",
         sampleAnswer:
-          "Zu einer Hochkultur gehören nicht nur große Bauwerke, sondern dauerhafte Ordnungen: Schrift oder andere feste Zeichensysteme, Verwaltung, Arbeitsteilung, religiöse Ordnung und politische Herrschaft. Erst das Zusammenspiel dieser Elemente macht aus monumentalen Bauten eine historisch stabile Hochkultur.",
+          "Zu einer Hochkultur gehören nicht nur grosse Bauwerke, sondern dauerhafte Ordnungen: Schrift oder andere feste Zeichensysteme, Verwaltung, Arbeitsteilung, religiöse Ordnung und politische Herrschaft. Erst das Zusammenspiel dieser Elemente macht aus monumentalen Bauten eine historisch stabile Hochkultur.",
         criteria: [
           { label: "Schrift oder Zeichensysteme", keywords: ["schrift", "zeichensystem", "hieroglyph"] },
           { label: "Verwaltung oder Spezialisierung", keywords: ["verwaltung", "spezialisierung", "arbeitsteilung"] },
@@ -3270,7 +3270,7 @@ const contentChecks = {
     title: "Inhaltssicherung Modul 7",
     questions: [
       {
-        prompt: "Warum bezeichnet der Name Kelten keinen einzelnen Staat, sondern einen größeren Kulturraum?",
+        prompt: "Warum bezeichnet der Name Kelten keinen einzelnen Staat, sondern einen grösseren Kulturraum?",
         placeholder: "Arbeite mit vielen Gruppen, Hallstatt, La Tène oder gemeinsamer materieller Kultur.",
         sampleAnswer:
           "Der Name Kelten bezeichnet keinen einzelnen Staat, weil damit viele Gruppen in verschiedenen Regionen Europas gemeint sind. Zusammengehalten werden sie eher durch ähnliche materielle Kultur, Kunstformen, Waffen, Schmuck und religiöse Praktiken als durch einen einheitlichen König oder ein gemeinsames Reich.",
@@ -3326,11 +3326,11 @@ const contentChecks = {
       },
       {
         prompt: "Worin unterscheiden sich Harari und Graeber/Wengrow bei der Deutung der Helvetier und der keltischen Welt vor Rom?",
-        placeholder: "Verbinde größere Imperien mit vorrömischer Eigenständigkeit und offenen Wegen.",
+        placeholder: "Verbinde grössere Imperien mit vorrömischer Eigenständigkeit und offenen Wegen.",
         sampleAnswer:
-          "Harari betont stärker, dass lokale Gruppen wie die Helvetier in größere Reiche, Rechtsräume und Handelsnetze hineingezogen werden. Graeber und Wengrow heben stärker hervor, dass oppida, Austausch und politische Verdichtung schon vor Rom komplexe Gesellschaften hervorbringen konnten. Der Unterschied liegt also zwischen Eingliederung in größere Ordnungen und der Eigenständigkeit offener vorrömischer Wege.",
+          "Harari betont stärker, dass lokale Gruppen wie die Helvetier in grössere Reiche, Rechtsräume und Handelsnetze hineingezogen werden. Graeber und Wengrow heben stärker hervor, dass oppida, Austausch und politische Verdichtung schon vor Rom komplexe Gesellschaften hervorbringen konnten. Der Unterschied liegt also zwischen Eingliederung in grössere Ordnungen und der Eigenständigkeit offener vorrömischer Wege.",
         criteria: [
-          { label: "Harari", keywords: ["harari", "reiche", "netze", "einglied", "größere ordnungen", "grössere ordnungen"] },
+          { label: "Harari", keywords: ["harari", "reiche", "netze", "einglied", "grössere ordnungen", "grössere ordnungen"] },
           { label: "Graeber/Wengrow", keywords: ["graeber", "wengrow", "offen", "eigenständig", "vorrömisch", "vorrömische"] },
           { label: "Helvetier als Beispiel", keywords: ["helvetier", "oppida", "keltische welt", "vor rom"] }
         ]
@@ -3385,10 +3385,10 @@ const contentChecks = {
         ]
       },
       {
-        prompt: "Erkläre die römische Republik. Nenne Senat, Konsuln oder Volksversammlungen und beschreibe kurz, warum diese Ordnung nicht einfach Demokratie heißt.",
+        prompt: "Erkläre die römische Republik. Nenne Senat, Konsuln oder Volksversammlungen und beschreibe kurz, warum diese Ordnung nicht einfach Demokratie heisst.",
         placeholder: "Verbinde Republik, Ämter und soziale Ungleichheit.",
         sampleAnswer:
-          "Die römische Republik hat keinen König, sondern arbeitet mit Senat, Konsuln, Magistraten und Volksversammlungen. Macht ist also verteilt und zeitlich begrenzt. Trotzdem ist die Republik keine einfache Demokratie, weil die Führungsschicht großen Einfluss behält und soziale Ungleichheiten stark bleiben.",
+          "Die römische Republik hat keinen König, sondern arbeitet mit Senat, Konsuln, Magistraten und Volksversammlungen. Macht ist also verteilt und zeitlich begrenzt. Trotzdem ist die Republik keine einfache Demokratie, weil die Führungsschicht grossen Einfluss behält und soziale Ungleichheiten stark bleiben.",
         criteria: [
           { label: "Republik benannt", keywords: ["republik", "rom"] },
           { label: "Senat, Konsuln oder Volksversammlungen", keywords: ["senat", "konsul", "volksversammlung", "magistrat"] },
@@ -3432,7 +3432,7 @@ const contentChecks = {
         prompt: "Zeige an zwei Beispielen, wie die Römer den Alltag in der Schweiz veränderten.",
         placeholder: "Nutze konkrete Dinge aus Infrastruktur, Städten, Recht oder Ernährung.",
         sampleAnswer:
-          "Die Römer veränderten den Alltag durch Straßen und Brücken, die Bewegung und Handel erleichterten. Auch neue Städte wie Aventicum, Legionslager wie Vindonissa, Weinbau, Importwaren oder römische Rechtsformen wirkten bis in lokale Lebenswelten hinein.",
+          "Die Römer veränderten den Alltag durch Strassen und Brücken, die Bewegung und Handel erleichterten. Auch neue Städte wie Aventicum, Legionslager wie Vindonissa, Weinbau, Importwaren oder römische Rechtsformen wirkten bis in lokale Lebenswelten hinein.",
         criteria: [
           { label: "Infrastruktur oder Städte", keywords: ["strassen", "brücken", "aventicum", "vindonissa", "städte"] },
           { label: "Alltag/Güter", keywords: ["wein", "waren", "ernährung", "handel", "bäder"] },
@@ -3481,7 +3481,7 @@ const contentChecks = {
         prompt: "Was ergänzt die Reihe 'Grosse Völker' zum Münzschatz von Ueken? Antworte mit Karthagern, Arabern und mindestens einer historischen Leistung.",
         placeholder: "Zeige, dass Vernetzung mehr ist als Münzumlauf.",
         sampleAnswer:
-          "Die Reihe ergänzt den Münzschatz, weil sie Vernetzung über verschiedene Großräume zeigt. Die Karthager stehen für Seehandel und Purpur, die Araber für Wissenschaft, Mathematik und Medizin. So wird deutlich, dass Handel nicht nur Ware, sondern auch Wissen und Kultur bewegt.",
+          "Die Reihe ergänzt den Münzschatz, weil sie Vernetzung über verschiedene Grossräume zeigt. Die Karthager stehen für Seehandel und Purpur, die Araber für Wissenschaft, Mathematik und Medizin. So wird deutlich, dass Handel nicht nur Ware, sondern auch Wissen und Kultur bewegt.",
         criteria: [
           { label: "Karthager", keywords: ["karthager", "purpur", "seehandel"] },
           { label: "Araber", keywords: ["araber", "mathematik", "medizin", "wissenschaft"] },
@@ -3508,10 +3508,10 @@ const contentChecks = {
         prompt: "Warum konnte sich das Christentum nach Jesus überhaupt über den Mittelmeerraum ausbreiten?",
         placeholder: "Arbeite mit Paulus, Gemeinden und dem römischen Verkehrsraum.",
         sampleAnswer:
-          "Das Christentum breitete sich aus, weil Paulus und andere Missionare Gemeinden gründeten und Briefe, Predigt und persönliche Kontakte nutzten. Der römische Verkehrsraum mit Städten, Straßen und Häfen erleichterte diese Verbreitung zusätzlich.",
+          "Das Christentum breitete sich aus, weil Paulus und andere Missionare Gemeinden gründeten und Briefe, Predigt und persönliche Kontakte nutzten. Der römische Verkehrsraum mit Städten, Strassen und Häfen erleichterte diese Verbreitung zusätzlich.",
         criteria: [
           { label: "Paulus oder Mission", keywords: ["paulus", "mission", "gemeinden"] },
-          { label: "Verkehrsraum oder Städte", keywords: ["römisch", "städte", "straßen", "häfen"] },
+          { label: "Verkehrsraum oder Städte", keywords: ["römisch", "städte", "strassen", "häfen"] },
           { label: "Ausbreitung", keywords: ["ausbreitung", "verbreitung", "mittelmeerraum"] }
         ]
       },
@@ -3552,7 +3552,7 @@ const contentChecks = {
         prompt: "Vergleiche Judentum, Christentum und Islam. Warum muss man alle drei als eigenständige religiöse Ordnungen mit eigenen Texten, Gemeinschaften und historischen Räumen verstehen?",
         placeholder: "Arbeite mit Eigenständigkeit, Schrift, Gemeinschaft und Ausbreitung.",
         sampleAnswer:
-          "Es ist wichtig, alle drei einzuführen, weil keine dieser Religionen bloß vorausgesetzt werden darf. Judentum, Christentum und Islam sind eigenständige religiöse Ordnungsräume mit Texten, Gemeinschaften und historischen Ausbreitungen. Erst durch den Vergleich wird Religion im Modul konkret und nicht nur abstrakt.",
+          "Es ist wichtig, alle drei einzuführen, weil keine dieser Religionen bloss vorausgesetzt werden darf. Judentum, Christentum und Islam sind eigenständige religiöse Ordnungsräume mit Texten, Gemeinschaften und historischen Ausbreitungen. Erst durch den Vergleich wird Religion im Modul konkret und nicht nur abstrakt.",
         criteria: [
           { label: "alle drei Religionen genannt", keywords: ["judentum", "christentum", "islam"] },
           { label: "Eigenständigkeit", keywords: ["eigenständig", "nicht nur vorausgesetzt", "vergleich"] },
@@ -3671,7 +3671,7 @@ const contentChecks = {
         prompt: "Warum war das Mittelalter stärker vernetzt, als das Klischee von der abgeschlossenen Burg vermuten lässt?",
         placeholder: "Arbeite mit Städten, Märkten oder Pilgerwegen.",
         sampleAnswer:
-          "Das Mittelalter war vernetzter, weil Städte, Märkte, Handelswege und Pilgerbewegungen Menschen miteinander verbanden. Waren, Ideen und religiöse Vorstellungen bewegten sich über große Räume.",
+          "Das Mittelalter war vernetzter, weil Städte, Märkte, Handelswege und Pilgerbewegungen Menschen miteinander verbanden. Waren, Ideen und religiöse Vorstellungen bewegten sich über grosse Räume.",
         criteria: [
           { label: "Städte oder Märkte", keywords: ["städte", "märkte", "handel"] },
           { label: "Wege oder Bewegung", keywords: ["wege", "pilger", "bewegung", "reisen"] },
@@ -3718,9 +3718,9 @@ const contentChecks = {
       },
       {
         prompt: "Formuliere eine Langzeitlinie von der Frühgeschichte bis kurz vor 1500.",
-        placeholder: "Verbinde mindestens drei große Entwicklungsschritte.",
+        placeholder: "Verbinde mindestens drei grosse Entwicklungsschritte.",
         sampleAnswer:
-          "Eine Langzeitlinie führt von Sprache und Kooperation über Sesshaftigkeit und Vorräte zu Schrift, Staat, Handel und Religion. So wird sichtbar, wie sich menschliche Ordnungen immer weiter verdichten und größere Räume verbinden.",
+          "Eine Langzeitlinie führt von Sprache und Kooperation über Sesshaftigkeit und Vorräte zu Schrift, Staat, Handel und Religion. So wird sichtbar, wie sich menschliche Ordnungen immer weiter verdichten und grössere Räume verbinden.",
         criteria: [
           { label: "früher Schritt", keywords: ["sprache", "kooperation", "kognitiv"] },
           { label: "mittlerer Schritt", keywords: ["sesshaftigkeit", "vorrate", "landwirtschaft"] },
@@ -3744,13 +3744,13 @@ const contentChecks = {
 
 const additionalHarariDetails = {
   [makeSourceKey("modul-1", "Harari-PDF · S. 39")]: {
-    badge: "S. 39 · Mythen tragen Großgruppen",
+    badge: "S. 39 · Mythen tragen Grossgruppen",
     locator: "Harari-PDF, S. 39",
     pdfPage: 39,
     pdfSearch: "magische Grenze",
     quote: "„magische Grenze von 150“",
     thesis:
-      "Harari erklärt, dass persönliche Bekanntschaft nur kleine Gruppen stabil trägt. Größere Gemeinschaften brauchen gemeinsame Geschichten, die auch Fremde an dieselbe Ordnung binden.",
+      "Harari erklärt, dass persönliche Bekanntschaft nur kleine Gruppen stabil trägt. Grössere Gemeinschaften brauchen gemeinsame Geschichten, die auch Fremde an dieselbe Ordnung binden.",
     passage:
       "Die Passage arbeitet mit der Grenze von ungefähr 150 Menschen. Kleine Gruppen können sich noch über Nähe, Rang und persönliches Wissen organisieren. Städte, Reiche und Kirchen funktionieren aber anders: Dort kooperieren Fremde, weil sie dieselben Mythen, Gesetze, Symbole und Zugehörigkeiten anerkennen. Für Modul 1 ist das zentral, weil Geschichte im engeren Sinn genau an dieser Schwelle beginnt: Menschen bauen Ordnungen, die weit über Familie und unmittelbare Umgebung hinausreichen."
   },
@@ -3758,12 +3758,12 @@ const additionalHarariDetails = {
     badge: "S. 151 · Gesellschaft wird gelernt",
     locator: "Harari-PDF, S. 151",
     pdfPage: 151,
-    pdfSearch: "ohne Fußballgen",
-    quote: "„ohne Fußballgen“",
+    pdfSearch: "ohne Fussballgen",
+    quote: "„ohne Fussballgen“",
     thesis:
       "Menschliche Ordnung steckt nicht in den Genen. Regeln, Bräuche und Verfahren müssen gelernt und von Generation zu Generation weitergegeben werden.",
     passage:
-      "Harari vergleicht Gesellschaft mit dem Fußballspiel. Menschen kommen nicht mit fertigen Spielregeln zur Welt, sondern müssen sie lernen. Genau deshalb ist Kultur so wichtig: Gesetze, Bräuche, Rituale und Verfahren werden nicht vererbt, sondern bewusst eingeübt. Für den Einstieg des Kurses ist das entscheidend, weil Geschichte hier nicht als Naturprozess erscheint, sondern als gelernte und weitergegebene Weltordnung."
+      "Harari vergleicht Gesellschaft mit dem Fussballspiel. Menschen kommen nicht mit fertigen Spielregeln zur Welt, sondern müssen sie lernen. Genau deshalb ist Kultur so wichtig: Gesetze, Bräuche, Rituale und Verfahren werden nicht vererbt, sondern bewusst eingeübt. Für den Einstieg des Kurses ist das entscheidend, weil Geschichte hier nicht als Naturprozess erscheint, sondern als gelernte und weitergegebene Weltordnung."
   },
   [makeSourceKey("modul-2", "Harari-PDF · S. 31")]: {
     badge: "S. 31 · Aufbruch der Sapiens",
@@ -3774,7 +3774,7 @@ const additionalHarariDetails = {
     thesis:
       "Die Seite zeigt den Sprung von frühen, noch begrenzten Sapiens zu Gruppen, die Boote, Nadeln, Schmuck, Kunst und weite Wanderungen hervorbringen.",
     passage:
-      "Harari beschreibt hier einen neuen Typ Mensch: Sapiens überqueren offenes Meer, erreichen Australien, nähen mit Nadeln warme Kleidung und hinterlassen erste Kunst- und Religionsspuren. Für Modul 2 ist die Passage wichtig, weil Ausbreitung hier nicht bloß körperliche Wanderung bedeutet, sondern eine Verbindung aus Technik, Anpassung und sozialem Lernen."
+      "Harari beschreibt hier einen neuen Typ Mensch: Sapiens überqueren offenes Meer, erreichen Australien, nähen mit Nadeln warme Kleidung und hinterlassen erste Kunst- und Religionsspuren. Für Modul 2 ist die Passage wichtig, weil Ausbreitung hier nicht bloss körperliche Wanderung bedeutet, sondern eine Verbindung aus Technik, Anpassung und sozialem Lernen."
   },
   [makeSourceKey("modul-2", "Harari-PDF · S. 32")]: {
     badge: "S. 32 · Löwenmensch und Vorstellungskraft",
@@ -3794,9 +3794,9 @@ const additionalHarariDetails = {
     pdfSearch: "über andere zu reden",
     quote: "„über andere zu reden“",
     thesis:
-      "Harari nimmt den scheinbar banalen Klatsch ernst: Verlässliche Informationen über andere Menschen vergrößern Gruppen und machen engere Zusammenarbeit erst praktikabel.",
+      "Harari nimmt den scheinbar banalen Klatsch ernst: Verlässliche Informationen über andere Menschen vergrössern Gruppen und machen engere Zusammenarbeit erst praktikabel.",
     passage:
-      "Die Seite zeigt, dass Sprache nicht nur schöne Erzählung, sondern harte Sozialtechnik ist. Wer über Zuverlässigkeit, Beziehungen und Verhalten anderer sprechen kann, organisiert Vertrauen und Misstrauen viel genauer. Für das Modul über die kognitive Revolution ist das wichtig, weil Großgruppenkooperation nicht mit abstrakten Ideen beginnt, sondern schon mit sozialem Informationsaustausch."
+      "Die Seite zeigt, dass Sprache nicht nur schöne Erzählung, sondern harte Sozialtechnik ist. Wer über Zuverlässigkeit, Beziehungen und Verhalten anderer sprechen kann, organisiert Vertrauen und Misstrauen viel genauer. Für das Modul über die kognitive Revolution ist das wichtig, weil Grossgruppenkooperation nicht mit abstrakten Ideen beginnt, sondern schon mit sozialem Informationsaustausch."
   },
   [makeSourceKey("modul-3", "Harari-PDF · S. 36")]: {
     badge: "S. 36 · Fiktive Sprache",
@@ -3829,7 +3829,7 @@ const additionalHarariDetails = {
     thesis:
       "Harari verbindet Geburtenrhythmus, Stillen, Bewegung und Umweltveränderung mit der Logik mobiler Lebensweisen.",
     passage:
-      "Die Passage erklärt, warum mobile Gesellschaften Kinder nicht in kurzen Abständen versorgen konnten und wie sich dies auf Gruppengröße und Bewegung auswirkte. Zugleich beschreibt Harari, wie Klimawandel, verlorene Körner und Brandrodung feste Lager begünstigten. Für Modul 4 ist das wichtig, weil Mobilität hier als komplexe Lebensorganisation und nicht als bloßer Zustand des Unterwegsseins erscheint."
+      "Die Passage erklärt, warum mobile Gesellschaften Kinder nicht in kurzen Abständen versorgen konnten und wie sich dies auf Gruppengrösse und Bewegung auswirkte. Zugleich beschreibt Harari, wie Klimawandel, verlorene Körner und Brandrodung feste Lager begünstigten. Für Modul 4 ist das wichtig, weil Mobilität hier als komplexe Lebensorganisation und nicht als blosser Zustand des Unterwegsseins erscheint."
   },
   [makeSourceKey("modul-5", "Harari-PDF · S. 103")]: {
     badge: "S. 103 · Härter als erwartet",
@@ -3857,10 +3857,10 @@ const additionalHarariDetails = {
     badge: "S. 157 · Die ersten Texte sind Rechnungen",
     locator: "Harari-PDF, S. 157",
     pdfPage: 157,
-    pdfSearch: "29.086 Maß",
-    quote: "„29.086 Maß. Gerste.“",
+    pdfSearch: "29.086 Mass",
+    quote: "„29.086 Mass. Gerste.“",
     thesis:
-      "Die ältesten Schriftzeugnisse sind keine großen Geschichten, sondern Gerstenmengen, Steuerlisten, Schuldscheine und Besitzurkunden.",
+      "Die ältesten Schriftzeugnisse sind keine grossen Geschichten, sondern Gerstenmengen, Steuerlisten, Schuldscheine und Besitzurkunden.",
     passage:
       "Harari zeigt hier, wie unerquicklich alltäglich die ersten Texte wirken: Gerste, Monate, Namen, Zahlen. Genau darin liegt aber ihre historische Bedeutung. Schrift entsteht zunächst, um wirtschaftliche und administrative Vorgänge festzuhalten. Das ist für Modul 6 zentral, weil frühe Staatlichkeit so über Listen und Bürokratie statt über Monumente verständlich wird."
   },
@@ -3882,7 +3882,7 @@ const additionalHarariDetails = {
     pdfSearch: "brechen Streitigkeiten aus",
     quote: "„brechen Streitigkeiten aus“",
     thesis:
-      "Nahrungsüberschuss und Transportmittel erzeugen noch kein Reich. Erst Einigung über Land, Wasser, Streitfälle und Krieg macht große politische Räume dauerhaft regierbar.",
+      "Nahrungsüberschuss und Transportmittel erzeugen noch kein Reich. Erst Einigung über Land, Wasser, Streitfälle und Krieg macht grosse politische Räume dauerhaft regierbar.",
     passage:
       "Die Seite erklärt, warum Städte und Imperien mehr brauchen als volle Speicher. Menschen müssen Regeln akzeptieren, Konflikte ordnen und Ressourcen verteilen. Für Modul 7 ist das wichtig, weil Imperium so nicht nur als Militär, sondern als Lösung politischer Ordnungsprobleme erscheint."
   },
@@ -3893,7 +3893,7 @@ const additionalHarariDetails = {
     pdfSearch: "Kodex Hammurabi",
     quote: "„Kodex Hammurabi“",
     thesis:
-      "Harari nutzt Hammurabi, um zu zeigen, dass große Reiche nicht nur Gewalt, sondern auch gemeinsame Rechtsvorstellungen und Erzählungen über Gerechtigkeit benötigen.",
+      "Harari nutzt Hammurabi, um zu zeigen, dass grosse Reiche nicht nur Gewalt, sondern auch gemeinsame Rechtsvorstellungen und Erzählungen über Gerechtigkeit benötigen.",
     passage:
       "Mit dem babylonischen Kodex wird sichtbar, dass Herrschaft Ordnungstexte braucht. Gesetze legen nicht nur Urteile fest, sondern definieren Hierarchien, Werte und eine Vorstellung von Gerechtigkeit. Das ergänzt Modul 7, weil Imperium hier auch als Rechts- und Sinnordnung lesbar wird."
   },
@@ -3926,9 +3926,9 @@ const additionalHarariDetails = {
     pdfSearch: "System von menschlichen Normen und Werten",
     quote: "„System von menschlichen Normen und Werten“",
     thesis:
-      "Harari definiert Religion nicht bloß als privaten Glauben, sondern als umfassendes Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt.",
+      "Harari definiert Religion nicht bloss als privaten Glauben, sondern als umfassendes Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt.",
     passage:
-      "Die Seite erklärt, warum Religion so wirksam ist: Sie legitimiert zerbrechliche menschliche Ordnungen durch Verweis auf eine höhere Autorität. Für Modul 9 ist das wichtig, weil damit klar wird, warum Religion Gesellschaft, Alltag und Herrschaft gleichermaßen strukturieren kann."
+      "Die Seite erklärt, warum Religion so wirksam ist: Sie legitimiert zerbrechliche menschliche Ordnungen durch Verweis auf eine höhere Autorität. Für Modul 9 ist das wichtig, weil damit klar wird, warum Religion Gesellschaft, Alltag und Herrschaft gleichermassen strukturieren kann."
   },
   [makeSourceKey("modul-9", "Harari-PDF · S. 253")]: {
     badge: "S. 253 · Universalreligionen",
@@ -3937,7 +3937,7 @@ const additionalHarariDetails = {
     pdfSearch: "missionierende Universalreligionen",
     quote: "„missionierende Universalreligionen“",
     thesis:
-      "Große Weltreligionen wollen nicht nur lokal gelten, sondern ihren Glauben an alle Menschen weitergeben. Genau dadurch tragen sie zur Vereinigung größerer Räume bei.",
+      "Grosse Weltreligionen wollen nicht nur lokal gelten, sondern ihren Glauben an alle Menschen weitergeben. Genau dadurch tragen sie zur Vereinigung grösserer Räume bei.",
     passage:
       "Harari macht hier deutlich, dass die meisten Religionen ursprünglich lokal begrenzt waren. Missionierende Universalreligionen wie Christentum und Islam verändern das. Für Modul 9 ist diese Seite zentral, weil sie Religion als expansiven historischen Ordnungsraum erklärt."
   },
@@ -3948,9 +3948,9 @@ const additionalHarariDetails = {
     pdfSearch: "Paulus von Tarsus",
     quote: "„Paulus von Tarsus“",
     thesis:
-      "Harari beschreibt, wie aus kleinen Sekten große missionierende Weltreligionen werden, die ganze Reiche prägen und den mittelalterlichen Raum ordnen.",
+      "Harari beschreibt, wie aus kleinen Sekten grosse missionierende Weltreligionen werden, die ganze Reiche prägen und den mittelalterlichen Raum ordnen.",
     passage:
-      "Die Seite verfolgt den Weg vom frühen Christentum zu seiner Ausbreitung im Römischen Reich und schlägt dann den Bogen zum Islam. Für Modul 10 ist das wichtig, weil Herrschaft, Kirche und Gesellschaft im Mittelalter ohne diese großen religiösen Ausbreitungsprozesse nicht verstanden werden können."
+      "Die Seite verfolgt den Weg vom frühen Christentum zu seiner Ausbreitung im Römischen Reich und schlägt dann den Bogen zum Islam. Für Modul 10 ist das wichtig, weil Herrschaft, Kirche und Gesellschaft im Mittelalter ohne diese grossen religiösen Ausbreitungsprozesse nicht verstanden werden können."
   },
   [makeSourceKey("modul-10", "Harari-PDF · S. 263")]: {
     badge: "S. 263 · Monotheistische Welt vor 1500",
@@ -3959,9 +3959,9 @@ const additionalHarariDetails = {
     pdfSearch: "Zu Beginn des 16. Jahrhunderts",
     quote: "„Zu Beginn des 16. Jahrhunderts“",
     thesis:
-      "Harari bilanziert, dass monotheistische Religionen bis an die Schwelle der Neuzeit weite Teile Afrikas und Eurasiens dominieren und große politische Räume legitimieren.",
+      "Harari bilanziert, dass monotheistische Religionen bis an die Schwelle der Neuzeit weite Teile Afrikas und Eurasiens dominieren und grosse politische Räume legitimieren.",
     passage:
-      "Die Passage verortet die religiöse Ordnung direkt am Ende des Kurszeitraums. Um 1500 stehen große Teile der bekannten Welt auf monotheistischen Füßen. Für Modul 10 macht das sichtbar, wie tief Glaubensordnung, Herrschaft und Gesellschaft bis ins Spätmittelalter hinein verbunden sind."
+      "Die Passage verortet die religiöse Ordnung direkt am Ende des Kurszeitraums. Um 1500 stehen grosse Teile der bekannten Welt auf monotheistischen Füssen. Für Modul 10 macht das sichtbar, wie tief Glaubensordnung, Herrschaft und Gesellschaft bis ins Spätmittelalter hinein verbunden sind."
   },
   [makeSourceKey("modul-11", "Harari-PDF · S. 214")]: {
     badge: "S. 214 · Städte und Spezialisten",
@@ -3992,7 +3992,7 @@ const additionalHarariDetails = {
     pdfSearch: "kein Ausweg aus der erfundenen Ordnung",
     quote: "„kein Ausweg aus der erfundenen Ordnung“",
     thesis:
-      "Menschen lösen eine Ordnung nicht einfach auf, um in reine Freiheit zu gelangen. Sie ersetzen sie meist durch eine andere, größere oder anders gebaute Ordnung.",
+      "Menschen lösen eine Ordnung nicht einfach auf, um in reine Freiheit zu gelangen. Sie ersetzen sie meist durch eine andere, grössere oder anders gebaute Ordnung.",
     passage:
       "Harari formuliert hier einen harten Bilanzsatz: Wer aus einer erfundenen Ordnung ausbricht, landet oft in einer neuen. Für das Abschlussmodul ist das stark, weil es alle Themen zusammenbindet: Sprache, Staat, Geld, Religion und Gesellschaft schaffen immer wieder neue Regelräume."
   },
@@ -4003,7 +4003,7 @@ const additionalHarariDetails = {
     pdfSearch: "Zu Beginn des 16. Jahrhunderts",
     quote: "„Zu Beginn des 16. Jahrhunderts“",
     thesis:
-      "Die Seite markiert den Zustand der Welt kurz vor der Neuzeit: weite Räume Afrikas und Eurasiens sind bereits durch große monotheistische und politische Ordnungen geprägt.",
+      "Die Seite markiert den Zustand der Welt kurz vor der Neuzeit: weite Räume Afrikas und Eurasiens sind bereits durch grosse monotheistische und politische Ordnungen geprägt.",
     passage:
       "Für den Kursabschluss ist diese Stelle wertvoll, weil sie direkt an die Zeitgrenze heranführt. Harari zeigt, wie weit die langfristigen Vereinigungsprozesse bis um 1500 bereits reichen. So erscheint die Schwelle zur Neuzeit als Ergebnis langer Vorgeschichten und nicht als plötzlicher Neubeginn."
   }
@@ -4013,8 +4013,8 @@ const additionalHarariSources = {
   "modul-1": [
     {
       title: "Harari-PDF · S. 39",
-      meta: "Buchstelle · Mythen und Großgruppen",
-      extracted: "Große Gesellschaften brauchen gemeinsame Geschichten; sie können nicht nur auf Nähe und persönliche Bekanntschaft gebaut werden."
+      meta: "Buchstelle · Mythen und Grossgruppen",
+      extracted: "Grosse Gesellschaften brauchen gemeinsame Geschichten; sie können nicht nur auf Nähe und persönliche Bekanntschaft gebaut werden."
     },
     {
       title: "Harari-PDF · S. 151",
@@ -4038,7 +4038,7 @@ const additionalHarariSources = {
     {
       title: "Harari-PDF · S. 35",
       meta: "Buchstelle · soziale Informationen",
-      extracted: "Klatsch und Wissen über andere Menschen erweitern Kooperation in größeren Gruppen."
+      extracted: "Klatsch und Wissen über andere Menschen erweitern Kooperation in grösseren Gruppen."
     },
     {
       title: "Harari-PDF · S. 36",
@@ -4085,7 +4085,7 @@ const additionalHarariSources = {
   "modul-7": [
     {
       title: "Harari-PDF · S. 130",
-      meta: "Buchstelle · Ordnung für große Räume",
+      meta: "Buchstelle · Ordnung für grosse Räume",
       extracted: "Überschüsse allein schaffen keine Reiche; Konflikte und Verteilung müssen geregelt werden."
     },
     {
@@ -4115,7 +4115,7 @@ const additionalHarariSources = {
     {
       title: "Harari-PDF · S. 253",
       meta: "Buchstelle · Universalreligionen",
-      extracted: "Missionierende Weltreligionen vereinigen große Räume und viele Menschen."
+      extracted: "Missionierende Weltreligionen vereinigen grosse Räume und viele Menschen."
     }
   ],
   "modul-10": [
@@ -4151,7 +4151,7 @@ const additionalHarariSources = {
     {
       title: "Harari-PDF · S. 263",
       meta: "Buchstelle · Welt kurz vor 1500",
-      extracted: "An der Schwelle der Neuzeit dominieren bereits große religiöse und politische Ordnungsräume."
+      extracted: "An der Schwelle der Neuzeit dominieren bereits grosse religiöse und politische Ordnungsräume."
     }
   ]
 };
@@ -4159,12 +4159,12 @@ const additionalHarariSources = {
 const additionalHarariChecks = {
   "modul-1": [
     {
-      prompt: "Warum brauchen große Gesellschaften gemeinsame Geschichten und gelernte Regeln? Warum reicht persönliche Bekanntschaft dafür nicht aus?",
-      placeholder: "Verbinde Großgruppen, Mythen, Regeln und Weitergabe.",
+      prompt: "Warum brauchen grosse Gesellschaften gemeinsame Geschichten und gelernte Regeln? Warum reicht persönliche Bekanntschaft dafür nicht aus?",
+      placeholder: "Verbinde Grossgruppen, Mythen, Regeln und Weitergabe.",
       sampleAnswer:
-        "S. 39 zeigt, dass persönliche Bekanntschaft nur kleine Gruppen trägt, während größere Gemeinschaften gemeinsame Geschichten brauchen. S. 151 ergänzt, dass diese Ordnungen nicht in den Genen liegen, sondern gelernt und weitergegeben werden. Große Gesellschaften leben daher von Symbolen, Regeln und Institutionen, nicht von bloßer Nähe.",
+        "S. 39 zeigt, dass persönliche Bekanntschaft nur kleine Gruppen trägt, während grössere Gemeinschaften gemeinsame Geschichten brauchen. S. 151 ergänzt, dass diese Ordnungen nicht in den Genen liegen, sondern gelernt und weitergegeben werden. Grosse Gesellschaften leben daher von Symbolen, Regeln und Institutionen, nicht von blosser Nähe.",
       criteria: [
-        { label: "Großgruppen statt bloßer Nähe", keywords: ["große gesellschaften", "fremde", "nicht nur bekanntschaft", "150"] },
+        { label: "Grossgruppen statt blosser Nähe", keywords: ["grosse gesellschaften", "fremde", "nicht nur bekanntschaft", "150"] },
         { label: "gemeinsame Geschichten oder Mythen", keywords: ["geschichten", "mythen", "gemeinsam", "ordnung"] },
         { label: "Regeln werden gelernt", keywords: ["gelernt", "weitergegeben", "nicht in den genen", "regeln"] }
       ]
@@ -4186,13 +4186,13 @@ const additionalHarariChecks = {
   "modul-3": [
     {
       prompt: "Warum sind Tratsch und fiktive Sprache für die Menschheitsgeschichte so wichtig?",
-      placeholder: "Verbinde soziale Informationen, Mythen und Großgruppenkooperation.",
+      placeholder: "Verbinde soziale Informationen, Mythen und Grossgruppenkooperation.",
       sampleAnswer:
-        "S. 35 zeigt, dass Menschen über andere sprechen und so Vertrauen und Misstrauen organisieren können. S. 36 geht weiter: Menschen reden sogar über Dinge, die es nicht gibt, also über Mythen, Götter oder Regeln. Zusammen ermöglichen beide Fähigkeiten Kooperation in sehr großen Gruppen.",
+        "S. 35 zeigt, dass Menschen über andere sprechen und so Vertrauen und Misstrauen organisieren können. S. 36 geht weiter: Menschen reden sogar über Dinge, die es nicht gibt, also über Mythen, Götter oder Regeln. Zusammen ermöglichen beide Fähigkeiten Kooperation in sehr grossen Gruppen.",
       criteria: [
         { label: "soziale Informationen oder Tratsch", keywords: ["tratsch", "soziale informationen", "vertrauen", "misstrauen"] },
         { label: "fiktive Sprache", keywords: ["fiktive sprache", "mythen", "götter", "vorgestellt"] },
-        { label: "Großgruppenkooperation", keywords: ["große gruppen", "zusammenarbeit", "kooperation"] }
+        { label: "Grossgruppenkooperation", keywords: ["grosse gruppen", "zusammenarbeit", "kooperation"] }
       ]
     }
   ],
@@ -4240,7 +4240,7 @@ const additionalHarariChecks = {
       prompt: "Warum braucht ein Reich nicht nur Speicher und Heere, sondern auch Regeln und Gerechtigkeitsvorstellungen?",
       placeholder: "Verbinde Überschuss, Streit, Ordnung und Hammurabi.",
       sampleAnswer:
-        "S. 130 zeigt, dass Überschüsse allein keine stabile Großordnung schaffen, weil Verteilung und Konflikte geregelt werden müssen. S. 133 führt mit Hammurabi vor, wie Kodizes und Gerechtigkeitsvorstellungen diese Ordnung stützen. Ein Reich braucht daher nicht nur Machtmittel, sondern auch akzeptierte Regeln.",
+        "S. 130 zeigt, dass Überschüsse allein keine stabile Grossordnung schaffen, weil Verteilung und Konflikte geregelt werden müssen. S. 133 führt mit Hammurabi vor, wie Kodizes und Gerechtigkeitsvorstellungen diese Ordnung stützen. Ein Reich braucht daher nicht nur Machtmittel, sondern auch akzeptierte Regeln.",
       criteria: [
         { label: "Überschuss reicht nicht", keywords: ["überschuss reicht nicht", "konflikte", "verteilung", "ordnung"] },
         { label: "Hammurabi oder Kodex", keywords: ["hammurabi", "kodex", "gesetz"] },
@@ -4250,7 +4250,7 @@ const additionalHarariChecks = {
   ],
   "modul-8": [
     {
-      prompt: "Warum stößt Tauschhandel an Grenzen und warum wird Geld dann zur Vertrauensordnung?",
+      prompt: "Warum stösst Tauschhandel an Grenzen und warum wird Geld dann zur Vertrauensordnung?",
       placeholder: "Arbeite mit Vergleichbarkeit und gemeinsamem Glauben an Wert.",
       sampleAnswer:
         "S. 215 zeigt, wie unübersichtlich direkter Tausch mit vielen Waren und Spezialisten wird. S. 220 erklärt dann, dass Geld diese Probleme löst, weil alle seinen Wert anerkennen. Geld ist deshalb nicht nur Metall, sondern ein gemeinsames Vertrauenssystem.",
@@ -4263,10 +4263,10 @@ const additionalHarariChecks = {
   ],
   "modul-9": [
     {
-      prompt: "Wie kann aus Religion ein großes, missionierendes Ordnungssystem werden?",
+      prompt: "Wie kann aus Religion ein grosses, missionierendes Ordnungssystem werden?",
       placeholder: "Arbeite mit Normen, Werten, übermenschlicher Ordnung und Universalreligionen.",
       sampleAnswer:
-        "S. 252 definiert Religion als Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt. S. 253 zeigt, wie daraus missionierende Universalreligionen werden, die viele Regionen und Menschen verbinden wollen. Religion ordnet dadurch nicht nur lokal, sondern über große Räume hinweg.",
+        "S. 252 definiert Religion als Normen- und Wertesystem, das sich auf eine übermenschliche Ordnung stützt. S. 253 zeigt, wie daraus missionierende Universalreligionen werden, die viele Regionen und Menschen verbinden wollen. Religion ordnet dadurch nicht nur lokal, sondern über grosse Räume hinweg.",
       criteria: [
         { label: "Normen und Werte", keywords: ["normen", "werte", "ordnung"] },
         { label: "übermenschliche Ordnung", keywords: ["übermenschlich", "gott", "autorität"] },
@@ -4276,13 +4276,13 @@ const additionalHarariChecks = {
   ],
   "modul-10": [
     {
-      prompt: "Warum sind Kirche und Religion für die mittelalterliche Gesellschaft nicht bloß Randthemen?",
+      prompt: "Warum sind Kirche und Religion für die mittelalterliche Gesellschaft nicht bloss Randthemen?",
       placeholder: "Verbinde Ausbreitung von Religionen, Herrschaft und Alltag bis um 1500.",
       sampleAnswer:
-        "S. 261 zeigt, wie Christentum und Islam von kleinen Gruppen zu großen Weltreligionen wurden. S. 263 macht deutlich, dass monotheistische Religionen bis um 1500 weite Teile Afrikas und Eurasiens prägten. Kirche und Religion strukturieren im Mittelalter daher Politik, Alltag und Gesellschaft insgesamt.",
+        "S. 261 zeigt, wie Christentum und Islam von kleinen Gruppen zu grossen Weltreligionen wurden. S. 263 macht deutlich, dass monotheistische Religionen bis um 1500 weite Teile Afrikas und Eurasiens prägten. Kirche und Religion strukturieren im Mittelalter daher Politik, Alltag und Gesellschaft insgesamt.",
       criteria: [
         { label: "Christentum oder Islam", keywords: ["christentum", "islam", "weltreligion"] },
-        { label: "große Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] },
+        { label: "grosse Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] },
         { label: "Gesellschaft und Herrschaft", keywords: ["gesellschaft", "herrschaft", "alltag", "kirche"] }
       ]
     }
@@ -4292,7 +4292,7 @@ const additionalHarariChecks = {
       prompt: "Warum hängen Städte, Märkte und Handel im Mittelalter eng zusammen?",
       placeholder: "Verbinde Spezialisierung, transportierbares Vermögen und urbane Verdichtung.",
       sampleAnswer:
-        "S. 214 zeigt, dass mit Städten neue Spezialisten und Märkte entstehen. S. 219 erklärt, warum Geld Vermögen beweglich macht und dadurch größere Handelsnetze ermöglicht. Mittelalterliche Städte verdichten also Arbeitsteilung, Markt und Verkehr.",
+        "S. 214 zeigt, dass mit Städten neue Spezialisten und Märkte entstehen. S. 219 erklärt, warum Geld Vermögen beweglich macht und dadurch grössere Handelsnetze ermöglicht. Mittelalterliche Städte verdichten also Arbeitsteilung, Markt und Verkehr.",
       criteria: [
         { label: "Städte oder Spezialisten", keywords: ["städte", "spezialisten", "berufe", "märkte"] },
         { label: "Geld oder transportierbares Vermögen", keywords: ["geld", "vermögen", "transport", "beweglich"] },
@@ -4302,13 +4302,13 @@ const additionalHarariChecks = {
   ],
   "modul-12": [
     {
-      prompt: "Warum leben Menschen immer wieder in großen gemeinsamen Ordnungen, und wie weit reichen diese Ordnungen um 1500 bereits?",
-      placeholder: "Verbinde erfundene Ordnung, große Räume und die Welt an der Schwelle der Neuzeit.",
+      prompt: "Warum leben Menschen immer wieder in grossen gemeinsamen Ordnungen, und wie weit reichen diese Ordnungen um 1500 bereits?",
+      placeholder: "Verbinde erfundene Ordnung, grosse Räume und die Welt an der Schwelle der Neuzeit.",
       sampleAnswer:
-        "S. 148 zeigt, dass Menschen selten außerhalb aller Ordnungen leben, sondern meist in neue Ordnungen wechseln. S. 263 macht sichtbar, wie weit diese großen religiösen und politischen Ordnungen bis um 1500 schon reichen. Die Bilanz lautet daher: Geschichte bis 1500 ist eine Geschichte wachsender gemeinsamer Regelräume.",
+        "S. 148 zeigt, dass Menschen selten ausserhalb aller Ordnungen leben, sondern meist in neue Ordnungen wechseln. S. 263 macht sichtbar, wie weit diese grossen religiösen und politischen Ordnungen bis um 1500 schon reichen. Die Bilanz lautet daher: Geschichte bis 1500 ist eine Geschichte wachsender gemeinsamer Regelräume.",
       criteria: [
         { label: "Ordnungen ersetzen Ordnungen", keywords: ["ordnung", "wechseln", "keine reine freiheit", "regelraum"] },
-        { label: "große Räume um 1500", keywords: ["1500", "große räume", "afrika", "eurasien"] },
+        { label: "grosse Räume um 1500", keywords: ["1500", "grosse räume", "afrika", "eurasien"] },
         { label: "Bilanz der Einheit", keywords: ["bilanz", "geschichte bis 1500", "gemeinsame ordnungen"] }
       ]
     }
@@ -4323,9 +4323,9 @@ const expandedHarariDetails = {
     pdfSearch: "nur von Klatsch zusammengehalten",
     quote: "„nur von Klatsch zusammengehalten“",
     thesis:
-      "Harari beschreibt hier die Grenze kleiner, intimer Gruppen. Frühmenschen können nicht beliebig viele Fremde integrieren; größere Verbände brauchen neue Formen von Sprache und Ordnung.",
+      "Harari beschreibt hier die Grenze kleiner, intimer Gruppen. Frühmenschen können nicht beliebig viele Fremde integrieren; grössere Verbände brauchen neue Formen von Sprache und Ordnung.",
     passage:
-      "Die Seite erklärt, warum kleine Gruppen auf persönliche Nähe, Rang und direkte Beziehungen angewiesen sind. Schimpansenhorden und frühe Menschengruppen bleiben deshalb relativ klein und instabil, sobald sie stark anwachsen. Erst mit der kognitiven Revolution können Menschen über Klatsch, Erzählung und gemeinsame Ordnung größere und dauerhaftere Verbände aufbauen. Für das Einstiegsmodul ist die Stelle wichtig, weil sie zeigt, dass Geschichte im engeren Sinn nicht einfach mit mehr Menschen beginnt, sondern mit neuen Mitteln, große Gruppen zusammenzuhalten."
+      "Die Seite erklärt, warum kleine Gruppen auf persönliche Nähe, Rang und direkte Beziehungen angewiesen sind. Schimpansenhorden und frühe Menschengruppen bleiben deshalb relativ klein und instabil, sobald sie stark anwachsen. Erst mit der kognitiven Revolution können Menschen über Klatsch, Erzählung und gemeinsame Ordnung grössere und dauerhaftere Verbände aufbauen. Für das Einstiegsmodul ist die Stelle wichtig, weil sie zeigt, dass Geschichte im engeren Sinn nicht einfach mit mehr Menschen beginnt, sondern mit neuen Mitteln, grosse Gruppen zusammenzuhalten."
   },
   [makeSourceKey("modul-3", "Harari-PDF · S. 34")]: {
     badge: "S. 34 · Sprache ist flexibel",
@@ -4378,7 +4378,7 @@ const expandedHarariDetails = {
     pdfSearch: "Quipu",
     quote: "„Quipu“",
     thesis:
-      "Harari erweitert den Schriftbegriff hier über Tontafeln hinaus. Auch Knotenschnüre können große Reiche verwalten, wenn sie Daten, Besitz und Abgaben systematisch speichern.",
+      "Harari erweitert den Schriftbegriff hier über Tontafeln hinaus. Auch Knotenschnüre können grosse Reiche verwalten, wenn sie Daten, Besitz und Abgaben systematisch speichern.",
     passage:
       "Mit dem Beispiel der Quipus zeigt Harari, dass Verwaltung nicht an Alphabete gebunden ist. Knotenschnüre mit Farben und Knotenmuster speichern mathematische und administrative Informationen über Jahre hinweg. Gerade das Inka-Beispiel macht sichtbar, dass frühe Staatlichkeit verschiedene Speichertechniken hervorbringen kann. Für das Modul ist die Seite wichtig, weil sie Hochkulturen nicht auf Mesopotamien und Ägypten verengt, sondern die allgemeine Funktion von Schrift und Datenspeicherung herausarbeitet."
   },
@@ -4389,9 +4389,9 @@ const expandedHarariDetails = {
     pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
     quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
     thesis:
-      "Harari bündelt hier die Richtung der antiken Geschichte: Kleine Gruppen und lokale Reiche werden in größere Macht-, Glaubens- und Handelsräume eingebunden.",
+      "Harari bündelt hier die Richtung der antiken Geschichte: Kleine Gruppen und lokale Reiche werden in grössere Macht-, Glaubens- und Handelsräume eingebunden.",
     passage:
-      "Die Passage macht klar, dass Geschichte nicht aus isolierten Inseln besteht. Menschen bauen immer größere Verbindungsräume auf, in denen Macht, Glaube und Handel zusammenwirken. Für Modul 7 ist das zentral, weil Imperien nicht nur aus Eroberungen bestehen, sondern Verbindungen schaffen: Straßen, Herrschaftsordnungen, Steuerwege, Militär und gemeinsame politische Horizonte."
+      "Die Passage macht klar, dass Geschichte nicht aus isolierten Inseln besteht. Menschen bauen immer grössere Verbindungsräume auf, in denen Macht, Glaube und Handel zusammenwirken. Für Modul 7 ist das zentral, weil Imperien nicht nur aus Eroberungen bestehen, sondern Verbindungen schaffen: Strassen, Herrschaftsordnungen, Steuerwege, Militär und gemeinsame politische Horizonte."
   },
   [makeSourceKey("modul-8", "Harari-PDF · S. 216")]: {
     badge: "S. 216 · Geld als geistige Revolution",
@@ -4402,7 +4402,7 @@ const expandedHarariDetails = {
     thesis:
       "Harari erklärt Geld hier ausdrücklich als intersubjektive Erfindung. Sein Wert liegt nicht im Material, sondern in der gemeinsamen Anerkennung.",
     passage:
-      "Die Seite führt vom Problem des Tauschhandels direkt zur Erfindung des Geldes. Geld entsteht nicht durch eine neue Maschine, sondern durch eine neue geteilte Vorstellung: Menschen akzeptieren etwas als Vergleichs- und Zahlungsmittel. Deshalb können Muscheln, Metall oder digitale Einträge Geld werden. Für Modul 8 ist diese Stelle entscheidend, weil sie Geld als historische Deutung und Vertrauensform erklärt, nicht bloß als Münze."
+      "Die Seite führt vom Problem des Tauschhandels direkt zur Erfindung des Geldes. Geld entsteht nicht durch eine neue Maschine, sondern durch eine neue geteilte Vorstellung: Menschen akzeptieren etwas als Vergleichs- und Zahlungsmittel. Deshalb können Muscheln, Metall oder digitale Einträge Geld werden. Für Modul 8 ist diese Stelle entscheidend, weil sie Geld als historische Deutung und Vertrauensform erklärt, nicht bloss als Münze."
   },
   [makeSourceKey("modul-8", "Harari-PDF · S. 218")]: {
     badge: "S. 218 · Geld tauscht alles gegen alles",
@@ -4427,18 +4427,18 @@ const expandedHarariDetails = {
       "Die Passage zeigt, dass Sesshaftigkeit nicht nur Essen und Arbeit verändert, sondern auch die religiöse Ordnung. Bauern besitzen, züchten und manipulieren Tiere und Pflanzen, statt ihnen auf Augenhöhe zu begegnen. Gleichzeitig entstehen stärkere Hoffnungen auf Götter, die Regen, Fruchtbarkeit und Schutz garantieren sollen. Für Modul 9 ist die Stelle wichtig, weil Religion hier als historische Antwort auf neue Abhängigkeiten und Kontrollwünsche erscheint."
   },
   [makeSourceKey("modul-9", "Harari-PDF · S. 255")]: {
-    badge: "S. 255 · Weltreiche brauchen große Götter",
+    badge: "S. 255 · Weltreiche brauchen grosse Götter",
     locator: "Harari-PDF, S. 255",
     pdfPage: 255,
     pdfSearch: "mit der Entstehung von Weltreichen und Handelsnetzen",
     quote: "„mit der Entstehung von Weltreichen und Handelsnetzen“",
     thesis:
-      "Harari erklärt, warum lokale Geister für größere politische und wirtschaftliche Räume nicht mehr ausreichen. Mit Imperien und Handel wachsen auch die religiösen Maßstäbe.",
+      "Harari erklärt, warum lokale Geister für grössere politische und wirtschaftliche Räume nicht mehr ausreichen. Mit Imperien und Handel wachsen auch die religiösen Massstäbe.",
     passage:
-      "Die Seite verbindet politische und religiöse Geschichte eng miteinander. Solange Menschen in kleinen Tälern leben, genügen lokale Geister und heilige Orte. Mit Weltreichen und Handelsnetzen brauchen sie dagegen Mächte, die weiter reichen als das eigene Tal. So erklärt Harari den Übergang zu polytheistischen Großordnungen. Für das Modul ist das stark, weil Religion hier als Begleiter wachsender Räume und nicht als loses Zusatzthema erscheint."
+      "Die Seite verbindet politische und religiöse Geschichte eng miteinander. Solange Menschen in kleinen Tälern leben, genügen lokale Geister und heilige Orte. Mit Weltreichen und Handelsnetzen brauchen sie dagegen Mächte, die weiter reichen als das eigene Tal. So erklärt Harari den Übergang zu polytheistischen Grossordnungen. Für das Modul ist das stark, weil Religion hier als Begleiter wachsender Räume und nicht als loses Zusatzthema erscheint."
   },
   [makeSourceKey("modul-10", "Harari-PDF · S. 262")]: {
-    badge: "S. 262 · Mission und Ausschließlichkeit",
+    badge: "S. 262 · Mission und Ausschliesslichkeit",
     locator: "Harari-PDF, S. 262",
     pdfPage: 262,
     pdfSearch: "missionarischen Eifer",
@@ -4446,7 +4446,7 @@ const expandedHarariDetails = {
     thesis:
       "Harari erklärt die Dynamik monotheistischer Religionen über ihren Wahrheitsanspruch: Wer an einen einzigen wahren Gott glaubt, neigt stärker zur Mission und zur Ausbreitung.",
     passage:
-      "Die Passage deutet den Unterschied zwischen polytheistischen und monotheistischen Religionen historisch. Polytheistische Systeme können andere Götter meist leichter neben sich dulden; monotheistische Religionen beanspruchen die ganze Wahrheit und treiben ihre Botschaft mit größerem Eifer nach außen. Für Modul 10 ist das wichtig, weil so verständlich wird, warum Kirche, Mission und Herrschaft im Mittelalter so eng verschränkt sind."
+      "Die Passage deutet den Unterschied zwischen polytheistischen und monotheistischen Religionen historisch. Polytheistische Systeme können andere Götter meist leichter neben sich dulden; monotheistische Religionen beanspruchen die ganze Wahrheit und treiben ihre Botschaft mit grösserem Eifer nach aussen. Für Modul 10 ist das wichtig, weil so verständlich wird, warum Kirche, Mission und Herrschaft im Mittelalter so eng verschränkt sind."
   },
   [makeSourceKey("modul-11", "Harari-PDF · S. 217")]: {
     badge: "S. 217 · Vielerlei Geldformen",
@@ -4460,7 +4460,7 @@ const expandedHarariDetails = {
       "Die Passage führt Muscheln, Stoffe, Salz, Zigaretten und Kontogeld als historische Geldformen auf. Damit wird deutlich, dass Märkte und Städte nicht an eine einzige Währung gebunden sind, sondern an allgemeine Tauschbarkeit. Für Modul 11 ist das wichtig, weil mittelalterlicher und vormoderner Handel so als flexible Praxis sichtbar wird, die weit über die einzelne Münze hinausreicht."
   },
   [makeSourceKey("modul-12", "Harari-PDF · S. 255")]: {
-    badge: "S. 255 · Größere Räume, größere Ordnungen",
+    badge: "S. 255 · Grössere Räume, grössere Ordnungen",
     locator: "Harari-PDF, S. 255",
     pdfPage: 255,
     pdfSearch: "Weltreichen und Handelsnetzen",
@@ -4468,7 +4468,7 @@ const expandedHarariDetails = {
     thesis:
       "Harari zieht hier eine Langzeitlinie, die den Kursabschluss trägt: Mit wachsenden Reichen und Handelsräumen wachsen auch die religiösen und politischen Ordnungen, die Menschen zusammenhalten.",
     passage:
-      "Die Seite eignet sich für die Schlussbilanz, weil sie nicht nur Religion erklärt, sondern den Größenwandel historischer Räume sichtbar macht. Lokale Welten werden durch Reiche, Verkehrswege und Handelsbeziehungen in größere Zusammenhänge gezogen. So erscheinen die Entwicklungen bis 1500 als Vorgeschichte einer immer enger verbundenen Welt. Für das Abschlussmodul bündelt diese Buchstelle deshalb die Hauptbewegung der Einheit: aus kleinen Ordnungen werden größere Netze."
+      "Die Seite eignet sich für die Schlussbilanz, weil sie nicht nur Religion erklärt, sondern den Grössenwandel historischer Räume sichtbar macht. Lokale Welten werden durch Reiche, Verkehrswege und Handelsbeziehungen in grössere Zusammenhänge gezogen. So erscheinen die Entwicklungen bis 1500 als Vorgeschichte einer immer enger verbundenen Welt. Für das Abschlussmodul bündelt diese Buchstelle deshalb die Hauptbewegung der Einheit: aus kleinen Ordnungen werden grössere Netze."
   }
 };
 
@@ -4477,7 +4477,7 @@ const expandedHarariSources = {
     {
       title: "Harari-PDF · S. 38",
       meta: "Buchstelle · kleine Gruppen und ihre Grenze",
-      extracted: "Frühe Menschengruppen bleiben klein; größere Verbände brauchen neue sprachliche und soziale Mittel."
+      extracted: "Frühe Menschengruppen bleiben klein; grössere Verbände brauchen neue sprachliche und soziale Mittel."
     }
   ],
   "modul-3": [
@@ -4508,13 +4508,13 @@ const expandedHarariSources = {
     {
       title: "Harari-PDF · S. 159",
       meta: "Buchstelle · Quipus und Reichsverwaltung",
-      extracted: "Auch Knotenschnüre können große Reiche verwalten, wenn sie Daten und Abgaben systematisch speichern."
+      extracted: "Auch Knotenschnüre können grosse Reiche verwalten, wenn sie Daten und Abgaben systematisch speichern."
     }
   ],
   "modul-7": [
     {
       title: "Harari-PDF · S. 150",
-      meta: "Buchstelle · größere Verbindungsräume",
+      meta: "Buchstelle · grössere Verbindungsräume",
       extracted: "Weltreiche, Weltreligionen und Handelsnetze binden immer mehr Menschen in gemeinsame Ordnungen ein."
     }
   ],
@@ -4538,8 +4538,8 @@ const expandedHarariSources = {
     },
     {
       title: "Harari-PDF · S. 255",
-      meta: "Buchstelle · große Götter für große Räume",
-      extracted: "Weltreiche und Handelsnetze fördern größere religiöse Ordnungen als lokale Tal- und Ortsgeister."
+      meta: "Buchstelle · grosse Götter für grosse Räume",
+      extracted: "Weltreiche und Handelsnetze fördern grössere religiöse Ordnungen als lokale Tal- und Ortsgeister."
     }
   ],
   "modul-10": [
@@ -4559,7 +4559,7 @@ const expandedHarariSources = {
   "modul-12": [
     {
       title: "Harari-PDF · S. 255",
-      meta: "Buchstelle · Langzeitlinie großer Räume",
+      meta: "Buchstelle · Langzeitlinie grosser Räume",
       extracted: "Mit Reichen und Handelsnetzen wachsen die religiösen und politischen Räume, in denen Menschen leben."
     }
   ]
@@ -4568,14 +4568,14 @@ const expandedHarariSources = {
 const expandedHarariChecks = {
   "modul-1": [
     {
-      prompt: "Warum funktionieren kleine Gruppen anders als große Gesellschaften? Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
+      prompt: "Warum funktionieren kleine Gruppen anders als grosse Gesellschaften? Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
       placeholder: "Verbinde kleine Gruppen, Klatsch und Mythen.",
       sampleAnswer:
-        "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Größe tragen. Große Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
+        "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Grösse tragen. Grosse Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
       criteria: [
         { label: "kleine Gruppen beruhen auf Nähe", keywords: ["nähe", "kleine gruppen", "direkte beziehungen", "intim"] },
         { label: "Klatsch oder soziale Informationen", keywords: ["klatsch", "soziale informationen", "vertrauen"] },
-        { label: "große Gruppen brauchen gemeinsame Ordnungen", keywords: ["mythen", "geschichten", "regeln", "symbole"] }
+        { label: "grosse Gruppen brauchen gemeinsame Ordnungen", keywords: ["mythen", "geschichten", "regeln", "symbole"] }
       ]
     }
   ],
@@ -4597,7 +4597,7 @@ const expandedHarariChecks = {
       prompt: "Warum waren Schrift und Datenspeicherung für frühe Staaten so wichtig?",
       placeholder: "Arbeite mit Steuern, Besitz, Zahlen und Quipus.",
       sampleAnswer:
-        "S. 158 zeigt, dass frühe Schrift vor allem Steuern, Besitz und Zahlen festhält. S. 159 erweitert das mit den Quipus: Auch Knotenschnüre konnten große Mengen von Verwaltungsdaten speichern. Frühe Staaten brauchen solche Systeme, um Menschen, Abgaben und Vorräte über größere Räume hinweg zu ordnen.",
+        "S. 158 zeigt, dass frühe Schrift vor allem Steuern, Besitz und Zahlen festhält. S. 159 erweitert das mit den Quipus: Auch Knotenschnüre konnten grosse Mengen von Verwaltungsdaten speichern. Frühe Staaten brauchen solche Systeme, um Menschen, Abgaben und Vorräte über grössere Räume hinweg zu ordnen.",
       criteria: [
         { label: "Steuern, Besitz oder Zahlen", keywords: ["steuern", "besitz", "zahlen", "abgaben"] },
         { label: "Quipu oder Knotenschnüre", keywords: ["quipu", "knotenschnüre", "inkas"] },
@@ -4620,27 +4620,27 @@ const expandedHarariChecks = {
   ],
   "modul-9": [
     {
-      prompt: "Wie lösen Landwirtschaft, Besitz und größere politische Räume religiöse Veränderungen aus?",
+      prompt: "Wie lösen Landwirtschaft, Besitz und grössere politische Räume religiöse Veränderungen aus?",
       placeholder: "Verbinde Bauernwelt, Götter und Weltreiche.",
       sampleAnswer:
-        "S. 254 zeigt, dass Bauern Tiere und Pflanzen als Besitz behandeln und deshalb stärker auf göttliche Kontrolle von Fruchtbarkeit und Schutz hoffen. S. 255 erklärt, dass mit Weltreichen und Handelsnetzen größere Götter und polytheistische Ordnungen wichtiger werden. Religion verändert sich also mit Besitz, Herrschaft und Raumgröße.",
+        "S. 254 zeigt, dass Bauern Tiere und Pflanzen als Besitz behandeln und deshalb stärker auf göttliche Kontrolle von Fruchtbarkeit und Schutz hoffen. S. 255 erklärt, dass mit Weltreichen und Handelsnetzen grössere Götter und polytheistische Ordnungen wichtiger werden. Religion verändert sich also mit Besitz, Herrschaft und Raumgrösse.",
       criteria: [
         { label: "Landwirtschaft und Besitz", keywords: ["bauern", "besitz", "tiere", "pflanzen"] },
         { label: "übermenschliche Mächte oder Götter", keywords: ["götter", "fruchtbarkeit", "schutz", "religiöse revolution"] },
-        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "größere räume", "polytheistisch"] }
+        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "grössere räume", "polytheistisch"] }
       ]
     }
   ],
   "modul-10": [
     {
       prompt: "Warum greifen monotheistische Religionen im Mittelalter so stark in Herrschaft und Gesellschaft ein?",
-      placeholder: "Arbeite mit Wahrheitsanspruch, Mission und großen Räumen.",
+      placeholder: "Arbeite mit Wahrheitsanspruch, Mission und grossen Räumen.",
       sampleAnswer:
-        "S. 262 erklärt den missionarischen Eifer monotheistischer Religionen aus ihrem Anspruch auf die ganze Wahrheit. S. 263 zeigt, wie weit diese Religionen bis um 1500 bereits große Teile Afrikas und Eurasiens prägen. Dadurch werden sie zu zentralen Ordnungskräften von Herrschaft und Gesellschaft.",
+        "S. 262 erklärt den missionarischen Eifer monotheistischer Religionen aus ihrem Anspruch auf die ganze Wahrheit. S. 263 zeigt, wie weit diese Religionen bis um 1500 bereits grosse Teile Afrikas und Eurasiens prägen. Dadurch werden sie zu zentralen Ordnungskräften von Herrschaft und Gesellschaft.",
       criteria: [
         { label: "Wahrheitsanspruch", keywords: ["wahrheit", "einziger gott", "vollständige botschaft"] },
         { label: "Mission oder Ausbreitung", keywords: ["mission", "missionarisch", "ausbreitung"] },
-        { label: "große Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] }
+        { label: "grosse Räume bis 1500", keywords: ["1500", "afrika", "eurasien", "weite teile"] }
       ]
     }
   ],
@@ -4659,13 +4659,13 @@ const expandedHarariChecks = {
   ],
   "modul-12": [
     {
-      prompt: "Wie werden aus lokalen Welten immer größere religiöse und politische Räume?",
+      prompt: "Wie werden aus lokalen Welten immer grössere religiöse und politische Räume?",
       placeholder: "Verbinde Talwelt, Weltreiche, Handelsnetze und die Lage um 1500.",
       sampleAnswer:
-        "S. 255 zeigt den Übergang von lokalen Geistern zu größeren religiösen Ordnungen, weil Weltreiche und Handelsnetze weiter reichen als das eigene Tal. S. 263 beschreibt dann die Welt um 1500 als Raum großer monotheistischer und politischer Ordnungen. Die Schlussbilanz lautet: Geschichte bis 1500 ist eine Geschichte wachsender Verbindungsräume.",
+        "S. 255 zeigt den Übergang von lokalen Geistern zu grösseren religiösen Ordnungen, weil Weltreiche und Handelsnetze weiter reichen als das eigene Tal. S. 263 beschreibt dann die Welt um 1500 als Raum grosser monotheistischer und politischer Ordnungen. Die Schlussbilanz lautet: Geschichte bis 1500 ist eine Geschichte wachsender Verbindungsräume.",
       criteria: [
         { label: "lokale Welten oder Tal", keywords: ["tal", "lokal", "örtliche geister"] },
-        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "größere räume"] },
+        { label: "Weltreiche oder Handelsnetze", keywords: ["weltreiche", "handelsnetze", "grössere räume"] },
         { label: "Bilanz um 1500", keywords: ["1500", "monotheistisch", "ordnungen", "schlussbilanz"] }
       ]
     }
@@ -4768,8 +4768,8 @@ const moduleVisuals = {
     side: "assets/srf/m05-pfahlbauer-detail.jpg",
     kicker: "Vorzeitliche Lebensformen",
     title: "Jäger und Sammler als lange Normalform",
-    text: "Über den größten Teil der Menschheitsgeschichte leben Menschen mobil. Nahrung, Wege, Behausungen und Jahreszeitenwissen werden genau auf Klima, Tierwelt und Landschaft abgestimmt.",
-    sideText: "Mobile Lebensformen beruhen auf Umweltwissen, mündlicher Überlieferung und flexibler Organisation, nicht auf Unordnung oder bloßem Mangel."
+    text: "Über den grössten Teil der Menschheitsgeschichte leben Menschen mobil. Nahrung, Wege, Behausungen und Jahreszeitenwissen werden genau auf Klima, Tierwelt und Landschaft abgestimmt.",
+    sideText: "Mobile Lebensformen beruhen auf Umweltwissen, mündlicher Überlieferung und flexibler Organisation, nicht auf Unordnung oder blossem Mangel."
   },
   "modul-5": {
     hero: "assets/srf/m05-pfahlbauer.jpg",
@@ -4784,7 +4784,7 @@ const moduleVisuals = {
     side: "assets/srf/m01-anthropozaen.jpg",
     kicker: "Hochkulturen",
     title: "Schrift, Verwaltung und frühe Staaten",
-    text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt großer Heldengeschichten. In Ägypten verbinden sich Nilwirtschaft, Pharaonenherrschaft und religiöse Ordnung zu einer besonders langen Reichsstruktur.",
+    text: "Hochkulturen beruhen auf Überschuss, Abgaben, Beamten, Tempeln und Schrift. Die ältesten Texte erfassen oft Gerste, Besitz, Schulden und Arbeitsleistungen statt grosser Heldengeschichten. In Ägypten verbinden sich Nilwirtschaft, Pharaonenherrschaft und religiöse Ordnung zu einer besonders langen Reichsstruktur.",
     sideText: "Wichtig sind Nil, Hieroglyphen, Beamtentum, Pharao, Maat sowie Tempel- und Jenseitsvorstellungen; Mesopotamien dient nur als kurzer Vergleich einer weniger einheitlichen Frühstaatenlandschaft."
   },
   "modul-7-kelten": {
@@ -4800,16 +4800,16 @@ const moduleVisuals = {
     side: "assets/srf/m07-roemer-detail.jpg",
     kicker: "Antike Politik",
     title: "Von Athen und der Republik zum Imperium",
-    text: "Modul 7 verbindet drei antike Ordnungsformen: die attische Demokratie mit ihrer direkten Bürgerbeteiligung, die römische Republik mit Senat und Magistraten und das römische Imperium als Herrschaft über große Räume.",
-    sideText: "So wird sichtbar, wie sich politische Ordnung in der Antike verändert: von der Polis über die Republik bis zu Straßen, Heeren, Verwaltung und Alltag im Reich."
+    text: "Modul 7 verbindet drei antike Ordnungsformen: die attische Demokratie mit ihrer direkten Bürgerbeteiligung, die römische Republik mit Senat und Magistraten und das römische Imperium als Herrschaft über grosse Räume.",
+    sideText: "So wird sichtbar, wie sich politische Ordnung in der Antike verändert: von der Polis über die Republik bis zu Strassen, Heeren, Verwaltung und Alltag im Reich."
   },
   "modul-8": {
     hero: "assets/srf/m08-muenzschatz.jpg",
     side: "assets/srf/m08-roemer-experiment.jpg",
     kicker: "Vernetzung",
     title: "Geld, Handel und Vertrauen",
-    text: "Tauschhandel stößt schnell an Grenzen. Geld vereinfacht Vergleich, Bezahlung und Fernhandel, weil viele Menschen denselben Münzen oder Werten gemeinsam Vertrauen schenken.",
-    sideText: "Münzfunde, Handelswege und Großreiche zeigen, wie wirtschaftliche Vernetzung über Regionen, Sprachen und politische Grenzen hinaus funktioniert."
+    text: "Tauschhandel stösst schnell an Grenzen. Geld vereinfacht Vergleich, Bezahlung und Fernhandel, weil viele Menschen denselben Münzen oder Werten gemeinsam Vertrauen schenken.",
+    sideText: "Münzfunde, Handelswege und Grossreiche zeigen, wie wirtschaftliche Vernetzung über Regionen, Sprachen und politische Grenzen hinaus funktioniert."
   },
   "modul-9": {
     hero: "assets/srf/m09-grosse-voelker.jpg",
@@ -4817,7 +4817,7 @@ const moduleVisuals = {
     kicker: "Religionen und Weltbilder",
     title: "Religionen als Normen-, Werte- und Herrschaftsordnungen",
     text: "Judentum, Christentum und Islam ordnen Welt, Gemeinschaft und Alltag. Religion wirkt historisch nicht nur als Glaube, sondern auch über Rituale, Texte, Regeln, Herrschaft und Bildungsnetze.",
-    sideText: "Weltreligionen verbinden Menschen über große Räume hinweg und prägen Politik, Recht, Wissen und gesellschaftliche Zugehörigkeit."
+    sideText: "Weltreligionen verbinden Menschen über grosse Räume hinweg und prägen Politik, Recht, Wissen und gesellschaftliche Zugehörigkeit."
   },
   "modul-10": {
     hero: "assets/srf/m10-verruecktes-mittelalter.jpg",
@@ -4850,7 +4850,7 @@ function normalize(value) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ß/g, "ss");
+    .replace(/ss/g, "ss");
 }
 
 function makeSourceKey(moduleId, title) {
@@ -4865,9 +4865,9 @@ const sourceDetails = {
     pdfSearch: "erfundene Ordnungen",
     quote: "„erfundene Ordnungen“",
     thesis:
-      "Harari erklärt hier, dass große menschliche Gesellschaften auf gemeinsam anerkannten Vorstellungen beruhen: auf Gesetzen, Rechten, Göttern, Staaten, Ordnungen und Institutionen, an die viele Menschen zugleich glauben.",
+      "Harari erklärt hier, dass grosse menschliche Gesellschaften auf gemeinsam anerkannten Vorstellungen beruhen: auf Gesetzen, Rechten, Göttern, Staaten, Ordnungen und Institutionen, an die viele Menschen zugleich glauben.",
     passage:
-      "Harari beschreibt große Gesellschaften als Kooperationsnetze, die nicht allein durch biologische Nähe oder persönliche Bekanntschaft zusammenhalten. Menschen können in viel größeren Verbänden leben, weil sie sich auf dieselben erfundenen Ordnungen beziehen: auf Gesetze, Herrschaft, Geld, religiöse Vorstellungen oder gemeinsame Rechte. Genau darin liegt der Schlüssel für den Beginn historischer Weltdeutung in diesem Kurs. Geschichte meint hier nicht einfach alles Vergangene, sondern eine von Menschen geordnete Welt, in der Regeln, Institutionen und gemeinsame Vorstellungen ganze Gesellschaften tragen."
+      "Harari beschreibt grosse Gesellschaften als Kooperationsnetze, die nicht allein durch biologische Nähe oder persönliche Bekanntschaft zusammenhalten. Menschen können in viel grösseren Verbänden leben, weil sie sich auf dieselben erfundenen Ordnungen beziehen: auf Gesetze, Herrschaft, Geld, religiöse Vorstellungen oder gemeinsame Rechte. Genau darin liegt der Schlüssel für den Beginn historischer Weltdeutung in diesem Kurs. Geschichte meint hier nicht einfach alles Vergangene, sondern eine von Menschen geordnete Welt, in der Regeln, Institutionen und gemeinsame Vorstellungen ganze Gesellschaften tragen."
   },
   [makeSourceKey("modul-1", "SRF: Anthropozän")]: {
     badge: "SRF-school-Seite · Langzeitlinie",
@@ -4880,7 +4880,7 @@ const sourceDetails = {
     relevantItems: [
       { title: "Die Kosten des Fortschritts", note: "Von Jungsteinzeit und Ägypten über Römer und Hochmittelalter bis zu Industrie und fossilen Brennstoffen." },
       { title: "Ein neues Erdzeitalter?", note: "Anthropozän als Frage nach dauerhaft geologisch sichtbaren menschlichen Spuren." },
-      { title: "Lösungen und Gegenmaßnahmen", note: "Dirk Steffens trifft Forschende, Ingenieurinnen und Umweltfachleute, die Schäden mindern oder neue Lösungen suchen." }
+      { title: "Lösungen und Gegenmassnahmen", note: "Dirk Steffens trifft Forschende, Ingenieurinnen und Umweltfachleute, die Schäden mindern oder neue Lösungen suchen." }
     ],
     relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
     relatedItems: [
@@ -4907,7 +4907,7 @@ const sourceDetails = {
     thesis:
       "Die Passage nimmt jede einfache Fortschrittserzählung zurück: Frühe Sapiens erscheinen zunächst nicht als selbstverständlich überlegene Sieger, sondern als eine Menschenart unter mehreren.",
     passage:
-      "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die zwar äußerlich modern wirken, gegenüber anderen Menschenarten aber anfangs keinen klaren Vorsprung besitzen. Damit wird die Entwicklung des Menschen bewusst entdramatisiert: Unsere Art tritt nicht von Beginn an als offensichtlicher Sieger auf. Für das Modul ist diese Passage wichtig, weil sie Frühgeschichte als offene Situation zeigt. Mehrere Menschenarten existieren nebeneinander, und Ausbreitung muss historisch erklärt werden: durch Lernen, Anpassung, Kooperation, Werkzeuggebrauch und Bewegung durch sehr unterschiedliche Räume."
+      "Harari beschreibt die frühen Sapiens in Ostafrika als Menschen, die zwar äusserlich modern wirken, gegenüber anderen Menschenarten aber anfangs keinen klaren Vorsprung besitzen. Damit wird die Entwicklung des Menschen bewusst entdramatisiert: Unsere Art tritt nicht von Beginn an als offensichtlicher Sieger auf. Für das Modul ist diese Passage wichtig, weil sie Frühgeschichte als offene Situation zeigt. Mehrere Menschenarten existieren nebeneinander, und Ausbreitung muss historisch erklärt werden: durch Lernen, Anpassung, Kooperation, Werkzeuggebrauch und Bewegung durch sehr unterschiedliche Räume."
   },
   [makeSourceKey("modul-2", "SRF: 1491")]: {
     badge: "SRF-school-Film · Migration",
@@ -4943,7 +4943,7 @@ const sourceDetails = {
     badge: "YouTube-Film · Frühmenschen",
     locator: "YouTube-Video: Frühmenschen und Menschwerdung",
     thesis:
-      "Der Film soll Frühgeschichte direkter an Menschenarten, Werkzeugen, Feuer und körperlicher Entwicklung festmachen als die bloße Langzeitperspektive.",
+      "Der Film soll Frühgeschichte direkter an Menschenarten, Werkzeugen, Feuer und körperlicher Entwicklung festmachen als die blosse Langzeitperspektive.",
     passage:
       "Für dieses Modul dient der Nutzerfilm als ergänzende Filmgrundlage zu Menschenarten, Werkzeuggebrauch, Feuer und früher Anpassung. Er stärkt genau den Teil, der in 1491 kaum vorkommt: frühe Menschenformen vor den späteren komplexen Gesellschaften.",
     whyHere:
@@ -4954,11 +4954,11 @@ const sourceDetails = {
       "Die Entwicklung des Menschen verläuft nicht als einfache Gerade."
     ],
     misconception:
-      "Korrigiert wird die Fehldeutung, Frühmenschen seien bloß primitive Vorformen ohne eigene historische Bedeutung."
+      "Korrigiert wird die Fehldeutung, Frühmenschen seien bloss primitive Vorformen ohne eigene historische Bedeutung."
   },
-  [makeSourceKey("modul-2", "Planet Schule: Die außergewöhnliche Reise der Menschheit")]: {
+  [makeSourceKey("modul-2", "Planet Schule: Die aussergewöhnliche Reise der Menschheit")]: {
     badge: "Planet Schule · Hominisation im Überblick",
-    locator: "Planet Schule: Die außergewöhnliche Reise der Menschheit",
+    locator: "Planet Schule: Die aussergewöhnliche Reise der Menschheit",
     thesis:
       "Der Film erzählt die Menschwerdung als lange Kette von Anpassung, Werkzeugtechnik, Kooperation, Migration und weltweiter Ausbreitung statt als einzelne Wundererfindung.",
     passage:
@@ -4996,7 +4996,7 @@ const sourceDetails = {
     thesis:
       "Der Faustkeil verdichtet frühe Technikgeschichte in einem einzigen Gegenstand: Materialwahl, Planen, Schlagtechnik und Weitergabe von Können.",
     passage:
-      "Das Material ist für Modul 2 deshalb so nützlich, weil es Technikgeschichte konkret macht. Ein Faustkeil ist nicht bloß ein Stein, sondern ein bearbeitetes Werkzeug mit klarer Form, praktischer Funktion und erlernbarer Herstellung. Dahinter stehen Beobachtung geeigneter Rohstoffe, ein Zielbild im Kopf und handwerkliche Erfahrung. Genau daran wird sichtbar, dass frühe Menschen nicht nur biologisch, sondern auch technisch und kulturell lernen mussten.",
+      "Das Material ist für Modul 2 deshalb so nützlich, weil es Technikgeschichte konkret macht. Ein Faustkeil ist nicht bloss ein Stein, sondern ein bearbeitetes Werkzeug mit klarer Form, praktischer Funktion und erlernbarer Herstellung. Dahinter stehen Beobachtung geeigneter Rohstoffe, ein Zielbild im Kopf und handwerkliche Erfahrung. Genau daran wird sichtbar, dass frühe Menschen nicht nur biologisch, sondern auch technisch und kulturell lernen mussten.",
     whyHere:
       "Der Faustkeil verbindet Körper, Denken, Material und Weitergabe von Wissen in einer einzigen Spur.",
     mustKnow: [
@@ -5017,7 +5017,7 @@ const sourceDetails = {
     whyHere:
       "Das Material stabilisiert die Chronologie des Moduls und ordnet die Frühgeschichte vor den späteren Umbrüchen.",
     mustKnow: [
-      "Paläolithikum, Mesolithikum und Neolithikum bilden große Frühphasen.",
+      "Paläolithikum, Mesolithikum und Neolithikum bilden grosse Frühphasen.",
       "Die längste Zeit menschlicher Geschichte liegt vor Städten und Staaten.",
       "Chronologie ist nötig, um Brüche wie Sesshaftigkeit überhaupt zu gewichten."
     ]
@@ -5031,7 +5031,7 @@ const sourceDetails = {
     thesis:
       "Harari bezeichnet die entscheidende Wende der Menschheitsgeschichte als geistige und sprachliche Veränderung: Menschen können über Abwesendes, Zukünftiges und Erfundenes sprechen.",
     passage:
-      "Harari benennt den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist damit nicht bloß eine größere Wortzahl, sondern eine neue Qualität des Denkens und Sprechens. Menschen können über Dinge reden, die gerade nicht vor ihnen liegen: über Vergangenes und Zukünftiges, über Gefahren, Götter, Gruppen, Regeln und gemeinsam vorgestellte Ordnungen. Diese Passage trägt das Modul, weil sie erklärt, warum aus bloßer Verständigung symbolische Welten entstehen konnten. Sprache wird hier zur Grundlage von Mythos, Ritual, Zugehörigkeit und großer Kooperation."
+      "Harari benennt den Zeitraum zwischen ungefähr 70'000 und 30'000 Jahren vor heute als kognitive Revolution. Gemeint ist damit nicht bloss eine grössere Wortzahl, sondern eine neue Qualität des Denkens und Sprechens. Menschen können über Dinge reden, die gerade nicht vor ihnen liegen: über Vergangenes und Zukünftiges, über Gefahren, Götter, Gruppen, Regeln und gemeinsam vorgestellte Ordnungen. Diese Passage trägt das Modul, weil sie erklärt, warum aus blosser Verständigung symbolische Welten entstehen konnten. Sprache wird hier zur Grundlage von Mythos, Ritual, Zugehörigkeit und grosser Kooperation."
   },
   [makeSourceKey("modul-3", "SRF: 1491")]: {
     badge: "SRF-school-Film · Zeichenwelten",
@@ -5048,7 +5048,7 @@ const sourceDetails = {
       { title: "Steinmarkierungen", note: "Orientierung, Raumwissen und Wegführung in der Landschaft." }
     ],
     whyHere:
-      "Die Seite gehört in Modul 3, weil sie Sprache und Symbolfähigkeit in sichtbare historische Spuren übersetzt und damit den Übergang von bloßer Kommunikation zu kultureller Ordnung zeigt.",
+      "Die Seite gehört in Modul 3, weil sie Sprache und Symbolfähigkeit in sichtbare historische Spuren übersetzt und damit den Übergang von blosser Kommunikation zu kultureller Ordnung zeigt.",
     mustKnow: [
       "Felsbilder sind keine Dekoration, sondern Speicher von Erinnerung, Weltdeutung und Handlung.",
       "Totempfähle erzählen Herkunfts- und Familiengeschichte öffentlich und dauerhaft.",
@@ -5065,7 +5065,7 @@ const sourceDetails = {
     passage:
       "Die Ressource bringt ein direktes Beispiel prähistorischer Kunst in das Modul: Höhlenmalereien als Spur dafür, dass Menschen Erlebnisse, Tiere, Rituale und Vorstellungen bildlich festhielten.",
     whyHere:
-      "Der Film gehört in Modul 3, weil die kognitive Revolution an konkreten Symbolspuren sichtbar werden muss und nicht bloß als abstrakte Sprachtheorie stehen darf.",
+      "Der Film gehört in Modul 3, weil die kognitive Revolution an konkreten Symbolspuren sichtbar werden muss und nicht bloss als abstrakte Sprachtheorie stehen darf.",
     mustKnow: [
       "Höhlenmalereien sind historische Quellen für Symbolfähigkeit.",
       "Bilder können Erinnerung, Ritual oder Weltdeutung tragen.",
@@ -5078,11 +5078,11 @@ const sourceDetails = {
     badge: "National Geographic · Frühgeschichte und Bildwelten",
     locator: "National Geographic: Frühgeschichte und Höhlenkunst",
     thesis:
-      "Der Themenraum erweitert Höhlenkunst von einem Einzelbeispiel zu einem größeren Feld früher Bild- und Zeichenwelten.",
+      "Der Themenraum erweitert Höhlenkunst von einem Einzelbeispiel zu einem grösseren Feld früher Bild- und Zeichenwelten.",
     passage:
-      "Für dieses Modul ist die Seite hilfreich, weil sie Höhlenkunst nicht isoliert, sondern als Teil größerer Fragen nach Symbolik, Ritual, Erinnerung und visueller Ordnung behandelt. Handabdrücke, Tierdarstellungen, Farbpigmente und schwer zugängliche Höhlenräume zeigen, dass Bilder in frühen Gesellschaften mehr waren als bloßer Schmuck. Sie gehören zu einer Welt, in der Menschen Erlebnisse deuten, Zugehörigkeit ausdrücken und ihre Umwelt symbolisch fassen.",
+      "Für dieses Modul ist die Seite hilfreich, weil sie Höhlenkunst nicht isoliert, sondern als Teil grösserer Fragen nach Symbolik, Ritual, Erinnerung und visueller Ordnung behandelt. Handabdrücke, Tierdarstellungen, Farbpigmente und schwer zugängliche Höhlenräume zeigen, dass Bilder in frühen Gesellschaften mehr waren als blosser Schmuck. Sie gehören zu einer Welt, in der Menschen Erlebnisse deuten, Zugehörigkeit ausdrücken und ihre Umwelt symbolisch fassen.",
     whyHere:
-      "Das Material verbreitert den Blick von einem einzelnen Höhlenfilm zu einer größeren Geschichte früher Bildsprachen.",
+      "Das Material verbreitert den Blick von einem einzelnen Höhlenfilm zu einer grösseren Geschichte früher Bildsprachen.",
     mustKnow: [
       "Höhlenkunst ist eine historische Quelle für Denken und Deuten.",
       "Bilder, Zeichen und Farben schaffen gemeinsame Bedeutung.",
@@ -5103,7 +5103,7 @@ const sourceDetails = {
       { title: "Mündliche Wissensweitergabe", note: "Überleben, Wege und Umweltwissen werden vor allem erzählt und gezeigt." }
     ],
     whyHere:
-      "Die Seite gehört in Modul 4, weil sie mobile Lebensformen als eigenständige, wissensreiche Lebensweise zeigt und nicht bloß als unentwickelte Vorstufe zur Sesshaftigkeit.",
+      "Die Seite gehört in Modul 4, weil sie mobile Lebensformen als eigenständige, wissensreiche Lebensweise zeigt und nicht bloss als unentwickelte Vorstufe zur Sesshaftigkeit.",
     mustKnow: [
       "Jäger-und-Sammler-Gesellschaften passen Behausungen, Wege und Ernährung sehr genau an ihre Umwelt an.",
       "Mündliche Überlieferung trägt praktisches Wissen über Tiere, Klima, Jagd und Orientierung.",
@@ -5120,7 +5120,7 @@ const sourceDetails = {
     passage:
       "Für dieses Modul ergänzt der Nutzerfilm die SRF-Ressource um eine direkte Auseinandersetzung mit Jagd, Sammeln, Mobilität, Umweltbeobachtung und alltäglicher Organisation.",
     whyHere:
-      "Der Film gehört in Modul 4, weil dieses Modul die Vorzeit nicht als bloßen Mangelzustand, sondern als hoch angepasste Lebensform erklären muss.",
+      "Der Film gehört in Modul 4, weil dieses Modul die Vorzeit nicht als blossen Mangelzustand, sondern als hoch angepasste Lebensform erklären muss.",
     mustKnow: [
       "Jagd und Sammeln verlangen genaue Umweltkenntnis.",
       "Mobilität folgt nicht dem Zufall, sondern saisonalen und räumlichen Logiken.",
@@ -5145,12 +5145,12 @@ const sourceDetails = {
     thesis:
       "Graeber und Wengrow betonen, dass frühe Gesellschaften nicht dauerhaft in einer einzigen politischen Form festlagen. Sie konnten je nach Jahreszeit, Ort und Anlass zwischen verschiedenen Lebens- und Ordnungsweisen wechseln.",
     passage:
-      "Die Gegenposition richtet sich gegen das Bild, mobile Gesellschaften seien grundsätzlich klein, schlicht und politisch immer gleich. Graeber und Wengrow verweisen auf saisonale Wechsel zwischen verstreutem Leben und großen Zusammenkünften, auf Monumente und auf Gruppen, die bewusst zwischen strengerer und freierer Ordnung hin- und herwechselten. Vorzeit erscheint dadurch nicht nur als Anpassung an Umwelt, sondern auch als Feld sozialer Wahlmöglichkeiten. Für dieses Modul ist das wichtig, weil Mobilität dann zugleich ökologische und politische Kompetenz bedeutet.",
+      "Die Gegenposition richtet sich gegen das Bild, mobile Gesellschaften seien grundsätzlich klein, schlicht und politisch immer gleich. Graeber und Wengrow verweisen auf saisonale Wechsel zwischen verstreutem Leben und grossen Zusammenkünften, auf Monumente und auf Gruppen, die bewusst zwischen strengerer und freierer Ordnung hin- und herwechselten. Vorzeit erscheint dadurch nicht nur als Anpassung an Umwelt, sondern auch als Feld sozialer Wahlmöglichkeiten. Für dieses Modul ist das wichtig, weil Mobilität dann zugleich ökologische und politische Kompetenz bedeutet.",
     whyHere:
       "Hier liegt einer der stärksten Unterschiede zu Harari: Er hebt die lange Normalform hervor, Graeber und Wengrow betonen innerhalb dieser Normalform die Vielfalt der politischen Möglichkeiten.",
     mustKnow: [
       "Mobile Gesellschaften konnten sich saisonal sehr unterschiedlich organisieren.",
-      "Große Versammlungen oder Monumente widerlegen das Bild bloß kleiner, einfacher Gruppen.",
+      "Grosse Versammlungen oder Monumente widerlegen das Bild bloss kleiner, einfacher Gruppen.",
       "Vor Landwirtschaft gab es bereits bewusste soziale und politische Wahlmöglichkeiten."
     ]
   },
@@ -5158,19 +5158,19 @@ const sourceDetails = {
     badge: "S. 100 · Streitstelle",
     locator: "Harari-PDF, S. 100",
     pdfPage: 100,
-    pdfSearch: "Der größte Betrug der Geschichte",
-    quote: "„Der größte Betrug der Geschichte“",
+    pdfSearch: "Der grösste Betrug der Geschichte",
+    quote: "„Der grösste Betrug der Geschichte“",
     thesis:
       "Die landwirtschaftliche Revolution wird hier nicht als einfache Erfolgsgeschichte gelesen, sondern als widersprüchlicher Umbruch mit Nutzen, Belastungen und neuen Abhängigkeiten.",
     passage:
-      "Harari überschreibt das Landwirtschaftskapitel bewusst provokativ und zwingt damit zu historischem Urteil. Seine Pointe ist nicht, dass Landwirtschaft nutzlos gewesen sei, sondern dass Ackerbau und Viehzucht einen widersprüchlichen Wandel auslösten: mehr Vorräte, größere Siedlungen und mehr Menschen auf der einen Seite, zugleich aber härtere Arbeit, einseitigere Ernährung, stärkere Abhängigkeit von Ernten, Eigentum und neue soziale Ungleichheiten auf der anderen. Die Passage ist für das Modul zentral, weil sie Sesshaftigkeit nicht als selbstverständlichen Fortschritt behandelt, sondern als tiefen Umbau von Alltag, Macht und Lebensrisiko."
+      "Harari überschreibt das Landwirtschaftskapitel bewusst provokativ und zwingt damit zu historischem Urteil. Seine Pointe ist nicht, dass Landwirtschaft nutzlos gewesen sei, sondern dass Ackerbau und Viehzucht einen widersprüchlichen Wandel auslösten: mehr Vorräte, grössere Siedlungen und mehr Menschen auf der einen Seite, zugleich aber härtere Arbeit, einseitigere Ernährung, stärkere Abhängigkeit von Ernten, Eigentum und neue soziale Ungleichheiten auf der anderen. Die Passage ist für das Modul zentral, weil sie Sesshaftigkeit nicht als selbstverständlichen Fortschritt behandelt, sondern als tiefen Umbau von Alltag, Macht und Lebensrisiko."
   },
   [makeSourceKey("modul-5", "Landwirtschaft ohne Zwangslogik")]: {
     quote: "„the granaries-to-overlords tale simply isn’t true“",
     thesis:
       "Graeber und Wengrow bestreiten, dass Landwirtschaft zwangsläufig in Eliten, Steuern und Staat mündet. Für sie gibt es keinen einzigen festen Weg von Feldbau zu Unterordnung.",
     passage:
-      "Die Gegenposition wendet sich gegen eine lineare Erzählung: zuerst Getreidebau, dann Vorräte, dann automatisch Herrschaft von oben. Graeber und Wengrow argumentieren stattdessen, dass Menschen Landwirtschaft in sehr verschiedenen Formen nutzten, mit älteren Lebensweisen kombinierten oder wieder zurücknahmen. Daraus folgt: Landwirtschaft verändert Ernährung, Arbeit und Siedlung tiefgreifend, aber sie legt nicht schon fest, ob daraus Königtum, Klassengesellschaft oder eine andere Ordnung entsteht. Für dieses Modul verschiebt das den Blick von der einen großen Revolution zu mehreren möglichen Wegen.",
+      "Die Gegenposition wendet sich gegen eine lineare Erzählung: zuerst Getreidebau, dann Vorräte, dann automatisch Herrschaft von oben. Graeber und Wengrow argumentieren stattdessen, dass Menschen Landwirtschaft in sehr verschiedenen Formen nutzten, mit älteren Lebensweisen kombinierten oder wieder zurücknahmen. Daraus folgt: Landwirtschaft verändert Ernährung, Arbeit und Siedlung tiefgreifend, aber sie legt nicht schon fest, ob daraus Königtum, Klassengesellschaft oder eine andere Ordnung entsteht. Für dieses Modul verschiebt das den Blick von der einen grossen Revolution zu mehreren möglichen Wegen.",
     whyHere:
       "Genau hier prallen die Deutungen aufeinander: Harari liest den Übergang stark als belastenden Bruch, Graeber und Wengrow als offeneren Prozess mit Mischformen und Alternativen.",
     mustKnow: [
@@ -5247,12 +5247,12 @@ const sourceDetails = {
     thesis:
       "Göbekli Tepe verschiebt die übliche Reihenfolge: monumentale Kultbauten entstehen sichtbar, bevor der klassische Bauernstaat mit Palast, Beamten und Steuern greifbar wird.",
     passage:
-      "Gerade dieses Material macht Modul 5 historisch schärfer. Die großen Steinsetzungen zeigen, dass religiöse Sammlung, gemeinsames Bauen und symbolische Ordnung schon sehr früh hohe Koordination verlangen konnten. Dadurch gerät die einfache Formel ins Wanken, erst Landwirtschaft habe automatisch Religion, Monumente und komplexe Organisation hervorgebracht. Göbekli Tepe zwingt dazu, Sesshaftigkeit, Kult und Herrschaft neu aufeinander zu beziehen.",
+      "Gerade dieses Material macht Modul 5 historisch schärfer. Die grossen Steinsetzungen zeigen, dass religiöse Sammlung, gemeinsames Bauen und symbolische Ordnung schon sehr früh hohe Koordination verlangen konnten. Dadurch gerät die einfache Formel ins Wanken, erst Landwirtschaft habe automatisch Religion, Monumente und komplexe Organisation hervorgebracht. Göbekli Tepe zwingt dazu, Sesshaftigkeit, Kult und Herrschaft neu aufeinander zu beziehen.",
     whyHere:
       "Der Film setzt mitten in der Neolithisierung einen starken Gegenakzent zu linearen Modellen.",
     mustKnow: [
       "Monumentale Kultzentren können vor klassischer Staatlichkeit entstehen.",
-      "Große Bauprojekte setzen schon früh Koordination und gemeinsame Deutung voraus.",
+      "Grosse Bauprojekte setzen schon früh Koordination und gemeinsame Deutung voraus.",
       "Religion, Sesshaftigkeit und Herrschaft folgen nicht immer derselben Reihenfolge."
     ]
   },
@@ -5290,7 +5290,7 @@ const sourceDetails = {
       "Tempel, Gräber und Pyramiden gehören zu einer Welt aus Herrschaft, Kult und Jenseitsvorstellungen."
     ],
     misconception:
-      "Korrigiert wird die Fehldeutung, frühe Hochkulturen ließen sich vor allem durch Monumente und berühmte Herrscher erklären."
+      "Korrigiert wird die Fehldeutung, frühe Hochkulturen liessen sich vor allem durch Monumente und berühmte Herrscher erklären."
   },
   [makeSourceKey("modul-6", "YouTube: Hochkulturen")]: {
     badge: "YouTube-Film · Hochkulturen",
@@ -5312,28 +5312,28 @@ const sourceDetails = {
   [makeSourceKey("modul-6", "Städte ohne Könige?")]: {
     quote: "„the mere fact of urban life“",
     thesis:
-      "Graeber und Wengrow widersprechen der Vorstellung, Stadtgröße führe automatisch zu Monarchie, Palästen oder festen Klassen. Große Siedlungen konnten politisch ganz unterschiedlich organisiert sein.",
+      "Graeber und Wengrow widersprechen der Vorstellung, Stadtgrösse führe automatisch zu Monarchie, Palästen oder festen Klassen. Grosse Siedlungen konnten politisch ganz unterschiedlich organisiert sein.",
     passage:
-      "Die Gegenposition setzt nicht bei Ägypten als Gegenbeispiel an, sondern bei der allgemeinen Deutung früher Komplexität. Graeber und Wengrow verweisen auf große Orte, deren Planung, Dichte und Koordination sichtbar sind, ohne dass sie zwangsläufig eine klassische Herrschaftspyramide hervorbringen. Das macht einen entscheidenden Unterschied: Ägypten bleibt ein starkes Beispiel für frühen Staat, aber nicht jede größere Siedlung ist automatisch ein Staat nach demselben Muster. Für das Modul ist diese Passage wichtig, weil sie zwischen Komplexität und Hierarchie unterscheidet.",
+      "Die Gegenposition setzt nicht bei Ägypten als Gegenbeispiel an, sondern bei der allgemeinen Deutung früher Komplexität. Graeber und Wengrow verweisen auf grosse Orte, deren Planung, Dichte und Koordination sichtbar sind, ohne dass sie zwangsläufig eine klassische Herrschaftspyramide hervorbringen. Das macht einen entscheidenden Unterschied: Ägypten bleibt ein starkes Beispiel für frühen Staat, aber nicht jede grössere Siedlung ist automatisch ein Staat nach demselben Muster. Für das Modul ist diese Passage wichtig, weil sie zwischen Komplexität und Hierarchie unterscheidet.",
     whyHere:
-      "Hier wird die Leitfrage des Moduls verschärft: Aus Vorräten kann ein Staat werden, aber große Besiedlung und Koordination müssen nicht immer sofort im gleichen Herrschaftsmodell enden.",
+      "Hier wird die Leitfrage des Moduls verschärft: Aus Vorräten kann ein Staat werden, aber grosse Besiedlung und Koordination müssen nicht immer sofort im gleichen Herrschaftsmodell enden.",
     mustKnow: [
-      "Große Siedlungen sind nicht automatisch Königsstaaten.",
+      "Grosse Siedlungen sind nicht automatisch Königsstaaten.",
       "Komplexität, Arbeitsteilung und Hierarchie sind historisch nicht identisch.",
       "Ägypten ist ein Weg früher Staatlichkeit, aber kein allgemeines Naturgesetz."
     ]
   },
-  [makeSourceKey("modul-6", "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung")]: {
-    badge: "Terra X · Großsiedlung ohne Palast",
-    locator: "Terra X / Planet Wissen: Çatalhöyük – Großsiedlung",
+  [makeSourceKey("modul-6", "Terra X / Planet Wissen: Çatalhöyük – Grosssiedlung")]: {
+    badge: "Terra X · Grosssiedlung ohne Palast",
+    locator: "Terra X / Planet Wissen: Çatalhöyük – Grosssiedlung",
     thesis:
       "Çatalhöyük zeigt dichte Besiedlung, Kult und Hausverbände, ohne dass sofort ein klassischer Königsstaat sichtbar wird.",
     passage:
       "Für Modul 6 ist Çatalhöyük besonders fruchtbar, weil es zwischen Dorf und Staat liegt. Viele eng gebaute Häuser, Dachzugänge, Wandmalereien und Bestattungen im Haus zeigen eine hoch verdichtete Lebensform mit klarer sozialer Ordnung. Gleichzeitig fehlt das eindeutige Bild eines Palastes oder eines zentralen Herrschers. Genau daran lässt sich lernen, dass Komplexität, Verdichtung und Staat nicht dasselbe sind.",
     whyHere:
-      "Das Material macht den Unterschied zwischen großer Siedlung und fertigem Staat anschaulich.",
+      "Das Material macht den Unterschied zwischen grosser Siedlung und fertigem Staat anschaulich.",
     mustKnow: [
-      "Çatalhöyük ist eine frühe Großsiedlung mit dichter Hausordnung.",
+      "Çatalhöyük ist eine frühe Grosssiedlung mit dichter Hausordnung.",
       "Komplexes Zusammenleben ist nicht automatisch schon Königtum.",
       "Verdichtung kann archäologisch sichtbar sein, bevor klassische Staatssymbole auftauchen."
     ]
@@ -5344,12 +5344,12 @@ const sourceDetails = {
     thesis:
       "Die Animation übersetzt den Befund von Çatalhöyük in einen räumlichen Eindruck und macht Hausdichte, Dächer und Zugänge unmittelbar sichtbar.",
     passage:
-      "Gerade bei frühen Großsiedlungen hilft die räumliche Vorstellung enorm. Die Animation zeigt, wie eng die Häuser stehen, warum Dächer als Verkehrsraum dienen und wie wenig das Ganze an spätere Straßensysteme oder Palastanlagen erinnert. So wird sichtbar, dass frühe Verdichtung anders organisiert sein kann als spätere Städte.",
+      "Gerade bei frühen Grosssiedlungen hilft die räumliche Vorstellung enorm. Die Animation zeigt, wie eng die Häuser stehen, warum Dächer als Verkehrsraum dienen und wie wenig das Ganze an spätere Strassensysteme oder Palastanlagen erinnert. So wird sichtbar, dass frühe Verdichtung anders organisiert sein kann als spätere Städte.",
     whyHere:
       "Das Material macht eine archäologische Beschreibung räumlich verständlich.",
     mustKnow: [
       "Dächer und Hausverbände strukturieren die Siedlung.",
-      "Großsiedlung bedeutet nicht automatisch Stadt nach späterem Muster.",
+      "Grosssiedlung bedeutet nicht automatisch Stadt nach späterem Muster.",
       "Räumliche Rekonstruktion hilft, Archäologie konkret zu lesen."
     ]
   },
@@ -5365,35 +5365,35 @@ const sourceDetails = {
     mustKnow: [
       "Hochkultur meint dauerhafte komplexe Ordnung, nicht nur Monumente.",
       "Schrift, Verwaltung und Spezialisierung gehören zum Kern.",
-      "Der Begriff muss präzise und nicht bloß dekorativ verwendet werden."
+      "Der Begriff muss präzise und nicht bloss dekorativ verwendet werden."
     ]
   },
   [makeSourceKey("modul-7-kelten", "Harari-PDF · S. 150")]: {
-    badge: "S. 150 · Größere Räume ziehen Gruppen in Netze",
+    badge: "S. 150 · Grössere Räume ziehen Gruppen in Netze",
     locator: "Harari-PDF, S. 150",
     pdfPage: 150,
     pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
     quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
     thesis:
-      "Harari beschreibt die antike Entwicklung als Ausweitung größerer Macht-, Glaubens- und Handelsräume. Lokale Gruppen geraten dadurch in immer größere Netze von Herrschaft und Verkehr.",
+      "Harari beschreibt die antike Entwicklung als Ausweitung grösserer Macht-, Glaubens- und Handelsräume. Lokale Gruppen geraten dadurch in immer grössere Netze von Herrschaft und Verkehr.",
     passage:
-      "Für die Helvetier ist diese Buchstelle wichtig, weil sie den römischen Eingriff von 58 v. Chr. nicht bloß als Schlacht, sondern als Eingliederung in eine größere imperiale Ordnung lesbar macht. Rom kontrolliert Raum, Bewegung, Militär, Recht und Verkehrswege. Hararis Akzent liegt deshalb weniger auf keltischer Eigenwelt als auf der historischen Tendenz, dass immer größere Reiche kleinere politische Räume in umfassendere Ordnungen hineinziehen.",
+      "Für die Helvetier ist diese Buchstelle wichtig, weil sie den römischen Eingriff von 58 v. Chr. nicht bloss als Schlacht, sondern als Eingliederung in eine grössere imperiale Ordnung lesbar macht. Rom kontrolliert Raum, Bewegung, Militär, Recht und Verkehrswege. Hararis Akzent liegt deshalb weniger auf keltischer Eigenwelt als auf der historischen Tendenz, dass immer grössere Reiche kleinere politische Räume in umfassendere Ordnungen hineinziehen.",
     whyHere:
       "Die Buchstelle macht sichtbar, wie Harari den Bruch von der keltischen Schweiz zur römisch geordneten Welt lesen würde.",
     mustKnow: [
-      "Harari liest antike Geschichte stark als Vergrößerung gemeinsamer Macht- und Verkehrsordnungen.",
+      "Harari liest antike Geschichte stark als Vergrösserung gemeinsamer Macht- und Verkehrsordnungen.",
       "Der römische Zugriff auf die Helvetier ist deshalb mehr als Krieg: Er verändert den politischen Raum.",
-      "Wichtig ist die Eingliederung in größere Netze aus Herrschaft, Verkehr und Handel."
+      "Wichtig ist die Eingliederung in grössere Netze aus Herrschaft, Verkehr und Handel."
     ]
   },
-  [makeSourceKey("modul-7-kelten", "Graeber/Wengrow: Oppida ohne Einbahnstraße")]: {
+  [makeSourceKey("modul-7-kelten", "Graeber/Wengrow: Oppida ohne Einbahnstrasse")]: {
     quote: "„the mere fact of urban life“",
     thesis:
-      "Graeber und Wengrow bestreiten, dass größere Siedlungen, Handel und politische Verdichtung automatisch nur als Vorstufe eines Reiches gelesen werden dürfen.",
+      "Graeber und Wengrow bestreiten, dass grössere Siedlungen, Handel und politische Verdichtung automatisch nur als Vorstufe eines Reiches gelesen werden dürfen.",
     passage:
       "Am Beispiel der keltischen oppida lässt sich diese Gegenposition gut erklären. Befestigte Zentren, Münzgeld, Fernkontakte und religiöse Orte zeigen eine komplexe Gesellschaft schon vor der römischen Eingliederung. Graeber und Wengrow verschieben deshalb den Blick: Nicht Rom macht die Helvetier erst historisch interessant, sondern die vorrömische keltische Welt besitzt bereits eigene Dichte, Wahlmöglichkeiten und politische Formen. Der entscheidende Unterschied zu Harari liegt hier im Gewicht der offenen Wege vor dem Imperium.",
     whyHere:
-      "Diese Gegenposition schärft die Leitfrage des Moduls: Ist Rom der eigentliche Anfang größerer Ordnung, oder war die keltische Welt schon vorher komplex und eigenständig?",
+      "Diese Gegenposition schärft die Leitfrage des Moduls: Ist Rom der eigentliche Anfang grösserer Ordnung, oder war die keltische Welt schon vorher komplex und eigenständig?",
     mustKnow: [
       "Oppida, Münzen und Fernkontakte beweisen vorrömische Komplexität.",
       "Komplexe Gesellschaften müssen nicht automatisch in einem einheitlichen Reich enden.",
@@ -5442,7 +5442,7 @@ const sourceDetails = {
     thesis:
       "Der Beitrag ordnet die keltische Welt als frühe europäische Hochkultur ein und verbindet Hallstatt, La Tène, Metallhandwerk und Fernkontakte.",
     passage:
-      "Für das Modul ist dieser Text vor allem am Anfang wichtig: Er erklärt, warum Hallstatt und La Tène keine bloßen Etiketten sind, sondern Entwicklungsphasen einer keltischen Kulturwelt mit Eisen, Schmuck, Waffen, Handel und regionalen Eliten. So wird verständlich, dass die Helvetier nicht erst mit Caesar in Erscheinung treten, sondern Teil einer längeren eisenzeitlichen Entwicklung sind.",
+      "Für das Modul ist dieser Text vor allem am Anfang wichtig: Er erklärt, warum Hallstatt und La Tène keine blossen Etiketten sind, sondern Entwicklungsphasen einer keltischen Kulturwelt mit Eisen, Schmuck, Waffen, Handel und regionalen Eliten. So wird verständlich, dass die Helvetier nicht erst mit Caesar in Erscheinung treten, sondern Teil einer längeren eisenzeitlichen Entwicklung sind.",
     whyHere:
       "Der Beitrag liefert den nötigen Überblick über die keltische Welt vor dem Fokus auf die Helvetier.",
     mustKnow: [
@@ -5459,7 +5459,7 @@ const sourceDetails = {
     passage:
       "Diese Übersicht hilft, die Begriffe sauber zu ordnen: Hallstatt steht für eine frühe Phase, La Tène für eine spätere Blüte, und oppida markieren verdichtete Zentren kurz vor dem römischen Eingriff. Damit lässt sich die keltische Schweiz als Entwicklung verstehen und nicht nur als Episode direkt vor Caesar.",
     whyHere:
-      "Die Übersicht schließt die Lücke zwischen allgemeiner Kelteneinführung und dem Spezialfall der Helvetier.",
+      "Die Übersicht schliesst die Lücke zwischen allgemeiner Kelteneinführung und dem Spezialfall der Helvetier.",
     mustKnow: [
       "Die keltische Schweiz entwickelt sich über längere Eisenzeitphasen.",
       "Oppida zeigen politische und wirtschaftliche Verdichtung kurz vor Rom.",
@@ -5476,12 +5476,12 @@ const sourceDetails = {
     thesis:
       "Die Seite macht klar, dass Kelten und Helvetier nicht isoliert zu betrachten sind, sondern in einer viel breiteren archäologischen Landschaft der Schweiz liegen.",
     passage:
-      "Für das Modul ist diese Seite weniger wegen eines einzelnen Arguments wichtig als wegen ihrer Einbettung: Fundorte, Siedlungsräume, Grabungen und Verkehrsachsen zeigen, dass die keltische Schweiz archäologisch dicht erschlossen und regional sehr verschieden ist. Damit wird sichtbar, warum Einzelorte wie Bern-Engehalbinsel oder Kempraten nur im Zusammenhang eines größeren Fundraums richtig verstanden werden.",
+      "Für das Modul ist diese Seite weniger wegen eines einzelnen Arguments wichtig als wegen ihrer Einbettung: Fundorte, Siedlungsräume, Grabungen und Verkehrsachsen zeigen, dass die keltische Schweiz archäologisch dicht erschlossen und regional sehr verschieden ist. Damit wird sichtbar, warum Einzelorte wie Bern-Engehalbinsel oder Kempraten nur im Zusammenhang eines grösseren Fundraums richtig verstanden werden.",
     whyHere:
       "Die Seite erweitert den Blick vom einzelnen Fund auf die gesamte archäologische Landschaft der Schweiz.",
     mustKnow: [
       "Keltische Geschichte der Schweiz ist archäologisch über viele Fundorte erschlossen.",
-      "Einzelfunde werden erst im größeren Raumzusammenhang historisch aussagekräftig.",
+      "Einzelfunde werden erst im grösseren Raumzusammenhang historisch aussagekräftig.",
       "Regionale Zentren, Verkehrsachsen und Fundlandschaften greifen ineinander."
     ],
     relatedLabel: "Regionale Ergänzungen:",
@@ -5527,7 +5527,7 @@ const sourceDetails = {
     thesis:
       "Der Film macht keltische Gesellschaft materiell fassbar: Häuser, Vorräte, Handwerk, Arbeitsteilung und Versorgung stehen im Mittelpunkt.",
     passage:
-      "Gerade dieses Material hilft, die keltische Welt aus der Sphäre bloßer Kriegerbilder zu holen. Hausbau, Werkzeuge, Kochen, Vorratshaltung und handwerkliche Arbeit zeigen, wie stark Alltag organisiert werden musste. Damit wird keltische Geschichte als Lebenswelt lesbar: mit Holz, Metall, Speicher, Körperarbeit und räumlicher Ordnung.",
+      "Gerade dieses Material hilft, die keltische Welt aus der Sphäre blosser Kriegerbilder zu holen. Hausbau, Werkzeuge, Kochen, Vorratshaltung und handwerkliche Arbeit zeigen, wie stark Alltag organisiert werden musste. Damit wird keltische Geschichte als Lebenswelt lesbar: mit Holz, Metall, Speicher, Körperarbeit und räumlicher Ordnung.",
     whyHere:
       "Der Film erdet die abstrakte Rede über Kelten in konkretem Alltag.",
     mustKnow: [
@@ -5572,7 +5572,7 @@ const sourceDetails = {
     thesis:
       "Der Film zeigt den Übergang nicht als Totalersetzung, sondern als Kontaktzone aus Übernahme, Druck, Weiterleben und Neuordnung.",
     passage:
-      "Das Material ist für die Einheit besonders stark, weil es Kelten und Römer nicht als zwei vollständig getrennte Welten behandelt. Straßen, Siedlungen, Ortslagen und materielle Spuren machen sichtbar, dass Rom auf bereits bestehende Räume trifft und diese überformt. Genau dadurch werden Kontinuitäten und Brüche konkret: Manche Orte bleiben wichtig, andere Funktionen ändern sich, neue Machtverhältnisse greifen in alte Strukturen ein.",
+      "Das Material ist für die Einheit besonders stark, weil es Kelten und Römer nicht als zwei vollständig getrennte Welten behandelt. Strassen, Siedlungen, Ortslagen und materielle Spuren machen sichtbar, dass Rom auf bereits bestehende Räume trifft und diese überformt. Genau dadurch werden Kontinuitäten und Brüche konkret: Manche Orte bleiben wichtig, andere Funktionen ändern sich, neue Machtverhältnisse greifen in alte Strukturen ein.",
     whyHere:
       "Der Film verknüpft den späteisenzeitlichen Raum mit der gallo-römischen Überlagerung.",
     mustKnow: [
@@ -5626,19 +5626,19 @@ const sourceDetails = {
     badge: "fünfteilige Reihe · Römer konkret",
     locator: "SRF school: Römer in der Schweiz",
     passage:
-      "Die SRF-Seite ist keine Einzelfolge, sondern eine fünfteilige Reihe. Für das Modul tragen gerade diese konkreten Teilfilme die Wissensvermittlung: Kulturkontakt zwischen Kelten und Römern, Legionärsalltag, Bauten und Siedlungen, Familienleben und Ernährung sowie Straßen, Handel und bleibende Spuren römischer Herrschaft.",
+      "Die SRF-Seite ist keine Einzelfolge, sondern eine fünfteilige Reihe. Für das Modul tragen gerade diese konkreten Teilfilme die Wissensvermittlung: Kulturkontakt zwischen Kelten und Römern, Legionärsalltag, Bauten und Siedlungen, Familienleben und Ernährung sowie Strassen, Handel und bleibende Spuren römischer Herrschaft.",
     itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
     relevantItems: [
       { title: "Die Kelten und die Römer", note: "Kulturkontakt, Eroberung und Überlagerung bestehender Siedlungen." },
       { title: "Was sind Legionäre?", note: "Vindonissa, Militäralltag und die Rolle des einzigen Legionslagers im Gebiet der heutigen Schweiz." },
       { title: "Wo lebten die Römer in der Schweiz?", note: "Gutshöfe, Wasserleitungen, Heizungen, Bäder und römische Baukunst." },
       { title: "Wie lebten die Römer in der Schweiz?", note: "Wein, Aprikosen, Walnüsse, Familienleben, Religion und Alltag." },
-      { title: "Strassen, Handel und was von den Römern geblieben ist", note: "Straßennetz, Tunnel, Handel, Zahlungsmittel und langfristige Infrastrukturfolgen." }
+      { title: "Strassen, Handel und was von den Römern geblieben ist", note: "Strassennetz, Tunnel, Handel, Zahlungsmittel und langfristige Infrastrukturfolgen." }
     ],
     whyHere:
       "Die Reihe gehört in Modul 7, weil Imperium hier an einem regionalen Raum konkret wird: Militär, Siedlung, Alltag, Infrastruktur und Kulturkontakt greifen ineinander.",
     mustKnow: [
-      "Römische Herrschaft verändert Raum durch Straßen, Brücken, Lager und Verkehrsachsen.",
+      "Römische Herrschaft verändert Raum durch Strassen, Brücken, Lager und Verkehrsachsen.",
       "Imperium wirkt bis in Ernährung, Bauten, Tierhaltung und Familienalltag hinein.",
       "Römische Ordnung überlagert lokale keltische Strukturen statt einfach im leeren Raum zu entstehen."
     ],
@@ -5649,7 +5649,7 @@ const sourceDetails = {
     badge: "SRF-school-Film · Rekonstruktion",
     locator: "SRF school: Das Römer-Experiment",
     passage:
-      "Der Film arbeitet mit Rekonstruktion statt bloßer Beschreibung: Kochen, Werkzeuge, Gladiatorenausbildung und nachgestellte Alltagssituationen zeigen, wie stark imperiale Ordnung im Materiellen steckt. Genau deshalb ergänzt er die politische Reichsgeschichte durch Körper, Gegenstände und Routinen.",
+      "Der Film arbeitet mit Rekonstruktion statt blosser Beschreibung: Kochen, Werkzeuge, Gladiatorenausbildung und nachgestellte Alltagssituationen zeigen, wie stark imperiale Ordnung im Materiellen steckt. Genau deshalb ergänzt er die politische Reichsgeschichte durch Körper, Gegenstände und Routinen.",
     whyHere:
       "Der Film gehört in Modul 7, weil er Reichsgeschichte in Gegenstände, Körper und Arbeitsabläufe übersetzt.",
     mustKnow: [
@@ -5658,7 +5658,7 @@ const sourceDetails = {
       "Imperium zeigt sich nicht nur in Gesetzen, sondern auch in Werkzeugen, Gebäuden und Praktiken."
     ],
     misconception:
-      "Korrigiert wird die Fehldeutung, Alltagsgeschichte sei bloß schmückendes Beiwerk neben der politischen Geschichte."
+      "Korrigiert wird die Fehldeutung, Alltagsgeschichte sei bloss schmückendes Beiwerk neben der politischen Geschichte."
   },
   [makeSourceKey("modul-8", "Harari-PDF")]: {
     badge: "S. 212 · Geld",
@@ -5667,9 +5667,9 @@ const sourceDetails = {
     pdfSearch: "Der Geruch des Geldes",
     quote: "„Der Geruch des Geldes“",
     thesis:
-      "Harari erklärt Geld hier nicht als bloßes Metall, sondern als Vertrauenssystem, das Menschen über kulturelle Grenzen hinweg miteinander handeln lässt.",
+      "Harari erklärt Geld hier nicht als blosses Metall, sondern als Vertrauenssystem, das Menschen über kulturelle Grenzen hinweg miteinander handeln lässt.",
     passage:
-      "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Gerade an diesem Kontrast zeigt er, dass Geld nicht einfach deshalb wirkt, weil ein bestimmtes Material an sich wertvoll wäre. Entscheidend ist vielmehr, dass Menschen demselben Mittel gemeinsam Tauschfähigkeit und Vertrauen zuschreiben. Für das Modul ist die Passage zentral, weil sie Handel und Vernetzung nicht bloß technisch erklärt. Geld wird hier zu einer historischen Ordnung, die Unterschiede von Sprache, Herkunft, Religion und politischem Raum überbrücken kann, ohne sie aufzuheben."
+      "Harari eröffnet sein Geld-Kapitel mit Cortés, den Azteken, Gold, Kakaobohnen und Tuchballen. Gerade an diesem Kontrast zeigt er, dass Geld nicht einfach deshalb wirkt, weil ein bestimmtes Material an sich wertvoll wäre. Entscheidend ist vielmehr, dass Menschen demselben Mittel gemeinsam Tauschfähigkeit und Vertrauen zuschreiben. Für das Modul ist die Passage zentral, weil sie Handel und Vernetzung nicht bloss technisch erklärt. Geld wird hier zu einer historischen Ordnung, die Unterschiede von Sprache, Herkunft, Religion und politischem Raum überbrücken kann, ohne sie aufzuheben."
   },
   [makeSourceKey("modul-8", "SRF: Münzschatz von Ueken")]: {
     badge: "SRF-school-Film · Sachquelle",
@@ -5679,7 +5679,7 @@ const sourceDetails = {
     whyHere:
       "Der Film gehört in Modul 8, weil Geld hier als Sachquelle sichtbar wird und nicht nur als abstraktes Wirtschaftswort.",
     mustKnow: [
-      "Über 4000 Silbermünzen bilden einen außergewöhnlich dichten Quellenfund.",
+      "Über 4000 Silbermünzen bilden einen aussergewöhnlich dichten Quellenfund.",
       "Bilder, Inschriften und Prägungen verbinden Münzen mit Herrschaft und Umlauf.",
       "Ein Schatzfund kann auf Unsicherheit, Vermögensschutz oder Krisen verweisen."
     ],
@@ -5692,7 +5692,7 @@ const sourceDetails = {
     thesis:
       "Die Reihe argumentiert gegen einen engen Europa-Blick: Karthager, Araber und Germanen werden als eigenständige Träger von Handel, Reichsbildung, Wissenschaft und Kultur sichtbar.",
     passage:
-      "Die SRF-Seite ist eine dreiteilige Dokumentation. Für dieses Modul ist die ganze Reihe wichtig, weil sie Handel, Schriftsysteme, Wissenschaft und Reichsbildung ausdrücklich an drei verschiedenen Großräumen zeigt.",
+      "Die SRF-Seite ist eine dreiteilige Dokumentation. Für dieses Modul ist die ganze Reihe wichtig, weil sie Handel, Schriftsysteme, Wissenschaft und Reichsbildung ausdrücklich an drei verschiedenen Grossräumen zeigt.",
     itemsLabel: "Auf der SRF-Seite besonders wichtige Folgen:",
     relevantItems: [
       {
@@ -5701,7 +5701,7 @@ const sourceDetails = {
       },
       {
         title: "Grosse Völker – Die Araber",
-        note: "Großreich, Islam, Mathematik, Medizin und offene Bildungsinstitutionen."
+        note: "Grossreich, Islam, Mathematik, Medizin und offene Bildungsinstitutionen."
       },
       {
         title: "Grosse Völker – Die Germanen",
@@ -5709,7 +5709,7 @@ const sourceDetails = {
       }
     ],
     whyHere:
-      "Die Reihe gehört in Modul 8, weil Handel und Vernetzung hier nicht nur an Rom, sondern an mehreren Großräumen erklärt werden.",
+      "Die Reihe gehört in Modul 8, weil Handel und Vernetzung hier nicht nur an Rom, sondern an mehreren Grossräumen erklärt werden.",
     mustKnow: [
       "Die Karthager stehen für Seehandel, Purpur und wirtschaftliche Reichweite.",
       "Die Araber stehen für Wissenstransfer, Wissenschaft und Fernverbindungen.",
@@ -5738,9 +5738,9 @@ const sourceDetails = {
     badge: "Lokales Dossier · Punische Kriege bis Caesar",
     locator: "Materialdossier: Römische Antike – Expansion und Krise",
     thesis:
-      "Das Dossier zeigt, dass römische Expansion wirtschaftlichen Gewinn und politische Größe bringt, aber zugleich die sozialen Grundlagen der Republik untergräbt.",
+      "Das Dossier zeigt, dass römische Expansion wirtschaftlichen Gewinn und politische Grösse bringt, aber zugleich die sozialen Grundlagen der Republik untergräbt.",
     passage:
-      "Punische Kriege, Provinzen und Beute vergrößern Roms Macht, doch gerade dieser Erfolg verschärft die innere Krise. Landkonzentration, Sklavenarbeit, Verarmung der Plebs und der Aufstieg von Feldherren wie Marius, Sulla und Caesar machen klar, dass die Republik an ihren eigenen Erfolgen destabilisiert wird. Der Weg zum Prinzipat ist deshalb kein Betriebsunfall, sondern Ergebnis einer langen republikanischen Krise.",
+      "Punische Kriege, Provinzen und Beute vergrössern Roms Macht, doch gerade dieser Erfolg verschärft die innere Krise. Landkonzentration, Sklavenarbeit, Verarmung der Plebs und der Aufstieg von Feldherren wie Marius, Sulla und Caesar machen klar, dass die Republik an ihren eigenen Erfolgen destabilisiert wird. Der Weg zum Prinzipat ist deshalb kein Betriebsunfall, sondern Ergebnis einer langen republikanischen Krise.",
     whyHere:
       "Das Dossier erklärt den Übergang von republikanischer Konkurrenz zur monarchischen Bündelung von Macht.",
     mustKnow: [
@@ -5755,7 +5755,7 @@ const sourceDetails = {
     thesis:
       "Das Dossier erklärt die Kaiserzeit als politische Neuordnung, in der Augustus republikanische Formen beibehält, aber tatsächliche Macht in einer Person bündelt.",
     passage:
-      "Gerade Augustus zeigt, wie eng politische Symbolik und Herrschaft verbunden sind. Der Senat bleibt sichtbar, alte Titel bleiben in Gebrauch, und doch wird die Republik zur Fassade eines neuen Systems. Provinzen, Heer, Städte, Recht und Selbstdarstellung stabilisieren diese Ordnung. Die Kaiserzeit ist damit kein bloß militärischer Erfolg, sondern eine bewusst gestaltete Form imperialer Herrschaft.",
+      "Gerade Augustus zeigt, wie eng politische Symbolik und Herrschaft verbunden sind. Der Senat bleibt sichtbar, alte Titel bleiben in Gebrauch, und doch wird die Republik zur Fassade eines neuen Systems. Provinzen, Heer, Städte, Recht und Selbstdarstellung stabilisieren diese Ordnung. Die Kaiserzeit ist damit kein bloss militärischer Erfolg, sondern eine bewusst gestaltete Form imperialer Herrschaft.",
     whyHere:
       "Das Dossier macht aus dem abstrakten Begriff Kaiserzeit eine präzise politische Form.",
     mustKnow: [
@@ -5788,7 +5788,7 @@ const sourceDetails = {
     thesis:
       "Harari beginnt Religion bewusst nicht mit einer Definition, sondern mit einem verdichteten historischen Raum, in dem Handel, Begegnung, Konkurrenz und kulturelle Vielfalt zusammenkommen.",
     passage:
-      "Harari beginnt das Religionskapitel mit dem Markt von Samarkand und wählt damit bewusst keinen stillen Innenraum des Glaubens, sondern einen Ort dichter Begegnung. Händler, Münzen, Stoffe, Tiere, Reisende und Menschen aus verschiedenen Weltregionen treffen aufeinander. Religion erscheint dadurch nicht bloß als innerer Glaube, sondern als Teil historischer Räume, in denen Herrschaft, Austausch, Ordnung und Weltdeutung miteinander verflochten sind. Die Passage trägt das Modul, weil sie Religion von Anfang an in Verkehr, Macht und kulturelle Vernetzung einbettet."
+      "Harari beginnt das Religionskapitel mit dem Markt von Samarkand und wählt damit bewusst keinen stillen Innenraum des Glaubens, sondern einen Ort dichter Begegnung. Händler, Münzen, Stoffe, Tiere, Reisende und Menschen aus verschiedenen Weltregionen treffen aufeinander. Religion erscheint dadurch nicht bloss als innerer Glaube, sondern als Teil historischer Räume, in denen Herrschaft, Austausch, Ordnung und Weltdeutung miteinander verflochten sind. Die Passage trägt das Modul, weil sie Religion von Anfang an in Verkehr, Macht und kulturelle Vernetzung einbettet."
   },
   [makeSourceKey("modul-9", "SRF: Grosse Völker")]: {
     badge: "dreiteilige Reihe · Arabische Wissenswelten",
@@ -5801,13 +5801,13 @@ const sourceDetails = {
     relevantItems: [
       {
         title: "Grosse Völker – Die Araber",
-        note: "Islamischer Glaube, Großreich, Wissenschaft, Medizin und Mathematik in einem Zusammenhang."
+        note: "Islamischer Glaube, Grossreich, Wissenschaft, Medizin und Mathematik in einem Zusammenhang."
       }
     ],
     whyHere:
       "Die Araber-Folge gehört in Modul 9, weil sie Religion, Wissen und Herrschaft in einem einzigen historischen Zusammenhang sichtbar macht.",
     mustKnow: [
-      "Islam ist Teil eines politischen und kulturellen Großraums.",
+      "Islam ist Teil eines politischen und kulturellen Grossraums.",
       "Mathematik, Medizin und Wissenschaft sind eng mit Bildungsnetzen verbunden.",
       "Religion steht hier nicht gegen Wissen, sondern trägt institutionelle und kulturelle Ordnung mit."
     ],
@@ -5822,7 +5822,7 @@ const sourceDetails = {
     passage:
       "Die Ressource ergänzt das Modul um eine ausdrückliche Einführung in das Christentum, damit Religionen nicht nur strukturell, sondern auch in ihren Eigenformen greifbar werden.",
     whyHere:
-      "Der Film gehört in Modul 9, weil das Christentum für Antike und Mittelalter nicht bloß vorausgesetzt werden darf.",
+      "Der Film gehört in Modul 9, weil das Christentum für Antike und Mittelalter nicht bloss vorausgesetzt werden darf.",
     mustKnow: [
       "Christentum ist eine eigenständige monotheistische Religion.",
       "Es bildet Gemeinschaften, Rituale und Ordnungsvorstellungen aus.",
@@ -5860,7 +5860,7 @@ const sourceDetails = {
     mustKnow: [
       "Der Islam ist eine monotheistische Weltreligion.",
       "Koran, Glaubenspraxis und Gemeinschaft strukturieren den religiösen Raum.",
-      "Der Islam prägt große politische und kulturelle Räume weit über Arabien hinaus."
+      "Der Islam prägt grosse politische und kulturelle Räume weit über Arabien hinaus."
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, Islam sei für die Geschichte bis 1500 nur ein Nebenthema."
@@ -5872,7 +5872,7 @@ const sourceDetails = {
     thesis:
       "Das Dossier erklärt die Ausbreitung des Christentums als historische Bewegung von den ersten Gemeinden über Verfolgungen bis zur konstantinischen Wende und zur Reichskirche.",
     passage:
-      "Dieses Dossier schließt im Modul eine wichtige Lücke, weil es das Christentum nicht nur als Glaubenssystem, sondern als historische Bewegung mit Konflikten, Mission, Briefnetzwerken und institutioneller Verdichtung zeigt. Jesus, Paulus, Verfolgungen, Konstantin, Nicäa und Theodosius machen sichtbar, wie aus einer kleinen Bewegung eine reichsweite Kirche wird. Genau dadurch wird Religion als Ordnungskraft konkret.",
+      "Dieses Dossier schliesst im Modul eine wichtige Lücke, weil es das Christentum nicht nur als Glaubenssystem, sondern als historische Bewegung mit Konflikten, Mission, Briefnetzwerken und institutioneller Verdichtung zeigt. Jesus, Paulus, Verfolgungen, Konstantin, Nicäa und Theodosius machen sichtbar, wie aus einer kleinen Bewegung eine reichsweite Kirche wird. Genau dadurch wird Religion als Ordnungskraft konkret.",
     whyHere:
       "Das Dossier führt die politische und institutionelle Geschichte des Christentums sauber in das Religionsmodul ein.",
     mustKnow: [
@@ -5990,7 +5990,7 @@ const sourceDetails = {
       "Die Hexenverfolgung zeigt, wie Angst, Gewalt und Aberglaube historisch organisiert werden."
     ],
     misconception:
-      "Korrigiert wird die Fehldeutung, Epochen ließen sich mit einem einzigen Etikett wie dunkel, glanzvoll oder rückständig erklären."
+      "Korrigiert wird die Fehldeutung, Epochen liessen sich mit einem einzigen Etikett wie dunkel, glanzvoll oder rückständig erklären."
   },
   [makeSourceKey("modul-10", "YouTube: Klöster im Mittelalter")]: {
     badge: "YouTube-Film · Klöster",
@@ -6031,14 +6031,14 @@ const sourceDetails = {
     badge: "Lokales Dossier · Westen, Byzanz, Islam",
     locator: "Materialdossier: Mittelalter – Frühmittelalter",
     thesis:
-      "Das Dossier erklärt das Frühmittelalter als Neuordnung der alten Mittelmeerwelt und nicht als bloße Zeit des Zerfalls.",
+      "Das Dossier erklärt das Frühmittelalter als Neuordnung der alten Mittelmeerwelt und nicht als blosse Zeit des Zerfalls.",
     passage:
       "Byzanz, die islamische Welt und das Frankenreich zeigen, dass nach Rom nicht Leere entsteht, sondern ein neuer politischer Raum. Klöster, Christianisierung, Grundherrschaft und neue Königtümer machen das Frühmittelalter zu einer Aufbauphase mit starken Kontinuitäten und tiefen Brüchen zugleich.",
     whyHere:
-      "Das Dossier erweitert den Mittelalterblock vom Alltag auf die große politische und religiöse Raumordnung.",
+      "Das Dossier erweitert den Mittelalterblock vom Alltag auf die grosse politische und religiöse Raumordnung.",
     mustKnow: [
-      "Das Frühmittelalter ist Neuordnung, nicht bloß Niedergang.",
-      "Byzanz, Islam und Frankenreich bilden drei große Macht- und Kulturräume.",
+      "Das Frühmittelalter ist Neuordnung, nicht bloss Niedergang.",
+      "Byzanz, Islam und Frankenreich bilden drei grosse Macht- und Kulturräume.",
       "Klöster und Christianisierung tragen zur neuen Ordnung entscheidend bei."
     ]
   },
@@ -6061,7 +6061,7 @@ const sourceDetails = {
     badge: "Lokales Dossier · Bündnisse und spätmittelalterliche Politik",
     locator: "Materialdossier: Mittelalter – Eidgenossenschaft",
     thesis:
-      "Das Dossier erklärt die Eidgenossenschaft aus Reichsunmittelbarkeit, Passpolitik, Landfriedensbündnissen und spätmittelalterlichen Machtkämpfen statt aus bloßem Gründungsmythos.",
+      "Das Dossier erklärt die Eidgenossenschaft aus Reichsunmittelbarkeit, Passpolitik, Landfriedensbündnissen und spätmittelalterlichen Machtkämpfen statt aus blossem Gründungsmythos.",
     passage:
       "Für das Modul ist dieses Dossier entscheidend, weil es regionale Geschichte in allgemeine Mittelaltergeschichte zurückbindet. Uri, Schwyz, Unterwalden, der Gotthardpass, Morgarten und spätere Bündnispolitik zeigen, wie eng lokale Freiheitsbehauptungen mit Reich, Adel, Verkehr und Krieg verbunden sind. Die Eidgenossenschaft erscheint dadurch als spätmittelalterliche politische Formation und nicht als zeitlose Ursprungserzählung.",
     whyHere:
@@ -6122,7 +6122,7 @@ const sourceDetails = {
     thesis:
       "Das Dossier erklärt das hochmittelalterliche Dorf als Raum von Landesausbau, Rodungen, Dreifelderwirtschaft und neuer dörflicher Selbstorganisation.",
     passage:
-      "Für dieses Modul ist das Dossier wichtig, weil es zeigt, dass mittelalterliche Vernetzung nicht nur über Städte läuft. Auch Dörfer verändern sich tief: Rodungen, neue Felder, Fruchtfolgen, Vergetreidung und Dorfrechte schaffen eine andere Produktions- und Lebensweise. Das Dorf ist damit kein statischer Rest, sondern Teil des großen hochmittelalterlichen Ausbaus.",
+      "Für dieses Modul ist das Dossier wichtig, weil es zeigt, dass mittelalterliche Vernetzung nicht nur über Städte läuft. Auch Dörfer verändern sich tief: Rodungen, neue Felder, Fruchtfolgen, Vergetreidung und Dorfrechte schaffen eine andere Produktions- und Lebensweise. Das Dorf ist damit kein statischer Rest, sondern Teil des grossen hochmittelalterlichen Ausbaus.",
     whyHere:
       "Das Dossier verankert Markt- und Handelsgeschichte in der landwirtschaftlichen Grundlage des Hochmittelalters.",
     mustKnow: [
@@ -6137,9 +6137,9 @@ const sourceDetails = {
     thesis:
       "Das Dossier erklärt die mittelalterliche Stadt als Raum von Markt, Autonomie, Rat, Zünften, Handwerk und Bildung.",
     passage:
-      "Gerade dieses Dossier macht sichtbar, dass Städte im Hochmittelalter eigene politische und wirtschaftliche Formen entwickeln. Stadtrecht, Kommune, Rat, Zünfte und Märkte schaffen verdichtete Lebensräume, die sich klar vom Dorf unterscheiden. Die Stadt ist damit nicht bloß Kulisse, sondern Schlüsselraum für Austausch, Mobilität und sozialen Wandel.",
+      "Gerade dieses Dossier macht sichtbar, dass Städte im Hochmittelalter eigene politische und wirtschaftliche Formen entwickeln. Stadtrecht, Kommune, Rat, Zünfte und Märkte schaffen verdichtete Lebensräume, die sich klar vom Dorf unterscheiden. Die Stadt ist damit nicht bloss Kulisse, sondern Schlüsselraum für Austausch, Mobilität und sozialen Wandel.",
     whyHere:
-      "Das Dossier gibt dem Modul eine feste urbane Struktur jenseits bloßer Kreuzzugs- oder Pilgererzählungen.",
+      "Das Dossier gibt dem Modul eine feste urbane Struktur jenseits blosser Kreuzzugs- oder Pilgererzählungen.",
     mustKnow: [
       "Stadtrecht und Rat geben der Stadt eigene politische Form.",
       "Zünfte ordnen Handwerk, Ausbildung und wirtschaftliche Interessen.",
@@ -6152,13 +6152,13 @@ const sourceDetails = {
     thesis:
       "Das Dossier zeigt das Spätmittelalter als Zeit harter Krisen, die Dorf, Stadt, Frömmigkeit und soziale Ordnung tief verändern.",
     passage:
-      "Klimaverschlechterung, Hungersnöte, Pest, Quarantäne, Geisslerbewegungen und Pogrome machen deutlich, dass das Spätmittelalter nicht nur eine späte Fortsetzung des Hochmittelalters ist. Die Krisen greifen in Arbeitswelt, Siedlungsstruktur, Frömmigkeit und Herrschaft ein. Gerade dadurch wird sichtbar, dass mittelalterliche Geschichte von tiefen Umbrüchen und nicht von bloßer Statik geprägt ist.",
+      "Klimaverschlechterung, Hungersnöte, Pest, Quarantäne, Geisslerbewegungen und Pogrome machen deutlich, dass das Spätmittelalter nicht nur eine späte Fortsetzung des Hochmittelalters ist. Die Krisen greifen in Arbeitswelt, Siedlungsstruktur, Frömmigkeit und Herrschaft ein. Gerade dadurch wird sichtbar, dass mittelalterliche Geschichte von tiefen Umbrüchen und nicht von blosser Statik geprägt ist.",
     whyHere:
       "Das Dossier erweitert das Modul von Mobilität und Vernetzung auf Krisen und ihre sozialen Folgen.",
     mustKnow: [
       "Klimaverschlechterung und Pest treffen Dorf und Stadt zugleich.",
       "Quarantäne, Geissler und Pogrome zeigen soziale und religiöse Reaktionen auf Krise.",
-      "Das Spätmittelalter ist eine Zeit tiefen Wandels und nicht bloß ein ruhiger Ausklang."
+      "Das Spätmittelalter ist eine Zeit tiefen Wandels und nicht bloss ein ruhiger Ausklang."
     ]
   },
   [makeSourceKey("modul-12", "SRF: 1491")]: {
@@ -6176,7 +6176,7 @@ const sourceDetails = {
       { title: "Kulturelles Erbe", note: "Felsbilder, Totempfähle, Schrift und Fragen der Rückführung." }
     ],
     whyHere:
-      "Die Seite gehört ins Abschlussmodul, weil sie den größten Perspektivwechsel der ganzen Einheit bündelt und gegen eurozentrische Abschlusserzählungen arbeitet.",
+      "Die Seite gehört ins Abschlussmodul, weil sie den grössten Perspektivwechsel der ganzen Einheit bündelt und gegen eurozentrische Abschlusserzählungen arbeitet.",
     mustKnow: [
       "1492 ist ein Einschnitt, aber kein Anfang der Geschichte Amerikas.",
       "Amerika vor Kolumbus ist durch Landwirtschaft, politische Ordnungen, Kunst und Sprachen geprägt.",
@@ -6191,12 +6191,12 @@ const sourceDetails = {
     thesis:
       "Die Seite zugespitzt zusammengefasst: Frühere Innovationen sind nicht vorbei, sondern wirken als lange Vorgeschichte heutiger Umweltveränderungen weiter.",
     passage:
-      "Für die Bilanz ist die Seite deshalb stark, weil sie frühe Innovationen nicht als abgeschlossene Kapitel behandelt. Feuer, Landwirtschaft, Metallbau, Straßen, Städte und fossile Brennstoffe erscheinen als aufeinanderfolgende Stufen wachsender Eingriffe in Boden, Wasser, Luft und Rohstoffe.",
+      "Für die Bilanz ist die Seite deshalb stark, weil sie frühe Innovationen nicht als abgeschlossene Kapitel behandelt. Feuer, Landwirtschaft, Metallbau, Strassen, Städte und fossile Brennstoffe erscheinen als aufeinanderfolgende Stufen wachsender Eingriffe in Boden, Wasser, Luft und Rohstoffe.",
     itemsLabel: "Auf der SRF-Seite angelegte Bilanzstruktur:",
     relevantItems: [
       { title: "Die Kosten des Fortschritts", note: "Erfolgsgeschichte und Folgeschäden werden zusammen gelesen." },
       { title: "Ein neues Erdzeitalter?", note: "Geologische Spuren menschlichen Handelns als Kernfrage." },
-      { title: "Lösungen", note: "SRF verknüpft die Diagnose mit Forschenden und praktischen Gegenmaßnahmen." }
+      { title: "Lösungen", note: "SRF verknüpft die Diagnose mit Forschenden und praktischen Gegenmassnahmen." }
     ],
     relatedLabel: "Von SRF auf dieser Seite zusätzlich verlinkt:",
     relatedItems: [
@@ -6209,7 +6209,7 @@ const sourceDetails = {
     mustKnow: [
       "Frühere Innovationen wirken über ihre eigene Epoche hinaus weiter.",
       "Anthropozän ist eine Deutungsfrage nach geologisch sichtbaren Spuren menschlicher Geschichte.",
-      "SRF verbindet Diagnose und Gegenmaßnahmen, nicht nur Katastrophenerzählung."
+      "SRF verbindet Diagnose und Gegenmassnahmen, nicht nur Katastrophenerzählung."
     ],
     misconception:
       "Korrigiert wird die Fehldeutung, die Folgen vormoderner Entwicklungen endeten einfach um 1500."
@@ -6221,22 +6221,22 @@ const sourceDetails = {
     pdfSearch: "Weltreiche, Weltreligionen und globale Handelsnetze",
     quote: "„Weltreiche, Weltreligionen und globale Handelsnetze“",
     thesis:
-      "Harari verdichtet hier die große Langzeitlinie des Kurses: Menschen bauen immer größere Verbindungsräume auf, die durch Macht, Glauben, Handel und gemeinsame Regeln zusammengehalten werden.",
+      "Harari verdichtet hier die grosse Langzeitlinie des Kurses: Menschen bauen immer grössere Verbindungsräume auf, die durch Macht, Glauben, Handel und gemeinsame Regeln zusammengehalten werden.",
     passage:
-      "Harari benutzt hier ein leicht verständliches Vergleichsbild, um zu zeigen, wie große geteilte Ordnungen funktionieren: Viele Menschen halten sich an dieselben Regeln, obwohl sie einander nicht persönlich kennen. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Für das Abschlussmodul ist die Passage deshalb besonders geeignet, weil sie die ganze Einheit in eine Formel bringt: Geschichte bis 1500 ist die Geschichte wachsender Verbindungen, größerer Ordnungsräume und immer weiterer Netze aus Macht, Glauben, Handel und Kooperation."
+      "Harari benutzt hier ein leicht verständliches Vergleichsbild, um zu zeigen, wie grosse geteilte Ordnungen funktionieren: Viele Menschen halten sich an dieselben Regeln, obwohl sie einander nicht persönlich kennen. Von dort schlägt er den Bogen zu Weltreichen, Weltreligionen und globalen Handelsnetzen. Für das Abschlussmodul ist die Passage deshalb besonders geeignet, weil sie die ganze Einheit in eine Formel bringt: Geschichte bis 1500 ist die Geschichte wachsender Verbindungen, grösserer Ordnungsräume und immer weiterer Netze aus Macht, Glauben, Handel und Kooperation."
   },
-  [makeSourceKey("modul-12", "Offene Wege statt Einbahnstraße")]: {
+  [makeSourceKey("modul-12", "Offene Wege statt Einbahnstrasse")]: {
     quote: "„paths not taken“",
     thesis:
       "Graeber und Wengrow lesen Tiefengeschichte als Geschichte nicht nur realisierter, sondern auch verworfener Möglichkeiten. Menschen sind für sie nicht einfach auf eine einzige Entwicklungslinie festgelegt.",
     passage:
-      "Diese Gegenposition richtet sich gegen ein zu geschlossenes Bild von Geschichte. Graeber und Wengrow fragen nach Wegen, die offenstanden, aber nicht dauerhaft verfolgt wurden: nach Städten ohne Paläste, nach Landwirtschaft ohne sofortige Herrschaftspyramiden oder nach mobilen Gesellschaften mit überraschend komplexen Institutionen. Für die Schlussbilanz ist das entscheidend, weil Geschichte dann nicht nur aus großen Übergängen besteht, sondern auch aus Alternativen, Brüchen und bewussten Neuordnungen. Die Vormoderne erscheint so nicht als Vorgeschichte eines feststehenden Endes, sondern als offener Möglichkeitsraum.",
+      "Diese Gegenposition richtet sich gegen ein zu geschlossenes Bild von Geschichte. Graeber und Wengrow fragen nach Wegen, die offenstanden, aber nicht dauerhaft verfolgt wurden: nach Städten ohne Paläste, nach Landwirtschaft ohne sofortige Herrschaftspyramiden oder nach mobilen Gesellschaften mit überraschend komplexen Institutionen. Für die Schlussbilanz ist das entscheidend, weil Geschichte dann nicht nur aus grossen Übergängen besteht, sondern auch aus Alternativen, Brüchen und bewussten Neuordnungen. Die Vormoderne erscheint so nicht als Vorgeschichte eines feststehenden Endes, sondern als offener Möglichkeitsraum.",
     whyHere:
-      "Die Abschlussbilanz soll nicht nur große Linien bündeln, sondern auch zeigen, wo diese Linien umstritten sind und anders gelesen werden können.",
+      "Die Abschlussbilanz soll nicht nur grosse Linien bündeln, sondern auch zeigen, wo diese Linien umstritten sind und anders gelesen werden können.",
     mustKnow: [
       "Tiefengeschichte enthält auch verworfene und abgebrochene Wege.",
-      "Nicht jede große Entwicklung ist als feste Einbahnstraße zu deuten.",
-      "Die Differenz zwischen Harari und Graeber/Wengrow liegt vor allem im Maß an Offenheit und historischer Wahlmöglichkeit."
+      "Nicht jede grosse Entwicklung ist als feste Einbahnstrasse zu deuten.",
+      "Die Differenz zwischen Harari und Graeber/Wengrow liegt vor allem im Mass an Offenheit und historischer Wahlmöglichkeit."
     ]
   }
 };
@@ -6247,7 +6247,7 @@ const repetitionLevels = {
   basis: {
     label: "Basis",
     intro:
-      "Hier sicherst du die großen Entwicklungslinien: Sprache, Sesshaftigkeit, Staatlichkeit, Antike und mittelalterliche Verdichtung.",
+      "Hier sicherst du die grossen Entwicklungslinien: Sprache, Sesshaftigkeit, Staatlichkeit, Antike und mittelalterliche Verdichtung.",
     memory: {
       title: "Memory: Entwicklung und Folge zusammenbringen",
       instructions:
@@ -6256,7 +6256,7 @@ const repetitionLevels = {
         {
           id: "basis-memory-kognition",
           left: "Kognitive Revolution",
-          right: "Sprache, Mythen und gemeinsame Regeln machen größere Gruppen möglich."
+          right: "Sprache, Mythen und gemeinsame Regeln machen grössere Gruppen möglich."
         },
         {
           id: "basis-memory-landwirtschaft",
@@ -6331,7 +6331,7 @@ const repetitionLevels = {
         {
           id: "basis-target-kognition",
           title: "Sprache und Symbolwelt",
-          prompt: "Ordne hier die Entwicklung zu, die Mythen, Regeln und große Kooperation ermöglicht."
+          prompt: "Ordne hier die Entwicklung zu, die Mythen, Regeln und grosse Kooperation ermöglicht."
         },
         {
           id: "basis-target-landwirtschaft",
@@ -6361,7 +6361,7 @@ const repetitionLevels = {
       ]
     },
     cloze: {
-      title: "Lückentext: Die großen Umbrüche zusammenfassen",
+      title: "Lückentext: Die grossen Umbrüche zusammenfassen",
       instructions:
         "Fülle die Lücken mit den passenden Begriffen. Synonyme werden erkannt, wenn sie denselben historischen Kern treffen.",
       parts: [
@@ -6369,7 +6369,7 @@ const repetitionLevels = {
         { id: "cloze-1", answers: ["kognitive", "kognitive revolution"] },
         ". Sie macht Sprache, ",
         { id: "cloze-2", answers: ["mythen", "erzaehlungen", "erzählungen", "symbolwelten", "gemeinsame vorstellungen"] },
-        " und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die ",
+        " und grosse Kooperation möglich. Mit Ackerbau und Viehzucht setzt die ",
         { id: "cloze-3", answers: ["landwirtschaftliche", "neolithische", "agrarische", "landwirtschaftliche revolution", "neolithische revolution"] },
         " Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale ",
         { id: "cloze-4", answers: ["ungleichheit", "hierarchie", "hierarchien", "soziale unterschiede"] },
@@ -6377,10 +6377,10 @@ const repetitionLevels = {
         { id: "cloze-5", answers: ["schrift", "schriftsysteme", "listen"] },
         " und Verwaltung. In Antike und Mittelalter verbinden ",
         { id: "cloze-6", answers: ["reiche", "imperien", "weltreiche"] },
-        ", Geld und Religion immer größere Räume."
+        ", Geld und Religion immer grössere Räume."
       ],
       sampleAnswer:
-        "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die kognitive Revolution. Sie macht Sprache, Mythen und große Kooperation möglich. Mit Ackerbau und Viehzucht setzt die landwirtschaftliche Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale Ungleichheit hervor. Frühe Staaten stützen sich auf Schrift und Verwaltung. In Antike und Mittelalter verbinden Reiche, Geld und Religion immer größere Räume."
+        "Zwischen ungefähr 70'000 und 30'000 Jahren vor heute beginnt die kognitive Revolution. Sie macht Sprache, Mythen und grosse Kooperation möglich. Mit Ackerbau und Viehzucht setzt die landwirtschaftliche Revolution ein. Sie bringt Vorräte, feste Siedlungen und soziale Ungleichheit hervor. Frühe Staaten stützen sich auf Schrift und Verwaltung. In Antike und Mittelalter verbinden Reiche, Geld und Religion immer grössere Räume."
     },
     oralQuestions: [
       {
@@ -6453,7 +6453,7 @@ const repetitionLevels = {
         {
           id: "lf-memory-kognition",
           left: "Erfundene Ordnungen",
-          right: "Sie halten Großgruppen zusammen, auch wenn sich die meisten Mitglieder nicht persönlich kennen."
+          right: "Sie halten Grossgruppen zusammen, auch wenn sich die meisten Mitglieder nicht persönlich kennen."
         },
         {
           id: "lf-memory-landwirtschaft",
@@ -6528,7 +6528,7 @@ const repetitionLevels = {
         {
           id: "lf-target-mythen",
           title: "Kooperation mit Fremden",
-          prompt: "Ordne hier die Entwicklung zu, die große Gruppen auch ohne persönliche Bekanntschaft stabilisiert."
+          prompt: "Ordne hier die Entwicklung zu, die grosse Gruppen auch ohne persönliche Bekanntschaft stabilisiert."
         },
         {
           id: "lf-target-vorraete",
@@ -6564,7 +6564,7 @@ const repetitionLevels = {
       parts: [
         "Menschen leben sehr lange in kleinen Gruppen. Erst ",
         { id: "cloze-1", answers: ["gemeinsame vorstellungen", "mythen", "erfundene ordnungen", "symbolische ordnungen"] },
-        " ermöglichen größere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere ",
+        " ermöglichen grössere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere ",
         { id: "cloze-2", answers: ["abhangigkeit", "abhängigkeit", "abhaengigkeit", "bindung an boden", "bindung an ernten"] },
         " von Feldern und Ernten. Frühe Staaten stützen sich auf ",
         { id: "cloze-3", answers: ["schrift", "listen", "verwaltung", "schriftsysteme"] },
@@ -6577,20 +6577,20 @@ const repetitionLevels = {
         " in bereits bestehende amerikanische Gesellschaften."
       ],
       sampleAnswer:
-        "Menschen leben sehr lange in kleinen Gruppen. Erst gemeinsame Vorstellungen ermöglichen größere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere Abhängigkeit von Feldern und Ernten. Frühe Staaten stützen sich auf Schrift, damit Abgaben, Arbeit und Besitz kontrollierbar werden. In Athen entsteht direkte Beteiligung, in Rom eine republikanische Mischordnung. Im Mittelalter verdichten Städte neue Lebensformen, ohne die ständische Gesellschaft sofort aufzuheben. 1492 bringt einen gewaltsamen Einschnitt in bereits bestehende amerikanische Gesellschaften."
+        "Menschen leben sehr lange in kleinen Gruppen. Erst gemeinsame Vorstellungen ermöglichen grössere Zusammenschlüsse. Die landwirtschaftliche Revolution bringt nicht nur mehr Nahrung, sondern auch stärkere Abhängigkeit von Feldern und Ernten. Frühe Staaten stützen sich auf Schrift, damit Abgaben, Arbeit und Besitz kontrollierbar werden. In Athen entsteht direkte Beteiligung, in Rom eine republikanische Mischordnung. Im Mittelalter verdichten Städte neue Lebensformen, ohne die ständische Gesellschaft sofort aufzuheben. 1492 bringt einen gewaltsamen Einschnitt in bereits bestehende amerikanische Gesellschaften."
     },
     oralQuestions: [
       {
         id: "repetition-lf-oral-1",
         question:
-          "Erkläre, warum gemeinsame Vorstellungen für die Bildung großer menschlicher Gruppen wichtiger waren als bloße körperliche Stärke.",
+          "Erkläre, warum gemeinsame Vorstellungen für die Bildung grosser menschlicher Gruppen wichtiger waren als blosse körperliche Stärke.",
         placeholder: "Beziehe dich auf Sprache, Regeln, Mythen und Kooperation mit Fremden.",
         sampleAnswer:
-          "Körperliche Stärke erklärt nur kleine Gruppen, nicht große Gesellschaften. Erst Sprache und gemeinsame Vorstellungen machen es möglich, dass Menschen sich auf Regeln, Götter, Rechte oder Traditionen beziehen. So können auch Fremde zusammenarbeiten. Große Gruppen beruhen deshalb nicht nur auf biologischen Voraussetzungen, sondern auf symbolischen Ordnungen. Gerade darin liegt ein entscheidender historische Bruch.",
+          "Körperliche Stärke erklärt nur kleine Gruppen, nicht grosse Gesellschaften. Erst Sprache und gemeinsame Vorstellungen machen es möglich, dass Menschen sich auf Regeln, Götter, Rechte oder Traditionen beziehen. So können auch Fremde zusammenarbeiten. Grosse Gruppen beruhen deshalb nicht nur auf biologischen Voraussetzungen, sondern auf symbolischen Ordnungen. Gerade darin liegt ein entscheidender historischer Bruch.",
         minWords: 40,
         criteria: [
           { label: "Sprache oder Symbolwelt als Grundlage", keywords: ["sprache", "symbol", "mythen", "vorstellungen"] },
-          { label: "Kooperation mit Fremden", keywords: ["fremde", "kooperation", "große gruppen", "grossgruppen", "zusammenarbeit"] },
+          { label: "Kooperation mit Fremden", keywords: ["fremde", "kooperation", "grosse gruppen", "grossgruppen", "zusammenarbeit"] },
           { label: "Körperliche Stärke reicht nicht aus", keywords: ["korper", "körper", "starke", "stärke", "nicht genug"] }
         ]
       },
@@ -6600,10 +6600,10 @@ const repetitionLevels = {
           "Erkläre, warum Landwirtschaft gleichzeitig ein Fortschritt und eine neue Belastung war.",
         placeholder: "Beziehe Nahrung, Arbeit, Bevölkerungswachstum und Abhängigkeit ein.",
         sampleAnswer:
-          "Landwirtschaft vergrößert die verfügbare Nahrungsmenge und ermöglicht größere, sesshafte Gemeinschaften. Gleichzeitig steigt die Arbeitslast, weil Felder ständig gepflegt, Tiere versorgt und Vorräte gesichert werden müssen. Menschen werden außerdem stärker von Klima, Boden und Ernte abhängig. Aus dieser neuen Stabilität entstehen daher auch neue Verletzlichkeiten. Fortschritt und Belastung gehören hier zusammen.",
+          "Landwirtschaft vergrössert die verfügbare Nahrungsmenge und ermöglicht grössere, sesshafte Gemeinschaften. Gleichzeitig steigt die Arbeitslast, weil Felder ständig gepflegt, Tiere versorgt und Vorräte gesichert werden müssen. Menschen werden ausserdem stärker von Klima, Boden und Ernte abhängig. Aus dieser neuen Stabilität entstehen daher auch neue Verletzlichkeiten. Fortschritt und Belastung gehören hier zusammen.",
         minWords: 40,
         criteria: [
-          { label: "Mehr Nahrung oder größere Gemeinschaften", keywords: ["nahrung", "bevolkerung", "bevölkerung", "größere gruppen", "sesshaft"] },
+          { label: "Mehr Nahrung oder grössere Gemeinschaften", keywords: ["nahrung", "bevolkerung", "bevölkerung", "grössere gruppen", "sesshaft"] },
           { label: "Mehr Arbeit", keywords: ["arbeit", "arbeitslast", "pflege", "felder", "vorrate", "vorräte"] },
           { label: "Abhängigkeit von Boden, Wetter oder Ernte", keywords: ["boden", "wetter", "ernte", "abhangigkeit", "abhängigkeit"] }
         ]
@@ -6614,7 +6614,7 @@ const repetitionLevels = {
           "Vergleiche Ägypten, Athen und Rom danach, wie politische Ordnung jeweils begründet und stabilisiert wird.",
         placeholder: "Ordne Pharao und Maat, Volksversammlung sowie Senat und Magistrate ein.",
         sampleAnswer:
-          "In Ägypten wird Ordnung stark religiös und königlich begründet: Pharao, Nil und Maat gehören zusammen. In Athen wird Ordnung durch die direkte Beteiligung freier Bürger in der Volksversammlung stabilisiert. In Rom entsteht eine republikanische Mischordnung aus Senat, Magistraten und Volksversammlungen. Alle drei Modelle schaffen politische Stabilität, aber auf sehr unterschiedliche Weise. Zugleich schließen alle drei große Teile der Bevölkerung aus oder ordnen sie unter.",
+          "In Ägypten wird Ordnung stark religiös und königlich begründet: Pharao, Nil und Maat gehören zusammen. In Athen wird Ordnung durch die direkte Beteiligung freier Bürger in der Volksversammlung stabilisiert. In Rom entsteht eine republikanische Mischordnung aus Senat, Magistraten und Volksversammlungen. Alle drei Modelle schaffen politische Stabilität, aber auf sehr unterschiedliche Weise. Zugleich schliessen alle drei grosse Teile der Bevölkerung aus oder ordnen sie unter.",
         minWords: 45,
         criteria: [
           { label: "Ägypten mit Pharao, Nil oder Maat", keywords: ["pharao", "nil", "maat", "agypten", "ägypten"] },
@@ -6641,7 +6641,7 @@ const repetitionLevels = {
   fortgeschritten: {
     label: "Fortgeschritten",
     intro:
-      "Hier geht es um Verbindungen zwischen mehreren Epochen: Wie tragen Geld, Religion und Reiche dazu bei, immer größere Räume zu ordnen?",
+      "Hier geht es um Verbindungen zwischen mehreren Epochen: Wie tragen Geld, Religion und Reiche dazu bei, immer grössere Räume zu ordnen?",
     memory: {
       title: "Memory: Entwicklung und Langzeitwirkung",
       instructions:
@@ -6660,7 +6660,7 @@ const repetitionLevels = {
         {
           id: "f-memory-imperium",
           left: "Imperien",
-          right: "Sie verbinden große Räume, vereinheitlichen aber auch Recht, Sprache und Macht unter Zwang."
+          right: "Sie verbinden grosse Räume, vereinheitlichen aber auch Recht, Sprache und Macht unter Zwang."
         },
         {
           id: "f-memory-republik",
@@ -6700,7 +6700,7 @@ const repetitionLevels = {
           id: "f-drag-imperium",
           label: "Imperium",
           target: "f-target-imperium",
-          explanation: "Es vergrößert politische Räume und vereinheitlicht Herrschaft, oft auch gewaltsam."
+          explanation: "Es vergrössert politische Räume und vereinheitlicht Herrschaft, oft auch gewaltsam."
         },
         {
           id: "f-drag-republik",
@@ -6718,7 +6718,7 @@ const repetitionLevels = {
           id: "f-drag-kolonisation",
           label: "Koloniale Expansion",
           target: "f-target-kolonisation",
-          explanation: "Sie greift in bereits bestehende außereuropäische Entwicklungen ein und deutet sie um."
+          explanation: "Sie greift in bereits bestehende aussereuropäische Entwicklungen ein und deutet sie um."
         }
       ],
       targets: [
@@ -6729,13 +6729,13 @@ const repetitionLevels = {
         },
         {
           id: "f-target-religion",
-          title: "Gemeinsame Normen großer Räume",
+          title: "Gemeinsame Normen grosser Räume",
           prompt: "Ordne hier die Entwicklung zu, die Menschen über Regionen hinweg an gemeinsame Deutungen bindet."
         },
         {
           id: "f-target-imperium",
           title: "Einheit unter Herrschaft",
-          prompt: "Ordne hier die Entwicklung zu, die große Räume politisch zusammenfasst und vereinheitlicht."
+          prompt: "Ordne hier die Entwicklung zu, die grosse Räume politisch zusammenfasst und vereinheitlicht."
         },
         {
           id: "f-target-republik",
@@ -6755,11 +6755,11 @@ const repetitionLevels = {
       ]
     },
     cloze: {
-      title: "Lückentext: Große Ordnungsformen zusammenführen",
+      title: "Lückentext: Grosse Ordnungsformen zusammenführen",
       instructions:
         "Fülle die Begriffe so ein, dass politische, wirtschaftliche und religiöse Integration als Gesamtlinie sichtbar wird.",
       parts: [
-        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Große Gruppen stützen sich auf ",
+        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Grosse Gruppen stützen sich auf ",
         { id: "cloze-1", answers: ["erfundene ordnungen", "gemeinsame vorstellungen", "mythen", "fiktive ordnungen"] },
         ". Frühstaaten sichern Abgaben und Arbeit durch ",
         { id: "cloze-2", answers: ["schrift", "verwaltung", "listen"] },
@@ -6767,23 +6767,23 @@ const repetitionLevels = {
         { id: "cloze-3", answers: ["imperien", "reichen", "imperium"] },
         ", während ",
         { id: "cloze-4", answers: ["geld", "munzgeld", "münzgeld"] },
-        " wirtschaftliche Beziehungen über große Räume verbindet. Im Mittelalter prägen ",
+        " wirtschaftliche Beziehungen über grosse Räume verbindet. Im Mittelalter prägen ",
         { id: "cloze-5", answers: ["kirche", "christentum", "religion"] },
         " und Städte gemeinsam den Alltag. 1492 zeigt, dass globale Verflechtung oft als ",
         { id: "cloze-6", answers: ["gewalt", "eroberung", "kolonisierung", "bruch"] },
         " in bestehende Welten eintritt."
       ],
       sampleAnswer:
-        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Große Gruppen stützen sich auf erfundene Ordnungen. Frühstaaten sichern Abgaben und Arbeit durch Schrift. In der Antike wächst die politische Reichweite von Imperien, während Geld wirtschaftliche Beziehungen über große Räume verbindet. Im Mittelalter prägen Kirche und Städte gemeinsam den Alltag. 1492 zeigt, dass globale Verflechtung oft als Gewalt in bestehende Welten eintritt."
+        "Mit wachsender Bevölkerungszahl reichen persönliche Bindungen nicht mehr aus. Grosse Gruppen stützen sich auf erfundene Ordnungen. Frühstaaten sichern Abgaben und Arbeit durch Schrift. In der Antike wächst die politische Reichweite von Imperien, während Geld wirtschaftliche Beziehungen über grosse Räume verbindet. Im Mittelalter prägen Kirche und Städte gemeinsam den Alltag. 1492 zeigt, dass globale Verflechtung oft als Gewalt in bestehende Welten eintritt."
     },
     oralQuestions: [
       {
         id: "repetition-f-oral-1",
         question:
-          "Erkläre, warum Geld, Religion und Reiche als drei verschiedene, aber zusammenwirkende Mittel zur Ordnung großer Räume verstanden werden können.",
+          "Erkläre, warum Geld, Religion und Reiche als drei verschiedene, aber zusammenwirkende Mittel zur Ordnung grosser Räume verstanden werden können.",
         placeholder: "Vergleiche wirtschaftliche, religiöse und politische Integration.",
         sampleAnswer:
-          "Geld verbindet Menschen wirtschaftlich, weil es ein abstraktes Vertrauen in Tauschwerte schafft. Religion verbindet sie normativ, indem sie gemeinsame Deutungen, Gebote und Rituale über große Räume verbreitet. Reiche verbinden Räume politisch durch Macht, Recht, Verwaltung und Infrastruktur. Diese drei Mittel wirken verschieden, greifen historisch aber oft ineinander. Gerade dadurch können sehr große Ordnungen entstehen und stabil bleiben.",
+          "Geld verbindet Menschen wirtschaftlich, weil es ein abstraktes Vertrauen in Tauschwerte schafft. Religion verbindet sie normativ, indem sie gemeinsame Deutungen, Gebote und Rituale über grosse Räume verbreitet. Reiche verbinden Räume politisch durch Macht, Recht, Verwaltung und Infrastruktur. Diese drei Mittel wirken verschieden, greifen historisch aber oft ineinander. Gerade dadurch können sehr grosse Ordnungen entstehen und stabil bleiben.",
         minWords: 50,
         criteria: [
           { label: "Geld als wirtschaftliche Verbindung", keywords: ["geld", "handel", "vertrauen", "tausch"] },
@@ -6811,7 +6811,7 @@ const repetitionLevels = {
           "Erkläre, warum mittelalterliche Klöster weit mehr waren als Orte des Gebets.",
         placeholder: "Gehe auf Schrift, Bildung, Herrschaft, Wirtschaft und religiöse Ordnung ein.",
         sampleAnswer:
-          "Klöster waren Orte des Gebets, aber zugleich Zentren von Schrift, Bildung und Erinnerung. Dort wurden Texte abgeschrieben, Wissen bewahrt und Herrschaft religiös gedeutet. Viele Klöster waren außerdem wirtschaftlich bedeutsam, weil sie Land besaßen und Arbeit organisierten. Sie prägten daher nicht nur Frömmigkeit, sondern auch Macht, Alltag und Kultur. Klöster zeigen besonders deutlich, wie eng Religion und gesellschaftliche Ordnung im Mittelalter verbunden waren.",
+          "Klöster waren Orte des Gebets, aber zugleich Zentren von Schrift, Bildung und Erinnerung. Dort wurden Texte abgeschrieben, Wissen bewahrt und Herrschaft religiös gedeutet. Viele Klöster waren ausserdem wirtschaftlich bedeutsam, weil sie Land besassen und Arbeit organisierten. Sie prägten daher nicht nur Frömmigkeit, sondern auch Macht, Alltag und Kultur. Klöster zeigen besonders deutlich, wie eng Religion und gesellschaftliche Ordnung im Mittelalter verbunden waren.",
         minWords: 45,
         criteria: [
           { label: "Schrift oder Bildung", keywords: ["schrift", "texte", "bildung", "abschreiben", "wissen"] },
@@ -6830,7 +6830,7 @@ const repetitionLevels = {
         criteria: [
           { label: "Bestehende Gesellschaften Amerikas", keywords: ["amerika", "reiche", "stadte", "städte", "landwirtschaft", "gesellschaften"] },
           { label: "Gewalt oder Eroberung", keywords: ["gewalt", "eroberung", "kolonial", "kolonisierung", "neuordnung"] },
-          { label: "Nicht bloß europäisches Erfolgsdatum", keywords: ["nicht nur", "europa", "erfolgsdatum", "perspektive", "fortschrittserzahlung", "fortschrittserzählung"] }
+          { label: "Nicht bloss europäisches Erfolgsdatum", keywords: ["nicht nur", "europa", "erfolgsdatum", "perspektive", "fortschrittserzahlung", "fortschrittserzählung"] }
         ]
       }
     ]
@@ -6857,7 +6857,7 @@ const repetitionLevels = {
         {
           id: "e-memory-imperium",
           left: "Imperium",
-          right: "Es zerstört lokale Autonomie und schafft zugleich größere politische, rechtliche und wirtschaftliche Räume."
+          right: "Es zerstört lokale Autonomie und schafft zugleich grössere politische, rechtliche und wirtschaftliche Räume."
         },
         {
           id: "e-memory-geld",
@@ -6932,7 +6932,7 @@ const repetitionLevels = {
         {
           id: "e-target-imperium",
           title: "Einheit und Zwang",
-          prompt: "Ordne hier die Entwicklung zu, die große Räume integriert und dabei Herrschaft mit Gewalt verbindet."
+          prompt: "Ordne hier die Entwicklung zu, die grosse Räume integriert und dabei Herrschaft mit Gewalt verbindet."
         },
         {
           id: "e-target-geld",
@@ -6941,7 +6941,7 @@ const repetitionLevels = {
         },
         {
           id: "e-target-religion",
-          title: "Gemeinsame Wahrheit großer Räume",
+          title: "Gemeinsame Wahrheit grosser Räume",
           prompt: "Ordne hier die Entwicklung zu, die moralische und historische Deutung über viele Gesellschaften hinweg verbindet."
         },
         {
@@ -6952,7 +6952,7 @@ const repetitionLevels = {
       ]
     },
     cloze: {
-      title: "Lückentext: Große Deutungslinie formulieren",
+      title: "Lückentext: Grosse Deutungslinie formulieren",
       instructions:
         "Fülle die Schlüsselbegriffe ein, so dass aus Einzelentwicklungen eine zusammenhängende historische Interpretation wird.",
       parts: [
@@ -6960,16 +6960,16 @@ const repetitionLevels = {
         { id: "cloze-1", answers: ["ordnungen", "regeln", "vorstellungen", "gemeinsame ordnungen"] },
         " gestalten. Die kognitive Revolution erweitert Kooperation über persönliche Nähe hinaus. Die landwirtschaftliche Revolution verdichtet Gesellschaften, macht sie aber auch stärker von ",
         { id: "cloze-2", answers: ["arbeit", "boden", "ernte", "vorraten", "vorräten", "ressourcen"] },
-        " abhängig. Staaten, Geld, Religion und Imperien verbinden immer größere Räume und schaffen dadurch sowohl ",
+        " abhängig. Staaten, Geld, Religion und Imperien verbinden immer grössere Räume und schaffen dadurch sowohl ",
         { id: "cloze-3", answers: ["einheit", "integration", "vernetzung", "ordnung"] },
-        " als auch neue Formen von Zwang. 1492 zeigt schließlich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoß bereits bestehender ",
+        " als auch neue Formen von Zwang. 1492 zeigt schliesslich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoss bereits bestehender ",
         { id: "cloze-4", answers: ["welten", "gesellschaften", "entwicklungen", "ordnungen"] },
-        " besteht. Große Geschichte ist deshalb immer auch eine Geschichte von ",
+        " besteht. Grosse Geschichte ist deshalb immer auch eine Geschichte von ",
         { id: "cloze-5", answers: ["kontinuitaten", "kontinuitäten", "umbruchen", "umbrüchen", "bruchen", "brüchen"] },
-        " und nicht bloß eine Liste einzelner Daten."
+        " und nicht bloss eine Liste einzelner Daten."
       ],
       sampleAnswer:
-        "Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt durch Ordnungen gestalten. Die kognitive Revolution erweitert Kooperation über persönliche Nähe hinaus. Die landwirtschaftliche Revolution verdichtet Gesellschaften, macht sie aber auch stärker von Arbeit und Ernte abhängig. Staaten, Geld, Religion und Imperien verbinden immer größere Räume und schaffen dadurch sowohl Einheit als auch neue Formen von Zwang. 1492 zeigt schließlich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoß bereits bestehender Welten besteht. Große Geschichte ist deshalb immer auch eine Geschichte von Kontinuitäten und Brüchen und nicht bloß eine Liste einzelner Daten."
+        "Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt durch Ordnungen gestalten. Die kognitive Revolution erweitert Kooperation über persönliche Nähe hinaus. Die landwirtschaftliche Revolution verdichtet Gesellschaften, macht sie aber auch stärker von Arbeit und Ernte abhängig. Staaten, Geld, Religion und Imperien verbinden immer grössere Räume und schaffen dadurch sowohl Einheit als auch neue Formen von Zwang. 1492 zeigt schliesslich, dass globale Geschichte nicht mit Europa beginnt, sondern aus dem Zusammenstoss bereits bestehender Welten besteht. Grosse Geschichte ist deshalb immer auch eine Geschichte von Kontinuitäten und Brüchen und nicht bloss eine Liste einzelner Daten."
     },
     oralQuestions: [
       {
@@ -6992,7 +6992,7 @@ const repetitionLevels = {
           "Erkläre Landwirtschaft als historischen Wendepunkt, ohne sie einfach als Fortschritt oder als Fehler zu deuten.",
         placeholder: "Verbinde Versorgung, Bevölkerungswachstum, Arbeitslast, Herrschaft und Ungleichheit.",
         sampleAnswer:
-          "Landwirtschaft ist ein Wendepunkt, weil sie größere und dichtere Gesellschaften ermöglicht. Sie verbessert Versorgung und stützt Bevölkerungswachstum, erzeugt aber zugleich mehr Arbeitslast und stärkere Abhängigkeit von Boden, Klima und Ernte. Außerdem werden Vorräte, Besitz und Herrschaft leichter kontrollierbar. Dadurch wächst soziale Ungleichheit. Landwirtschaft ist deshalb weder bloß Fortschritt noch bloß Irrtum, sondern ein historischer Bruch mit widersprüchlichen Folgen.",
+          "Landwirtschaft ist ein Wendepunkt, weil sie grössere und dichtere Gesellschaften ermöglicht. Sie verbessert Versorgung und stützt Bevölkerungswachstum, erzeugt aber zugleich mehr Arbeitslast und stärkere Abhängigkeit von Boden, Klima und Ernte. Ausserdem werden Vorräte, Besitz und Herrschaft leichter kontrollierbar. Dadurch wächst soziale Ungleichheit. Landwirtschaft ist deshalb weder bloss Fortschritt noch bloss Irrtum, sondern ein historischer Bruch mit widersprüchlichen Folgen.",
         minWords: 55,
         criteria: [
           { label: "Mehr Versorgung oder Bevölkerungswachstum", keywords: ["versorgung", "nahrung", "bevolkerung", "bevölkerung", "wachstum"] },
@@ -7004,14 +7004,14 @@ const repetitionLevels = {
         id: "repetition-e-oral-3",
         question:
           "Erkläre, warum Imperien historisch zugleich zerstörerisch und vereinheitlichend wirken.",
-        placeholder: "Gehe auf Gewalt, lokale Verluste, Recht, Infrastruktur und große Räume ein.",
+        placeholder: "Gehe auf Gewalt, lokale Verluste, Recht, Infrastruktur und grosse Räume ein.",
         sampleAnswer:
-          "Imperien arbeiten oft mit Eroberung, Zwang und dem Abbau lokaler Autonomie. In diesem Sinn sind sie zerstörerisch. Gleichzeitig schaffen sie größere politische Räume, verbinden Regionen durch Straßen, Recht, Verwaltung oder gemeinsame Sprachen und erleichtern Austausch. Ihre Wirkung ist deshalb doppelt: Sie unterwerfen, aber sie integrieren auch. Gerade diese Ambivalenz macht sie historisch so bedeutsam.",
+          "Imperien arbeiten oft mit Eroberung, Zwang und dem Abbau lokaler Autonomie. In diesem Sinn sind sie zerstörerisch. Gleichzeitig schaffen sie grössere politische Räume, verbinden Regionen durch Strassen, Recht, Verwaltung oder gemeinsame Sprachen und erleichtern Austausch. Ihre Wirkung ist deshalb doppelt: Sie unterwerfen, aber sie integrieren auch. Gerade diese Ambivalenz macht sie historisch so bedeutsam.",
         minWords: 50,
         criteria: [
           { label: "Gewalt oder lokale Verluste", keywords: ["gewalt", "eroberung", "zwang", "lokal", "verluste", "unterwerfung"] },
-          { label: "Einheit oder Integration", keywords: ["einheit", "integration", "verbinden", "grosse raume", "große räume"] },
-          { label: "Recht, Infrastruktur oder Verwaltung", keywords: ["recht", "infrastruktur", "strassen", "straßen", "verwaltung", "sprache"] }
+          { label: "Einheit oder Integration", keywords: ["einheit", "integration", "verbinden", "grosse raume", "grosse räume"] },
+          { label: "Recht, Infrastruktur oder Verwaltung", keywords: ["recht", "infrastruktur", "strassen", "strassen", "verwaltung", "sprache"] }
         ]
       },
       {
@@ -7754,8 +7754,8 @@ function renderThinkerPanel() {
     <div class="thinker-compare-grid">
       <article class="thinker-summary-card">
         <span class="fact-label">Harari</span>
-        <strong>Große Umbrüche und wachsende Ordnungen</strong>
-        <p>Sprache, Landwirtschaft, Reiche, Geld und Religion verdichten die Geschichte zu immer größeren Verbindungsräumen.</p>
+        <strong>Grosse Umbrüche und wachsende Ordnungen</strong>
+        <p>Sprache, Landwirtschaft, Reiche, Geld und Religion verdichten die Geschichte zu immer grösseren Verbindungsräumen.</p>
         <button class="btn primary" type="button" data-thinker-open="harari">Harari öffnen</button>
       </article>
       <article class="thinker-summary-card">
@@ -8812,7 +8812,7 @@ function renderRepetitionOral(state) {
   return `
     <article class="repetition-card repetition-oral-card">
       <p class="section-kicker">4. Mündliche Probe</p>
-      <h3>Große Entwicklungen frei erklären</h3>
+      <h3>Grosse Entwicklungen frei erklären</h3>
       <p>Diese Fragen trainieren zusammenhängende Antworten zu Entwicklungen, Brüchen und historischen Deutungen.</p>
       <div class="repetition-oral-stack">
         ${mode.oralQuestions.map((question) => renderShortAnswerBox(question, "Prüffrage")).join("")}
@@ -8831,9 +8831,9 @@ function renderRepetitionPanel(state) {
   const mode = progress.currentMode;
   container.innerHTML = `
     <p class="panel-kicker">Repetitionsmodus</p>
-    <h2>Große Entwicklungen und Umbrüche sicher wiederholen</h2>
+    <h2>Grosse Entwicklungen und Umbrüche sicher wiederholen</h2>
     <p class="compact">
-      Dieser Bereich trainiert Überblickswissen für mündliche Prüfungen: große Entwicklungslinien, zentrale Brüche und ihre historische Bedeutung. Fakten bleiben wichtig, aber immer im Zusammenhang.
+      Dieser Bereich trainiert Überblickswissen für mündliche Prüfungen: grosse Entwicklungslinien, zentrale Brüche und ihre historische Bedeutung. Fakten bleiben wichtig, aber immer im Zusammenhang.
     </p>
     <div class="repetition-level-switch">
       ${repetitionLevelOrder
@@ -9216,7 +9216,7 @@ function renderWelcomeOverlay(state) {
       <div class="welcome-copy">
         <p class="panel-kicker">Willkommen</p>
         <h2>Geschichte bis 1500 Schritt für Schritt verstehen</h2>
-        <p>Diese Lernumgebung erklärt den Stoff von Grund auf: von frühen Menschen über Sesshaftigkeit und Staaten bis zu Antike und Mittelalter. Du arbeitest mit Sachtexten, Quellen und schriftlichen Antworten statt mit bloßen Schlagworten.</p>
+        <p>Diese Lernumgebung erklärt den Stoff von Grund auf: von frühen Menschen über Sesshaftigkeit und Staaten bis zu Antike und Mittelalter. Du arbeitest mit Sachtexten, Quellen und schriftlichen Antworten statt mit blossen Schlagworten.</p>
         <div class="welcome-list">
           <div class="takeaway">Jedes Modul beginnt mit verständlichem Grundwissen und führt dann in Quellen und Zusammenhänge.</div>
           <div class="takeaway">Nach jedem Modul folgt eine schriftliche Sicherung mit direktem Feedback.</div>
@@ -9233,7 +9233,7 @@ function renderWelcomeOverlay(state) {
       </div>
       <div class="welcome-side">
         <div class="welcome-visual"></div>
-        <p class="compact">Die Einheit verbindet große Entwicklungslinien mit konkreten Beispielen aus den SRF-Ressourcen: Frühgeschichte, Antike, Handel, Religion und mittelalterliche Lebenswelten.</p>
+        <p class="compact">Die Einheit verbindet grosse Entwicklungslinien mit konkreten Beispielen aus den SRF-Ressourcen: Frühgeschichte, Antike, Handel, Religion und mittelalterliche Lebenswelten.</p>
       </div>
     </div>
   `;
@@ -9445,7 +9445,7 @@ function bindRepetitionCloze(state) {
         : {
             level: correctCount >= Math.ceil(blanks.length / 2) ? "mid" : "low",
             title: correctCount >= Math.ceil(blanks.length / 2) ? "Im Kern richtig" : "Noch zu viele Lücken offen",
-            body: `Du hast ${correctCount} von ${blanks.length} Lücken richtig. Ergänze vor allem die Entwicklungsbegriffe, die die großen Umbrüche benennen.`
+            body: `Du hast ${correctCount} von ${blanks.length} Lücken richtig. Ergänze vor allem die Entwicklungsbegriffe, die die grossen Umbrüche benennen.`
           };
 
       if (feedbackBox) {
