@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.mjs"
+    "preflight": "node preflight.mjs",
+    "build": "npm run preflight && node build.mjs"
   }
 }

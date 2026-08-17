@@ -10,6 +10,7 @@
   let ownProgress = null;
   let teacherQuestions = [];
   let syncTimer = null;
+  let syncQueue = Promise.resolve();
 
   function escapeHtml(value) {
     return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -35,7 +36,14 @@
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      if (response.status === 401) localStorage.removeItem(role === "teacher" ? teacherTokenKey : studentTokenKey);
+      if (response.status === 401) {
+        localStorage.removeItem(role === "teacher" ? teacherTokenKey : studentTokenKey);
+        if (role === "teacher") {
+          localStorage.removeItem("geschichte_bis_1500_teacher_access");
+          localStorage.removeItem(dashboardKey);
+          window.setTimeout(() => location.reload(), 0);
+        }
+      }
       throw new Error(data.error || "Die Verbindung zur Datenbank ist fehlgeschlagen.");
     }
     return data;
@@ -97,8 +105,8 @@
           <div class="student-data-grid">
             <div><span>Name</span><strong>${escapeHtml(profile.firstName)} ${escapeHtml(profile.lastName)}</strong></div>
             <div><span>Klasse</span><strong>${escapeHtml(profile.className)}</strong></div>
-            <div><span>Bestandene Module</span><strong>${Number(snapshot.passedModules || 0)} von ${Number(snapshot.totalModules || 12)}</strong></div>
-            <div><span>Bearbeitete Schritte</span><strong>${Number(snapshot.interactionCompleted || 0)} von ${Number(snapshot.interactionTotal || 48)}</strong></div>
+            <div><span>Bestandene Module</span><strong>${Number(snapshot.passedModules || 0)} von ${Number(snapshot.totalModules || 13)}</strong></div>
+            <div><span>Bearbeitete Schritte</span><strong>${Number(snapshot.interactionCompleted || 0)} von ${Number(snapshot.interactionTotal || 52)}</strong></div>
             <div><span>Gesamtfortschritt</span><strong>${Number(snapshot.overallPercent || 0)} %</strong></div>
             <div><span>Nächstes Modul</span><strong>${escapeHtml(snapshot.nextModule || "Modul 1")}</strong></div>
           </div>
@@ -143,7 +151,7 @@
     state.lastName = nextProfile.lastName;
     state.learnerName = `${nextProfile.firstName} ${nextProfile.lastName}`;
     state.className = nextProfile.className;
-    appApi?.saveState?.(state);
+    appApi?.replaceState?.(state, { persist: true, sync: false, touch: false });
   }
 
   function bindStudentAuth() {
@@ -155,7 +163,7 @@
         profile = result.profile;
         applyProfileToState(profile);
         renderStudentPanel();
-        await syncState(currentState());
+        await syncStateNow(currentState());
       } catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
     });
     document.querySelector("[data-cloud-login]")?.addEventListener("click", async () => {
@@ -165,7 +173,8 @@
         localStorage.setItem(studentTokenKey, result.token);
         profile = result.profile;
         applyProfileToState(profile);
-        await loadOwnCloudState(false);
+        const resolution = await loadOwnCloudState(false);
+        if (resolution === "local-newer") await syncStateNow(currentState());
         await loadOwnQuestions();
         renderStudentPanel();
       } catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
@@ -174,7 +183,7 @@
 
   function bindStudentSession() {
     document.querySelector("[data-cloud-sync-now]")?.addEventListener("click", async () => {
-      try { await syncState(currentState()); setFeedback("cloud-sync-feedback", "Lernstand gespeichert.", false); }
+      try { await syncStateNow(currentState()); renderStudentPanel(); setFeedback("cloud-sync-feedback", "Lernstand sicher in der Cloud gespeichert.", false); }
       catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
     });
     document.querySelector("[data-cloud-load]")?.addEventListener("click", async () => {
@@ -193,7 +202,12 @@
       } catch (error) { setFeedback("student-comment-feedback", error.message, true); }
     });
     document.querySelector("[data-cloud-signout]")?.addEventListener("click", () => {
-      localStorage.removeItem(studentTokenKey); profile = null; ownQuestions = []; renderStudentPanel();
+      clearTimeout(syncTimer);
+      localStorage.removeItem(studentTokenKey);
+      profile = null;
+      ownQuestions = [];
+      ownProgress = null;
+      renderStudentPanel();
     });
   }
 
@@ -203,7 +217,8 @@
       const result = await api("/api/student/me", {}, "student");
       profile = result.profile;
       applyProfileToState(profile);
-      await loadOwnCloudState(false);
+      const resolution = await loadOwnCloudState(false);
+      if (resolution === "local-newer") await syncStateNow(currentState());
       await loadOwnQuestions();
     } catch {
       profile = null;
@@ -213,24 +228,45 @@
   async function syncState(state) {
     if (isTeacherPage() || !localStorage.getItem(studentTokenKey) || !appApi) return;
     clearTimeout(syncTimer);
-    syncTimer = setTimeout(async () => {
-      try {
-        const snapshot = appApi.buildLearnerSnapshot(state);
-        if (!snapshot) return;
-        await api("/api/student/progress", { method: "PUT", body: JSON.stringify({ state, snapshot }) }, "student");
-      } catch (error) { console.error("Cloudflare sync failed", error); }
+    const stateCopy = JSON.parse(JSON.stringify(state));
+    syncTimer = setTimeout(() => {
+      queueStateUpload(stateCopy).catch((error) => console.error("Cloudflare sync failed", error));
     }, 700);
+  }
+
+  async function syncStateNow(state) {
+    if (isTeacherPage() || !localStorage.getItem(studentTokenKey) || !appApi) {
+      throw new Error("Bitte melde dich an, bevor du den Lernstand speicherst.");
+    }
+    clearTimeout(syncTimer);
+    const stateCopy = JSON.parse(JSON.stringify(state));
+    return queueStateUpload(stateCopy);
+  }
+
+  function queueStateUpload(state) {
+    syncQueue = syncQueue.catch(() => {}).then(async () => {
+      const snapshot = appApi.buildLearnerSnapshot(state);
+      if (!snapshot) throw new Error("Bitte trage zuerst deinen Namen ein.");
+      const result = await api("/api/student/progress", { method: "PUT", body: JSON.stringify({ state, snapshot }) }, "student");
+      ownProgress = { state, snapshot, updatedAt: result.updatedAt };
+      return result;
+    });
+    return syncQueue;
   }
 
   async function loadOwnCloudState(force) {
     if (!localStorage.getItem(studentTokenKey) || !appApi) return;
     const result = await api("/api/student/progress", {}, "student");
     ownProgress = result.progress || null;
-    if (!result.progress?.state) return;
+    if (!result.progress?.state) return "no-remote";
     const local = currentState();
     const localTime = new Date(local.lastUpdatedAt || 0).getTime();
-    const remoteTime = new Date(result.progress.updatedAt || 0).getTime();
-    if (force || !localTime || remoteTime > localTime) appApi.replaceState(result.progress.state, { persist: true });
+    const remoteTime = new Date(result.progress.state.lastUpdatedAt || result.progress.updatedAt || 0).getTime();
+    if (force || !localTime || remoteTime > localTime) {
+      appApi.replaceState(result.progress.state, { persist: true, sync: false, touch: false });
+      return "remote-loaded";
+    }
+    return localTime > remoteTime ? "local-newer" : "equal";
   }
 
   async function loadOwnQuestions() {
@@ -251,7 +287,7 @@
     const panel = document.getElementById("teacher-cloud-auth");
     if (!panel) return;
     if (!localStorage.getItem(teacherTokenKey)) {
-      panel.innerHTML = `<div class="summary-item"><span class="fact-label">Cloud-Dashboard</span><strong>Noch nicht verbunden</strong><p>Öffne die Lehrpersonen-Seite mit dem Passwort FiP.</p></div>`;
+      panel.innerHTML = `<div class="summary-item"><span class="fact-label">Cloud-Dashboard</span><strong>Noch nicht verbunden</strong><p>Melde dich mit dem separaten Lehrpersonen-Passwort an.</p></div>`;
       return;
     }
     panel.innerHTML = `<div class="summary-item"><span class="fact-label">Cloudflare-Datenbank</span><strong>Lehrpersonen-Zugang aktiv</strong><p>Die Lernstände beider Klassen werden automatisch geladen.</p><div class="teacher-access-actions"><button class="btn primary" type="button" data-teacher-cloud-refresh>Neu laden</button><button class="btn ghost" type="button" data-teacher-signout>Abmelden</button></div><p id="teacher-cloud-feedback" class="teacher-gate-feedback" aria-live="polite"></p></div>`;
@@ -259,6 +295,7 @@
     document.querySelector("[data-teacher-signout]")?.addEventListener("click", () => {
       localStorage.removeItem(teacherTokenKey);
       localStorage.removeItem("geschichte_bis_1500_teacher_access");
+      localStorage.removeItem(dashboardKey);
       location.reload();
     });
   }
@@ -274,9 +311,9 @@
           name: `${student.firstName} ${student.lastName}`,
           class_name: student.className,
           passedModules: snapshot.passedModules || 0,
-          totalModules: snapshot.totalModules || 12,
+          totalModules: snapshot.totalModules || 13,
           interactionCompleted: snapshot.interactionCompleted || 0,
-          interactionTotal: snapshot.interactionTotal || 48,
+          interactionTotal: snapshot.interactionTotal || 52,
           overallPercent: snapshot.overallPercent || 0,
           nextModule: snapshot.nextModule || "Modul 1",
           moduleScores: snapshot.moduleScores || [],
@@ -311,6 +348,7 @@
 
   window.GESCHICHTE_FIREBASE = {
     syncState,
+    syncStateNow,
     refreshTeacherDashboardFromCloud,
     getStatus,
     getOwnQuestionsForModule,

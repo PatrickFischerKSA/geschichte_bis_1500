@@ -7578,13 +7578,15 @@ function loadState() {
   }
 }
 
-function saveState(state) {
-  state.lastUpdatedAt = new Date().toISOString();
+function saveState(state, options = {}) {
+  if (options.touch !== false) {
+    state.lastUpdatedAt = new Date().toISOString();
+  }
   localStorage.setItem(getStorageKey(), JSON.stringify(state));
   if (!isTeacherMode()) {
     persistLearnerSnapshot(state);
   }
-  if (!isTeacherMode() && window.GESCHICHTE_FIREBASE?.syncState) {
+  if (options.sync !== false && !isTeacherMode() && window.GESCHICHTE_FIREBASE?.syncState) {
     window.GESCHICHTE_FIREBASE.syncState(state).catch((error) => {
       console.error("Cloudflare sync failed", error);
     });
@@ -9565,7 +9567,7 @@ function bindTeacherQuestionButtons() {
 function replaceState(nextState, options = {}) {
   const state = { ...nextState };
   if (options.persist !== false) {
-    saveState(state);
+    saveState(state, options);
   }
   renderApp(state);
 }

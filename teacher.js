@@ -1,7 +1,5 @@
-const TEACHER_PASSWORDS = [
-  "FiP"
-];
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
+const TEACHER_TOKEN_KEY = "geschichte_bis_1500_teacher_token";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 
@@ -373,17 +371,6 @@ function setTeacherAuthorized(value) {
   document.body.dataset.teacherAuthorized = value ? "true" : "false";
 }
 
-function normalizeTeacherPassword(value) {
-  return String(value || "")
-    .trim()
-    .toLowerCase();
-}
-
-function isAcceptedTeacherPassword(value) {
-  const normalized = normalizeTeacherPassword(value);
-  return TEACHER_PASSWORDS.some((password) => normalizeTeacherPassword(password) === normalized);
-}
-
 function renderTeacherAccess(isUnlocked) {
   const gate = document.getElementById("teacher-gate");
   const shell = document.getElementById("teacher-shell");
@@ -406,35 +393,10 @@ function renderTeacherAccess(isUnlocked) {
   }
 }
 
-async function loadTeacherProfile() {
-  return null;
-}
-
-async function unlockTeacherAccess() {
-  const password = String(document.getElementById("teacher-password-input")?.value || "");
-
-  if (!password) {
-    setTeacherFeedback("Bitte das Lehrpersonen-Passwort eingeben.", true);
-    return;
-  }
-
-  if (!isAcceptedTeacherPassword(password)) {
-    setTeacherFeedback("Das Passwort stimmt nicht.", true);
-    return;
-  }
-
-  localStorage.setItem(TEACHER_ACCESS_KEY, "granted");
-  setTeacherFeedback("");
-  renderTeacherAccess(true);
-  if (window.GESCHICHTE_FIREBASE?.refreshTeacherDashboardFromCloud) {
-    window.GESCHICHTE_FIREBASE.refreshTeacherDashboardFromCloud().catch((err) => {
-      console.error(err);
-    });
-  }
-}
-
 async function lockTeacherAccess() {
   localStorage.removeItem(TEACHER_ACCESS_KEY);
+  localStorage.removeItem(TEACHER_TOKEN_KEY);
+  localStorage.removeItem(window.GESCHICHTE_DATA?.dashboardStorageKey || "geschichte_bis_1500_teacher_dashboard_v1");
   renderTeacherAccess(false);
   setTeacherFeedback("");
 }
@@ -461,7 +423,7 @@ function clearTeacherPreviewState() {
 }
 
 async function initTeacherAuthState() {
-  if (localStorage.getItem(TEACHER_ACCESS_KEY) === "granted") {
+  if (localStorage.getItem(TEACHER_ACCESS_KEY) === "granted" && localStorage.getItem(TEACHER_TOKEN_KEY)) {
     renderTeacherAccess(true);
     if (window.GESCHICHTE_FIREBASE?.refreshTeacherDashboardFromCloud) {
       window.GESCHICHTE_FIREBASE.refreshTeacherDashboardFromCloud().catch((err) => {
@@ -476,34 +438,9 @@ async function initTeacherAuthState() {
 }
 
 function bindTeacherPage() {
-  const passwordInput = document.getElementById("teacher-password-input");
-
-  [passwordInput].forEach((input) => {
-    if (!input) {
-      return;
-    }
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        unlockTeacherAccess().catch((error) => {
-          console.error(error);
-          setTeacherFeedback(error.message, true);
-        });
-      }
-    });
-  });
-
   document.addEventListener("click", (event) => {
     const target = event.target.closest("button, a");
     if (!target) {
-      return;
-    }
-
-    if (target.matches("[data-teacher-unlock]")) {
-      unlockTeacherAccess().catch((error) => {
-        console.error(error);
-        setTeacherFeedback(error.message, true);
-      });
       return;
     }
 

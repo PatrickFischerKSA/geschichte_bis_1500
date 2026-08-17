@@ -19,7 +19,7 @@ werden.
 - Fortschrittsanzeige im Browser
 - Modulfreischaltung: das nächste Modul öffnet sich erst nach mindestens 60 Prozent in der
   Inhaltssicherung
-- sichtbare Status-Badges pro Modul und Abschlusszertifikat nach bestandenen 12 Modulen
+- sichtbare Status-Badges pro Modul und Abschlusszertifikat nach bestandenen 13 Modulen
 - Start- und Willkommensmaske mit Erklärung des Freischaltsystems
 - Namensfeld für personalisierten Lernstand und personalisiertes Zertifikat
 - lokale atmosphärische Bildwelten auf Basis der eingebauten SRF-Ressourcen
@@ -54,7 +54,7 @@ Die veröffentlichte Plattform verwendet eine Cloudflare-D1-Datenbank:
 - Schüler*innen registrieren sich mit Vorname, Nachname, Klasse und einem eigenen Passwort.
 - Passwörter werden nur als gesicherte Hashwerte gespeichert.
 - Lernstände werden automatisch dem persönlichen Konto zugeordnet.
-- Das mit `FiP` geschützte Lehrpersonen-Dashboard zeigt beide Klassen und alle Modulstände.
+- Das serverseitig geschützte Lehrpersonen-Dashboard zeigt beide Klassen und alle Modulstände.
 - Fragen aus den Modulen können im Dashboard gelesen und beantwortet werden.
 
 ## Zusatzseite für Lehrpersonen

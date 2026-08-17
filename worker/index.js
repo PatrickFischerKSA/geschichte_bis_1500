@@ -1,6 +1,8 @@
 const COURSE_ID = "geschichte_bis_1500";
 const SESSION_DAYS = 30;
 const PBKDF2_ITERATIONS = 100000;
+const PBKDF2_SCHEME = "pbkdf2-sha256";
+let schemaReady;
 
 export default {
   async fetch(request, env) {
@@ -14,7 +16,7 @@ export default {
 
 async function handleApi(request, env, url) {
   try {
-    await ensureSchema(env.DB);
+    await ensureSchemaReady(env.DB);
     if (url.pathname === "/api/student/register" && request.method === "POST") return registerStudent(request, env);
     if (url.pathname === "/api/student/login" && request.method === "POST") return loginStudent(request, env);
     if (url.pathname === "/api/student/me" && request.method === "GET") return studentMe(request, env);
@@ -41,8 +43,11 @@ async function registerStudent(request, env) {
   const id = crypto.randomUUID();
   const password = await hashPassword(profile.password);
   const now = new Date().toISOString();
-  await env.DB.prepare("INSERT INTO students (id, first_name, last_name, class_name, login_key, password_hash, password_salt, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
-    .bind(id, profile.firstName, profile.lastName, profile.className, profile.loginKey, password.hash, password.salt, now, now).run();
+  const inserted = await env.DB.prepare("INSERT OR IGNORE INTO students (id, first_name, last_name, class_name, login_key, password_hash, password_salt, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
+    .bind(id, profile.firstName, profile.lastName, profile.className, profile.loginKey, encodePasswordHash(password.hash, PBKDF2_ITERATIONS), password.salt, now, now).run();
+  if (!inserted.success || Number(inserted.meta?.changes || 0) !== 1) {
+    return json({ error: "Für diesen Namen und diese Klasse besteht bereits ein Konto. Bitte melde dich an." }, 409);
+  }
   const token = await createSession(env.DB, id, "student");
   return json({ token, profile: publicProfile({ id, ...profile }) }, 201);
 }
@@ -114,13 +119,15 @@ async function studentQuestions(request, env) {
 
 async function teacherLogin(request, env) {
   const body = await request.json();
-  if (!env.TEACHER_PASSWORD || String(body.password || "") !== env.TEACHER_PASSWORD) return json({ error: "Das Passwort stimmt nicht." }, 401);
+  const suppliedHash = await sha256(String(body.password || ""));
+  const expectedHash = await sha256(String(env.TEACHER_PASSWORD || ""));
+  if (!env.TEACHER_PASSWORD || !timingSafeEqual(suppliedHash, expectedHash)) return json({ error: "Das Passwort stimmt nicht." }, 401);
   const token = await createSession(env.DB, null, "teacher", 12 * 60 * 60);
   return json({ token }, 200);
 }
 
 async function teacherDashboard(request, env) {
-  const session = await requireSession(request, env.DB, "teacher");
+  const session = await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
   if (!session) return json({ error: "Kein Lehrpersonen-Zugriff." }, 401);
   const rows = (await env.DB.prepare(`SELECT s.id, s.first_name, s.last_name, s.class_name, p.snapshot_json, p.updated_at
     FROM students s LEFT JOIN learner_progress p ON p.student_id = s.id AND p.course_id = ?
@@ -140,7 +147,7 @@ async function teacherDashboard(request, env) {
 }
 
 async function answerQuestion(request, env, id) {
-  const session = await requireSession(request, env.DB, "teacher");
+  const session = await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
   if (!session) return json({ error: "Kein Lehrpersonen-Zugriff." }, 401);
   const body = await request.json();
   const answer = String(body.answerText || "").trim().slice(0, 5000);
@@ -180,15 +187,32 @@ function publicProfile(row) {
   };
 }
 
-async function hashPassword(password, salt = randomHex(16)) {
+async function hashPassword(password, salt = randomHex(16), iterations = PBKDF2_ITERATIONS) {
   const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
-  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBytes(salt), iterations: PBKDF2_ITERATIONS }, key, 256);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBytes(salt), iterations }, key, 256);
   return { salt, hash: bytesHex(new Uint8Array(bits)) };
 }
 
 async function verifyPassword(password, salt, expected) {
-  const actual = (await hashPassword(password, salt)).hash;
-  return timingSafeEqual(actual, expected);
+  const stored = decodePasswordHash(expected);
+  if (!stored || stored.scheme !== PBKDF2_SCHEME || stored.iterations > PBKDF2_ITERATIONS) return false;
+  const actual = (await hashPassword(password, salt, stored.iterations)).hash;
+  return timingSafeEqual(actual, stored.hash);
+}
+
+function encodePasswordHash(hash, iterations) {
+  return `${PBKDF2_SCHEME}$${iterations}$${hash}`;
+}
+
+function decodePasswordHash(value) {
+  const text = String(value || "");
+  if (/^[a-f0-9]{64}$/i.test(text)) {
+    return { scheme: PBKDF2_SCHEME, iterations: PBKDF2_ITERATIONS, hash: text };
+  }
+  const [scheme, iterationText, hash] = text.split("$");
+  const iterations = Number(iterationText);
+  if (scheme !== PBKDF2_SCHEME || !Number.isInteger(iterations) || iterations < 1 || !/^[a-f0-9]{64}$/i.test(hash || "")) return null;
+  return { scheme, iterations, hash };
 }
 
 async function createSession(db, userId, role, lifetimeSeconds = SESSION_DAYS * 86400) {
@@ -200,13 +224,14 @@ async function createSession(db, userId, role, lifetimeSeconds = SESSION_DAYS * 
   return token;
 }
 
-async function requireSession(request, db, role) {
+async function requireSession(request, db, role, minimumCreatedAt = null) {
   const header = request.headers.get("authorization") || "";
   const token = header.startsWith("Bearer ") ? header.slice(7) : "";
   if (!token) return null;
   const hash = await sha256(token);
-  const row = await db.prepare("SELECT user_id, role, expires_at FROM sessions WHERE token_hash = ?").bind(hash).first();
+  const row = await db.prepare("SELECT user_id, role, expires_at, created_at FROM sessions WHERE token_hash = ?").bind(hash).first();
   if (!row || row.role !== role || new Date(String(row.expires_at)).getTime() < Date.now()) return null;
+  if (minimumCreatedAt && new Date(String(row.created_at)).getTime() < new Date(String(minimumCreatedAt)).getTime()) return null;
   return { userId: row.user_id ? String(row.user_id) : null, role: String(row.role) };
 }
 
@@ -248,6 +273,16 @@ async function ensureSchema(db) {
     db.prepare("CREATE INDEX IF NOT EXISTS students_class_idx ON students(class_name)"),
     db.prepare("CREATE INDEX IF NOT EXISTS questions_student_idx ON student_questions(student_id, course_id)")
   ]);
+}
+
+function ensureSchemaReady(db) {
+  if (!schemaReady) {
+    schemaReady = ensureSchema(db).catch((error) => {
+      schemaReady = null;
+      throw error;
+    });
+  }
+  return schemaReady;
 }
 
 function json(body, status) {
