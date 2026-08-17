@@ -1,5 +1,6 @@
 const COURSE_ID = "geschichte_bis_1500";
 const SESSION_DAYS = 30;
+const PBKDF2_ITERATIONS = 100000;
 
 export default {
   async fetch(request, env) {
@@ -181,7 +182,7 @@ function publicProfile(row) {
 
 async function hashPassword(password, salt = randomHex(16)) {
   const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
-  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBytes(salt), iterations: 120000 }, key, 256);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hexBytes(salt), iterations: PBKDF2_ITERATIONS }, key, 256);
   return { salt, hash: bytesHex(new Uint8Array(bits)) };
 }
 
