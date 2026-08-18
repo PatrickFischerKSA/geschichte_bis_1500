@@ -12,6 +12,7 @@ const worker = read("worker/index.js");
 const teacher = read("teacher.js");
 const cloud = read("cloudflare.js");
 const hosting = JSON.parse(read(".openai/hosting.json"));
+const build = read("build.mjs");
 const publicSources = [
   read("index.html"),
   read("lehrpersonen.html"),
@@ -35,6 +36,8 @@ assert(!publicSources.includes("TEACHER_PASSWORDS") && !publicSources.includes('
   "Ein Lehrpersonen-Passwort darf nicht in öffentlichen Dateien stehen.");
 assert(hosting.d1 === "DB",
   "Die produktive D1-Bindung DB fehlt.");
+assert(build.includes('cpSync(".openai/hosting.json", "dist/.openai/hosting.json")'),
+  "Der Produktions-Build muss die Hosting-Konfiguration enthalten.");
 assert(!cloud.includes("totalModules || 12") && !cloud.includes("interactionTotal || 48"),
   "Veraltete Lernstands-Summen 12/48 sind noch vorhanden.");
 assert(cloud.includes("syncStateNow") && cloud.includes("sync: false, touch: false"),
