@@ -2,6 +2,7 @@ const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 const TEACHER_DASHBOARD_KEY = "geschichte_bis_1500_teacher_dashboard_v1";
 const HARARI_REFERENCE_VIEW_PATH = "./harari-viewer.html";
+const SOURCE_TEXT_VIEW_PATH = "./textstelle.html";
 
 function isTeacherPage() {
   return document.body?.dataset?.mode === "teacher";
@@ -7132,6 +7133,27 @@ function escapeLinkAttribute(url) {
   return String(url).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
+function getSourceTextLink(source, module, detail) {
+  const params = new URLSearchParams();
+  params.set("title", getSourceHeading(source, detail) || source.title);
+  if (module?.title) params.set("module", `Modul ${module.number}: ${module.title}`);
+  if (detail.badge || source.meta) params.set("meta", detail.badge || source.meta);
+  if (detail.locator) params.set("locator", detail.locator);
+  if (detail.quote) params.set("quote", detail.quote);
+  if (detail.thesis) params.set("thesis", cleanStudentText(detail.thesis));
+  const context = cleanStudentText(detail.passage || source.extracted);
+  if (context) params.set("context", context);
+  return `${SOURCE_TEXT_VIEW_PATH}?${params.toString()}`;
+}
+
+function renderSourceTextAction(source, module, detail) {
+  return `
+    <div class="source-actions">
+      <a class="btn ghost" href="${escapeLinkAttribute(getSourceTextLink(source, module, detail))}">Textstelle anzeigen</a>
+    </div>
+  `;
+}
+
 function renderHarariActions(detail) {
   if (!detail?.pdfPage) {
     return "";
@@ -7893,7 +7915,7 @@ function renderSourceCard(source, module) {
         </div>
       </header>
       ${locatorText && locatorLabel ? `<p><strong>${locatorLabel}:</strong> ${locatorText}</p>` : ""}
-      ${isHarari ? renderHarariActions(detail) : ""}
+      ${isHarari ? renderHarariActions(detail) : renderSourceTextAction(source, module, detail)}
       ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
       ${microChecks[0] ? renderSourceMicroCheck(microChecks[0]) : ""}
       ${detail.quote ? `<p class="source-quote"><strong>Kurzes Zitat:</strong> <q>${detail.quote}</q></p>` : ""}

@@ -20,7 +20,9 @@ const publicSources = [
   cloud,
   read("app.js"),
   read("harari-viewer.html"),
-  read("harari-viewer.js")
+  read("harari-viewer.js"),
+  read("textstelle.html"),
+  read("textstelle.js")
 ].join("\n");
 const app = read("app.js");
 const viewer = `${read("harari-viewer.html")}\n${read("harari-viewer.js")}`;
@@ -48,8 +50,14 @@ for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/l
 }
 assert(app.includes('const HARARI_REFERENCE_VIEW_PATH = "./harari-viewer.html";'),
   "Buchstellen müssen auf den veröffentlichten relativen Viewer zeigen.");
+assert(app.includes('const SOURCE_TEXT_VIEW_PATH = "./textstelle.html";'),
+  "Textstellen müssen auf die veröffentlichte relative Ansicht zeigen.");
+assert(app.includes("renderSourceTextAction(source, module, detail)"),
+  "Nicht-Harari-Quellen müssen eine interne Textstellenansicht erhalten.");
 assert(!viewer.includes("pdfjsLib") && !viewer.includes("pdf.worker") && !viewer.includes("<canvas"),
   "Der Buchstellen-Viewer darf nicht von einer lokalen oder externen PDF-Laufzeit abhängen.");
+assert(build.includes('"textstelle.html"') && build.includes('"textstelle.js"'),
+  "Die allgemeine Textstellenansicht fehlt im Produktions-Build.");
 
 const pageNumbers = [
   ...[...app.matchAll(/pdfPage:\s*(\d+)/g)].map((match) => Number(match[1])),

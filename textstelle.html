@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Textstelle – Geschichte vor 1500</title>
+    <style>
+      :root { color-scheme:light; --bg:#f6f0e6; --card:#fffaf2; --line:rgba(30,44,52,.13); --text:#1e2c34; --muted:#5f6f78; --accent:#17364b; --gold:#7b5a16; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:"Avenir Next","Segoe UI",sans-serif; background:radial-gradient(circle at top left,rgba(232,211,167,.3),transparent 36%),linear-gradient(180deg,#faf6ef,var(--bg)); color:var(--text); }
+      main { width:min(820px,calc(100vw - 32px)); margin:24px auto 48px; }
+      article { padding:clamp(22px,5vw,44px); border:1px solid var(--line); border-radius:24px; background:var(--card); box-shadow:0 20px 50px rgba(30,44,52,.08); }
+      h1 { margin:.45rem 0 .8rem; font-size:clamp(1.8rem,5vw,2.8rem); line-height:1.08; }
+      h2 { margin:1.7rem 0 .45rem; font-size:1.15rem; }
+      p { line-height:1.65; }
+      .eyebrow { margin:0; color:var(--gold); font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+      .meta { color:var(--muted); }
+      blockquote { margin:1.5rem 0; padding:16px 18px; border-left:4px solid var(--gold); border-radius:0 16px 16px 0; background:rgba(123,90,22,.08); font:1.08rem/1.6 Georgia,serif; }
+      .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:2rem; }
+      .btn { display:inline-flex; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:750; background:var(--accent); color:#fff; }
+      [hidden] { display:none !important; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <p class="eyebrow" id="module-label">Textstelle</p>
+        <h1 id="title">Historische Textstelle</h1>
+        <p class="meta" id="meta" hidden></p>
+        <p class="meta" id="locator" hidden></p>
+        <blockquote id="quote" hidden></blockquote>
+        <section id="thesis-section" hidden><h2>Kernaussage</h2><p id="thesis"></p></section>
+        <section id="context-section" hidden><h2>Einordnung</h2><p id="context"></p></section>
+        <div class="actions"><a class="btn" href="./index.html">Zur Lerneinheit zurück</a></div>
+      </article>
+    </main>
+    <script src="./textstelle.js?v=20260818-1"></script>
+  </body>
+</html>

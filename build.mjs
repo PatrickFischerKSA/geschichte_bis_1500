@@ -5,7 +5,7 @@ mkdirSync("dist/server", { recursive: true });
 mkdirSync("dist/client", { recursive: true });
 mkdirSync("dist/.openai", { recursive: true });
 
-for (const file of ["index.html", "lehrpersonen.html", "harari-viewer.html", "app.js", "teacher.js", "cloudflare.js", "harari-viewer.js", "styles.css"]) {
+for (const file of ["index.html", "lehrpersonen.html", "harari-viewer.html", "textstelle.html", "app.js", "teacher.js", "cloudflare.js", "harari-viewer.js", "textstelle.js", "styles.css"]) {
   cpSync(file, `dist/client/${file}`);
 }
 cpSync("assets", "dist/client/assets", {
