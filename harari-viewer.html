@@ -1,176 +1,48 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harari-Passage öffnen</title>
+    <meta name="robots" content="noindex" />
+    <title>Buchstelle – Eine kurze Geschichte der Menschheit</title>
     <style>
-      :root {
-        color-scheme: light;
-        --bg: #f6f0e6;
-        --card: rgba(255, 252, 246, 0.96);
-        --line: rgba(30, 44, 52, 0.12);
-        --text: #1e2c34;
-        --muted: #5f6f78;
-        --accent: #17364b;
-        --accent-soft: rgba(23, 54, 75, 0.1);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Avenir Next", "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(232, 211, 167, 0.28), transparent 35%),
-          linear-gradient(180deg, #faf6ef, var(--bg));
-        color: var(--text);
-      }
-
-      main {
-        width: min(1100px, calc(100vw - 32px));
-        margin: 24px auto 48px;
-      }
-
-      .viewer-shell {
-        padding: 22px;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        background: var(--card);
-        box-shadow: 0 20px 50px rgba(30, 44, 52, 0.08);
-      }
-
-      .viewer-head {
-        display: grid;
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-
-      .viewer-head h1 {
-        margin: 0;
-        font-size: clamp(1.9rem, 4vw, 2.8rem);
-        line-height: 1.05;
-      }
-
-      .viewer-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
-      }
-
-      .pill {
-        display: inline-flex;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(200, 155, 60, 0.14);
-        color: #7b5a16;
-        font-weight: 700;
-      }
-
-      .viewer-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 18px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .btn.primary {
-        background: var(--accent);
-        color: white;
-      }
-
-      .btn.ghost {
-        border-color: rgba(23, 54, 75, 0.14);
-        background: white;
-        color: var(--accent);
-      }
-
-      .viewer-note {
-        color: var(--muted);
-      }
-
-      .viewer-panel {
-        margin-top: 20px;
-        display: grid;
-        gap: 14px;
-      }
-
-      .status {
-        padding: 14px 16px;
-        border-radius: 18px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      .status.error {
-        background: rgba(160, 42, 42, 0.12);
-        color: #7f1d1d;
-      }
-
-      .canvas-wrap {
-        overflow: auto;
-        border-radius: 18px;
-        border: 1px solid var(--line);
-        background: white;
-        min-height: 420px;
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        padding: 18px;
-      }
-
-      canvas {
-        max-width: 100%;
-        height: auto;
-        box-shadow: 0 10px 26px rgba(30, 44, 52, 0.12);
-      }
-
-      .viewer-search {
-        color: var(--muted);
-      }
+      :root { color-scheme: light; --bg:#f6f0e6; --card:#fffaf2; --line:rgba(30,44,52,.13); --text:#1e2c34; --muted:#5f6f78; --accent:#17364b; --gold:#7b5a16; }
+      * { box-sizing:border-box; }
+      body { margin:0; font-family:"Avenir Next","Segoe UI",sans-serif; background:radial-gradient(circle at top left,rgba(232,211,167,.3),transparent 36%),linear-gradient(180deg,#faf6ef,var(--bg)); color:var(--text); }
+      main { width:min(820px,calc(100vw - 32px)); margin:24px auto 48px; }
+      article { padding:clamp(22px,5vw,44px); border:1px solid var(--line); border-radius:24px; background:var(--card); box-shadow:0 20px 50px rgba(30,44,52,.08); }
+      h1 { margin:.45rem 0 .8rem; font-size:clamp(1.8rem,5vw,2.8rem); line-height:1.08; }
+      h2 { margin:1.7rem 0 .45rem; font-size:1.15rem; }
+      p { line-height:1.65; }
+      .eyebrow { margin:0; color:var(--gold); font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+      .citation,.notice { color:var(--muted); }
+      .notice { margin:1.5rem 0; padding:16px 18px; border-radius:16px; background:rgba(23,54,75,.08); }
+      .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:2rem; }
+      .btn { display:inline-flex; padding:12px 18px; border-radius:999px; border:1px solid rgba(23,54,75,.15); text-decoration:none; font-weight:750; color:var(--accent); background:#fff; }
+      .btn.primary { background:var(--accent); color:#fff; }
+      [hidden] { display:none !important; }
     </style>
   </head>
   <body>
     <main>
-      <section class="viewer-shell">
-        <div class="viewer-head">
-          <h1 id="title">Harari-Passage</h1>
-          <div class="viewer-meta">
-            <span class="pill" id="page-pill">Seite</span>
-            <span class="viewer-note" id="quote-note"></span>
-          </div>
-          <div class="viewer-actions">
-            <a class="btn primary" id="local-link" href="http://127.0.0.1:4173/harari-viewer.html">Lokalen Viewer öffnen</a>
-            <a class="btn ghost" href="./index.html">Zur Einheit zurück</a>
-          </div>
+      <article>
+        <p class="eyebrow" id="page-label">Buchstelle</p>
+        <h1 id="heading">Eine kurze Geschichte der Menschheit</h1>
+        <p class="citation" id="citation"></p>
+        <p class="notice">Diese Ansicht zeigt den Seitenverweis und die didaktische Einordnung aus der Lerneinheit. Aus urheberrechtlichen Gründen wird das vollständige Buch nicht öffentlich bereitgestellt.</p>
+        <section id="thesis-section" hidden>
+          <h2>Kernaussage</h2>
+          <p id="thesis"></p>
+        </section>
+        <section id="context-section" hidden>
+          <h2>Einordnung</h2>
+          <p id="context"></p>
+        </section>
+        <div class="actions">
+          <a class="btn primary" href="./index.html">Zur Lerneinheit zurück</a>
         </div>
-
-        <div class="viewer-panel">
-          <div class="status" id="status">Lade PDF und rendere Zielseite …</div>
-          <p class="viewer-search" id="search-note"></p>
-          <div class="canvas-wrap">
-            <canvas id="pdf-canvas"></canvas>
-          </div>
-        </div>
-      </section>
+      </article>
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script src="./harari-viewer.js?v=20260405-4"></script>
+    <script src="./harari-viewer.js?v=20260818-1"></script>
   </body>
 </html>

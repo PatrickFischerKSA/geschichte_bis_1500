@@ -17,8 +17,12 @@ const publicSources = [
   read("lehrpersonen.html"),
   teacher,
   cloud,
-  read("app.js")
+  read("app.js"),
+  read("harari-viewer.html"),
+  read("harari-viewer.js")
 ].join("\n");
+const app = read("app.js");
+const viewer = `${read("harari-viewer.html")}\n${read("harari-viewer.js")}`;
 
 const iterationMatch = worker.match(/const PBKDF2_ITERATIONS = (\d+);/);
 const iterations = Number(iterationMatch?.[1]);
@@ -36,4 +40,23 @@ assert(!cloud.includes("totalModules || 12") && !cloud.includes("interactionTota
 assert(cloud.includes("syncStateNow") && cloud.includes("sync: false, touch: false"),
   "Die sichere Cloud-Synchronisation ist unvollständig.");
 
-console.log("Preflight erfolgreich: Authentifizierung, D1-Bindung und Synchronisationsschutz geprüft.");
+for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
+  assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);
+}
+assert(app.includes('const HARARI_REFERENCE_VIEW_PATH = "./harari-viewer.html";'),
+  "Buchstellen müssen auf den veröffentlichten relativen Viewer zeigen.");
+assert(!viewer.includes("pdfjsLib") && !viewer.includes("pdf.worker") && !viewer.includes("<canvas"),
+  "Der Buchstellen-Viewer darf nicht von einer lokalen oder externen PDF-Laufzeit abhängen.");
+
+const pageNumbers = [
+  ...[...app.matchAll(/pdfPage:\s*(\d+)/g)].map((match) => Number(match[1])),
+  ...[...app.matchAll(/extraPdfPages:\s*\[([^\]]+)\]/g)].flatMap((match) =>
+    [...match[1].matchAll(/\d+/g)].map((page) => Number(page[0])))
+];
+assert(pageNumbers.length > 0, "Es wurden keine Buchseiten-Verweise gefunden.");
+assert(pageNumbers.every((page) => Number.isInteger(page) && page > 0 && page <= 1000),
+  "Mindestens ein Buchseiten-Verweis ist ungültig.");
+assert(!app.includes("Buchstelle S. ${detail.pdfPage} öffnen"),
+  "Die Beschriftung darf nicht fälschlich das Öffnen einer PDF versprechen.");
+
+console.log(`Preflight erfolgreich: Authentifizierung, D1, Synchronisation sowie ${pageNumbers.length} Buchseiten-Verweise geprüft.`);

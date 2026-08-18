@@ -1,7 +1,7 @@
 const STORAGE_KEY = "geschichte_bis_1500-progress-v2";
 const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 const TEACHER_DASHBOARD_KEY = "geschichte_bis_1500_teacher_dashboard_v1";
-const HARARI_REFERENCE_VIEW_PATH = "http://127.0.0.1:4173/harari-viewer.html";
+const HARARI_REFERENCE_VIEW_PATH = "./harari-viewer.html";
 
 function isTeacherPage() {
   return document.body?.dataset?.mode === "teacher";
@@ -19,14 +19,13 @@ const sourceCatalog = [
   {
     id: "harari-pdf",
     title: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
-    type: "Buch / PDF",
+    type: "Buch",
     role: "Strukturgebende Tiefenfolie der gesamten Einheit",
     didactics:
       "Aus dem PDF werden nicht bloss Schlagworte übernommen, sondern die Grobarchitektur der Einheit abgeleitet: kognitive Revolution, landwirtschaftliche Revolution, Vereinigungsprozesse durch Geld, Reiche und Religionen. Für die Module bis 1500 werden vor allem Teil 1, Teil 2 und Teil 3 didaktisch auf Frühgeschichte, Antike und Mittelalter zugeschnitten.",
-    linkLabel: "Lokale Datei",
+    linkLabel: "Buchstellen anzeigen",
     link: null,
-    note:
-      "Datei: /Users/patrickfischer/Desktop/Harari-Y._Eine-kurze-Geschicht_9783641104986.pdf"
+    note: "Die verwendeten Buchstellen werden innerhalb der Einheit als didaktisch aufbereitete Seitenverweise angezeigt."
   },
   {
     id: "anthropozaen",
@@ -187,7 +186,7 @@ const sourceCatalog = [
       "Die Präsentation unterstützt Modul 2, weil sie Frühgeschichte klar in Paläolithikum, Mesolithikum und Neolithikum gliedert und die langen Zeiträume der Menschwerdung übersichtlich ordnet.",
     linkLabel: "Lokale Präsentation",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/Hominisation_Zeitleiste_Musterlösung.pptx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "hoehlenmalereien",
@@ -248,7 +247,7 @@ const sourceCatalog = [
       "Das Dossier bündelt den Beginn von Sesshaftigkeit und Nahrungsproduktion im Fruchtbaren Halbmond und bringt Harari und Graeber/Wengrow direkt in die Frage nach offenen oder linearen Wegen hinein.",
     linkLabel: "Lokales Dokument",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/Neolithisierung_Anfänge.docx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "neolithisierung-europa-doc",
@@ -259,7 +258,7 @@ const sourceCatalog = [
       "Das Dossier konkretisiert die langsame Ausbreitung nach Europa, die Rolle von Migration und Übernahme sowie die besondere Bedeutung der Pfahlbausiedlungen im Alpenraum.",
     linkLabel: "Lokales Dokument",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/Neolithisierung_Europa.docx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "goebekli-tepe",
@@ -330,7 +329,7 @@ const sourceCatalog = [
       "Das Dossier erklärt Archäologie als unterirdisches Archiv und verbindet Grabung, Stratigraphie, relative und absolute Chronologie mit naturwissenschaftlichen Methoden.",
     linkLabel: "Lokales Dokument",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/Archäologie.docx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "griechenland-demokratie-video",
@@ -381,7 +380,7 @@ const sourceCatalog = [
       "Das Dossier bündelt Grundwissen zu Hallstatt und La Tène, Oppida, Druiden, Fernkontakten und dem Bruch durch Caesar.",
     linkLabel: "Lokales Dokument",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/Die Kelten.docx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "kelten-praesentation",
@@ -392,7 +391,7 @@ const sourceCatalog = [
       "Die Präsentation eignet sich, um gängige Gallier- und Barbarenbilder ausdrücklich aufzurufen und dann mit Hallstatt, La Tène, Oppida und archäologischen Befunden zu korrigieren.",
     linkLabel: "Lokale Präsentation",
     link: null,
-    note: "Datei: /Users/patrickfischer/Downloads/PPP_Kelten.pptx"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "kelten-experiment",
@@ -467,35 +466,35 @@ const sourceCatalog = [
   {
     id: "kempraten-pdf",
     title: "Stadtspiegel 2018: Schwerpunkt Kempraten",
-    type: "Lokales PDF",
+    type: "Zusatzmaterial",
     role: "Regionales Material zu Siedlungsraum am oberen Zürichsee",
     didactics:
       "Das PDF dient als lokale Vertiefung zum Raum Kempraten und zur Frage, wie Siedlung, Uferlage und Verkehrsraum über längere Zeit zusammenhängen.",
-    linkLabel: "Lokale Datei",
+    linkLabel: "Zusatzmaterial",
     link: null,
-    note: "Datei: /Users/patrickfischer/Desktop/Stadtspiegel_2018_Schwerpunkt_Kempraten.pdf"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "jahresbericht-2004-pdf",
     title: "Archäologischer Jahresbericht 2004",
-    type: "Lokales PDF",
+    type: "Zusatzmaterial",
     role: "Lokale archäologische Ergänzung",
     didactics:
       "Das PDF dient als zusätzliche lokale Vertiefung zu Funden, Grabungen und Befundlagen im schweizerischen Raum.",
-    linkLabel: "Lokale Datei",
+    linkLabel: "Zusatzmaterial",
     link: null,
-    note: "Datei: /Users/patrickfischer/Desktop/Archäologischer Jahresbericht 2004.pdf"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "roemische-verkehrswege-pdf",
     title: "Römische Verkehrswege",
-    type: "Lokales PDF",
+    type: "Zusatzmaterial",
     role: "Übergang von keltischem Siedlungsraum zu römischer Raumordnung",
     didactics:
       "Das PDF ergänzt die Einheit dort, wo aus vorrömischen Räumen römisch geordnete Verkehrsachsen werden.",
-    linkLabel: "Lokale Datei",
+    linkLabel: "Zusatzmaterial",
     link: null,
-    note: "Datei: /Users/patrickfischer/Desktop/PBA.DOK2.461p-HSpi-2021-Roemische-Verkehrswege.pdf"
+    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
   },
   {
     id: "christentum-video",
@@ -7115,12 +7114,22 @@ function getSourceDetail(moduleId, source) {
   return sourceDetails[makeSourceKey(moduleId, source.title)] || {};
 }
 
-function getHarariReferenceLink(detail) {
+function getHarariReferenceLink(detail, pageOverride) {
   const params = new URLSearchParams();
-  if (detail.pdfPage) {
-    params.set("page", String(detail.pdfPage));
+  const page = pageOverride || detail.pdfPage;
+  if (page) {
+    params.set("page", String(page));
+  }
+  if (!pageOverride) {
+    if (detail.heading) params.set("heading", cleanStudentText(detail.heading));
+    if (detail.thesis) params.set("thesis", cleanStudentText(detail.thesis));
+    if (detail.passage) params.set("context", cleanStudentText(detail.passage));
   }
   return `${HARARI_REFERENCE_VIEW_PATH}?${params.toString()}`;
+}
+
+function escapeLinkAttribute(url) {
+  return String(url).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 }
 
 function renderHarariActions(detail) {
@@ -7130,7 +7139,7 @@ function renderHarariActions(detail) {
 
   const actions = [
     {
-      label: `Buchstelle S. ${detail.pdfPage} öffnen`,
+      label: `Buchstelle S. ${detail.pdfPage} anzeigen`,
       href: getHarariReferenceLink(detail)
     }
   ];
@@ -7138,8 +7147,8 @@ function renderHarariActions(detail) {
   if (Array.isArray(detail.extraPdfPages)) {
     detail.extraPdfPages.forEach((page) => {
       actions.push({
-        label: `Zusatzstelle S. ${page} öffnen`,
-        href: `${HARARI_REFERENCE_VIEW_PATH}?page=${encodeURIComponent(page)}`
+        label: `Zusatzstelle S. ${page} anzeigen`,
+        href: getHarariReferenceLink(detail, page)
       });
     });
   }
@@ -7149,7 +7158,7 @@ function renderHarariActions(detail) {
       ${actions
         .map(
           (action) =>
-            `<a class="btn ghost" href="${action.href}">${action.label}</a>`
+            `<a class="btn ghost" href="${escapeLinkAttribute(action.href)}">${action.label}</a>`
         )
         .join("")}
     </div>
@@ -7870,7 +7879,7 @@ function renderSourceCard(source, module) {
     : detail.locator || "";
   const locatorText =
     isHarari && detail.pdfPage
-      ? `<a href="${getHarariReferenceLink(detail)}">${locatorTextRaw}</a>`
+      ? `<a href="${escapeLinkAttribute(getHarariReferenceLink(detail))}">${locatorTextRaw}</a>`
       : locatorTextRaw;
   const locatorLabel = isHarari ? "Im Buch" : "";
   const passageLabel = "Einordnung";
