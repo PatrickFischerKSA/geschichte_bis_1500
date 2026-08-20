@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "preflight": "node preflight.mjs",
+    "compatibility": "node compatibility-check.mjs",
+    "preflight": "node preflight.mjs && npm run compatibility",
     "build": "npm run preflight && node build.mjs"
   }
 }
