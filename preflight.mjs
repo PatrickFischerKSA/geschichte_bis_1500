@@ -49,6 +49,10 @@ assert(cloud.includes("cloud-save-status") && cloud.includes("Cloud-Stand bestä
   "Sichtbare Speicherbestätigung oder Wiederholungsversuch fehlt.");
 assert(worker.includes("SELECT updated_at FROM learner_progress") && worker.includes("D1 hat den Lernstand nicht bestätigt"),
   "Der Server kontrolliert die dauerhafte D1-Speicherung nicht.");
+assert(app.includes("data-save-field") && app.includes("bindExplicitCloudSaveButtons") && app.includes("In Cloud gespeichert"),
+  "Explizite Cloud-Speicherknöpfe mit Bestätigung fehlen bei den Antwortfeldern.");
+assert(app.includes("data-save-cloze"),
+  "Beim Lückentext fehlt der explizite Cloud-Speicherknopf.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

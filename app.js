@@ -7460,9 +7460,11 @@ function renderSourceMicroCheck(question) {
       <p>${cleanPromptText(question.prompt)}</p>
       <textarea data-source-answer="${question.id}" placeholder="${question.placeholder}"></textarea>
       <div class="task-actions">
+        <button class="btn primary" type="button" data-save-field="${question.id}" data-save-kind="source">In Cloud speichern</button>
         <button class="btn primary" type="button" data-source-check="${question.id}">Antwort prüfen</button>
         <button class="btn ghost" type="button" data-source-show="${question.id}">Musterlösung zeigen</button>
       </div>
+      <div class="feedback" data-save-feedback="${question.id}" aria-live="polite"></div>
       <div class="feedback" data-source-feedback="${question.id}"></div>
       ${teacherSolution}
     </div>
@@ -8101,9 +8103,11 @@ function renderShortAnswerBox(task, kindLabel) {
       <p><strong>${kindLabel}:</strong> ${cleanPromptText(task.question)}</p>
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
+        <button class="btn primary" type="button" data-save-field="${task.id}" data-save-kind="answer">In Cloud speichern</button>
         <button class="btn primary" type="button" data-check="${task.id}">Antwort prüfen</button>
         <button class="btn ghost" type="button" data-show="${task.id}">Beispiellösung zeigen</button>
       </div>
+      <div class="feedback" data-save-feedback="${task.id}" aria-live="polite"></div>
       <div class="feedback" data-feedback="${task.id}"></div>
       ${teacherSolution}
     </div>
@@ -8184,6 +8188,10 @@ function renderInlineCheckQuestion(module, questionIndex) {
       <div class="check-question" data-inline-check="${answerId}">
         <p>${question.prompt}</p>
         <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
+        <div class="task-actions">
+          <button class="btn primary" type="button" data-save-field="${answerId}" data-save-kind="content">In Cloud speichern</button>
+        </div>
+        <div class="feedback" data-save-feedback="${answerId}" aria-live="polite"></div>
         <div class="feedback" data-content-feedback="${answerId}"></div>
         ${
           isTeacherMode()
@@ -8835,9 +8843,11 @@ function renderRepetitionCloze(state) {
       </div>
       <div class="cloze-text">${renderedText}</div>
       <div class="task-actions">
+        <button class="btn primary" type="button" data-save-cloze>In Cloud speichern</button>
         <button class="btn primary" type="button" data-cloze-check>Lückentext prüfen</button>
         <button class="btn ghost" type="button" data-cloze-solution>Musterlösung zeigen</button>
       </div>
+      <div class="feedback" data-save-feedback="repetition-cloze" aria-live="polite"></div>
       <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-cloze-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
       <div class="teacher-answer-key ${showSolution ? "" : "is-hidden"}" data-cloze-solution-box>
         <p class="section-kicker">Musterlösung</p>
@@ -9073,6 +9083,66 @@ function bindShortAnswerTasks(state) {
 
 function bindSelftests(state) {
   return state;
+}
+
+function showExplicitSaveFeedback(id, level, title, body) {
+  const feedback = document.querySelector(`[data-save-feedback="${id}"]`);
+  if (!feedback) return;
+  feedback.className = `feedback is-visible ${level}`;
+  feedback.innerHTML = `<strong>${title}</strong><p>${body}</p>`;
+}
+
+async function saveExplicitlyToCloud(state, id, button) {
+  const cloudApi = window.GESCHICHTE_FIREBASE;
+  saveState(state, { sync: false });
+  if (!cloudApi?.getStatus?.().loggedIn) {
+    showExplicitSaveFeedback(id, "low", "Noch nicht in Cloud gespeichert", "Melde dich zuerst im Bereich Cloud-Sync an.");
+    return;
+  }
+
+  button.disabled = true;
+  showExplicitSaveFeedback(id, "mid", "Speichere …", "Der Lernstand wird an die Cloud übertragen.");
+  try {
+    const result = await cloudApi.syncStateNow(state);
+    const savedAt = new Intl.DateTimeFormat("de-CH", { dateStyle: "medium", timeStyle: "short" }).format(new Date(result.updatedAt));
+    showExplicitSaveFeedback(id, "good", "In Cloud gespeichert", `D1 hat den Lernstand am ${savedAt} bestätigt.`);
+  } catch (error) {
+    showExplicitSaveFeedback(id, "low", "Speichern fehlgeschlagen", cleanPromptText(error.message));
+  } finally {
+    button.disabled = false;
+  }
+}
+
+function bindExplicitCloudSaveButtons(state) {
+  document.querySelectorAll("[data-save-field]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const id = button.dataset.saveField;
+      const kind = button.dataset.saveKind;
+      const selector = kind === "source"
+        ? `[data-source-answer="${id}"]`
+        : kind === "content"
+          ? `[data-content-answer="${id}"]`
+          : `[data-answer="${id}"]`;
+      const field = document.querySelector(selector);
+      if (!field) return;
+      state[`${id}-text`] = field.value;
+      await saveExplicitlyToCloud(state, id, button);
+    });
+  });
+
+  const clozeButton = document.querySelector("[data-save-cloze]");
+  if (clozeButton) {
+    clozeButton.addEventListener("click", async () => {
+      const level = getCurrentRepetitionLevel(state);
+      const mode = getRepetitionMode(level);
+      mode.cloze.parts.filter((part) => typeof part === "object").forEach((blank) => {
+        const fieldId = `${level}-${blank.id}`;
+        const field = document.querySelector(`[data-cloze-input="${fieldId}"]`);
+        state[getRepetitionTextKey(level, blank.id)] = String(field?.value || "");
+      });
+      await saveExplicitlyToCloud(state, "repetition-cloze", clozeButton);
+    });
+  }
 }
 
 function bindContentChecks(state) {
@@ -9543,6 +9613,7 @@ function renderApp(state) {
   renderCompletionPanel(state);
   renderSourceCatalog();
   bindShortAnswerTasks(state);
+  bindExplicitCloudSaveButtons(state);
   bindSelftests(state);
   bindContentChecks(state);
   bindSourceMicroChecks(state);
