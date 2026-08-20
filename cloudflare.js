@@ -44,7 +44,9 @@
           window.setTimeout(() => location.reload(), 0);
         }
       }
-      throw new Error(data.error || "Die Verbindung zur Datenbank ist fehlgeschlagen.");
+      const error = new Error(data.error || "Die Verbindung zur Datenbank ist fehlgeschlagen.");
+      error.status = response.status;
+      throw error;
     }
     return data;
   }
@@ -54,6 +56,13 @@
     if (!node) return;
     node.textContent = message || "";
     node.style.color = isError ? "#7f1d1d" : "";
+  }
+
+  function updateCloudSaveStatus(message, state = "saved") {
+    const node = document.getElementById("cloud-save-status");
+    if (!node) return;
+    node.textContent = message;
+    node.dataset.state = state;
   }
 
   function currentState() {
@@ -94,6 +103,7 @@
         <span class="fact-label">Cloud-Speicherung aktiv</span>
         <strong>${escapeHtml(profile.firstName)} ${escapeHtml(profile.lastName)}</strong>
         <p class="sidebar-note">${escapeHtml(profile.className)} · Lernstände werden automatisch gesichert.</p>
+        <p id="cloud-save-status" class="cloud-save-status" data-state="${ownProgress?.updatedAt ? "saved" : "idle"}" aria-live="polite">${ownProgress?.updatedAt ? `Cloud-Stand bestätigt: ${escapeHtml(progressUpdatedAt)}` : "Noch kein bestätigter Cloud-Stand."}</p>
         <div class="teacher-access-actions">
           <button class="btn primary" type="button" data-cloud-sync-now>Jetzt speichern</button>
           <button class="btn ghost" type="button" data-cloud-load>Cloud-Stand laden</button>
@@ -230,7 +240,10 @@
     clearTimeout(syncTimer);
     const stateCopy = JSON.parse(JSON.stringify(state));
     syncTimer = setTimeout(() => {
-      queueStateUpload(stateCopy).catch((error) => console.error("Cloudflare sync failed", error));
+      queueStateUpload(stateCopy).catch((error) => {
+        console.error("Cloudflare sync failed", error);
+        updateCloudSaveStatus(`Speichern fehlgeschlagen: ${error.message}`, "error");
+      });
     }, 700);
   }
 
@@ -247,8 +260,21 @@
     syncQueue = syncQueue.catch(() => {}).then(async () => {
       const snapshot = appApi.buildLearnerSnapshot(state);
       if (!snapshot) throw new Error("Bitte trage zuerst deinen Namen ein.");
-      const result = await api("/api/student/progress", { method: "PUT", body: JSON.stringify({ state, snapshot }) }, "student");
+      updateCloudSaveStatus("Speichere Lernstand in der Cloud …", "saving");
+      let result;
+      for (let attempt = 1; attempt <= 2; attempt += 1) {
+        try {
+          result = await api("/api/student/progress", { method: "PUT", body: JSON.stringify({ state, snapshot }) }, "student");
+          break;
+        } catch (error) {
+          const retryable = !error.status || error.status >= 500;
+          if (!retryable || attempt === 2) throw error;
+          await new Promise((resolve) => window.setTimeout(resolve, 900));
+        }
+      }
       ownProgress = { state, snapshot, updatedAt: result.updatedAt };
+      const savedAt = new Intl.DateTimeFormat("de-CH", { dateStyle: "medium", timeStyle: "short" }).format(new Date(result.updatedAt));
+      updateCloudSaveStatus(`Cloud-Stand bestätigt: ${savedAt}`, "saved");
       return result;
     });
     return syncQueue;

@@ -45,6 +45,10 @@ assert(!cloud.includes("totalModules || 12") && !cloud.includes("interactionTota
   "Veraltete Lernstands-Summen 12/48 sind noch vorhanden.");
 assert(cloud.includes("syncStateNow") && cloud.includes("sync: false, touch: false"),
   "Die sichere Cloud-Synchronisation ist unvollständig.");
+assert(cloud.includes("cloud-save-status") && cloud.includes("Cloud-Stand bestätigt") && cloud.includes("attempt <= 2"),
+  "Sichtbare Speicherbestätigung oder Wiederholungsversuch fehlt.");
+assert(worker.includes("SELECT updated_at FROM learner_progress") && worker.includes("D1 hat den Lernstand nicht bestätigt"),
+  "Der Server kontrolliert die dauerhafte D1-Speicherung nicht.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

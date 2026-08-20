@@ -1447,6 +1447,26 @@ p {
   margin-left: 0;
 }
 
+.cloud-save-status {
+  margin-top: 10px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(31, 109, 102, 0.1);
+  color: var(--teal);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.cloud-save-status[data-state="saving"] {
+  background: rgba(200, 155, 60, 0.14);
+  color: #765916;
+}
+
+.cloud-save-status[data-state="error"] {
+  background: rgba(180, 75, 63, 0.12);
+  color: #8f3028;
+}
+
 .btn.disabled,
 .btn[aria-disabled="true"] {
   pointer-events: none;

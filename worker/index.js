@@ -87,10 +87,16 @@ async function studentProgress(request, env) {
     const snapshotJson = JSON.stringify(snapshot);
     if (stateJson.length > 500000 || snapshotJson.length > 100000) return json({ error: "Der Lernstand ist zu gross." }, 413);
     const now = new Date().toISOString();
-    await env.DB.prepare(`INSERT INTO learner_progress (student_id, course_id, state_json, snapshot_json, updated_at)
+    const write = await env.DB.prepare(`INSERT INTO learner_progress (student_id, course_id, state_json, snapshot_json, updated_at)
       VALUES (?, ?, ?, ?, ?) ON CONFLICT(student_id, course_id) DO UPDATE SET
       state_json=excluded.state_json, snapshot_json=excluded.snapshot_json, updated_at=excluded.updated_at`)
       .bind(session.userId, COURSE_ID, stateJson, snapshotJson, now).run();
+    if (!write.success) throw new Error("D1 hat den Lernstand nicht bestätigt.");
+    const confirmation = await env.DB.prepare("SELECT updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+      .bind(session.userId, COURSE_ID).first();
+    if (!confirmation || String(confirmation.updated_at) !== now) {
+      throw new Error("Der gespeicherte Lernstand konnte nicht bestätigt werden.");
+    }
     return json({ ok: true, updatedAt: now }, 200);
   }
   return json({ error: "Methode nicht erlaubt." }, 405);
