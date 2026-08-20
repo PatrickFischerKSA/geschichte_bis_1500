@@ -7839,7 +7839,7 @@ function openThinkerModal(key) {
   `;
 
   modal.hidden = false;
-  document.body.classList.add("is-overlay-open");
+  reconcileOverlayScrollLock();
 }
 
 function closeThinkerModal() {
@@ -7848,7 +7848,14 @@ function closeThinkerModal() {
     return;
   }
   modal.hidden = true;
-  document.body.classList.remove("is-overlay-open");
+  reconcileOverlayScrollLock();
+}
+
+function reconcileOverlayScrollLock() {
+  const welcome = document.getElementById("welcome-overlay");
+  const thinker = document.getElementById("thinker-modal");
+  const overlayOpen = Boolean((welcome && !welcome.hidden) || (thinker && !thinker.hidden));
+  document.body.classList.toggle("is-overlay-open", overlayOpen);
 }
 
 function bindThinkerPanel() {
@@ -9230,14 +9237,14 @@ function renderWelcomeOverlay(state) {
   if (isTeacherMode()) {
     overlay.hidden = true;
     overlay.innerHTML = "";
-    document.body.classList.remove("is-overlay-open");
+    reconcileOverlayScrollLock();
     return;
   }
 
   const shouldOpen = !state.welcomeDismissed;
 
   overlay.hidden = !shouldOpen;
-  document.body.classList.toggle("is-overlay-open", shouldOpen);
+  reconcileOverlayScrollLock();
 
   if (!shouldOpen) {
     overlay.innerHTML = "";
@@ -9545,7 +9552,10 @@ function renderApp(state) {
   bindThinkerPanel();
   bindCompletionActions();
   updateProgress(state);
+  reconcileOverlayScrollLock();
 }
+
+window.addEventListener("pageshow", reconcileOverlayScrollLock);
 
 function bindTeacherQuestionButtons() {
   document.querySelectorAll("[data-open-teacher-question]").forEach((button) => {

@@ -13,6 +13,7 @@ const teacher = read("teacher.js");
 const cloud = read("cloudflare.js");
 const hosting = JSON.parse(read(".openai/hosting.json"));
 const build = read("build.mjs");
+const styles = read("styles.css");
 const publicSources = [
   read("index.html"),
   read("lehrpersonen.html"),
@@ -58,6 +59,10 @@ assert(!viewer.includes("pdfjsLib") && !viewer.includes("pdf.worker") && !viewer
   "Der Buchstellen-Viewer darf nicht von einer lokalen oder externen PDF-Laufzeit abhängen.");
 assert(build.includes('"textstelle.html"') && build.includes('"textstelle.js"'),
   "Die allgemeine Textstellenansicht fehlt im Produktions-Build.");
+assert(styles.includes(".welcome-overlay") && styles.includes("overscroll-behavior: contain"),
+  "Overlays müssen auf kleinen oder skalierten Windows-Anzeigen selbst scrollbar sein.");
+assert(styles.includes("overflow-y: auto") && app.includes("reconcileOverlayScrollLock"),
+  "Der Schutz gegen hängen gebliebene Scroll-Sperren fehlt.");
 
 const pageNumbers = [
   ...[...app.matchAll(/pdfPage:\s*(\d+)/g)].map((match) => Number(match[1])),
