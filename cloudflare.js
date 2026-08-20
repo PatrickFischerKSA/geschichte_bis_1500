@@ -192,6 +192,16 @@
   }
 
   function bindStudentSession() {
+    const progressComment = document.getElementById("student-progress-comment");
+    if (progressComment) {
+      const state = currentState();
+      progressComment.value = String(state.studentProgressCommentDraft || "");
+      progressComment.addEventListener("input", () => {
+        state.studentProgressCommentDraft = progressComment.value;
+        appApi?.saveState?.(state);
+        updateCloudSaveStatus("Kommentarentwurf wird automatisch gespeichert …", "saving");
+      });
+    }
     document.querySelector("[data-cloud-sync-now]")?.addEventListener("click", async () => {
       try { await syncStateNow(currentState()); renderStudentPanel(); setFeedback("cloud-sync-feedback", "Lernstand sicher in der Cloud gespeichert.", false); }
       catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
@@ -207,6 +217,9 @@
       try {
         setFeedback("student-comment-feedback", "Kommentar wird gespeichert …", false);
         await submitTeacherQuestion({ moduleId: "lernstand", moduleTitle: "Mein Lernstand", questionText: comment });
+        const state = currentState();
+        delete state.studentProgressCommentDraft;
+        appApi?.saveState?.(state);
         renderStudentPanel();
         setFeedback("student-comment-feedback", "Kommentar gespeichert und für die Lehrperson sichtbar.", false);
       } catch (error) { setFeedback("student-comment-feedback", error.message, true); }

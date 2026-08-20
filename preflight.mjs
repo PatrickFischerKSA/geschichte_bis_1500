@@ -53,6 +53,10 @@ assert(app.includes("data-save-field") && app.includes("bindExplicitCloudSaveBut
   "Explizite Cloud-Speicherknöpfe mit Bestätigung fehlen bei den Antwortfeldern.");
 assert(app.includes("data-save-cloze"),
   "Beim Lückentext fehlt der explizite Cloud-Speicherknopf.");
+assert(app.includes("bindAutomaticCloudDrafts") && app.includes("scheduleAutomaticCloudSave") && app.includes("Automatisch in Cloud gespeichert"),
+  "Die sofortige automatische Cloud-Speicherung von Entwürfen fehlt.");
+assert(cloud.includes("studentProgressCommentDraft") && cloud.includes("Kommentarentwurf wird automatisch gespeichert"),
+  "Kommentarentwürfe werden nicht automatisch gespeichert.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

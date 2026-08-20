@@ -3,6 +3,7 @@ const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 const TEACHER_DASHBOARD_KEY = "geschichte_bis_1500_teacher_dashboard_v1";
 const HARARI_REFERENCE_VIEW_PATH = "./harari-viewer.html";
 const SOURCE_TEXT_VIEW_PATH = "./textstelle.html";
+const automaticCloudSaveTimers = new Map();
 
 function isTeacherPage() {
   return document.body?.dataset?.mode === "teacher";
@@ -8320,6 +8321,7 @@ function renderTeacherQuestionSection(module) {
       <div class="task-actions">
         <button class="btn primary" type="button" data-teacher-question-send="${module.id}">Frag die Lehrperson</button>
       </div>
+      <div class="feedback" data-save-feedback="${module.id}-teacher-question" aria-live="polite"></div>
       <div class="feedback" data-teacher-question-feedback="${module.id}"></div>
       ${listMarkup}
     </div>
@@ -9145,6 +9147,60 @@ function bindExplicitCloudSaveButtons(state) {
   }
 }
 
+function scheduleAutomaticCloudSave(state, feedbackId) {
+  saveState(state, { sync: false });
+  showExplicitSaveFeedback(feedbackId, "mid", "Wird automatisch gespeichert …", "Die Eingabe ist lokal gesichert und wird gleich in die Cloud übertragen.");
+  window.clearTimeout(automaticCloudSaveTimers.get(feedbackId));
+  automaticCloudSaveTimers.set(feedbackId, window.setTimeout(async () => {
+    const cloudApi = window.GESCHICHTE_FIREBASE;
+    if (!cloudApi?.getStatus?.().loggedIn) {
+      showExplicitSaveFeedback(feedbackId, "low", "Nur lokal gespeichert", "Melde dich im Bereich Cloud-Sync an, damit die Eingabe automatisch in D1 gespeichert wird.");
+      return;
+    }
+    try {
+      const result = await cloudApi.syncStateNow(state);
+      const savedAt = new Intl.DateTimeFormat("de-CH", { timeStyle: "short" }).format(new Date(result.updatedAt));
+      showExplicitSaveFeedback(feedbackId, "good", "Automatisch in Cloud gespeichert", `D1 hat die Eingabe um ${savedAt} Uhr bestätigt.`);
+    } catch (error) {
+      showExplicitSaveFeedback(feedbackId, "low", "Automatisches Speichern fehlgeschlagen", cleanPromptText(error.message));
+    }
+  }, 450));
+}
+
+function bindAutomaticCloudDrafts(state) {
+  const draftFields = [
+    ...document.querySelectorAll("[data-answer]"),
+    ...document.querySelectorAll("[data-content-answer]"),
+    ...document.querySelectorAll("[data-source-answer]")
+  ];
+  draftFields.forEach((field) => {
+    const id = field.dataset.answer || field.dataset.contentAnswer || field.dataset.sourceAnswer;
+    field.addEventListener("input", () => {
+      state[`${id}-text`] = field.value;
+      scheduleAutomaticCloudSave(state, id);
+    });
+  });
+
+  document.querySelectorAll("[data-cloze-input]").forEach((field) => {
+    field.addEventListener("input", () => {
+      const level = getCurrentRepetitionLevel(state);
+      const blankId = String(field.dataset.clozeInput || "").replace(`${level}-`, "");
+      state[getRepetitionTextKey(level, blankId)] = field.value;
+      scheduleAutomaticCloudSave(state, "repetition-cloze");
+    });
+  });
+
+  document.querySelectorAll("[data-teacher-question-input]").forEach((field) => {
+    const moduleId = field.dataset.teacherQuestionInput;
+    const draftKey = `${moduleId}-teacher-question-draft`;
+    if (state[draftKey]) field.value = state[draftKey];
+    field.addEventListener("input", () => {
+      state[draftKey] = field.value;
+      scheduleAutomaticCloudSave(state, `${moduleId}-teacher-question`);
+    });
+  });
+}
+
 function bindContentChecks(state) {
   modules.forEach((module) => {
     const button = document.querySelector(`[data-content-check="${module.id}"]`);
@@ -9614,6 +9670,7 @@ function renderApp(state) {
   renderSourceCatalog();
   bindShortAnswerTasks(state);
   bindExplicitCloudSaveButtons(state);
+  bindAutomaticCloudDrafts(state);
   bindSelftests(state);
   bindContentChecks(state);
   bindSourceMicroChecks(state);
@@ -9668,7 +9725,10 @@ function bindTeacherQuestionButtons() {
         });
         feedbackBox.innerHTML = `<div class="feedback is-visible good"><strong>Frage gesendet.</strong><p>Die Lehrperson sieht deine Frage jetzt im Dashboard.</p></div>`;
         field.value = "";
-        renderApp(loadState());
+        const nextState = loadState();
+        delete nextState[`${module.id}-teacher-question-draft`];
+        saveState(nextState);
+        renderApp(nextState);
       } catch (error) {
         feedbackBox.innerHTML = `<div class="feedback is-visible low"><strong>Frage konnte nicht gesendet werden.</strong><p>${cleanPromptText(error.message)}</p></div>`;
       }
