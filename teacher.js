@@ -115,9 +115,10 @@ function renderTeacherDashboard() {
   const rosterInput = document.getElementById("teacher-roster-input");
   const summary = document.getElementById("teacher-dashboard-summary");
   const table = document.getElementById("teacher-dashboard-table");
+  const accountPanel = document.getElementById("teacher-account-panel");
   const questionPanel = document.getElementById("teacher-question-panel");
 
-  if (!rosterInput || !summary || !table || !questionPanel) {
+  if (!rosterInput || !summary || !accountPanel || !table || !questionPanel) {
     return;
   }
 
@@ -157,6 +158,8 @@ function renderTeacherDashboard() {
       <p>${classes.length ? classes.map(escapeTeacherHtml).join(" · ") : `${missing} Personen noch ohne Datensatz`}</p>
     </div>
   `;
+
+  renderTeacherAccountPanel(accountPanel);
 
   if (!learners.length) {
     table.innerHTML = `
@@ -268,6 +271,88 @@ function renderTeacherDashboard() {
   `;
 
   renderTeacherQuestionPanel(questionPanel);
+}
+
+function teacherActivityLabel(action) {
+  const labels = {
+    account_created: "Konto erstellt",
+    login: "angemeldet",
+    progress_saved: "Lernstand gespeichert",
+    question_sent: "Frage oder Kommentar gesendet",
+    password_reset: "Passwort zurückgesetzt",
+    account_deactivated: "Konto deaktiviert",
+    account_reactivated: "Konto reaktiviert"
+  };
+  return labels[action] || action;
+}
+
+function renderTeacherAccountPanel(container) {
+  const cloudApi = window.GESCHICHTE_FIREBASE;
+  const status = cloudApi?.getStatus ? cloudApi.getStatus() : { loggedIn: false };
+  const accounts = cloudApi?.getTeacherAccounts ? cloudApi.getTeacherAccounts() : [];
+  const activities = cloudApi?.getTeacherActivities ? cloudApi.getTeacherActivities() : [];
+
+  if (!status.loggedIn) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const activeCount = accounts.filter(account => account.isActive).length;
+  container.innerHTML = `
+    <div class="teacher-account-heading">
+      <div>
+        <p class="panel-kicker">Kontoverwaltung</p>
+        <h2>Alle Konten und Aktivitäten</h2>
+        <p>${accounts.length} Konten · ${activeCount} aktiv · ${accounts.length - activeCount} deaktiviert. Beim Zurücksetzen werden bestehende Sitzungen beendet, Lernstände bleiben erhalten.</p>
+      </div>
+    </div>
+    <div class="teacher-account-list">
+      ${accounts.map(account => `
+        <article class="teacher-account-card ${account.isActive ? "" : "is-disabled"}">
+          <div class="teacher-question-meta">
+            <div>
+              <strong>${escapeTeacherHtml(`${account.firstName} ${account.lastName}`)}</strong>
+              <p class="teacher-muted">${escapeTeacherHtml(account.className)} · Konto erstellt: ${formatTeacherDate(account.createdAt)}</p>
+            </div>
+            <span class="status-badge ${account.isActive ? "ready" : "locked"}">${account.isActive ? "aktiv" : "deaktiviert"}</span>
+          </div>
+          <div class="teacher-account-facts">
+            <p><strong>Letzte Anmeldung:</strong> ${formatTeacherDate(account.lastLoginAt)}</p>
+            <p><strong>Letzte Aktivität:</strong> ${formatTeacherDate(account.lastActivityAt || account.progress?.updatedAt)}</p>
+            <p><strong>Erfasste Aktivitäten:</strong> ${Number(account.activityCount || 0)}</p>
+          </div>
+          <div class="teacher-account-actions">
+            <label class="teacher-roster-field">
+              <strong>Neues Passwort</strong>
+              <input type="text" minlength="6" autocomplete="off" data-account-password="${account.id}" placeholder="mindestens 6 Zeichen" />
+            </label>
+            <button class="btn primary" type="button" data-reset-account-password="${account.id}">Passwort zurücksetzen</button>
+            <button class="btn ghost" type="button" data-set-account-active="${account.id}" data-next-active="${account.isActive ? "false" : "true"}">${account.isActive ? "Konto deaktivieren" : "Konto reaktivieren"}</button>
+          </div>
+          <p class="teacher-gate-feedback" data-account-feedback="${account.id}" aria-live="polite"></p>
+        </article>
+      `).join("") || `<div class="summary-item"><p>Noch keine Cloud-Konten vorhanden.</p></div>`}
+    </div>
+    <details class="teacher-activity-log">
+      <summary>Aktivitätsprotokoll anzeigen (${activities.length} jüngste Einträge)</summary>
+      <div class="teacher-activity-list">
+        ${activities.map(item => `
+          <div class="teacher-activity-row">
+            <strong>${escapeTeacherHtml(item.learner_name)}</strong>
+            <span>${escapeTeacherHtml(teacherActivityLabel(item.action))}${item.detail ? ` · ${escapeTeacherHtml(item.detail)}` : ""}</span>
+            <time>${formatTeacherDate(item.created_at)}</time>
+          </div>
+        `).join("") || `<p class="teacher-muted">Noch keine Aktivitäten protokolliert.</p>`}
+      </div>
+    </details>
+  `;
+}
+
+function setAccountFeedback(studentId, message, isError = false) {
+  const node = document.querySelector(`[data-account-feedback="${studentId}"]`);
+  if (!node) return;
+  node.textContent = message;
+  node.style.color = isError ? "#7f1d1d" : "";
 }
 
 function renderTeacherQuestionPanel(container) {
@@ -493,6 +578,43 @@ function bindTeacherPage() {
           console.error(error);
           setTeacherDashboardFeedback(error.message, true);
         });
+      return;
+    }
+
+    if (target.matches("[data-reset-account-password]")) {
+      const studentId = target.dataset.resetAccountPassword;
+      const field = document.querySelector(`[data-account-password="${studentId}"]`);
+      const newPassword = String(field?.value || "");
+      if (newPassword.length < 6) {
+        setAccountFeedback(studentId, "Bitte ein neues Passwort mit mindestens 6 Zeichen eingeben.", true);
+        return;
+      }
+      target.disabled = true;
+      setAccountFeedback(studentId, "Passwort wird zurückgesetzt …");
+      window.GESCHICHTE_FIREBASE?.manageStudentAccount(studentId, { action: "reset_password", newPassword })
+        .then(result => {
+          renderTeacherDashboard();
+          setTeacherDashboardFeedback(result.message || "Passwort zurückgesetzt.", false);
+        })
+        .catch(error => setAccountFeedback(studentId, error.message, true))
+        .finally(() => { target.disabled = false; });
+      return;
+    }
+
+    if (target.matches("[data-set-account-active]")) {
+      const studentId = target.dataset.setAccountActive;
+      const isActive = target.dataset.nextActive === "true";
+      const actionText = isActive ? "reaktivieren" : "deaktivieren";
+      if (!window.confirm(`Konto wirklich ${actionText}? Lernstände und Antworten bleiben erhalten.`)) return;
+      target.disabled = true;
+      setAccountFeedback(studentId, `Konto wird ${actionText} …`);
+      window.GESCHICHTE_FIREBASE?.manageStudentAccount(studentId, { action: "set_active", isActive })
+        .then(result => {
+          renderTeacherDashboard();
+          setTeacherDashboardFeedback(result.message || `Konto ${actionText}.`, false);
+        })
+        .catch(error => setAccountFeedback(studentId, error.message, true))
+        .finally(() => { target.disabled = false; });
     }
   });
 

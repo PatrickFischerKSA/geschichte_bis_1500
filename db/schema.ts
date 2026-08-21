@@ -1,4 +1,4 @@
-import { index, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { index, integer, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const students = sqliteTable("students", {
   id: text("id").primaryKey(),
@@ -8,6 +8,7 @@ export const students = sqliteTable("students", {
   loginKey: text("login_key").notNull().unique(),
   passwordHash: text("password_hash").notNull(),
   passwordSalt: text("password_salt").notNull(),
+  isActive: integer("is_active", { mode: "boolean" }).notNull().default(true),
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
 }, table => [index("students_class_idx").on(table.className)]);
@@ -41,3 +42,14 @@ export const studentQuestions = sqliteTable("student_questions", {
   updatedAt: text("updated_at").notNull(),
   answeredAt: text("answered_at"),
 }, table => [index("questions_student_idx").on(table.studentId, table.courseId)]);
+
+export const activityEvents = sqliteTable("activity_events", {
+  id: text("id").primaryKey(),
+  studentId: text("student_id").notNull(),
+  action: text("action").notNull(),
+  detail: text("detail"),
+  createdAt: text("created_at").notNull(),
+}, table => [
+  index("activity_student_idx").on(table.studentId, table.createdAt),
+  index("activity_created_idx").on(table.createdAt),
+]);

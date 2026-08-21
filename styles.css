@@ -2376,6 +2376,82 @@ p {
   gap: 12px;
 }
 
+.teacher-account-panel,
+.teacher-account-list,
+.teacher-activity-list {
+  display: grid;
+  gap: 14px;
+}
+
+.teacher-account-panel {
+  margin: 20px 0;
+}
+
+.teacher-account-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.teacher-account-card.is-disabled {
+  background: rgba(127, 29, 29, 0.05);
+}
+
+.teacher-account-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.teacher-account-actions {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.teacher-account-actions input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(30, 44, 52, 0.14);
+  border-radius: 14px;
+  background: #fffdf9;
+  color: var(--text);
+}
+
+.teacher-activity-log {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.teacher-activity-log summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.teacher-activity-list {
+  margin-top: 14px;
+}
+
+.teacher-activity-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.8fr) minmax(220px, 1.3fr) minmax(150px, 0.7fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .teacher-account-facts,
+  .teacher-account-actions,
+  .teacher-activity-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .teacher-question-box {
   display: grid;
   gap: 12px;

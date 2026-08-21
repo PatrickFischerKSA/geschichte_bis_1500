@@ -57,6 +57,12 @@ assert(app.includes("bindAutomaticCloudDrafts") && app.includes("scheduleAutomat
   "Die sofortige automatische Cloud-Speicherung von Entwürfen fehlt.");
 assert(cloud.includes("studentProgressCommentDraft") && cloud.includes("Kommentarentwurf wird automatisch gespeichert"),
   "Kommentarentwürfe werden nicht automatisch gespeichert.");
+assert(worker.includes("manageStudentAccount") && worker.includes("reset_password") && worker.includes("set_active"),
+  "Die serverseitige Kontoverwaltung für Lehrpersonen fehlt.");
+assert(worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'student'") && worker.includes("Number(student.is_active) === 0"),
+  "Passwortwechsel und Deaktivierung müssen bestehende Schüler*innen-Sitzungen sicher sperren.");
+assert(worker.includes("activity_events") && teacher.includes("renderTeacherAccountPanel") && cloud.includes("manageStudentAccount"),
+  "Konten- oder Aktivitätsübersicht im Lehrpersonen-Dashboard ist unvollständig.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

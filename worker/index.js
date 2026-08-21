@@ -24,6 +24,9 @@ async function handleApi(request, env, url) {
     if (url.pathname === "/api/student/questions") return studentQuestions(request, env);
     if (url.pathname === "/api/teacher/login" && request.method === "POST") return teacherLogin(request, env);
     if (url.pathname === "/api/teacher/dashboard" && request.method === "GET") return teacherDashboard(request, env);
+    if (url.pathname.startsWith("/api/teacher/students/") && request.method === "PATCH") {
+      return manageStudentAccount(request, env, decodeURIComponent(url.pathname.slice("/api/teacher/students/".length)));
+    }
     if (url.pathname.startsWith("/api/teacher/questions/") && request.method === "PATCH") {
       return answerQuestion(request, env, decodeURIComponent(url.pathname.slice("/api/teacher/questions/".length)));
     }
@@ -48,6 +51,7 @@ async function registerStudent(request, env) {
   if (!inserted.success || Number(inserted.meta?.changes || 0) !== 1) {
     return json({ error: "Für diesen Namen und diese Klasse besteht bereits ein Konto. Bitte melde dich an." }, 409);
   }
+  await logActivity(env.DB, id, "account_created", now);
   const token = await createSession(env.DB, id, "student");
   return json({ token, profile: publicProfile({ id, ...profile }) }, 201);
 }
@@ -60,6 +64,8 @@ async function loginStudent(request, env) {
   if (!student || !await verifyPassword(profile.password, String(student.password_salt), String(student.password_hash))) {
     return json({ error: "Name, Klasse oder Passwort stimmen nicht." }, 401);
   }
+  if (Number(student.is_active) === 0) return json({ error: "Dieses Konto wurde von der Lehrperson deaktiviert." }, 403);
+  await logActivity(env.DB, String(student.id), "login", new Date().toISOString());
   const token = await createSession(env.DB, String(student.id), "student");
   return json({ token, profile: publicProfile(student) }, 200);
 }
@@ -97,6 +103,7 @@ async function studentProgress(request, env) {
     if (!confirmation || String(confirmation.updated_at) !== now) {
       throw new Error("Der gespeicherte Lernstand konnte nicht bestätigt werden.");
     }
+    await logActivity(env.DB, session.userId, "progress_saved", now);
     return json({ ok: true, updatedAt: now }, 200);
   }
   return json({ error: "Methode nicht erlaubt." }, 405);
@@ -118,6 +125,7 @@ async function studentQuestions(request, env) {
     const now = new Date().toISOString();
     await env.DB.prepare("INSERT INTO student_questions (id, student_id, course_id, module_id, module_title, question_text, status, answer_text, created_at, updated_at, answered_at) VALUES (?, ?, ?, ?, ?, ?, 'offen', NULL, ?, ?, NULL)")
       .bind(crypto.randomUUID(), session.userId, COURSE_ID, moduleId, moduleTitle, questionText, now, now).run();
+    await logActivity(env.DB, session.userId, "question_sent", now, moduleTitle);
     return json({ ok: true }, 201);
   }
   return json({ error: "Methode nicht erlaubt." }, 405);
@@ -135,7 +143,14 @@ async function teacherLogin(request, env) {
 async function teacherDashboard(request, env) {
   const session = await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
   if (!session) return json({ error: "Kein Lehrpersonen-Zugriff." }, 401);
-  const rows = (await env.DB.prepare(`SELECT s.id, s.first_name, s.last_name, s.class_name, p.snapshot_json, p.updated_at
+  const rows = (await env.DB.prepare(`SELECT s.id, s.first_name, s.last_name, s.class_name, s.is_active, s.created_at,
+    p.snapshot_json, p.updated_at,
+    COALESCE(
+      (SELECT MAX(created_at) FROM activity_events ae WHERE ae.student_id = s.id AND ae.action = 'login'),
+      (SELECT MAX(created_at) FROM sessions se WHERE se.user_id = s.id AND se.role = 'student')
+    ) AS last_login_at,
+    (SELECT COUNT(*) FROM activity_events ae WHERE ae.student_id = s.id) AS activity_count,
+    (SELECT MAX(created_at) FROM activity_events ae WHERE ae.student_id = s.id) AS last_activity_at
     FROM students s LEFT JOIN learner_progress p ON p.student_id = s.id AND p.course_id = ?
     ORDER BY s.class_name, s.last_name, s.first_name`).bind(COURSE_ID).all()).results;
   const students = rows.map(row => ({
@@ -143,13 +158,59 @@ async function teacherDashboard(request, env) {
     firstName: row.first_name,
     lastName: row.last_name,
     className: row.class_name,
+    isActive: Number(row.is_active) !== 0,
+    createdAt: row.created_at,
+    lastLoginAt: row.last_login_at,
+    activityCount: Number(row.activity_count || 0),
+    lastActivityAt: row.last_activity_at,
     progress: row.snapshot_json ? { snapshot: parseJson(row.snapshot_json), updatedAt: row.updated_at } : null
   }));
   const questionRows = (await env.DB.prepare(`SELECT q.id, q.module_id, q.module_title, q.question_text, q.status, q.answer_text,
     q.created_at, q.updated_at, q.answered_at, s.first_name || ' ' || s.last_name AS learner_name, s.class_name
     FROM student_questions q JOIN students s ON s.id = q.student_id WHERE q.course_id = ? ORDER BY q.created_at DESC`).bind(COURSE_ID).all()).results;
   const classes = [...new Set(students.map(student => student.className))];
-  return json({ students, classes, questions: questionRows }, 200);
+  const activities = (await env.DB.prepare(`SELECT ae.id, ae.student_id, ae.action, ae.detail, ae.created_at,
+    s.first_name || ' ' || s.last_name AS learner_name, s.class_name
+    FROM activity_events ae JOIN students s ON s.id = ae.student_id
+    ORDER BY ae.created_at DESC LIMIT 250`).all()).results;
+  return json({ students, classes, questions: questionRows, activities }, 200);
+}
+
+async function manageStudentAccount(request, env, studentId) {
+  const session = await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
+  if (!session) return json({ error: "Kein Lehrpersonen-Zugriff." }, 401);
+  const student = await env.DB.prepare("SELECT id, is_active FROM students WHERE id = ?").bind(studentId).first();
+  if (!student) return json({ error: "Konto nicht gefunden." }, 404);
+  const body = await request.json();
+  const action = String(body.action || "");
+  const now = new Date().toISOString();
+
+  if (action === "reset_password") {
+    const newPassword = String(body.newPassword || "");
+    if (newPassword.length < 6) return json({ error: "Das neue Passwort muss mindestens 6 Zeichen lang sein." }, 400);
+    if (newPassword.length > 200) return json({ error: "Das neue Passwort ist zu lang." }, 400);
+    const password = await hashPassword(newPassword);
+    await env.DB.batch([
+      env.DB.prepare("UPDATE students SET password_hash = ?, password_salt = ?, updated_at = ? WHERE id = ?")
+        .bind(encodePasswordHash(password.hash, PBKDF2_ITERATIONS), password.salt, now, studentId),
+      env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId)
+    ]);
+    await logActivity(env.DB, studentId, "password_reset", now);
+    return json({ ok: true, message: "Passwort zurückgesetzt. Die Person muss sich neu anmelden." }, 200);
+  }
+
+  if (action === "set_active") {
+    const isActive = body.isActive === true;
+    await env.DB.prepare("UPDATE students SET is_active = ?, updated_at = ? WHERE id = ?")
+      .bind(isActive ? 1 : 0, now, studentId).run();
+    if (!isActive) {
+      await env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId).run();
+    }
+    await logActivity(env.DB, studentId, isActive ? "account_reactivated" : "account_deactivated", now);
+    return json({ ok: true, isActive, message: isActive ? "Konto reaktiviert." : "Konto deaktiviert. Die gespeicherten Daten bleiben erhalten." }, 200);
+  }
+
+  return json({ error: "Unbekannte Kontoaktion." }, 400);
 }
 
 async function answerQuestion(request, env, id) {
@@ -238,7 +299,16 @@ async function requireSession(request, db, role, minimumCreatedAt = null) {
   const row = await db.prepare("SELECT user_id, role, expires_at, created_at FROM sessions WHERE token_hash = ?").bind(hash).first();
   if (!row || row.role !== role || new Date(String(row.expires_at)).getTime() < Date.now()) return null;
   if (minimumCreatedAt && new Date(String(row.created_at)).getTime() < new Date(String(minimumCreatedAt)).getTime()) return null;
+  if (role === "student" && row.user_id) {
+    const student = await db.prepare("SELECT is_active FROM students WHERE id = ?").bind(row.user_id).first();
+    if (!student || Number(student.is_active) === 0) return null;
+  }
   return { userId: row.user_id ? String(row.user_id) : null, role: String(row.role) };
+}
+
+async function logActivity(db, studentId, action, createdAt, detail = null) {
+  await db.prepare("INSERT INTO activity_events (id, student_id, action, detail, created_at) VALUES (?, ?, ?, ?, ?)")
+    .bind(crypto.randomUUID(), studentId, action, detail, createdAt).run();
 }
 
 async function sha256(value) {
@@ -271,13 +341,21 @@ function parseJson(value) {
 }
 
 async function ensureSchema(db) {
+  await db.prepare("CREATE TABLE IF NOT EXISTS students (id TEXT PRIMARY KEY, first_name TEXT NOT NULL, last_name TEXT NOT NULL, class_name TEXT NOT NULL, login_key TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, password_salt TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)").run();
+  const studentColumns = (await db.prepare("PRAGMA table_info(students)").all()).results || [];
+  if (!studentColumns.some(column => column.name === "is_active")) {
+    await db.prepare("ALTER TABLE students ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1").run();
+  }
   await db.batch([
     db.prepare("CREATE TABLE IF NOT EXISTS students (id TEXT PRIMARY KEY, first_name TEXT NOT NULL, last_name TEXT NOT NULL, class_name TEXT NOT NULL, login_key TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, password_salt TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)"),
     db.prepare("CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, user_id TEXT, role TEXT NOT NULL, expires_at TEXT NOT NULL, created_at TEXT NOT NULL)"),
     db.prepare("CREATE TABLE IF NOT EXISTS learner_progress (student_id TEXT NOT NULL, course_id TEXT NOT NULL, state_json TEXT NOT NULL, snapshot_json TEXT NOT NULL, updated_at TEXT NOT NULL, PRIMARY KEY (student_id, course_id))"),
     db.prepare("CREATE TABLE IF NOT EXISTS student_questions (id TEXT PRIMARY KEY, student_id TEXT NOT NULL, course_id TEXT NOT NULL, module_id TEXT NOT NULL, module_title TEXT NOT NULL, question_text TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'offen', answer_text TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, answered_at TEXT)"),
+    db.prepare("CREATE TABLE IF NOT EXISTS activity_events (id TEXT PRIMARY KEY, student_id TEXT NOT NULL, action TEXT NOT NULL, detail TEXT, created_at TEXT NOT NULL)"),
     db.prepare("CREATE INDEX IF NOT EXISTS students_class_idx ON students(class_name)"),
-    db.prepare("CREATE INDEX IF NOT EXISTS questions_student_idx ON student_questions(student_id, course_id)")
+    db.prepare("CREATE INDEX IF NOT EXISTS questions_student_idx ON student_questions(student_id, course_id)"),
+    db.prepare("CREATE INDEX IF NOT EXISTS activity_student_idx ON activity_events(student_id, created_at)"),
+    db.prepare("CREATE INDEX IF NOT EXISTS activity_created_idx ON activity_events(created_at)")
   ]);
 }
 

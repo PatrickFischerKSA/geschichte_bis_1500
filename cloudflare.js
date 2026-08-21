@@ -9,6 +9,8 @@
   let ownQuestions = [];
   let ownProgress = null;
   let teacherQuestions = [];
+  let teacherAccounts = [];
+  let teacherActivities = [];
   let syncTimer = null;
   let syncQueue = Promise.resolve();
 
@@ -362,6 +364,8 @@
       });
       localStorage.setItem(dashboardKey, JSON.stringify(snapshots));
       teacherQuestions = result.questions || [];
+      teacherAccounts = result.students || [];
+      teacherActivities = result.activities || [];
       window.dispatchEvent(new Event("gesch-dashboard-updated"));
       window.dispatchEvent(new Event("gesch-questions-updated"));
       setFeedback("teacher-cloud-feedback", `${result.students.length} Lernstände aus ${result.classes.length} Klassen geladen.`, false);
@@ -374,6 +378,23 @@
 
   function getTeacherQuestions() {
     return teacherQuestions.slice();
+  }
+
+  function getTeacherAccounts() {
+    return teacherAccounts.slice();
+  }
+
+  function getTeacherActivities() {
+    return teacherActivities.slice();
+  }
+
+  async function manageStudentAccount(studentId, payload) {
+    const result = await api(`/api/teacher/students/${encodeURIComponent(studentId)}`, {
+      method: "PATCH",
+      body: JSON.stringify(payload)
+    }, "teacher");
+    await refreshTeacherDashboardFromCloud();
+    return result;
   }
 
   async function answerTeacherQuestion(questionId, answerText, status = "beantwortet") {
@@ -393,6 +414,9 @@
     getOwnQuestionsForModule,
     submitTeacherQuestion,
     getTeacherQuestions,
+    getTeacherAccounts,
+    getTeacherActivities,
+    manageStudentAccount,
     answerTeacherQuestion,
     loadTeacherQuestions: refreshTeacherDashboardFromCloud
   };
