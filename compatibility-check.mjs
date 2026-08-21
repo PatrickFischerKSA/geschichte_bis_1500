@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { Script } from "node:vm";
 
 function read(path) {
   return readFileSync(path, "utf8");
@@ -11,8 +12,18 @@ function assert(condition, message) {
 const htmlFiles = ["index.html", "lehrpersonen.html", "harari-viewer.html", "textstelle.html"];
 const html = htmlFiles.map((file) => read(file));
 const app = read("app.js");
+const cloud = read("cloudflare.js");
+const teacherClient = read("teacher.js");
 const styles = read("styles.css");
-const clientCode = [app, read("cloudflare.js"), read("teacher.js"), read("harari-viewer.js"), read("textstelle.js")].join("\n");
+const clientCode = [app, cloud, teacherClient, read("harari-viewer.js"), read("textstelle.js")].join("\n");
+
+for (const [page, scripts] of [["Schülerseite", [app, cloud]], ["Lehrpersonenseite", [app, cloud, teacherClient]]]) {
+  try {
+    new Script(scripts.join("\n"), { filename: page });
+  } catch (error) {
+    throw new Error(`Kompatibilitätsprüfung fehlgeschlagen: ${page} enthält kollidierende globale Deklarationen (${error.message}).`);
+  }
+}
 
 html.forEach((source, index) => {
   assert(source.includes('name="viewport"') && source.includes("width=device-width"),

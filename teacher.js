@@ -1,7 +1,7 @@
 const TEACHER_ACCESS_KEY = "geschichte_bis_1500_teacher_access";
 const TEACHER_TOKEN_KEY = "geschichte_bis_1500_teacher_token";
 const TEACHER_ROSTER_KEY = "geschichte_bis_1500_teacher_roster_v1";
-const TEACHER_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
+const TEACHER_PAGE_PREVIEW_STORAGE_KEY = "geschichte_bis_1500-teacher-preview-v1";
 
 function escapeTeacherHtml(value) {
   return String(value || "")
@@ -503,7 +503,7 @@ function saveTeacherRosterFromInput() {
 }
 
 function clearTeacherPreviewState() {
-  localStorage.removeItem(TEACHER_PREVIEW_STORAGE_KEY);
+  localStorage.removeItem(TEACHER_PAGE_PREVIEW_STORAGE_KEY);
   window.location.reload();
 }
 

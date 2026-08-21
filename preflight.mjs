@@ -63,6 +63,8 @@ assert(worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'stude
   "Passwortwechsel und Deaktivierung müssen bestehende Schüler*innen-Sitzungen sicher sperren.");
 assert(worker.includes("activity_events") && teacher.includes("renderTeacherAccountPanel") && cloud.includes("manageStudentAccount"),
   "Konten- oder Aktivitätsübersicht im Lehrpersonen-Dashboard ist unvollständig.");
+assert(!teacher.includes("const TEACHER_PREVIEW_STORAGE_KEY"),
+  "Die Lehrpersonen-Datei darf keine bereits in app.js deklarierte globale Konstante erneut anlegen.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);
