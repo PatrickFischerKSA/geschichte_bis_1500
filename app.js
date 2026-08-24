@@ -4786,6 +4786,140 @@ const expandedHarariChecks = {
   ]
 };
 
+const originalEvidenceByModule = {
+  "modul-1": [
+    {
+      quote: "Eine große Zahl von wildfremden Menschen kann effektiv zusammenarbeiten, wenn alle an gemeinsame Mythen glauben.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 39,
+      pdfPage: 39
+    },
+    {
+      quote: "Man kann nicht von einer Entwicklung ausgehen, bei der die Stadien Horde, Stamm, Stammesfürstentum und Staat passiert werden.",
+      source: "David Graeber / David Wengrow, Anfänge",
+      bookPage: 216,
+      pdfPage: 216
+    }
+  ],
+  "modul-2": [
+    {
+      quote: "Die ersten Gegenstände, die man als Kunst und Schmuck bezeichnen kann, stammen aus dieser Zeit.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 31,
+      pdfPage: 31
+    }
+  ],
+  "modul-3": [
+    {
+      quote: "Nur mit der menschlichen Sprache lassen sich Dinge erfinden und weitererzählen.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 36,
+      pdfPage: 36
+    }
+  ],
+  "modul-4": [
+    {
+      quote: "Säuglinge und Kleinkinder, die sich nur langsam fortbewegen und viel Zuwendung verlangen, waren den umherziehenden Wildbeutern eine Last.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 108,
+      pdfPage: 108
+    },
+    {
+      quote: "Auch neuere Versuche, Jäger und Sammler als «einfache» oder «komplexe» Typen zu klassifizieren, werden durch den saisonalen Dualismus ad absurdum geführt.",
+      source: "David Graeber / David Wengrow, Anfänge",
+      bookPage: 216,
+      pdfPage: 216
+    }
+  ],
+  "modul-5": [
+    {
+      quote: "Die Menschen stimmten nicht über die landwirtschaftliche Revolution ab. Sie liefen in eine Falle.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 107,
+      pdfPage: 107
+    },
+    {
+      quote: "Die Wildbeuter hatten «die Neolithische Revolution abgelehnt, um ihre Freizeit zu behalten».",
+      source: "David Graeber / David Wengrow, Anfänge",
+      bookPage: 263,
+      pdfPage: 263
+    }
+  ],
+  "modul-6": [
+    {
+      quote: "Mit partiellen Systemen wie der sumerischen Schrift oder mathematischen Zeichen lassen sich zwar keine Gedichte niederschreiben, sehr wohl aber Steuereinnahmen festhalten.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 158,
+      pdfPage: 158
+    }
+  ],
+  "modul-7": [
+    {
+      quote: "Wenn sie keine Einigung finden, brechen Streitigkeiten aus, selbst wenn die Kornspeicher aus allen Nähten platzen.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 130,
+      pdfPage: 130
+    }
+  ],
+  "modul-8": [
+    {
+      quote: "Geld ist also ein System gegenseitigen Vertrauens, aber nicht nur irgendeines.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 220,
+      pdfPage: 220
+    }
+  ],
+  "modul-9": [
+    {
+      quote: "Eine Religion lässt sich also als ein System von menschlichen Normen und Werten definieren, die sich auf den Glauben an eine übermenschliche Ordnung stützen.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 252,
+      pdfPage: 252
+    }
+  ],
+  "modul-10": [
+    {
+      quote: "Das heißt, sie muss universell sein und sie muss sich missionarisch betätigen.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 253,
+      pdfPage: 253
+    }
+  ],
+  "modul-11": [
+    {
+      quote: "Mit dem Aufstieg von Städten und Reichen und der Verbesserung der Transportmittel ergaben sich neue Möglichkeiten der Spezialisierung.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 214,
+      pdfPage: 214
+    }
+  ],
+  "modul-12": [
+    {
+      quote: "Es gibt also keinen Ausweg aus der erfundenen Ordnung.",
+      source: "Yuval Noah Harari, Eine kurze Geschichte der Menschheit",
+      bookPage: 148,
+      pdfPage: 148
+    },
+    {
+      quote: "Das wirkliche Rätsel ist nicht, wann erstmals Häuptlinge oder Chefs oder sogar Könige und Königinnen auf der Bildfläche erschienen.",
+      source: "David Graeber / David Wengrow, Anfänge",
+      bookPage: 254,
+      pdfPage: 254
+    }
+  ]
+};
+
+function attachOriginalEvidence(checkCollection) {
+  Object.entries(checkCollection).forEach(([moduleId, questions]) => {
+    questions.forEach((question) => {
+      question.originalEvidence = originalEvidenceByModule[moduleId] || [];
+    });
+  });
+}
+
+attachOriginalEvidence(additionalHarariChecks);
+attachOriginalEvidence(expandedHarariChecks);
+
 Object.entries(additionalHarariSources).forEach(([moduleId, sources]) => {
   const module = modules.find((entry) => entry.id === moduleId);
   if (!module) {
@@ -8215,6 +8349,7 @@ function renderShortAnswerBox(task, kindLabel) {
   return `
     <div class="${kindLabel === "Transferfrage" ? "transfer-box" : "task-box"}">
       <p><strong>${kindLabel}:</strong> ${cleanPromptText(task.question)}</p>
+      ${renderOriginalEvidence(task.originalEvidence)}
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
         <button class="btn primary" type="button" data-save-field="${task.id}" data-save-kind="answer">In Cloud speichern</button>
@@ -8225,6 +8360,28 @@ function renderShortAnswerBox(task, kindLabel) {
       <div class="feedback" data-feedback="${task.id}"></div>
       ${teacherSolution}
     </div>
+  `;
+}
+
+function renderOriginalEvidence(items = []) {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <aside class="original-evidence" aria-label="Passende Originalzitate">
+      <p class="section-kicker">Passende Originalzitate</p>
+      ${items
+        .map(
+          (item) => `
+            <blockquote>
+              <p>«${item.quote}»</p>
+              <footer>${item.source}, Buchseite ${item.bookPage} · PDF-Seite ${item.pdfPage}</footer>
+            </blockquote>
+          `
+        )
+        .join("")}
+    </aside>
   `;
 }
 
