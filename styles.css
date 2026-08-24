@@ -2399,6 +2399,47 @@ p {
   background: rgba(239, 248, 245, 0.86);
 }
 
+.compact-summary-section {
+  border: 2px solid rgba(31, 109, 102, 0.3);
+  background: linear-gradient(145deg, rgba(239, 248, 245, 0.98), rgba(255, 253, 249, 0.98));
+}
+
+.compact-learning-core {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.compact-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.compact-learning-grid article {
+  padding: 14px;
+  border-left: 4px solid var(--teal);
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.compact-learning-grid h4,
+.compact-learning-grid p {
+  margin: 0;
+}
+
+.compact-learning-grid h4 {
+  margin-bottom: 6px;
+  color: var(--teal-dark);
+}
+
+.compact-question-key {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: #fff;
+}
+
 .module-answer-export h3,
 .module-answer-export p {
   margin-top: 0;
@@ -2410,7 +2451,8 @@ p {
 }
 
 @media (max-width: 720px) {
-  .module-answer-export {
+  .module-answer-export,
+  .compact-learning-grid {
     grid-template-columns: 1fr;
   }
 }

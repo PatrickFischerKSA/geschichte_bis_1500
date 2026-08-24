@@ -69,6 +69,13 @@ assert(app.includes("data-export-module-answers") && app.includes("bindModuleAns
   "Der Antwortexport am Ende jedes Moduls fehlt.");
 assert(app.includes('type: "text/html;charset=utf-8"') && app.includes("URL.revokeObjectURL"),
   "Der plattformunabhängige Antwortexport ist unvollständig.");
+assert(app.includes("moduleCompactSummaries") && app.includes("renderModuleCompactSummary") && app.includes("Schlüssel für die Schlussfragen"),
+  "Die hoch komprimierten Modulzusammenfassungen fehlen.");
+for (const perspective of ["Allgemeine Merkmale", "Veränderungen", "Entwicklungen", "Kontinuitäten"]) {
+  assert(app.includes(perspective), `Die Zusammenfassungsperspektive ${perspective} fehlt.`);
+}
+assert((app.match(/questionKey:/g) || []).length === 13,
+  "Nicht alle 13 Module besitzen einen Schlüssel für die Schlussfragen.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

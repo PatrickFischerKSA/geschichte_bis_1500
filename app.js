@@ -2726,6 +2726,119 @@ const moduleSupports = {
   }
 };
 
+const moduleCompactSummaries = {
+  "modul-1": {
+    characteristics: "Geschichte untersucht nicht einfach alles Vergangene, sondern menschlich gestaltete Kultur: Sprache, Werkzeuge, Regeln, Erinnerungen und Ordnungen.",
+    changes: "Biologische Entwicklung wird dort zur Geschichte, wo Menschen Wissen weitergeben und ihre Welt gemeinsam verändern.",
+    developments: "Feuer, Landwirtschaft, Metall, Städte und Handel bilden lange Wirkungsketten bis zu späteren globalen Umweltveränderungen.",
+    continuities: "Menschen deuten, organisieren und verändern ihre Umwelt in allen Epochen; Umfang und technische Reichweite nehmen jedoch zu.",
+    questionKey: "Unterscheide Naturgeschichte, Evolution und Kulturgeschichte und erkläre frühe Entwicklungen stets über ihre langfristigen Folgen."
+  },
+  "modul-2": {
+    characteristics: "Mehrere Menschenarten lebten gleichzeitig. Homo sapiens war zunächst weder allein noch automatisch überlegen; grosses Gehirn, aufrechter Gang, lange Kindheit, Werkzeuge und Kooperation wirkten zusammen.",
+    changes: "Aus einem unauffälligen Teil der Tierwelt wurde durch Lernen, Technik, Feuer und Zusammenarbeit eine zunehmend anpassungsfähige Menschenart.",
+    developments: "Migration führte Menschen über Generationen in neue Klimazonen und schliesslich nach Australien und Amerika; Lebensweisen wurden jeweils an den Raum angepasst.",
+    continuities: "Abhängigkeit von Gruppen, Weitergabe von Wissen und Wanderung begleiten die Menschheitsgeschichte dauerhaft.",
+    questionKey: "Denke in einem verzweigten Stammbaum statt in einer geraden Leiter und behandle 1492 für Amerika als Einschnitt, nicht als Beginn."
+  },
+  "modul-3": {
+    characteristics: "Menschliche Sprache bezeichnet Abwesendes, Zukünftiges und Vorgestelltes. Symbole, Mythen und Regeln schaffen gemeinsame Wirklichkeiten und Zugehörigkeit.",
+    changes: "Kooperation war nicht mehr nur auf persönlich bekannte Kleingruppen begrenzt; gemeinsame Vorstellungen ermöglichten flexible Zusammenarbeit vieler Menschen.",
+    developments: "Aus symbolischer Kommunikation entstanden Rituale, Identitäten und Institutionen – Grundlagen späterer Staaten, Religionen und Geldsysteme.",
+    continuities: "Gesellschaften werden bis heute nicht nur durch Zwang, sondern auch durch geteilte Geschichten, Zeichen und Erwartungen zusammengehalten.",
+    questionKey: "Erkläre bei Mythen immer Inhalt, gemeinsame Regel und soziale Funktion."
+  },
+  "modul-4": {
+    characteristics: "Mobile Gruppen verfügten über präzises Wissen zu Landschaft, Tieren, Pflanzen, Jahreszeiten, Wegen und Unterkünften; mündliche Überlieferung war lebenswichtig.",
+    changes: "Gruppen konnten sich saisonal trennen, sammeln und neu ordnen, ohne feste Staaten, Archive oder dauerhafte Speicher zu benötigen.",
+    developments: "Werkzeugtechnik, Feuer, Kooperation und flexible Nahrungssuche wurden über sehr lange Zeit an verschiedene Räume angepasst.",
+    continuities: "Teilen, gemeinsames Erinnern, Regeln und Weltdeutungen blieben auch ohne Schrift zentrale Grundlagen gesellschaftlicher Ordnung.",
+    questionKey: "Bewerte Mobilität als anspruchsvolle Lebensform und erkläre mündliches Wissen als Gedächtnis-, Orientierungs- und Überlebenstechnik."
+  },
+  "modul-5": {
+    characteristics: "Ackerbau und Viehzucht banden Menschen stärker an Boden, Wasser und Jahreszeiten; feste Häuser, Dörfer, Vorräte, Besitz und Arbeitsteilung gewannen an Bedeutung.",
+    changes: "Aus flexibler Nahrungssuche wurde planbarere, aber arbeitsintensive und krisenanfällige Produktion; Bevölkerung und soziale Unterschiede konnten wachsen.",
+    developments: "Überschüsse förderten Spezialisierung, Verwaltung und grössere Siedlungen, zugleich aber Abhängigkeit, Konflikte und Ungleichheit.",
+    continuities: "Jagen, Sammeln und mobile Elemente verschwanden nicht sofort; Menschen kombinierten Lebensformen und trafen unterschiedliche Entscheidungen.",
+    questionKey: "Beurteile Landwirtschaft immer ambivalent: Chancen und Belastungen nennen und jeden vermeintlichen Automatismus vermeiden."
+  },
+  "modul-6": {
+    characteristics: "Hochkulturen verbinden Städte, Überschüsse, Arbeitsteilung, Schrift, Verwaltung, Abgaben, Religion und politisch begründete Herrschaft.",
+    changes: "Vorräte wurden nicht mehr nur gelagert, sondern gezählt, verteilt und besteuert; daraus entstanden Schreiber, Bürokratien und dauerhafte Machtzentren.",
+    developments: "Kalender, Listen und Schrift koordinierten grosse Gruppen. In Ägypten stabilisierten Nil, Pharao und Maat eine besonders langlebige Ordnung.",
+    continuities: "Landwirtschaft und religiöse Deutung bestanden fort, wurden nun aber stärker in staatliche Organisation und soziale Hierarchien eingebunden.",
+    questionKey: "Baue Erklärungen als Kette auf: Überschuss → Speicherung → Zählung/Abgaben → Verwaltung/Schrift → Herrschaft und Legitimation."
+  },
+  "modul-7-kelten": {
+    characteristics: "Kelten waren keine einheitliche Nation, sondern Gruppen mit verwandter materieller Kultur; die Helvetier lebten mit Oppida, Handwerk, Münzen, Religion und Fernkontakten im schweizerischen Mittelland.",
+    changes: "Caesars Eingriff 58 v. Chr. und die römische Expansion veränderten politische Macht, Siedlungen, Verkehrswege und kulturelle Beziehungen.",
+    developments: "Von Hallstatt über La Tène entstanden befestigte Zentren, spezialisierte Produktion, Handel und komplexe soziale Ordnungen.",
+    continuities: "Lokale Bevölkerung, Wissen und kulturelle Praktiken verschwanden unter Rom nicht vollständig, sondern verbanden sich mit römischen Formen.",
+    questionKey: "Trenne archäologische Befunde von Caesars interessengeleiteter Darstellung und beschreibe Romanisierung als Wandel mit Fortbestehen lokaler Elemente."
+  },
+  "modul-7": {
+    characteristics: "Athen, die römische Republik und das Imperium ordneten politische Teilhabe unterschiedlich: direkte Bürgerdemokratie, geteilte republikanische Ämter und grossräumige Herrschaft.",
+    changes: "Aus Stadtstaaten und republikanischen Institutionen entwickelten sich durch Expansion grössere, stärker militärisch und administrativ kontrollierte Räume.",
+    developments: "Heer, Recht, Strassen, Städte und Steuern verbanden Regionen; zugleich blieben Macht, Bürgerrechte und Teilhabe ungleich verteilt.",
+    continuities: "Lokale Eliten und Institutionen wurden häufig eingebunden, während Infrastruktur und Rechtsvorstellungen lange über politische Brüche hinauswirkten.",
+    questionKey: "Vergleiche stets, wer teilnehmen durfte, wie Entscheidungen fielen und mit welchen Mitteln grosse Räume zusammengehalten wurden."
+  },
+  "modul-8": {
+    characteristics: "Geld beruht auf gemeinsamem Vertrauen und schafft einen vergleichbaren Wertmassstab; Handel verbindet Menschen, die sich nicht persönlich kennen.",
+    changes: "Tausch wurde durch Münzen und anerkannte Zahlungsmittel räumlich flexibler; lokale Märkte verbanden sich stärker mit Fernhandelsnetzen.",
+    developments: "Münzen, Verkehrswege, Häfen und Handelsplätze transportierten Waren, Nachrichten, Techniken und kulturelle Einflüsse.",
+    continuities: "Wirtschaftlicher Austausch blieb von Vertrauen, Regeln, politischer Sicherheit und funktionierender Infrastruktur abhängig.",
+    questionKey: "Erkläre Geld nicht nur als Metall: Entscheidend sind gemeinsames Vertrauen, Wertanerkennung und Austausch zwischen Fremden."
+  },
+  "modul-9": {
+    characteristics: "Religion ordnet Weltbild, Normen, Zeit, Raum und Zugehörigkeit durch Rituale, heilige Texte, Institutionen und Gemeinschaften.",
+    changes: "Lokale Glaubensformen konnten sich über Mission, Reiche, Pilgerwege und Schrift zu grossräumigen religiösen Gemeinschaften entwickeln.",
+    developments: "Christentum, Judentum und Islam prägten Herrschaft, Recht, Bildung, Wissenschaft, Handel und Mobilität in unterschiedlicher Weise.",
+    continuities: "Religion blieb zugleich persönliche Deutung und öffentliche Ordnung; Pilgerfahrten verbanden dauerhaft Glauben mit Begegnung und Austausch.",
+    questionKey: "Verbinde religiöse Praktiken immer mit Mobilität, Gemeinschaft, politischer Ordnung und Wissens- oder Warenaustausch."
+  },
+  "modul-10": {
+    characteristics: "Das Mittelalter war eine vielfältige Epoche mit Königtum, Kirche, Klöstern, Lehensbindungen, Ständen, Burgen, Landwirtschaft und regional sehr unterschiedlichen Lebenswelten.",
+    changes: "Nach dem weströmischen Reich entstanden neue Herrschaftsräume; Christianisierung, Frankenreich, Städtewachstum und Bündnisse veränderten Politik und Gesellschaft.",
+    developments: "Adel, geistliche Eliten und soziale Stände begründeten Rang durch Herkunft, Religion, Rechte, Rituale und sichtbare Statussymbole.",
+    continuities: "Römische Traditionen, Schrift, Recht und Verkehrsbeziehungen wirkten fort, während Kirche und lokale Gemeinschaften Wissen und Ordnung weitertrugen.",
+    questionKey: "Vermeide das Etikett «dunkel» und erkläre, wie religiöse Legitimation, Herkunft, soziale Rollen und Statuszeichen Herrschaft stabilisierten."
+  },
+  "modul-11": {
+    characteristics: "Städte, Märkte, Pilgerorte und Verkehrswege waren Kontaktzonen für Menschen, Waren, Nachrichten und Glaubensvorstellungen.",
+    changes: "Wachsende Mobilität und Handel stärkten städtische Gruppen, Fernkontakte und neue Formen wirtschaftlicher sowie politischer Selbstorganisation.",
+    developments: "Pilgerfahrten und Kreuzzugsbewegungen verbanden Frömmigkeit mit Reise, Herrschaft und Austausch; Chroniken formten daraus oft wirkungsvolle Erzählungen.",
+    continuities: "Religion blieb ein zentraler Beweggrund, während Märkte und Wege ältere regionale Verbindungen ausbauten.",
+    questionKey: "Verknüpfe Handel, Frömmigkeit und Mobilität und prüfe Quellen stets nach Entstehungszeit, Autor, Absicht und späterer Ausschmückung."
+  },
+  "modul-12": {
+    characteristics: "Bis 1500 gestalteten Menschen ihre Welt durch Sprache, Mobilität, Landwirtschaft, Staaten, Geld, Religion und weitreichende Netzwerke – in verschiedenen Regionen auf unterschiedlichen Wegen.",
+    changes: "Kooperation wurde grossräumiger, Siedlungen dichter, Herrschaft dauerhafter und Umweltveränderung intensiver; 1492 war für Amerika ein massiver Einschnitt.",
+    developments: "Symbolische Ordnung ermöglichte Institutionen; Überschüsse förderten Staaten; Geld und Religion verbanden Räume; Technik und Handel steigerten Eingriffe in Landschaften.",
+    continuities: "Menschen blieben entscheidungsfähig: Neben grossen Entwicklungslinien bestanden Alternativen, Mischformen, Brüche und bewusst verworfene Ordnungen.",
+    questionKey: "Formuliere Langzeitketten, berücksichtige mehrere Weltregionen und verbinde Hararis Grosslinien mit Graeber/Wengrows Betonung historischer Wahlmöglichkeiten."
+  }
+};
+
+function renderModuleCompactSummary(module) {
+  const summary = moduleCompactSummaries[module.id];
+  if (!summary) return "";
+  const items = [
+    ["Allgemeine Merkmale", summary.characteristics],
+    ["Veränderungen", summary.changes],
+    ["Entwicklungen", summary.developments],
+    ["Kontinuitäten", summary.continuities]
+  ];
+  return `
+    <div class="compact-learning-core">
+      <div class="compact-learning-grid">
+        ${items.map(([label, text]) => `<article><h4>${label}</h4><p>${text}</p></article>`).join("")}
+      </div>
+      <div class="compact-question-key"><strong>Schlüssel für die Schlussfragen:</strong> ${summary.questionKey}</div>
+    </div>
+  `;
+}
+
 const quickChecks = {
   "modul-1": {
     id: "m1-quick",
@@ -8609,8 +8722,15 @@ function renderModules(state) {
           ${renderShortAnswerBox(module.transfer, "Transferfrage")}
         </section>
 
+        <section class="module-section compact-summary-section">
+          <p class="section-kicker">10. Hoch komprimierte Zusammenfassung</p>
+          <h3>Der Lernkern des Moduls</h3>
+          <p>Lerne die vier historischen Perspektiven nicht isoliert, sondern als zusammenhängende Erklärung.</p>
+          ${renderModuleCompactSummary(module)}
+        </section>
+
         <section class="module-section">
-          <p class="section-kicker">10. Freischaltung des nächsten Moduls</p>
+          <p class="section-kicker">11. Schlussfragen und Freischaltung</p>
           ${renderContentCheck(module, state)}
         </section>
       </div>
