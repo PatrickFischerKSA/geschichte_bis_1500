@@ -65,6 +65,10 @@ assert(worker.includes("activity_events") && teacher.includes("renderTeacherAcco
   "Konten- oder Aktivitätsübersicht im Lehrpersonen-Dashboard ist unvollständig.");
 assert(!teacher.includes("const TEACHER_PREVIEW_STORAGE_KEY"),
   "Die Lehrpersonen-Datei darf keine bereits in app.js deklarierte globale Konstante erneut anlegen.");
+assert(app.includes("data-export-module-answers") && app.includes("bindModuleAnswerExports") && app.includes("buildModuleAnswerExport"),
+  "Der Antwortexport am Ende jedes Moduls fehlt.");
+assert(app.includes('type: "text/html;charset=utf-8"') && app.includes("URL.revokeObjectURL"),
+  "Der plattformunabhängige Antwortexport ist unvollständig.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

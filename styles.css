@@ -2387,6 +2387,34 @@ p {
   margin: 20px 0;
 }
 
+.module-answer-export {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px 20px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid rgba(31, 109, 102, 0.24);
+  border-radius: var(--radius-md);
+  background: rgba(239, 248, 245, 0.86);
+}
+
+.module-answer-export h3,
+.module-answer-export p {
+  margin-top: 0;
+}
+
+.module-answer-export .teacher-gate-feedback {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .module-answer-export {
+    grid-template-columns: 1fr;
+  }
+}
+
 .teacher-account-card {
   padding: 18px;
   border: 1px solid var(--line);

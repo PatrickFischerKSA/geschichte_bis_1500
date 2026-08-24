@@ -8614,9 +8614,105 @@ function renderModules(state) {
           ${renderContentCheck(module, state)}
         </section>
       </div>
+      <section class="module-answer-export">
+        <div>
+          <p class="section-kicker">Modulabschluss</p>
+          <h3>Deine Antworten sichern</h3>
+          <p>Exportiere alle eingetragenen Antworten aus diesem Modul als übersichtliche HTML-Datei. Sie lässt sich unter Windows und macOS im Browser öffnen, ausdrucken oder als PDF sichern.</p>
+        </div>
+        <button class="btn primary" type="button" data-export-module-answers="${module.id}">Alle Antworten exportieren</button>
+        <p class="teacher-gate-feedback" data-export-feedback="${module.id}" aria-live="polite"></p>
+      </section>
     `;
 
     list.appendChild(section);
+  });
+}
+
+function exportFileName(value) {
+  return String(value || "modul")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "modul";
+}
+
+function escapeExportHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getExportPrompt(field) {
+  const wrapper = field.closest(".task-box, .transfer-box, .check-question");
+  const prompt = wrapper?.querySelector("p");
+  return cleanPromptText(prompt?.textContent || "Antwortfeld");
+}
+
+function buildModuleAnswerExport(module, state) {
+  const moduleNode = document.getElementById(module.id);
+  const fields = moduleNode ? [...moduleNode.querySelectorAll("[data-answer], [data-content-answer], [data-source-answer]")] : [];
+  const answers = fields.map((field, index) => ({
+    number: index + 1,
+    prompt: getExportPrompt(field),
+    answer: String(field.value || "").trim()
+  }));
+  const answeredCount = answers.filter(item => item.answer).length;
+  const exportedAt = new Date().toLocaleString("de-CH", { dateStyle: "long", timeStyle: "short" });
+  const rows = answers.map(item => `
+    <section class="answer">
+      <h2>${item.number}. ${escapeExportHtml(item.prompt)}</h2>
+      <p>${item.answer ? escapeExportHtml(item.answer).replace(/\n/g, "<br>") : "<em>Noch keine Antwort eingetragen.</em>"}</p>
+    </section>
+  `).join("");
+
+  return `<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antworten – Modul ${module.number}: ${escapeExportHtml(module.title)}</title>
+  <style>
+    body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 24px;color:#1e2c34;line-height:1.55}
+    header{border-bottom:3px solid #1f6d66;padding-bottom:20px;margin-bottom:26px}h1{margin:.2em 0}h2{font-size:1.05rem;color:#1f6d66}
+    .meta{color:#52646d}.answer{border:1px solid #d7dedc;border-radius:12px;padding:18px;margin:14px 0;break-inside:avoid}
+    .answer p{white-space:normal}@media print{body{margin:0;max-width:none}.answer{border-color:#aaa}}
+  </style>
+</head>
+<body>
+  <header>
+    <p>Geschichte bis 1500</p>
+    <h1>Modul ${module.number}: ${escapeExportHtml(module.title)}</h1>
+    <p class="meta"><strong>Schüler*in:</strong> ${escapeExportHtml(getLearnerName(state))}<br><strong>Klasse:</strong> ${escapeExportHtml(state.className || "nicht angegeben")}<br><strong>Exportiert:</strong> ${escapeExportHtml(exportedAt)}<br><strong>Bearbeitet:</strong> ${answeredCount} von ${answers.length} Antwortfeldern</p>
+  </header>
+  ${rows || "<p>In diesem Modul wurden keine exportierbaren Antwortfelder gefunden.</p>"}
+</body>
+</html>`;
+}
+
+function bindModuleAnswerExports(state) {
+  document.querySelectorAll("[data-export-module-answers]").forEach(button => {
+    button.addEventListener("click", () => {
+      const moduleId = button.dataset.exportModuleAnswers;
+      const module = modules.find(item => item.id === moduleId);
+      const feedback = document.querySelector(`[data-export-feedback="${moduleId}"]`);
+      if (!module) return;
+      const html = buildModuleAnswerExport(module, state);
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `geschichte-bis-1500-modul-${module.number}-${exportFileName(module.title)}-antworten.html`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      if (feedback) feedback.textContent = "Export erstellt. Die Datei befindet sich in deinem Download-Ordner.";
+    });
   });
 }
 
@@ -9674,6 +9770,7 @@ function renderApp(state) {
   bindSelftests(state);
   bindContentChecks(state);
   bindSourceMicroChecks(state);
+  bindModuleAnswerExports(state);
   bindTeacherQuestionButtons();
   bindRepetitionMode(state);
   bindWelcomeOverlay(state);
