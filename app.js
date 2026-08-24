@@ -8304,6 +8304,8 @@ function renderInlineCheckQuestion(module, questionIndex) {
         <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
         <div class="task-actions">
           <button class="btn primary" type="button" data-save-field="${answerId}" data-save-kind="content">In Cloud speichern</button>
+          <button class="btn primary" type="button" data-content-check-one="${answerId}">Antwort prüfen</button>
+          <button class="btn ghost" type="button" data-content-show-one="${answerId}">Musterlösung zeigen</button>
         </div>
         <div class="feedback" data-save-feedback="${answerId}" aria-live="polite"></div>
         <div class="feedback" data-content-feedback="${answerId}"></div>
@@ -9424,14 +9426,46 @@ function bindContentChecks(state) {
       const answerId = `${module.id}-content-question-${questionIndex}`;
       const field = document.querySelector(`[data-content-answer="${answerId}"]`);
       const feedbackBox = document.querySelector(`[data-content-feedback="${answerId}"]`);
+      const wrapper = document.querySelector(`[data-inline-check="${answerId}"]`);
+      const checkOneButton = document.querySelector(`[data-content-check-one="${answerId}"]`);
+      const showOneButton = document.querySelector(`[data-content-show-one="${answerId}"]`);
       if (field && state[`${answerId}-text`]) {
         field.value = state[`${answerId}-text`];
       }
       if (feedbackBox && state[`${answerId}-feedback`]) {
         const stored = state[`${answerId}-feedback`];
+        wrapper?.classList.remove("good", "mid", "low");
+        wrapper?.classList.add(stored.level);
         feedbackBox.className = `feedback is-visible ${stored.level}`;
         feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
       }
+
+      checkOneButton?.addEventListener("click", () => {
+        const answerText = String(field?.value || "");
+        const result = evaluateCheckQuestion(answerText, question);
+        state[`${answerId}-text`] = answerText;
+        state[`${answerId}-feedback`] = result;
+        wrapper?.classList.remove("good", "mid", "low");
+        wrapper?.classList.add(result.level);
+        if (feedbackBox) {
+          feedbackBox.className = `feedback is-visible ${result.level}`;
+          feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+        }
+        saveState(state);
+      });
+
+      showOneButton?.addEventListener("click", () => {
+        const result = { level: "mid", title: "Musterlösung", body: cleanPromptText(question.sampleAnswer) };
+        state[`${answerId}-text`] = String(field?.value || "");
+        state[`${answerId}-feedback`] = result;
+        wrapper?.classList.remove("good", "low");
+        wrapper?.classList.add("mid");
+        if (feedbackBox) {
+          feedbackBox.className = "feedback is-visible mid";
+          feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
+        }
+        saveState(state);
+      });
     });
 
     if (!button) {

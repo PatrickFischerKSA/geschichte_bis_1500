@@ -76,6 +76,10 @@ for (const perspective of ["Allgemeine Merkmale", "Veränderungen", "Entwicklung
 }
 assert((app.match(/questionKey:/g) || []).length === 13,
   "Nicht alle 13 Module besitzen einen Schlüssel für die Schlussfragen.");
+assert(app.includes("data-content-check-one") && app.includes("data-content-show-one"),
+  "Bei den eingebetteten Prüffragen fehlen Antwortprüfung oder Musterlösung.");
+assert(app.includes('title: "Musterlösung"') && app.includes("evaluateCheckQuestion(answerText, question)"),
+  "Die individuelle Prüfung der eingebetteten Fragen ist nicht vollständig verdrahtet.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);
