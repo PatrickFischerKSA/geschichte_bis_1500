@@ -8371,6 +8371,7 @@ function renderOriginalEvidence(items = []) {
   return `
     <aside class="original-evidence" aria-label="Passende Originalzitate">
       <p class="section-kicker">Passende Originalzitate</p>
+      <p class="original-evidence-notice"><strong>Hinweis:</strong> Die vollständigen Originaltexte von Harari sowie Graeber/Wengrow liegen ausserhalb dieser Lernumgebung vor. Hier erscheinen ausschliesslich kurze, zu den Fragen passende Originalzitate mit Seitenangaben.</p>
       ${items
         .map(
           (item) => `

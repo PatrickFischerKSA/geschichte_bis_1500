@@ -2810,6 +2810,12 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
   border-left: 3px solid var(--accent, #a9582d);
 }
 
+.original-evidence-notice {
+  margin: 0.5rem 0 0.9rem;
+  color: var(--muted, #5f6d73);
+  font-size: 0.95rem;
+}
+
 .original-evidence blockquote p {
   margin: 0;
 }
