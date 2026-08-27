@@ -7709,10 +7709,12 @@ function renderSourceMicroCheck(question) {
       <textarea data-source-answer="${question.id}" placeholder="${question.placeholder}"></textarea>
       <div class="task-actions">
         <button class="btn primary" type="button" data-save-field="${question.id}" data-save-kind="source">In Cloud speichern</button>
+        <button class="btn ghost" type="button" data-source-hint="${question.id}">Tipp anzeigen</button>
         <button class="btn primary" type="button" data-source-check="${question.id}">Antwort prüfen</button>
         <button class="btn ghost" type="button" data-source-show="${question.id}">Musterlösung zeigen</button>
       </div>
       <div class="feedback" data-save-feedback="${question.id}" aria-live="polite"></div>
+      <div class="feedback" data-source-hint-feedback="${question.id}" aria-live="polite"></div>
       <div class="feedback" data-source-feedback="${question.id}"></div>
       ${teacherSolution}
     </div>
@@ -8353,10 +8355,12 @@ function renderShortAnswerBox(task, kindLabel) {
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
         <button class="btn primary" type="button" data-save-field="${task.id}" data-save-kind="answer">In Cloud speichern</button>
+        <button class="btn ghost" type="button" data-hint="${task.id}">Tipp anzeigen</button>
         <button class="btn primary" type="button" data-check="${task.id}">Antwort prüfen</button>
         <button class="btn ghost" type="button" data-show="${task.id}">Beispiellösung zeigen</button>
       </div>
       <div class="feedback" data-save-feedback="${task.id}" aria-live="polite"></div>
+      <div class="feedback" data-hint-feedback="${task.id}" aria-live="polite"></div>
       <div class="feedback" data-feedback="${task.id}"></div>
       ${teacherSolution}
     </div>
@@ -8462,10 +8466,12 @@ function renderInlineCheckQuestion(module, questionIndex) {
         <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
         <div class="task-actions">
           <button class="btn primary" type="button" data-save-field="${answerId}" data-save-kind="content">In Cloud speichern</button>
+          <button class="btn ghost" type="button" data-content-hint-one="${answerId}">Tipp anzeigen</button>
           <button class="btn primary" type="button" data-content-check-one="${answerId}">Antwort prüfen</button>
           <button class="btn ghost" type="button" data-content-show-one="${answerId}">Musterlösung zeigen</button>
         </div>
         <div class="feedback" data-save-feedback="${answerId}" aria-live="polite"></div>
+        <div class="feedback" data-content-hint-feedback="${answerId}" aria-live="polite"></div>
         <div class="feedback" data-content-feedback="${answerId}"></div>
         ${
           isTeacherMode()
@@ -9488,6 +9494,40 @@ function evaluateCheckQuestion(answer, question) {
   };
 }
 
+function buildProgressiveHints(question) {
+  const labels = (question.criteria || [])
+    .map((criterion) => cleanPromptText(criterion.label))
+    .filter(Boolean);
+  const hints = [];
+
+  if (labels[0]) {
+    hints.push(`Beginne mit diesem Aspekt: ${labels[0]}. Erkläre ihn in einem vollständigen Satz.`);
+  } else {
+    hints.push("Beginne mit der wichtigsten Aussage und formuliere sie in einem vollständigen Satz.");
+  }
+
+  if (labels.length > 1) {
+    hints.push(`Verbinde deine erste Aussage nun mit: ${labels.slice(1).join(", ")}. Zeige, wie die Aspekte zusammenhängen.`);
+  } else {
+    hints.push("Ergänze eine Ursache, eine Folge oder ein passendes historisches Beispiel.");
+  }
+
+  hints.push("Prüfe zum Schluss: Beantwortest du die genaue Frage, erklärst du den Zusammenhang und verwendest du zentrale historische Begriffe?");
+  return hints;
+}
+
+function bindProgressiveHint(button, feedbackBox, question) {
+  if (!button || !feedbackBox) return;
+  const hints = buildProgressiveHints(question);
+  button.addEventListener("click", () => {
+    const stage = Number(button.dataset.hintStage || 0) % hints.length;
+    feedbackBox.className = "feedback is-visible mid";
+    feedbackBox.innerHTML = `<strong>Tipp ${stage + 1} von ${hints.length}</strong><p>${hints[stage]}</p>`;
+    button.dataset.hintStage = String(stage + 1);
+    button.textContent = stage + 1 < hints.length ? "Weiterer Tipp" : "Tipps erneut";
+  });
+}
+
 function bindShortAnswerTasks(state) {
   const tasks = [
     ...modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer]),
@@ -9496,6 +9536,8 @@ function bindShortAnswerTasks(state) {
   tasks.forEach((task) => {
     const answerField = document.querySelector(`[data-answer="${task.id}"]`);
     const feedbackBox = document.querySelector(`[data-feedback="${task.id}"]`);
+    const hintFeedbackBox = document.querySelector(`[data-hint-feedback="${task.id}"]`);
+    const hintButton = document.querySelector(`[data-hint="${task.id}"]`);
     const checkButton = document.querySelector(`[data-check="${task.id}"]`);
     const showButton = document.querySelector(`[data-show="${task.id}"]`);
 
@@ -9512,6 +9554,8 @@ function bindShortAnswerTasks(state) {
       feedbackBox.className = `feedback is-visible ${stored.level}`;
       feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
     }
+
+    bindProgressiveHint(hintButton, hintFeedbackBox, task);
 
     checkButton.addEventListener("click", () => {
       const result = evaluateTask(answerField.value, task);
@@ -9665,6 +9709,8 @@ function bindContentChecks(state) {
       const field = document.querySelector(`[data-content-answer="${answerId}"]`);
       const feedbackBox = document.querySelector(`[data-content-feedback="${answerId}"]`);
       const wrapper = document.querySelector(`[data-inline-check="${answerId}"]`);
+      const hintButton = document.querySelector(`[data-content-hint-one="${answerId}"]`);
+      const hintFeedbackBox = document.querySelector(`[data-content-hint-feedback="${answerId}"]`);
       const checkOneButton = document.querySelector(`[data-content-check-one="${answerId}"]`);
       const showOneButton = document.querySelector(`[data-content-show-one="${answerId}"]`);
       if (field && state[`${answerId}-text`]) {
@@ -9677,6 +9723,8 @@ function bindContentChecks(state) {
         feedbackBox.className = `feedback is-visible ${stored.level}`;
         feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
       }
+
+      bindProgressiveHint(hintButton, hintFeedbackBox, question);
 
       checkOneButton?.addEventListener("click", () => {
         const answerText = String(field?.value || "");
@@ -9769,6 +9817,8 @@ function bindSourceMicroChecks(state) {
         const field = document.querySelector(`[data-source-answer="${question.id}"]`);
         const feedbackBox = document.querySelector(`[data-source-feedback="${question.id}"]`);
         const checkButton = document.querySelector(`[data-source-check="${question.id}"]`);
+        const hintButton = document.querySelector(`[data-source-hint="${question.id}"]`);
+        const hintFeedbackBox = document.querySelector(`[data-source-hint-feedback="${question.id}"]`);
         const showButton = document.querySelector(`[data-source-show="${question.id}"]`);
         const wrapper = document.querySelector(`[data-source-question="${question.id}"]`);
 
@@ -9787,6 +9837,8 @@ function bindSourceMicroChecks(state) {
           feedbackBox.className = `feedback is-visible ${stored.level}`;
           feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
         }
+
+        bindProgressiveHint(hintButton, hintFeedbackBox, question);
 
         checkButton.addEventListener("click", () => {
           const result = evaluateCheckQuestion(field.value, question);

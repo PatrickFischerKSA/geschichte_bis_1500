@@ -82,6 +82,11 @@ assert(app.includes('title: "Musterlösung"') && app.includes("evaluateCheckQues
   "Die individuelle Prüfung der eingebetteten Fragen ist nicht vollständig verdrahtet.");
 assert(app.includes("semanticConceptGroups") && app.includes("semanticTermMatches"),
   "Die Freitextprüfung braucht eine Synonym- und Flexionserkennung.");
+assert(app.includes("buildProgressiveHints") && app.includes("bindProgressiveHint"),
+  "Die progressiven Lösungshinweise fehlen.");
+for (const hintHook of ["data-hint=", "data-content-hint-one=", "data-source-hint="]) {
+  assert(app.includes(hintHook), `Nicht alle Fragetypen besitzen einen abrufbaren Tipp (${hintHook}).`);
+}
 assert(worker.includes("confirmation.state_json") && worker.includes("confirmation.snapshot_json") && cloud.includes("result.verified !== true"),
   "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
 
