@@ -9025,7 +9025,7 @@ function renderSourceCatalog() {
 }
 
 function normalizeLoose(text) {
-  return normalize(text).replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  return normalize(text).replace(/ß/g, "ss").replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function getRepetitionProgress(state) {
@@ -9293,10 +9293,89 @@ function renderRepetitionPanel(state) {
   `;
 }
 
+const semanticConceptGroups = [
+  ["geschichte", "erzahlung", "narrativ", "mythos", "mythen", "legende", "vorstellung"],
+  ["regel", "regeln", "gesetz", "gesetze", "norm", "normen", "vorschrift", "kodex"],
+  ["gesellschaft", "gemeinschaft", "gruppe", "verband", "kollektiv"],
+  ["grossgruppe", "grosse gruppe", "grosse gesellschaft", "viele menschen", "fremde"],
+  ["zusammenarbeit", "kooperation", "zusammenwirken", "gemeinsam handeln"],
+  ["landwirtschaft", "ackerbau", "feldbau", "bauern", "bäuerlich", "anbau"],
+  ["sesshaft", "sesshaftigkeit", "niederlassen", "fester wohnort", "dorfleben"],
+  ["mobil", "mobilitat", "nomadisch", "umherziehen", "wandern"],
+  ["arbeit", "feldarbeit", "muhe", "anstrengung", "belastung", "strapaze"],
+  ["abhangigkeit", "bindung", "gebunden", "unfreiheit", "angewiesen"],
+  ["schrift", "schreiben", "aufzeichnung", "zeichen", "notieren", "datenspeicherung"],
+  ["verwaltung", "burokratie", "beamte", "listen", "erfassen", "registrieren"],
+  ["steuer", "steuern", "abgabe", "abgaben", "tribut"],
+  ["vorrat", "vorrate", "speicher", "uberschuss", "reserven"],
+  ["staat", "reich", "imperium", "grossordnung", "herrschaftsraum"],
+  ["herrschaft", "macht", "autoritat", "fuhrung", "regierung"],
+  ["gerechtigkeit", "recht", "fairness", "gerechte ordnung"],
+  ["geld", "wahrung", "munze", "zahlungsmittel", "tauschmittel"],
+  ["vertrauen", "anerkennung", "anerkennen", "akzeptanz", "akzeptieren", "glauben an wert", "gemeinsamer wert"],
+  ["handel", "markt", "tausch", "warenaustausch", "handelsnetz"],
+  ["religion", "glaube", "glaubensordnung", "kult", "religios"],
+  ["mission", "missionarisch", "verbreitung", "bekehren", "ausbreiten"],
+  ["stadt", "urban", "stadtisch", "zentrum", "metropole"],
+  ["spezialisierung", "arbeitsteilung", "berufe", "handwerk", "fachleute"],
+  ["umweltwissen", "naturkenntnis", "ortskenntnis", "wissen uber tiere", "jahreszeiten"],
+  ["mundlich", "weitergabe", "uberlieferung", "erzahlen", "erinnerung"],
+  ["symbol", "zeichen", "bild", "darstellung", "felsbild"],
+  ["freiheit", "frei", "selbstbestimmung", "autonomie", "nicht gehorchen"],
+  ["gleichheit", "egalitar", "gleichberechtigt", "ohne rangordnung"],
+  ["hierarchie", "rangordnung", "soziale unterschiede", "ungleichheit"],
+  ["veranderung", "wandel", "entwicklung", "umbruch", "transition"],
+  ["kontinuitat", "fortbestand", "weiterbestehen", "bleibt erhalten", "bestandig"]
+].map((group) => group.map(normalizeLoose));
+
+const semanticStopWords = new Set([
+  "aber", "als", "auch", "auf", "aus", "bei", "das", "den", "der", "die", "ein", "eine", "einer", "eines",
+  "fur", "im", "in", "ist", "mit", "nicht", "oder", "sich", "und", "von", "war", "wie", "zu", "zum", "zur"
+]);
+
+function semanticStem(token) {
+  let value = normalizeLoose(token);
+  if (value.length <= 4) return value;
+  for (const ending of ["ungen", "ischen", "licher", "igkeit", "keiten", "erinnen", "ern", "en", "er", "es", "e", "n", "s"]) {
+    if (value.endsWith(ending) && value.length - ending.length >= 4) {
+      value = value.slice(0, -ending.length);
+      break;
+    }
+  }
+  return value;
+}
+
+function conceptFor(term) {
+  const normalized = normalizeLoose(term);
+  return semanticConceptGroups.find((group) => group.some((entry) =>
+    normalized === entry || normalized.includes(entry) || entry.includes(normalized)
+  ));
+}
+
+function semanticTermMatches(answerText, keyword) {
+  const answer = normalizeLoose(answerText);
+  const target = normalizeLoose(keyword);
+  if (!target) return false;
+  if (answer.includes(target)) return true;
+
+  const concept = conceptFor(target);
+  if (concept?.some((entry) => answer.includes(entry))) return true;
+
+  const answerStems = new Set(answer.split(" ").filter(Boolean).map(semanticStem));
+  const targetTokens = target.split(" ").filter((token) => token.length > 2 && !semanticStopWords.has(token));
+  return targetTokens.length > 0 && targetTokens.every((token) => {
+    const tokenConcept = conceptFor(token);
+    if (tokenConcept?.some((entry) => answer.includes(entry))) return true;
+    const stem = semanticStem(token);
+    return answerStems.has(stem) || [...answerStems].some((answerStem) =>
+      stem.length >= 5 && answerStem.length >= 5 && (answerStem.startsWith(stem) || stem.startsWith(answerStem))
+    );
+  });
+}
+
 function analyzeAnswer(answer, task) {
-  const normalized = normalize(answer);
   const matched = task.criteria.filter((criterion) =>
-    criterion.keywords.some((keyword) => normalized.includes(normalize(keyword)))
+    criterion.keywords.some((keyword) => semanticTermMatches(answer, keyword))
   );
   const missing = task.criteria.filter((criterion) => !matched.includes(criterion));
   const wordCount = String(answer || "").trim() ? String(answer || "").trim().split(/\s+/).length : 0;
@@ -9319,13 +9398,13 @@ function evaluateTask(answer, task) {
   }
 
   if (wordCount < minimumWords) {
+    const guidance = missing.length
+      ? `Versuche mindestens diese Aspekte einzubauen: ${missing.map((criterion) => criterion.label).join(", ")}.`
+      : "Die zentralen Inhalte werden bereits erkannt. Begründe sie noch etwas ausführlicher oder ergänze ein konkretes Beispiel.";
     return {
       level: "mid",
       title: "Ansatz erkennbar, aber noch zu knapp",
-      body:
-        `Du setzt bereits an, aber die Antwort bleibt zu kurz. Versuche mindestens diese Aspekte einzubauen: ${missing
-          .map((criterion) => criterion.label)
-          .join(", ")}.`
+      body: `Du setzt bereits an, aber die Antwort bleibt zu kurz. ${guidance}`
     };
   }
 
@@ -9390,11 +9469,14 @@ function evaluateCheckQuestion(answer, question) {
   }
 
   if (adjustedScore >= 60) {
+    const guidance = missing.length
+      ? `Ergänze beim Überarbeiten noch: ${missing.map((criterion) => criterion.label).join(", ")}. `
+      : "Die verlangten Inhalte sind vorhanden; formuliere sie für die volle Punktzahl noch etwas ausführlicher. ";
     return {
       score: adjustedScore,
       level: "mid",
       title: "Im Kern richtig",
-      body: `Das reicht für diese Teilfrage schon gut. Ergänze beim Überarbeiten noch: ${missing.map((criterion) => criterion.label).join(", ")}. Beispiellösung: ${question.sampleAnswer}`
+      body: `Das reicht für diese Teilfrage schon gut. ${guidance}Beispiellösung: ${question.sampleAnswer}`
     };
   }
 
@@ -9439,7 +9521,6 @@ function bindShortAnswerTasks(state) {
       state[`${task.id}-text`] = answerField.value;
       state[`${task.id}-feedback`] = result;
       saveState(state);
-      renderApp(state);
     });
 
     showButton.addEventListener("click", () => {
@@ -9454,7 +9535,6 @@ function bindShortAnswerTasks(state) {
       state[`${task.id}-text`] = answerField.value;
       state[`${task.id}-feedback`] = result;
       saveState(state);
-      renderApp(state);
     });
   });
 }
@@ -9718,7 +9798,6 @@ function bindSourceMicroChecks(state) {
           state[`${question.id}-text`] = field.value;
           state[`${question.id}-feedback`] = result;
           saveState(state);
-          renderApp(state);
         });
 
         showButton.addEventListener("click", () => {
@@ -9735,7 +9814,6 @@ function bindSourceMicroChecks(state) {
           state[`${question.id}-text`] = field.value;
           state[`${question.id}-feedback`] = result;
           saveState(state);
-          renderApp(state);
         });
       });
     });

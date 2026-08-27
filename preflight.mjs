@@ -47,7 +47,7 @@ assert(cloud.includes("syncStateNow") && cloud.includes("sync: false, touch: fal
   "Die sichere Cloud-Synchronisation ist unvollständig.");
 assert(cloud.includes("cloud-save-status") && cloud.includes("Cloud-Stand bestätigt") && cloud.includes("attempt <= 2"),
   "Sichtbare Speicherbestätigung oder Wiederholungsversuch fehlt.");
-assert(worker.includes("SELECT updated_at FROM learner_progress") && worker.includes("D1 hat den Lernstand nicht bestätigt"),
+assert(worker.includes("SELECT state_json, snapshot_json, updated_at FROM learner_progress") && worker.includes("D1 hat den Lernstand nicht bestätigt"),
   "Der Server kontrolliert die dauerhafte D1-Speicherung nicht.");
 assert(app.includes("data-save-field") && app.includes("bindExplicitCloudSaveButtons") && app.includes("In Cloud gespeichert"),
   "Explizite Cloud-Speicherknöpfe mit Bestätigung fehlen bei den Antwortfeldern.");
@@ -80,6 +80,10 @@ assert(app.includes("data-content-check-one") && app.includes("data-content-show
   "Bei den eingebetteten Prüffragen fehlen Antwortprüfung oder Musterlösung.");
 assert(app.includes('title: "Musterlösung"') && app.includes("evaluateCheckQuestion(answerText, question)"),
   "Die individuelle Prüfung der eingebetteten Fragen ist nicht vollständig verdrahtet.");
+assert(app.includes("semanticConceptGroups") && app.includes("semanticTermMatches"),
+  "Die Freitextprüfung braucht eine Synonym- und Flexionserkennung.");
+assert(worker.includes("confirmation.state_json") && worker.includes("confirmation.snapshot_json") && cloud.includes("result.verified !== true"),
+  "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

@@ -98,13 +98,18 @@ async function studentProgress(request, env) {
       state_json=excluded.state_json, snapshot_json=excluded.snapshot_json, updated_at=excluded.updated_at`)
       .bind(session.userId, COURSE_ID, stateJson, snapshotJson, now).run();
     if (!write.success) throw new Error("D1 hat den Lernstand nicht bestätigt.");
-    const confirmation = await env.DB.prepare("SELECT updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+    const confirmation = await env.DB.prepare("SELECT state_json, snapshot_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
       .bind(session.userId, COURSE_ID).first();
-    if (!confirmation || String(confirmation.updated_at) !== now) {
+    if (
+      !confirmation ||
+      String(confirmation.updated_at) !== now ||
+      String(confirmation.state_json) !== stateJson ||
+      String(confirmation.snapshot_json) !== snapshotJson
+    ) {
       throw new Error("Der gespeicherte Lernstand konnte nicht bestätigt werden.");
     }
     await logActivity(env.DB, session.userId, "progress_saved", now);
-    return json({ ok: true, updatedAt: now }, 200);
+    return json({ ok: true, updatedAt: now, verified: true, stateBytes: stateJson.length }, 200);
   }
   return json({ error: "Methode nicht erlaubt." }, 405);
 }

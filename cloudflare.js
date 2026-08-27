@@ -288,6 +288,7 @@
         }
       }
       ownProgress = { state, snapshot, updatedAt: result.updatedAt };
+      if (result.verified !== true) throw new Error("Die Cloud hat den gespeicherten Inhalt nicht bestätigt.");
       const savedAt = new Intl.DateTimeFormat("de-CH", { dateStyle: "medium", timeStyle: "short" }).format(new Date(result.updatedAt));
       updateCloudSaveStatus(`Cloud-Stand bestätigt: ${savedAt}`, "saved");
       return result;
