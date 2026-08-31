@@ -7587,104 +7587,88 @@ function splitSourcePassage(text) {
   return parts.filter(Boolean);
 }
 
-function shortenPromptSegment(text, maxLength = 140) {
-  const cleaned = cleanStudentText(text).replace(/\s+/g, " ").trim();
-  if (cleaned.length <= maxLength) {
-    return cleaned.replace(/[.!?…]+$/, "").trim();
-  }
-  return `${cleaned.slice(0, maxLength).replace(/[,:;.!?…]\s*$/, "").trim()} …`;
+function buildCompleteSourceSentences(detail, source) {
+  const sourceText = [detail.thesis, detail.passage || source.extracted]
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const sentences = sourceText.match(/[^.!?]+[.!?]+/g) || [];
+  return [...new Set(sentences.map((sentence) => sentence.trim()))]
+    .filter((sentence) => /^[A-ZÄÖÜÇ]/.test(sentence))
+    .filter((sentence) => sentence.length >= 45 && sentence.length <= 420);
 }
 
-function buildSourceMicroCheckPrompt(heading, detail, kind, texts) {
-  const cleanedTexts = (texts || []).map((item) => cleanStudentText(item)).filter(Boolean);
-  const first = shortenPromptSegment(cleanedTexts[0] || heading || "dieser Entwicklung");
-  const second = shortenPromptSegment(cleanedTexts[1] || "");
-
-  if (kind === "quote" && detail.quote) {
-    return `Erkläre präzise, was die Aussage ${detail.quote} historisch bedeutet und woran man das konkret erkennt.`;
+function buildSourceSampleAnswer(sentences, startIndex, heading, module) {
+  const selected = sentences.slice(startIndex, startIndex + 3);
+  if (selected.length >= 2) {
+    return selected.join(" ");
   }
-
-  if (kind === "facts" && first && second) {
-    return `Erkläre in 2 bis 4 klaren Sätzen, wie die folgenden Aussagen historisch zusammenhängen: «${first}» und «${second}».`;
+  if (sentences.length >= 2) {
+    return sentences.slice(0, 2).join(" ");
   }
-
-  if (kind === "contrast" && first && second) {
-    return `Vergleiche die folgenden Aussagen in 2 bis 4 klaren Sätzen und arbeite den historischen Unterschied heraus: «${first}» und «${second}».`;
+  if (sentences.length === 1) {
+    return `${sentences[0]} Damit lässt sich die Quelle «${heading}» in den historischen Zusammenhang des Moduls «${module.title}» einordnen.`;
   }
+  return `Die Quelle «${heading}» gehört zum historischen Thema «${module.title}». Sie muss nach ihrer zentralen Aussage, ihrem Entstehungszusammenhang und ihrer historischen Bedeutung untersucht werden.`;
+}
 
-  if (first) {
-    return `Erkläre in 2 bis 4 klaren Sätzen die historische Bedeutung der folgenden Aussage: «${first}».`;
-  }
-
-  return "Erkläre den historischen Zusammenhang in 2 bis 4 klaren Sätzen.";
+function isCompleteSourceQuestion(question) {
+  const sampleSentences = String(question.sampleAnswer || "").match(/[^.!?]+[.!?]+/g) || [];
+  return /^[A-ZÄÖÜ]/.test(question.prompt)
+    && /[.!?]$/.test(question.prompt)
+    && sampleSentences.length >= 2
+    && sampleSentences.every((sentence) => /^[A-ZÄÖÜÇ]/.test(sentence.trim()))
+    && !/[.…]\s*(?:und|oder)\s+[A-ZÄÖÜ]/.test(question.prompt)
+    && !/^den Historiker\b/i.test(question.sampleAnswer)
+    && !question.prompt.includes(" …")
+    && !question.sampleAnswer.includes(" …");
 }
 
 function buildSourceMicroChecks(module, source, detail, heading) {
   const sourceId = `${module.id}-${normalize(heading || source.title)}`;
-  const thesisText = cleanStudentText(detail.thesis || "");
-  const passageText = cleanStudentText(detail.passage || source.extracted || "");
-  const passageSections = splitSourcePassage(passageText);
-  const factTexts =
-    detail.mustKnow?.length
-      ? detail.mustKnow
-      : detail.relevantItems?.map((item) =>
-          `${item.title}${item.note ? `: ${cleanStudentText(item.note)}` : ""}`
-        ) || [];
-  const claims = splitIntoClaims(`${thesisText} ${passageText}`.trim());
-  const microChecks = [];
-
-  const checkBlueprints = [
-    {
-      kind: detail.quote ? "quote" : "thesis",
-      texts: thesisText ? [thesisText, claims[0] || passageSections[0] || ""] : claims.slice(0, 2),
-      sample: thesisText || passageSections[0] || claims[0] || passageText
-    },
-    {
-      kind: "facts",
-      texts: passageSections[0]
-        ? [passageSections[0], passageSections[1] || claims[1] || thesisText]
-        : claims.slice(0, 2),
-      sample: passageSections[0] || passageText
-    },
-    {
-      kind: detail.whyHere ? "contrast" : "facts",
-      texts: detail.whyHere
-        ? [detail.whyHere, factTexts[0] || factTexts[1] || claims[0] || ""]
-        : factTexts.slice(0, 2),
-      sample:
-        [detail.whyHere, ...factTexts.slice(0, 2)]
-          .filter(Boolean)
-          .join(" ") || passageSections[1] || passageText
-    },
-    {
-      kind: "facts",
-      texts:
-        factTexts.slice(1, 3).length >= 2
-          ? factTexts.slice(1, 3)
-          : passageSections.slice(1, 3),
-      sample:
-        factTexts.slice(1, 4).join(" ") ||
-        passageSections.slice(1).join(" ") ||
-        passageText
-    }
+  const safeHeading = cleanStudentText(heading || source.title);
+  const sentences = buildCompleteSourceSentences(detail, source);
+  const questionBlueprints = [
+    `Erkläre die zentrale historische Aussage der Quelle «${safeHeading}» in 2 bis 4 vollständigen Sätzen.`,
+    `Zeige anhand von zwei konkreten Punkten, was die Quelle «${safeHeading}» über das Thema «${module.title}» aussagt.`,
+    `Ordne die Quelle «${safeHeading}» in den historischen Zusammenhang des Moduls ein. Beschreibe dabei eine Entwicklung und ihre Bedeutung.`
   ];
 
-  checkBlueprints.forEach((blueprint, index) => {
-    const criteria = buildCriteriaFromTexts(blueprint.texts);
-    if (!blueprint.sample || !criteria.length) {
-      return;
-    }
+  return questionBlueprints
+    .map((prompt, index) => {
+      const sampleAnswer = buildSourceSampleAnswer(sentences, index, safeHeading, module);
+      return {
+        id: `${sourceId}-micro-${index + 1}`,
+        prompt,
+        placeholder: "Formuliere hier 2 bis 4 inhaltlich klare und vollständige Sätze.",
+        sampleAnswer,
+        criteria: buildCriteriaFromTexts(splitIntoClaims(sampleAnswer))
+      };
+    })
+    .filter((question) => question.criteria.length && isCompleteSourceQuestion(question));
+}
 
-    microChecks.push({
-      id: `${sourceId}-micro-${index + 1}`,
-      prompt: buildSourceMicroCheckPrompt(heading, detail, blueprint.kind, blueprint.texts),
-      placeholder: "Formuliere hier 2 bis 4 inhaltlich klare Sätze.",
-      sampleAnswer: blueprint.sample,
-      criteria
+function auditAllSourceQuestions() {
+  const issues = [];
+  let questionCount = 0;
+  modules.forEach((module) => {
+    module.sources.forEach((source) => {
+      const detail = getSourceDetail(module.id, source);
+      const heading = getSourceHeading(source, detail) || source.title;
+      const questions = buildSourceMicroChecks(module, source, detail, heading);
+      questionCount += questions.length;
+      if (questions.length !== 3) {
+        issues.push(`${module.id} / ${heading}: ${questions.length} statt 3 vollständige Fragen`);
+      }
+      questions.forEach((question) => {
+        if (!isCompleteSourceQuestion(question)) {
+          issues.push(`${module.id} / ${heading}: unvollständige Frage oder Musterlösung`);
+        }
+      });
     });
   });
-
-  return microChecks.slice(0, 4);
+  return { questionCount, issues };
 }
 
 function renderSourceMicroCheck(question) {
@@ -7755,8 +7739,7 @@ function cleanPromptText(text) {
     .replace(/Hararis Zuspitzung/gi, "die Zuspitzung in der Harari-Buchstelle")
     .replace(/Hararis Einstieg/gi, "den Einstieg in der Harari-Buchstelle")
     .replace(/Hararis Kapitel/gi, "das Kapitel in der Harari-Buchstelle")
-    .replace(/Harari-PDF/gi, "Harari-Buchstelle im PDF")
-    .replace(/\bHarari\b/gi, "den Historiker Harari");
+    .replace(/Harari-PDF/gi, "Harari-Buchstelle im PDF");
 }
 
 function getSourceHeading(source, detail) {
@@ -10295,7 +10278,8 @@ window.GESCHICHTE_APP = {
   replaceState,
   getStorageKey,
   isTeacherMode,
-  buildLearnerSnapshot
+  buildLearnerSnapshot,
+  auditAllSourceQuestions
 };
 
 function init() {
@@ -10304,6 +10288,10 @@ function init() {
   }
   if (isTeacherPage() && !isTeacherMode()) {
     return;
+  }
+  const languageAudit = auditAllSourceQuestions();
+  if (languageAudit.issues.length) {
+    throw new Error(`Sprachprüfung der Quellenfragen fehlgeschlagen: ${languageAudit.issues.join("; ")}`);
   }
   const state = loadState();
   renderApp(state);
