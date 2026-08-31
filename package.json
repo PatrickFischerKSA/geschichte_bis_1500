@@ -5,7 +5,8 @@
   "scripts": {
     "compatibility": "node compatibility-check.mjs",
     "answer-check": "node answer-evaluation-check.mjs",
-    "preflight": "node preflight.mjs && npm run answer-check && npm run compatibility",
+    "language-check": "node language-quality-check.mjs",
+    "preflight": "node preflight.mjs && npm run language-check && npm run answer-check && npm run compatibility",
     "build": "npm run preflight && node build.mjs"
   }
 }

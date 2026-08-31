@@ -7590,9 +7590,9 @@ function splitSourcePassage(text) {
 function shortenPromptSegment(text, maxLength = 140) {
   const cleaned = cleanStudentText(text).replace(/\s+/g, " ").trim();
   if (cleaned.length <= maxLength) {
-    return cleaned;
+    return cleaned.replace(/[.!?…]+$/, "").trim();
   }
-  return `${cleaned.slice(0, maxLength).replace(/[,:;]\s*$/, "").trim()} …`;
+  return `${cleaned.slice(0, maxLength).replace(/[,:;.!?…]\s*$/, "").trim()} …`;
 }
 
 function buildSourceMicroCheckPrompt(heading, detail, kind, texts) {
@@ -7605,15 +7605,15 @@ function buildSourceMicroCheckPrompt(heading, detail, kind, texts) {
   }
 
   if (kind === "facts" && first && second) {
-    return `Erkläre den historischen Zusammenhang zwischen ${first} und ${second}.`;
+    return `Erkläre in 2 bis 4 klaren Sätzen, wie die folgenden Aussagen historisch zusammenhängen: «${first}» und «${second}».`;
   }
 
   if (kind === "contrast" && first && second) {
-    return `Zeige den Unterschied zwischen ${first} und ${second} in 2 bis 4 klaren Sätzen.`;
+    return `Vergleiche die folgenden Aussagen in 2 bis 4 klaren Sätzen und arbeite den historischen Unterschied heraus: «${first}» und «${second}».`;
   }
 
   if (first) {
-    return `Erkläre präzise, was historisch mit ${first} gemeint ist.`;
+    return `Erkläre in 2 bis 4 klaren Sätzen die historische Bedeutung der folgenden Aussage: «${first}».`;
   }
 
   return "Erkläre den historischen Zusammenhang in 2 bis 4 klaren Sätzen.";
