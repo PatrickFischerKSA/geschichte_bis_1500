@@ -26,6 +26,7 @@ const publicSources = [
   read("textstelle.js")
 ].join("\n");
 const app = read("app.js");
+const sourceQuestionBank = read("source-question-bank.js");
 const viewer = `${read("harari-viewer.html")}\n${read("harari-viewer.js")}`;
 
 const iterationMatch = worker.match(/const PBKDF2_ITERATIONS = (\d+);/);
@@ -87,6 +88,8 @@ assert(app.includes("buildProgressiveHints") && app.includes("bindProgressiveHin
 for (const hintHook of ["data-hint=", "data-content-hint-one=", "data-source-hint="]) {
   assert(app.includes(hintHook), `Nicht alle Fragetypen besitzen einen abrufbaren Tipp (${hintHook}).`);
 }
+assert(sourceQuestionBank.includes("GESCHICHTE_SOURCE_QUESTION_BANK") && build.includes('"source-question-bank.js"'),
+  "Der feste Katalog individueller Quellenfragen fehlt im Produktions-Build.");
 assert(worker.includes("confirmation.state_json") && worker.includes("confirmation.snapshot_json") && cloud.includes("result.verified !== true"),
   "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
 

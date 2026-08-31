@@ -7587,32 +7587,6 @@ function splitSourcePassage(text) {
   return parts.filter(Boolean);
 }
 
-function buildCompleteSourceSentences(detail, source) {
-  const sourceText = [detail.thesis, detail.passage || source.extracted]
-    .filter(Boolean)
-    .join(" ")
-    .replace(/\s+/g, " ")
-    .trim();
-  const sentences = sourceText.match(/[^.!?]+[.!?]+/g) || [];
-  return [...new Set(sentences.map((sentence) => sentence.trim()))]
-    .filter((sentence) => /^[A-ZÄÖÜÇ]/.test(sentence))
-    .filter((sentence) => sentence.length >= 45 && sentence.length <= 420);
-}
-
-function buildSourceSampleAnswer(sentences, startIndex, heading, module) {
-  const selected = sentences.slice(startIndex, startIndex + 3);
-  if (selected.length >= 2) {
-    return selected.join(" ");
-  }
-  if (sentences.length >= 2) {
-    return sentences.slice(0, 2).join(" ");
-  }
-  if (sentences.length === 1) {
-    return `${sentences[0]} Damit lässt sich die Quelle «${heading}» in den historischen Zusammenhang des Moduls «${module.title}» einordnen.`;
-  }
-  return `Die Quelle «${heading}» gehört zum historischen Thema «${module.title}». Sie muss nach ihrer zentralen Aussage, ihrem Entstehungszusammenhang und ihrer historischen Bedeutung untersucht werden.`;
-}
-
 function isCompleteSourceQuestion(question) {
   const sampleSentences = String(question.sampleAnswer || "").match(/[^.!?]+[.!?]+/g) || [];
   return /^[A-ZÄÖÜ]/.test(question.prompt)
@@ -7627,26 +7601,16 @@ function isCompleteSourceQuestion(question) {
 
 function buildSourceMicroChecks(module, source, detail, heading) {
   const sourceId = `${module.id}-${normalize(heading || source.title)}`;
-  const safeHeading = cleanStudentText(heading || source.title);
-  const sentences = buildCompleteSourceSentences(detail, source);
-  const questionBlueprints = [
-    `Erkläre die zentrale historische Aussage der Quelle «${safeHeading}» in 2 bis 4 vollständigen Sätzen.`,
-    `Zeige anhand von zwei konkreten Punkten, was die Quelle «${safeHeading}» über das Thema «${module.title}» aussagt.`,
-    `Ordne die Quelle «${safeHeading}» in den historischen Zusammenhang des Moduls ein. Beschreibe dabei eine Entwicklung und ihre Bedeutung.`
-  ];
-
-  return questionBlueprints
-    .map((prompt, index) => {
-      const sampleAnswer = buildSourceSampleAnswer(sentences, index, safeHeading, module);
-      return {
-        id: `${sourceId}-micro-${index + 1}`,
-        prompt,
-        placeholder: "Formuliere hier 2 bis 4 inhaltlich klare und vollständige Sätze.",
-        sampleAnswer,
-        criteria: buildCriteriaFromTexts(splitIntoClaims(sampleAnswer))
-      };
-    })
-    .filter((question) => question.criteria.length && isCompleteSourceQuestion(question));
+  const fixedQuestions = window.GESCHICHTE_SOURCE_QUESTION_BANK?.[sourceId];
+  return Array.isArray(fixedQuestions)
+    ? fixedQuestions.map((question) => ({
+        ...question,
+        criteria: question.criteria.map((criterion) => ({
+          ...criterion,
+          keywords: [...criterion.keywords]
+        }))
+      }))
+    : [];
 }
 
 function auditAllSourceQuestions() {
