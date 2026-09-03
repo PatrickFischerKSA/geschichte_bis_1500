@@ -7630,8 +7630,8 @@ function renderAssessmentContract(item) {
   if (!criteria.length) return "";
   return `
     <div class="assessment-contract">
-      <p><strong>Für die Bewertung zählt ausschliesslich:</strong> ${criteria.map((criterion) => cleanPromptText(criterion.label)).join("; ")}.</p>
-      <p>Fachlich gleichwertige Begriffe, Synonyme und anders aufgebaute, begründete Antworten werden ebenfalls anerkannt.</p>
+      <p><strong>Mögliche Gesichtspunkte:</strong> ${criteria.map((criterion) => cleanPromptText(criterion.label)).join("; ")}.</p>
+      <p>Diese Liste und die Beispiellösung sind nicht abschliessend. Fachlich gleichwertige Begriffe, Synonyme, Umschreibungen und andere nachvollziehbar begründete Antworten werden gleichwertig anerkannt.</p>
     </div>`;
 }
 
@@ -7649,7 +7649,7 @@ function auditAllSourceQuestions() {
       }
       questions.forEach((question) => {
         if (!isCompleteSourceQuestion(question)) {
-          issues.push(`${module.id} / ${heading}: unvollständige Frage oder Musterlösung`);
+          issues.push(`${module.id} / ${heading}: unvollständige Frage oder Beispiellösung`);
         }
       });
     });
@@ -7661,10 +7661,10 @@ function renderSourceMicroCheck(question) {
   const teacherSolution = isTeacherMode()
     ? `
       <div class="teacher-answer-key">
-        <p class="section-kicker">Direkte Musterlösung</p>
+        <p class="section-kicker">Eine mögliche Beispiellösung</p>
         <p>${cleanPromptText(question.sampleAnswer)}</p>
         <div class="source-list-block">
-          <p><strong>Erwartete Gesichtspunkte:</strong></p>
+          <p><strong>Mögliche Gesichtspunkte:</strong></p>
           <ul class="source-list">
             ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
           </ul>
@@ -7682,7 +7682,7 @@ function renderSourceMicroCheck(question) {
         <button class="btn primary" type="button" data-save-field="${question.id}" data-save-kind="source">In Cloud speichern</button>
         <button class="btn ghost" type="button" data-source-hint="${question.id}">Tipp anzeigen</button>
         <button class="btn primary" type="button" data-source-check="${question.id}">Antwort prüfen</button>
-        <button class="btn ghost" type="button" data-source-show="${question.id}">Musterlösung zeigen</button>
+        <button class="btn ghost" type="button" data-source-show="${question.id}">Beispiellösung zeigen</button>
       </div>
       <div class="feedback" data-save-feedback="${question.id}" aria-live="polite"></div>
       <div class="feedback" data-source-hint-feedback="${question.id}" aria-live="polite"></div>
@@ -8323,10 +8323,10 @@ function renderShortAnswerBox(task, kindLabel) {
   const teacherSolution = isTeacherMode()
     ? `
       <div class="teacher-answer-key">
-        <p class="section-kicker">Direkte Musterlösung</p>
+        <p class="section-kicker">Eine mögliche Beispiellösung</p>
         <p>${cleanPromptText(task.sampleAnswer)}</p>
         <div class="source-list-block">
-          <p><strong>Erwartete Gesichtspunkte:</strong></p>
+          <p><strong>Mögliche Gesichtspunkte:</strong></p>
           <ul class="source-list">
             ${task.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
           </ul>
@@ -8457,7 +8457,7 @@ function renderInlineCheckQuestion(module, questionIndex) {
           <button class="btn primary" type="button" data-save-field="${answerId}" data-save-kind="content">In Cloud speichern</button>
           <button class="btn ghost" type="button" data-content-hint-one="${answerId}">Tipp anzeigen</button>
           <button class="btn primary" type="button" data-content-check-one="${answerId}">Antwort prüfen</button>
-          <button class="btn ghost" type="button" data-content-show-one="${answerId}">Musterlösung zeigen</button>
+          <button class="btn ghost" type="button" data-content-show-one="${answerId}">Beispiellösung zeigen</button>
         </div>
         <div class="feedback" data-save-feedback="${answerId}" aria-live="polite"></div>
         <div class="feedback" data-content-hint-feedback="${answerId}" aria-live="polite"></div>
@@ -8466,10 +8466,10 @@ function renderInlineCheckQuestion(module, questionIndex) {
           isTeacherMode()
             ? `
               <div class="teacher-answer-key">
-                <p class="section-kicker">Direkte Musterlösung</p>
+                <p class="section-kicker">Eine mögliche Beispiellösung</p>
                 <p>${cleanPromptText(question.sampleAnswer)}</p>
                 <div class="source-list-block">
-                  <p><strong>Erwartete Gesichtspunkte:</strong></p>
+                  <p><strong>Mögliche Gesichtspunkte:</strong></p>
                   <ul class="source-list">
                     ${question.criteria.map((criterion) => `<li>${criterion.label}</li>`).join("")}
                   </ul>
@@ -9191,7 +9191,7 @@ function renderRepetitionMemory(state) {
       </div>
       <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-memory-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
       <div class="teacher-answer-key ${state[getRepetitionStateKey(level, "memory-show-solution")] || isTeacherMode() ? "" : "is-hidden"}" data-memory-solution-box>
-        <p class="section-kicker">Musterlösung</p>
+        <p class="section-kicker">Eine mögliche Beispiellösung</p>
         <ul class="source-list">${solution}</ul>
       </div>
     </article>
@@ -9244,7 +9244,7 @@ function renderRepetitionDrag(state) {
                 </div>
                 ${
                   showSolution
-                    ? `<p class="drag-solution"><strong>Musterlösung:</strong> ${solutionItem.label} – ${solutionItem.explanation}</p>`
+                    ? `<p class="drag-solution"><strong>Beispiellösung:</strong> ${solutionItem.label} – ${solutionItem.explanation}</p>`
                     : ""
                 }
               </div>
@@ -9292,12 +9292,12 @@ function renderRepetitionCloze(state) {
       <div class="task-actions">
         <button class="btn primary" type="button" data-save-cloze>In Cloud speichern</button>
         <button class="btn primary" type="button" data-cloze-check>Lückentext prüfen</button>
-        <button class="btn ghost" type="button" data-cloze-solution>Musterlösung zeigen</button>
+        <button class="btn ghost" type="button" data-cloze-solution>Beispiellösung zeigen</button>
       </div>
       <div class="feedback" data-save-feedback="repetition-cloze" aria-live="polite"></div>
       <div class="feedback ${feedback ? `is-visible ${feedback.level}` : ""}" data-cloze-feedback>${feedback ? `<strong>${feedback.title}</strong><p>${feedback.body}</p>` : ""}</div>
       <div class="teacher-answer-key ${showSolution ? "" : "is-hidden"}" data-cloze-solution-box>
-        <p class="section-kicker">Musterlösung</p>
+        <p class="section-kicker">Eine mögliche Beispiellösung</p>
         <p>${mode.cloze.sampleAnswer}</p>
       </div>
     </article>
@@ -9368,33 +9368,40 @@ const semanticConceptGroups = [
   ["gesellschaft", "gemeinschaft", "gruppe", "verband", "kollektiv"],
   ["grossgruppe", "grosse gruppe", "grosse gesellschaft", "viele menschen", "fremde"],
   ["zusammenarbeit", "kooperation", "zusammenwirken", "gemeinsam handeln"],
-  ["landwirtschaft", "ackerbau", "feldbau", "bauern", "bäuerlich", "anbau"],
+  ["landwirtschaft", "ackerbau", "feldbau", "bauern", "bäuerlich", "anbau", "getreideanbau", "bodenbewirtschaftung", "kultivierung"],
   ["sesshaft", "sesshaftigkeit", "niederlassen", "fester wohnort", "dorfleben"],
-  ["mobil", "mobilitat", "nomadisch", "umherziehen", "wandern"],
+  ["mobil", "mobilitat", "nomadisch", "umherziehen", "wandern", "migration", "wanderung", "bevolkerungsbewegung"],
   ["arbeit", "feldarbeit", "muhe", "anstrengung", "belastung", "strapaze"],
   ["abhangigkeit", "bindung", "gebunden", "unfreiheit", "angewiesen"],
-  ["schrift", "schreiben", "aufzeichnung", "zeichen", "notieren", "datenspeicherung"],
-  ["verwaltung", "burokratie", "beamte", "listen", "erfassen", "registrieren"],
+  ["schrift", "schreiben", "aufzeichnung", "zeichen", "notieren", "datenspeicherung", "schriftlichkeit", "dokumentation", "buchfuhrung"],
+  ["verwaltung", "burokratie", "beamte", "listen", "erfassen", "registrieren", "administration", "staatsapparat"],
   ["steuer", "steuern", "abgabe", "abgaben", "tribut"],
   ["vorrat", "vorrate", "speicher", "uberschuss", "reserven"],
-  ["staat", "reich", "imperium", "grossordnung", "herrschaftsraum"],
-  ["herrschaft", "macht", "autoritat", "fuhrung", "regierung"],
+  ["staat", "reich", "imperium", "grossordnung", "herrschaftsraum", "staatswesen", "konigtum", "obrigkeit"],
+  ["herrschaft", "macht", "autoritat", "fuhrung", "regierung", "machtordnung", "herrschaftssystem", "kontrolle"],
   ["gerechtigkeit", "recht", "fairness", "gerechte ordnung"],
   ["geld", "wahrung", "munze", "zahlungsmittel", "tauschmittel"],
   ["vertrauen", "anerkennung", "anerkennen", "akzeptanz", "akzeptieren", "glauben an wert", "gemeinsamer wert"],
-  ["handel", "markt", "tausch", "warenaustausch", "handelsnetz"],
+  ["handel", "markt", "tausch", "warenaustausch", "handelsnetz", "fernhandel", "handelsbeziehung", "wirtschaftsaustausch"],
   ["religion", "glaube", "glaubensordnung", "kult", "religios"],
   ["mission", "missionarisch", "verbreitung", "bekehren", "ausbreiten"],
   ["stadt", "urban", "stadtisch", "zentrum", "metropole"],
   ["spezialisierung", "arbeitsteilung", "berufe", "handwerk", "fachleute"],
-  ["umweltwissen", "naturkenntnis", "ortskenntnis", "wissen uber tiere", "jahreszeiten"],
+  ["umweltwissen", "naturkenntnis", "ortskenntnis", "wissen uber tiere", "jahreszeiten", "naturraum", "landschaft", "lebensraum"],
   ["mundlich", "weitergabe", "uberlieferung", "erzahlen", "erinnerung"],
   ["symbol", "zeichen", "bild", "darstellung", "felsbild"],
   ["freiheit", "frei", "selbstbestimmung", "autonomie", "nicht gehorchen"],
   ["gleichheit", "egalitar", "gleichberechtigt", "ohne rangordnung"],
   ["hierarchie", "rangordnung", "soziale unterschiede", "ungleichheit"],
-  ["veranderung", "wandel", "entwicklung", "umbruch", "transition"],
-  ["kontinuitat", "fortbestand", "weiterbestehen", "bleibt erhalten", "bestandig"]
+  ["veranderung", "wandel", "entwicklung", "umbruch", "transition", "neuerung", "transformation"],
+  ["kontinuitat", "fortbestand", "weiterbestehen", "bleibt erhalten", "bestandig", "dauer", "fortdauer", "tradition", "bestehen fort", "bestand fort"],
+  ["ursache", "grund", "ausloser", "voraussetzung", "bedingt", "hervorgerufen"],
+  ["folge", "auswirkung", "wirkung", "konsequenz", "resultat", "ergebnis"],
+  ["anpassung", "anpassen", "einstellen", "stellte sich ein", "stellten sich ein", "stellte", "stellten", "zurechtfinden", "adaptieren"],
+  ["versorgung", "ernahrung", "nahrung", "lebensmittel", "existenzsicherung"],
+  ["konflikt", "krieg", "gewalt", "auseinandersetzung", "kampf"],
+  ["austausch", "kontakt", "beziehung", "vernetzung", "verbindung"],
+  ["wissen", "kenntnis", "erfahrung", "knowhow", "kompetenz"]
 ].map((group) => group.map(normalizeLoose));
 
 const semanticStopWords = new Set([
@@ -9414,9 +9421,61 @@ function semanticStem(token) {
   return value;
 }
 
-function conceptFor(term) {
+function editDistanceAtMostOne(left, right) {
+  const a = normalizeLoose(left);
+  const b = normalizeLoose(right);
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 1) return false;
+  if (a.length === b.length) {
+    const differences = [];
+    for (let index = 0; index < a.length; index += 1) {
+      if (a[index] !== b[index]) differences.push(index);
+    }
+    if (differences.length === 2
+      && differences[1] === differences[0] + 1
+      && a[differences[0]] === b[differences[1]]
+      && a[differences[1]] === b[differences[0]]) return true;
+  }
+  let first = a;
+  let second = b;
+  if (first.length > second.length) [first, second] = [second, first];
+  let differences = 0;
+  for (let i = 0, j = 0; i < first.length || j < second.length;) {
+    if (first[i] === second[j]) {
+      i += 1;
+      j += 1;
+      continue;
+    }
+    differences += 1;
+    if (differences > 1) return false;
+    if (first.length === second.length) {
+      i += 1;
+      j += 1;
+    } else {
+      j += 1;
+    }
+  }
+  return true;
+}
+
+function semanticTokenMatches(answerToken, targetToken) {
+  const answer = normalizeLoose(answerToken);
+  const target = normalizeLoose(targetToken);
+  if (!answer || !target) return false;
+  const answerStem = semanticStem(answer);
+  const targetStem = semanticStem(target);
+  if (answerStem === targetStem) return true;
+  if (answerStem.length >= 5 && targetStem.length >= 5
+    && (answerStem.includes(targetStem) || targetStem.includes(answerStem))) return true;
+  return answerStem.length >= 6
+    && targetStem.length >= 6
+    && answerStem[0] === targetStem[0]
+    && editDistanceAtMostOne(answerStem, targetStem);
+}
+
+function conceptsFor(term) {
   const normalized = normalizeLoose(term);
-  return semanticConceptGroups.find((group) => group.some((entry) =>
+  return semanticConceptGroups.filter((group) => group.some((entry) =>
     normalized === entry || normalized.includes(entry) || entry.includes(normalized)
   ));
 }
@@ -9427,18 +9486,15 @@ function semanticTermMatches(answerText, keyword) {
   if (!target) return false;
   if (answer.includes(target)) return true;
 
-  const concept = conceptFor(target);
-  if (concept?.some((entry) => answer.includes(entry))) return true;
+  const concepts = conceptsFor(target);
+  if (concepts.some((group) => group.some((entry) => answer.includes(entry)))) return true;
 
-  const answerStems = new Set(answer.split(" ").filter(Boolean).map(semanticStem));
+  const answerTokens = answer.split(" ").filter(Boolean);
   const targetTokens = target.split(" ").filter((token) => token.length > 2 && !semanticStopWords.has(token));
   return targetTokens.length > 0 && targetTokens.every((token) => {
-    const tokenConcept = conceptFor(token);
-    if (tokenConcept?.some((entry) => answer.includes(entry))) return true;
-    const stem = semanticStem(token);
-    return answerStems.has(stem) || [...answerStems].some((answerStem) =>
-      stem.length >= 5 && answerStem.length >= 5 && (answerStem.startsWith(stem) || stem.startsWith(answerStem))
-    );
+    const tokenConcepts = conceptsFor(token);
+    if (tokenConcepts.some((group) => group.some((entry) => answer.includes(entry)))) return true;
+    return answerTokens.some((answerToken) => semanticTokenMatches(answerToken, token));
   });
 }
 
@@ -9465,13 +9521,18 @@ function hasExplanatoryStructure(answer) {
 function evaluateTask(answer, task) {
   const { matched, missing, wordCount } = analyzeAnswer(answer, task);
   const minimumWords = task.minWords || (task.id.includes("-quick") ? 8 : 18);
+  const promptRelevance = answerPromptRelevance(answer, task);
+  const explanationRequested = /\b(warum|erkläre|begründe|wie|vergleich|zusammenhang)\b/i.test(String(task.question || task.prompt || ""));
+  const plausibleAlternative = wordCount >= Math.min(10, minimumWords)
+    && (matched.length >= 1 || promptRelevance >= 2)
+    && (!explanationRequested || hasExplanatoryStructure(answer) || wordCount >= minimumWords);
 
   if (!answer.trim()) {
     return {
       level: "low",
       title: "Noch keine auswertbare Antwort",
       body:
-        "Schreibe zuerst eine eigene Formulierung. Nutze danach die Musterantwort nur zum Abgleich, nicht als Ersatz für den Denkweg."
+        "Schreibe zuerst eine eigene Formulierung. Die Beispiellösung ist nur eine mögliche Antwort und dient freiwillig zum Vergleich."
     };
   }
 
@@ -9483,6 +9544,14 @@ function evaluateTask(answer, task) {
       level: "mid",
       title: "Ansatz erkennbar, aber noch zu knapp",
       body: `Du setzt bereits an, aber die Antwort bleibt zu kurz. ${guidance}`
+    };
+  }
+
+  if (plausibleAlternative && matched.length < Math.max(2, task.criteria.length - 1)) {
+    return {
+      level: "mid",
+      title: "Fachlich plausible Alternativantwort anerkannt",
+      body: "Deine Antwort bezieht sich erkennbar auf die Frage und erklärt einen nachvollziehbaren historischen Zusammenhang. Sie wird gleichwertig anerkannt, auch wenn sie andere Begriffe, Beispiele oder Schwerpunkte als die Beispiellösung verwendet."
     };
   }
 
@@ -9541,7 +9610,7 @@ function evaluateCheckQuestion(answer, question) {
       score: 0,
       level: "low",
       title: "Noch keine auswertbare Antwort",
-      body: `Schreibe zuerst eine kurze eigene Antwort. Beispiellösung: ${question.sampleAnswer}`
+      body: "Schreibe zuerst eine kurze eigene Antwort. Die Beispiellösung kannst du danach freiwillig als eine von mehreren möglichen Antworten ansehen."
     };
   }
 
@@ -9570,7 +9639,7 @@ function evaluateCheckQuestion(answer, question) {
       score: adjustedScore,
       level: "mid",
       title: "Im Kern richtig",
-      body: `Das reicht für diese Teilfrage schon gut. ${guidance}Beispiellösung: ${question.sampleAnswer}`
+      body: `Das reicht für diese Teilfrage schon gut. ${guidance}Andere fachlich richtige Begriffe, Beispiele und Begründungen sind gleichwertig.`
     };
   }
 
@@ -9578,7 +9647,7 @@ function evaluateCheckQuestion(answer, question) {
     score: adjustedScore,
     level: "low",
     title: "Noch nicht sicher genug",
-    body: `Es fehlt noch Wesentliches: ${missing.map((criterion) => criterion.label).join(", ")}. Beispiellösung: ${question.sampleAnswer}`
+    body: `Der Bezug zur Frage ist noch nicht deutlich genug. Prüfe mögliche Gesichtspunkte wie: ${missing.map((criterion) => criterion.label).join(", ")}. Das sind Hilfen, keine verbindlichen Formulierungen oder abschliessenden Pflichtpunkte.`
   };
 }
 
@@ -9606,7 +9675,7 @@ function evaluateSourceReasoning(answer, question) {
     title: wellExplained ? "Eigenständige historische Deutung anerkannt" : "Befund passend aufgegriffen",
     body: wellExplained
       ? "Die Antwort greift den Befund auf und erklärt einen nachvollziehbaren Zusammenhang. Andere fachlich vertretbare Ursachen, Folgen oder Deutungen werden gleichwertig anerkannt."
-      : "Der Bezug zum Befund stimmt. Begründe den Zusammenhang noch mit einem erklärenden Satz; zusätzliche Details aus der Musterlösung sind freiwillige Vertiefung."
+      : "Der Bezug zum Befund stimmt. Begründe den Zusammenhang noch mit einem erklärenden Satz; zusätzliche Details aus der Beispiellösung sind freiwillige Vertiefung."
   };
 }
 
@@ -9686,7 +9755,7 @@ function bindShortAnswerTasks(state) {
     showButton.addEventListener("click", () => {
       const result = {
         level: "mid",
-        title: "Musterantwort",
+        title: "Eine mögliche Beispiellösung",
         body: cleanPromptText(task.sampleAnswer)
       };
       feedbackBox.className = "feedback is-visible mid";
@@ -9857,7 +9926,7 @@ function bindContentChecks(state) {
       });
 
       showOneButton?.addEventListener("click", () => {
-        const result = { level: "mid", title: "Musterlösung", body: cleanPromptText(question.sampleAnswer) };
+        const result = { level: "mid", title: "Eine mögliche Beispiellösung", body: cleanPromptText(question.sampleAnswer) };
         state[`${answerId}-text`] = String(field?.value || "");
         state[`${answerId}-feedback`] = result;
         wrapper?.classList.remove("good", "low");
@@ -9971,7 +10040,7 @@ function bindSourceMicroChecks(state) {
         showButton.addEventListener("click", () => {
           const result = {
             level: "mid",
-            title: "Musterlösung",
+            title: "Eine mögliche Beispiellösung",
             body: cleanPromptText(question.sampleAnswer)
           };
           wrapper.classList.remove("good", "low");
@@ -9997,7 +10066,7 @@ function renderLearnerBanner(state) {
   if (isTeacherMode()) {
     banner.innerHTML = `
       <strong>Lehrpersonen-Inspektionsmodus</strong>
-      <span>Alle Module sind geöffnet. Musterlösungen und Sicherungskriterien stehen direkt in den Aufgabenfeldern.</span>
+      <span>Alle Module sind geöffnet. Beispiellösungen und mögliche Gesichtspunkte stehen direkt in den Aufgabenfeldern.</span>
     `;
     return;
   }
@@ -10155,7 +10224,7 @@ function bindRepetitionMemory(state) {
       state[getRepetitionStateKey(level, "memory-show-solution")] = true;
       state[getRepetitionStateKey(level, "memory-feedback")] = {
         level: "mid",
-        title: "Musterlösung eingeblendet",
+        title: "Beispiellösung eingeblendet",
         body: `${mode.memory.pairs.length} Entwicklung-Folge-Paare sind jetzt sichtbar.`
       };
       saveState(state);
@@ -10226,7 +10295,7 @@ function bindRepetitionDrag(state) {
       }, {});
       state[getRepetitionStateKey(level, "drag-feedback")] = {
         level: "mid",
-        title: "Musterlösung eingeblendet",
+        title: "Beispiellösung eingeblendet",
         body: "Die vollständige Zuordnung ist jetzt sichtbar. Vergleiche damit, welche Entwicklungen und Folgen zusammengehören."
       };
       saveState(state);
@@ -10284,7 +10353,7 @@ function bindRepetitionCloze(state) {
       state[getRepetitionStateKey(level, "cloze-show-solution")] = true;
       state[getRepetitionStateKey(level, "cloze-feedback")] = {
         level: "mid",
-        title: "Musterlösung eingeblendet",
+        title: "Beispiellösung eingeblendet",
         body: mode.cloze.sampleAnswer
       };
       saveState(state);

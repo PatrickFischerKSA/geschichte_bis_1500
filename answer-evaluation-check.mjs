@@ -26,7 +26,33 @@ const cases = [
   ["Listen und Aufzeichnungen halfen Beamten, Abgaben zu registrieren.", "verwaltung", true],
   ["Eine Währung funktioniert, weil alle ihren gemeinsamen Wert akzeptieren.", "vertrauen", true],
   ["Nomadische Gemeinschaften zogen umher und kannten Tiere und Jahreszeiten.", "mobilität", true],
-  ["Die Stadt wuchs durch Handwerk und Märkte.", "staat", false]
+  ["Getreideanbau veränderte die Versorgung dauerhaft.", "landwirtschaft", true],
+  ["Die Bodenbewirtschaftung band Menschen an einen Ort.", "ackerbau", true],
+  ["Bevölkerungsbewegungen verbreiteten Ideen über weite Räume.", "migration", true],
+  ["Die Schriftlichkeit erleichterte die Buchführung.", "aufzeichnung", true],
+  ["Eine Administration erfasste Tribute in Verzeichnissen.", "verwaltung", true],
+  ["Das Staatswesen stützte sich auf eine dauerhafte Obrigkeit.", "staat", true],
+  ["Ein Herrschaftssystem bündelte politische Kontrolle.", "macht", true],
+  ["Fernhandelsnetze verbanden weit entfernte Märkte.", "handel", true],
+  ["Kenntnisse über den Naturraum halfen beim Überleben.", "umweltwissen", true],
+  ["Die Transformation der Lebensweise war ein langfristiger Prozess.", "veränderung", true],
+  ["Viele Traditionen bestanden dennoch fort.", "kontinuität", true],
+  ["Der entscheidende Auslöser lag in einer besseren Versorgung.", "ursache", true],
+  ["Eine Konsequenz war die zunehmende Arbeitsteilung.", "folge", true],
+  ["Menschen stellten sich auf neue Lebensräume ein.", "anpassung", true],
+  ["Nahrungsmittel wurden in Speichern gesammelt.", "versorgung", true],
+  ["Gewaltsame Auseinandersetzungen erschütterten das Reich.", "konflikt", true],
+  ["Die Vernetzung schuf Beziehungen zwischen entfernten Gruppen.", "austausch", true],
+  ["Überlieferte Erfahrungen wurden mündlich weitergegeben.", "wissen", true],
+  ["Groessere Verbaende brauchten gemeinsame Regeln.", "grössere verbände", true],
+  ["Baeuerliche Gemeinschaften lebten dauerhaft in Dörfern.", "bäuerlich", true],
+  ["Die Burokratie organisierte die Abgaben.", "bürokratie", true],
+  ["Handelsbezihungen verbanden verschiedene Städte.", "handelsbeziehungen", true],
+  ["Die Sesshaftigkeiten veränderten den Alltag.", "sesshaftigkeit", true],
+  ["Die Stadt wuchs durch Handwerk und Märkte.", "staat", false],
+  ["Menschen erzählten Geschichten am Feuer.", "steuer", false],
+  ["Ein Dorf pflegte seine Felder.", "imperium", false],
+  ["Münzen lagen in einem Gefäss.", "religion", false]
 ];
 
 for (const [answer, keyword, expected] of cases) {
@@ -36,7 +62,7 @@ for (const [answer, keyword, expected] of cases) {
   }
 }
 
-console.log(`Synonymerkennung erfolgreich: ${cases.length} gezielte Fälle geprüft.`);
+console.log(`Synonymerkennung erfolgreich: ${cases.length} gezielte Fälle zu Synonymen, Flexionen, Zusammensetzungen, Schreibvarianten und Tippfehlern geprüft.`);
 
 const sourceQuestionBank = fs.readFileSync(new URL("./source-question-bank.js", import.meta.url), "utf8");
 const browserWindow = { addEventListener() {}, location: { search: "", pathname: "/" } };
@@ -70,11 +96,11 @@ for (const module of audit.modules) {
   }
 }
 
-const rejectedModels = assessed.filter((item) => item.result.score !== undefined
+const rejectedExamples = assessed.filter((item) => item.result.score !== undefined
   ? item.result.score < 60
   : item.result.level === "low");
-if (rejectedModels.length) {
-  throw new Error(`Musterlösungen werden vom eigenen Erwartungshorizont abgewiesen: ${JSON.stringify(rejectedModels.slice(0, 5))}`);
+if (rejectedExamples.length) {
+  throw new Error(`Beispiellösungen werden von der eigenen Prüfung abgewiesen: ${JSON.stringify(rejectedExamples.slice(0, 5))}`);
 }
 
 const alternativeQuestion = {
@@ -89,4 +115,15 @@ if (alternativeResult.score < 60 || !alternativeResult.title.includes("Alternati
   throw new Error("Eine fachlich plausible Alternativantwort wird weiterhin wegen eines sachfremden Kriteriums blockiert.");
 }
 
-console.log(`Erwartungshorizonte erfolgreich: ${assessed.length} offene Fragen einzeln mit ihrer Musterlösung geprüft; fachlich plausible Alternativantworten blockieren den Lernfortschritt nicht.`);
+const alternativeTask = {
+  id: "alternative-quick",
+  question: "Warum wuchsen mittelalterliche Städte? Erkläre einen fachlich passenden Zusammenhang.",
+  placeholder: "Begründe deine Antwort.",
+  criteria: [{ label: "nicht verlangtes Königtum", keywords: ["könig", "krone"] }]
+};
+const alternativeTaskResult = audit.evaluateTask(alternativeAnswer, alternativeTask);
+if (alternativeTaskResult.level === "low" || !alternativeTaskResult.title.includes("Alternativantwort")) {
+  throw new Error("Eine plausible Antwort auf Haupt- oder Transferfragen wird weiterhin an einer absoluten Beispiellösung gemessen.");
+}
+
+console.log(`Flexible Bewertung erfolgreich: ${assessed.length} offene Fragen mit ihren Beispiellösungen geprüft; fachlich plausible Alternativantworten blockieren den Lernfortschritt nicht.`);

@@ -79,8 +79,8 @@ for (const perspective of ["Allgemeine Merkmale", "Veränderungen", "Entwicklung
 assert((app.match(/questionKey:/g) || []).length === 13,
   "Nicht alle 13 Module besitzen einen Schlüssel für die Schlussfragen.");
 assert(app.includes("data-content-check-one") && app.includes("data-content-show-one"),
-  "Bei den eingebetteten Prüffragen fehlen Antwortprüfung oder Musterlösung.");
-assert(app.includes('title: "Musterlösung"') && app.includes("evaluateCheckQuestion(answerText, question)"),
+  "Bei den eingebetteten Prüffragen fehlen Antwortprüfung oder Beispiellösung.");
+assert(app.includes('title: "Eine mögliche Beispiellösung"') && app.includes("evaluateCheckQuestion(answerText, question)"),
   "Die individuelle Prüfung der eingebetteten Fragen ist nicht vollständig verdrahtet.");
 assert(app.includes("semanticConceptGroups") && app.includes("semanticTermMatches"),
   "Die Freitextprüfung braucht eine Synonym- und Flexionserkennung.");
@@ -89,7 +89,7 @@ assert(app.includes("renderAssessmentContract") && (app.match(/renderAssessmentC
 assert(app.includes("Fachlich plausible Alternativantwort anerkannt") && app.includes("repairStoredContentScores"),
   "Fachlich plausible Alternativantworten oder die rückwirkende faire Neubewertung fehlen.");
 assert(app.includes('evaluationMode: "source-reasoning"') && app.includes("evaluateSourceReasoning"),
-  "Quellenfragen dürfen keine ganzen Musterlösungssätze als versteckte Pflichtkriterien bewerten.");
+  "Quellenfragen dürfen keine ganzen Beispiellösungssätze als versteckte Pflichtkriterien bewerten.");
 assert(app.includes("buildProgressiveHints") && app.includes("bindProgressiveHint"),
   "Die progressiven Lösungshinweise fehlen.");
 for (const hintHook of ["data-hint=", "data-content-hint-one=", "data-source-hint="]) {
