@@ -1,3 +1,5 @@
+import { MODEL_ANSWER_DOCUMENTS } from "./model-answer-documents.js";
+
 const COURSE_ID = "geschichte_bis_1500";
 const SESSION_DAYS = 30;
 const PBKDF2_ITERATIONS = 100000;
@@ -79,14 +81,19 @@ async function modelAnswerDocument(request, env, url) {
     return json({ error: `Das Lösungsheft wird am ${release[0]} freigeschaltet.` }, 403);
   }
 
-  const assetUrl = new URL(`/assets/modellantworten/${release[1]}`, request.url);
-  const asset = await env.ASSETS.fetch(new Request(assetUrl, { method: "GET" }));
-  if (!asset.ok) return json({ error: "Das Lösungsheft ist vorübergehend nicht verfügbar." }, 503);
-  const headers = new Headers(asset.headers);
-  headers.set("content-type", "application/pdf");
-  headers.set("content-disposition", `inline; filename="${release[1]}"`);
-  headers.set("cache-control", "private, no-store");
-  return withSecurityHeaders(new Response(asset.body, { status: 200, headers }));
+  const encodedDocument = MODEL_ANSWER_DOCUMENTS[moduleNumber];
+  if (!encodedDocument) return json({ error: "Das Lösungsheft ist vorübergehend nicht verfügbar." }, 503);
+  const binary = atob(encodedDocument);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+  return withSecurityHeaders(new Response(bytes, {
+    status: 200,
+    headers: {
+      "content-type": "application/pdf",
+      "content-disposition": `inline; filename="${release[1]}"`,
+      "cache-control": "private, no-store"
+    }
+  }));
 }
 
 async function registerStudent(request, env) {

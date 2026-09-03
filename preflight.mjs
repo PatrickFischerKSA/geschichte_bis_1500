@@ -28,6 +28,7 @@ const publicSources = [
 const app = read("app.js");
 const sourceQuestionBank = read("source-question-bank.js");
 const viewer = `${read("harari-viewer.html")}\n${read("harari-viewer.js")}`;
+const modelAnswerDocuments = read("worker/model-answer-documents.js");
 
 const iterationMatch = worker.match(/const PBKDF2_ITERATIONS = (\d+);/);
 const iterations = Number(iterationMatch?.[1]);
@@ -97,6 +98,8 @@ assert((app.match(/\["modul-[^"]+", "2026-/g) || []).length === 13,
   "Der Freigabeplan muss genau 13 Module enthalten.");
 assert(worker.includes("/api/materials/model-answers/") && worker.includes("/assets/modellantworten/") && worker.includes("private, no-store"),
   "Die Lösungshefte müssen serverseitig geschützt und termingesteuert ausgeliefert werden.");
+assert(worker.includes("MODEL_ANSWER_DOCUMENTS") && build.includes('!source.includes("assets/modellantworten")') && build.includes('cpSync("worker/model-answer-documents.js"'),
+  "Die PDF-Dateien dürfen nicht als direkt abrufbare öffentliche Dateien ausgeliefert werden.");
 assert(cloud.includes("downloadModelAnswers") && app.includes("bindModelAnswerDownloads"),
   "Die authentifizierte PDF-Downloadfunktion ist nicht vollständig verdrahtet.");
 releaseDates.forEach((releaseDate, index) => {
@@ -104,6 +107,7 @@ releaseDates.forEach((releaseDate, index) => {
   const file = `assets/modellantworten/Modul_${number}_Modellantworten_mit_Quellenbelegen.pdf`;
   assert(app.includes(releaseDate) && worker.includes(releaseDate), `Freigabetermin ${releaseDate} fehlt.`);
   assert(statSync(file).size > 50000, `Lösungsheft für Modul ${index + 1} fehlt oder ist unvollständig.`);
+  assert(modelAnswerDocuments.includes(`${index + 1}: "`), `Das geschützte Serverdokument für Modul ${index + 1} fehlt.`);
 });
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
