@@ -8726,6 +8726,58 @@ function renderCompletionPanel(state) {
   `;
 }
 
+const modelAnswerReleasePlan = [
+  ["modul-1", "2026-08-31"],
+  ["modul-2", "2026-09-07"],
+  ["modul-3", "2026-09-14"],
+  ["modul-4", "2026-09-21"],
+  ["modul-5", "2026-09-28"],
+  ["modul-6", "2026-10-05"],
+  ["modul-7-kelten", "2026-10-12"],
+  ["modul-7", "2026-10-19"],
+  ["modul-8", "2026-10-26"],
+  ["modul-9", "2026-11-02"],
+  ["modul-10", "2026-11-09"],
+  ["modul-11", "2026-11-16"],
+  ["modul-12", "2026-11-23"]
+];
+
+function getZurichCalendarDate() {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Europe/Zurich", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function formatModelAnswerReleaseDate(value) {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Intl.DateTimeFormat("de-CH", { dateStyle: "long", timeZone: "Europe/Zurich" })
+    .format(new Date(Date.UTC(year, month - 1, day, 12)));
+}
+
+function renderModelAnswerRelease(module) {
+  const planIndex = modelAnswerReleasePlan.findIndex(([moduleId]) => moduleId === module.id);
+  const entry = modelAnswerReleasePlan[planIndex];
+  if (!entry) return "";
+  const available = getZurichCalendarDate() >= entry[1];
+  const formattedDate = formatModelAnswerReleaseDate(entry[1]);
+  return `
+    <section class="model-answer-release ${available ? "is-available" : "is-locked"}">
+      <div>
+        <p class="section-kicker">Modellantworten · Modul ${planIndex + 1}</p>
+        <h3>${available ? "Lösungsheft freigeschaltet" : "Lösungsheft noch gesperrt"}</h3>
+        <p>${available
+          ? `Seit dem ${formattedDate} verfügbar. Das PDF enthält ausführliche Modellantworten, Erklärungen und Quellenbelege zu sämtlichen Fragen dieses Moduls.`
+          : `Wird am ${formattedDate} freigeschaltet. Vorher kann das PDF auch über einen direkten Dateilink nicht geöffnet werden.`}</p>
+      </div>
+      ${available
+        ? `<button class="btn primary" type="button" data-download-model-answers="${planIndex + 1}">Modellantworten als PDF öffnen</button>`
+        : `<span class="model-answer-release-date" aria-label="Noch nicht verfügbar">Verfügbar ab ${formattedDate}</span>`}
+      <p class="teacher-gate-feedback" data-model-answer-feedback="${planIndex + 1}" aria-live="polite"></p>
+    </section>`;
+}
+
 function renderModules(state) {
   const list = document.getElementById("module-list");
   list.innerHTML = "";
@@ -8847,6 +8899,7 @@ function renderModules(state) {
           ${renderContentCheck(module, state)}
         </section>
       </div>
+      ${renderModelAnswerRelease(module)}
       <section class="module-answer-export">
         <div>
           <p class="section-kicker">Modulabschluss</p>
@@ -8945,6 +8998,27 @@ function bindModuleAnswerExports(state) {
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       if (feedback) feedback.textContent = "Export erstellt. Die Datei befindet sich in deinem Download-Ordner.";
+    });
+  });
+}
+
+function bindModelAnswerDownloads() {
+  document.querySelectorAll("[data-download-model-answers]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const moduleNumber = Number(button.dataset.downloadModelAnswers);
+      const feedback = document.querySelector(`[data-model-answer-feedback="${moduleNumber}"]`);
+      const cloudApi = window.GESCHICHTE_FIREBASE;
+      button.disabled = true;
+      if (feedback) feedback.textContent = "Lösungsheft wird sicher geladen …";
+      try {
+        if (!cloudApi?.downloadModelAnswers) throw new Error("Die Download-Funktion ist noch nicht bereit. Bitte lade die Seite neu.");
+        await cloudApi.downloadModelAnswers(moduleNumber);
+        if (feedback) feedback.textContent = "Lösungsheft geöffnet.";
+      } catch (error) {
+        if (feedback) feedback.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
     });
   });
 }
@@ -10160,6 +10234,7 @@ function renderApp(state) {
   bindContentChecks(state);
   bindSourceMicroChecks(state);
   bindModuleAnswerExports(state);
+  bindModelAnswerDownloads();
   bindTeacherQuestionButtons();
   bindRepetitionMode(state);
   bindWelcomeOverlay(state);

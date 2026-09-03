@@ -403,6 +403,30 @@
     await refreshTeacherDashboardFromCloud();
   }
 
+  async function downloadModelAnswers(moduleNumber) {
+    const authToken = token();
+    if (!authToken) throw new Error("Bitte melde dich zuerst an.");
+    const response = await fetch(`/api/materials/model-answers/${Number(moduleNumber)}`, {
+      headers: { authorization: `Bearer ${authToken}` }
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data.error || "Das Lösungsheft konnte nicht geöffnet werden.");
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const popup = window.open(url, "_blank", "noopener,noreferrer");
+    if (!popup) {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `Modul_${String(moduleNumber).padStart(2, "0")}_Modellantworten.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+    window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+  }
+
   function getStatus() {
     return { configured: true, loggedIn: Boolean(token()), teacherRole: isTeacherPage() && Boolean(token()) };
   }
@@ -419,6 +443,7 @@
     getTeacherActivities,
     manageStudentAccount,
     answerTeacherQuestion,
+    downloadModelAnswers,
     loadTeacherQuestions: refreshTeacherDashboardFromCloud
   };
 

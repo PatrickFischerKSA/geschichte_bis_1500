@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 
 function read(path) {
   return readFileSync(path, "utf8");
@@ -92,6 +92,19 @@ assert(sourceQuestionBank.includes("GESCHICHTE_SOURCE_QUESTION_BANK") && build.i
   "Der feste Katalog individueller Quellenfragen fehlt im Produktions-Build.");
 assert(worker.includes("confirmation.state_json") && worker.includes("confirmation.snapshot_json") && cloud.includes("result.verified !== true"),
   "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
+const releaseDates = ["2026-08-31", "2026-09-07", "2026-09-14", "2026-09-21", "2026-09-28", "2026-10-05", "2026-10-12", "2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09", "2026-11-16", "2026-11-23"];
+assert((app.match(/\["modul-[^"]+", "2026-/g) || []).length === 13,
+  "Der Freigabeplan muss genau 13 Module enthalten.");
+assert(worker.includes("/api/materials/model-answers/") && worker.includes("/assets/modellantworten/") && worker.includes("private, no-store"),
+  "Die Lösungshefte müssen serverseitig geschützt und termingesteuert ausgeliefert werden.");
+assert(cloud.includes("downloadModelAnswers") && app.includes("bindModelAnswerDownloads"),
+  "Die authentifizierte PDF-Downloadfunktion ist nicht vollständig verdrahtet.");
+releaseDates.forEach((releaseDate, index) => {
+  const number = String(index + 1).padStart(2, "0");
+  const file = `assets/modellantworten/Modul_${number}_Modellantworten_mit_Quellenbelegen.pdf`;
+  assert(app.includes(releaseDate) && worker.includes(releaseDate), `Freigabetermin ${releaseDate} fehlt.`);
+  assert(statSync(file).size > 50000, `Lösungsheft für Modul ${index + 1} fehlt oder ist unvollständig.`);
+});
 
 for (const forbidden of ["127.0.0.1", "localhost", "file:", "/Users/", "assets/local/"]) {
   assert(!publicSources.includes(forbidden), `Öffentliche Dateien enthalten einen lokalen Verweis (${forbidden}).`);

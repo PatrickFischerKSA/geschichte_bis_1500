@@ -2399,6 +2399,45 @@ p {
   background: rgba(239, 248, 245, 0.86);
 }
 
+.model-answer-release {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px 20px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid rgba(167, 88, 38, 0.28);
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, rgba(255, 248, 224, 0.96), rgba(255, 253, 249, 0.96));
+}
+
+.model-answer-release.is-available {
+  border-color: rgba(31, 109, 102, 0.38);
+  background: linear-gradient(145deg, rgba(232, 247, 241, 0.98), rgba(255, 253, 249, 0.98));
+}
+
+.model-answer-release h3,
+.model-answer-release p {
+  margin-top: 0;
+}
+
+.model-answer-release-date {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid rgba(30, 44, 52, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.model-answer-release .teacher-gate-feedback {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
 .compact-summary-section {
   border: 2px solid rgba(31, 109, 102, 0.3);
   background: linear-gradient(145deg, rgba(239, 248, 245, 0.98), rgba(255, 253, 249, 0.98));
@@ -2452,6 +2491,7 @@ p {
 
 @media (max-width: 720px) {
   .module-answer-export,
+  .model-answer-release,
   .compact-learning-grid {
     grid-template-columns: 1fr;
   }

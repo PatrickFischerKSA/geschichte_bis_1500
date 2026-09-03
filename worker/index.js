@@ -8,6 +8,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/api/")) return handleApi(request, env, url);
+    if (url.pathname.startsWith("/assets/modellantworten/")) {
+      return json({ error: "Dieses Dokument ist nur nach der Anmeldung und ab dem Freigabetermin verfügbar." }, 403);
+    }
     const response = await env.ASSETS.fetch(request);
     if (response.status !== 404) return withSecurityHeaders(response);
     return response;
@@ -22,6 +25,9 @@ async function handleApi(request, env, url) {
     if (url.pathname === "/api/student/me" && request.method === "GET") return studentMe(request, env);
     if (url.pathname === "/api/student/progress") return studentProgress(request, env);
     if (url.pathname === "/api/student/questions") return studentQuestions(request, env);
+    if (url.pathname.startsWith("/api/materials/model-answers/") && request.method === "GET") {
+      return modelAnswerDocument(request, env, url);
+    }
     if (url.pathname === "/api/teacher/login" && request.method === "POST") return teacherLogin(request, env);
     if (url.pathname === "/api/teacher/dashboard" && request.method === "GET") return teacherDashboard(request, env);
     if (url.pathname.startsWith("/api/teacher/students/") && request.method === "PATCH") {
@@ -35,6 +41,52 @@ async function handleApi(request, env, url) {
     console.error(error);
     return json({ error: "Die Anfrage konnte nicht verarbeitet werden." }, 500);
   }
+}
+
+const MODEL_ANSWER_RELEASES = [
+  ["2026-08-31", "Modul_01_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-09-07", "Modul_02_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-09-14", "Modul_03_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-09-21", "Modul_04_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-09-28", "Modul_05_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-10-05", "Modul_06_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-10-12", "Modul_07_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-10-19", "Modul_08_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-10-26", "Modul_09_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-11-02", "Modul_10_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-11-09", "Modul_11_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-11-16", "Modul_12_Modellantworten_mit_Quellenbelegen.pdf"],
+  ["2026-11-23", "Modul_13_Modellantworten_mit_Quellenbelegen.pdf"]
+];
+
+function zurichCalendarDate() {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Europe/Zurich", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+async function modelAnswerDocument(request, env, url) {
+  const moduleNumber = Number(url.pathname.slice("/api/materials/model-answers/".length));
+  const release = MODEL_ANSWER_RELEASES[moduleNumber - 1];
+  if (!release || !Number.isInteger(moduleNumber)) return json({ error: "Lösungsheft nicht gefunden." }, 404);
+
+  const studentSession = await requireSession(request, env.DB, "student");
+  const teacherSession = studentSession ? null : await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
+  if (!studentSession && !teacherSession) return json({ error: "Bitte melde dich zuerst an." }, 401);
+  if (zurichCalendarDate() < release[0]) {
+    return json({ error: `Das Lösungsheft wird am ${release[0]} freigeschaltet.` }, 403);
+  }
+
+  const assetUrl = new URL(`/assets/modellantworten/${release[1]}`, request.url);
+  const asset = await env.ASSETS.fetch(new Request(assetUrl, { method: "GET" }));
+  if (!asset.ok) return json({ error: "Das Lösungsheft ist vorübergehend nicht verfügbar." }, 503);
+  const headers = new Headers(asset.headers);
+  headers.set("content-type", "application/pdf");
+  headers.set("content-disposition", `inline; filename="${release[1]}"`);
+  headers.set("cache-control", "private, no-store");
+  return withSecurityHeaders(new Response(asset.body, { status: 200, headers }));
 }
 
 async function registerStudent(request, env) {
