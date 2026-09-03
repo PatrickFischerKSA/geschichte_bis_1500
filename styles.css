@@ -2443,6 +2443,25 @@ p {
   background: linear-gradient(145deg, rgba(239, 248, 245, 0.98), rgba(255, 253, 249, 0.98));
 }
 
+.assessment-contract {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 4px solid var(--teal);
+  border-radius: 0 12px 12px 0;
+  background: rgba(239, 248, 245, 0.9);
+  color: var(--text);
+}
+
+.assessment-contract p {
+  margin: 0;
+}
+
+.assessment-contract p + p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.94em;
+}
+
 .compact-learning-core {
   display: grid;
   gap: 14px;

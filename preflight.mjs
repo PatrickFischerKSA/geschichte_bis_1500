@@ -84,6 +84,12 @@ assert(app.includes('title: "Musterlösung"') && app.includes("evaluateCheckQues
   "Die individuelle Prüfung der eingebetteten Fragen ist nicht vollständig verdrahtet.");
 assert(app.includes("semanticConceptGroups") && app.includes("semanticTermMatches"),
   "Die Freitextprüfung braucht eine Synonym- und Flexionserkennung.");
+assert(app.includes("renderAssessmentContract") && (app.match(/renderAssessmentContract\(/g) || []).length >= 4,
+  "Die Bewertungskriterien müssen bei sämtlichen offenen Fragetypen vor der Eingabe sichtbar sein.");
+assert(app.includes("Fachlich plausible Alternativantwort anerkannt") && app.includes("repairStoredContentScores"),
+  "Fachlich plausible Alternativantworten oder die rückwirkende faire Neubewertung fehlen.");
+assert(app.includes('evaluationMode: "source-reasoning"') && app.includes("evaluateSourceReasoning"),
+  "Quellenfragen dürfen keine ganzen Musterlösungssätze als versteckte Pflichtkriterien bewerten.");
 assert(app.includes("buildProgressiveHints") && app.includes("bindProgressiveHint"),
   "Die progressiven Lösungshinweise fehlen.");
 for (const hintHook of ["data-hint=", "data-content-hint-one=", "data-source-hint="]) {

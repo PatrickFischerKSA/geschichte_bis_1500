@@ -3015,21 +3015,21 @@ const contentChecks = {
         prompt: "Warum beginnt Geschichte nicht schon mit Urknall, Eiszeiten oder Dinosauriern, sondern erst dort, wo Menschen mit Sprache, Regeln und gemeinsamen Vorstellungen ihre Welt ordnen?",
         placeholder: "Erkläre, was Kultur und bewusste Weltgestaltung daran verändern.",
         sampleAnswer:
-          "Die Unterscheidung verändert den Kurs, weil dann nicht bloss Daten oder Ereignisse im Mittelpunkt stehen. Wichtiger werden Sprache, Sesshaftigkeit, Schrift, Herrschaft, Geld und Religion als grosse Entwicklungslinien menschlicher Geschichte.",
+          "Urknall, Eiszeiten und Dinosaurier gehören zur Naturgeschichte, weil sie ohne menschliches Handeln ablaufen. Geschichte im engeren Sinn beginnt dort, wo Menschen ihre Welt bewusst kulturell gestalten: Sie sprechen, lernen Regeln und teilen gemeinsame Vorstellungen. Entscheidend ist somit der Übergang von Naturprozessen zu menschlichem Handeln und kultureller Ordnung.",
         criteria: [
-          { label: "Schwelle zur Geschichte erklärt", keywords: ["sprache", "regeln", "vorstellungen", "kultur", "bewusst"] },
-          { label: "grosse Linien genannt", keywords: ["sprache", "sesshaftigkeit", "schrift", "herrschaft", "geld", "religion"] }
+          { label: "Naturprozesse von menschlichem Handeln unterschieden", keywords: ["naturgeschichte", "naturprozess", "ohne mensch", "urknall", "eiszeit", "dinosaurier"] },
+          { label: "kulturelle Weltgestaltung durch Sprache, Regeln oder Vorstellungen erklärt", keywords: ["sprache", "regeln", "vorstellungen", "kultur", "bewusst"] }
         ]
       },
       {
         prompt: "Erkläre in 4 bis 6 Sätzen, warum Feuer, Landwirtschaft, Metallverarbeitung und Industrie zusammen als lange Geschichte menschlicher Eingriffe in Boden, Wasser, Luft und Lebensräume verstanden werden können.",
         placeholder: "Verbinde technische Entwicklung mit ihren langfristigen Folgen.",
         sampleAnswer:
-          "Die Struktur ist für Modul 1 wichtig, weil sie Geschichte sofort als Langzeitprozess zeigt. Zuerst wird deutlich, dass Fortschritt Vorteile bringt, aber auch Schäden erzeugt. Dann stellt die Seite die Frage nach einem neuen Erdzeitalter des Menschen. Am Schluss wird sichtbar, dass Menschen auch auf ihre eigenen Folgen reagieren. So beginnt der Kurs nicht mit Einzelereignissen, sondern mit einer langen Geschichte menschlicher Eingriffe.",
+          "Feuer veränderte bereits früh Pflanzenwelt, Nahrung und menschliche Lebensräume. Landwirtschaft griff danach stärker und dauerhaft in Böden, Wasserhaushalt und Landschaften ein. Metallverarbeitung benötigte Rohstoffe und viel Energie, während die Industrie diese Eingriffe nochmals stark vergrösserte und zusätzlich die Luft belastete. Die Beispiele bilden deshalb eine lange Entwicklung, in der menschliche Technik immer tiefere und räumlich weiter reichende Umweltfolgen hervorbrachte.",
         criteria: [
-          { label: "Kosten des Fortschritts", keywords: ["fortschritt", "kosten", "schaden", "folgen"] },
-          { label: "neues Erdzeitalter", keywords: ["erdzeitalter", "anthropozan", "geologisch"] },
-          { label: "Lösungen", keywords: ["losungen", "gegenmassnahmen", "reagieren", "renaturierung", "schutz"] }
+          { label: "Feuer, Landwirtschaft, Metall und Industrie als zeitliche Entwicklung verbunden", keywords: ["feuer", "landwirtschaft", "metall", "industrie"] },
+          { label: "Eingriffe in Boden, Wasser, Luft oder Lebensräume erklärt", keywords: ["boden", "wasser", "luft", "lebensraum", "landschaft"] },
+          { label: "zunehmende oder langfristige Folgen erläutert", keywords: ["lang", "zunehmend", "tiefer", "vergrössert", "folgen"] }
         ]
       }
     ]
@@ -3222,7 +3222,7 @@ const contentChecks = {
         prompt: "Warum ist Landwirtschaft zugleich Fortschritt und Belastung?",
         placeholder: "Schreibe ein ausgewogenes Urteil.",
         sampleAnswer:
-          "Landwirtschaft brachte Vorräte, Bevölkerungswachstum und feste Siedlungen. Gleichzeitig wurden Menschen abhängiger von Ernten, arbeiteten härter und entwickelten neue soziale Unterschiede.",
+          "Landwirtschaft brachte Vorräte, Bevölkerungswachstum und feste Siedlungen. Gleichzeitig wurden Menschen abhängiger von Ernten, arbeiteten härter und entwickelten neue soziale Unterschiede. Sie ist deshalb weder nur Fortschritt noch nur Belastung, sondern muss anhand beider Seiten beurteilt werden.",
         criteria: [
           { label: "Vorteile genannt", keywords: ["vorrate", "siedlungen", "bevolkerungswachstum", "hauser"] },
           { label: "Belastungen genannt", keywords: ["abhangig", "harter", "arbeit", "ernte", "risiko"] },
@@ -3266,7 +3266,7 @@ const contentChecks = {
         prompt: "Warum beginnt die Neolithisierung im Fruchtbaren Halbmond nicht als fertiges System, sondern als längerer Übergang?",
         placeholder: "Arbeite mit Klimawechsel, Pflanzen, Tieren und schrittweisen Veränderungen.",
         sampleAnswer:
-          "Die Neolithisierung beginnt nicht als fertiges System, weil Menschen nach der Eiszeit erst schrittweise mit Pflanzenmanagement, Tierhaltung und festen Siedlungsformen experimentieren. Klima, Nahrungssuche und neue Techniken greifen langsam ineinander, bevor daraus dauerhafter Ackerbau entsteht.",
+          "Im Fruchtbaren Halbmond beginnt die Neolithisierung nicht als fertiges System, weil Menschen nach der Eiszeit erst schrittweise mit Pflanzenmanagement, Tierhaltung und festen Siedlungsformen experimentieren. Klima, Nahrungssuche und neue Techniken greifen langsam ineinander, bevor daraus dauerhafter Ackerbau entsteht.",
         criteria: [
           { label: "Fruchtbarer Halbmond", keywords: ["fruchtbarer halbmond", "vorderasien"] },
           { label: "schrittweiser Übergang", keywords: ["schrittweise", "langsam", "übergang", "prozess"] },
@@ -3277,7 +3277,7 @@ const contentChecks = {
         prompt: "Warum ist die Ausbreitung von Landwirtschaft nach Europa keine einzige Welle, sondern eine Folge verschiedener Wege?",
         placeholder: "Verbinde Balkan, Donau, Mittelmeer, Alpenraum, Migration und Übernahme.",
         sampleAnswer:
-          "Die Ausbreitung verläuft über verschiedene Räume wie Balkan, Donau, Mittelmeer und Alpenraum. In manchen Regionen wandern Gruppen ein, anderswo werden Techniken übernommen oder gemischt. Deshalb ist Neolithisierung in Europa ein regional unterschiedlicher Prozess und kein einziger gleichförmiger Zug.",
+          "Die Ausbreitung verläuft über verschiedene Räume wie Balkan, Donau, Mittelmeer und Alpenraum. In manchen Regionen geschieht sie durch Migration landwirtschaftlicher Gruppen, anderswo durch die Übernahme einzelner Techniken oder ihre Verbindung mit bestehenden Lebensweisen. Deshalb ist Neolithisierung in Europa ein regional unterschiedlicher Prozess und kein einziger gleichförmiger Zug.",
         criteria: [
           { label: "mehrere Wege", keywords: ["balkan", "donau", "mittelmeer", "alpen"] },
           { label: "Migration oder Übernahme", keywords: ["migration", "übernahme", "mischung"] },
@@ -3387,7 +3387,7 @@ const contentChecks = {
         prompt: "Warum bezeichnet der Name Kelten keinen einzelnen Staat, sondern einen grösseren Kulturraum?",
         placeholder: "Arbeite mit vielen Gruppen, Hallstatt, La Tène oder gemeinsamer materieller Kultur.",
         sampleAnswer:
-          "Der Name Kelten bezeichnet keinen einzelnen Staat, weil damit viele Gruppen in verschiedenen Regionen Europas gemeint sind. Zusammengehalten werden sie eher durch ähnliche materielle Kultur, Kunstformen, Waffen, Schmuck und religiöse Praktiken als durch einen einheitlichen König oder ein gemeinsames Reich.",
+          "Der Name Kelten bezeichnet keinen einzelnen Staat, weil damit viele Gruppen in verschiedenen Regionen Europas gemeint sind. Archäologische Funde der Hallstatt- und La-Tène-Kultur zeigen gemeinsame Merkmale bei Kunstformen, Waffen, Schmuck und religiösen Praktiken. Der Zusammenhang beruht deshalb auf einem grösseren Kulturraum und nicht auf einem einheitlichen König oder gemeinsamen Reich.",
         criteria: [
           { label: "kein einzelner Staat", keywords: ["kein staat", "kein reich", "viele gruppen", "mehrere gruppen"] },
           { label: "Hallstatt oder La Tène", keywords: ["hallstatt", "la tène", "la tene"] },
@@ -4685,7 +4685,7 @@ const expandedHarariChecks = {
       prompt: "Warum funktionieren kleine Gruppen anders als grosse Gesellschaften? Arbeite mit persönlicher Nähe, Klatsch und gemeinsamen Geschichten.",
       placeholder: "Verbinde kleine Gruppen, Klatsch und Mythen.",
       sampleAnswer:
-        "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Grösse tragen. Grosse Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
+        "S. 38 zeigt, dass kleine Gruppen auf Nähe und direkte Beziehungen angewiesen sind. Klatsch und soziale Informationen helfen dort, das Verhalten bekannter Personen einzuschätzen. S. 39 erklärt, dass solche Formen nur bis zu einer bestimmten Grösse tragen. Grosse Gesellschaften brauchen deshalb gemeinsame Geschichten, Regeln und Symbole, damit auch Fremde zusammenarbeiten können.",
       criteria: [
         { label: "kleine Gruppen beruhen auf Nähe", keywords: ["nähe", "kleine gruppen", "direkte beziehungen", "intim"] },
         { label: "Klatsch oder soziale Informationen", keywords: ["klatsch", "soziale informationen", "vertrauen"] },
@@ -4698,7 +4698,7 @@ const expandedHarariChecks = {
       prompt: "Warum brachte Landwirtschaft nicht nur Erträge, sondern führte Menschen auch in neue Arbeit und Abhängigkeit hinein?",
       placeholder: "Arbeite mit Feldarbeit, Körper und Luxusfalle.",
       sampleAnswer:
-        "S. 104 zeigt die harte Feldarbeit mit Unkrautjäten, Bewässerung und Schutz der Ernte. S. 107 erklärt, dass die neue Lebensweise nicht plötzlich beschlossen wurde, sondern sich Schritt für Schritt als Luxusfalle verfestigte. Landwirtschaft brachte also mehr Nahrung, aber auch mehr Mühe und stärkere Bindung an Felder und Ernten.",
+        "S. 104 zeigt die harte Feldarbeit mit Unkrautjäten, Bewässerung und Schutz der Ernte, die Rücken, Gelenke und den übrigen Körper belastete. S. 107 erklärt, dass die neue Lebensweise nicht plötzlich beschlossen wurde, sondern sich Schritt für Schritt als Luxusfalle verfestigte. Landwirtschaft brachte also mehr Nahrung, aber auch mehr Mühe und stärkere Bindung an Felder und Ernten.",
       criteria: [
         { label: "harte Feldarbeit", keywords: ["harte arbeit", "feldarbeit", "bewässerung", "unkraut"] },
         { label: "menschlicher Körper", keywords: ["körper", "nicht gebaut", "jagen", "sammeln"] },
@@ -7603,14 +7603,36 @@ function buildSourceMicroChecks(module, source, detail, heading) {
   const sourceId = `${module.id}-${normalize(heading || source.title)}`;
   const fixedQuestions = window.GESCHICHTE_SOURCE_QUESTION_BANK?.[sourceId];
   return Array.isArray(fixedQuestions)
-    ? fixedQuestions.map((question) => ({
+    ? fixedQuestions.map((question, questionIndex) => ({
         ...question,
-        criteria: question.criteria.map((criterion) => ({
-          ...criterion,
-          keywords: [...criterion.keywords]
-        }))
+        evaluationMode: "source-reasoning",
+        criteria: questionIndex === 0
+          ? [
+              { label: "Befund sachlich in eigenen Worten erklärt", keywords: [] },
+              { label: "zwei konkrete, zum Befund passende Zusammenhänge hergestellt", keywords: [] }
+            ]
+          : questionIndex === 1
+            ? [
+                { label: "Befund historisch eingeordnet", keywords: [] },
+                { label: "eine passende Ursache oder Voraussetzung erklärt", keywords: [] },
+                { label: "eine passende Folge oder Veränderung erklärt", keywords: [] }
+              ]
+            : [
+                { label: "eine Entwicklung oder Kontinuität benannt", keywords: [] },
+                { label: "Aussage nachvollziehbar am Befund begründet", keywords: [] }
+              ]
       }))
     : [];
+}
+
+function renderAssessmentContract(item) {
+  const criteria = Array.isArray(item?.criteria) ? item.criteria : [];
+  if (!criteria.length) return "";
+  return `
+    <div class="assessment-contract">
+      <p><strong>Für die Bewertung zählt ausschliesslich:</strong> ${criteria.map((criterion) => cleanPromptText(criterion.label)).join("; ")}.</p>
+      <p>Fachlich gleichwertige Begriffe, Synonyme und anders aufgebaute, begründete Antworten werden ebenfalls anerkannt.</p>
+    </div>`;
 }
 
 function auditAllSourceQuestions() {
@@ -7654,6 +7676,7 @@ function renderSourceMicroCheck(question) {
   return `
     <div class="check-question source-micro-check" data-source-question="${question.id}">
       <p>${cleanPromptText(question.prompt)}</p>
+      ${renderAssessmentContract(question)}
       <textarea data-source-answer="${question.id}" placeholder="${question.placeholder}"></textarea>
       <div class="task-actions">
         <button class="btn primary" type="button" data-save-field="${question.id}" data-save-kind="source">In Cloud speichern</button>
@@ -7802,10 +7825,27 @@ function persistLearnerSnapshot(state) {
 
 function loadState() {
   try {
-    return migrateRepetitionState(JSON.parse(localStorage.getItem(getStorageKey()) || "{}"));
+    return repairStoredContentScores(migrateRepetitionState(JSON.parse(localStorage.getItem(getStorageKey()) || "{}")));
   } catch {
     return {};
   }
+}
+
+function repairStoredContentScores(state) {
+  modules.forEach((module) => {
+    const check = contentChecks[module.id];
+    const answered = check.questions.map((question, questionIndex) => {
+      const answer = String(state[`${module.id}-content-question-${questionIndex}-text`] || "").trim();
+      return answer ? evaluateCheckQuestion(answer, question).score : null;
+    });
+    const availableScores = answered.filter((score) => score !== null);
+    if (!availableScores.length) return;
+    const recalculated = Math.round(answered.reduce((sum, score) => sum + (score || 0), 0) / answered.length);
+    const key = `${module.id}-content-score`;
+    state[key] = Math.max(Number(state[key] || 0), recalculated);
+    if (state[key] >= 60) state[`${module.id}-content-check`] = true;
+  });
+  return state;
 }
 
 function saveState(state, options = {}) {
@@ -8299,6 +8339,7 @@ function renderShortAnswerBox(task, kindLabel) {
     <div class="${kindLabel === "Transferfrage" ? "transfer-box" : "task-box"}">
       <p><strong>${kindLabel}:</strong> ${cleanPromptText(task.question)}</p>
       ${renderOriginalEvidence(task.originalEvidence)}
+      ${renderAssessmentContract(task)}
       <textarea data-answer="${task.id}" placeholder="${task.placeholder}"></textarea>
       <div class="${kindLabel === "Transferfrage" ? "transfer-actions" : "task-actions"}">
         <button class="btn primary" type="button" data-save-field="${task.id}" data-save-kind="answer">In Cloud speichern</button>
@@ -8410,6 +8451,7 @@ function renderInlineCheckQuestion(module, questionIndex) {
       <p class="section-kicker">Prüffrage</p>
       <div class="check-question" data-inline-check="${answerId}">
         <p>${question.prompt}</p>
+        ${renderAssessmentContract(question)}
         <textarea data-content-answer="${answerId}" placeholder="${question.placeholder}"></textarea>
         <div class="task-actions">
           <button class="btn primary" type="button" data-save-field="${answerId}" data-save-kind="content">In Cloud speichern</button>
@@ -9411,6 +9453,15 @@ function analyzeAnswer(answer, task) {
   return { matched, missing, wordCount, rawScore };
 }
 
+function answerPromptRelevance(answer, task) {
+  const promptKeywords = extractKeywordsFromText(`${task.question || task.prompt || ""} ${task.placeholder || ""}`);
+  return promptKeywords.filter((keyword) => semanticTermMatches(answer, keyword)).length;
+}
+
+function hasExplanatoryStructure(answer) {
+  return /\b(weil|da|dadurch|deshalb|daher|somit|führt|ermöglicht|bewirkt|während|hingegen|zugleich)\b/i.test(String(answer || ""));
+}
+
 function evaluateTask(answer, task) {
   const { matched, missing, wordCount } = analyzeAnswer(answer, task);
   const minimumWords = task.minWords || (task.id.includes("-quick") ? 8 : 18);
@@ -9461,21 +9512,29 @@ function evaluateTask(answer, task) {
     level: "low",
     title: "Grundidee vorhanden, zentrale Aspekte fehlen noch",
     body:
-      `Bislang erkenne ich vor allem: ${matched.length ? matched.map((criterion) => criterion.label).join(", ") : "einen ersten Zugang"}. Ergänze unbedingt noch: ${missing
+      `Bislang erkenne ich vor allem: ${matched.length ? matched.map((criterion) => criterion.label).join(", ") : "einen ersten Zugang"}. Zur Vertiefung könntest du noch aufgreifen: ${missing
         .map((criterion) => criterion.label)
-        .join(", ")}.`
+        .join(", ")}. Diese Hinweise sind keine zusätzlichen, versteckten Anforderungen.`
   };
 }
 
 function evaluateCheckQuestion(answer, question) {
+  if (question.evaluationMode === "source-reasoning") return evaluateSourceReasoning(answer, question);
   const { matched, missing, wordCount, rawScore } = analyzeAnswer(answer, question);
-  const adjustedScore = wordCount === 0
+  const promptRelevance = answerPromptRelevance(answer, question);
+  const questionText = String(question.question || question.prompt || "");
+  const explanationRequested = /\b(warum|erkläre|begründe|wie|vergleich|zusammenhang)\b/i.test(questionText);
+  const plausibleAlternative = wordCount >= 10
+    && (matched.length >= 1 || promptRelevance >= 2)
+    && (!explanationRequested || hasExplanatoryStructure(answer) || wordCount >= 18);
+  let adjustedScore = wordCount === 0
     ? 0
     : wordCount < 6
       ? Math.min(rawScore, 40)
       : wordCount < 10
         ? Math.min(rawScore, 70)
         : rawScore;
+  if (plausibleAlternative && adjustedScore < 60) adjustedScore = 60;
 
   if (!answer.trim()) {
     return {
@@ -9496,6 +9555,14 @@ function evaluateCheckQuestion(answer, question) {
   }
 
   if (adjustedScore >= 60) {
+    if (plausibleAlternative && rawScore < 60) {
+      return {
+        score: adjustedScore,
+        level: "mid",
+        title: "Fachlich plausible Alternativantwort anerkannt",
+        body: "Deine Antwort bezieht sich erkennbar auf die Frage und begründet einen passenden historischen Zusammenhang. Sie wird für den Lernfortschritt anerkannt. Vergleiche sie freiwillig mit der Beispiellösung, wenn du sie noch vertiefen möchtest."
+      };
+    }
     const guidance = missing.length
       ? `Ergänze beim Überarbeiten noch: ${missing.map((criterion) => criterion.label).join(", ")}. `
       : "Die verlangten Inhalte sind vorhanden; formuliere sie für die volle Punktzahl noch etwas ausführlicher. ";
@@ -9512,6 +9579,34 @@ function evaluateCheckQuestion(answer, question) {
     level: "low",
     title: "Noch nicht sicher genug",
     body: `Es fehlt noch Wesentliches: ${missing.map((criterion) => criterion.label).join(", ")}. Beispiellösung: ${question.sampleAnswer}`
+  };
+}
+
+function evaluateSourceReasoning(answer, question) {
+  const text = String(answer || "").trim();
+  const wordCount = text ? text.split(/\s+/).length : 0;
+  const claim = String(question.prompt || "").match(/«([^»]+)»/)?.[1] || question.prompt || "";
+  const claimKeywords = extractKeywordsFromText(claim);
+  const relevance = claimKeywords.filter((keyword) => semanticTermMatches(text, keyword)).length;
+  if (!text) {
+    return { score: 0, level: "low", title: "Noch keine auswertbare Antwort", body: "Schreibe zuerst eine eigene Antwort zum genannten Befund." };
+  }
+  if (wordCount < 8 || relevance === 0) {
+    return {
+      score: 40,
+      level: "mid",
+      title: "Bezug zum Befund noch verdeutlichen",
+      body: "Formuliere mindestens zwei vollständige Sätze und beziehe deine Erklärung ausdrücklich auf den in der Frage zitierten Befund. Es werden keine zusätzlichen Einzelinformationen verlangt."
+    };
+  }
+  const wellExplained = wordCount >= 14 && hasExplanatoryStructure(text);
+  return {
+    score: wellExplained ? 100 : 75,
+    level: wellExplained ? "good" : "mid",
+    title: wellExplained ? "Eigenständige historische Deutung anerkannt" : "Befund passend aufgegriffen",
+    body: wellExplained
+      ? "Die Antwort greift den Befund auf und erklärt einen nachvollziehbaren Zusammenhang. Andere fachlich vertretbare Ursachen, Folgen oder Deutungen werden gleichwertig anerkannt."
+      : "Der Bezug zum Befund stimmt. Begründe den Zusammenhang noch mit einem erklärenden Satz; zusätzliche Details aus der Musterlösung sind freiwillige Vertiefung."
   };
 }
 
@@ -9862,7 +9957,7 @@ function bindSourceMicroChecks(state) {
         bindProgressiveHint(hintButton, hintFeedbackBox, question);
 
         checkButton.addEventListener("click", () => {
-          const result = evaluateCheckQuestion(field.value, question);
+          const result = evaluateSourceReasoning(field.value, question);
           wrapper.classList.remove("good", "mid", "low");
           wrapper.classList.add(result.level);
           feedbackBox.className = `feedback is-visible ${result.level}`;
