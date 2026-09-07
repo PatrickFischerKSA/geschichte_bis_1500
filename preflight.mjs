@@ -104,6 +104,8 @@ assert(worker.includes('action === "restore_progress"') && worker.includes("merg
   "Die sichere Wiederherstellung zwischen eindeutig gleichnamigen Konten fehlt.");
 assert(worker.includes("progress_restored") && worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'student'") && cloud.includes("restoreStudentProgress"),
   "Wiederhergestellte Lernstände müssen bestätigt, protokolliert und vor Überschreiben durch alte Sitzungen geschützt werden.");
+assert(teacher.includes("data-restore-account-progress") && teacher.includes("data-source-account") && teacher.includes("restoreStudentProgress(studentId, sourceStudentId)"),
+  "Die authentifizierte Wiederherstellung im Lehrpersonen-Dashboard fehlt.");
 assert((cloud.match(/await loadOwnCloudState\(true\)/g) || []).length >= 3 && !cloud.includes('resolution === "local-newer"'),
   "Beim Anmelden und Wiederherstellen muss ein vorhandener Cloud-Stand immer Vorrang vor einem leeren oder fremden Browserstand haben.");
 const recoveryHelpers = worker.slice(worker.indexOf("function isPlainObject"), worker.indexOf("async function ensureSchema"));

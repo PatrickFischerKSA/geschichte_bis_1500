@@ -299,6 +299,12 @@ function renderTeacherAccountPanel(container) {
   }
 
   const activeCount = accounts.filter(account => account.isActive).length;
+  const recoverySourceFor = (target) => accounts
+    .filter(candidate => candidate.id !== target.id
+      && normalizeTeacherName(`${candidate.firstName} ${candidate.lastName}`) === normalizeTeacherName(`${target.firstName} ${target.lastName}`)
+      && candidate.progress?.snapshot
+      && new Date(candidate.createdAt || 0).getTime() < new Date(target.createdAt || 0).getTime())
+    .sort((left, right) => new Date(right.progress?.updatedAt || right.createdAt || 0).getTime() - new Date(left.progress?.updatedAt || left.createdAt || 0).getTime())[0];
   container.innerHTML = `
     <div class="teacher-account-heading">
       <div>
@@ -308,7 +314,9 @@ function renderTeacherAccountPanel(container) {
       </div>
     </div>
     <div class="teacher-account-list">
-      ${accounts.map(account => `
+      ${accounts.map(account => {
+        const recoverySource = recoverySourceFor(account);
+        return `
         <article class="teacher-account-card ${account.isActive ? "" : "is-disabled"}">
           <div class="teacher-question-meta">
             <div>
@@ -329,10 +337,12 @@ function renderTeacherAccountPanel(container) {
             </label>
             <button class="btn primary" type="button" data-reset-account-password="${account.id}">Passwort zurücksetzen</button>
             <button class="btn ghost" type="button" data-set-account-active="${account.id}" data-next-active="${account.isActive ? "false" : "true"}">${account.isActive ? "Konto deaktivieren" : "Konto reaktivieren"}</button>
+            ${recoverySource ? `<button class="btn primary" type="button" data-restore-account-progress="${account.id}" data-source-account="${recoverySource.id}">Früheren Lernstand aus ${escapeTeacherHtml(recoverySource.className)} übernehmen</button>` : ""}
           </div>
+          ${recoverySource ? `<p class="teacher-muted">Gefundener früherer Cloud-Stand: ${escapeTeacherHtml(recoverySource.className)}, zuletzt gespeichert am ${formatTeacherDate(recoverySource.progress?.updatedAt)}. Frühere und neue Eingaben werden zusammengeführt.</p>` : ""}
           <p class="teacher-gate-feedback" data-account-feedback="${account.id}" aria-live="polite"></p>
         </article>
-      `).join("") || `<div class="summary-item"><p>Noch keine Cloud-Konten vorhanden.</p></div>`}
+      `;}).join("") || `<div class="summary-item"><p>Noch keine Cloud-Konten vorhanden.</p></div>`}
     </div>
     <details class="teacher-activity-log">
       <summary>Aktivitätsprotokoll anzeigen (${activities.length} jüngste Einträge)</summary>
@@ -524,7 +534,7 @@ async function initTeacherAuthState() {
 }
 
 function bindTeacherPage() {
-  document.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
     const target = event.target.closest("button, a");
     if (!target) {
       return;
@@ -597,6 +607,18 @@ function bindTeacherPage() {
           renderTeacherDashboard();
           setTeacherDashboardFeedback(result.message || "Passwort zurückgesetzt.", false);
         })
+        .catch(error => setAccountFeedback(studentId, error.message, true))
+        .finally(() => { target.disabled = false; });
+      return;
+    }
+
+    if (target.matches("[data-restore-account-progress]")) {
+      const studentId = target.dataset.restoreAccountProgress;
+      const sourceStudentId = target.dataset.sourceAccount;
+      setAccountFeedback(studentId, "Früherer Lernstand und neue Eingaben werden zusammengeführt …", false);
+      target.disabled = true;
+      window.GESCHICHTE_FIREBASE?.restoreStudentProgress(studentId, sourceStudentId)
+        .then(result => setAccountFeedback(studentId, result.message || "Lernstand wiederhergestellt.", false))
         .catch(error => setAccountFeedback(studentId, error.message, true))
         .finally(() => { target.disabled = false; });
       return;
