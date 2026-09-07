@@ -185,8 +185,7 @@
         localStorage.setItem(studentTokenKey, result.token);
         profile = result.profile;
         applyProfileToState(profile);
-        const resolution = await loadOwnCloudState(false);
-        if (resolution === "local-newer") await syncStateNow(currentState());
+        await loadOwnCloudState(true);
         await loadOwnQuestions();
         renderStudentPanel();
       } catch (error) { setFeedback("cloud-sync-feedback", error.message, true); }
@@ -242,8 +241,7 @@
       const result = await api("/api/student/me", {}, "student");
       profile = result.profile;
       applyProfileToState(profile);
-      const resolution = await loadOwnCloudState(false);
-      if (resolution === "local-newer") await syncStateNow(currentState());
+      await loadOwnCloudState(true);
       await loadOwnQuestions();
     } catch {
       profile = null;
