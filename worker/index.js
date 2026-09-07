@@ -431,12 +431,17 @@ function migrateLegacySourceQuestionState(state) {
     const match = legacyKey.match(/^(.*)-micro-([1-3])(-text|-feedback)?$/);
     if (!match) return;
     const nextKey = `${match[1]}-frage-${match[2]}${match[3] || ""}`;
-    if (!(nextKey in migrated)) {
+    if (hasMeaningfulStateValue(state[legacyKey]) && !hasMeaningfulStateValue(migrated[nextKey])) {
       migrated[nextKey] = state[legacyKey];
       copied += 1;
     }
   });
   return { state: migrated, changed: copied > 0, copied };
+}
+
+function hasMeaningfulStateValue(value) {
+  if (typeof value === "string") return value.trim().length > 0;
+  return value !== undefined && value !== null && value !== false;
 }
 
 function publicProfile(row) {

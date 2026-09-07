@@ -7357,11 +7357,16 @@ function migrateSourceQuestionState(state) {
     const match = legacyKey.match(/^(.*)-micro-([1-3])(-text|-feedback)?$/);
     if (!match) return;
     const nextKey = `${match[1]}-frage-${match[2]}${match[3] || ""}`;
-    if (!(nextKey in migrated)) {
+    if (hasMeaningfulStateValue(state[legacyKey]) && !hasMeaningfulStateValue(migrated[nextKey])) {
       migrated[nextKey] = state[legacyKey];
     }
   });
   return migrated;
+}
+
+function hasMeaningfulStateValue(value) {
+  if (typeof value === "string") return value.trim().length > 0;
+  return value !== undefined && value !== null && value !== false;
 }
 
 function migrateLearnerState(state) {
@@ -7370,7 +7375,7 @@ function migrateLearnerState(state) {
 
 function getSourceQuestionStateValue(state, questionId, suffix = "") {
   const currentKey = `${questionId}${suffix}`;
-  if (currentKey in state && state[currentKey] !== "") {
+  if (hasMeaningfulStateValue(state[currentKey])) {
     return state[currentKey];
   }
   const legacyId = questionId.replace(/-frage-([1-3])$/, "-micro-$1");

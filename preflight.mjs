@@ -106,6 +106,8 @@ assert(app.includes("migrateSourceQuestionState") && app.includes("-micro-([1-3]
   "Die clientseitige Migration früherer Quellen-Antwortfelder fehlt.");
 assert(app.includes("getSourceQuestionStateValue") && app.includes("const storedText = getSourceQuestionStateValue") && app.includes("const storedFeedback = getSourceQuestionStateValue"),
   "Die Quellenfelder müssen frühere Antworten auch unabhängig von der Migration direkt anzeigen.");
+assert(app.includes("hasMeaningfulStateValue(state[legacyKey])") && worker.includes("hasMeaningfulStateValue(state[legacyKey])"),
+  "Leere neue Felder dürfen gefüllte frühere Antworten nicht verdecken.");
 assert(worker.includes('action === "repair_progress_fields"') && worker.includes("migrateLegacySourceQuestionState") && worker.includes("progress_fields_repaired"),
   "Die bestätigte Cloud-Reparatur früherer Quellen-Antwortfelder fehlt.");
 assert(teacher.includes("data-repair-account-progress") && teacher.includes("Frühere Antwortfelder reparieren"),
