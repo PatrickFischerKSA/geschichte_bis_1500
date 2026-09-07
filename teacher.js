@@ -361,6 +361,13 @@ function renderTeacherAccountPanel(container) {
   `;
 }
 
+function getCurrentSourceQuestionIds() {
+  return Object.values(window.GESCHICHTE_SOURCE_QUESTION_BANK || {})
+    .flatMap(questions => Array.isArray(questions) ? questions : [])
+    .map(question => String(question?.id || ""))
+    .filter(Boolean);
+}
+
 function setAccountFeedback(studentId, message, isError = false) {
   const node = document.querySelector(`[data-account-feedback="${studentId}"]`);
   if (!node) return;
@@ -630,8 +637,17 @@ document.addEventListener("click", (event) => {
       const studentId = target.dataset.repairAccountProgress;
       setAccountFeedback(studentId, "Frühere Antwortfelder werden sicher zugeordnet und in der Cloud bestätigt …", false);
       target.disabled = true;
-      window.GESCHICHTE_FIREBASE?.manageStudentAccount(studentId, { action: "repair_progress_fields" })
-        .then(result => setAccountFeedback(studentId, result.message || "Antwortfelder repariert.", false))
+      window.GESCHICHTE_FIREBASE?.manageStudentAccount(studentId, {
+        action: "repair_progress_fields",
+        currentSourceQuestionIds: getCurrentSourceQuestionIds()
+      })
+        .then(result => {
+          const missing = Array.isArray(result.missingQuestionIds) ? result.missingQuestionIds : [];
+          const diagnostic = missing.length
+            ? ` Nicht im Cloud-Datensatz vorhanden: ${missing.join(", ")}.`
+            : " Alle Quellen-Antworten des bisherigen Arbeitsstands sind zugeordnet.";
+          setAccountFeedback(studentId, `${result.message || "Antwortfelder repariert."}${diagnostic}`, false);
+        })
         .catch(error => setAccountFeedback(studentId, error.message, true))
         .finally(() => { target.disabled = false; });
       return;

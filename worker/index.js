@@ -323,6 +323,14 @@ async function manageStudentAccount(request, env, studentId) {
     if (!progress) return json({ error: "Für dieses Konto ist kein Lernstand vorhanden." }, 404);
     const originalState = parseJson(progress.state_json);
     const migrated = migrateLegacySourceQuestionState(originalState);
+    const currentSourceQuestionIds = Array.isArray(body.currentSourceQuestionIds)
+      ? body.currentSourceQuestionIds.map(value => String(value || "").trim()).filter(Boolean).slice(0, 1000)
+      : [];
+    const missingQuestionIds = currentSourceQuestionIds.filter(questionId => {
+      const currentText = String(migrated.state?.[`${questionId}-text`] || "").trim();
+      const legacyText = String(migrated.state?.[`${questionId.replace(/-frage-([1-3])$/, "-micro-$1")}-text`] || "").trim();
+      return !currentText && !legacyText;
+    });
     if (!isPlainObject(originalState)) return json({ error: "Der gespeicherte Lernstand ist beschädigt und wurde nicht verändert." }, 409);
     const stateJson = JSON.stringify(migrated.state);
     await env.DB.batch([
@@ -340,6 +348,7 @@ async function manageStudentAccount(request, env, studentId) {
       ok: true,
       verified: true,
       copied: migrated.copied,
+      missingQuestionIds,
       updatedAt: now,
       message: migrated.copied
         ? `${migrated.copied} frühere Antwortfelder wurden übernommen und in der Cloud bestätigt. Die Person muss sich einmal neu anmelden.`

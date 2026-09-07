@@ -108,6 +108,8 @@ assert(worker.includes('action === "repair_progress_fields"') && worker.includes
   "Die bestätigte Cloud-Reparatur früherer Quellen-Antwortfelder fehlt.");
 assert(teacher.includes("data-repair-account-progress") && teacher.includes("Frühere Antwortfelder reparieren"),
   "Die Reparaturfunktion im Lehrpersonendashboard fehlt.");
+assert(teacher.includes("getCurrentSourceQuestionIds") && worker.includes("missingQuestionIds"),
+  "Die feldgenaue Diagnose fehlender Quellenantworten fehlt.");
 assert(worker.includes("progress_restored") && worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'student'") && cloud.includes("restoreStudentProgress"),
   "Wiederhergestellte Lernstände müssen bestätigt, protokolliert und vor Überschreiben durch alte Sitzungen geschützt werden.");
 assert(teacher.includes("data-restore-account-progress") && teacher.includes("data-source-account") && teacher.includes("restoreStudentProgress(studentId, sourceStudentId)"),
