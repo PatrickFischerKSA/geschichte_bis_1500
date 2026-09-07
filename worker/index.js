@@ -141,13 +141,26 @@ async function studentProgress(request, env) {
   if (!session) return json({ error: "Bitte melde dich an." }, 401);
   if (request.method === "GET") {
     const row = await env.DB.prepare("SELECT state_json, snapshot_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?").bind(session.userId, COURSE_ID).first();
-    return json({ progress: row ? { state: parseJson(row.state_json), snapshot: parseJson(row.snapshot_json), updatedAt: row.updated_at } : null }, 200);
+    if (!row) return json({ progress: null }, 200);
+    const originalState = parseJson(row.state_json);
+    const migrated = migrateLegacySourceQuestionState(originalState);
+    if (migrated.changed) {
+      const stateJson = JSON.stringify(migrated.state);
+      const now = new Date().toISOString();
+      const write = await env.DB.prepare("UPDATE learner_progress SET state_json = ?, updated_at = ? WHERE student_id = ? AND course_id = ?")
+        .bind(stateJson, now, session.userId, COURSE_ID).run();
+      if (!write.success) throw new Error("Die früheren Antwortfelder konnten nicht übernommen werden.");
+      await logActivity(env.DB, session.userId, "progress_fields_repaired", now, `${migrated.copied} Antwortfelder übernommen`);
+      return json({ progress: { state: migrated.state, snapshot: parseJson(row.snapshot_json), updatedAt: now } }, 200);
+    }
+    return json({ progress: { state: originalState, snapshot: parseJson(row.snapshot_json), updatedAt: row.updated_at } }, 200);
   }
   if (request.method === "PUT") {
     const body = await request.json();
-    const state = body.state && typeof body.state === "object" ? body.state : null;
+    const suppliedState = body.state && typeof body.state === "object" ? body.state : null;
     const snapshot = body.snapshot && typeof body.snapshot === "object" ? body.snapshot : null;
-    if (!state || !snapshot) return json({ error: "Ungültiger Lernstand." }, 400);
+    if (!suppliedState || !snapshot) return json({ error: "Ungültiger Lernstand." }, 400);
+    const state = migrateLegacySourceQuestionState(suppliedState).state;
     const stateJson = JSON.stringify(state);
     const snapshotJson = JSON.stringify(snapshot);
     if (stateJson.length > 500000 || snapshotJson.length > 100000) return json({ error: "Der Lernstand ist zu gross." }, 413);
@@ -304,6 +317,36 @@ async function manageStudentAccount(request, env, studentId) {
     }, 200);
   }
 
+  if (action === "repair_progress_fields") {
+    const progress = await env.DB.prepare("SELECT state_json, snapshot_json FROM learner_progress WHERE student_id = ? AND course_id = ?")
+      .bind(studentId, COURSE_ID).first();
+    if (!progress) return json({ error: "Für dieses Konto ist kein Lernstand vorhanden." }, 404);
+    const originalState = parseJson(progress.state_json);
+    const migrated = migrateLegacySourceQuestionState(originalState);
+    if (!isPlainObject(originalState)) return json({ error: "Der gespeicherte Lernstand ist beschädigt und wurde nicht verändert." }, 409);
+    const stateJson = JSON.stringify(migrated.state);
+    await env.DB.batch([
+      env.DB.prepare("UPDATE learner_progress SET state_json = ?, updated_at = ? WHERE student_id = ? AND course_id = ?")
+        .bind(stateJson, now, studentId, COURSE_ID),
+      env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId)
+    ]);
+    const confirmation = await env.DB.prepare("SELECT state_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+      .bind(studentId, COURSE_ID).first();
+    if (!confirmation || String(confirmation.state_json) !== stateJson || String(confirmation.updated_at) !== now) {
+      throw new Error("Die reparierten Antwortfelder konnten nicht bestätigt werden.");
+    }
+    await logActivity(env.DB, studentId, "progress_fields_repaired", now, `${migrated.copied} Antwortfelder übernommen`);
+    return json({
+      ok: true,
+      verified: true,
+      copied: migrated.copied,
+      updatedAt: now,
+      message: migrated.copied
+        ? `${migrated.copied} frühere Antwortfelder wurden übernommen und in der Cloud bestätigt. Die Person muss sich einmal neu anmelden.`
+        : "Alle Antwortfelder verwenden bereits die aktuellen Kennungen. Die Cloud-Speicherung wurde erneut bestätigt."
+    }, 200);
+  }
+
   if (action === "reset_password") {
     const newPassword = String(body.newPassword || "");
     if (newPassword.length < 6) return json({ error: "Das neue Passwort muss mindestens 6 Zeichen lang sein." }, 400);
@@ -362,6 +405,22 @@ function cleanName(value) {
 
 function normalize(value) {
   return String(value).toLocaleLowerCase("de-CH").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+
+function migrateLegacySourceQuestionState(state) {
+  if (!isPlainObject(state)) return { state, changed: false, copied: 0 };
+  const migrated = { ...state };
+  let copied = 0;
+  Object.keys(state).forEach((legacyKey) => {
+    const match = legacyKey.match(/^(.*)-micro-([1-3])(-text|-feedback)?$/);
+    if (!match) return;
+    const nextKey = `${match[1]}-frage-${match[2]}${match[3] || ""}`;
+    if (!(nextKey in migrated)) {
+      migrated[nextKey] = state[legacyKey];
+      copied += 1;
+    }
+  });
+  return { state: migrated, changed: copied > 0, copied };
 }
 
 function publicProfile(row) {

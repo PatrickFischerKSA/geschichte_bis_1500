@@ -7347,6 +7347,27 @@ function migrateRepetitionState(state) {
   return migrated;
 }
 
+function migrateSourceQuestionState(state) {
+  if (!state || typeof state !== "object") {
+    return {};
+  }
+
+  const migrated = { ...state };
+  Object.keys(state).forEach((legacyKey) => {
+    const match = legacyKey.match(/^(.*)-micro-([1-3])(-text|-feedback)?$/);
+    if (!match) return;
+    const nextKey = `${match[1]}-frage-${match[2]}${match[3] || ""}`;
+    if (!(nextKey in migrated)) {
+      migrated[nextKey] = state[legacyKey];
+    }
+  });
+  return migrated;
+}
+
+function migrateLearnerState(state) {
+  return migrateSourceQuestionState(migrateRepetitionState(state));
+}
+
 function getAllRepetitionOralQuestions() {
   return repetitionLevelOrder.flatMap((level) => repetitionLevels[level].oralQuestions);
 }
@@ -7825,7 +7846,7 @@ function persistLearnerSnapshot(state) {
 
 function loadState() {
   try {
-    return repairStoredContentScores(migrateRepetitionState(JSON.parse(localStorage.getItem(getStorageKey()) || "{}")));
+    return repairStoredContentScores(migrateLearnerState(JSON.parse(localStorage.getItem(getStorageKey()) || "{}")));
   } catch {
     return {};
   }
@@ -10462,7 +10483,7 @@ function bindTeacherQuestionButtons() {
 }
 
 function replaceState(nextState, options = {}) {
-  const state = { ...nextState };
+  const state = migrateLearnerState(nextState);
   if (options.persist !== false) {
     saveState(state, options);
   }

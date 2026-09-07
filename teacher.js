@@ -282,7 +282,8 @@ function teacherActivityLabel(action) {
     password_reset: "Passwort zurückgesetzt",
     account_deactivated: "Konto deaktiviert",
     account_reactivated: "Konto reaktiviert",
-    progress_restored: "Lernstand wiederhergestellt"
+    progress_restored: "Lernstand wiederhergestellt",
+    progress_fields_repaired: "Frühere Antwortfelder übernommen"
   };
   return labels[action] || action;
 }
@@ -337,6 +338,7 @@ function renderTeacherAccountPanel(container) {
             </label>
             <button class="btn primary" type="button" data-reset-account-password="${account.id}">Passwort zurücksetzen</button>
             <button class="btn ghost" type="button" data-set-account-active="${account.id}" data-next-active="${account.isActive ? "false" : "true"}">${account.isActive ? "Konto deaktivieren" : "Konto reaktivieren"}</button>
+            ${account.progress?.snapshot ? `<button class="btn ghost" type="button" data-repair-account-progress="${account.id}">Frühere Antwortfelder reparieren</button>` : ""}
             ${recoverySource ? `<button class="btn primary" type="button" data-restore-account-progress="${account.id}" data-source-account="${recoverySource.id}">Früheren Lernstand aus ${escapeTeacherHtml(recoverySource.className)} übernehmen</button>` : ""}
           </div>
           ${recoverySource ? `<p class="teacher-muted">Gefundener früherer Cloud-Stand: ${escapeTeacherHtml(recoverySource.className)}, zuletzt gespeichert am ${formatTeacherDate(recoverySource.progress?.updatedAt)}. Frühere und neue Eingaben werden zusammengeführt.</p>` : ""}
@@ -619,6 +621,17 @@ document.addEventListener("click", (event) => {
       target.disabled = true;
       window.GESCHICHTE_FIREBASE?.restoreStudentProgress(studentId, sourceStudentId)
         .then(result => setAccountFeedback(studentId, result.message || "Lernstand wiederhergestellt.", false))
+        .catch(error => setAccountFeedback(studentId, error.message, true))
+        .finally(() => { target.disabled = false; });
+      return;
+    }
+
+    if (target.matches("[data-repair-account-progress]")) {
+      const studentId = target.dataset.repairAccountProgress;
+      setAccountFeedback(studentId, "Frühere Antwortfelder werden sicher zugeordnet und in der Cloud bestätigt …", false);
+      target.disabled = true;
+      window.GESCHICHTE_FIREBASE?.manageStudentAccount(studentId, { action: "repair_progress_fields" })
+        .then(result => setAccountFeedback(studentId, result.message || "Antwortfelder repariert.", false))
         .catch(error => setAccountFeedback(studentId, error.message, true))
         .finally(() => { target.disabled = false; });
       return;

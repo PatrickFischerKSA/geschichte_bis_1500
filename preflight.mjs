@@ -102,6 +102,12 @@ assert(worker.includes("confirmation.state_json") && worker.includes("confirmati
   "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
 assert(worker.includes('action === "restore_progress"') && worker.includes("mergeProgressStates") && worker.includes("mergeProgressSnapshots") && worker.includes("Lernstände dürfen nur zwischen Konten derselben Person übertragen werden"),
   "Die sichere Wiederherstellung zwischen eindeutig gleichnamigen Konten fehlt.");
+assert(app.includes("migrateSourceQuestionState") && app.includes("-micro-([1-3])") && app.includes("-frage-${match[2]}"),
+  "Die clientseitige Migration früherer Quellen-Antwortfelder fehlt.");
+assert(worker.includes('action === "repair_progress_fields"') && worker.includes("migrateLegacySourceQuestionState") && worker.includes("progress_fields_repaired"),
+  "Die bestätigte Cloud-Reparatur früherer Quellen-Antwortfelder fehlt.");
+assert(teacher.includes("data-repair-account-progress") && teacher.includes("Frühere Antwortfelder reparieren"),
+  "Die Reparaturfunktion im Lehrpersonendashboard fehlt.");
 assert(worker.includes("progress_restored") && worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'student'") && cloud.includes("restoreStudentProgress"),
   "Wiederhergestellte Lernstände müssen bestätigt, protokolliert und vor Überschreiben durch alte Sitzungen geschützt werden.");
 assert(teacher.includes("data-restore-account-progress") && teacher.includes("data-source-account") && teacher.includes("restoreStudentProgress(studentId, sourceStudentId)"),
