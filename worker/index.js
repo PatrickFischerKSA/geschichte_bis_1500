@@ -329,15 +329,22 @@ async function manageStudentAccount(request, env, studentId) {
     const missingQuestionIds = currentSourceQuestionIds.filter(questionId => {
       const currentText = String(migrated.state?.[`${questionId}-text`] || "").trim();
       const legacyText = String(migrated.state?.[`${questionId.replace(/-frage-([1-3])$/, "-micro-$1")}-text`] || "").trim();
-      return !currentText && !legacyText;
+      const sourceBase = questionId.replace(/-frage-[1-3]$/, "");
+      const sourceStarted = [1, 2, 3].some(index =>
+        String(migrated.state?.[`${sourceBase}-frage-${index}-text`] || "").trim()
+        || String(migrated.state?.[`${sourceBase}-micro-${index}-text`] || "").trim());
+      return sourceStarted && !currentText && !legacyText;
     });
     if (!isPlainObject(originalState)) return json({ error: "Der gespeicherte Lernstand ist beschädigt und wurde nicht verändert." }, 409);
     const stateJson = JSON.stringify(migrated.state);
-    await env.DB.batch([
+    const repairStatements = [
       env.DB.prepare("UPDATE learner_progress SET state_json = ?, updated_at = ? WHERE student_id = ? AND course_id = ?")
-        .bind(stateJson, now, studentId, COURSE_ID),
-      env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId)
-    ]);
+        .bind(stateJson, now, studentId, COURSE_ID)
+    ];
+    if (migrated.changed) {
+      repairStatements.push(env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId));
+    }
+    await env.DB.batch(repairStatements);
     const confirmation = await env.DB.prepare("SELECT state_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
       .bind(studentId, COURSE_ID).first();
     if (!confirmation || String(confirmation.state_json) !== stateJson || String(confirmation.updated_at) !== now) {
