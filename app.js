@@ -7368,6 +7368,15 @@ function migrateLearnerState(state) {
   return migrateSourceQuestionState(migrateRepetitionState(state));
 }
 
+function getSourceQuestionStateValue(state, questionId, suffix = "") {
+  const currentKey = `${questionId}${suffix}`;
+  if (currentKey in state && state[currentKey] !== "") {
+    return state[currentKey];
+  }
+  const legacyId = questionId.replace(/-frage-([1-3])$/, "-micro-$1");
+  return state[`${legacyId}${suffix}`];
+}
+
 function getAllRepetitionOralQuestions() {
   return repetitionLevelOrder.flatMap((level) => repetitionLevels[level].oralQuestions);
 }
@@ -10032,12 +10041,14 @@ function bindSourceMicroChecks(state) {
           return;
         }
 
-        if (state[`${question.id}-text`]) {
-          field.value = state[`${question.id}-text`];
+        const storedText = getSourceQuestionStateValue(state, question.id, "-text");
+        const storedFeedback = getSourceQuestionStateValue(state, question.id, "-feedback");
+        if (storedText) {
+          field.value = storedText;
         }
 
-        if (state[`${question.id}-feedback`]) {
-          const stored = state[`${question.id}-feedback`];
+        if (storedFeedback) {
+          const stored = storedFeedback;
           wrapper.classList.remove("good", "mid", "low");
           wrapper.classList.add(stored.level);
           feedbackBox.className = `feedback is-visible ${stored.level}`;
