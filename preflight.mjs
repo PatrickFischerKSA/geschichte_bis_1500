@@ -1,4 +1,5 @@
 import { readFileSync, statSync } from "node:fs";
+import vm from "node:vm";
 
 function read(path) {
   return readFileSync(path, "utf8");
@@ -99,6 +100,30 @@ assert(sourceQuestionBank.includes("GESCHICHTE_SOURCE_QUESTION_BANK") && build.i
   "Der feste Katalog individueller Quellenfragen fehlt im Produktions-Build.");
 assert(worker.includes("confirmation.state_json") && worker.includes("confirmation.snapshot_json") && cloud.includes("result.verified !== true"),
   "Cloud-Speicherungen müssen durch Zurücklesen des vollständigen Inhalts bestätigt werden.");
+assert(worker.includes('action === "restore_progress"') && worker.includes("mergeProgressStates") && worker.includes("mergeProgressSnapshots") && worker.includes("Lernstände dürfen nur zwischen Konten derselben Person übertragen werden"),
+  "Die sichere Wiederherstellung zwischen eindeutig gleichnamigen Konten fehlt.");
+assert(worker.includes("progress_restored") && worker.includes("DELETE FROM sessions WHERE user_id = ? AND role = 'student'") && cloud.includes("restoreStudentProgress"),
+  "Wiederhergestellte Lernstände müssen bestätigt, protokolliert und vor Überschreiben durch alte Sitzungen geschützt werden.");
+const recoveryHelpers = worker.slice(worker.indexOf("function isPlainObject"), worker.indexOf("async function ensureSchema"));
+const recoveryContext = {};
+vm.createContext(recoveryContext);
+vm.runInContext(`${recoveryHelpers}\nthis.mergeProgressStates = mergeProgressStates; this.mergeProgressSnapshots = mergeProgressSnapshots;`, recoveryContext);
+const restoredState = recoveryContext.mergeProgressStates(
+  { "modul-1-answer-text": "frühere Antwort", className: "FM4a" },
+  { "cloze-1-basis-text": "neue Eingabe", className: "FM4" },
+  { first_name: "Mailin", last_name: "Steiner", class_name: "FM4" },
+  "2026-09-07T08:00:00.000Z"
+);
+assert(restoredState["modul-1-answer-text"] === "frühere Antwort" && restoredState["cloze-1-basis-text"] === "neue Eingabe" && restoredState.className === "FM4",
+  "Bei der Wiederherstellung müssen frühere Antworten und neue Eingaben gemeinsam erhalten bleiben.");
+const restoredSnapshot = recoveryContext.mergeProgressSnapshots(
+  { passedModules: 1, overallPercent: 8, interactionCompleted: 4, interactionTotal: 52, totalModules: 13, moduleScores: [{ id: "modul-1", passed: true, score: 73 }] },
+  { passedModules: 0, overallPercent: 0, interactionCompleted: 1, interactionTotal: 52, totalModules: 13, moduleScores: [{ id: "modul-1", passed: false, score: 0 }] },
+  "Mailin Steiner",
+  "2026-09-07T08:00:00.000Z"
+);
+assert(restoredSnapshot.passedModules === 1 && restoredSnapshot.overallPercent === 8 && restoredSnapshot.moduleScores[0].passed === true,
+  "Die Wiederherstellung darf einen weiter fortgeschrittenen Modulstand nicht durch einen leeren Stand ersetzen.");
 const releaseDates = ["2026-08-31", "2026-09-07", "2026-09-14", "2026-09-21", "2026-09-28", "2026-10-05", "2026-10-12", "2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09", "2026-11-16", "2026-11-23"];
 assert((app.match(/\["modul-[^"]+", "2026-/g) || []).length === 13,
   "Der Freigabeplan muss genau 13 Module enthalten.");

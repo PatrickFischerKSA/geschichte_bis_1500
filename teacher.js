@@ -281,7 +281,8 @@ function teacherActivityLabel(action) {
     question_sent: "Frage oder Kommentar gesendet",
     password_reset: "Passwort zurückgesetzt",
     account_deactivated: "Konto deaktiviert",
-    account_reactivated: "Konto reaktiviert"
+    account_reactivated: "Konto reaktiviert",
+    progress_restored: "Lernstand wiederhergestellt"
   };
   return labels[action] || action;
 }

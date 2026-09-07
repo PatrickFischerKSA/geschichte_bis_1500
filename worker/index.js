@@ -243,11 +243,66 @@ async function teacherDashboard(request, env) {
 async function manageStudentAccount(request, env, studentId) {
   const session = await requireSession(request, env.DB, "teacher", env.TEACHER_SESSION_EPOCH);
   if (!session) return json({ error: "Kein Lehrpersonen-Zugriff." }, 401);
-  const student = await env.DB.prepare("SELECT id, is_active FROM students WHERE id = ?").bind(studentId).first();
+  const student = await env.DB.prepare("SELECT id, first_name, last_name, class_name, is_active FROM students WHERE id = ?").bind(studentId).first();
   if (!student) return json({ error: "Konto nicht gefunden." }, 404);
   const body = await request.json();
   const action = String(body.action || "");
   const now = new Date().toISOString();
+
+  if (action === "restore_progress") {
+    const sourceStudentId = String(body.sourceStudentId || "").trim();
+    if (!sourceStudentId || sourceStudentId === studentId) return json({ error: "Ungültiges Quellkonto." }, 400);
+    const sourceStudent = await env.DB.prepare("SELECT id, first_name, last_name, class_name FROM students WHERE id = ?")
+      .bind(sourceStudentId).first();
+    if (!sourceStudent) return json({ error: "Quellkonto nicht gefunden." }, 404);
+    const sourceName = normalize(`${sourceStudent.first_name}|${sourceStudent.last_name}`);
+    const targetName = normalize(`${student.first_name}|${student.last_name}`);
+    if (sourceName !== targetName) {
+      return json({ error: "Lernstände dürfen nur zwischen Konten derselben Person übertragen werden." }, 409);
+    }
+
+    const [sourceProgress, targetProgress] = await Promise.all([
+      env.DB.prepare("SELECT state_json, snapshot_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+        .bind(sourceStudentId, COURSE_ID).first(),
+      env.DB.prepare("SELECT state_json, snapshot_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+        .bind(studentId, COURSE_ID).first()
+    ]);
+    if (!sourceProgress) return json({ error: "Im Quellkonto ist kein Lernstand vorhanden." }, 404);
+
+    const sourceState = parseJson(sourceProgress.state_json);
+    const sourceSnapshot = parseJson(sourceProgress.snapshot_json);
+    const targetState = targetProgress ? parseJson(targetProgress.state_json) : {};
+    const targetSnapshot = targetProgress ? parseJson(targetProgress.snapshot_json) : {};
+    if (!isPlainObject(sourceState) || !isPlainObject(sourceSnapshot) || !isPlainObject(targetState) || !isPlainObject(targetSnapshot)) {
+      return json({ error: "Der gespeicherte Lernstand ist beschädigt und wurde nicht verändert." }, 409);
+    }
+
+    const mergedState = mergeProgressStates(sourceState, targetState, student, now);
+    const mergedSnapshot = mergeProgressSnapshots(sourceSnapshot, targetSnapshot, `${student.first_name} ${student.last_name}`, now);
+    const stateJson = JSON.stringify(mergedState);
+    const snapshotJson = JSON.stringify(mergedSnapshot);
+    if (stateJson.length > 500000 || snapshotJson.length > 100000) return json({ error: "Der zusammengeführte Lernstand ist zu gross." }, 413);
+
+    await env.DB.batch([
+      env.DB.prepare(`INSERT INTO learner_progress (student_id, course_id, state_json, snapshot_json, updated_at)
+        VALUES (?, ?, ?, ?, ?) ON CONFLICT(student_id,course_id) DO UPDATE SET
+        state_json=excluded.state_json, snapshot_json=excluded.snapshot_json, updated_at=excluded.updated_at`)
+        .bind(studentId, COURSE_ID, stateJson, snapshotJson, now),
+      env.DB.prepare("DELETE FROM sessions WHERE user_id = ? AND role = 'student'").bind(studentId)
+    ]);
+    const confirmation = await env.DB.prepare("SELECT state_json, snapshot_json, updated_at FROM learner_progress WHERE student_id = ? AND course_id = ?")
+      .bind(studentId, COURSE_ID).first();
+    if (!confirmation || String(confirmation.state_json) !== stateJson || String(confirmation.snapshot_json) !== snapshotJson || String(confirmation.updated_at) !== now) {
+      throw new Error("Der wiederhergestellte Lernstand konnte nicht bestätigt werden.");
+    }
+    await logActivity(env.DB, studentId, "progress_restored", now, `Quelle: ${sourceStudentId}`);
+    return json({
+      ok: true,
+      verified: true,
+      updatedAt: now,
+      message: "Der frühere Lernstand und die neuen Eingaben wurden zusammengeführt. Die Person muss sich einmal neu anmelden."
+    }, 200);
+  }
 
   if (action === "reset_password") {
     const newPassword = String(body.newPassword || "");
@@ -402,6 +457,46 @@ function timingSafeEqual(a, b) {
 
 function parseJson(value) {
   try { return JSON.parse(String(value)); } catch { return null; }
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function mergeProgressStates(source, target, student, updatedAt) {
+  return {
+    ...source,
+    ...target,
+    learnerName: `${student.first_name} ${student.last_name}`,
+    firstName: student.first_name,
+    lastName: student.last_name,
+    className: student.class_name,
+    lastUpdatedAt: updatedAt
+  };
+}
+
+function mergeProgressSnapshots(source, target, name, updatedAt) {
+  const sourceModules = Array.isArray(source.moduleScores) ? source.moduleScores : [];
+  const targetModules = Array.isArray(target.moduleScores) ? target.moduleScores : [];
+  const moduleKeys = new Set([...sourceModules, ...targetModules].map(item => String(item.id || item.number)));
+  const moduleScores = [...moduleKeys].map(key => {
+    const candidates = [...sourceModules, ...targetModules].filter(item => String(item.id || item.number) === key);
+    return candidates.sort((left, right) => Number(Boolean(right.passed)) - Number(Boolean(left.passed)) || Number(right.score || 0) - Number(left.score || 0))[0];
+  });
+  const sourcePercent = Number(source.overallPercent || 0);
+  const targetPercent = Number(target.overallPercent || 0);
+  const preferred = targetPercent > sourcePercent ? target : source;
+  return {
+    ...preferred,
+    name,
+    updatedAt,
+    passedModules: moduleScores.filter(item => item?.passed).length,
+    totalModules: Math.max(Number(source.totalModules || 0), Number(target.totalModules || 0), moduleScores.length),
+    interactionCompleted: Math.max(Number(source.interactionCompleted || 0), Number(target.interactionCompleted || 0)),
+    interactionTotal: Math.max(Number(source.interactionTotal || 0), Number(target.interactionTotal || 0)),
+    overallPercent: Math.max(sourcePercent, targetPercent),
+    moduleScores
+  };
 }
 
 async function ensureSchema(db) {

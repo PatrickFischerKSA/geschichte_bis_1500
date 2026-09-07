@@ -398,6 +398,10 @@
     return result;
   }
 
+  async function restoreStudentProgress(targetStudentId, sourceStudentId) {
+    return manageStudentAccount(targetStudentId, { action: "restore_progress", sourceStudentId });
+  }
+
   async function answerTeacherQuestion(questionId, answerText, status = "beantwortet") {
     await api(`/api/teacher/questions/${encodeURIComponent(questionId)}`, { method: "PATCH", body: JSON.stringify({ answerText, status }) }, "teacher");
     await refreshTeacherDashboardFromCloud();
@@ -442,6 +446,7 @@
     getTeacherAccounts,
     getTeacherActivities,
     manageStudentAccount,
+    restoreStudentProgress,
     answerTeacherQuestion,
     downloadModelAnswers,
     loadTeacherQuestions: refreshTeacherDashboardFromCloud
