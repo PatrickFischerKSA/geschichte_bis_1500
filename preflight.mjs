@@ -87,8 +87,10 @@ assert(app.includes("semanticConceptGroups") && app.includes("semanticTermMatche
   "Die Freitextprüfung braucht eine Synonym- und Flexionserkennung.");
 assert(app.includes("renderAssessmentContract") && (app.match(/renderAssessmentContract\(/g) || []).length >= 4,
   "Die Bewertungskriterien müssen bei sämtlichen offenen Fragetypen vor der Eingabe sichtbar sein.");
-assert(app.includes("Fachlich plausible Alternativantwort anerkannt") && app.includes("repairStoredContentScores"),
-  "Fachlich plausible Alternativantworten oder die rückwirkende faire Neubewertung fehlen.");
+assert(app.includes("Automatische Zuordnung noch unsicher") && app.includes("repairStoredContentScores") && app.includes("content-review-pending"),
+  "Unsichere automatische Bewertungen dürfen weder Fehler vortäuschen noch Lernfortschritte blockieren.");
+assert(read("assessment-review.js").includes("GESCHICHTE_SOURCE_REVIEW") && build.includes('"assessment-review.js"'),
+  "Der vollständige Einzelkatalog der Bedeutungsnachweise fehlt.");
 assert(app.includes('evaluationMode: "source-reasoning"') && app.includes("evaluateSourceReasoning"),
   "Quellenfragen dürfen keine ganzen Beispiellösungssätze als versteckte Pflichtkriterien bewerten.");
 assert(app.includes("buildProgressiveHints") && app.includes("bindProgressiveHint"),

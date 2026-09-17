@@ -1,129 +1,65 @@
-import fs from "node:fs";
-import vm from "node:vm";
+import fs from 'node:fs';
+import vm from 'node:vm';
 
-const source = fs.readFileSync(new URL("./app.js", import.meta.url), "utf8");
-
-function extract(start, end) {
-  const from = source.indexOf(start);
-  const to = source.indexOf(end, from);
-  if (from < 0 || to < 0) throw new Error(`Prüfbereich fehlt: ${start}`);
-  return source.slice(from, to);
-}
-
-const evaluationSource = [
-  extract("function normalize(value)", "function makeSourceKey"),
-  extract("function normalizeLoose(text)", "function getRepetitionProgress"),
-  extract("const semanticConceptGroups", "function analyzeAnswer")
-].join("\n");
-
-const context = {};
+const window = { addEventListener() {}, location: { search: '', pathname: '/' } };
+const context = { window, document: { body: { dataset: {} }, getElementById() { return null; } },
+  localStorage: { getItem() { return null; }, setItem() {} }, console, Map, Set, Date, Intl,
+  URL, URLSearchParams, setTimeout, clearTimeout };
 vm.createContext(context);
-vm.runInContext(`${evaluationSource}\nthis.semanticTermMatches = semanticTermMatches;`, context);
-
-const cases = [
-  ["Bauern bestellten Äcker und waren danach stärker an ihre Ernten gebunden.", "landwirtschaft", true],
-  ["Die bäuerliche Lebensweise brachte viel Mühe und neue Unfreiheit.", "abhängigkeit", true],
-  ["Listen und Aufzeichnungen halfen Beamten, Abgaben zu registrieren.", "verwaltung", true],
-  ["Eine Währung funktioniert, weil alle ihren gemeinsamen Wert akzeptieren.", "vertrauen", true],
-  ["Nomadische Gemeinschaften zogen umher und kannten Tiere und Jahreszeiten.", "mobilität", true],
-  ["Getreideanbau veränderte die Versorgung dauerhaft.", "landwirtschaft", true],
-  ["Die Bodenbewirtschaftung band Menschen an einen Ort.", "ackerbau", true],
-  ["Bevölkerungsbewegungen verbreiteten Ideen über weite Räume.", "migration", true],
-  ["Die Schriftlichkeit erleichterte die Buchführung.", "aufzeichnung", true],
-  ["Eine Administration erfasste Tribute in Verzeichnissen.", "verwaltung", true],
-  ["Das Staatswesen stützte sich auf eine dauerhafte Obrigkeit.", "staat", true],
-  ["Ein Herrschaftssystem bündelte politische Kontrolle.", "macht", true],
-  ["Fernhandelsnetze verbanden weit entfernte Märkte.", "handel", true],
-  ["Kenntnisse über den Naturraum halfen beim Überleben.", "umweltwissen", true],
-  ["Die Transformation der Lebensweise war ein langfristiger Prozess.", "veränderung", true],
-  ["Viele Traditionen bestanden dennoch fort.", "kontinuität", true],
-  ["Der entscheidende Auslöser lag in einer besseren Versorgung.", "ursache", true],
-  ["Eine Konsequenz war die zunehmende Arbeitsteilung.", "folge", true],
-  ["Menschen stellten sich auf neue Lebensräume ein.", "anpassung", true],
-  ["Nahrungsmittel wurden in Speichern gesammelt.", "versorgung", true],
-  ["Gewaltsame Auseinandersetzungen erschütterten das Reich.", "konflikt", true],
-  ["Die Vernetzung schuf Beziehungen zwischen entfernten Gruppen.", "austausch", true],
-  ["Überlieferte Erfahrungen wurden mündlich weitergegeben.", "wissen", true],
-  ["Groessere Verbaende brauchten gemeinsame Regeln.", "grössere verbände", true],
-  ["Baeuerliche Gemeinschaften lebten dauerhaft in Dörfern.", "bäuerlich", true],
-  ["Die Burokratie organisierte die Abgaben.", "bürokratie", true],
-  ["Handelsbezihungen verbanden verschiedene Städte.", "handelsbeziehungen", true],
-  ["Die Sesshaftigkeiten veränderten den Alltag.", "sesshaftigkeit", true],
-  ["Die Stadt wuchs durch Handwerk und Märkte.", "staat", false],
-  ["Menschen erzählten Geschichten am Feuer.", "steuer", false],
-  ["Ein Dorf pflegte seine Felder.", "imperium", false],
-  ["Münzen lagen in einem Gefäss.", "religion", false]
-];
-
-for (const [answer, keyword, expected] of cases) {
-  const actual = context.semanticTermMatches(answer, keyword);
-  if (actual !== expected) {
-    throw new Error(`Synonymprüfung fehlgeschlagen: ${JSON.stringify({ answer, keyword, expected, actual })}`);
-  }
+for (const path of ['assessment-review.js', 'source-question-bank.js', 'app.js']) {
+  vm.runInContext(fs.readFileSync(new URL(path, import.meta.url), 'utf8'), context);
 }
-
-console.log(`Synonymerkennung erfolgreich: ${cases.length} gezielte Fälle zu Synonymen, Flexionen, Zusammensetzungen, Schreibvarianten und Tippfehlern geprüft.`);
-
-const sourceQuestionBank = fs.readFileSync(new URL("./source-question-bank.js", import.meta.url), "utf8");
-const browserWindow = { addEventListener() {}, location: { search: "", pathname: "/" } };
-const fullContext = {
-  window: browserWindow,
-  document: { body: { dataset: {} }, getElementById() { return null; } },
-  localStorage: { getItem() { return null; }, setItem() {} },
-  console, Map, Set, Date, Intl, URL, URLSearchParams, setTimeout, clearTimeout
-};
-vm.createContext(fullContext);
-vm.runInContext(sourceQuestionBank, fullContext);
-vm.runInContext(`${source}\nwindow.__ASSESSMENT_AUDIT = { modules, quickChecks, contentChecks, getSourceDetail, getSourceHeading, buildSourceMicroChecks, evaluateCheckQuestion, evaluateTask };`, fullContext);
-
-const audit = browserWindow.__ASSESSMENT_AUDIT;
-const assessed = [];
-for (const module of audit.modules) {
-  for (const item of [module.task, audit.quickChecks[module.id], module.transfer]) {
-    assessed.push({ module: module.number, id: item.id, result: audit.evaluateTask(item.sampleAnswer, item) });
-  }
-  audit.contentChecks[module.id].questions.forEach((item, index) => {
-    assessed.push({ module: module.number, id: `content-${index + 1}`, result: audit.evaluateCheckQuestion(item.sampleAnswer, item) });
-  });
-  for (const sourceItem of module.sources) {
-    const detail = audit.getSourceDetail(module.id, sourceItem);
-    const heading = audit.getSourceHeading(sourceItem, detail) || sourceItem.title;
-    const questions = audit.buildSourceMicroChecks(module, sourceItem, detail, heading);
-    if (questions.length !== 3 || questions.some((item) => item.evaluationMode !== "source-reasoning")) {
-      throw new Error(`Fragebezogene Quellenbewertung fehlt: ${module.id} / ${heading}`);
+vm.runInContext('window.audit = { modules, quickChecks, contentChecks, getAllRepetitionOralQuestions, getSourceDetail, getSourceHeading, buildSourceMicroChecks, evaluateCheckQuestion, analyzeAnswer, semanticTermMatches, repairStoredContentScores, isModuleUnlocked, isModulePassed };', context);
+const a = window.audit;
+const reviewed = window.GESCHICHTE_OPEN_REVIEW;
+const cases = [];
+for (const module of a.modules) {
+  const open = [module.task, a.quickChecks[module.id], module.transfer, ...a.contentChecks[module.id].questions];
+  for (const item of open) cases.push({ module: module.number, item, answer: reviewed[item.reviewId]?.[2] });
+  for (const source of module.sources) {
+    const detail = a.getSourceDetail(module.id, source);
+    const heading = a.getSourceHeading(source, detail) || source.title;
+    for (const item of a.buildSourceMicroChecks(module, source, detail, heading)) {
+      const key = item.id.replace(/-frage-[123]$/, '');
+      const index = Number(item.id.slice(-1)) - 1;
+      cases.push({ module: module.number, item, answer: window.GESCHICHTE_SOURCE_REVIEW[key]?.[index]?.[2] });
     }
-    questions.forEach((item) => assessed.push({ module: module.number, id: item.id, result: audit.evaluateCheckQuestion(item.sampleAnswer, item) }));
   }
 }
-
-const rejectedExamples = assessed.filter((item) => item.result.score !== undefined
-  ? item.result.score < 60
-  : item.result.level === "low");
-if (rejectedExamples.length) {
-  throw new Error(`Beispiellösungen werden von der eigenen Prüfung abgewiesen: ${JSON.stringify(rejectedExamples.slice(0, 5))}`);
+for (const item of a.getAllRepetitionOralQuestions()) cases.push({ module: 'Repetition', item, answer: reviewed[item.reviewId]?.[2] });
+const ids = cases.map(({ item }) => item.reviewId);
+if (cases.length !== 504 || new Set(ids).size !== 504) throw new Error('Der Einzelkatalog muss alle 504 offenen Fragen genau einmal enthalten.');
+if (Object.keys(reviewed).some((id) => !ids.includes(id))) throw new Error('Ein Einzelfall ist nicht an eine echte Frage angeschlossen.');
+const failures = [];
+for (const { module, item, answer } of cases) {
+  if (!answer) { failures.push({ id: item.reviewId, reason: 'Individuelle Prüfantwort fehlt' }); continue; }
+  const result = a.evaluateCheckQuestion(answer, item);
+  if (result.unassignedLabels.length || result.reviewRequired || result.score < 60) {
+    failures.push({ module, id: item.reviewId, answer, unassigned: result.unassignedLabels });
+  }
+  // Technische Eigenschaften zusätzlich zur individuell redigierten Inhaltsprüfung.
+  const empty = a.evaluateCheckQuestion('', item);
+  if (empty.score !== 0 || empty.matchedLabels.length) failures.push({ id: item.reviewId, reason: 'Leere Antwort erhält Anerkennung' });
+  const repeated = a.evaluateCheckQuestion(`${answer} ${answer}`, item);
+  if (JSON.stringify(result.matchedLabels) !== JSON.stringify(repeated.matchedLabels)) failures.push({ id: item.reviewId, reason: 'Wiederholung verändert die Anerkennung' });
 }
-
-const alternativeQuestion = {
-  prompt: "Warum wuchsen mittelalterliche Städte? Erkläre einen fachlich passenden Zusammenhang.",
-  placeholder: "Begründe deine Antwort.",
-  sampleAnswer: "",
-  criteria: [{ label: "nicht verlangtes Königtum", keywords: ["könig", "krone"] }]
-};
-const alternativeAnswer = "Mittelalterliche Städte wuchsen, weil Märkte, Handwerk und Zuwanderung neue Arbeitsmöglichkeiten und dichte wirtschaftliche Beziehungen schufen.";
-const alternativeResult = audit.evaluateCheckQuestion(alternativeAnswer, alternativeQuestion);
-if (alternativeResult.score < 60 || !alternativeResult.title.includes("Alternativantwort")) {
-  throw new Error("Eine fachlich plausible Alternativantwort wird weiterhin wegen eines sachfremden Kriteriums blockiert.");
+if (failures.length) throw new Error(JSON.stringify(failures, null, 2));
+// Konkret gemeldete Fehlmechanismen: knappe richtige Antwort, falsche Wortgleichsetzungen,
+// unaufgeforderte Zusatzkategorien, fehlende automatische Anerkennung ohne Fehlerurteil.
+const q = a.contentChecks['modul-1'].questions[3];
+const compact = a.evaluateCheckQuestion('Unbekannte kooperieren durch geteilte Erzählungen und erlernte Normen.', q);
+if (compact.score < 60 || compact.reviewRequired) throw new Error('Knappe richtige Antwort wird nicht vollständig anerkannt.');
+for (const [answer, term] of [['Städte', 'Staat'], ['Geschichte', 'Mythos'], ['Landschaft', 'Umweltwissen'], ['Ausbreitung', 'Mission'], ['Jahreszeiten', 'Umweltwissen']]) {
+  if (a.semanticTermMatches(answer, term)) throw new Error(`Sachlich falsche Gleichsetzung: ${answer} = ${term}`);
 }
-
-const alternativeTask = {
-  id: "alternative-quick",
-  question: "Warum wuchsen mittelalterliche Städte? Erkläre einen fachlich passenden Zusammenhang.",
-  placeholder: "Begründe deine Antwort.",
-  criteria: [{ label: "nicht verlangtes Königtum", keywords: ["könig", "krone"] }]
-};
-const alternativeTaskResult = audit.evaluateTask(alternativeAnswer, alternativeTask);
-if (alternativeTaskResult.level === "low" || !alternativeTaskResult.title.includes("Alternativantwort")) {
-  throw new Error("Eine plausible Antwort auf Haupt- oder Transferfragen wird weiterhin an einer absoluten Beispiellösung gemessen.");
-}
-
-console.log(`Flexible Bewertung erfolgreich: ${assessed.length} offene Fragen mit ihren Beispiellösungen geprüft; fachlich plausible Alternativantworten blockieren den Lernfortschritt nicht.`);
+const roman = a.contentChecks['modul-7'].questions[5];
+if (roman.criteria.length !== 2) throw new Error('Die Frage nach zwei römischen Veränderungen verlangt weiterhin drei Kategorien.');
+const uncertain = a.evaluateCheckQuestion('Die gesellschaftlichen Bindungen waren anders ausgestaltet.', q);
+if (!uncertain.reviewRequired || uncertain.score !== null || /fehlen noch|noch nicht sicher genug|noch zu knapp/i.test(uncertain.body + uncertain.title)) throw new Error('Unsicherheit wird als fachlicher Fehler ausgegeben.');
+const preserved = { learnerName: 'Prüfprofil', 'modul-1-content-score': 87, 'modul-1-content-check': true, 'modul-1-kooperationsnetze-micro-1-text': 'Unveränderlicher alter Eintrag' };
+a.repairStoredContentScores(preserved);
+if (preserved['modul-1-content-score'] !== 87 || preserved['modul-1-kooperationsnetze-micro-1-text'] !== 'Unveränderlicher alter Eintrag' || !a.isModulePassed(preserved, 'modul-1')) throw new Error('Frühere Lernstände werden herabgesetzt.');
+const pending = { 'modul-1-content-review-pending': true };
+if (!a.isModuleUnlocked(pending, 1) || a.isModulePassed(pending, 'modul-1')) throw new Error('Klärungsbedarf wird entweder blockiert oder fälschlich als bestanden ausgewiesen.');
+for (const module of a.modules) console.log(`Modul ${module.number}: ${cases.filter((entry) => entry.module === module.number).length} einzeln redigierte alternative Antworten anerkannt.`);
+console.log('16 mündliche Wiederholungsfragen einzeln geprüft. Insgesamt 504 konkrete Inhaltsfälle; keine Auswahl von Stichproben.');

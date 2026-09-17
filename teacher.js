@@ -184,6 +184,7 @@ function renderTeacherDashboard() {
       const moduleCells = Array.from({ length: moduleCount }, (_, index) => {
         const number = index + 1;
         const item = scoreMap.get(number);
+        if (item?.reviewPending && !item.passed) return `<div><span class="status-badge open">Klärung offen</span></div>`;
         if (!item) {
           return `<div><span class="status-badge locked">-</span></div>`;
         }
@@ -224,11 +225,11 @@ function renderTeacherDashboard() {
           const snapshot = entry.snapshot;
           const moduleScoreMarkup = snapshot?.moduleScores?.length
             ? `<div class="teacher-score-pills">${snapshot.moduleScores
-                .filter((item) => item.score || item.passed)
+                .filter((item) => item.score || item.passed || item.reviewPending)
                 .slice(0, 6)
                 .map(
                   (item) =>
-                    `<span class="status-badge ${item.passed ? "ready" : item.score ? "open" : "locked"}">M${item.number} ${item.score ? `${Math.round(item.score)}%` : item.passed ? "best." : "0%"}</span>`
+                    `<span class="status-badge ${item.passed ? "ready" : item.score || item.reviewPending ? "open" : "locked"}">Modul ${item.number} ${item.reviewPending && !item.passed ? "Klärung offen" : item.score ? `${Math.round(item.score)}%` : item.passed ? "bestanden" : "0%"}</span>`
                 )
                 .join("")}</div>`
             : `<span class="teacher-muted">noch kein lokaler Stand</span>`;

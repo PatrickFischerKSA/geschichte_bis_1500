@@ -11,9 +11,11 @@ function assert(condition, message) {
 
 const app = read("app.js");
 const sourceQuestionBank = read("source-question-bank.js");
+const assessmentReview = read("assessment-review.js");
 const publicUi = [
   app,
   sourceQuestionBank,
+  assessmentReview,
   read("index.html"),
   read("lehrpersonen.html"),
   read("teacher.js"),
@@ -74,6 +76,7 @@ const runtimeContext = {
   clearTimeout
 };
 runInNewContext(sourceQuestionBank, runtimeContext);
+runInNewContext(assessmentReview, runtimeContext);
 runInNewContext(app, runtimeContext);
 const generatedAudit = browserWindow.GESCHICHTE_APP.auditAllSourceQuestions();
 const fixedQuestions = Object.values(browserWindow.GESCHICHTE_SOURCE_QUESTION_BANK).flat();

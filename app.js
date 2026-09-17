@@ -7638,25 +7638,16 @@ function buildSourceMicroChecks(module, source, detail, heading) {
   const sourceId = `${module.id}-${normalize(heading || source.title)}`;
   const fixedQuestions = window.GESCHICHTE_SOURCE_QUESTION_BANK?.[sourceId];
   return Array.isArray(fixedQuestions)
-    ? fixedQuestions.map((question, questionIndex) => ({
-        ...question,
-        evaluationMode: "source-reasoning",
-        criteria: questionIndex === 0
-          ? [
-              { label: "Befund sachlich in eigenen Worten erklärt", keywords: [] },
-              { label: "zwei konkrete, zum Befund passende Zusammenhänge hergestellt", keywords: [] }
-            ]
-          : questionIndex === 1
-            ? [
-                { label: "Befund historisch eingeordnet", keywords: [] },
-                { label: "eine passende Ursache oder Voraussetzung erklärt", keywords: [] },
-                { label: "eine passende Folge oder Veränderung erklärt", keywords: [] }
-              ]
-            : [
-                { label: "eine Entwicklung oder Kontinuität benannt", keywords: [] },
-                { label: "Aussage nachvollziehbar am Befund begründet", keywords: [] }
-              ]
-      }))
+    ? fixedQuestions.map((question, questionIndex) => {
+        const reviewed = window.GESCHICHTE_SOURCE_REVIEW?.[sourceId]?.[questionIndex];
+        if (!reviewed) throw new Error(`Die Einzelredaktion fehlt für ${question.id}.`);
+        return {
+          ...question,
+          evaluationMode: "source-reasoning",
+          reviewId: question.id,
+          criteria: [{ label: reviewed[0], keywords: [], recognitionPatterns: reviewed[1] }]
+        };
+      })
     : [];
 }
 
@@ -7829,6 +7820,7 @@ function buildLearnerSnapshot(state) {
     number: module.number,
     title: module.title,
     passed: isModulePassed(state, module.id),
+    reviewPending: Boolean(state[`${module.id}-content-review-pending`]),
     unlocked: isModuleUnlocked(state, moduleIndex),
     score: getContentCheckScore(state, module.id)
   }));
@@ -7874,11 +7866,18 @@ function repairStoredContentScores(state) {
       return answer ? evaluateCheckQuestion(answer, question).score : null;
     });
     const availableScores = answered.filter((score) => score !== null);
+    const allAnswered = check.questions.every((question, index) => String(state[`${module.id}-content-question-${index}-text`] || "").trim());
+    const uncertain = allAnswered && check.questions.some((question, index) =>
+      evaluateCheckQuestion(state[`${module.id}-content-question-${index}-text`], question).reviewRequired);
+    state[`${module.id}-content-review-pending`] = Boolean(uncertain && !isModulePassed(state, module.id));
     if (!availableScores.length) return;
     const recalculated = Math.round(answered.reduce((sum, score) => sum + (score || 0), 0) / answered.length);
     const key = `${module.id}-content-score`;
     state[key] = Math.max(Number(state[key] || 0), recalculated);
-    if (state[key] >= 60) state[`${module.id}-content-check`] = true;
+    if (state[key] >= 60) {
+      state[`${module.id}-content-check`] = true;
+      state[`${module.id}-content-review-pending`] = false;
+    }
   });
   return state;
 }
@@ -7929,7 +7928,8 @@ function isModuleUnlocked(state, moduleIndex) {
     return true;
   }
 
-  return isModulePassed(state, modules[moduleIndex - 1].id);
+  return isModulePassed(state, modules[moduleIndex - 1].id)
+    || Boolean(state[`${modules[moduleIndex - 1].id}-content-review-pending`]);
 }
 
 function getModuleStatus(state, module, moduleIndex) {
@@ -7940,6 +7940,8 @@ function getModuleStatus(state, module, moduleIndex) {
   if (isModulePassed(state, module.id)) {
     return { label: "bestanden", className: "ready" };
   }
+
+  if (state[`${module.id}-content-review-pending`]) return { label: "Klärung offen", className: "open" };
 
   return { label: "offen", className: "open" };
 }
@@ -8667,7 +8669,7 @@ function renderContentCheck(module, state) {
 
   return `
     <div class="selftest-box">
-      <p><strong>${check.title}:</strong> Die einzelnen Fragen stehen bereits an den passenden Stoffstellen im Modul. Prüfe hier deinen Gesamtstand. Wenn der Durchschnitt mindestens 60 Prozent erreicht, wird das nächste Modul freigeschaltet.</p>
+      <p><strong>${check.title}:</strong> Die einzelnen Fragen stehen bereits an den passenden Stoffstellen im Modul. Prüfe hier deinen Gesamtstand. Ab 60 Prozent erkannter Gesichtspunkte wird das nächste Modul freigeschaltet. Sind alle Schlussfragen beantwortet und bleibt die automatische Zuordnung unsicher, ist die Weiterarbeit ebenfalls möglich: Der Status lautet dann «Klärung offen», nicht «bestanden».</p>
       <div class="selftest-actions">
         <button class="btn primary" type="button" data-content-check="${module.id}">Inhaltssicherung prüfen</button>
       </div>
@@ -8866,7 +8868,9 @@ function renderModules(state) {
     const status = getModuleStatus(state, module, moduleIndex);
     const contentStatus = isModulePassed(state, module.id)
       ? `Inhaltssicherung bestanden: ${Math.round(contentScore)}%`
-      : contentScore
+      : state[`${module.id}-content-review-pending`]
+        ? "Antworten bearbeitet: fachliche Klärung offen; Weiterarbeit möglich"
+        : contentScore
         ? `Inhaltssicherung noch offen: ${Math.round(contentScore)}%`
         : "Inhaltssicherung noch nicht bearbeitet";
 
@@ -9398,41 +9402,45 @@ function renderRepetitionPanel(state) {
 }
 
 const semanticConceptGroups = [
-  ["geschichte", "erzahlung", "narrativ", "mythos", "mythen", "legende", "vorstellung"],
+  ["erzahlung", "narrativ", "geschichte erzählen"],
+  ["mythos", "mythen", "gründungsmythos"],
   ["regel", "regeln", "gesetz", "gesetze", "norm", "normen", "vorschrift", "kodex"],
-  ["gesellschaft", "gemeinschaft", "gruppe", "verband", "kollektiv"],
+  ["gruppe", "verband", "kollektiv"],
   ["grossgruppe", "grosse gruppe", "grosse gesellschaft", "viele menschen", "fremde"],
   ["zusammenarbeit", "kooperation", "zusammenwirken", "gemeinsam handeln"],
   ["landwirtschaft", "ackerbau", "feldbau", "bauern", "bäuerlich", "anbau", "getreideanbau", "bodenbewirtschaftung", "kultivierung"],
   ["sesshaft", "sesshaftigkeit", "niederlassen", "fester wohnort", "dorfleben"],
-  ["mobil", "mobilitat", "nomadisch", "umherziehen", "wandern", "migration", "wanderung", "bevolkerungsbewegung"],
+  ["mobil", "mobilitat", "nomadisch", "umherziehen"],
+  ["migration", "wandern", "wanderung", "bevolkerungsbewegung"],
   ["arbeit", "feldarbeit", "muhe", "anstrengung", "belastung", "strapaze"],
   ["abhangigkeit", "bindung", "gebunden", "unfreiheit", "angewiesen"],
-  ["schrift", "schreiben", "aufzeichnung", "zeichen", "notieren", "datenspeicherung", "schriftlichkeit", "dokumentation", "buchfuhrung"],
-  ["verwaltung", "burokratie", "beamte", "listen", "erfassen", "registrieren", "administration", "staatsapparat"],
+  ["schrift", "schreiben", "schriftlichkeit"],
+  ["aufzeichnung", "notieren", "dokumentation", "buchfuhrung", "datenspeicherung"],
+  ["verwaltung", "burokratie", "administration", "staatsapparat"],
   ["steuer", "steuern", "abgabe", "abgaben", "tribut"],
   ["vorrat", "vorrate", "speicher", "uberschuss", "reserven"],
-  ["staat", "reich", "imperium", "grossordnung", "herrschaftsraum", "staatswesen", "konigtum", "obrigkeit"],
+  ["staat", "staatswesen"],
+  ["imperium", "weltreich", "imperial"],
   ["herrschaft", "macht", "autoritat", "fuhrung", "regierung", "machtordnung", "herrschaftssystem", "kontrolle"],
-  ["gerechtigkeit", "recht", "fairness", "gerechte ordnung"],
+  ["gerechtigkeit", "fairness", "gerechte ordnung"],
   ["geld", "wahrung", "munze", "zahlungsmittel", "tauschmittel"],
-  ["vertrauen", "anerkennung", "anerkennen", "akzeptanz", "akzeptieren", "glauben an wert", "gemeinsamer wert"],
+  ["anerkennung", "anerkennen", "akzeptanz", "akzeptieren"],
   ["handel", "markt", "tausch", "warenaustausch", "handelsnetz", "fernhandel", "handelsbeziehung", "wirtschaftsaustausch"],
   ["religion", "glaube", "glaubensordnung", "kult", "religios"],
-  ["mission", "missionarisch", "verbreitung", "bekehren", "ausbreiten"],
-  ["stadt", "urban", "stadtisch", "zentrum", "metropole"],
-  ["spezialisierung", "arbeitsteilung", "berufe", "handwerk", "fachleute"],
-  ["umweltwissen", "naturkenntnis", "ortskenntnis", "wissen uber tiere", "jahreszeiten", "naturraum", "landschaft", "lebensraum"],
+  ["mission", "missionarisch", "bekehren"],
+  ["stadt", "urban", "stadtisch", "metropole"],
+  ["spezialisierung", "arbeitsteilung", "spezialisierte berufe"],
+  ["umweltwissen", "naturkenntnis", "umweltkenntnis", "wissen uber tiere", "kenntnisse über den naturraum"],
   ["mundlich", "weitergabe", "uberlieferung", "erzahlen", "erinnerung"],
-  ["symbol", "zeichen", "bild", "darstellung", "felsbild"],
+  ["bild", "darstellung", "abbildung"],
   ["freiheit", "frei", "selbstbestimmung", "autonomie", "nicht gehorchen"],
   ["gleichheit", "egalitar", "gleichberechtigt", "ohne rangordnung"],
   ["hierarchie", "rangordnung", "soziale unterschiede", "ungleichheit"],
-  ["veranderung", "wandel", "entwicklung", "umbruch", "transition", "neuerung", "transformation"],
+  ["veranderung", "wandel", "transition", "transformation"],
   ["kontinuitat", "fortbestand", "weiterbestehen", "bleibt erhalten", "bestandig", "dauer", "fortdauer", "tradition", "bestehen fort", "bestand fort"],
-  ["ursache", "grund", "ausloser", "voraussetzung", "bedingt", "hervorgerufen"],
+  ["ursache", "grund", "ausloser"],
   ["folge", "auswirkung", "wirkung", "konsequenz", "resultat", "ergebnis"],
-  ["anpassung", "anpassen", "einstellen", "stellte sich ein", "stellten sich ein", "stellte", "stellten", "zurechtfinden", "adaptieren"],
+  ["anpassung", "anpassen", "einstellen auf", "stellte sich ein", "stellten sich ein", "stellten sich auf", "zurechtfinden", "adaptieren"],
   ["versorgung", "ernahrung", "nahrung", "lebensmittel", "existenzsicherung"],
   ["konflikt", "krieg", "gewalt", "auseinandersetzung", "kampf"],
   ["austausch", "kontakt", "beziehung", "vernetzung", "verbindung"],
@@ -9447,7 +9455,11 @@ const semanticStopWords = new Set([
 function semanticStem(token) {
   let value = normalizeLoose(token);
   if (value.length <= 4) return value;
-  for (const ending of ["ungen", "ischen", "licher", "igkeit", "keiten", "erinnen", "ern", "en", "er", "es", "e", "n", "s"]) {
+  // Pluralformen erhalten denselben Wortkern wie der Singular. Ein blosses
+  // Schluss-n darf nicht verschwinden: sonst passen „Aufzeichnung“ und
+  // „Aufzeichnungen“ ausgerechnet nicht zueinander.
+  if (value.endsWith("ungen")) return value.slice(0, -2);
+  for (const ending of ["ern", "en", "er", "es", "e", "s"]) {
     if (value.endsWith(ending) && value.length - ending.length >= 4) {
       value = value.slice(0, -ending.length);
       break;
@@ -9494,14 +9506,15 @@ function editDistanceAtMostOne(left, right) {
 }
 
 function semanticTokenMatches(answerToken, targetToken) {
-  const answer = normalizeLoose(answerToken);
-  const target = normalizeLoose(targetToken);
+  const fold = (value) => normalizeLoose(value).replace(/ae/g, "a").replace(/oe/g, "o").replace(/ue/g, "u");
+  const answer = fold(answerToken);
+  const target = fold(targetToken);
   if (!answer || !target) return false;
   const answerStem = semanticStem(answer);
   const targetStem = semanticStem(target);
   if (answerStem === targetStem) return true;
   if (answerStem.length >= 5 && targetStem.length >= 5
-    && (answerStem.includes(targetStem) || targetStem.includes(answerStem))) return true;
+    && answerStem.startsWith(targetStem)) return true;
   return answerStem.length >= 6
     && targetStem.length >= 6
     && answerStem[0] === targetStem[0]
@@ -9511,7 +9524,7 @@ function semanticTokenMatches(answerToken, targetToken) {
 function conceptsFor(term) {
   const normalized = normalizeLoose(term);
   return semanticConceptGroups.filter((group) => group.some((entry) =>
-    normalized === entry || normalized.includes(entry) || entry.includes(normalized)
+    normalized === entry
   ));
 }
 
@@ -9519,199 +9532,89 @@ function semanticTermMatches(answerText, keyword) {
   const answer = normalizeLoose(answerText);
   const target = normalizeLoose(keyword);
   if (!target) return false;
-  if (answer.includes(target)) return true;
-
-  const concepts = conceptsFor(target);
-  if (concepts.some((group) => group.some((entry) => answer.includes(entry)))) return true;
-
   const answerTokens = answer.split(" ").filter(Boolean);
   const targetTokens = target.split(" ").filter((token) => token.length > 2 && !semanticStopWords.has(token));
-  return targetTokens.length > 0 && targetTokens.every((token) => {
-    const tokenConcepts = conceptsFor(token);
-    if (tokenConcepts.some((group) => group.some((entry) => answer.includes(entry)))) return true;
-    return answerTokens.some((answerToken) => semanticTokenMatches(answerToken, token));
+  const directMatch = (phrase) => {
+    const terms = normalizeLoose(phrase).split(" ").filter(Boolean);
+    return terms.length > 0 && terms.every((term) => answerTokens.some((token) => semanticTokenMatches(token, term)));
+  };
+  if (directMatch(target)) return true;
+  // Nur echte, ausdrücklich hinterlegte Synonyme. Keine Ähnlichkeit von Themen.
+  return conceptsFor(target).some((group) => group.some(directMatch))
+    || (targetTokens.length > 1 && targetTokens.every((token) =>
+      answerTokens.some((answerToken) => semanticTokenMatches(answerToken, token))));
+}
+
+function reviewedPatternMatches(answer, patterns) {
+  return String(patterns || "").split(";").some((pattern) =>
+    pattern.trim() && pattern.split("&").every((part) =>
+      part.split("|").some((alternative) => alternative.trim() && semanticTermMatches(answer, alternative.trim()))));
+}
+
+function applyReviewedAssessmentCases() {
+  const entries = [
+    ...modules.flatMap((module) => [module.task, quickChecks[module.id], module.transfer,
+      ...contentChecks[module.id].questions.map((question, index) => {
+        question.reviewId = `${module.id}-content-question-${index}`;
+        return question;
+      })]),
+    ...getAllRepetitionOralQuestions()
+  ];
+  entries.forEach((item) => {
+    const key = item.reviewId || item.id;
+    const reviewed = window.GESCHICHTE_OPEN_REVIEW?.[key];
+    if (!reviewed) throw new Error(`Die Einzelredaktion fehlt für ${key}.`);
+    item.reviewId = key;
+    item.criteria = reviewed[0].map((index, position) => ({
+      ...item.criteria[index], recognitionPatterns: reviewed[1][position]
+    }));
   });
 }
 
 function analyzeAnswer(answer, task) {
   const matched = task.criteria.filter((criterion) =>
-    criterion.keywords.some((keyword) => semanticTermMatches(answer, keyword))
+    reviewedPatternMatches(answer, criterion.recognitionPatterns)
+      || criterion.keywords.some((keyword) => semanticTermMatches(answer, keyword))
   );
   const missing = task.criteria.filter((criterion) => !matched.includes(criterion));
-  const wordCount = String(answer || "").trim() ? String(answer || "").trim().split(/\s+/).length : 0;
   const rawScore = task.criteria.length ? Math.round((matched.length / task.criteria.length) * 100) : 0;
 
-  return { matched, missing, wordCount, rawScore };
+  return { matched, missing, rawScore };
 }
 
-function answerPromptRelevance(answer, task) {
-  const promptKeywords = extractKeywordsFromText(`${task.question || task.prompt || ""} ${task.placeholder || ""}`);
-  return promptKeywords.filter((keyword) => semanticTermMatches(answer, keyword)).length;
-}
-
-function hasExplanatoryStructure(answer) {
-  return /\b(weil|da|dadurch|deshalb|daher|somit|führt|ermöglicht|bewirkt|während|hingegen|zugleich)\b/i.test(String(answer || ""));
+function evaluateReviewedAnswer(answer, question) {
+  const text = String(answer || "").trim();
+  if (!text) return {
+    score: 0, level: "low", title: "Noch keine Antwort",
+    body: "Schreibe zuerst deine eigene Antwort zur Frage.", matchedLabels: [], unassignedLabels: [], reviewRequired: false, feedbackVersion: "20260917"
+  };
+  if (!question.reviewId) throw new Error("Diese Frage besitzt noch keine individuelle Redaktion.");
+  const { matched, missing, rawScore } = analyzeAnswer(text, question);
+  const matchedLabels = matched.map((item) => item.label);
+  const unassignedLabels = missing.map((item) => item.label);
+  const recognition = matchedLabels.length ? `Automatisch erkannt: ${matchedLabels.join("; ")}. ` : "";
+  if (!missing.length) return {
+    score: rawScore, level: "good", title: "Gesichtspunkte erkannt",
+    body: `${recognition}Deine eigene Wortwahl wird berücksichtigt. Die Erkennung ist keine vollständige fachliche Prüfung deiner Begründung; eine bestimmte Formulierung aus der Beispiellösung wird nicht verlangt.`,
+    matchedLabels, unassignedLabels, reviewRequired: false, feedbackVersion: "20260917"
+  };
+  return {
+    score: rawScore >= 60 ? rawScore : null, level: "mid", title: "Automatische Zuordnung noch unsicher",
+    body: `${recognition}Nicht sicher automatisch zugeordnet: ${unassignedLabels.join("; ")}. Das bedeutet nicht, dass diese Inhalte in deiner Antwort fehlen oder falsch sind. Wiederhole bereits erklärte Aussagen nicht bloss für die Erkennung. Eine abweichende fachlich richtige Erklärung ist gleichwertig; bei Unsicherheit kläre die Antwort mit deiner Lehrperson.`,
+    matchedLabels, unassignedLabels, reviewRequired: true, feedbackVersion: "20260917"
+  };
 }
 
 function evaluateTask(answer, task) {
-  const { matched, missing, wordCount } = analyzeAnswer(answer, task);
-  const minimumWords = task.minWords || (task.id.includes("-quick") ? 8 : 18);
-  const promptRelevance = answerPromptRelevance(answer, task);
-  const explanationRequested = /\b(warum|erkläre|begründe|wie|vergleich|zusammenhang)\b/i.test(String(task.question || task.prompt || ""));
-  const plausibleAlternative = wordCount >= Math.min(10, minimumWords)
-    && (matched.length >= 1 || promptRelevance >= 2)
-    && (!explanationRequested || hasExplanatoryStructure(answer) || wordCount >= minimumWords);
-
-  if (!answer.trim()) {
-    return {
-      level: "low",
-      title: "Noch keine auswertbare Antwort",
-      body:
-        "Schreibe zuerst eine eigene Formulierung. Die Beispiellösung ist nur eine mögliche Antwort und dient freiwillig zum Vergleich."
-    };
-  }
-
-  if (wordCount < minimumWords) {
-    const guidance = missing.length
-      ? `Versuche mindestens diese Aspekte einzubauen: ${missing.map((criterion) => criterion.label).join(", ")}.`
-      : "Die zentralen Inhalte werden bereits erkannt. Begründe sie noch etwas ausführlicher oder ergänze ein konkretes Beispiel.";
-    return {
-      level: "mid",
-      title: "Ansatz erkennbar, aber noch zu knapp",
-      body: `Du setzt bereits an, aber die Antwort bleibt zu kurz. ${guidance}`
-    };
-  }
-
-  if (plausibleAlternative && matched.length < Math.max(2, task.criteria.length - 1)) {
-    return {
-      level: "mid",
-      title: "Fachlich plausible Alternativantwort anerkannt",
-      body: "Deine Antwort bezieht sich erkennbar auf die Frage und erklärt einen nachvollziehbaren historischen Zusammenhang. Sie wird gleichwertig anerkannt, auch wenn sie andere Begriffe, Beispiele oder Schwerpunkte als die Beispiellösung verwendet."
-    };
-  }
-
-  if (matched.length === task.criteria.length) {
-    return {
-      level: "good",
-      title: "Sehr tragfähige Antwort",
-      body:
-        `Du deckst alle Kernkriterien ab: ${matched.map((criterion) => criterion.label).join(", ")}. Prüfe höchstens noch, ob deine Beispiele klar genug erläutert sind.`
-    };
-  }
-
-  if (matched.length >= Math.max(2, task.criteria.length - 1)) {
-    return {
-      level: "mid",
-      title: "Schon stark, aber noch ausbaufähig",
-      body:
-        `Deine Antwort trifft wichtige Punkte (${matched
-          .map((criterion) => criterion.label)
-          .join(", ")}). Für eine noch präzisere Fassung ergänze: ${missing
-          .map((criterion) => criterion.label)
-          .join(", ")}.`
-    };
-  }
-
-  return {
-    level: "low",
-    title: "Grundidee vorhanden, zentrale Aspekte fehlen noch",
-    body:
-      `Bislang erkenne ich vor allem: ${matched.length ? matched.map((criterion) => criterion.label).join(", ") : "einen ersten Zugang"}. Zur Vertiefung könntest du noch aufgreifen: ${missing
-        .map((criterion) => criterion.label)
-        .join(", ")}. Diese Hinweise sind keine zusätzlichen, versteckten Anforderungen.`
-  };
+  return evaluateReviewedAnswer(answer, task);
 }
 
 function evaluateCheckQuestion(answer, question) {
-  if (question.evaluationMode === "source-reasoning") return evaluateSourceReasoning(answer, question);
-  const { matched, missing, wordCount, rawScore } = analyzeAnswer(answer, question);
-  const promptRelevance = answerPromptRelevance(answer, question);
-  const questionText = String(question.question || question.prompt || "");
-  const explanationRequested = /\b(warum|erkläre|begründe|wie|vergleich|zusammenhang)\b/i.test(questionText);
-  const plausibleAlternative = wordCount >= 10
-    && (matched.length >= 1 || promptRelevance >= 2)
-    && (!explanationRequested || hasExplanatoryStructure(answer) || wordCount >= 18);
-  let adjustedScore = wordCount === 0
-    ? 0
-    : wordCount < 6
-      ? Math.min(rawScore, 40)
-      : wordCount < 10
-        ? Math.min(rawScore, 70)
-        : rawScore;
-  if (plausibleAlternative && adjustedScore < 60) adjustedScore = 60;
-
-  if (!answer.trim()) {
-    return {
-      score: 0,
-      level: "low",
-      title: "Noch keine auswertbare Antwort",
-      body: "Schreibe zuerst eine kurze eigene Antwort. Die Beispiellösung kannst du danach freiwillig als eine von mehreren möglichen Antworten ansehen."
-    };
-  }
-
-  if (adjustedScore >= 80) {
-    return {
-      score: adjustedScore,
-      level: "good",
-      title: "Inhalt sicher erfasst",
-      body: `Stark. Du deckst die Kernpunkte ab: ${matched.map((criterion) => criterion.label).join(", ")}.`
-    };
-  }
-
-  if (adjustedScore >= 60) {
-    if (plausibleAlternative && rawScore < 60) {
-      return {
-        score: adjustedScore,
-        level: "mid",
-        title: "Fachlich plausible Alternativantwort anerkannt",
-        body: "Deine Antwort bezieht sich erkennbar auf die Frage und begründet einen passenden historischen Zusammenhang. Sie wird für den Lernfortschritt anerkannt. Vergleiche sie freiwillig mit der Beispiellösung, wenn du sie noch vertiefen möchtest."
-      };
-    }
-    const guidance = missing.length
-      ? `Ergänze beim Überarbeiten noch: ${missing.map((criterion) => criterion.label).join(", ")}. `
-      : "Die verlangten Inhalte sind vorhanden; formuliere sie für die volle Punktzahl noch etwas ausführlicher. ";
-    return {
-      score: adjustedScore,
-      level: "mid",
-      title: "Im Kern richtig",
-      body: `Das reicht für diese Teilfrage schon gut. ${guidance}Andere fachlich richtige Begriffe, Beispiele und Begründungen sind gleichwertig.`
-    };
-  }
-
-  return {
-    score: adjustedScore,
-    level: "low",
-    title: "Noch nicht sicher genug",
-    body: `Der Bezug zur Frage ist noch nicht deutlich genug. Prüfe mögliche Gesichtspunkte wie: ${missing.map((criterion) => criterion.label).join(", ")}. Das sind Hilfen, keine verbindlichen Formulierungen oder abschliessenden Pflichtpunkte.`
-  };
+  return evaluateReviewedAnswer(answer, question);
 }
 
 function evaluateSourceReasoning(answer, question) {
-  const text = String(answer || "").trim();
-  const wordCount = text ? text.split(/\s+/).length : 0;
-  const claim = String(question.prompt || "").match(/«([^»]+)»/)?.[1] || question.prompt || "";
-  const claimKeywords = extractKeywordsFromText(claim);
-  const relevance = claimKeywords.filter((keyword) => semanticTermMatches(text, keyword)).length;
-  if (!text) {
-    return { score: 0, level: "low", title: "Noch keine auswertbare Antwort", body: "Schreibe zuerst eine eigene Antwort zum genannten Befund." };
-  }
-  if (wordCount < 8 || relevance === 0) {
-    return {
-      score: 40,
-      level: "mid",
-      title: "Bezug zum Befund noch verdeutlichen",
-      body: "Formuliere mindestens zwei vollständige Sätze und beziehe deine Erklärung ausdrücklich auf den in der Frage zitierten Befund. Es werden keine zusätzlichen Einzelinformationen verlangt."
-    };
-  }
-  const wellExplained = wordCount >= 14 && hasExplanatoryStructure(text);
-  return {
-    score: wellExplained ? 100 : 75,
-    level: wellExplained ? "good" : "mid",
-    title: wellExplained ? "Eigenständige historische Deutung anerkannt" : "Befund passend aufgegriffen",
-    body: wellExplained
-      ? "Die Antwort greift den Befund auf und erklärt einen nachvollziehbaren Zusammenhang. Andere fachlich vertretbare Ursachen, Folgen oder Deutungen werden gleichwertig anerkannt."
-      : "Der Bezug zum Befund stimmt. Begründe den Zusammenhang noch mit einem erklärenden Satz; zusätzliche Details aus der Beispiellösung sind freiwillige Vertiefung."
-  };
+  return evaluateReviewedAnswer(answer, question);
 }
 
 function buildProgressiveHints(question) {
@@ -9727,12 +9630,12 @@ function buildProgressiveHints(question) {
   }
 
   if (labels.length > 1) {
-    hints.push(`Verbinde deine erste Aussage nun mit: ${labels.slice(1).join(", ")}. Zeige, wie die Aspekte zusammenhängen.`);
+    hints.push(`Beachte die genaue Aufgabenstellung: ${question.question || question.prompt}`);
   } else {
-    hints.push("Ergänze eine Ursache, eine Folge oder ein passendes historisches Beispiel.");
+    hints.push(`Beachte die genaue Aufgabenstellung: ${question.question || question.prompt}`);
   }
 
-  hints.push("Prüfe zum Schluss: Beantwortest du die genaue Frage, erklärst du den Zusammenhang und verwendest du zentrale historische Begriffe?");
+  hints.push("Vergleiche freiwillig mit der Beispiellösung. Übernimm nur Gesichtspunkte, die deine konkrete Frage verlangt; deine eigene fachlich richtige Erklärung ist gleichwertig.");
   return hints;
 }
 
@@ -9770,7 +9673,9 @@ function bindShortAnswerTasks(state) {
     }
 
     if (state[`${task.id}-feedback`]) {
-      const stored = state[`${task.id}-feedback`];
+      const previous = state[`${task.id}-feedback`];
+      const stored = previous.feedbackVersion !== "20260917" && previous.title !== "Eine mögliche Beispiellösung" && state[`${task.id}-text`]
+        ? evaluateTask(state[`${task.id}-text`], task) : previous;
       feedbackBox.className = `feedback is-visible ${stored.level}`;
       feedbackBox.innerHTML = `<strong>${stored.title}</strong><p>${stored.body}</p>`;
     }
@@ -9937,7 +9842,9 @@ function bindContentChecks(state) {
         field.value = state[`${answerId}-text`];
       }
       if (feedbackBox && state[`${answerId}-feedback`]) {
-        const stored = state[`${answerId}-feedback`];
+        const previous = state[`${answerId}-feedback`];
+        const stored = previous.feedbackVersion !== "20260917" && previous.title !== "Eine mögliche Beispiellösung" && state[`${answerId}-text`]
+          ? evaluateCheckQuestion(state[`${answerId}-text`], question) : previous;
         wrapper?.classList.remove("good", "mid", "low");
         wrapper?.classList.add(stored.level);
         feedbackBox.className = `feedback is-visible ${stored.level}`;
@@ -9982,6 +9889,7 @@ function bindContentChecks(state) {
       const check = contentChecks[module.id];
       const scores = [];
       const weakQuestions = [];
+      const pendingQuestions = [];
 
       check.questions.forEach((question, questionIndex) => {
         const answerId = `${module.id}-content-question-${questionIndex}`;
@@ -9997,28 +9905,34 @@ function bindContentChecks(state) {
           feedbackBox.innerHTML = `<strong>${result.title}</strong><p>${result.body}</p>`;
         }
         scores.push(result.score);
+        if (result.reviewRequired) pendingQuestions.push(questionIndex + 1);
 
-        if (result.score < 60) {
+        if (result.score !== null && result.score < 60) {
           weakQuestions.push(`${questionIndex + 1}. ${question.prompt}`);
         }
       });
 
       const percent = Math.round(scores.reduce((sum, score) => sum + score, 0) / scores.length);
       const bestPercent = Math.max(percent, getContentCheckScore(state, module.id));
-      const body = percent >= 60
-        ? `Du erreichst im Durchschnitt ${percent}%. Das nächste Modul ist damit freigeschaltet.${weakQuestions.length ? ` Überarbeite bei Gelegenheit noch: ${weakQuestions.join(" ")}` : ""}`
-        : `Du erreichst im Durchschnitt ${percent}%. Für die Freischaltung brauchst du mindestens 60%. Überarbeite besonders: ${weakQuestions.join(" ")}`;
+      const allAnswered = check.questions.every((question, index) => String(state[`${module.id}-content-question-${index}-text`] || "").trim());
+      const reviewPending = allAnswered && pendingQuestions.length > 0 && bestPercent < 60;
+      const body = reviewPending
+        ? `Alle Fragen sind beantwortet. Die automatische Zuordnung ist bei Frage ${pendingQuestions.join(", ")} unsicher; das ist kein Fehlernachweis. Das nächste Modul bleibt für die Weiterarbeit offen. Kläre die betreffenden Antworten mit deiner Lehrperson. Es wird keine fachliche Richtigkeit vorgetäuscht.`
+        : percent >= 60
+          ? `Die Erkennung ordnet ${percent}% der hinterlegten Gesichtspunkte zu. Das nächste Modul ist freigeschaltet. Das ist keine vollständige fachliche Prüfung.${weakQuestions.length ? ` Noch unbeantwortet: ${weakQuestions.join(" ")}` : ""}`
+          : `Noch nicht alle verlangten Gesichtspunkte sind sicher zugeordnet. ${weakQuestions.length ? `Noch unbeantwortet: ${weakQuestions.join(" ")}` : "Kläre abweichend formulierte Antworten mit deiner Lehrperson."}`;
 
       state[`${module.id}-content-score`] = bestPercent;
       state[`${module.id}-content-feedback`] = {
-        level: bestPercent >= 60 ? "good" : percent >= 34 ? "mid" : "low",
-        title: bestPercent >= 60 ? "Inhalt gesichert" : "Inhalt noch nicht gesichert",
+        level: bestPercent >= 60 ? "good" : reviewPending ? "mid" : "low",
+        title: bestPercent >= 60 ? "Gesichtspunkte erkannt" : reviewPending ? "Fachliche Klärung offen" : "Bearbeitung noch offen",
         body:
           bestPercent >= 60 && percent < 60
             ? `${body} Deine frühere Bestleistung bleibt jedoch gespeichert, deshalb bleibt das nächste Modul offen.`
             : body
       };
       state[`${module.id}-content-check`] = bestPercent >= 60;
+      state[`${module.id}-content-review-pending`] = reviewPending;
 
       saveState(state);
       renderApp(state);
@@ -10053,7 +9967,8 @@ function bindSourceMicroChecks(state) {
         }
 
         if (storedFeedback) {
-          const stored = storedFeedback;
+          const stored = storedFeedback.feedbackVersion !== "20260917" && storedFeedback.title !== "Eine mögliche Beispiellösung" && storedText
+            ? evaluateSourceReasoning(storedText, question) : storedFeedback;
           wrapper.classList.remove("good", "mid", "low");
           wrapper.classList.add(stored.level);
           feedbackBox.className = `feedback is-visible ${stored.level}`;
@@ -10110,7 +10025,7 @@ function renderLearnerBanner(state) {
 
   banner.innerHTML = `
     <strong>${getLearnerName(state)}</strong>
-    <span>Arbeite Modul für Modul: Nach einer bestandenen schriftlichen Sicherung wird das nächste Kapitel geöffnet.</span>
+    <span>Arbeite Modul für Modul. Eine unsichere automatische Zuordnung darf die Weiterarbeit nicht blockieren, wenn alle Schlussfragen beantwortet sind. Offene fachliche Klärungen bleiben sichtbar.</span>
   `;
 }
 
@@ -10146,7 +10061,7 @@ function renderWelcomeOverlay(state) {
         <div class="welcome-list">
           <div class="takeaway">Jedes Modul beginnt mit verständlichem Grundwissen und führt dann in Quellen und Zusammenhänge.</div>
           <div class="takeaway">Nach jedem Modul folgt eine schriftliche Sicherung mit direktem Feedback.</div>
-          <div class="takeaway">Das nächste Modul öffnet sich jeweils nach mindestens 60 Prozent.</div>
+          <div class="takeaway">Das nächste Modul öffnet sich ab 60 Prozent erkannter Gesichtspunkte oder zur Weiterarbeit bei vollständig beantworteten Schlussfragen mit offenem Klärungsbedarf.</div>
           <div class="takeaway">Wenn alle 13 Module bestanden sind, wird das Zertifikat freigeschaltet.</div>
         </div>
         <label class="welcome-name">
@@ -10505,6 +10420,8 @@ function replaceState(nextState, options = {}) {
   }
   renderApp(state);
 }
+
+applyReviewedAssessmentCases();
 
 window.GESCHICHTE_DATA = {
   modules,
