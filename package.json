@@ -6,7 +6,8 @@
     "compatibility": "node compatibility-check.mjs",
     "answer-check": "node answer-evaluation-check.mjs",
     "language-check": "node language-quality-check.mjs",
-    "preflight": "node preflight.mjs && npm run language-check && npm run answer-check && npm run compatibility",
-    "build": "npm run preflight && node build.mjs"
+    "preflight": "node preflight.mjs && npm run language-check && npm run answer-check && npm run compatibility && npm run material-check",
+    "build": "npm run preflight && node build.mjs",
+    "material-check": "node material-links-check.mjs"
   }
 }

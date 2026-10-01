@@ -171,8 +171,9 @@ const sourceCatalog = [
   },
   {
     id: "faustkeil-zdf",
+    displayTitle: "KULTURAMA: Wissenshappen – Faustkeil",
     title: "ZDF / Terra X: Wissenshappen – Faustkeil",
-    type: "YouTube / ZDF",
+    type: "YouTube / KULTURAMA",
     role: "Werkzeugtechnik als Schlüssel zur frühen Menschheitsgeschichte",
     didactics:
       "Der kurze Film verdichtet, wie ein Faustkeil Rohstoffwissen, Planung, Handarbeit und Weitergabe technischen Könnens in einem einzigen Gegenstand bündelt.",
@@ -208,27 +209,29 @@ const sourceCatalog = [
     didactics:
       "Der Themenraum erweitert Modul 3 um eine internationale Perspektive auf Höhlenkunst und frühe Bildwelten. Er dient als Ergänzung, damit Symbolik nicht nur regional, sondern als weltweites archäologisches Phänomen erscheint.",
     linkLabel: "Themenraum öffnen",
-    link: "https://nationalgeographic.de/"
+    link: "https://www.nationalgeographic.de/themenkomplex/themen/geschichte-und-zivilisation/urgeschichte/urmensch"
   },
   {
     id: "jaeger-sammler-video",
+    displayTitle: "ARTE: Frauen und Männer der Steinzeit",
     title: "YouTube: Jäger und Sammler",
     type: "YouTube",
     role: "Zusätzliche Filmgrundlage zu mobilen Lebensformen",
     didactics:
       "Der vom Nutzer eingebrachte Film soll Modul 4 direkter auf Jagd, Sammeln, Mobilität und Umweltwissen beziehen.",
     linkLabel: "Film öffnen",
-    link: "https://www.youtube.com/watch?v=6xSNuCXNZmw"
+    link: "https://www.youtube.com/watch?v=rFesakjYftM"
   },
   {
     id: "steinzeit-menschen-video",
+    displayTitle: "Terra X: Die Steinzeit – Vom Faustkeil bis Stonehenge",
     title: "YouTube: Die Steinzeit-Menschen - Alles, was Du wissen musst!",
     type: "YouTube",
     role: "Breiter Überblick über Lebensformen der Steinzeit",
     didactics:
       "Der Film verdichtet Umweltanpassung, Nahrung, Werkzeuge und Lebensweise der Steinzeit in einem grösseren Überblick und ergänzt damit Modul 4.",
     linkLabel: "Film öffnen",
-    link: "https://www.youtube.com/watch?v=ZjejoT1gFOc"
+    link: "https://www.youtube.com/watch?v=4LLH6TC0mjg"
   },
   {
     id: "neolithische-revolution-video",
@@ -247,9 +250,8 @@ const sourceCatalog = [
     role: "Fruchtbarer Halbmond, Sesshaftigkeit und Streit um die Neolithisierung",
     didactics:
       "Das Dossier bündelt den Beginn von Sesshaftigkeit und Nahrungsproduktion im Fruchtbaren Halbmond und bringt Harari und Graeber/Wengrow direkt in die Frage nach offenen oder linearen Wegen hinein.",
-    linkLabel: "Lokales Dokument",
-    link: null,
-    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
+    linkLabel: "Dossier öffnen",
+    link: "./assets/materialien/neolithisierung-anfaenge.html"
   },
   {
     id: "neolithisierung-europa-doc",
@@ -258,9 +260,8 @@ const sourceCatalog = [
     role: "Ausbreitung von Ackerbau und Viehzucht nach Europa",
     didactics:
       "Das Dossier konkretisiert die langsame Ausbreitung nach Europa, die Rolle von Migration und Übernahme sowie die besondere Bedeutung der Pfahlbausiedlungen im Alpenraum.",
-    linkLabel: "Lokales Dokument",
-    link: null,
-    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
+    linkLabel: "Dossier öffnen",
+    link: "./assets/materialien/neolithisierung-europa.html"
   },
   {
     id: "goebekli-tepe",
@@ -294,11 +295,12 @@ const sourceCatalog = [
   },
   {
     id: "hochkulturen-video",
+    displayTitle: "Terra X: Mythos Turm zu Babel",
     title: "YouTube: Hochkulturen",
     type: "YouTube",
-    role: "Zusätzliche Übersicht zu Schrift, Verwaltung und Staat",
+    role: "Fallbeispiel zu Babylon, Monumentalbauten und historischen Überlieferungen",
     didactics:
-      "Der Film ergänzt Modul 6 um eine breitere Übersicht zu Hochkulturen jenseits des Ägypten-Beispiels.",
+      "Der Film untersucht den Turm zu Babel als Fallbeispiel für Monumentalbauten und die Verbindung von archäologischen Befunden und Überlieferung.",
     linkLabel: "Film öffnen",
     link: "https://www.youtube.com/watch?v=kDarvo1XSMA"
   },
@@ -329,9 +331,8 @@ const sourceCatalog = [
     role: "Stratigraphie, Datierung und Auswertung von Funden",
     didactics:
       "Das Dossier erklärt Archäologie als unterirdisches Archiv und verbindet Grabung, Stratigraphie, relative und absolute Chronologie mit naturwissenschaftlichen Methoden.",
-    linkLabel: "Lokales Dokument",
-    link: null,
-    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
+    linkLabel: "Dossier öffnen",
+    link: "./assets/materialien/archaeologie.html"
   },
   {
     id: "griechenland-demokratie-video",
@@ -361,7 +362,7 @@ const sourceCatalog = [
     didactics:
       "Der Artikel bündelt den Forschungsstand zu den Helvetiern: Siedlungsgebiet, antike Überlieferung, politische Ordnung und das Problem, dass Caesar die wichtigste, aber interessengeleitete Textquelle bleibt.",
     linkLabel: "Original öffnen",
-    link: "https://hls-dhs-dss.ch/articles/008016/2007-07-30/"
+    link: "https://hls-dhs-dss.ch/de/articles/008017/2008-04-08/"
   },
   {
     id: "kelten-engehalbinsel",
@@ -380,9 +381,8 @@ const sourceCatalog = [
     role: "Hallstatt, La Tène, Oppida und Helvetier",
     didactics:
       "Das Dossier bündelt Grundwissen zu Hallstatt und La Tène, Oppida, Druiden, Fernkontakten und dem Bruch durch Caesar.",
-    linkLabel: "Lokales Dokument",
-    link: null,
-    note: "Zusatzmaterial für Lehrpersonen; nicht öffentlich verlinkt."
+    linkLabel: "Dossier öffnen",
+    link: "./assets/materialien/kelten.html"
   },
   {
     id: "kelten-praesentation",
@@ -809,6 +809,7 @@ const modules = [
           "Im Kurs dient dieser Text als Orientierung: Nicht weil alle Lernenden Harari kennen müssen, sondern weil er eine gut verständliche Grundfrage stellt, nämlich was als Geschichte zählt und was noch nicht."
       },
       {
+        sourceId: "anthropozaen",
         title: "SRF: Anthropozän",
         meta: "Langzeitfolge",
         extracted:
@@ -910,6 +911,7 @@ const modules = [
           "Die Ressource wird genutzt, um lineare Höherentwicklung zu korrigieren und biologische Voraussetzungen als Ausgangspunkt, nicht als Enderklärung, sichtbar zu machen."
       },
       {
+        sourceId: "planet-reise-menschheit",
         title: "Planet Schule: Die aussergewöhnliche Reise der Menschheit",
         meta: "Grosser Überblick",
         extracted:
@@ -918,6 +920,7 @@ const modules = [
           "Die Ressource liefert für Modul 2 die grosse Entwicklungslinie, damit Frühgeschichte als zusammenhängender Prozess statt als lose Sammlung von Fossilien erscheint."
       },
       {
+        sourceId: "zdf-stammbaum",
         title: "ZDF Schule: Stammbaum",
         meta: "Kein gerader Aufstieg",
         extracted:
@@ -926,6 +929,7 @@ const modules = [
           "So wird die Vorstellung korrigiert, es habe von Anfang an nur eine einzige stetig verbesserte Menschheitslinie gegeben."
       },
       {
+        sourceId: "faustkeil-zdf",
         title: "ZDF / Terra X: Wissenshappen – Faustkeil",
         meta: "Werkzeug und Planung",
         extracted:
@@ -934,6 +938,7 @@ const modules = [
           "Das kurze Material eignet sich, um Technik nicht als Nebensache, sondern als Teil früher Lern- und Denkprozesse zu behandeln."
       },
       {
+        materialType: "presentation",
         title: "Arbeitspräsentation: Hominisation – Zeitleiste",
         meta: "Zeitliche Ordnung",
         extracted:
@@ -942,6 +947,7 @@ const modules = [
           "Das Material hilft, die frühe Menschheitsgeschichte nicht nur thematisch, sondern auch zeitlich sauber zu staffeln."
       },
       {
+        sourceId: "1491",
         title: "SRF: 1491",
         meta: "Migration und Anpassung",
         extracted:
@@ -950,6 +956,7 @@ const modules = [
           "Die Lernenden verstehen Ausbreitung nicht als blosses 'Besiedeln', sondern als fortlaufende Anpassungs- und Kulturleistung."
       },
       {
+        sourceId: "fruehmenschen-video",
         title: "YouTube: Frühmenschen und Menschwerdung",
         meta: "Menschenarten, Werkzeuge, Feuer",
         extracted:
@@ -1050,6 +1057,7 @@ const modules = [
           "Die Lernenden arbeiten heraus, dass Mythen keine blossen Lügen sind, sondern soziale Wirklichkeiten erzeugen können."
       },
       {
+        sourceId: "1491",
         title: "SRF: 1491",
         meta: "Kunst und Schrift",
         extracted:
@@ -1058,6 +1066,7 @@ const modules = [
           "Die Ressource macht Symbolfähigkeit sichtbar und eignet sich für eine Quellensimulation: Was sagt ein Bild oder Monument über eine Gesellschaft?"
       },
       {
+        sourceId: "hoehlenmalereien",
         title: "SRF Einstein: Rätselhafte Höhlenmalereien",
         meta: "Frühe Bildwelten",
         extracted:
@@ -1066,6 +1075,7 @@ const modules = [
           "Die Ressource soll die Symbol- und Vorstellungswelt früher Menschen nicht nur über allgemeine Zeichen, sondern über ein präzises Kunstbeispiel erschliessen."
       },
       {
+        sourceId: "natgeo-fruehgeschichte",
         title: "National Geographic: Frühgeschichte und Höhlenkunst",
         meta: "Handabdrücke, Tiere, Zeichen",
         extracted:
@@ -1158,6 +1168,7 @@ const modules = [
     ],
     sources: [
       {
+        sourceId: "1491",
         title: "SRF: 1491",
         meta: "Anpassung",
         extracted:
@@ -1174,6 +1185,7 @@ const modules = [
           "Dadurch werden spätere Veränderungen wie Sesshaftigkeit als historischer Bruch lesbar."
       },
       {
+        sourceId: "jaeger-sammler-video",
         title: "YouTube: Jäger und Sammler",
         meta: "Mobile Lebensform",
         extracted:
@@ -1182,6 +1194,7 @@ const modules = [
           "Die Ressource soll Jäger-und-Sammler-Gesellschaften als eigenständige Lebensform direkt absichern."
       },
       {
+        sourceId: "steinzeit-menschen-video",
         title: "YouTube: Die Steinzeit-Menschen - Alles, was Du wissen musst!",
         meta: "Werkzeuge, Feuer, Schutz",
         extracted:
@@ -1293,6 +1306,7 @@ const modules = [
           "Die Zuspitzung dient als Streitfrage. Lernende sollen nicht auswendig bestätigen, sondern mit Gründen abwägen."
       },
       {
+        sourceId: "pfahlbauer",
         title: "SRF: Pfahlbauer von Pfyn",
         meta: "Experimentalarchäologie",
         extracted:
@@ -1301,6 +1315,8 @@ const modules = [
           "Die Ressource wird als konkretes Lebensweltfenster genutzt: Was bedeutet Sesshaftigkeit im Alltag wirklich?"
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/neolithisierung-anfaenge.html",
         title: "Materialdossier: Neolithisierung – Anfänge",
         meta: "Fruchtbarer Halbmond und langsamer Übergang",
         extracted:
@@ -1309,6 +1325,8 @@ const modules = [
           "Das Material stützt die Grundlinie des Moduls: Sesshaftigkeit beginnt als Prozess, nicht als ein einziger revolutionärer Moment."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/neolithisierung-europa.html",
         title: "Materialdossier: Neolithisierung in Europa",
         meta: "Langsame Ausbreitung nach Europa",
         extracted:
@@ -1317,6 +1335,7 @@ const modules = [
           "Die Ressource macht klar, dass Neolithisierung in Europa kein einheitlicher Vorgang ist, sondern aus vielen regionalen Wegen besteht."
       },
       {
+        sourceId: "goebekli-tepe",
         title: "Planet Schule: Göbekli Tepe – der älteste Tempel der Menschheit",
         meta: "Monumente vor dem Staat",
         extracted:
@@ -1325,6 +1344,7 @@ const modules = [
           "Die Ressource zwingt dazu, frühe Grossbauten nicht erst aus fertigen Staaten heraus zu erklären."
       },
       {
+        sourceId: "neolithische-revolution-video",
         title: "YouTube: Neolithische Revolution",
         meta: "Streitfrage",
         extracted:
@@ -1436,6 +1456,7 @@ const modules = [
           "Die Buchstellen zeigen, dass frühe Staaten ohne Listen, Abgaben, Schreiber und Bürokratie nicht dauerhaft handlungsfähig werden."
       },
       {
+        sourceId: "spurensuche",
         title: "SRF: Eine kurze Geschichte über…",
         meta: "Ägypten",
         extracted:
@@ -1444,6 +1465,7 @@ const modules = [
           "So wird sichtbar, wie Landwirtschaft, Verwaltung, Religion und Herrschaft am Nil ineinandergreifen."
       },
       {
+        sourceId: "catalhoeyuk-terrax",
         title: "Terra X / Planet Wissen: Çatalhöyük – Grosssiedlung",
         meta: "Dichte Siedlung ohne Königsmodell",
         extracted:
@@ -1452,6 +1474,7 @@ const modules = [
           "Die Ressource macht den Unterschied zwischen grosser Besiedlung und fertigem Königsstaat sichtbar."
       },
       {
+        sourceId: "catalhoeyuk-3d",
         title: "YouTube: 3D Çatalhöyük Project Animation",
         meta: "Räumliche Rekonstruktion",
         extracted:
@@ -1460,6 +1483,7 @@ const modules = [
           "Das Material hilft, aus abstrakten Beschreibungen ein konkretes Bild früher Verdichtung zu machen."
       },
       {
+        sourceId: "hochkulturen-video",
         title: "YouTube: Hochkulturen",
         meta: "Überblick",
         extracted:
@@ -1468,6 +1492,7 @@ const modules = [
           "Ägypten bleibt das Hauptbeispiel, wird aber in einen grösseren Zusammenhang früher Hochkulturen eingeordnet."
       },
       {
+        sourceId: "einfach-antike-hochkultur",
         title: "YouTube: Was ist eine \"Hochkultur\"?",
         meta: "Begriffsarbeit",
         extracted:
@@ -1586,72 +1611,86 @@ const modules = [
           "Die Gegenposition betont, dass dichte Siedlungen, Fernhandel und politische Verdichtung nicht automatisch schon auf ein einziges Staatsmodell oder auf Rom zulaufen."
       },
       {
+        sourceId: "helvetier-hls",
         title: "HLS: Helvetier",
         meta: "Siedlungsraum, Caesar und Forschungslage",
         extracted:
           "Der Lexikonartikel ordnet die Helvetier als keltische Bevölkerungsgruppe des schweizerischen Mittellands ein und macht deutlich, wie stark ihre Geschichte über Caesar und Archäologie erschlossen wird."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/kelten.html",
         title: "Materialdossier: Die Kelten",
         meta: "Hallstatt, La Tène und oppida",
         extracted:
           "Das lokale Dossier bündelt Hallstatt, La Tène, Oppida, Fernkontakte und den Bruch durch Caesar und legt damit die Grundstruktur der keltischen Entwicklung im Raum der heutigen Schweiz frei."
       },
       {
+        materialType: "presentation",
         title: "Arbeitspräsentation: Kelten – Überblick",
         meta: "Keltenbilder und archäologische Korrektur",
         extracted:
           "Die lokale Präsentation stellt gängige Gallier- und Barbarenbilder bewusst neben Hallstatt, La Tène, oppida und archäologische Befunde und eignet sich deshalb als Korrekturfolie gegen Klischees."
       },
       {
+        sourceId: "kelten-experiment",
         title: "Planet Schule: Das Kelten-Experiment – Wie lebten die Kelten?",
         meta: "Materieller Alltag",
         extracted:
           "Der Film zeigt Hausbau, Vorräte, Handwerk und Alltag und macht damit sichtbar, dass keltische Gesellschaft aus konkreter Arbeit, Siedlungsorganisation und materieller Kultur besteht."
       },
       {
+        sourceId: "kelten-engehalbinsel",
         title: "SRF: Keltische Schätze der Berner Engehalbinsel",
         meta: "Archäologie gegen das Bauernvolk-Klischee",
         extracted:
           "Die Funde der Engehalbinsel zeigen die Helvetier nicht als schlichtes Bauernvolk, sondern als reiche, religiöse und weit vernetzte Gesellschaft."
       },
       {
+        sourceId: "archaeologie-datierung",
         title: "Planet Schule: Altersbestimmung in der Archäologie",
         meta: "Wie Archäologie zu Daten kommt",
         extracted:
           "Das Material erklärt C14, Dendrochronologie, Fundschichten und Vergleichsfunde und zeigt damit, wie archäologische Aussagen zu Kelten und Helvetiern überhaupt abgesichert werden."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/archaeologie.html",
         title: "Materialdossier: Archäologie",
         meta: "Stratigraphie, Datierung und Auswertung",
         extracted:
           "Das lokale Dossier erklärt Archäologie als unterirdisches Archiv und verbindet Grabung, Stratigraphie, Datierung und naturwissenschaftliche Auswertung."
       },
       {
+        sourceId: "kelten-nationalmuseum",
         title: "Nationalmuseum: Warum die Kelten tapfer waren",
         meta: "Hallstatt, La Tène und Metallkultur",
         extracted:
           "Der Beitrag führt in die keltische Welt als frühe europäische Hochkultur mit Metallhandwerk, Fernkontakten und markanter materieller Kultur ein."
       },
       {
+        sourceId: "kelten-roemer-srf-einzelfilm",
         title: "SRF: Die Kelten und die Römer",
         meta: "Kontaktzone vor der Romanisierung",
         extracted:
           "Der Film behandelt die Begegnung von keltischer und römischer Welt konkret im Schweizer Raum und zeigt Kontinuitäten und Brüche statt eines einfachen Ersetzungsmodells."
       },
       {
+        sourceId: "kelten-swiss-spectator",
         title: "Swiss Spectator: Die Kelten in der Schweiz",
         meta: "Keltische Schweiz im Überblick",
         extracted:
           "Der Überblick verbindet Hallstatt, La Tène, oppida und die keltische Besiedlung der Schweiz mit dem Übergang in die römische Zeit."
       },
       {
+        sourceId: "phbern-kelten",
         title: "PHBern: Kelten und gallo-römische Zeit",
         meta: "Keltische Schweiz im Übergang",
         extracted:
           "Das Ideenset verbindet keltische und gallo-römische Zeit und ist deshalb besonders hilfreich, um Übergänge, Überlagerungen und regional unterschiedliche Entwicklungen zu erklären."
       },
       {
+        sourceId: "archaeologie-schweiz",
         title: "Landesmuseum: Archäologie Schweiz",
         meta: "Fundlandschaften und archäologischer Rahmen",
         extracted:
@@ -1748,36 +1787,45 @@ const modules = [
     ],
     sources: [
       {
+        sourceId: "griechenland-demokratie-video",
         title: "YouTube: Griechenland, Polis und attische Demokratie",
         meta: "Athen, Bürgerrecht und Volksversammlung",
         extracted:
           "Der Film erklärt die Polis als politischen Raum und zeigt, wie die attische Demokratie mit Volksversammlung, Rat und Bürgerrecht funktioniert, aber zugleich viele Menschen ausschliesst."
       },
       {
+        sourceId: "rom-republik-video",
         title: "YouTube: Rom, Republik und politische Ordnung",
         meta: "Senat, Magistrate und Republik",
         extracted:
           "Der Film zeigt Rom vor der Kaiserzeit als Republik mit Senat, Konsuln, Volksversammlungen und Konflikten zwischen sozialen Gruppen."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/roemische-republik.html",
         title: "Materialdossier: Römische Republik",
         meta: "res publica, Ständekonflikte und Magistrate",
         extracted:
           "Das Dossier erklärt Senat, Konsuln, Volksversammlungen, Zwölftafeln, Volkstribunat und die Konflikte zwischen Patriziern und Plebejern als Kern der republikanischen Ordnung."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/rom-expansion-krise.html",
         title: "Materialdossier: Rom – Expansion und Krise",
         meta: "Punische Kriege, Gracchen, Caesar, Augustus",
         extracted:
           "Das Dossier verbindet Expansion, Provinzen, soziale Spannungen und Bürgerkriege bis zur Umformung der Republik im Prinzipat."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/roemische-kaiserzeit.html",
         title: "Materialdossier: Römische Kaiserzeit",
         meta: "Prinzipat, Provinzen und Reichsorganisation",
         extracted:
           "Das Dossier zeigt, wie Augustus die Republik formal weiterführt, aber faktisch eine monarchische Ordnung schafft, die das Reich dauerhaft stabilisiert."
       },
       {
+        sourceId: "roemer-schweiz",
         title: "SRF: Römer in der Schweiz",
         meta: "Regionalisierung des Imperiums",
         extracted:
@@ -1786,12 +1834,15 @@ const modules = [
           "Sie wird als Fallmaterial genutzt, um abstrakte Expansion in konkrete Veränderungen von Raum und Alltag zu übersetzen."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/rom-schweiz.html",
         title: "Materialdossier: Rom in der Schweiz",
         meta: "Helvetier, Provinzen und gallo-römische Mischwelt",
         extracted:
           "Das Dossier verbindet Caesars Sieg über die Helvetier mit Aventicum, Vindonissa, Provinzbildung, Romanisierung und dem Fortleben lokaler Traditionen."
       },
       {
+        sourceId: "roemer-experiment",
         title: "SRF: Das Römer-Experiment",
         meta: "Alltag der Römerzeit",
         extracted:
@@ -1890,6 +1941,7 @@ const modules = [
           "Die Lernenden sollen verstehen, dass Geld historisch als soziale Vereinbarung funktioniert."
       },
       {
+        sourceId: "ueken",
         title: "SRF: Münzschatz von Ueken",
         meta: "Sachquelle",
         extracted:
@@ -1898,6 +1950,7 @@ const modules = [
           "Die Ressource wird als Modell für Quellenarbeit eingesetzt: Was verrät eine Münze über Wirtschaft, Macht und Unsicherheit?"
       },
       {
+        sourceId: "grosse-voelker",
         title: "SRF: Grosse Völker",
         meta: "Fernhandel",
         extracted:
@@ -2000,6 +2053,7 @@ const modules = [
           "Der Text dient hier als Einstieg, weil Religion sofort mit Mobilität, Austausch und Weltdeutung verbunden erscheint."
       },
       {
+        sourceId: "grosse-voelker",
         title: "SRF: Grosse Völker",
         meta: "Religion, Herrschaft und Wissen",
         extracted:
@@ -2008,24 +2062,29 @@ const modules = [
           "Die Ressource wird verwendet, um religiöse Ordnung direkt mit Wissenschaft und Vernetzung zusammenzudenken."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/christentum.html",
         title: "Materialdossier: Christentum – Entstehung und Verbreitung",
         meta: "Jesus, Paulus, Verfolgungen, Konstantin",
         extracted:
           "Das Dossier erklärt die Ausbreitung des Christentums von den ersten Gemeinden über Verfolgungen bis zur konstantinischen Wende und zur Reichskirche."
       },
       {
+        sourceId: "christentum-video",
         title: "YouTube: Christentum",
         meta: "Einführung in Glauben und Ausbreitung",
         extracted:
           "Der Nutzerfilm ergänzt das Modul um eine direkte Einführung in das Christentum, damit zentrale Begriffe und Traditionen nicht stillschweigend vorausgesetzt werden."
       },
       {
+        sourceId: "judentum-video",
         title: "YouTube: Judentum",
         meta: "Einführung in Tradition und Schriftkultur",
         extracted:
           "Der Nutzerfilm ergänzt das Modul um einen direkten Zugang zu Judentum, Tora, Tradition und historischer Kontinuität."
       },
       {
+        sourceId: "islam-video",
         title: "YouTube: Islam",
         meta: "Einführung in Glaube und historischen Ordnungsraum",
         extracted:
@@ -2117,18 +2176,23 @@ const modules = [
     ],
     sources: [
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/fruehmittelalter.html",
         title: "Materialdossier: Frühmittelalter",
         meta: "Frankenreich, Klöster und neue Herrschaftsräume",
         extracted:
           "Das Dossier erklärt die mittelalterliche Welt nach Rom über Frankenreich, Christianisierung, Klöster, Grundherrschaft und die neue Dreiteilung zwischen Westen, Byzanz und Islam."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/hochmittelalter-koenige-kirche.html",
         title: "Materialdossier: Hochmittelalter – Könige und Kirche",
         meta: "Lehen, Rittertum, Stände und Frömmigkeit",
         extracted:
           "Das Dossier bündelt Lehenswesen, Ministerialen, Burgen, Rittertum, Ständeordnung und religiöse Vorstellungswelten wie Jüngstes Gericht und Fegefeuer."
       },
       {
+        sourceId: "verruecktes-mittelalter",
         title: "SRF: Das verrückte Mittelalter",
         meta: "Einstieg",
         extracted:
@@ -2137,6 +2201,7 @@ const modules = [
           "Im Modul dient sie als motivierender Zugang, der anschliessend kritisch ausdifferenziert wird."
       },
       {
+        sourceId: "mittelalter-schweiz",
         title: "SRF: Mittelalter in der Schweiz",
         meta: "Alltagsgeschichte",
         extracted:
@@ -2145,6 +2210,7 @@ const modules = [
           "Die Ressource hilft, den Unterricht vom Klischee auf materielle und soziale Wirklichkeit umzustellen."
       },
       {
+        sourceId: "spurensuche",
         title: "SRF: Eine kurze Geschichte über…",
         meta: "Klischeekritik",
         extracted:
@@ -2153,6 +2219,7 @@ const modules = [
           "Sie eignet sich für eine explizite Urteilsaufgabe: Welche Bilder vom Mittelalter tragen, welche sind zu simpel?"
       },
       {
+        sourceId: "kloester-video",
         title: "YouTube: Klöster im Mittelalter",
         meta: "Kirche und Bildung",
         extracted:
@@ -2161,12 +2228,15 @@ const modules = [
           "Die Ressource soll Kirche und Gesellschaft im Mittelalter materieller und institutioneller greifbar machen."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/eidgenossenschaft.html",
         title: "Materialdossier: Eidgenossenschaft",
         meta: "Bündnisse, Gotthard und spätmittelalterliche Machtpolitik",
         extracted:
           "Das Dossier erklärt die Eidgenossenschaft aus Reichsunmittelbarkeit, Gotthardverkehr, Landfriedensbündnissen, Morgarten und der späteren Ausweitung des Bundes."
       },
       {
+        sourceId: "eidgenossenschaft-video",
         title: "YouTube: Entstehung der Eidgenossenschaft",
         meta: "Herrschaft und Bündnisse",
         extracted:
@@ -2260,6 +2330,7 @@ const modules = [
     ],
     sources: [
       {
+        sourceId: "kreuzzug",
         title: "SRF: Der Kreuzzug der Kinder",
         meta: "Quellenkritik",
         extracted:
@@ -2268,18 +2339,24 @@ const modules = [
           "Die Ressource dient als Musterfall für historisches Fragen: Welche Quellen gibt es? Wann wurden sie geschrieben? Welche Interessen prägen sie?"
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/hochmittelalter-dorf.html",
         title: "Materialdossier: Hochmittelalter – Dorf",
         meta: "Landesausbau, Dreifelderwirtschaft und Dorfrecht",
         extracted:
           "Das Dossier erklärt Rodungen, Binnenkolonisation, Vergetreidung, Dreifelderwirtschaft und dörfliche Selbstorganisation als Kern des hochmittelalterlichen Ausbaus."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/hochmittelalter-stadt.html",
         title: "Materialdossier: Hochmittelalter – Stadt",
         meta: "Stadtrecht, Märkte, Rat und Zünfte",
         extracted:
           "Das Dossier bündelt Stadtgründungen, Autonomiebewegungen, Stadtrecht, Rat, Zünfte, Bildung und Handwerk als zentrale Entwicklungen urbaner Räume."
       },
       {
+        materialType: "dossier",
+        materialPath: "./assets/materialien/spaetmittelalter.html",
         title: "Materialdossier: Spätmittelalter",
         meta: "Pest, Hunger, Wüstungen und soziale Spannungen",
         extracted:
@@ -2294,6 +2371,7 @@ const modules = [
           "So lässt sich Kreuzzugsgeschichte aus der Enge reiner Kampfgeschichte lösen und in eine Geschichte von Mobilität und Vernetzung einordnen."
       },
       {
+        sourceId: "stadt-mittelalter-video",
         title: "YouTube: Stadt im Mittelalter",
         meta: "Stadtleben und Märkte",
         extracted:
@@ -2385,6 +2463,7 @@ const modules = [
     ],
     sources: [
       {
+        sourceId: "1491",
         title: "SRF: 1491",
         meta: "Dekoloniale Bilanz",
         extracted:
@@ -2393,6 +2472,7 @@ const modules = [
           "Die Ressource dient als Korrektiv gegen eurozentrische Abschlusserzählungen."
       },
       {
+        sourceId: "anthropozaen",
         title: "SRF: Anthropozän",
         meta: "Langzeitwirkung",
         extracted:
@@ -7417,8 +7497,9 @@ function escapeLinkAttribute(url) {
 }
 
 function getSourceTextLink(source, module, detail) {
+  if (source.materialPath) return source.materialPath;
   const params = new URLSearchParams();
-  params.set("title", getSourceHeading(source, detail) || source.title);
+  params.set("title", source.materialType ? source.title : getSourceHeading(source, detail) || source.title);
   if (module?.title) params.set("module", `Modul ${module.number}: ${module.title}`);
   if (detail.badge || source.meta) params.set("meta", detail.badge || source.meta);
   if (detail.locator) params.set("locator", detail.locator);
@@ -7426,13 +7507,22 @@ function getSourceTextLink(source, module, detail) {
   if (detail.thesis) params.set("thesis", cleanStudentText(detail.thesis));
   const context = cleanStudentText(detail.passage || source.extracted);
   if (context) params.set("context", context);
+  if (source.materialType) {
+    params.set("material", source.materialType);
+    if (detail.whyHere) params.set("why", cleanStudentText(detail.whyHere));
+    if (detail.mustKnow?.length) params.set("facts", JSON.stringify(detail.mustKnow.map(cleanStudentText)));
+    if (detail.misconception) params.set("misconception", cleanStudentText(detail.misconception));
+    for (const key of ["relevantItems", "relatedItems"]) {
+      if (detail[key]?.length) params.set(key, JSON.stringify(detail[key]));
+    }
+  }
   return `${SOURCE_TEXT_VIEW_PATH}?${params.toString()}`;
 }
 
 function renderSourceTextAction(source, module, detail) {
   return `
     <div class="source-actions">
-      <a class="btn ghost" href="${escapeLinkAttribute(getSourceTextLink(source, module, detail))}">Textstelle anzeigen</a>
+      <a class="btn ghost" href="${escapeLinkAttribute(getSourceTextLink(source, module, detail))}">${source.materialType === "dossier" ? "Dossier öffnen" : source.materialType ? "Lernmaterial öffnen" : "Textstelle anzeigen"}</a>
     </div>
   `;
 }
@@ -8193,7 +8283,7 @@ function renderSourceCard(source, module) {
     <article class="source-card">
       <header>
         <div>
-          <h4>${heading}</h4>
+          <h4>${resolveSourceLink(source, module)?.displayTitle || heading}</h4>
           ${badge ? `<span class="source-meta">${badge}</span>` : ""}
         </div>
       </header>
@@ -8214,104 +8304,25 @@ function renderSourceCard(source, module) {
   `;
 }
 
-function resolveSourceLink(source) {
-  const title = normalize(source.title);
-  if (title.includes("anthropo")) {
-    return sourceCatalog.find((entry) => entry.id === "anthropozaen");
+function resolveSourceLink(source, module) {
+  // A document is never resolved by words shared with a film title.
+  if (source.materialType) {
+    if (!module) return null;
+    return {
+      id: makeSourceKey(module.id, source.title),
+      type: source.materialType,
+      linkLabel: source.materialType === "dossier" ? "Dossier öffnen" : "Lernmaterial öffnen",
+      link: source.materialPath || getSourceTextLink(source, module, getSourceDetail(module.id, source))
+    };
   }
-  if (title.includes("1491")) {
-    return sourceCatalog.find((entry) => entry.id === "1491");
-  }
-  if (title.includes("fruhmenschen") || title.includes("fruehmenschen")) {
-    return sourceCatalog.find((entry) => entry.id === "fruehmenschen-video");
-  }
-  if (title.includes("hohlenmalereien") || title.includes("hoehlenmalereien")) {
-    return sourceCatalog.find((entry) => entry.id === "hoehlenmalereien");
-  }
-  if (title.includes("jager und sammler") || title.includes("jaeger und sammler")) {
-    return sourceCatalog.find((entry) => entry.id === "jaeger-sammler-video");
-  }
-  if (title.includes("neolithische revolution")) {
-    return sourceCatalog.find((entry) => entry.id === "neolithische-revolution-video");
-  }
-  if (title.includes("hochkulturen")) {
-    return sourceCatalog.find((entry) => entry.id === "hochkulturen-video");
-  }
-  if (title.includes("helvetier")) {
-    return sourceCatalog.find((entry) => entry.id === "helvetier-hls");
-  }
-  if (title.includes("keltische schatze") || title.includes("keltische schätze") || title.includes("engehalbinsel")) {
-    return sourceCatalog.find((entry) => entry.id === "kelten-engehalbinsel");
-  }
-  if (title.includes("kelten tapfer") || title.includes("warum die kelten tapfer waren") || title.includes("nationalmuseum")) {
-    return sourceCatalog.find((entry) => entry.id === "kelten-nationalmuseum");
-  }
-  if (title.includes("swiss spectator")) {
-    return sourceCatalog.find((entry) => entry.id === "kelten-swiss-spectator");
-  }
-  if (title.includes("archaologie schweiz") || title.includes("archäologie schweiz") || title.includes("landesmuseum")) {
-    return sourceCatalog.find((entry) => entry.id === "archaeologie-schweiz");
-  }
-  if (title.includes("squix")) {
-    return sourceCatalog.find((entry) => entry.id === "kelten-squix");
-  }
-  if (title.includes("griechenland") || title.includes("attische demokratie") || title.includes("polis")) {
-    return sourceCatalog.find((entry) => entry.id === "griechenland-demokratie-video");
-  }
-  if (title.includes("republik") || title.includes("politische ordnung")) {
-    return sourceCatalog.find((entry) => entry.id === "rom-republik-video");
-  }
-  if (title.includes("christentum")) {
-    return sourceCatalog.find((entry) => entry.id === "christentum-video");
-  }
-  if (title.includes("judentum")) {
-    return sourceCatalog.find((entry) => entry.id === "judentum-video");
-  }
-  if (title.includes("islam")) {
-    return sourceCatalog.find((entry) => entry.id === "islam-video");
-  }
-  if (title.includes("stadt im mittelalter")) {
-    return sourceCatalog.find((entry) => entry.id === "stadt-mittelalter-video");
-  }
-  if (title.includes("kloster")) {
-    return sourceCatalog.find((entry) => entry.id === "kloester-video");
-  }
-  if (title.includes("eidgenossenschaft")) {
-    return sourceCatalog.find((entry) => entry.id === "eidgenossenschaft-video");
-  }
-  if (title.includes("pfahlbauer")) {
-    return sourceCatalog.find((entry) => entry.id === "pfahlbauer");
-  }
-  if (title.includes("romer in der schweiz") || title.includes("romer in der schweiz")) {
-    return sourceCatalog.find((entry) => entry.id === "roemer-schweiz");
-  }
-  if (title.includes("romer-experiment") || title.includes("roemer-experiment")) {
-    return sourceCatalog.find((entry) => entry.id === "roemer-experiment");
-  }
-  if (title.includes("munzschatz") || title.includes("münzschatz")) {
-    return sourceCatalog.find((entry) => entry.id === "ueken");
-  }
-  if (title.includes("grosse volker") || title.includes("grosse völker")) {
-    return sourceCatalog.find((entry) => entry.id === "grosse-voelker");
-  }
-  if (title.includes("kreuzzug")) {
-    return sourceCatalog.find((entry) => entry.id === "kreuzzug");
-  }
-  if (title.includes("eine kurze geschichte")) {
-    return sourceCatalog.find((entry) => entry.id === "spurensuche");
-  }
-  if (title.includes("mittelalter in der schweiz")) {
-    return sourceCatalog.find((entry) => entry.id === "mittelalter-schweiz");
-  }
-  if (title.includes("verruckte mittelalter") || title.includes("verrueckte mittelalter")) {
-    return sourceCatalog.find((entry) => entry.id === "verruecktes-mittelalter");
-  }
-  return null;
+  return source.sourceId
+    ? sourceCatalog.find((entry) => entry.id === source.sourceId) || null
+    : null;
 }
 
 function renderFilmFoundation(module) {
   const filmSources = module.sources
-    .map((source) => ({ source, catalog: resolveSourceLink(source) }))
+    .map((source) => ({ source, catalog: resolveSourceLink(source, module) }))
     .filter((entry) => entry.catalog && !normalize(entry.source.title).startsWith(normalize("Harari-PDF")));
 
   if (!filmSources.length) {
@@ -8322,7 +8333,7 @@ function renderFilmFoundation(module) {
     <section class="film-foundation">
       <div class="film-foundation-head">
         <p class="section-kicker">Historische Fallbeispiele</p>
-        <p>Die folgenden Filme und Seiten zeigen die Entwicklungen des Moduls an konkreten Räumen, Gegenständen, Herrschaftsformen, Glaubenswelten und Lebensweisen.</p>
+        <p>Die folgenden Dossiertexte, Filme und Seiten zeigen die Entwicklungen des Moduls an konkreten Räumen, Gegenständen, Herrschaftsformen, Glaubenswelten und Lebensweisen.</p>
       </div>
       <div class="film-grid">
         ${filmSources
@@ -8335,10 +8346,10 @@ function renderFilmFoundation(module) {
               <article class="film-card">
                 <div class="film-card-head">
                   <div>
-                    <h3>${source.title}</h3>
+                    <h3>${catalog.displayTitle || source.title}</h3>
                     <span class="source-meta">${badge}</span>
                   </div>
-                  ${catalog.link ? `<a class="btn primary" href="${catalog.link}" target="_blank" rel="noreferrer">${catalog.linkLabel || "Original öffnen"}</a>` : ""}
+                  ${catalog.link ? `<a class="btn primary" href="${escapeLinkAttribute(catalog.link)}" target="_blank" rel="noreferrer">${catalog.linkLabel || "Original öffnen"}</a>` : ""}
                 </div>
                 ${detail.locator ? `<p><strong>Beispiel:</strong> ${detail.locator}</p>` : ""}
                 ${detail.thesis ? `<p><strong>Kernaussage:</strong> ${cleanStudentText(detail.thesis)}</p>` : ""}
@@ -9113,7 +9124,7 @@ function renderSourceCatalog() {
     card.innerHTML = `
       <header>
         <div>
-          <h3>${source.title}</h3>
+          <h3>${source.displayTitle || source.title}</h3>
           <span class="source-meta">${source.type}</span>
         </div>
       </header>

@@ -13,7 +13,8 @@
       article { padding:clamp(22px,5vw,44px); border:1px solid var(--line); border-radius:24px; background:var(--card); box-shadow:0 20px 50px rgba(30,44,52,.08); }
       h1 { margin:.45rem 0 .8rem; font-size:clamp(1.8rem,5vw,2.8rem); line-height:1.08; }
       h2 { margin:1.7rem 0 .45rem; font-size:1.15rem; }
-      p { line-height:1.65; }
+      p, li { line-height:1.65; }
+      li { margin-bottom:.6rem; }
       .eyebrow { margin:0; color:var(--gold); font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
       .meta { color:var(--muted); }
       blockquote { margin:1.5rem 0; padding:16px 18px; border-left:4px solid var(--gold); border-radius:0 16px 16px 0; background:rgba(123,90,22,.08); font:1.08rem/1.6 Georgia,serif; }
@@ -29,12 +30,18 @@
         <h1 id="title">Historische Textstelle</h1>
         <p class="meta" id="meta" hidden></p>
         <p class="meta" id="locator" hidden></p>
+        <p class="meta" id="material-note" hidden></p>
         <blockquote id="quote" hidden></blockquote>
         <section id="thesis-section" hidden><h2>Kernaussage</h2><p id="thesis"></p></section>
         <section id="context-section" hidden><h2>Einordnung</h2><p id="context"></p></section>
+        <section id="why-section" hidden><h2>Historische Einordnung</h2><p id="why"></p></section>
+        <section id="facts-section" hidden><h2>Wichtige Fakten</h2><ul id="facts"></ul></section>
+        <section id="misconception-section" hidden><h2>Genauer hinsehen</h2><p id="misconception"></p></section>
+        <section id="relevantItems-section" hidden><h2>Vertiefung</h2><ul id="relevantItems"></ul></section>
+        <section id="relatedItems-section" hidden><h2>Weiterführende Themen</h2><ul id="relatedItems"></ul></section>
         <div class="actions"><a class="btn" href="./index.html">Zur Lerneinheit zurück</a></div>
       </article>
     </main>
-    <script src="./textstelle.js?v=20260818-1"></script>
+    <script src="./textstelle.js?v=20261001-materials"></script>
   </body>
 </html>

@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Materialdossier: Römische Republik",
+    "path": "./assets/materialien/roemische-republik.html",
+    "original": "Römische Antike_Republik.docx",
+    "originalSha256": "93ef88f533fd9e92619a0c5480f529f9f89b105296e9a29d6d630baff836adbd",
+    "textCharacters": 13540,
+    "images": 1
+  },
+  {
+    "title": "Materialdossier: Rom – Expansion und Krise",
+    "path": "./assets/materialien/rom-expansion-krise.html",
+    "original": "Römische Antike_Expansion und Krise.docx",
+    "originalSha256": "8e10c296fa4cd9e14c627375678d19522542fac3577466a14b32010b2e73714c",
+    "textCharacters": 17299,
+    "images": 7
+  },
+  {
+    "title": "Materialdossier: Römische Kaiserzeit",
+    "path": "./assets/materialien/roemische-kaiserzeit.html",
+    "original": "Römische Antike_Kaiserzeit.docx",
+    "originalSha256": "fa1ae3ce08c3d68e41e7a31ff3cd2f6077ac1094c0495594f6a62fae3bf488e7",
+    "textCharacters": 28136,
+    "images": 8
+  },
+  {
+    "title": "Materialdossier: Rom in der Schweiz",
+    "path": "./assets/materialien/rom-schweiz.html",
+    "original": "Römische Antike_Schweiz.docx",
+    "originalSha256": "da4dd0576d2938329e35d3ca3793809d6efb6ca4e7030224281d5936849a7a72",
+    "textCharacters": 15880,
+    "images": 7
+  },
+  {
+    "title": "Materialdossier: Christentum – Entstehung und Verbreitung",
+    "path": "./assets/materialien/christentum.html",
+    "original": "Römische Antike_Christentum_Entstehung und Verbreitung.docx",
+    "originalSha256": "609dbc7f564d42adda336772c78695fe5a0ec92c6825bf6bef78ba6394008da5",
+    "textCharacters": 17661,
+    "images": 5
+  },
+  {
+    "title": "Materialdossier: Neolithisierung – Anfänge",
+    "path": "./assets/materialien/neolithisierung-anfaenge.html",
+    "original": "Neolithisierung_Anfänge (1).docx",
+    "originalSha256": "d032b56b80ed983383a45e4fdb44180242d854158e366e3a6110cd06666e21b0",
+    "textCharacters": 24600,
+    "images": 6
+  },
+  {
+    "title": "Materialdossier: Neolithisierung in Europa",
+    "path": "./assets/materialien/neolithisierung-europa.html",
+    "original": "Neolithisierung_Europa.docx",
+    "originalSha256": "9f30de28a22aab80483ad581e21161a21a54d886da4e1d0c625cd2f6f5c77bde",
+    "textCharacters": 27601,
+    "images": 10
+  },
+  {
+    "title": "Materialdossier: Die Kelten",
+    "path": "./assets/materialien/kelten.html",
+    "original": "Die Kelten.docx",
+    "originalSha256": "dcc964559babb67d7c2694ad35d88070fe2bcb7d0e5dd94534d6ae5e5161a337",
+    "textCharacters": 24312,
+    "images": 6
+  },
+  {
+    "title": "Materialdossier: Archäologie",
+    "path": "./assets/materialien/archaeologie.html",
+    "original": "Archäologie.docx",
+    "originalSha256": "cf777389be7fe93b8d102a3672e3404e18fa2a65a6d3d71058573adcd80ba8a9",
+    "textCharacters": 7309,
+    "images": 4
+  },
+  {
+    "title": "Materialdossier: Frühmittelalter",
+    "path": "./assets/materialien/fruehmittelalter.html",
+    "original": "Mittelalter_Frühmittelalter.docx",
+    "originalSha256": "58608fc51bd7433a80f28d9a43738ad095a92e4cbd17b759f760a3b4ffdb3b0c",
+    "textCharacters": 30398,
+    "images": 15
+  },
+  {
+    "title": "Materialdossier: Hochmittelalter – Könige und Kirche",
+    "path": "./assets/materialien/hochmittelalter-koenige-kirche.html",
+    "original": "Mittelalter_Hochmittelalter_Könige und Kirche.docx",
+    "originalSha256": "b387f5797647209a7c2715e0d3e31963868a4fa5ce9ed9daeca732294b2edc3f",
+    "textCharacters": 23553,
+    "images": 12
+  },
+  {
+    "title": "Materialdossier: Eidgenossenschaft",
+    "path": "./assets/materialien/eidgenossenschaft.html",
+    "original": "Mittelalter_Eidgenossenschaft.docx",
+    "originalSha256": "b2972e60c1c58fe8c1653f2220540df9b48eb6429c7c100ec0154db58464f7d2",
+    "textCharacters": 45220,
+    "images": 18
+  },
+  {
+    "title": "Materialdossier: Hochmittelalter – Dorf",
+    "path": "./assets/materialien/hochmittelalter-dorf.html",
+    "original": "Mittelalter_Hochmittelalter_Dorf.docx",
+    "originalSha256": "3e9c63ce1b4cc0671e72ed232d2601beeb2896e16a0426e72cd2e7d8976fbde4",
+    "textCharacters": 25795,
+    "images": 10
+  },
+  {
+    "title": "Materialdossier: Hochmittelalter – Stadt",
+    "path": "./assets/materialien/hochmittelalter-stadt.html",
+    "original": "Mittelalter_Hochmittelalter_Stadt.docx",
+    "originalSha256": "de41cbfee2a5ec71cd9e2cbd3cfe969dd9cc016d2eb5916bb079a0a9696cc9ee",
+    "textCharacters": 44726,
+    "images": 17
+  },
+  {
+    "title": "Materialdossier: Spätmittelalter",
+    "path": "./assets/materialien/spaetmittelalter.html",
+    "original": "Mittelalter_Spätmittelalter.docx",
+    "originalSha256": "c9c2f339be33e9a8b8b0ca1d62736603deb92bdaddeeb28d3a3c3a52b9b9a790",
+    "textCharacters": 27950,
+    "images": 11
+  }
+]
