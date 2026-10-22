@@ -34,8 +34,8 @@ html.forEach((source, index) => {
 
 assert(/html\s*\{[^}]*overflow-y:\s*auto/s.test(styles),
   "Das Wurzeldokument muss vertikal scrollbar bleiben.");
-assert(/body\s*\{[^}]*min-height:\s*100%/s.test(styles) && /body\s*\{[^}]*overflow-y:\s*auto/s.test(styles),
-  "Die normale Schülerseite muss eine plattformunabhängige vertikale Scrollfläche besitzen.");
+assert(/body\s*\{[^}]*min-height:\s*100%/s.test(styles) && /body\s*\{[^}]*overflow:\s*visible/s.test(styles),
+  "Der Body darf keine zweite vertikale Scrollfläche innerhalb des Wurzeldokuments erzeugen.");
 for (const selector of [".welcome-overlay", ".thinker-modal"]) {
   const escaped = selector.replace(".", "\\.");
   const block = styles.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`, "s"))?.[1] || "";

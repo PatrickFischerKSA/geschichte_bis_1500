@@ -74,3 +74,11 @@ Die veröffentlichte Plattform verwendet eine Cloudflare-D1-Datenbank:
 - `drizzle/`: Datenbankschema und Migration
 - `assets/srf/`: lokal eingebundene SRF-Bildassets für die atmosphärische Modulgestaltung
 - `.github/workflows/pages.yml`: automatische Veröffentlichung über GitHub Pages
+
+## Scroll-Performance
+
+Gesperrte Module werden zunächst als kompakte Vorschau aufgebaut; nach der Freischaltung entstehen die vollständigen Quellen und Aufgaben. Lernstände werden dabei nicht gelöscht oder umgeschrieben. In der freigeschalteten Lehrpersonenansicht bleiben alle Module vollständig verfügbar.
+
+Die Seite verwendet nur die Scrollfläche des Wurzeldokuments. Dialoge sperren diese nur, solange sie offen sind; beim Schließen und Wiederherstellen der Seite wird die Sperre abgeglichen. Großflächige Hintergrundanimationen und Grafikfilter über den sehr langen Modulen wurden entfernt. Offscreen-Abschnitte freigeschalteter Module können vom Browser später gerendert werden; beim Drucken wird alles vollständig dargestellt.
+
+`npm run scroll-check` prüft die kompakte Vorschau, die Freischaltung, den Erhalt gespeicherter Entwürfe, die vollständige Lehrpersonenansicht und das Freigeben der Scrollsperre. Der Check gehört zum Preflight und wird vor der GitHub-Pages-Veröffentlichung ausgeführt.

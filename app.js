@@ -8222,6 +8222,7 @@ function reconcileOverlayScrollLock() {
   const thinker = document.getElementById("thinker-modal");
   const overlayOpen = Boolean((welcome && !welcome.hidden) || (thinker && !thinker.hidden));
   document.body.classList.toggle("is-overlay-open", overlayOpen);
+  document.documentElement?.classList.toggle("is-overlay-open", overlayOpen);
 }
 
 function bindThinkerPanel() {
@@ -8888,6 +8889,22 @@ function renderModules(state) {
     const section = document.createElement("section");
     section.className = `panel module-card ${unlocked ? "" : "is-locked"}`.trim();
     section.id = module.id;
+    // Locked modules need a preview, not thousands of inactive source/task nodes.
+    // The normal render below creates their full content as soon as they unlock.
+    if (!unlocked) {
+      section.innerHTML = `
+        <header class="module-header">
+          <div>
+            <p class="module-kicker">Modul ${module.number}</p>
+            <div class="module-title-row"><h2>${module.title}</h2><span class="status-badge ${status.className}">${status.label}</span></div>
+            <p class="lead">${getModuleIntroText(module)}</p>
+          </div>
+          <div class="module-meta"><div class="meta-box"><span class="module-tag">${module.phase}</span><p><strong>Zeitraum:</strong> ${module.era}</p></div><div class="meta-box"><p class="section-kicker">Leitfrage</p><p>${module.guidingQuestion}</p></div></div>
+        </header>
+        <div class="module-lock-note"><p><strong>Gesperrt:</strong> Dieses Modul wird nach der Inhaltssicherung des vorherigen Moduls freigeschaltet. Grundwissen, Quellen und Aufgaben werden dann eingeblendet. Bereits gespeicherte Antworten bleiben erhalten.</p></div>`;
+      list.appendChild(section);
+      return;
+    }
     section.innerHTML = `
       <header class="module-header">
         <div>

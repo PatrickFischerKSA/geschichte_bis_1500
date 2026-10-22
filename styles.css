@@ -27,15 +27,15 @@
 html {
   scroll-behavior: smooth;
   min-height: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: auto;
 }
 
 body {
   margin: 0;
   min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* Only the root document scrolls; a second auto scroller traps wheel input. */
+  overflow: visible;
   color: var(--text);
   font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -66,10 +66,11 @@ body::after {
     radial-gradient(circle at 20% 20%, rgba(200, 155, 60, 0.1), transparent 18%),
     radial-gradient(circle at 75% 18%, rgba(31, 109, 102, 0.08), transparent 20%),
     radial-gradient(circle at 60% 78%, rgba(168, 86, 42, 0.08), transparent 18%);
-  animation: ambientDrift 22s ease-in-out infinite alternate;
+  /* Keep the atmosphere static to avoid repainting the whole long page. */
   opacity: 0.75;
 }
 
+html.is-overlay-open,
 body.is-overlay-open {
   overflow: hidden;
 }
@@ -77,7 +78,6 @@ body.is-overlay-open {
 body.first-run-intro .hero,
 body.first-run-intro .showcase-panel,
 body.first-run-intro .sidebar,
-body.first-run-intro #module-list,
 body.first-run-intro #completion-panel {
   animation: introReveal 850ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
@@ -94,7 +94,6 @@ body.first-run-intro .sidebar {
   animation-delay: 240ms;
 }
 
-body.first-run-intro #module-list,
 body.first-run-intro #completion-panel {
   animation-delay: 320ms;
 }
@@ -146,7 +145,7 @@ p {
   border-radius: var(--radius-lg);
   background: var(--panel);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px);
+  /* Large scrolling panels must not allocate full-height blur surfaces. */
 }
 
 .hero {
@@ -176,7 +175,7 @@ p {
   height: 320px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(31, 109, 102, 0.14), transparent 68%);
-  animation: orbFloat 12s ease-in-out infinite alternate;
+  /* Static decoration: no continuous compositor work while learning. */
 }
 
 .hero-copy > * {
@@ -827,8 +826,7 @@ p {
   height: 380px;
   border-radius: 999px;
   background: radial-gradient(circle, rgba(31, 109, 102, 0.14), transparent 62%);
-  filter: blur(12px);
-  animation: ribbonPulse 10s ease-in-out infinite alternate;
+  /* The radial gradient is already soft; no animated filter surface needed. */
   pointer-events: none;
 }
 
@@ -927,7 +925,14 @@ p {
 
 .content {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
   gap: 22px;
+}
+
+.content > *,
+.module-grid > * {
+  min-width: 0;
 }
 
 .welcome-overlay {
@@ -1300,6 +1305,8 @@ p {
 
 .module-grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
   gap: 14px;
 }
 
@@ -1309,7 +1316,6 @@ p {
 }
 
 .module-card.is-locked .module-grid {
-  filter: grayscale(0.2);
   pointer-events: none;
   user-select: none;
 }
@@ -2883,4 +2889,26 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
   margin-top: 0.45rem;
   color: var(--muted, #5f6d73);
   font-size: 0.9rem;
+}
+
+/* Smaller paint/layout boundaries for long open modules, including teacher mode.
+   Off-screen content remains in the DOM for search, focus and anchor navigation. */
+@supports (content-visibility: auto) {
+  .module-grid > .module-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+}
+@media print {
+  .module-grid > .module-section {
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body.first-run-intro .hero,
+  body.first-run-intro .showcase-panel,
+  body.first-run-intro .sidebar,
+    body.first-run-intro #completion-panel { animation: none; }
 }
