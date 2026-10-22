@@ -2900,19 +2900,454 @@ const moduleCompactSummaries = {
   }
 };
 
+// Redigierte Schaubilder: Zusammenhänge, keine zwangsläufige Fortschrittsfolge.
+const moduleDiagrams = {
+  "modul-1": {
+    "title": "Von Vergangenheit zu erklärter Geschichte",
+    "left": [
+      {
+        "title": "Natur und Evolution",
+        "text": "Klima, Lebewesen und biologische Veränderung."
+      },
+      {
+        "title": "Menschliche Spuren",
+        "text": "Werkzeuge, Sprache, Regeln und Erinnerungen."
+      }
+    ],
+    "center": {
+      "title": "Kultur gestaltet Welt",
+      "text": "Menschen geben Wissen weiter und ordnen ihr Zusammenleben."
+    },
+    "right": [
+      {
+        "title": "Historisch erklären",
+        "text": "Quellen deuten und Veränderungen mit ihren Bedingungen verknüpfen."
+      },
+      {
+        "title": "Langzeitfolgen erkennen",
+        "text": "Frühe Eingriffe mit späteren Gesellschaften und Umweltfolgen verbinden."
+      }
+    ],
+    "conflicts": "Deutungskonflikte: Welche Ereignisse gelten als wichtig, aus wessen Perspektive wird erzählt und was lässt sich durch Quellen belegen?",
+    "breaks": "Der Übergang von biologischer Entwicklung zu kultureller Weltgestaltung verändert den Blick auf Vergangenheit. Das ist eine begriffliche Unterscheidung, kein einzelner datierbarer Umschaltpunkt.",
+    "continuities": "Menschen lernen, erinnern und verändern ihre Umwelt in allen behandelten Epochen.",
+    "developments": "Feuer, Landwirtschaft, Städte und Handel bilden lange Wirkungsketten; ihre Folgen unterscheiden sich nach Zeit und Raum.",
+    "innovations": "Sprache, Werkzeuge und gemeinsam anerkannte Regeln machen Wissen über Generationen nutzbar. Sie bilden den Ausgangspunkt der historischen Betrachtung."
+  },
+  "modul-2": {
+    "title": "Menschwerdung als verzweigter Prozess",
+    "left": [
+      {
+        "title": "Mehrere Menschenarten",
+        "text": "Koexistenz statt einer geraden Entwicklungsleiter."
+      },
+      {
+        "title": "Biologische Voraussetzungen",
+        "text": "Gehirn, aufrechter Gang und lange Kindheit."
+      }
+    ],
+    "center": {
+      "title": "Lernen und Kooperation",
+      "text": "Technik und Gruppenwissen erweitern die Handlungsmöglichkeiten."
+    },
+    "right": [
+      {
+        "title": "Migration und Anpassung",
+        "text": "Menschen erschliessen unterschiedliche Landschaften und Klimazonen."
+      },
+      {
+        "title": "Verzweigungen und Abbrüche",
+        "text": "Einige Menschenarten verschwinden; Sapiens bleibt nicht einfach von Anfang an überlegen."
+      }
+    ],
+    "conflicts": "Überleben verlangt Anpassung an Umweltbedingungen und den Zugang zu Nahrung und Räumen. Das Verhältnis von Zusammenarbeit und Konkurrenz darf nicht als einfache Siegergeschichte erzählt werden.",
+    "breaks": "Das Verschwinden anderer Menschenarten und die Besiedlung neuer Räume verändern die menschliche Vielfalt. Amerika hat bereits lange vor 1492 eine eigene Geschichte.",
+    "continuities": "Abhängigkeit von Gruppen, soziales Lernen und die Weitergabe von Erfahrungswissen begleiten die Menschheitsgeschichte.",
+    "developments": "Biologische, technische und soziale Veränderungen greifen über lange Zeit ineinander; Wanderungen führen zu unterschiedlichen regionalen Lebensweisen.",
+    "innovations": "Werkzeugtechniken, kontrollierte Feuernutzung und angepasste Unterkünfte erweitern Handlungsspielräume. Diese Neuerungen entstehen nicht alle gleichzeitig oder nur bei Sapiens."
+  },
+  "modul-3": {
+    "title": "Sprache verbindet Menschen über die Kleingruppe hinaus",
+    "left": [
+      {
+        "title": "Flexible Sprache",
+        "text": "Über Abwesendes, Zukünftiges und Vorgestelltes sprechen."
+      },
+      {
+        "title": "Symbole und Mythen",
+        "text": "Gemeinsame Zeichen, Geschichten und Erwartungen."
+      }
+    ],
+    "center": {
+      "title": "Geteilte Vorstellungen",
+      "text": "Regeln und Zugehörigkeit ermöglichen Zusammenarbeit mit Fremden."
+    },
+    "right": [
+      {
+        "title": "Grössere Kooperation",
+        "text": "Menschen können sich flexibler und grossräumiger organisieren."
+      },
+      {
+        "title": "Ordnung und Ausschluss",
+        "text": "Gemeinsame Geschichten stiften Zusammenhalt und ziehen Grenzen."
+      }
+    ],
+    "conflicts": "Unterschiedliche Gruppen können um Deutung, Zugehörigkeit und die Geltung gemeinsamer Regeln streiten. Vorstellungen können Kooperation ebenso wie Abgrenzung begründen.",
+    "breaks": "Kooperation ist nicht mehr nur an persönliche Bekanntschaft gebunden. Die «kognitive Revolution» ist eine Deutung eines langen Wandels, kein überall gleichzeitiges Ereignis.",
+    "continuities": "Gesellschaften beruhen weiter auf Vertrauen, Erinnerungen und gemeinsamen Erwartungen, nicht allein auf Zwang.",
+    "developments": "Symbolische Kommunikation unterstützt Rituale und Identitäten; später können darauf auch staatliche, religiöse und wirtschaftliche Institutionen aufbauen.",
+    "innovations": "Flexible Sprache, symbolische Darstellungen und gemeinsam anerkannte Regeln eröffnen neue Formen der Verständigung und Koordination."
+  },
+  "modul-4": {
+    "title": "Mobile Lebensformen: Wissen, Bewegung und soziale Ordnung",
+    "left": [
+      {
+        "title": "Umweltwissen",
+        "text": "Pflanzen, Tiere, Jahreszeiten und Wege kennen."
+      },
+      {
+        "title": "Soziale Regeln",
+        "text": "Teilen, Erinnern und Wissen mündlich weitergeben."
+      }
+    ],
+    "center": {
+      "title": "Flexible Gruppen",
+      "text": "Mobilität und Kooperation werden an Räume und Jahreszeiten angepasst."
+    },
+    "right": [
+      {
+        "title": "Vielfältige Lebensweisen",
+        "text": "Nahrung, Unterkünfte und Werkzeuge passen zu unterschiedlichen Umwelten."
+      },
+      {
+        "title": "Veränderbare Ordnung",
+        "text": "Gruppen können sich saisonal sammeln, trennen und neu organisieren."
+      }
+    ],
+    "conflicts": "Die Verteilung von Nahrung und die Gestaltung gemeinsamer Regeln bilden soziale Spannungsfelder. Mobile Gesellschaften dürfen weder pauschal als friedlich noch als gewaltsam gelten.",
+    "breaks": "Saisonale Wechsel und Wanderungen verändern Gruppenzusammensetzung und Alltag. Spätere Sesshaftigkeit ist kein überall zwangsläufiger nächster Schritt.",
+    "continuities": "Teilen, Kooperation, mündliches Gedächtnis und genaue Umweltbeobachtung tragen das Zusammenleben über lange Zeit.",
+    "developments": "Menschen passen Techniken und soziale Beziehungen an unterschiedliche Räume an und können verschiedene Formen gesellschaftlicher Ordnung erproben.",
+    "innovations": "Spezialisierte Werkzeuge, angepasste Unterkünfte und Techniken der Wissensweitergabe erweitern die Möglichkeiten mobiler Lebensformen."
+  },
+  "modul-5": {
+    "title": "Sesshaftigkeit: neue Möglichkeiten, neue Abhängigkeiten",
+    "left": [
+      {
+        "title": "Nahrungsproduktion",
+        "text": "Pflanzen anbauen und Tiere halten."
+      },
+      {
+        "title": "Ortsbindung",
+        "text": "Boden, Wasser, Häuser und Vorräte gewinnen an Gewicht."
+      }
+    ],
+    "center": {
+      "title": "Dörfer und Überschüsse",
+      "text": "Arbeit, Besitz und Versorgung werden anders organisiert."
+    },
+    "right": [
+      {
+        "title": "Neue Möglichkeiten",
+        "text": "Bevölkerungswachstum, Spezialisierung und grössere Siedlungen."
+      },
+      {
+        "title": "Neue Belastungen",
+        "text": "Mehr Arbeit, Ertragsrisiken und ungleicher Zugang zu Ressourcen."
+      }
+    ],
+    "conflicts": "Zugang zu Boden, Wasser und Vorräten kann umstritten sein. Unterschiedliche Besitz- und Verteilungsordnungen schaffen Chancen, Abhängigkeiten und soziale Ungleichheit.",
+    "breaks": "Nahrung wird zunehmend produziert statt nur gesammelt oder gejagt; dauerhafte Siedlungen verändern Alltag und Umwelt. Der Wandel verläuft regional verschieden und oft schrittweise.",
+    "continuities": "Jagen, Sammeln und mobile Lebensweisen bestehen neben Ackerbau und Viehzucht weiter; älteres Wissen bleibt nutzbar.",
+    "developments": "Dörfer, Arbeitsteilung und neue Eigentumsformen entwickeln sich in unterschiedlichen Kombinationen. Grosse Siedlungen führen nicht automatisch zu Königtum oder Staat.",
+    "innovations": "Ackerbau, Viehzucht, Vorratshaltung und feste Bauweisen eröffnen neue Formen der Versorgung und Organisation. Kultzentren und Siedlungen zeigen mehrere mögliche Entwicklungspfade."
+  },
+  "modul-6": {
+    "title": "Überschüsse verwalten – Herrschaft organisieren",
+    "left": [
+      {
+        "title": "Landwirtschaft und Vorräte",
+        "text": "Versorgung und Überschüsse müssen koordiniert werden."
+      },
+      {
+        "title": "Städte und Arbeitsteilung",
+        "text": "Viele Tätigkeiten und soziale Gruppen wirken zusammen."
+      }
+    ],
+    "center": {
+      "title": "Zählen, Schreiben, Verwalten",
+      "text": "Listen, Abgaben und Schrift organisieren grosse Gruppen."
+    },
+    "right": [
+      {
+        "title": "Dauerhafte Machtzentren",
+        "text": "Herrschaft, soziale Hierarchien und Bürokratien."
+      },
+      {
+        "title": "Legitimation und Ordnung",
+        "text": "Religion und Weltbilder begründen Ansprüche, etwa Pharao und Maat."
+      }
+    ],
+    "conflicts": "Wer kontrolliert Vorräte, Abgaben und Arbeitsleistungen? Herrschaft organisiert Versorgung, verteilt Macht und kann ungleiche Ansprüche durchsetzen.",
+    "breaks": "Schriftliche Verwaltung und dauerhafte Machtzentren verändern das Verhältnis zwischen lokalen Gemeinschaften und übergeordneten Institutionen. Nicht jede komplexe Siedlung bildet denselben Staatstyp aus.",
+    "continuities": "Landwirtschaft, lokale Gemeinschaften und religiöse Vorstellungen bleiben grundlegend, werden aber anders in politische Ordnungen eingebunden.",
+    "developments": "Städte, Verwaltung und Hierarchien können sich gegenseitig verstärken. Ägypten veranschaulicht die Verbindung von Umweltbedingungen, Königtum und religiöser Legitimation.",
+    "innovations": "Schrift, Listen, Kalender und geregelte Abgaben ermöglichen neue Formen der Erinnerung, Planung und Koordination; sie sind zugleich Werkzeuge der Macht."
+  },
+  "modul-7-kelten": {
+    "title": "Keltische Vielfalt und römischer Eingriff",
+    "left": [
+      {
+        "title": "Hallstatt und La Tène",
+        "text": "Verwandte materielle Kulturen, keine einheitliche Nation."
+      },
+      {
+        "title": "Oppida und Fernkontakte",
+        "text": "Befestigte Zentren, Handwerk, Münzen und Religion."
+      }
+    ],
+    "center": {
+      "title": "Helvetische Lebenswelt",
+      "text": "Im schweizerischen Mittelland bestehen komplexe soziale und wirtschaftliche Beziehungen."
+    },
+    "right": [
+      {
+        "title": "Bruch durch Rom",
+        "text": "Caesars Eingriff 58 v. Chr. verändert politische Handlungsspielräume."
+      },
+      {
+        "title": "Gallo-römische Verbindungen",
+        "text": "Lokale Praktiken verbinden sich später mit römischen Formen."
+      }
+    ],
+    "conflicts": "Römische Expansion und lokale Handlungsspielräume geraten in Konflikt. Caesars interessengeleitete Darstellung muss mit archäologischen Befunden verglichen werden.",
+    "breaks": "Caesars Eingriff und die spätere römische Eingliederung verändern Machtverhältnisse, Siedlungen und Verkehrsbeziehungen; 58 v. Chr. erklärt nicht allein den gesamten folgenden Wandel.",
+    "continuities": "Lokale Bevölkerung, Handwerkswissen, religiöse Praktiken und ältere Beziehungen verschwinden nicht einfach, sondern wirken in veränderten Formen fort.",
+    "developments": "Von Hallstatt über La Tène entwickeln sich befestigte Zentren, Spezialisierung und Fernkontakte. Unter Rom entstehen neue Mischformen statt eines blossen Austauschs aller Lebensweisen.",
+    "innovations": "Spezialisiertes Metallhandwerk, keltische Münzprägung und die Organisation von Oppida verdichten Produktion und Austausch; römische Infrastruktur erweitert später die Vernetzung."
+  },
+  "modul-7": {
+    "title": "Antike Ordnungen: Teilhabe und Herrschaft über grosse Räume",
+    "left": [
+      {
+        "title": "Athen",
+        "text": "Direkte Beteiligung eines begrenzten Bürgerkreises."
+      },
+      {
+        "title": "Römische Republik",
+        "text": "Ämter, Senat und Volksversammlungen verteilen Macht ungleich."
+      }
+    ],
+    "center": {
+      "title": "Politische Organisation",
+      "text": "Teilhabe und die Kontrolle wachsender Räume werden unterschiedlich gelöst."
+    },
+    "right": [
+      {
+        "title": "Expansion und Imperium",
+        "text": "Heer, Steuern, Recht und Infrastruktur verbinden Regionen."
+      },
+      {
+        "title": "Integration und Ungleichheit",
+        "text": "Lokale Eliten werden eingebunden; Rechte und Macht bleiben ungleich verteilt."
+      }
+    ],
+    "conflicts": "Politische Beteiligung steht neben dem Ausschluss grosser Bevölkerungsgruppen. Expansion erzeugt Konflikte um Macht, Ressourcen und die Stellung unterworfener Regionen.",
+    "breaks": "Roms Übergang von der Republik zur Kaiserherrschaft verändert die Machtverteilung; Eroberungen ordnen lokale Verhältnisse neu. Athen und Rom bilden keine einfache gemeinsame Entwicklungsleiter.",
+    "continuities": "Republikanische Institutionen und lokale Eliten können unter veränderten Machtverhältnissen fortbestehen. Rechtsvorstellungen und Verkehrswege wirken über politische Brüche hinaus.",
+    "developments": "Stadtstaatliche und grossräumige Ordnungen entwickeln verschiedene Lösungen für politische Entscheidungen, Verwaltung und die Einbindung von Regionen.",
+    "innovations": "Direkte Bürgerbeteiligung in Athen, republikanische Ämterordnungen sowie römische Rechts-, Verwaltungs- und Infrastruktursysteme prägen politische Handlungsmöglichkeiten – jeweils mit Grenzen der Teilhabe."
+  },
+  "modul-8": {
+    "title": "Geld und Handel: Austausch zwischen Fremden",
+    "left": [
+      {
+        "title": "Gemeinsames Vertrauen",
+        "text": "Wert und Zahlungsmittel werden anerkannt."
+      },
+      {
+        "title": "Wege und Regeln",
+        "text": "Verkehr, Sicherheit und Handelsplätze ermöglichen Begegnungen."
+      }
+    ],
+    "center": {
+      "title": "Geld als Verbindung",
+      "text": "Werte vergleichen, bezahlen und Austausch koordinieren."
+    },
+    "right": [
+      {
+        "title": "Fernhandelsnetze",
+        "text": "Waren, Nachrichten und Techniken zirkulieren über weite Räume."
+      },
+      {
+        "title": "Abhängigkeiten und Risiken",
+        "text": "Störungen von Sicherheit oder Vertrauen beeinflussen den Austausch."
+      }
+    ],
+    "conflicts": "Vertrauen in Zahlungsmittel, unterschiedliche Interessen von Handelnden und politische Kontrolle prägen den Austausch. Kriege und unsichere Wege können Handelsbeziehungen beeinträchtigen.",
+    "breaks": "Münzen und andere anerkannte Zahlungsmittel verändern Möglichkeiten des Austauschs; politische Krisen können Netze unterbrechen. Münzgeld ersetzt andere Tausch- und Zahlungsformen nicht überall vollständig.",
+    "continuities": "Austausch bleibt auf soziale Beziehungen, Vertrauen, Regeln und Infrastruktur angewiesen; regionale und lokale Märkte bestehen neben Fernhandel.",
+    "developments": "Verkehrswege, Häfen und Handelsplätze verbinden sich zu überregionalen Netzen. Mit Waren verbreiten sich auch Wissen und kulturelle Einflüsse.",
+    "innovations": "Münzprägung und anerkannte Wertmassstäbe erleichtern Austausch zwischen Fremden; der Ausbau von Verkehrs- und Handelsinfrastruktur vergrössert die Reichweite."
+  },
+  "modul-9": {
+    "title": "Religion: Sinn, Gemeinschaft und öffentliche Ordnung",
+    "left": [
+      {
+        "title": "Deutungen und Praktiken",
+        "text": "Rituale, heilige Texte und gemeinsame Normen."
+      },
+      {
+        "title": "Menschen in Bewegung",
+        "text": "Diaspora, Mission, Handel und Pilgerwege – je nach Tradition verschieden."
+      }
+    ],
+    "center": {
+      "title": "Religiöse Gemeinschaften",
+      "text": "Religion stiftet Zugehörigkeit und ordnet Zeit, Raum und Zusammenleben."
+    },
+    "right": [
+      {
+        "title": "Herrschaft und Institutionen",
+        "text": "Glaubensordnungen prägen Recht, Bildung und Legitimation."
+      },
+      {
+        "title": "Kontakt und Abgrenzung",
+        "text": "Begegnung ermöglicht Austausch, aber auch Streit um Geltung und Macht."
+      }
+    ],
+    "conflicts": "Religiöse und politische Autoritäten können um Zuständigkeit und Deutung ringen. Zwischen Gemeinschaften bestehen sowohl Austausch und Zusammenleben als auch Abgrenzung und Konflikte.",
+    "breaks": "Die Entstehung und Ausbreitung neuer religiöser Gemeinschaften verändert Zugehörigkeit und öffentliche Ordnung. Judentum, Christentum und Islam folgen dabei unterschiedlichen historischen Wegen.",
+    "continuities": "Sinnsuche, Rituale und Normen bleiben wichtig; ältere Praktiken und regionale Traditionen wirken unter veränderten Bedingungen weiter.",
+    "developments": "Religiöse Netze verbinden Räume und beeinflussen Herrschaft, Bildung, Wissen und Mobilität. Pilgerwege verknüpfen Frömmigkeit mit Begegnung und Austausch.",
+    "innovations": "Neue Formen religiöser Gemeinschaft, überregionaler Textüberlieferung und institutioneller Vernetzung verändern, wie Glauben und Wissen weitergegeben werden."
+  },
+  "modul-10": {
+    "title": "Mittelalterliche Ordnung: Herrschaft, Kirche und Lebenswelt",
+    "left": [
+      {
+        "title": "Landwirtschaft und Gemeinschaft",
+        "text": "Versorgung, Arbeit und lokale Beziehungen tragen den Alltag."
+      },
+      {
+        "title": "Glaube und Rang",
+        "text": "Kirche, Herkunft und Statuszeichen begründen Zugehörigkeit."
+      }
+    ],
+    "center": {
+      "title": "Verflochtene Herrschaft",
+      "text": "Königtum, Adel, geistliche Institutionen und Bindungen ordnen Macht."
+    },
+    "right": [
+      {
+        "title": "Stabilisierung",
+        "text": "Rituale, Rechte, Klöster und lokale Ordnungen schaffen Verlässlichkeit."
+      },
+      {
+        "title": "Wandel und Aushandlung",
+        "text": "Neue Herrschaftsräume und Bündnisse verändern Beziehungen."
+      }
+    ],
+    "conflicts": "Ansprüche von weltlichen und geistlichen Eliten sowie Rechte und Pflichten sozialer Gruppen stehen in Spannung. Die konkrete Machtverteilung wird regional ausgehandelt.",
+    "breaks": "Das Ende des weströmischen Reiches und die Entstehung neuer Herrschaftsräume verändern politische Ordnungen; der Übergang ist kein vollständiger Abbruch aller antiken Traditionen.",
+    "continuities": "Römische Schrift-, Rechts- und Verkehrsbezüge wirken fort. Landwirtschaft, religiöse Deutung und lokale Gemeinschaften bleiben tragende Grundlagen.",
+    "developments": "Christianisierung, Frankenreich, Klöster und regionale Bündnisse prägen unterschiedliche mittelalterliche Lebenswelten. Die Epoche ist weder einheitlich noch bewegungslos.",
+    "innovations": "Klöster als vernetzte Wissens- und Organisationsorte sowie neue Formen von Bindung, Recht und Bündnisbildung verändern die Gestaltung von Herrschaft und Gemeinschaft."
+  },
+  "modul-11": {
+    "title": "Stadt, Handel und Frömmigkeit als Kontaktzonen",
+    "left": [
+      {
+        "title": "Märkte und Verkehrswege",
+        "text": "Handwerk, Waren und Nachrichten verbinden Orte."
+      },
+      {
+        "title": "Glaube und Reisen",
+        "text": "Pilgerfahrten und Kreuzzugsbewegungen mobilisieren Menschen."
+      }
+    ],
+    "center": {
+      "title": "Begegnung in Kontaktzonen",
+      "text": "Städte und Wege verdichten wirtschaftliche und religiöse Beziehungen."
+    },
+    "right": [
+      {
+        "title": "Neue Handlungsspielräume",
+        "text": "Städtische Gruppen und Selbstorganisation gewinnen Gewicht."
+      },
+      {
+        "title": "Überlieferung kritisch prüfen",
+        "text": "Chroniken deuten Ereignisse und können sie später ausschmücken."
+      }
+    ],
+    "conflicts": "Städtische Gruppen, Herrschaftsträger und religiöse Bewegungen verfolgen unterschiedliche Interessen. Frömmigkeit kann Austausch motivieren, aber auch mit Gewalt und Machtansprüchen verbunden werden.",
+    "breaks": "Städtewachstum und neue Formen wirtschaftlicher und politischer Organisation verändern ältere Ordnungen. Quellen zum «Kinderkreuzzug» erlauben keine unkritische Übernahme späterer Erzählungen.",
+    "continuities": "Religion bleibt ein zentraler Beweggrund; Märkte und Wege bauen vielfach auf älteren regionalen Verbindungen auf.",
+    "developments": "Handel, Mobilität und städtische Verdichtung verstärken Kontakte zwischen Regionen. Ereignisse werden zugleich in Chroniken ausgewählt und gedeutet.",
+    "innovations": "Städtische Organisationsformen, verdichtete Handelsplätze und überregionale Verbindungen erweitern Handlungsspielräume. Quellenkritik ist hier unser Erkenntniswerkzeug, keine mittelalterliche Erfindung."
+  },
+  "modul-12": {
+    "title": "Bis 1500: verflochtene Entwicklungen statt einer Fortschrittsleiter",
+    "left": [
+      {
+        "title": "Kultur und Wissen",
+        "text": "Sprache, Symbole und Technik erweitern Handlungsmöglichkeiten."
+      },
+      {
+        "title": "Versorgung und Netze",
+        "text": "Landwirtschaft, Städte, Staaten, Geld und Religion verbinden Menschen."
+      }
+    ],
+    "center": {
+      "title": "Historische Wechselwirkungen",
+      "text": "Kooperation, Macht und Umweltgestaltung beeinflussen einander."
+    },
+    "right": [
+      {
+        "title": "Grössere Reichweite",
+        "text": "Dichtere Siedlungen, weite Verbindungen und stärkere Eingriffe in Landschaften."
+      },
+      {
+        "title": "Alternativen und Brüche",
+        "text": "Regionale Wege, verworfene Ordnungen und der Einschnitt von 1492."
+      }
+    ],
+    "conflicts": "Kooperation steht neben Herrschaft, Ungleichheit und Gewalt. Auch Deutungen konkurrieren: Hararis grosse Entwicklungslinien werden mit Graeber/Wengrows Betonung von Wahlmöglichkeiten verglichen.",
+    "breaks": "Sesshaftigkeit, Staatsbildung, Reichszerfälle und 1492 verändern Lebenswelten unterschiedlich stark. Für Amerika ist 1492 ein Einschnitt in bestehende Gesellschaften, nicht der Beginn seiner Geschichte.",
+    "continuities": "Menschen bleiben auf Wissen, soziale Beziehungen, Regeln und ihre Umwelt angewiesen. Ältere Praktiken bestehen neben neuen Institutionen und Mischformen fort.",
+    "developments": "Kooperation, Vernetzung und Umweltveränderung gewinnen an Reichweite; Verlauf und Folgen unterscheiden sich nach Weltregion und sozialen Gruppen.",
+    "innovations": "Sprache, Landwirtschaft, Schrift, Geld und Verkehrsnetze wirken in Kombination. Innovation ist nicht automatisch Fortschritt für alle; Vorteile und Belastungen müssen gemeinsam betrachtet werden."
+  }
+};
+
 function renderModuleCompactSummary(module) {
   const summary = moduleCompactSummaries[module.id];
-  if (!summary) return "";
+  const diagram = moduleDiagrams[module.id];
+  if (!summary || !diagram) return "";
   const items = [
-    ["Allgemeine Merkmale", summary.characteristics],
-    ["Veränderungen", summary.changes],
-    ["Entwicklungen", summary.developments],
-    ["Kontinuitäten", summary.continuities]
+    ["Konflikte", diagram.conflicts],
+    ["Diskontinuitäten", diagram.breaks],
+    ["Kontinuitäten", diagram.continuities],
+    ["Entwicklungen", diagram.developments],
+    ["Innovationen", diagram.innovations]
   ];
+  const node = (item, central = false) => `<div class="history-diagram-node ${central ? "is-central" : ""}"><h4>${escapeExportHtml(item.title)}</h4><p>${escapeExportHtml(item.text)}</p></div>`;
   return `
     <div class="compact-learning-core">
-      <div class="compact-learning-grid">
-        ${items.map(([label, text]) => `<article><h4>${label}</h4><p>${text}</p></article>`).join("")}
+      <figure class="history-diagram" aria-labelledby="${module.id}-diagram-title">
+        <figcaption id="${module.id}-diagram-title"><span class="section-kicker">Modul ${module.number} auf einen Blick</span><h3>${escapeExportHtml(diagram.title)}</h3></figcaption>
+        <div class="history-diagram-flow">
+          <div class="history-diagram-column"><p class="history-diagram-label">Ausgangspunkte</p>${diagram.left.map(item => node(item)).join("")}</div>
+          <div class="history-diagram-link"><span aria-hidden="true">→</span></div>
+          <div class="history-diagram-column"><p class="history-diagram-label">Zentraler Zusammenhang</p>${node(diagram.center, true)}</div>
+          <div class="history-diagram-link"><span aria-hidden="true">→</span></div>
+          <div class="history-diagram-column"><p class="history-diagram-label">Folgen und Spannungen</p>${diagram.right.map(item => node(item)).join("")}</div>
+        </div>
+        <p class="history-diagram-note">Die Pfeile zeigen Zusammenhänge, keine überall gleiche oder zwangsläufige Entwicklung. ${escapeExportHtml(summary.characteristics)}</p>
+      </figure>
+      <div class="history-analysis-intro"><h3>Die fünf historischen Perspektiven</h3><p>Konflikte: widerstreitende Interessen oder Deutungen. Diskontinuitäten: Brüche und Einschnitte. Kontinuitäten: Fortbestehendes. Entwicklungen: längerfristige Veränderungen. Innovationen: neue Praktiken, Techniken oder Ordnungen.</p></div>
+      <div class="compact-learning-grid history-analysis-grid">
+        ${items.map(([label, text]) => `<article><h4>${label}</h4><p>${escapeExportHtml(text)}</p></article>`).join("")}
       </div>
       <div class="compact-question-key"><strong>Schlüssel für die Schlussfragen:</strong> ${summary.questionKey}</div>
     </div>
@@ -8997,9 +9432,9 @@ function renderModules(state) {
         </section>
 
         <section class="module-section compact-summary-section">
-          <p class="section-kicker">10. Hoch komprimierte Zusammenfassung</p>
-          <h3>Der Lernkern des Moduls</h3>
-          <p>Lerne die vier historischen Perspektiven nicht isoliert, sondern als zusammenhängende Erklärung.</p>
+          <p class="section-kicker">10. Schaubild und historische Einordnung</p>
+          <h3>Das Modul als Zusammenhang</h3>
+          <p>Nutze das Schaubild zur Orientierung und unterscheide darunter die fünf historischen Perspektiven.</p>
           ${renderModuleCompactSummary(module)}
         </section>
 

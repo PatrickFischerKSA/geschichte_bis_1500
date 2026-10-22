@@ -74,7 +74,7 @@ assert(app.includes('type: "text/html;charset=utf-8"') && app.includes("URL.revo
   "Der plattformunabhängige Antwortexport ist unvollständig.");
 assert(app.includes("moduleCompactSummaries") && app.includes("renderModuleCompactSummary") && app.includes("Schlüssel für die Schlussfragen"),
   "Die hoch komprimierten Modulzusammenfassungen fehlen.");
-for (const perspective of ["Allgemeine Merkmale", "Veränderungen", "Entwicklungen", "Kontinuitäten"]) {
+for (const perspective of ["Konflikte", "Diskontinuitäten", "Kontinuitäten", "Entwicklungen", "Innovationen"]) {
   assert(app.includes(perspective), `Die Zusammenfassungsperspektive ${perspective} fehlt.`);
 }
 assert((app.match(/questionKey:/g) || []).length === 13,

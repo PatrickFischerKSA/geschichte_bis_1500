@@ -2912,3 +2912,47 @@ body[data-mode="teacher"] .module-card.is-locked .module-grid {
   body.first-run-intro .sidebar,
     body.first-run-intro #completion-panel { animation: none; }
 }
+
+/* Static, text-based module diagrams: no canvas, filters or continuous animation. */
+.history-diagram {
+  margin: 0;
+  padding: 22px;
+  border: 1px solid rgba(31, 109, 102, 0.24);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #f2f7f0, #fdf9f1);
+}
+.history-diagram figcaption h3 { margin-top: 8px; font-size: 1.4rem; }
+.history-diagram-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.history-diagram-column { display: grid; gap: 10px; min-width: 0; }
+.history-diagram-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal); }
+.history-diagram-node { border: 1px solid var(--line); border-radius: 12px; background: #fffdf9; padding: 14px; overflow-wrap: anywhere; }
+.history-diagram-node.is-central { background: #193f4b; color: #fffdf9; border-color: #193f4b; }
+.history-diagram-node h4 { font-size: 1.02rem; line-height: 1.25; }
+.history-diagram-node p { font-size: 0.87rem; line-height: 1.5; margin-top: 8px; }
+.history-diagram-link { display: grid; justify-items: center; color: var(--teal); text-align: center; min-width: 0; }
+.history-diagram-link span { font-size: 1.8rem; line-height: 1; }
+.history-diagram-link small { display: block; font-size: 0.62rem; line-height: 1.3; overflow-wrap: anywhere; margin-top: 6px; }
+.history-diagram-note { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.83rem; color: var(--muted); }
+.history-analysis-intro { margin-top: 12px; }
+.history-analysis-intro h3 { font-size: 1.2rem; }
+.history-analysis-intro p { margin-top: 10px; color: var(--muted); font-size: 0.88rem; }
+.history-analysis-grid article { border-top: 3px solid rgba(31, 109, 102, 0.5); }
+.history-analysis-grid article:nth-child(1) { border-top-color: var(--rust); }
+.history-analysis-grid article:nth-child(2) { border-top-color: var(--gold); }
+@media (max-width: 700px) {
+  .history-diagram { padding: 15px; }
+  .history-diagram-flow { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .history-diagram-link span { transform: rotate(90deg); }
+  .history-diagram-link small { font-size: 0.74rem; }
+}
+@media print {
+  .history-diagram { break-inside: avoid; background: #fff; }
+  .history-diagram-node, .history-diagram-node.is-central { background: #fff; color: #000; border-color: #888; }
+  .history-analysis-grid article { break-inside: avoid; }
+}

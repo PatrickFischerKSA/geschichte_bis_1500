@@ -82,3 +82,7 @@ Gesperrte Module werden zunächst als kompakte Vorschau aufgebaut; nach der Frei
 Die Seite verwendet nur die Scrollfläche des Wurzeldokuments. Dialoge sperren diese nur, solange sie offen sind; beim Schließen und Wiederherstellen der Seite wird die Sperre abgeglichen. Großflächige Hintergrundanimationen und Grafikfilter über den sehr langen Modulen wurden entfernt. Offscreen-Abschnitte freigeschalteter Module können vom Browser später gerendert werden; beim Drucken wird alles vollständig dargestellt.
 
 `npm run scroll-check` prüft die kompakte Vorschau, die Freischaltung, den Erhalt gespeicherter Entwürfe, die vollständige Lehrpersonenansicht und das Freigeben der Scrollsperre. Der Check gehört zum Preflight und wird vor der GitHub-Pages-Veröffentlichung ausgeführt.
+
+### Schaubilder pro Modul
+
+Alle 13 Module enthalten in Abschnitt 10 ein statisches Schaubild mit Ausgangspunkten, zentralem Zusammenhang und Folgen beziehungsweise Spannungen. Darunter erläutern fünf modulspezifische Perspektiven die Konflikte, Diskontinuitäten, Kontinuitäten, Entwicklungen und Innovationen. Die Pfeile verdeutlichen Zusammenhänge, ohne eine zwangsläufige Fortschrittsfolge zu behaupten. Die Schaubilder passen sich kleinen Bildschirmen an und sind druckbar. Die bestehende Freischaltung der Module bleibt erhalten.
